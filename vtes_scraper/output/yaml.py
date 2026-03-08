@@ -1,10 +1,12 @@
 import io
 import json
+from pathlib import Path
 
 from ruamel.yaml import YAML
 from ruamel.yaml.scalarstring import LiteralScalarString
 
 from vtes_scraper.models import Tournament
+from vtes_scraper.output._common import _date_subdir
 
 
 def _to_serializable(obj) -> dict:
@@ -37,3 +39,27 @@ def tournament_to_yaml_str(tournament: Tournament) -> str:
     buf = io.StringIO()
     yaml.dump(_prepare_yaml_dict(tournament), buf)
     return buf.getvalue()
+
+
+def write_tournament_yaml(
+    tournament: Tournament,
+    output_dir: Path,
+    overwrite: bool = False,
+) -> Path:
+    """
+    Write a Tournament to {output_dir}/YYYY/MM/{event_id}.yaml
+
+    Raises:
+        FileExistsError: if file exists and overwrite=False
+    """
+    dest = output_dir / _date_subdir(tournament)
+    dest.mkdir(parents=True, exist_ok=True)
+    path = dest / tournament.yaml_filename
+
+    if path.exists() and not overwrite:
+        raise FileExistsError(
+            f"Output file already exists: {path}. Use --overwrite to replace."
+        )
+
+    path.write_text(tournament_to_yaml_str(tournament), encoding="utf-8")
+    return path

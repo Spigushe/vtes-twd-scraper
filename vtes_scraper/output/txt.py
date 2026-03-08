@@ -1,4 +1,7 @@
+from pathlib import Path
+
 from vtes_scraper.models import CryptCard, Deck, LibrarySection, Tournament
+from vtes_scraper.output._common import _date_subdir
 
 
 def _fmt_crypt_card(card: CryptCard) -> str:
@@ -36,10 +39,10 @@ def tournament_to_txt(tournament: Tournament) -> str:
     lines.append(tournament.name)
     lines.append(tournament.location)
 
-    date = tournament.date_start
+    date_str = tournament.date_start.isoformat()
     if tournament.date_end:
-        date = f"{date} -- {tournament.date_end}"
-    lines.append(date)
+        date_str = f"{date_str} -- {tournament.date_end.isoformat()}"
+    lines.append(date_str)
 
     lines.append(tournament.rounds_format)
     lines.append(f"{tournament.players_count} players")
@@ -77,3 +80,28 @@ def tournament_to_txt(tournament: Tournament) -> str:
     lines.append("")
 
     return "\n".join(lines)
+
+
+def write_tournament_txt(
+    tournament: Tournament,
+    output_dir: Path,
+    overwrite: bool = False,
+) -> Path:
+    """
+    Write a Tournament to {output_dir}/YYYY/MM/{event_id}.txt
+
+    Raises:
+        FileExistsError: if file exists and overwrite=False
+        ValueError: if tournament has no event_id
+    """
+    dest = output_dir / _date_subdir(tournament)
+    dest.mkdir(parents=True, exist_ok=True)
+    path = dest / tournament.txt_filename
+
+    if path.exists() and not overwrite:
+        raise FileExistsError(
+            f"Output file already exists: {path}. Use --overwrite to replace."
+        )
+
+    path.write_text(tournament_to_txt(tournament), encoding="utf-8")
+    return path
