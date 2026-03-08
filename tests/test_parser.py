@@ -3,6 +3,8 @@ Unit tests for the TWD parser.
 Test data is taken verbatim from the README examples.
 """
 
+from datetime import datetime
+
 import pytest
 
 from vtes_scraper.parser import parse_twd_text
@@ -94,13 +96,13 @@ class TestMandatoryFields:
 
     def test_date_single_day(self):
         t = parse_twd_text(EXAMPLE_SIMPLE)
-        assert t.date_start == "October 1st 2016"
+        assert t.date_start == datetime(2016, 10, 1).date()
         assert t.date_end is None
 
     def test_date_multi_day(self):
         t = parse_twd_text(EXAMPLE_FULL)
-        assert t.date_start == "December 13th 2021"
-        assert t.date_end == "December 15th 2021"
+        assert t.date_start == datetime(2021, 12, 13).date()
+        assert t.date_end == datetime(2021, 12, 15).date()
 
     def test_rounds_format(self):
         t = parse_twd_text(EXAMPLE_SIMPLE)
@@ -124,7 +126,7 @@ class TestMandatoryFields:
 
     def test_output_filename(self):
         t = parse_twd_text(EXAMPLE_SIMPLE)
-        assert t.output_filename == "8470.yaml"
+        assert t.yaml_filename == "8470.yaml"
 
 
 # ---------------------------------------------------------------------------
