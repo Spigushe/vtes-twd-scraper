@@ -23,6 +23,7 @@ import logging
 import re
 import time
 from collections.abc import Iterator
+from typing import cast
 from urllib.parse import urljoin
 
 import httpx
@@ -70,7 +71,9 @@ _SKIP_SLUGS = {
 # ---------------------------------------------------------------------------
 
 
-def _get(client: httpx.Client, url: str, delay: float = DEFAULT_DELAY_SECONDS) -> BeautifulSoup:
+def _get(
+    client: httpx.Client, url: str, delay: float = DEFAULT_DELAY_SECONDS
+) -> BeautifulSoup:
     """Fetch a URL and return parsed HTML. Raises on HTTP errors."""
     logger.debug("GET %s", url)
     response = client.get(url, follow_redirects=True)
@@ -123,13 +126,15 @@ def iter_thread_urls(
 
     while True:
         limitstart = page * TOPICS_PER_PAGE
-        url = FORUM_INDEX if limitstart == 0 else f"{FORUM_INDEX}?limitstart={limitstart}"
+        url = (
+            FORUM_INDEX if limitstart == 0 else f"{FORUM_INDEX}?limitstart={limitstart}"
+        )
         soup = _get(client, url, delay)
 
         # Collect all <a> tags whose href matches a clean thread URL pattern
         found_new = False
         for tag in soup.find_all("a", href=True):
-            href = tag.get("href", "")
+            href = cast(str, tag.get("href", ""))
             # Strip query params and anchors before matching — avoids ?start= and #anchor variants
             clean_href = href.split("?")[0].split("#")[0]
             if not _THREAD_HREF_RE.match(clean_href):

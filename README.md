@@ -11,6 +11,11 @@ This convention mirrors the [GiottoVerducci/TWD](https://github.com/GiottoVerduc
 ## Installation
 
 ```bash
+git clone https://github.com/Spigushe/vtes-twd-scraper.git
+cd vtes-twd-scraper
+python3 -m venv .venv
+source .venv/bin/activate      # UNIX
+& .\.venv\Scripts\Activate.ps1 # Windows PowerShell
 pip install -e ".[dev]"
 ```
 
@@ -21,7 +26,7 @@ Requires Python ≥ 3.11.
 ### CLI
 
 ```bash
-# Scrape all pages, write YAMLs to ./output/
+# Scrape all pages, write YAMLs to ./twds/
 vtes-scraper scrape
 
 # Scrape first 3 pages only, overwrite existing files
@@ -99,12 +104,21 @@ deck:
 
 ```
 vtes-twd-scraper/
-├── src/vtes_scraper/
-│   ├── models.py     # Pydantic data models
-│   ├── parser.py     # TWD text format parser
-│   ├── scraper.py    # Forum scraper (httpx + BeautifulSoup)
-│   ├── output.py     # YAML serializer (ruamel.yaml)
-│   └── cli.py        # Typer CLI
+├── vtes_scraper/
+│   └── cli/
+│   │   ├── __init__.py # CLI entry point and shared argparse instance
+│   │   ├── _common.py  # CLI shared utilities
+│   │   ├── parse.py    # CLI command for parsing local .txt files
+│   │   ├── publish.py  # CLI command for publishing to GitHub
+│   │   └── scrape.py   # CLI command for scraping the VEKN forum
+│   └── output/
+│   │   ├── __init__.py
+│   │   ├── _common.py  # Output shared utilities
+│   │   ├── txt.py      # TXT serializer
+│   │   └── yaml.py     # YAML serializer
+│   ├── models.py       # Pydantic data models
+│   ├── parser.py       # TWD text format parser
+│   └── scraper.py      # Forum scraper (httpx + BeautifulSoup)
 ├── tests/
 │   └── test_parser.py
 ├── .github/workflows/scrape.yml

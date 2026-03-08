@@ -6,8 +6,11 @@ Based on: https://github.com/GiottoVerducci/TWD/blob/master/README.md
 from __future__ import annotations
 
 import re
+from datetime import date, datetime
 
 from pydantic import BaseModel, field_validator, model_validator
+
+DATE_FORMATS = ("%B %d %Y", "%b %d %Y", "%d %B %Y", "%d %b %Y", "%Y-%m-%d", "%d/%m/%Y")
 
 
 class CryptCard(BaseModel):
@@ -69,8 +72,8 @@ class Tournament(BaseModel):
     # --- Mandatory ---
     name: str
     location: str  # "Online" or "City, Country" or "Place, City, Country"
-    date_start: str  # "March 25th 2023"
-    date_end: str | None = None  # only for multi-day events
+    date_start: date
+    date_end: date | None = None  # only for multi-day events
     rounds_format: str  # "2R+F" or "3R+F"
     players_count: int
     winner: str
@@ -111,6 +114,28 @@ class Tournament(BaseModel):
             if match:
                 return int(match.group())
         return v
+
+    @field_validator("date_start", "date_end", mode="before")
+    @classmethod
+    def parse_date(cls, v) -> date | None:
+        """Parse date strings in various formats into a date object.
+
+        Supported formats:
+          - ISO:            2026-02-28
+          - DD/MM/YYYY:     28/02/2026
+          - Month DD YYYY:  February 22 2026  (ordinal suffixes stripped)
+          - DD Month YYYY:  22 February 2026  (ordinal suffixes stripped)
+          - Abbreviated:    Feb 22 2026 / 22 Feb 2026
+        """
+        if v is None or isinstance(v, date):
+            return v
+        clean = re.sub(r"(\d+)(st|nd|rd|th)\b", r"\1", v).replace(",", "").strip()
+        for fmt in DATE_FORMATS:
+            try:
+                return datetime.strptime(clean, fmt).date()
+            except ValueError:
+                continue
+        raise ValueError(f"Cannot parse date: {v!r}")
 
     @property
     def yaml_filename(self) -> str:

@@ -16,7 +16,6 @@ dependencies = [
     "lxml>=5.0",             # Fast HTML parser backend for bs4
     "pydantic>=2.7",         # Data validation and models
     "ruamel.yaml>=0.18",     # YAML serialization (preserves formatting)
-    "typer>=0.12",           # CLI framework
     "rich>=13.0",            # Pretty terminal output
 ]
 
