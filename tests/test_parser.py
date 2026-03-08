@@ -29,7 +29,7 @@ A great deck that wins all the time.
 
 Crypt (2 cards, min=4, max=4, avg=4)
 -------------------------------------
-2x Nathan Turner      4  PRO ani                 Gangrel:6
+2x Nathan Turner      4 PRO ani                 Gangrel:6
 
 Library (1 cards)
 Master (1)
@@ -49,9 +49,9 @@ Deck Name: Tributo a Paulão
 
 Crypt (12 cards, min=11, max=22, avg=4)
 ---------------------------------------
-2x Nathan Turner      4  PRO ani                 Gangrel:6
-2x Indira             3  PRO                     Gangrel:6
-1x Ruslan Fedorenko   2  pro                     Gangrel:6
+2x Nathan Turner      4 PRO ani                 Gangrel:6
+2x Indira             3 PRO                     Gangrel:6
+1x Ruslan Fedorenko   2 pro                     Gangrel:6
 
 Library (89 cards)
 Master (14; 2 trifle)
@@ -70,7 +70,7 @@ https://www.vekn.net/event-calendar/event/10546    # Event Link
 
 Crypt (2 cards, min=4, max=4, avg=4)
 -------------------------------------
-2x Nathan Turner      4  PRO ani                 Gangrel:6
+2x Nathan Turner      4 PRO ani                 Gangrel:6
 
 Library (1 cards)
 Master (1)
@@ -189,7 +189,8 @@ class TestCryptParsing:
         assert nathan.name == "Nathan Turner"
         assert nathan.capacity == 4
         assert "PRO" in nathan.disciplines
-        assert nathan.clan_set == "Gangrel:6"
+        assert nathan.clan == "Gangrel"
+        assert nathan.grouping == 6
 
 
 # ---------------------------------------------------------------------------
