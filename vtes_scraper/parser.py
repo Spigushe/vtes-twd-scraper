@@ -126,6 +126,8 @@ def _parse_crypt_line(line: str) -> CryptCard | None:
 
     name = parts[0].strip()
 
+    clan = ""
+    grouping = 0
     if ":" in parts[-1]:
         clan_set = parts[-1].strip()
         clan, group = clan_set.split(":", 1)
