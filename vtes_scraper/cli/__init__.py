@@ -9,7 +9,7 @@ from __future__ import annotations
 import argparse
 import sys
 
-from vtes_scraper.cli import parse, publish, scrape
+from vtes_scraper.cli import parse, publish, scrape, validate
 
 
 def _build_parser() -> argparse.ArgumentParser:
@@ -21,6 +21,7 @@ def _build_parser() -> argparse.ArgumentParser:
     scrape.register(sub)
     parse.register(sub)
     publish.register(sub)
+    validate.register(sub)
     return parser
 
 
