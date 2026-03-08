@@ -1,56 +1,42 @@
 """
-YAML output — uses ruamel.yaml to preserve:
-  - field order (defined by model)
-  - multiline strings (description block)
-  - consistent formatting
+Output serializers for Tournament objects.
+
+Supports two formats:
+  - YAML  (ruamel.yaml, preserves field order and multiline strings)
+  - TXT   (TWD text format expected by https://github.com/GiottoVerducci/TWD)
+
+TXT format reference:
+
+    Event Name
+    Event Location
+    Event Date
+    Number of Rounds (e.g. 3R+F)
+    Number of Players (e.g. 13 players)
+    Winner
+    Event URL
+
+    Deck Name: ...          # optional
+    Created by: ...         # optional, only when different from winner
+    Description:            # optional
+    ...description text...
+
+    Crypt (N cards, min=X max=Y avg=Z.ZZ)
+    ----------------------------------
+    Nx Vampire Name  capacity  disciplines  Clan:group
+    ...
+
+    Library (N cards)
+    Section Name (count)
+    Nx Card Name
+    ...
 """
 
 from __future__ import annotations
 
-import json
 from pathlib import Path
 
-from ruamel.yaml import YAML
-from ruamel.yaml.scalarstring import LiteralScalarString
-
+from vtes_scraper.helpers import date_subdir, tournament_to_txt, tournament_to_yaml_str
 from vtes_scraper.models import Tournament
-
-
-def _to_serializable(obj) -> dict:
-    """Convert a Pydantic model to a plain dict, recursively."""
-    # Use model_dump() (Pydantic v2) — exclude None values for cleanliness
-    return json.loads(obj.model_dump_json(exclude_none=True))
-
-
-def _prepare_yaml_dict(tournament: Tournament) -> dict:
-    """
-    Build an ordered dict suitable for YAML output.
-    Handles multiline description as a literal block scalar (|).
-    """
-    d = _to_serializable(tournament)
-
-    # Promote description to literal block scalar so YAML renders it
-    # with the '|' style instead of a quoted single-line string.
-    if "deck" in d and d["deck"] and "description" in d["deck"]:
-        desc = d["deck"]["description"]
-        if desc and "\n" in desc:
-            d["deck"]["description"] = LiteralScalarString(desc)
-
-    return d
-
-
-def tournament_to_yaml_str(tournament: Tournament) -> str:
-    """Serialize a Tournament to a YAML string."""
-    yaml = YAML()
-    yaml.default_flow_style = False
-    yaml.allow_unicode = True
-    yaml.width = 120
-
-    import io
-
-    buf = io.StringIO()
-    yaml.dump(_prepare_yaml_dict(tournament), buf)
-    return buf.getvalue()
 
 
 def write_tournament_yaml(
@@ -59,27 +45,44 @@ def write_tournament_yaml(
     overwrite: bool = False,
 ) -> Path:
     """
-    Write a Tournament to {output_dir}/{event_id}.yaml
+    Write a Tournament to {output_dir}/YYYY/MM/{event_id}.yaml
 
-    Args:
-        tournament: parsed Tournament object
-        output_dir: directory to write into (created if missing)
-        overwrite: if False, skip existing files
+    Raises:
+        FileExistsError: if file exists and overwrite=False
+    """
+    dest = output_dir / date_subdir(tournament)
+    dest.mkdir(parents=True, exist_ok=True)
+    path = dest / tournament.yaml_filename
 
-    Returns:
-        Path of the written file.
+    if path.exists() and not overwrite:
+        raise FileExistsError(
+            f"Output file already exists: {path}. Use --overwrite to replace."
+        )
+
+    path.write_text(tournament_to_yaml_str(tournament), encoding="utf-8")
+    return path
+
+
+def write_tournament_txt(
+    tournament: Tournament,
+    output_dir: Path,
+    overwrite: bool = False,
+) -> Path:
+    """
+    Write a Tournament to {output_dir}/YYYY/MM/{event_id}.txt
 
     Raises:
         FileExistsError: if file exists and overwrite=False
         ValueError: if tournament has no event_id
     """
-    output_dir.mkdir(parents=True, exist_ok=True)
-    filename = tournament.output_filename
-    path = output_dir / filename
+    dest = output_dir / date_subdir(tournament)
+    dest.mkdir(parents=True, exist_ok=True)
+    path = dest / tournament.txt_filename
 
     if path.exists() and not overwrite:
-        raise FileExistsError(f"Output file already exists: {path}. Use --overwrite to replace.")
+        raise FileExistsError(
+            f"Output file already exists: {path}. Use --overwrite to replace."
+        )
 
-    content = tournament_to_yaml_str(tournament)
-    path.write_text(content, encoding="utf-8")
+    path.write_text(tournament_to_txt(tournament), encoding="utf-8")
     return path

@@ -97,7 +97,9 @@ class Tournament(BaseModel):
     @classmethod
     def validate_rounds_format(cls, v: str) -> str:
         if not re.fullmatch(r"\d+R\+F", v):
-            raise ValueError(f"rounds_format must match 'NR+F' (e.g. '3R+F'), got: '{v}'")
+            raise ValueError(
+                f"rounds_format must match 'NR+F' (e.g. '3R+F'), got: '{v}'"
+            )
         return v
 
     @field_validator("players_count", mode="before")
@@ -111,9 +113,17 @@ class Tournament(BaseModel):
         return v
 
     @property
-    def output_filename(self) -> str:
+    def yaml_filename(self) -> str:
         """TWD convention: {event_id}.yaml"""
         if self.event_id:
             return f"{self.event_id}.yaml"
+        # Fallback: should not happen if event_url is valid
+        raise ValueError("Cannot derive filename: event_id is missing")
+
+    @property
+    def txt_filename(self) -> str:
+        """TWD convention: {event_id}.txt"""
+        if self.event_id:
+            return f"{self.event_id}.txt"
         # Fallback: should not happen if event_url is valid
         raise ValueError("Cannot derive filename: event_id is missing")
