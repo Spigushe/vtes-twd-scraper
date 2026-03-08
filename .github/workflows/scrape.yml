@@ -1,0 +1,88 @@
+name: Scrape VTES TWD
+
+on:
+  # Run on a schedule — every day at 06:00 UTC
+  schedule:
+    - cron: "0 6 * * *"
+
+  # Allow manual trigger from the Actions tab
+  workflow_dispatch:
+    inputs:
+      max_pages:
+        description: "Max forum pages to scrape (leave empty for all)"
+        required: false
+        default: ""
+      overwrite:
+        description: "Overwrite existing YAML files?"
+        type: boolean
+        default: false
+
+  # Run on push to main (useful during development)
+  push:
+    branches: [main]
+    paths:
+      - "vtes_scraper/**"
+      - "pyproject.toml"
+      - ".github/workflows/scrape.yml"
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to commit output files
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history for clean diffs
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          allow-prereleases: true   # required until 3.14 reaches final release
+          cache: "pip"
+
+      - name: Set UTF-8 encoding (required on Windows runners)
+        run: echo "PYTHONUTF8=1" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: pip install -e ".[dev]"
+
+      - name: Run tests before scraping
+        run: pytest tests/ -v
+
+      - name: Build scrape command
+        id: build_cmd
+        run: |
+          CMD="vtes-scraper scrape --output-dir output/"
+          if [ -n "${{ github.event.inputs.max_pages }}" ]; then
+            CMD="$CMD --max-pages ${{ github.event.inputs.max_pages }}"
+          fi
+          if [ "${{ github.event.inputs.overwrite }}" = "true" ]; then
+            CMD="$CMD --overwrite"
+          fi
+          echo "cmd=$CMD" >> "$GITHUB_OUTPUT"
+
+      - name: Scrape forum
+        run: ${{ steps.build_cmd.outputs.cmd }}
+
+      - name: Check for new files
+        id: git_status
+        run: |
+          git add output/
+          if git diff --staged --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git diff --staged --stat
+          fi
+
+      - name: Commit and push new YAML files
+        if: steps.git_status.outputs.changed == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: scrape VTES TWD $(date -u +%Y-%m-%d)"
+          git push

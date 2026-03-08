@@ -1,0 +1,189 @@
+name: Side Event - Trento the day after...
+location: Caldonazzo (Tn) Italy
+date_start: 01/03/2026
+rounds_format: 2R+F
+players_count: 34
+winner: Thomas Marchiori
+event_url: https://www.vekn.net/event-calendar/event/12853
+event_id: '12853'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82861-twd-side-event-trento-the-day-after-01-03-2026
+deck:
+  name: Baroni, figli e tigelle [by Giulio De Cicco]
+  description: ''
+  crypt_count: 12
+  crypt_min: 17
+  crypt_max: 29
+  crypt_avg: 5.92
+  crypt:
+  - count: 1
+    name: Sergio Bueno
+    capacity: 8
+    disciplines: OBF PRE PRO aus pot
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Ángel Guerrero
+    capacity: 7
+    disciplines: ANI DOM PRO
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Massimiliano
+    capacity: 7
+    disciplines: ANI FOR pro
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Valeriya Zinovieva
+    capacity: 7
+    disciplines: POT cel pre pro
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Vivian VI
+    capacity: 7
+    disciplines: PRE PRO obf tha
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Branimira
+    capacity: 6
+    disciplines: ANI dom pre pro
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Elisha Tucker
+    capacity: 6
+    disciplines: PRE cel obf pro
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Kamile Paukstys
+    capacity: 5
+    disciplines: PRO ani for
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Indira
+    capacity: 3
+    disciplines: PRO
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Joseph Fischer
+    capacity: 3
+    disciplines: PRO
+    clan: Gangrel antitribu
+    grouping: 5
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 26
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Anarch Troublemaker
+    - count: 2
+      name: Carfax Abbey
+    - count: 2
+      name: Club Illusion
+    - count: 1
+      name: Dark Influences
+    - count: 1
+      name: Erciyes Fragments, The
+    - count: 2
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: Poacher's Hunting Ground
+    - count: 1
+      name: 'Powerbase: Los Angeles'
+    - count: 6
+      name: Protean
+    - count: 6
+      name: Villein
+  - name: Action
+    count: 11
+    cards:
+    - count: 1
+      name: Aranthebes, The Immortal
+    - count: 9
+      name: Childe of the Revolution
+    - count: 1
+      name: Constant Revolution
+  - name: Political Action
+    count: 3
+    cards:
+    - count: 1
+      name: Eat the Rich
+    - count: 2
+      name: Revolutionary Council
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 2
+      name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 6
+    cards:
+    - count: 4
+      name: Earth Control
+    - count: 2
+      name: Monkey Wrench
+  - name: Action Modifier/Reaction
+    count: 3
+    cards:
+    - count: 3
+      name: Form of the Bat
+  - name: Reaction
+    count: 25
+    cards:
+    - count: 7
+      name: Bait and Switch
+    - count: 1
+      name: Delaying Tactics
+    - count: 15
+      name: Organized Resistance
+    - count: 2
+      name: Protection Racket
+  - name: Combat
+    count: 13
+    cards:
+    - count: 1
+      name: Claws of the Dead
+    - count: 5
+      name: Donnybrook
+    - count: 6
+      name: Earth Meld
+    - count: 1
+      name: Groundfighting
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Uncoiling, The

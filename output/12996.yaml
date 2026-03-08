@@ -1,0 +1,164 @@
+name: 'Second Tradition: Domain'
+location: 28 February 2026
+date_start: Campina Grande - Paraiba - Brasil
+rounds_format: 2R+F
+players_count: 10
+winner: Joab Rogerio Barbosa da Silva (
+event_url: https://www.vekn.net/player-registry/event/12996
+event_id: '12996'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82855-twd-second-tradition-domain-campina-grande-brasil-28-february-26
+deck:
+  name: me dê papai
+  description: deck inspired by the ideas of Martin Weinmayer
+  crypt_count: 12
+  crypt_min: 24
+  crypt_max: 32
+  crypt_avg: 7.08
+  crypt:
+  - count: 3
+    name: Sergio Bueno
+    capacity: 8
+    disciplines: OBF PRE PRO aus pot
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 2
+    name: Vivian VI
+    capacity: 7
+    disciplines: PRE PRO obf tha
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Adrino Manauara
+    capacity: 8
+    disciplines: ANI DOM PRO pot
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Ángel Guerrero
+    capacity: 7
+    disciplines: ANI DOM PRO
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Branimira
+    capacity: 6
+    disciplines: ANI dom pre pro
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Elisha Tucker
+    capacity: 6
+    disciplines: PRE cel obf pro
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Saku Pihlajamäki
+    capacity: 8
+    disciplines: CEL POT PRE for pro
+    title: baron
+    clan: Brujah
+    grouping: 6
+  library_count: 88
+  library_sections:
+  - name: Master
+    count: 23
+    cards:
+    - count: 2
+      name: Abombwe
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Carfax Abbey
+    - count: 2
+      name: Club Illusion
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Dark Influences
+    - count: 1
+      name: Erciyes Fragments, The
+    - count: 1
+      name: Ferraille
+    - count: 2
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Opium Den
+    - count: 2
+      name: Papillon
+    - count: 6
+      name: Villein
+  - name: Action
+    count: 3
+    cards:
+    - count: 3
+      name: Chameleon
+  - name: Political Action
+    count: 8
+    cards:
+    - count: 6
+      name: Banishment
+    - count: 2
+      name: Revolutionary Council
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 2
+      name: Heart of Nizchetus
+  - name: Retainer
+    count: 2
+    cards:
+    - count: 1
+      name: Crypt's Sons
+    - count: 1
+      name: Mr. Winthrop
+  - name: Action Modifier
+    count: 4
+    cards:
+    - count: 2
+      name: Earth Control
+    - count: 2
+      name: Monkey Wrench
+  - name: Action Modifier/Reaction
+    count: 8
+    cards:
+    - count: 8
+      name: Form of the Bat
+  - name: Reaction
+    count: 22
+    cards:
+    - count: 10
+      name: Bait and Switch
+    - count: 12
+      name: Organized Resistance
+  - name: Combat
+    count: 16
+    cards:
+    - count: 10
+      name: Earth Meld
+    - count: 6
+      name: Form of Mist
