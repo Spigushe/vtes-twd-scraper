@@ -1,0 +1,124 @@
+name: The great Tiger
+location: Campina Grande, Brasil
+date_start: '2022-07-24'
+rounds_format: 3R+F
+players_count: 10
+winner: José Roberio Barbosa da Silva
+event_url: https://www.vekn.net/player-registry/event/10283
+event_id: '10283'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/79945-twda-the-great-tiger-campina-grande-brasil-24-july-2022
+deck:
+  name: O abraço de caos
+  description: ''
+  crypt_count: 24
+  crypt_min: 4
+  crypt_max: 18
+  crypt_avg: 1.92
+  crypt:
+  - count: 16
+    name: Tupdog
+    capacity: 1
+    disciplines: POT VIS
+    clan: Gargoyle
+    grouping: 3
+  - count: 2
+    name: Antonio d'Erlette
+    capacity: 5
+    disciplines: THA dom for pot
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Ember Wright
+    capacity: 3
+    disciplines: aus dom
+    clan: Tremere antitribu
+    grouping: 3
+  - count: 1
+    name: Janine
+    capacity: 4
+    disciplines: aus dom tha
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Keith Moody
+    capacity: 3
+    disciplines: DOM
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Lectora
+    capacity: 3
+    disciplines: aus tha
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Mosfair
+    capacity: 4
+    disciplines: cel dom tha
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Saiz
+    capacity: 3
+    disciplines: aus dom
+    clan: Tremere antitribu
+    grouping: 3
+  library_count: 77
+  library_sections:
+  - name: Master
+    count: 17
+    cards:
+    - count: 3
+      name: Effective Management
+    - count: 2
+      name: Fame
+    - count: 1
+      name: Information Highway
+    - count: 2
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Secure Haven
+    - count: 1
+      name: Sudden Reversal
+    - count: 2
+      name: Vessel
+    - count: 1
+      name: Villein
+    - count: 4
+      name: Wider View
+  - name: Action
+    count: 2
+    cards:
+    - count: 2
+      name: Govern the Unaligned
+  - name: Ally
+    count: 8
+    cards:
+    - count: 7
+      name: Nephandus
+    - count: 1
+      name: Rock Cat
+  - name: Reaction
+    count: 5
+    cards:
+    - count: 5
+      name: Deflection
+  - name: Combat
+    count: 43
+    cards:
+    - count: 9
+      name: Brick by Brick
+    - count: 10
+      name: Immortal Grapple
+    - count: 10
+      name: Raking Talons
+    - count: 5
+      name: Stonestrength
+    - count: 9
+      name: Torn Signpost
+  - name: Event
+    count: 2
+    cards:
+    - count: 2
+      name: Unmasking, The

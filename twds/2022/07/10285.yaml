@@ -1,0 +1,140 @@
+name: Nose of the hound
+location: Online
+date_start: '2022-07-25'
+rounds_format: 2R+F
+players_count: 14
+winner: Rafael Barbosa
+event_url: https://www.vekn.net/player-registry/event/10285
+event_id: '10285'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79953-twda-nose-of-the-hound
+deck:
+  name: ravnos snow
+  description: ''
+  crypt_count: 12
+  crypt_min: 4
+  crypt_max: 29
+  crypt_avg: 4.83
+  crypt:
+  - count: 3
+    name: Delizbieta of the Dark Eyes
+    capacity: 7
+    disciplines: ANI CHI FOR PRE
+    clan: Ravnos
+    grouping: 3
+  - count: 2
+    name: Tatiana Stepanova, Alastor
+    capacity: 7
+    disciplines: CHI PRE ani for obf
+    clan: Ravnos
+    grouping: 4
+  - count: 1
+    name: Devyn
+    capacity: 4
+    disciplines: ani chi pre
+    clan: Ravnos
+    grouping: 4
+  - count: 1
+    name: Jeremy MacNeil (ADV)
+    capacity: 8
+    disciplines: AUS POT PRE cel chi
+    clan: Brujah
+    grouping: 3
+  - count: 1
+    name: Rain
+    capacity: 7
+    disciplines: AUS cel chi dem pot pre
+    clan: Toreador antitribu
+    grouping: 4
+  library_count: 80
+  library_sections:
+  - name: Master
+    count: 16
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fortune Teller Shop
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Park Hunting Ground
+    - count: 2
+      name: Path of Paradox, The
+    - count: 1
+      name: Svadharma
+    - count: 3
+      name: Vessel
+    - count: 2
+      name: Villein
+    - count: 1
+      name: Week of Nightmares
+  - name: Action
+    count: 5
+    cards:
+    - count: 1
+      name: Bujo
+    - count: 3
+      name: Illegalism
+    - count: 1
+      name: Patshiv
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 1
+      name: Karavalanisha Vrana
+    - count: 1
+      name: Treasured Samadji
+  - name: Political Action
+    count: 10
+    cards:
+    - count: 3
+      name: Consanguineous Boon
+    - count: 6
+      name: Kine Resources Contested
+    - count: 1
+      name: Year of Fortune
+  - name: Action Modifier
+    count: 34
+    cards:
+    - count: 5
+      name: Adhocracy
+    - count: 3
+      name: Awe
+    - count: 3
+      name: Bewitching Oration
+    - count: 2
+      name: False Resonance
+    - count: 4
+      name: Fata Morgana
+    - count: 5
+      name: Freak Drive
+    - count: 2
+      name: Mirror's Visage
+    - count: 3
+      name: Propaganda of the Deed
+    - count: 2
+      name: Smoke and Mirrors
+    - count: 5
+      name: Voter Captivation
+  - name: Action Modifier/Combat
+    count: 6
+    cards:
+    - count: 3
+      name: Mirror Image
+    - count: 3
+      name: Occlusion
+  - name: Reaction
+    count: 7
+    cards:
+    - count: 3
+      name: Deep Ecology
+    - count: 1
+      name: Forced Awakening
+    - count: 2
+      name: On the Qui Vive
+    - count: 1
+      name: Wake with Evening's Freshness

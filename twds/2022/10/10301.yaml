@@ -1,0 +1,118 @@
+name: We Only Come Out At Night
+location: Bochum, Germany
+date_start: '2022-10-08'
+rounds_format: 2R+F
+players_count: 19
+winner: Roy Opitz
+event_url: https://www.vekn.net/event-calendar/event/10301
+event_id: '10301'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80066-twd-we-only-come-out-at-night-bochum-germany-8-oct-2022
+deck:
+  name: Tremere! Claws & Mages
+  created_by: Roy Opitz
+  description: ''
+  crypt_count: 32
+  crypt_min: 4
+  crypt_max: 20
+  crypt_avg: 1.97
+  crypt:
+  - count: 5
+    name: Antonio d'Erlette
+    capacity: 5
+    disciplines: THA dom for pot
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Mosfair
+    capacity: 4
+    disciplines: cel dom tha
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 2
+    name: Keith Moody
+    capacity: 3
+    disciplines: DOM
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Ember Wright
+    capacity: 3
+    disciplines: aus dom
+    clan: Tremere antitribu
+    grouping: 3
+  - count: 1
+    name: Saiz
+    capacity: 3
+    disciplines: aus dom
+    clan: Tremere antitribu
+    grouping: 3
+  - count: 22
+    name: Tupdog
+    capacity: 1
+    disciplines: POT VIS
+    clan: Gargoyle
+    grouping: 3
+  library_count: 80
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 2
+      name: Direct Intervention
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 3
+      name: Information Highway
+    - count: 1
+      name: KRCG News Radio
+    - count: 1
+      name: Not to Be
+    - count: 1
+      name: 'Powerbase: Chicago'
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 2
+      name: Wider View
+    - count: 1
+      name: Yawp Court
+  - name: Action
+    count: 3
+    cards:
+    - count: 1
+      name: Aranthebes, The Immortal
+    - count: 2
+      name: Graverobbing
+  - name: Ally
+    count: 7
+    cards:
+    - count: 7
+      name: Nephandus
+  - name: Equipment
+    count: 3
+    cards:
+    - count: 2
+      name: Codex of the Edenic Groundskeepers
+    - count: 1
+      name: Hand of Conrad
+  - name: Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Deflection
+  - name: Combat
+    count: 46
+    cards:
+    - count: 12
+      name: Brick by Brick
+    - count: 12
+      name: Immortal Grapple
+    - count: 12
+      name: Raking Talons
+    - count: 10
+      name: Torn Signpost
+  - name: Event
+    count: 2
+    cards:
+    - count: 2
+      name: Unmasking, The

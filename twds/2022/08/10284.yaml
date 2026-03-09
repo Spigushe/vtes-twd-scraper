@@ -1,0 +1,102 @@
+name: V Torneio Paraibano
+location: Campina Grande, Brazil
+date_start: '2022-08-21'
+rounds_format: 3R+F
+players_count: 23
+winner: Percio Robélio
+event_url: https://www.vekn.net/player-registry/event/10284
+event_id: '10284'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80006-twd-v-torneio-paraibano-campina-grande-brasil-21-august-2022
+deck:
+  name: lucian ponto cego
+  description: ''
+  crypt_count: 12
+  crypt_min: 44
+  crypt_max: 44
+  crypt_avg: 11.0
+  crypt:
+  - count: 4
+    name: Lucian, the Perfect
+    capacity: 11
+    disciplines: ANI AUS DOM OBF POT PRE
+    clan: Guruhi
+    grouping: 4
+  - count: 4
+    name: Mistress Fanchon
+    capacity: 11
+    disciplines: AUS CEL DOM OBF THA VIC
+    title: inner circle
+    clan: Tremere
+    grouping: 4
+  - count: 4
+    name: Rafael de Corazon
+    capacity: 11
+    disciplines: AUS CEL DOM OBF PRE
+    title: inner circle
+    clan: Toreador
+    grouping: 4
+  library_count: 73
+  library_sections:
+  - name: Master
+    count: 19
+    cards:
+    - count: 7
+      name: Blind Spot
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: 'Golconda: Inner Peace'
+    - count: 3
+      name: Information Highway
+    - count: 1
+      name: Metro Underground
+    - count: 2
+      name: Villein
+    - count: 3
+      name: Zillah's Valley
+  - name: Action
+    count: 7
+    cards:
+    - count: 5
+      name: Flurry of Action
+    - count: 2
+      name: Intimidation
+  - name: Action Modifier
+    count: 28
+    cards:
+    - count: 7
+      name: Conditioning
+    - count: 6
+      name: Elder Impersonation
+    - count: 2
+      name: Enkil Cog
+    - count: 2
+      name: Foreshadowing Destruction
+    - count: 1
+      name: Into Thin Air
+    - count: 4
+      name: Lost in Crowds
+    - count: 6
+      name: Seduction
+  - name: Reaction
+    count: 10
+    cards:
+    - count: 3
+      name: Eluding the Arms of Morpheus
+    - count: 5
+      name: Obedience
+    - count: 2
+      name: Telepathic Counter
+  - name: Combat
+    count: 7
+    cards:
+    - count: 7
+      name: Majesty
+  - name: Event
+    count: 2
+    cards:
+    - count: 1
+      name: Bitter and Sweet Story, The
+    - count: 1
+      name: Narrow Minds

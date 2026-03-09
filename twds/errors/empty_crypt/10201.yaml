@@ -1,0 +1,98 @@
+name: Week of Nightmares Helsinki 2022 Wednesday
+location: Espoo, Finland
+date_start: '2022-07-27'
+rounds_format: 2R+F
+players_count: 14
+winner: 'winner: Tero Aalto'
+event_url: https://www.vekn.net/event-calendar/event/10201
+event_id: '10201'
+vp_comment: The last leg of the WoN Helsinki tour took things even further into the depths of Espoo, all the way to the 
+  end of the metro line, Matinkylä. The venue was familiar from the Tragic Love Affair tournament series, and also 
+  functions as my home. Because our apartment contains 15 chairs exactly, that was the maximum number of participants we
+  could accomodate. After a last-minute cancellation, the final figure settled at 14 players.
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79925-twd-week-of-nightmares-helsinki-2022-wednesday
+deck:
+  name: '(Sem título): I Lost My Senses'
+  description: A variation of the original "(Sem título)" with optimized card flow.
+  crypt_count: 12
+  crypt_min: 10
+  crypt_max: 40
+  crypt_avg: 6.33
+  crypt: []
+  library_count: 66
+  library_sections:
+  - name: Master
+    count: 8
+    cards:
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Monastery of Shadows
+    - count: 2
+      name: Perfectionist
+    - count: 3
+      name: Secure Haven
+  - name: Action
+    count: 14
+    cards:
+    - count: 1
+      name: Contagion
+    - count: 4
+      name: Entrancement
+    - count: 6
+      name: Flurry of Action
+    - count: 3
+      name: Unleash Hell's Fury
+  - name: Ally
+    count: 5
+    cards:
+    - count: 5
+      name: Infernal Servitor
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Retainer
+    count: 2
+    cards:
+    - count: 2
+      name: Homunculus
+  - name: Action Modifier
+    count: 26
+    cards:
+    - count: 2
+      name: Cloak the Gathering
+    - count: 4
+      name: Elder Impersonation
+    - count: 3
+      name: Enkil Cog
+    - count: 2
+      name: Faceless Night
+    - count: 3
+      name: I am Legion
+    - count: 7
+      name: Instantaneous Transformation
+    - count: 4
+      name: Lost in Crowds
+    - count: 1
+      name: Psychomachia
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Sense the Sin
+  - name: Combat
+    count: 4
+    cards:
+    - count: 2
+      name: Earth Meld
+    - count: 2
+      name: Form of Mist
+  - name: Event
+    count: 2
+    cards:
+    - count: 1
+      name: Narrow Minds
+    - count: 1
+      name: Scourge of the Enochians

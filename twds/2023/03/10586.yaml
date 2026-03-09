@@ -1,0 +1,152 @@
+name: 'Black Forest Base/Hunting Ground Freiburg: Return of the She-Wolf'
+location: Freiburg, Germany
+date_start: '2023-03-18'
+rounds_format: 3R+F
+players_count: 8
+winner: Sebastian Meurer's (
+event_url: https://www.vekn.net/event-calendar/event/10586
+event_id: '10586'
+vp_comment: 2vp in final (multideck event)
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80402-twd-black-forest-base-hg-freiburg-return-of-the-she-wolf
+deck:
+  name: Fleurdumal and Other Stories
+  description: 'This is something of a hybrid between a Malk dementation bleed deck and a Toreador tap and bleed. I think
+    the crypt is awesome and pretty unique: five vampires with AUS DEM PRE, which also happen to come with votes, +bleed and/or
+    useful specials. This allows for a very versatile deck: consistent mid-stealth bleed power combined with a sturdy defensive
+    package (the flexibility of Random Patterns helps a lot) and some vote. Moreover, the deck has three ways to look at other
+    players‘ hands (Patterns in the Chaos + Specials of Fleurdumal and Alicia Barrows), which helps a lot, especially in an
+    Archon-heavy meta.'
+  crypt_count: 12
+  crypt_min: 30
+  crypt_max: 44
+  crypt_avg: 8.92
+  crypt:
+  - count: 4
+    name: Fleurdumal
+    capacity: 8
+    disciplines: AUS DEM PRE cel tha
+    title: prince
+    clan: Toreador
+    grouping: 3
+  - count: 4
+    name: Lutz von Hohenzollern
+    capacity: 11
+    disciplines: AUS DEM OBF PRE pot
+    title: inner circle
+    clan: Malkavian
+    grouping: 4
+  - count: 2
+    name: Lazarus James
+    capacity: 8
+    disciplines: AUS DEM PRE obf tha
+    clan: Malkavian
+    grouping: 4
+  - count: 1
+    name: Alicia Barrows
+    capacity: 9
+    disciplines: AUS DEM OBF POT PRE
+    title: archbishop
+    clan: Malkavian antitribu
+    grouping: 4
+  - count: 1
+    name: Tears, The Dark Pierrot
+    capacity: 6
+    disciplines: AUS DEM PRE cel
+    clan: Toreador antitribu
+    grouping: 4
+  library_count: 81
+  library_sections:
+  - name: Master
+    count: 20
+    cards:
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fragment of the Book of Nod
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Legendary Vampire
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 5
+      name: Villein
+    - count: 1
+      name: Wider View
+    - count: 4
+      name: Zillah's Valley
+  - name: Action
+    count: 12
+    cards:
+    - count: 1
+      name: Entrancement
+    - count: 8
+      name: Kindred Spirits
+    - count: 1
+      name: Madman's Quill
+    - count: 2
+      name: Mind Numb
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+  - name: Political Action
+    count: 3
+    cards:
+    - count: 1
+      name: Banishment
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+  - name: Action Modifier
+    count: 15
+    cards:
+    - count: 9
+      name: Confusion
+    - count: 2
+      name: Eyes of Chaos
+    - count: 2
+      name: Mind Tricks
+    - count: 2
+      name: Patterns in the Chaos
+  - name: Action Modifier/Combat
+    count: 6
+    cards:
+    - count: 5
+      name: Deny
+    - count: 1
+      name: Force of Personality
+  - name: Action Modifier/Reaction
+    count: 5
+    cards:
+    - count: 4
+      name: Random Patterns
+    - count: 1
+      name: Touch of Clarity
+  - name: Reaction
+    count: 11
+    cards:
+    - count: 5
+      name: Eyes of Argus
+    - count: 1
+      name: Shattered Mirror
+    - count: 4
+      name: Telepathic Misdirection
+    - count: 1
+      name: Wrong and Crosswise
+  - name: Combat
+    count: 8
+    cards:
+    - count: 3
+      name: Charismatic Aura
+    - count: 5
+      name: Majesty

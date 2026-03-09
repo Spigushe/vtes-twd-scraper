@@ -1,0 +1,123 @@
+name: Empowering the Puppet King
+location: Paris, France
+date_start: '2019-01-26'
+rounds_format: 3R+F
+players_count: 17
+winner: Jorge Delgado
+event_url: https://www.vekn.net/player-registry/event/9115
+event_id: '9115'
+vp_comment: 1,5 VPs in the finals
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80025-twd-empowering-the-puppet-king
+deck:
+  name: Nana ANI tablets
+  created_by: Jorge Delgado
+  description: ''
+  crypt_count: 12
+  crypt_min: 4
+  crypt_max: 29
+  crypt_avg: 3.75
+  crypt:
+  - count: 3
+    name: Nana Buruku
+    capacity: 8
+    disciplines: ANI POT PRE
+    clan: Guruhi
+    grouping: 4
+  - count: 1
+    name: Beetleman
+    capacity: 4
+    disciplines: ANI obf
+    clan: Nosferatu
+    grouping: 4
+  - count: 1
+    name: Bobby Lemon
+    capacity: 4
+    disciplines: ANI pro
+    clan: Gangrel
+    grouping: 3
+  - count: 1
+    name: Petra
+    capacity: 5
+    disciplines: ANI OBF aus
+    clan: Nosferatu
+    grouping: 4
+  - count: 1
+    name: Stick
+    capacity: 3
+    disciplines: ANI
+    clan: Nosferatu antitribu
+    grouping: 4
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 34
+    cards:
+    - count: 4
+      name: Anarch Revolt
+    - count: 1
+      name: Archon Investigation
+    - count: 12
+      name: Ashur Tablets
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Haven Uncovered
+    - count: 1
+      name: Inceptor
+    - count: 5
+      name: Liquidation
+    - count: 1
+      name: Parthenon, The
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 4
+      name: Vessel
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 12
+    cards:
+    - count: 1
+      name: Aranthebes, The Immortal
+    - count: 11
+      name: Deep Song
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 1
+    cards:
+    - count: 1
+      name: Monkey Wrench
+  - name: Reaction
+    count: 6
+    cards:
+    - count: 2
+      name: Cats' Guidance
+    - count: 2
+      name: Delaying Tactics
+    - count: 2
+      name: On the Qui Vive
+  - name: Combat
+    count: 36
+    cards:
+    - count: 14
+      name: Aid from Bats
+    - count: 1
+      name: Canine Horde
+    - count: 10
+      name: Carrion Crows
+    - count: 1
+      name: High Ground
+    - count: 4
+      name: Target Vitals
+    - count: 4
+      name: Taste of Vitae
+    - count: 2
+      name: Terror Frenzy

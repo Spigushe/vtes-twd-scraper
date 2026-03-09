@@ -1,0 +1,160 @@
+name: Norwegian National Championship 2022
+location: Moss, Østfold, Norway
+date_start: '2022-08-06'
+rounds_format: 3R+F
+players_count: 22
+winner: Håvard Skjevling's Tournament Winning Deck with 3 VPs in the Finals
+event_url: https://www.vekn.net/index.php/event-calendar/event/10161
+event_id: '10161'
+vp_comment: 1 vp, 3 vp, 1,5 vp, 3 vp in the final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79948-twd-norwegian-nc-2022-moss-norway-6-aug-2022
+deck:
+  name: Homunculi Network
+  created_by: Håvard Skjevling
+  description: ''
+  crypt_count: 13
+  crypt_min: 40
+  crypt_max: 28
+  crypt_avg: 7.69
+  crypt:
+  - count: 5
+    name: Rachel Brandywine
+    capacity: 10
+    disciplines: ani AUS DEM OBF PRO
+    title: prince
+    clan: Malkavian
+    grouping: 3
+  - count: 3
+    name: Philip van Vermeer IV
+    capacity: 7
+    disciplines: dom pro AUS DEM OBF
+    clan: Malkavian
+    grouping: 2
+  - count: 2
+    name: Greger Anderssen
+    capacity: 7
+    disciplines: dom pro AUS OBF
+    title: prince
+    clan: Malkavian
+    grouping: 2
+  - count: 1
+    name: Quentin King III
+    capacity: 7
+    disciplines: obf pre AUS DEM
+    title: prince
+    clan: Malkavian
+    grouping: 3
+  - count: 1
+    name: Victoria
+    capacity: 5
+    disciplines: cel obf AUS
+    clan: Malkavian
+    grouping: 2
+  - count: 1
+    name: Zöe
+    capacity: 3
+    disciplines: cel obf AUS
+    clan: Malkavian
+    grouping: 2
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 19
+    cards:
+    - count: 1
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Guardian Angel
+    - count: 4
+      name: Madness Network
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 3
+      name: Perfectionist
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Secure Haven
+    - count: 3
+      name: Villein
+    - count: 1
+      name: Wash
+  - name: Action
+    count: 5
+    cards:
+    - count: 1
+      name: Anima Gathering
+    - count: 1
+      name: Blessing of Chaos
+    - count: 1
+      name: Revelations
+    - count: 2
+      name: Shadow of the Beast
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+  - name: Equipment
+    count: 3
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 2
+      name: Camera Phone
+  - name: Retainer
+    count: 6
+    cards:
+    - count: 5
+      name: Homunculus
+    - count: 1
+      name: Mr. Winthrop
+  - name: Action Modifier
+    count: 15
+    cards:
+    - count: 2
+      name: Crocodile's Tongue
+    - count: 3
+      name: Elder Impersonation
+    - count: 1
+      name: Enkil Cog
+    - count: 3
+      name: Faceless Night
+    - count: 3
+      name: Lost in Crowds
+    - count: 3
+      name: Spying Mission
+  - name: Action Modifier/Combat
+    count: 5
+    cards:
+    - count: 5
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 18
+    cards:
+    - count: 4
+      name: Eyes of Argus
+    - count: 2
+      name: On the Qui Vive
+    - count: 7
+      name: 'Second Tradition: Domain'
+    - count: 5
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 17
+    cards:
+    - count: 3
+      name: Disengage
+    - count: 11
+      name: Earth Meld
+    - count: 3
+      name: Form of Mist
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Uncoiling, The

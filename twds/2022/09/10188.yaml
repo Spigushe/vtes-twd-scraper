@@ -1,0 +1,195 @@
+name: Czech Republic National Championship 2022 (Pulled Fang
+location: Sazava, Czech Republic
+date_start: '2022-09-03'
+rounds_format: 3R+F
+players_count: 48
+winner: Michal Drahokoupil
+event_url: https://www.vekn.net/event-calendar/event/10188
+event_id: '10188'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80156-twd-czech-national-championship-sazava-czech-september-3rd-2022
+deck:
+  name: Giovanni are Rich
+  created_by: Michal Drahokoupil
+  description: ''
+  crypt_count: 12
+  crypt_min: 13
+  crypt_max: 36
+  crypt_avg: 6.5
+  crypt:
+  - count: 4
+    name: Guillaume Giovanni
+    capacity: 9
+    disciplines: CEL DOM NEC POT obt
+    clan: Giovanni
+    grouping: 4
+  - count: 2
+    name: Baldesar Rossellini
+    capacity: 8
+    disciplines: DOM POT aus for nec
+    clan: Giovanni
+    grouping: 4
+  - count: 1
+    name: Don Michael Antonio Giovanni
+    capacity: 7
+    disciplines: DOM NEC POT
+    title: 2 votes
+    clan: Giovanni
+    grouping: 4
+  - count: 1
+    name: Virginie, Prodigy
+    capacity: 6
+    disciplines: DOM POT obt
+    title: bishop
+    clan: Lasombra
+    grouping: 4
+  - count: 1
+    name: Primo Giovanni
+    capacity: 4
+    disciplines: dom nec pot
+    clan: Giovanni
+    grouping: 4
+  - count: 1
+    name: Almodo Giovanni
+    capacity: 3
+    disciplines: dom pot
+    clan: Giovanni
+    grouping: 4
+  - count: 1
+    name: Keith Moody
+    capacity: 3
+    disciplines: DOM
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Nunzio Giovanni
+    capacity: 3
+    disciplines: nec pot
+    clan: Giovanni
+    grouping: 4
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 21
+    cards:
+    - count: 1
+      name: Barrens, The
+    - count: 1
+      name: Dummy Corporation
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Haven Uncovered
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: KRCG News Radio
+    - count: 1
+      name: Life in the City
+    - count: 1
+      name: Metro Underground
+    - count: 1
+      name: Morgue Hunting Ground
+    - count: 3
+      name: Parthenon, The
+    - count: 1
+      name: 'Powerbase: Cape Verde'
+    - count: 1
+      name: 'Powerbase: Chicago'
+    - count: 1
+      name: Rumor Mill, Tabloid Newspaper, The
+    - count: 1
+      name: Therbold Realty
+    - count: 1
+      name: Vessel
+    - count: 1
+      name: Villein
+    - count: 1
+      name: WMRH Talk Radio
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 12
+    cards:
+    - count: 1
+      name: Bum's Rush
+    - count: 2
+      name: Divine Sign
+    - count: 1
+      name: Far Mastery
+    - count: 4
+      name: Govern the Unaligned
+    - count: 1
+      name: Preternatural Strength
+    - count: 1
+      name: Scouting Mission
+    - count: 2
+      name: Sudario Refraction
+  - name: Ally
+    count: 4
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 2
+      name: Mylan Horseed
+    - count: 1
+      name: Ossian
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 1
+      name: Gran Madre di Dio, Italy
+    - count: 1
+      name: Palatial Estate
+  - name: Action Modifier
+    count: 7
+    cards:
+    - count: 2
+      name: Bonding
+    - count: 1
+      name: Call of the Hungry Dead
+    - count: 3
+      name: Conditioning
+    - count: 1
+      name: Foreshadowing Destruction
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Spectral Divination
+  - name: Reaction
+    count: 18
+    cards:
+    - count: 4
+      name: Deflection
+    - count: 2
+      name: Delaying Tactics
+    - count: 4
+      name: On the Qui Vive
+    - count: 4
+      name: Redirection
+    - count: 4
+      name: Wake with Evening's Freshness
+  - name: Combat
+    count: 24
+    cards:
+    - count: 1
+      name: Blur
+    - count: 2
+      name: Disarm
+    - count: 2
+      name: Glancing Blow
+    - count: 5
+      name: Immortal Grapple
+    - count: 5
+      name: Roundhouse
+    - count: 1
+      name: Street Cred
+    - count: 1
+      name: Target Vitals
+    - count: 4
+      name: Taste of Vitae
+    - count: 1
+      name: Thrown Sewer Lid
+    - count: 2
+      name: Torn Signpost

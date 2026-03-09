@@ -1,0 +1,154 @@
+name: Feast in the Hill
+location: Torino, Italy
+date_start: '2023-02-19'
+rounds_format: 2R+F
+players_count: 19
+winner: Nicola Lonardi
+event_url: https://www.vekn.net/event-calendar/event/10588
+event_id: '10588'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80339-twd-feast-in-the-hill-torino-italy-19-february-2023
+deck:
+  name: Anarch debate 1.2
+  created_by: Nicola Lonardi
+  description: ''
+  crypt_count: 12
+  crypt_min: 13
+  crypt_max: 28
+  crypt_avg: 5.5
+  crypt:
+  - count: 3
+    name: Aline Gädeke
+    capacity: 7
+    disciplines: POT PRE cel
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Atiena
+    capacity: 6
+    disciplines: CEL obf pot pre
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Elen Kamjian
+    capacity: 4
+    disciplines: CEL POT
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Valeriya Zinovieva
+    capacity: 7
+    disciplines: POT cel pre pro
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Ariane
+    capacity: 3
+    disciplines: cel pot pre
+    clan: Brujah
+    grouping: 5
+  - count: 1
+    name: Leumeah
+    capacity: 6
+    disciplines: PRE cel for pot
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Rayne
+    capacity: 2
+    disciplines: pot
+    clan: Brujah
+    grouping: 6
+  library_count: 81
+  library_sections:
+  - name: Master
+    count: 25
+    cards:
+    - count: 6
+      name: Ashur Tablets
+    - count: 7
+      name: Brujah Debate
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: New Carthage
+    - count: 2
+      name: Parthenon, The
+    - count: 4
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 12
+    cards:
+    - count: 1
+      name: Aranthebes, The Immortal
+    - count: 4
+      name: Embrace, The
+    - count: 6
+      name: Line Brawl
+    - count: 1
+      name: Open War
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Political Action
+    count: 10
+    cards:
+    - count: 1
+      name: Anarch Salon
+    - count: 4
+      name: Consanguineous Boon
+    - count: 2
+      name: Firebrand
+    - count: 2
+      name: Reckless Agitation
+    - count: 1
+      name: Rumors of Gehenna
+  - name: Retainer
+    count: 1
+    cards:
+    - count: 1
+      name: Mr. Winthrop
+  - name: Action Modifier
+    count: 1
+    cards:
+    - count: 1
+      name: Monkey Wrench
+  - name: Reaction
+    count: 14
+    cards:
+    - count: 4
+      name: Bait and Switch
+    - count: 2
+      name: On the Qui Vive
+    - count: 8
+      name: Organized Resistance
+  - name: Combat
+    count: 16
+    cards:
+    - count: 2
+      name: Disarm
+    - count: 4
+      name: Dust Up
+    - count: 6
+      name: Immortal Grapple
+    - count: 4
+      name: Taste of Vitae
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Uncoiling, The

@@ -1,0 +1,86 @@
+name: Persistence Echo
+location: Aix en Provence, France
+date_start: '2022-06-19'
+rounds_format: 3R+F
+players_count: 15
+winner: Jérémy Mercier
+event_url: https://www.vekn.net/event-calendar/event/10124
+event_id: '10124'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79881-twd-persistence-echo-aix-en-provence-19-06-2022
+deck:
+  name: Eat the Rich, but with philosophy!
+  created_by: LonelyLasombra
+  description: ''
+  crypt_count: 12
+  crypt_min: 24
+  crypt_max: 32
+  crypt_avg: 6.92
+  crypt: []
+  library_count: 67
+  library_sections:
+  - name: Master
+    count: 17
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Anarch Troublemaker
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 1
+      name: Creepshow Casino
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Information Highway
+    - count: 2
+      name: New Carthage
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 4
+      name: Villein
+    - count: 1
+      name: Warzone Hunting Ground
+    - count: 2
+      name: Wider View
+  - name: Action
+    count: 4
+    cards:
+    - count: 4
+      name: Enchant Kindred
+  - name: Political Action
+    count: 14
+    cards:
+    - count: 2
+      name: Conservative Agitation
+    - count: 2
+      name: Eat the Rich
+    - count: 6
+      name: Kine Resources Contested
+    - count: 4
+      name: Reckless Agitation
+  - name: Action Modifier
+    count: 12
+    cards:
+    - count: 3
+      name: Iron Glare
+    - count: 1
+      name: Monkey Wrench
+    - count: 2
+      name: Perfect Paragon
+    - count: 6
+      name: Voter Captivation
+  - name: Reaction
+    count: 13
+    cards:
+    - count: 6
+      name: Bait and Switch
+    - count: 7
+      name: Organized Resistance
+  - name: Combat
+    count: 7
+    cards:
+    - count: 7
+      name: Majesty

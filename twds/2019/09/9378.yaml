@@ -1,0 +1,153 @@
+name: Special Report
+location: Paris, France
+date_start: '2019-09-14'
+rounds_format: 2R+F
+players_count: 9
+winner: Jorge Delgado
+event_url: https://www.vekn.net/player-registry/event/9378
+event_id: '9378'
+vp_comment: 1,5 VPs in the finals
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80026-twd-special-report
+deck:
+  name: The Black Plague
+  created_by: Jorge Delgado
+  description: ''
+  crypt_count: 12
+  crypt_min: 15
+  crypt_max: 28
+  crypt_avg: 5.25
+  crypt:
+  - count: 2
+    name: Banjoko
+    capacity: 5
+    disciplines: DOM obt pot
+    clan: Lasombra
+    grouping: 3
+  - count: 1
+    name: Ermenegildo, The Rake
+    capacity: 5
+    disciplines: DOM OBT pot
+    clan: Lasombra
+    grouping: 4
+  - count: 1
+    name: Katherine Stoddard
+    capacity: 4
+    disciplines: dom for
+    clan: Ventrue antitribu
+    grouping: 3
+  - count: 1
+    name: Kazimir Savostin
+    capacity: 7
+    disciplines: AUS VIC ani pot
+    clan: Tzimisce
+    grouping: 3
+  - count: 1
+    name: Mosfair
+    capacity: 4
+    disciplines: cel dom tha
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Nicomedes
+    capacity: 5
+    disciplines: aus for nec vic
+    clan: Harbinger of Skulls
+    grouping: 4
+  - count: 1
+    name: Piotr Andreikov
+    capacity: 2
+    disciplines: aus
+    clan: Tzimisce
+    grouping: 3
+  - count: 1
+    name: Sennadurek
+    capacity: 6
+    disciplines: AUS NEC dom
+    clan: Nagaraja
+    grouping: 4
+  - count: 1
+    name: Teresita, The Godmother
+    capacity: 7
+    disciplines: ANI OBF POT for
+    clan: Nosferatu antitribu
+    grouping: 3
+  - count: 1
+    name: Wah Chun-Yuen
+    capacity: 5
+    disciplines: POT cel dom pre
+    clan: Brujah antitribu
+    grouping: 3
+  - count: 1
+    name: Yazid Tamari
+    capacity: 8
+    disciplines: CEL QUI ani dom obf
+    clan: Banu Haqim
+    grouping: 3
+  library_count: 70
+  library_sections:
+  - name: Master
+    count: 14
+    cards:
+    - count: 1
+      name: Anarch Troublemaker
+    - count: 2
+      name: Direct Intervention
+    - count: 1
+      name: Hungry Coyote, The
+    - count: 1
+      name: Life Boon
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 4
+      name: Villein
+    - count: 4
+      name: 'Watchtower: The Wolves Feed'
+  - name: Action
+    count: 29
+    cards:
+    - count: 1
+      name: Black Hand Emissary
+    - count: 8
+      name: Recruitment Exercise
+    - count: 16
+      name: Reunion Kamut
+    - count: 4
+      name: Tattoo Signal
+  - name: Equipment
+    count: 3
+    cards:
+    - count: 1
+      name: Guarded Rubrics
+    - count: 2
+      name: Sargon Fragment, The
+  - name: Action Modifier
+    count: 6
+    cards:
+    - count: 2
+      name: Conditioning
+    - count: 4
+      name: Seraph's Second
+  - name: Reaction
+    count: 12
+    cards:
+    - count: 5
+      name: Deflection
+    - count: 2
+      name: Delaying Tactics
+    - count: 3
+      name: On the Qui Vive
+    - count: 2
+      name: Truth in Ink
+  - name: Event
+    count: 6
+    cards:
+    - count: 1
+      name: Blood Trade
+    - count: 2
+      name: Break the Code
+    - count: 1
+      name: Fourth Cycle, The
+    - count: 1
+      name: NRA PAC
+    - count: 1
+      name: Thirst

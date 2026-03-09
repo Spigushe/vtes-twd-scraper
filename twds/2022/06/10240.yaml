@@ -1,0 +1,164 @@
+name: Game of the instinct
+location: Online
+date_start: '2022-06-27'
+rounds_format: 2R+F
+players_count: 12
+winner: Bruno Patrício Silva Pontes
+event_url: https://www.vekn.net/player-registry/event/10240
+event_id: '10240'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79947-twda-game-of-the-instinct
+deck:
+  name: bruno pontes, the crow
+  description: ''
+  crypt_count: 12
+  crypt_min: 15
+  crypt_max: 30
+  crypt_avg: 5.75
+  crypt:
+  - count: 2
+    name: Dowager, The
+    capacity: 6
+    disciplines: ANI OBF aus pot
+    title: primogen
+    clan: Nosferatu
+    grouping: 6
+  - count: 2
+    name: Larissa Moreira
+    capacity: 6
+    disciplines: ANI OBF pot
+    title: primogen
+    clan: Nosferatu
+    grouping: 6
+  - count: 2
+    name: Lenny Burkhead
+    capacity: 6
+    disciplines: ANI obf pot pre
+    title: primogen
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Baixinho
+    capacity: 3
+    disciplines: ani obf
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Horace Radcliffe
+    capacity: 5
+    disciplines: ANI POT obf
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Iago Castille
+    capacity: 8
+    disciplines: ANI CHI FOR OBT
+    clan: Ravnos
+    grouping: 6
+  - count: 1
+    name: Mordechai Ben-Nun
+    capacity: 8
+    disciplines: ANI AUS FOR NEC
+    clan: Harbinger of Skulls
+    grouping: 5
+  - count: 1
+    name: Zelios
+    capacity: 8
+    disciplines: ANI OBF POT pro
+    title: primogen
+    clan: Nosferatu
+    grouping: 5
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 25
+    cards:
+    - count: 1
+      name: Archon Investigation
+    - count: 9
+      name: Ashur Tablets
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Labyrinth, The
+    - count: 2
+      name: Perfectionist
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 2
+      name: Vessel
+    - count: 3
+      name: Villein
+    - count: 3
+      name: Warsaw Station
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 6
+    cards:
+    - count: 2
+      name: Army of Rats
+    - count: 4
+      name: Creeping Sabotage
+  - name: Equipment
+    count: 4
+    cards:
+    - count: 2
+      name: Heart of Nizchetus
+    - count: 1
+      name: Ivory Bow
+    - count: 1
+      name: Sniper Rifle
+  - name: Political Action
+    count: 1
+    cards:
+    - count: 1
+      name: Rumors of Gehenna
+  - name: Retainer
+    count: 6
+    cards:
+    - count: 1
+      name: Mr. Winthrop
+    - count: 5
+      name: Raven Spy
+  - name: Action Modifier
+    count: 2
+    cards:
+    - count: 2
+      name: Veil the Legions
+  - name: Reaction
+    count: 14
+    cards:
+    - count: 2
+      name: Cats' Guidance
+    - count: 3
+      name: Forced Awakening
+    - count: 5
+      name: On the Qui Vive
+    - count: 3
+      name: Protected District
+    - count: 1
+      name: Wake with Evening's Freshness
+  - name: Combat
+    count: 30
+    cards:
+    - count: 10
+      name: Aid from Bats
+    - count: 1
+      name: Canine Horde
+    - count: 9
+      name: Carrion Crows
+    - count: 2
+      name: Pack Alpha
+    - count: 5
+      name: Taste of Vitae
+    - count: 3
+      name: Terror Frenzy
+  - name: Event
+    count: 2
+    cards:
+    - count: 1
+      name: Narrow Minds
+    - count: 1
+      name: Scourge of the Enochians

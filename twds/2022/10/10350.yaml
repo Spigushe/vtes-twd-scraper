@@ -1,0 +1,148 @@
+name: The Shape Mastery
+location: Reims, France
+date_start: '2022-10-15'
+rounds_format: 3R+F
+players_count: 13
+winner: Vincent Ripoll
+event_url: https://www.vekn.net/event-calendar/event/10350
+event_id: '10350'
+vp_comment: 'The final table was: Evgueni (Ian Forestal EL DOM/OBF) > Mathieu (Khazar Diary) > Me > Dhia (Council of Doom)
+  > Thibault (Tremere Valerius Maior / Carna / Uta Kovacs)'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80094-twd-the-shape-mastery-reims-france-oct-15-2022
+deck:
+  name: With a little help from Giotto
+  description: Reins ruins Reims
+  crypt_count: 12
+  crypt_min: 43
+  crypt_max: 28
+  crypt_avg: 8.75
+  crypt:
+  - count: 3
+    name: Arika
+    capacity: 11
+    disciplines: DOM FOR OBF PRE aus cel
+    title: inner circle
+    clan: Ventrue
+    grouping: 2
+  - count: 2
+    name: Leandro
+    capacity: 11
+    disciplines: AUS OBF PRE cel dom
+    title: inner circle
+    clan: Malkavian
+    grouping: 2
+  - count: 1
+    name: Jaroslav Pascek
+    capacity: 10
+    disciplines: CEL POT PRE for obf
+    title: justicar
+    clan: Brujah
+    grouping: 3
+  - count: 5
+    name: Giotto Verducci
+    capacity: 7
+    disciplines: DAI OBF for pot pre
+    clan: Baali
+    grouping: 2
+  - count: 1
+    name: Catherine du Bois
+    capacity: 5
+    disciplines: DOM for obf pre
+    clan: Ventrue
+    grouping: 3
+  library_count: 70
+  library_sections:
+  - name: Master
+    count: 23
+    cards:
+    - count: 9
+      name: Ashur Tablets
+      comment: very usefull despite some Trochomancies on round 1, and Dhia winning the Ashur race in the finals
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Dreams of the Sphinx
+      comment: could be removed. I was glad to draw it, but was also fine without it
+    - count: 1
+      name: Giant's Blood
+      comment: usually discarded because someone else had already played it, but still worth the slot
+    - count: 1
+      name: Information Highway
+      comment: always useful to transfer back 3 per turn, but see below
+    - count: 1
+      name: Jake Washington
+      comment: versatile as an early blocker or blood provider, but unused during this tournament
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: 'Powerbase: Montreal'
+      comment: used in one game only
+    - count: 1
+      name: Presence
+      comment: a card I've been removing and adding, helps Giotto a lot to play sup Majesty, get the stealth from the 
+        Monastery, or simply Banish a 7-cap
+    - count: 1
+      name: Uptown Hunting Ground
+      comment: wasn't useful during the tournament, usually because I didn't have Arika or Catherine when I could play 
+        it. In theory, the deck needs blood but Coven is usually enough
+    - count: 3
+      name: Villein
+    - count: 2
+      name: Wider View
+  - name: Action
+    count: 4
+    cards:
+    - count: 4
+      name: Unleash Hell's Fury
+      comment: fine number of copies
+  - name: Equipment
+    count: 7
+    cards:
+    - count: 7
+      name: Kaymakli Fragment
+  - name: Political Action
+    count: 9
+    cards:
+    - count: 2
+      name: Anarchist Uprising
+    - count: 2
+      name: Ancilla Empowerment
+    - count: 4
+      name: Banishment
+      comment: perfect tool to control the tables
+    - count: 1
+      name: Reins of Power
+      comment: the finishing move
+  - name: Action Modifier
+    count: 15
+    cards:
+    - count: 2
+      name: Elder Impersonation
+    - count: 2
+      name: Faceless Night
+    - count: 6
+      name: Freak Drive
+      comment: a key card during the whole game
+    - count: 4
+      name: Lost in Crowds
+    - count: 1
+      name: Voter Captivation
+  - name: Action Modifier/Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 4
+    cards:
+    - count: 2
+      name: Deflection
+    - count: 2
+      name: On the Qui Vive
+      comment: you can't always rely of Freak Drive to end the turn unlocked, never understimate the surprise factor of 
+        wakes, especially combined with Jaroslav's intercept and Majesty
+  - name: Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Majesty

@@ -1,0 +1,160 @@
+name: Taça Campina
+location: Campina Grande, Brasil
+date_start: '2022-10-16'
+rounds_format: 3R+F
+players_count: 14
+winner: Joselmo Soares
+event_url: https://www.vekn.net/event-calendar/event/10403
+event_id: '10403'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80138-twd-taca-campina
+deck:
+  name: setita raiz
+  description: ''
+  crypt_count: 14
+  crypt_min: 40
+  crypt_max: 36
+  crypt_avg: 8.86
+  crypt:
+  - count: 2
+    name: Kahina the Sorceress
+    capacity: 9
+    disciplines: AUS DOM OBF SER nec pre
+    title: 1 vote
+    clan: Ministry
+    grouping: 3
+  - count: 2
+    name: Kemintiri (ADV)
+    capacity: 10
+    disciplines: OBF PRE SER THA aus dom
+    clan: Ministry
+    grouping: 2
+  - count: 2
+    name: Khay'tall, Snake of Eden
+    capacity: 9
+    disciplines: DOM OBF PRE SER aus
+    clan: Ministry
+    grouping: 2
+  - count: 2
+    name: Nefertiti (ADV)
+    capacity: 10
+    disciplines: DOM OBF PRE SER cel pot
+    clan: Ministry
+    grouping: 2
+  - count: 1
+    name: Count Ormonde
+    capacity: 5
+    disciplines: OBF dom pre ser
+    clan: Ministry
+    grouping: 2
+  - count: 1
+    name: Kemintiri
+    capacity: 10
+    disciplines: OBF PRE SER THA aus dom
+    clan: Ministry
+    grouping: 2
+  - count: 1
+    name: Kephamos, High Priest of Marrakech
+    capacity: 8
+    disciplines: SER dom obf pre
+    title: 2 votes
+    clan: Ministry
+    grouping: 2
+  - count: 1
+    name: Nefertiti
+    capacity: 10
+    disciplines: DOM OBF PRE SER cel pot
+    clan: Ministry
+    grouping: 2
+  - count: 1
+    name: Sarrasine
+    capacity: 7
+    disciplines: OBF PRE aus nec ser
+    clan: Ministry
+    grouping: 2
+  - count: 1
+    name: Sarrasine (ADV)
+    capacity: 8
+    disciplines: OBF PRE SER aus nec
+    title: prince
+    clan: Ministry
+    grouping: 2
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 19
+    cards:
+    - count: 2
+      name: Blood Doll
+    - count: 4
+      name: Eternals of Sirius, The
+    - count: 3
+      name: 'Golconda: Inner Peace'
+    - count: 1
+      name: Khobar Towers, Al-Khubar
+    - count: 1
+      name: Minion Tap
+    - count: 1
+      name: Opium Den
+    - count: 3
+      name: Sudden Reversal
+    - count: 1
+      name: Temple Hunting Ground
+    - count: 1
+      name: Vessel
+    - count: 1
+      name: Villein
+    - count: 1
+      name: Wash
+  - name: Action
+    count: 12
+    cards:
+    - count: 4
+      name: Entrancement
+    - count: 6
+      name: Public Trust
+    - count: 2
+      name: Social Charm
+  - name: Action Modifier
+    count: 27
+    cards:
+    - count: 4
+      name: Cloak the Gathering
+    - count: 4
+      name: Faceless Night
+    - count: 3
+      name: Into Thin Air
+    - count: 4
+      name: Lost in Crowds
+    - count: 1
+      name: Revelation of Desire
+    - count: 2
+      name: Spying Mission
+    - count: 6
+      name: True Love's Face
+    - count: 3
+      name: Truth of a Thousand Lies
+  - name: Action Modifier/Combat
+    count: 3
+    cards:
+    - count: 3
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 17
+    cards:
+    - count: 5
+      name: Deflection
+    - count: 4
+      name: On the Qui Vive
+    - count: 4
+      name: Redirection
+    - count: 4
+      name: Wake with Evening's Freshness
+  - name: Combat
+    count: 12
+    cards:
+    - count: 5
+      name: Majesty
+    - count: 4
+      name: Serpent's Numbing Kiss
+    - count: 3
+      name: Staredown

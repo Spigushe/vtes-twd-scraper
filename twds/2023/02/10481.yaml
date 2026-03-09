@@ -1,0 +1,183 @@
+name: 'Fee stake: Turku - Arms of Abyss'
+location: Turku, Finland
+date_start: '2023-02-18'
+rounds_format: 3R+F
+players_count: 28
+winner: Otso Saariluoma
+event_url: https://www.vekn.net/event-calendar/event/10481
+event_id: '10481'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80332-twd-fee-stake-turku-arms-of-abyss-turku-finland-18-feb-2023
+deck:
+  name: Usurper High Council
+  created_by: Otso Saariluoma
+  description: Tremere fatties with a bit diversified crypt and an expanded master module. The game plan is to keep 
+    bloating and accelerating out new vampires while aiming for the vote lock and taking over in the mid to late game. 
+    The hand manipulation with Ashurs, Heart and Mistress is rather spectacular.
+  crypt_count: 12
+  crypt_min: 30
+  crypt_max: 43
+  crypt_avg: 9.17
+  crypt:
+  - count: 3
+    name: Mistress Fanchon
+    capacity: 11
+    disciplines: AUS CEL DOM OBF THA VIC
+    title: inner circle
+    clan: Tremere
+    grouping: 4
+  - count: 2
+    name: Gabrielle di Righetti
+    capacity: 10
+    disciplines: ANI AUS DOM THA obf pot
+    title: justicar
+    clan: Tremere
+    grouping: 5
+  - count: 2
+    name: Orlando Oriundus
+    capacity: 9
+    disciplines: AUS DOM THA obf
+    title: bishop
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Dr. John Dee
+    capacity: 9
+    disciplines: ANI AUS DOM THA chi
+    title: prince
+    clan: Tremere
+    grouping: 4
+  - count: 1
+    name: Gerald Windham
+    capacity: 9
+    disciplines: AUS DOM FOR THA
+    clan: Tremere
+    grouping: 5
+  - count: 1
+    name: Troius
+    capacity: 8
+    disciplines: AUS DOM THA cel
+    title: prince
+    clan: Tremere
+    grouping: 4
+  - count: 1
+    name: Graham Gottesman
+    capacity: 7
+    disciplines: DOM FOR obf pre tha
+    title: prince
+    clan: Ventrue
+    grouping: 5
+  - count: 1
+    name: Johannes Worringen
+    capacity: 6
+    disciplines: AUS THA dom
+    title: archbishop
+    clan: Tremere antitribu
+    grouping: 5
+  library_count: 76
+  library_sections:
+  - name: Master
+    count: 33
+    cards:
+    - count: 1
+      name: Archon Investigation
+    - count: 6
+      name: Ashur Tablets
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: 'Golconda: Inner Peace'
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Metro Underground
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Papillon
+    - count: 3
+      name: Parthenon, The
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 7
+      name: Villein
+    - count: 1
+      name: Wider View
+    - count: 3
+      name: Zillah's Valley
+  - name: Action
+    count: 7
+    cards:
+    - count: 4
+      name: Govern the Unaligned
+    - count: 2
+      name: Magic of the Smith
+    - count: 1
+      name: Rutor's Hand
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Political Action
+    count: 12
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 3
+      name: Banishment
+    - count: 3
+      name: Parity Shift
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+    - count: 1
+      name: Rumors of Gehenna
+  - name: Action Modifier
+    count: 9
+    cards:
+    - count: 1
+      name: Enkil Cog
+    - count: 2
+      name: Forgotten Labyrinth
+    - count: 6
+      name: Mirror Walk
+  - name: Reaction
+    count: 12
+    cards:
+    - count: 3
+      name: Deflection
+    - count: 2
+      name: Eyes of Argus
+    - count: 1
+      name: My Enemy's Enemy
+    - count: 4
+      name: Obedience
+    - count: 1
+      name: 'Second Tradition: Domain'
+    - count: 1
+      name: Telepathic Misdirection
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Scourge of the Enochians
+  - name: Otso Saariluoma with Usurper High Council
+    count: 2
+    cards: []
+  - name: Noora Hirvonen with Weenie Dem
+    count: 1
+    cards: []

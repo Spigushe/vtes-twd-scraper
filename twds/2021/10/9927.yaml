@@ -1,0 +1,103 @@
+name: Guard Dogs
+location: Campina Grande, Brasil
+date_start: '2021-10-10'
+rounds_format: 3R+F
+players_count: 10
+winner: Joab Rogerio Barbosa da Silva
+event_url: https://www.vekn.net/player-registry/event/9927
+event_id: '9927'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/79773-twda-guard-dogs-campina-grande-brasil-10-october-2021
+deck:
+  name: estraga corpo
+  description: ''
+  crypt_count: 12
+  crypt_min: 4
+  crypt_max: 36
+  crypt_avg: 5.25
+  crypt:
+  - count: 5
+    name: Mambo Jeanne
+    capacity: 9
+    disciplines: FOR NEC OBF THN
+    clan: Samedi
+    grouping: 6
+  - count: 1
+    name: Angel Chavarria
+    capacity: 3
+    disciplines: THN
+    clan: Samedi
+    grouping: 6
+  - count: 1
+    name: Baroque
+    capacity: 7
+    disciplines: NEC THN aus for obf
+    clan: Samedi
+    grouping: 5
+  - count: 1
+    name: Marie-Pierre
+    capacity: 4
+    disciplines: THN for nec
+    clan: Samedi
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 17
+    cards:
+    - count: 6
+      name: Ashur Tablets
+    - count: 2
+      name: Blessings of the Loa
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Tension in the Ranks
+    - count: 4
+      name: Villein
+  - name: Action
+    count: 12
+    cards:
+    - count: 3
+      name: Ambush
+    - count: 3
+      name: Bum's Rush
+    - count: 3
+      name: Charge of the Buffalo
+    - count: 3
+      name: Harass
+  - name: Ally
+    count: 5
+    cards:
+    - count: 5
+      name: Reanimated Corpse
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Ivory Bow
+  - name: Action Modifier
+    count: 10
+    cards:
+    - count: 10
+      name: Freak Drive
+  - name: Combat
+    count: 44
+    cards:
+    - count: 12
+      name: Groaning Corpse
+    - count: 10
+      name: Relentless Reaper
+    - count: 8
+      name: Rolling with the Punches
+    - count: 7
+      name: Taste of Vitae
+    - count: 7
+      name: Unflinching Persistence
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Dragonbound

@@ -1,0 +1,145 @@
+name: Belgian Limited National Championship 2022
+location: Brussels, Belgium
+date_start: '2022-07-09'
+rounds_format: 3R+F
+players_count: 14
+winner: 'Organizer & winner: Emiliano Imeroni'
+event_url: https://www.vekn.net/event-calendar/event/10218
+event_id: '10218'
+vp_comment: 'After three hard-fought rounds, five players sat to play the finals in the following order:'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/79910-report-belgian-limited-national-championship-2022-brussels-9-7-2022
+deck:
+  name: Toreador Justicar
+  created_by: Emiliano Imeroni
+  description: I know it does not make much sense to post the winning decklist for a draft event, but I decided to do it
+    just to give people an idea of the kind of decks that could be built with the available selection of product 
+    drafted. Not bad, huh?
+  crypt_count: 6
+  crypt_min: 25
+  crypt_max: 29
+  crypt_avg: 6.67
+  crypt:
+  - count: 1
+    name: Catalina Vega
+    capacity: 8
+    disciplines: for AUS CEL PRE
+    title: prince
+    clan: Toreador
+    grouping: 6
+  - count: 1
+    name: Eliott Sinclair, Virtuoso Thespian
+    capacity: 7
+    disciplines: aus cel PRE
+    title: primogen
+    clan: Toreador
+    grouping: 1
+  - count: 1
+    name: Flávio Gonçalves
+    capacity: 7
+    disciplines: aus for CEL PRE
+    title: prince
+    clan: Toreador
+    grouping: 6
+  - count: 1
+    name: Tatiana Romanov
+    capacity: 7
+    disciplines: cel pre AUS
+    title: prince
+    clan: Toreador
+    grouping: 1
+  - count: 1
+    name: Kallista, Master Sculptor
+    capacity: 6
+    disciplines: pre pro AUS CEL
+    clan: Toreador
+    grouping: 1
+  - count: 1
+    name: Ramiel DuPre
+    capacity: 5
+    disciplines: aus cel dom PRE
+    clan: Toreador
+    grouping: 1
+  library_count: 39
+  library_sections:
+  - name: Master
+    count: 10
+    cards:
+    - count: 1
+      name: Art Museum
+    - count: 3
+      name: Blood Doll
+    - count: 1
+      name: Misdirection
+    - count: 1
+      name: Obfuscate
+    - count: 1
+      name: Protracted Investment
+    - count: 1
+      name: Short-Term Investment
+    - count: 1
+      name: Sudden Reversal
+    - count: 1
+      name: Toreador Grand Ball
+  - name: Action
+    count: 3
+    cards:
+    - count: 1
+      name: Computer Hacking
+    - count: 2
+      name: Enchant Kindred
+  - name: Political Action
+    count: 8
+    cards:
+    - count: 1
+      name: Ancient Influence
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 1
+      name: Domain Challenge
+    - count: 2
+      name: Kine Resources Contested
+    - count: 1
+      name: Parity Shift
+    - count: 1
+      name: 'Praxis Seizure: Dallas'
+    - count: 1
+      name: Toreador Justicar
+  - name: Retainer
+    count: 1
+    cards:
+    - count: 1
+      name: Resplendent Protector
+  - name: Action Modifier
+    count: 11
+    cards:
+    - count: 1
+      name: Aire of Elation
+    - count: 2
+      name: Bewitching Oration
+    - count: 1
+      name: Bribes
+    - count: 1
+      name: Change of Target
+    - count: 1
+      name: Cloak the Gathering
+    - count: 1
+      name: Crocodile's Tongue
+    - count: 2
+      name: Faceless Night
+    - count: 1
+      name: Scorn of Adonis
+    - count: 1
+      name: Voter Captivation
+  - name: Reaction
+    count: 5
+    cards:
+    - count: 2
+      name: Forced Awakening
+    - count: 3
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 1
+    cards:
+    - count: 1
+      name: Majesty

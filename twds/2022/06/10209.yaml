@@ -1,0 +1,132 @@
+name: taunt the caged beast
+location: Online
+date_start: '2022-06-02'
+rounds_format: 2R+F
+players_count: 17
+winner: Henrique Cone
+event_url: https://www.vekn.net/player-registry/event/10209
+event_id: '10209'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79834-twda-taunt-the-caged-beast
+deck:
+  name: night
+  description: ''
+  crypt_count: 12
+  crypt_min: 23
+  crypt_max: 32
+  crypt_avg: 7.0
+  crypt:
+  - count: 4
+    name: Arcadian, The
+    capacity: 8
+    disciplines: DOM MYT OBT chi for
+    clan: Kiasyd
+    grouping: 5
+  - count: 3
+    name: Isanwayen
+    capacity: 6
+    disciplines: DOM MYT OBT
+    clan: Kiasyd
+    grouping: 4
+  - count: 2
+    name: Omme Enberbenight
+    capacity: 7
+    disciplines: MYT OBT cel dom
+    title: priscus
+    clan: Kiasyd
+    grouping: 4
+  - count: 1
+    name: Pherydima
+    capacity: 8
+    disciplines: DOM MYT NEC obt pot
+    title: bishop
+    clan: Kiasyd
+    grouping: 4
+  - count: 1
+    name: Roderick Phillips March
+    capacity: 7
+    disciplines: DOM MYT cel obt tha
+    clan: Kiasyd
+    grouping: 4
+  - count: 1
+    name: Dame Hollerton
+    capacity: 5
+    disciplines: DOM OBT myt
+    clan: Kiasyd
+    grouping: 4
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 9
+    cards:
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Great Symposium
+    - count: 1
+      name: Hungry Coyote, The
+    - count: 2
+      name: Perfectionist
+    - count: 1
+      name: Ravager
+    - count: 1
+      name: Secure Haven
+  - name: Action
+    count: 12
+    cards:
+    - count: 10
+      name: Govern the Unaligned
+    - count: 2
+      name: Song of Pan
+  - name: Political Action
+    count: 2
+    cards:
+    - count: 2
+      name: Anarchist Uprising
+  - name: Action Modifier
+    count: 25
+    cards:
+    - count: 6
+      name: Blanket of Night
+    - count: 8
+      name: Conditioning
+    - count: 4
+      name: Shadow Play
+    - count: 2
+      name: Shroud of Absence
+    - count: 2
+      name: Shroud of Night
+    - count: 3
+      name: Stone Travel
+  - name: Action Modifier/Combat
+    count: 8
+    cards:
+    - count: 8
+      name: Fae Contortion
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Aura Absorption
+  - name: Reaction
+    count: 14
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 2
+      name: Faerie Wards
+    - count: 6
+      name: On the Qui Vive
+  - name: Combat
+    count: 14
+    cards:
+    - count: 14
+      name: Oubliette
+  - name: Event
+    count: 2
+    cards:
+    - count: 1
+      name: Bitter and Sweet Story, The
+    - count: 1
+      name: Narrow Minds

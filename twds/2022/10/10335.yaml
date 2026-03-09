@@ -1,0 +1,155 @@
+name: 12th Hiekkaharju Nightmares
+location: Vantaa, Finland
+date_start: '2022-10-08'
+rounds_format: 3R+F
+players_count: 18
+winner: Otso Saariluoma
+event_url: https://www.vekn.net/event-calendar/event/10335
+event_id: '10335'
+vp_comment: 'Finals seating: Joona (unamed) -> Otso (Luts + friends) -> Teemu (Gangrel barons wall) -> Otto (Ministry bleed
+  + votes) -> Marko (Mambo rush)'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80088-twd-12th-hiekkaharju-nighmares
+deck:
+  name: Unmada’s Friends
+  created_by: Otso
+  description: ''
+  crypt_count: 12
+  crypt_min: 40
+  crypt_max: 38
+  crypt_avg: 10.08
+  crypt:
+  - count: 3
+    name: Lutz von Hohenzollern
+    capacity: 11
+    disciplines: AUS DEM OBF PRE pot
+    title: inner circle
+    clan: Malkavian
+    grouping: 4
+  - count: 1
+    name: Josef von Bauren
+    capacity: 11
+    disciplines: ANI DEM OBF POT cel
+    title: inner circle
+    clan: Nosferatu
+    grouping: 4
+  - count: 1
+    name: Rafael de Corazon
+    capacity: 11
+    disciplines: AUS CEL DOM OBF PRE
+    title: inner circle
+    clan: Toreador
+    grouping: 4
+  - count: 4
+    name: Unmada
+    capacity: 10
+    disciplines: AUS DEM OBF VIC cel for
+    title: justicar
+    clan: Malkavian
+    grouping: 5
+  - count: 1
+    name: Alonso Petrodon
+    capacity: 10
+    disciplines: ANI DOM OBF POT for tha
+    title: justicar
+    clan: Nosferatu
+    grouping: 5
+  - count: 1
+    name: Dmitra Ilyanova
+    capacity: 9
+    disciplines: CEL FOR POT PRE obf
+    title: justicar
+    clan: Brujah
+    grouping: 5
+  - count: 1
+    name: Benjamin Rose
+    capacity: 7
+    disciplines: AUS OBF ani pot
+    title: prince
+    clan: Nosferatu
+    grouping: 5
+  library_count: 77
+  library_sections:
+  - name: Master
+    count: 26
+    cards:
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Dark Influences
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 3
+      name: Information Highway
+    - count: 1
+      name: Legendary Vampire
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 7
+      name: Villein
+    - count: 2
+      name: Wider View
+    - count: 6
+      name: Zillah's Valley
+  - name: Action
+    count: 1
+    cards:
+    - count: 1
+      name: 'Judgment: Camarilla Segregation'
+  - name: Political Action
+    count: 21
+    cards:
+    - count: 2
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 2
+      name: Ancilla Empowerment
+    - count: 3
+      name: Banishment
+    - count: 4
+      name: Kine Resources Contested
+    - count: 1
+      name: Neonate Breach
+    - count: 6
+      name: Parity Shift
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+  - name: Action Modifier
+    count: 15
+    cards:
+    - count: 2
+      name: Elder Impersonation
+    - count: 2
+      name: Faceless Night
+    - count: 4
+      name: Forgotten Labyrinth
+    - count: 4
+      name: Into Thin Air
+    - count: 2
+      name: Lost in Crowds
+    - count: 1
+      name: Voter Captivation
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Swallowed by the Night
+    - count: 2
+      name: Eyes of Argus
+    - count: 1
+      name: My Enemy's Enemy
+    - count: 1
+      name: On the Qui Vive
+    - count: 4
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 4
+    cards:
+    - count: 4
+      name: No Trace

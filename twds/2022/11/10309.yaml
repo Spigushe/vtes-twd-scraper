@@ -1,0 +1,170 @@
+name: SAC 2022 - Day 1
+location: São Paulo - Brazil
+date_start: '2022-11-12'
+rounds_format: 3R+F
+players_count: 16
+winner: Leonardo Villela
+event_url: https://www.vekn.net/event-calendar/event/10309
+event_id: '10309'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80158-twd-southamerica-championchip-day-01
+deck:
+  name: Calma e bleed
+  description: ''
+  crypt_count: 12
+  crypt_min: 15
+  crypt_max: 26
+  crypt_avg: 5.25
+  crypt:
+  - count: 2
+    name: Ayelech
+    capacity: 7
+    disciplines: AUS DOM THA
+    title: prince
+    clan: Tremere
+    grouping: 6
+  - count: 1
+    name: Bituin
+    capacity: 6
+    disciplines: THA ani cel dom
+    title: baron
+    clan: Tremere
+    grouping: 6
+  - count: 1
+    name: Inês Tristão
+    capacity: 6
+    disciplines: THA aus dom pre
+    title: prince
+    clan: Tremere
+    grouping: 6
+  - count: 1
+    name: Lloyd Brooks
+    capacity: 6
+    disciplines: DOM THA aus pot
+    title: primogen
+    clan: Tremere
+    grouping: 6
+  - count: 1
+    name: Trevon Parker
+    capacity: 6
+    disciplines: AUS DOM THA
+    clan: Tremere
+    grouping: 6
+  - count: 1
+    name: Chrysanthemum
+    capacity: 5
+    disciplines: AUS THA dom
+    title: primogen
+    clan: Tremere
+    grouping: 6
+  - count: 1
+    name: Zane
+    capacity: 5
+    disciplines: THA aus dom
+    title: primogen
+    clan: Tremere
+    grouping: 5
+  - count: 1
+    name: Lauren
+    capacity: 4
+    disciplines: aus dom tha
+    clan: Tremere
+    grouping: 6
+  - count: 1
+    name: Nassir
+    capacity: 4
+    disciplines: THA aus
+    clan: Tremere
+    grouping: 6
+  - count: 1
+    name: Tarrence Moore
+    capacity: 4
+    disciplines: aus dom tha
+    clan: Tremere
+    grouping: 5
+  - count: 1
+    name: Monica Chang
+    capacity: 3
+    disciplines: dom tha
+    clan: Tremere
+    grouping: 5
+  library_count: 73
+  library_sections:
+  - name: Master
+    count: 12
+    cards:
+    - count: 1
+      name: Academic Hunting Ground
+    - count: 2
+      name: Arcane Library
+    - count: 1
+      name: Chantry
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 4
+      name: Vessel
+  - name: Action
+    count: 13
+    cards:
+    - count: 8
+      name: Govern the Unaligned
+    - count: 5
+      name: Magic of the Smith
+  - name: Ally
+    count: 2
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 1
+      name: Ponticulus
+  - name: Equipment
+    count: 6
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Ivory Bow
+    - count: 1
+      name: Kevlar Vest
+    - count: 1
+      name: Sniper Rifle
+    - count: 1
+      name: Sport Bike
+  - name: Action Modifier
+    count: 14
+    cards:
+    - count: 6
+      name: Conditioning
+    - count: 8
+      name: Mirror Walk
+  - name: Reaction
+    count: 20
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 2
+      name: Eagle's Sight
+    - count: 2
+      name: Enhanced Senses
+    - count: 3
+      name: Eyes of Argus
+    - count: 1
+      name: My Enemy's Enemy
+    - count: 4
+      name: On the Qui Vive
+    - count: 2
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 6
+    cards:
+    - count: 1
+      name: Burst of Sunlight
+    - count: 5
+      name: Theft of Vitae

@@ -1,0 +1,152 @@
+name: "Vidor: Cold Amber's Hold"
+location: Vidor, Texas, United States
+date_start: '2022-12-10'
+rounds_format: 3R+F
+players_count: 12
+winner: Darby Keeney
+event_url: https://www.vekn.net/event-calendar/event/10454
+event_id: '10454'
+vp_comment: 2gw7.5 + 1.5vp in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80213-twd-vidor-cold-amber-s-hold-vidor-tx-usa-on-10-dec-2022
+deck:
+  name: Members Only
+  created_by: Darby Keeney (Not-Karl-Schaefer)
+  description: ''
+  crypt_count: 12
+  crypt_min: 21
+  crypt_max: 28
+  crypt_avg: 6.25
+  crypt:
+  - count: 4
+    name: Erebus
+    capacity: 7
+    disciplines: AUS FOR NEC dem
+    clan: Harbinger of Skulls
+    grouping: 3
+  - count: 2
+    name: Babalawo Alafin
+    capacity: 7
+    disciplines: AUS FOR NEC ani
+    clan: Harbinger of Skulls
+    grouping: 4
+  - count: 2
+    name: Nicomedes
+    capacity: 5
+    disciplines: aus for nec vic
+    clan: Harbinger of Skulls
+    grouping: 4
+  - count: 2
+    name: Zygodat
+    capacity: 6
+    disciplines: AUS NEC pot
+    clan: Harbinger of Skulls
+    grouping: 4
+  - count: 1
+    name: Mina Grotius
+    capacity: 6
+    disciplines: FOR NEC cel
+    clan: Harbinger of Skulls
+    grouping: 3
+  - count: 1
+    name: Solomon Batanea
+    capacity: 5
+    disciplines: AUS FOR nec
+    clan: Harbinger of Skulls
+    grouping: 4
+  library_count: 68
+  library_sections:
+  - name: Master
+    count: 22
+    cards:
+    - count: 1
+      name: Anarch Troublemaker
+    - count: 6
+      name: British Museum, London, The
+    - count: 1
+      name: Charisma
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Filchware's Pawn Shop *//recursion is broken
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Heidelberg Castle, Germany
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 4
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Ally
+    count: 12
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 10
+      name: Emerald Legionnaire *//recursion is broken
+    - count: 1
+      name: Vagabond Mystic
+  - name: Equipment
+    count: 13
+    cards:
+    - count: 1
+      name: Blood Tears of Kephran
+    - count: 1
+      name: Cooler
+    - count: 1
+      name: Erebus Mask *// tons of value when you act 3 times per turn
+    - count: 2
+      name: Heart of Nizchetus
+    - count: 5
+      name: Leather Jacket
+    - count: 1
+      name: Palatial Estate
+    - count: 1
+      name: Sargon Fragment, The *// did I mention that recursion is broken
+    - count: 1
+      name: Signet of King Saul, The *// less valuable in the current V5 meta
+  - name: Action Modifier
+    count: 10
+    cards:
+    - count: 3
+      name: Acheron Vortex
+    - count: 2
+      name: Call of the Hungry Dead
+    - count: 4
+      name: Shroud Mastery
+    - count: 1
+      name: Trochomancy *// Monopolize recursion FTW
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Breath of Thanatos
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Spectral Divination
+  - name: Reaction
+    count: 4
+    cards:
+    - count: 1
+      name: Delaying Tactics
+    - count: 1
+      name: My Enemy's Enemy
+    - count: 2
+      name: Telepathic Misdirection
+  - name: Event
+    count: 3
+    cards:
+    - count: 1
+      name: NRA PAC *// might be overkill, but still useful.
+    - count: 2
+      name: Unmasking, The

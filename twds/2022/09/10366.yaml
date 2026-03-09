@@ -1,0 +1,174 @@
+name: Enrage
+location: Longmont, CO
+date_start: '2022-09-16'
+rounds_format: 2R+F
+players_count: 9
+winner: Darby Keeney
+event_url: https://www.vekn.net/event-calendar/event/10366
+event_id: '10366'
+vp_comment: 1GW+5VP, with 2VP in final as 2nd seed.
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80034-twd-enrage-longmont-co-18-sept-2022
+deck:
+  name: Gwal - Eff This Place
+  created_by: Darby Keeney
+  description: Anarch-based Gangrel Wall
+  crypt_count: 12
+  crypt_min: 14
+  crypt_max: 26
+  crypt_avg: 5.25
+  crypt:
+  - count: 2
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani for cel
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 2
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 2
+    name: Massimiliano
+    capacity: 7
+    disciplines: ANI FOR pro
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Hanna Nokelainen
+    capacity: 4
+    disciplines: ani for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Indira
+    capacity: 3
+    disciplines: PRO
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Joaquín de Cádiz
+    capacity: 3
+    disciplines: for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Kamile Paukstys
+    capacity: 5
+    disciplines: PRO ani for
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Martina Srnankova
+    capacity: 6
+    disciplines: FOR PRO ani
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Nathan Turner
+    capacity: 4
+    disciplines: PRO ani
+    clan: Gangrel
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 22
+    cards:
+    - count: 1
+      name: Anarch Free Press, The   *// never needed, but this is a wall.
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Backways
+    - count: 2
+      name: Blood Doll
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion   *// iffy at a lot of tables right now.
+    - count: 1
+      name: Ecoterrorists
+    - count: 2
+      name: Ennoia's Theater
+    - count: 2
+      name: Garibaldi-Meucci Museum   *// recursion is less broken here, but G-MM is needed.
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: 'Powerbase: Los Angeles'
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Smiling Jack, The Anarch   *// dunno, but this is a wall.
+    - count: 3
+      name: Vessel
+    - count: 1
+      name: Zoo Hunting Ground
+  - name: Action
+    count: 13
+    cards:
+    - count: 1
+      name: Atonement   *// should be Aranthebes unless you slot Crow and Darius.
+    - count: 1
+      name: Constant Revolution   *// continues to help other more than it hurts them.
+    - count: 3
+      name: Rewilding   *//down from 4, still pure gold.
+    - count: 8
+      name: Thing
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 2
+      name: Sniper Rifle   *// cause Legionnaires need to die. Over and over and over.
+  - name: Retainer
+    count: 4
+    cards:
+    - count: 4
+      name: Raven Spy   *// fewer than the "prototypical" design but seemed enough.
+  - name: Action Modifier
+    count: 3
+    cards:
+    - count: 3
+      name: Earth Control
+  - name: Action Modifier/Combat
+    count: 1
+    cards:
+    - count: 1
+      name: Rapid Change  *// I don't know why this sees so little use.
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Form of the Bat   *// great dual use for this deck and reduces need for retainers.
+  - name: Reaction
+    count: 26
+    cards:
+    - count: 5
+      name: Bait and Switch
+    - count: 6
+      name: Deep Ecology
+    - count: 5
+      name: Eyes of the Wild
+    - count: 8
+      name: Organized Resistance
+    - count: 2
+      name: Protection Racket   *// sits in place of extra Raven Spies
+  - name: Combat
+    count: 14
+    cards:
+    - count: 10
+      name: Earth Meld
+    - count: 4
+      name: Form of Mist
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Uncoiling, The   *// must eat the Unmasking and Veil of Darkness.
