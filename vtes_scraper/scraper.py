@@ -231,7 +231,9 @@ def fetch_event_date(
     for script in soup.find_all("script", type="application/ld+json"):
         try:
             data = json.loads(script.string or "")
-        except (json.JSONDecodeError, AttributeError):
+        except json.JSONDecodeError:
+            continue
+        except AttributeError:
             continue
         # data may be a single object or a list
         items = data if isinstance(data, list) else [data]
