@@ -196,6 +196,60 @@ class TestCryptParsing:
 
 
 # ---------------------------------------------------------------------------
+# Crypt fallback parsing (compact single-space format)
+# ---------------------------------------------------------------------------
+
+EXAMPLE_COMPACT_CRYPT = """\
+Conservative Agitation
+Vila Velha, Brazil
+October 1st 2016
+2R+F
+12 players
+Ravel Zorzal
+https://www.vekn.net/event-calendar/event/8470
+
+Crypt (4 cards, min=3, max=4, avg=3.5)
+---------------------------------------
+2x Nathan Turner 4 PRO ani Gangrel:6
+2x Indira 3 PRO Gangrel:6
+
+Library (1 cards)
+Master (1)
+1x Blood Doll
+"""
+
+
+class TestCryptCompactFormat:
+    def test_card_count(self):
+        t = parse_twd_text(EXAMPLE_COMPACT_CRYPT)
+        assert len(t.deck.crypt) == 2
+
+    def test_card_fields(self):
+        t = parse_twd_text(EXAMPLE_COMPACT_CRYPT)
+        card = t.deck.crypt[0]
+        assert card.count == 2
+        assert card.name == "Nathan Turner"
+        assert card.capacity == 4
+        assert "PRO" in card.disciplines
+        assert card.clan == "Gangrel"
+        assert card.grouping == 6
+
+    def test_multi_discipline(self):
+        t = parse_twd_text(EXAMPLE_COMPACT_CRYPT)
+        # "2x Nathan Turner 4 PRO ani Gangrel:6" has two disciplines
+        card = t.deck.crypt[0]
+        assert "PRO" in card.disciplines
+        assert "ani" in card.disciplines
+
+    def test_single_discipline(self):
+        t = parse_twd_text(EXAMPLE_COMPACT_CRYPT)
+        indira = t.deck.crypt[1]
+        assert indira.name == "Indira"
+        assert indira.capacity == 3
+        assert "PRO" in indira.disciplines
+
+
+# ---------------------------------------------------------------------------
 # Library parsing
 # ---------------------------------------------------------------------------
 

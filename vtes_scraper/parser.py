@@ -36,7 +36,15 @@ CRYPT_HEADER_RE = re.compile(
 )
 LIBRARY_HEADER_RE = re.compile(r"Library\s*\((?P<count>\d+)\s*cards?\)")
 
-# CRYPT_LINE_RE removed — _parse_crypt_line uses split-based parsing instead
+# Regex for crypt line parsing (handles both compact and column-aligned formats):
+#   <Qty>x <Name> <Capacity>( <discipline:3chars>)+ <Clan>:<grouping>
+CRYPT_LINE_RE = re.compile(
+    r"^(?P<count>\d+)x\s+"
+    r"(?P<name>.+?)\s+"
+    r"(?P<capacity>\d{1,2})"
+    r"(?P<disciplines>(?:\s+[a-zA-Z]{3})+)\s+"
+    r"(?P<clan>[^:\s]+):(?P<grouping>\d+)\s*$"
+)
 LIBRARY_LINE_RE = re.compile(r"^(?P<count>\d+)x\s+(?P<name>.+)$")
 SECTION_HEADER_RE = re.compile(r"^(?P<name>[A-Za-z /,()]+)\s*\((?P<count>\d+).*\)$")
 
@@ -101,57 +109,29 @@ def _split_date(raw: str) -> tuple[str, str | None]:
 
 def _parse_crypt_line(line: str) -> CryptCard | None:
     """
-    Parse a VTES crypt line using double-space column splitting.
+    Parse a VTES crypt line.
 
-    Expected format (columns separated by 2+ spaces):
-        COUNT x  VAMPIRE NAME  CAPACITY  DISCIPLINES  [CLAN:SET]  [extra...]
+    Handles both compact and column-aligned formats:
+        <Qty>x <Name> <Capacity> <disc1> [<disc2> ...] <Clan>:<grouping>
 
     Examples:
-        2x Nathan Turner      4  PRO ani                 Gangrel:6
-        2x Ramiel de Béziers  9  for nec obf OBT NEC     Cappadocian:1
-        2x Nathan Turner      4  PRO ani                 (no clan_set)
+        2x Nathan Turner 4 PRO ani Gangrel:6
+        2x Nathan Turner      4 PRO ani                 Gangrel:6
     """
     line, comment = _strip_inline_comment(line)
     line = line.strip()
 
-    m = re.match(r"^(\d+)x\s+(.*)", line)
+    m = CRYPT_LINE_RE.match(line)
     if not m:
         return None
-    count = int(m.group(1))
-    rest = m.group(2)
-
-    parts = re.split(r"\s{2,}", rest)
-    if len(parts) < 3:
-        return None
-
-    name = parts[0].strip()
-
-    clan = ""
-    grouping = 0
-    if ":" in parts[-1]:
-        clan_set = parts[-1].strip()
-        clan, group = clan_set.split(":", 1)
-        if not group.isdigit():
-            return None
-        grouping = int(group)
-
-    capa, disciplines = parts[1].strip().split(None, 1)
-    if not capa.isdigit():
-        return None
-    capacity = int(capa)
-
-    title: str | None = None
-    if len(parts) == 4:
-        title = parts[-2].strip()
-
     return CryptCard(
-        count=count,
-        name=name,
-        capacity=capacity,
-        disciplines=disciplines,
-        clan=clan,
-        grouping=grouping,
-        title=title,
+        count=int(m.group("count")),
+        name=m.group("name").strip(),
+        capacity=int(m.group("capacity")),
+        disciplines=m.group("disciplines").strip(),
+        clan=m.group("clan").strip(),
+        grouping=int(m.group("grouping")),
+        title=None,
         comment=comment,
     )
 
