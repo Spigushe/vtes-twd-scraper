@@ -1,0 +1,1005 @@
+"""Tests for CLI subcommands."""
+
+import argparse
+import logging
+import tempfile
+from datetime import date
+from pathlib import Path
+from unittest.mock import MagicMock, patch
+
+import pytest
+
+from vtes_scraper.models import CryptCard, Deck, LibraryCard, LibrarySection, Tournament
+from vtes_scraper.cli import _build_parser, main
+from vtes_scraper.cli import _common
+from vtes_scraper.cli._common import _reconfigure_windows_stdio, setup_logging
+from vtes_scraper.cli import parse as parse_cmd
+from vtes_scraper.cli import scrape as scrape_cmd
+from vtes_scraper.cli import validate as validate_cmd
+from vtes_scraper.cli import fix_dates as fix_dates_cmd
+from vtes_scraper.cli import rescrape as rescrape_cmd
+from vtes_scraper.cli import publish as publish_cmd
+from vtes_scraper.publisher import BatchPRResult
+
+
+# ---------------------------------------------------------------------------
+# Shared fixtures
+# ---------------------------------------------------------------------------
+
+SIMPLE_TWD = """\
+Conservative Agitation
+Vila Velha, Brazil
+October 1st 2016
+2R+F
+12 players
+Ravel Zorzal
+https://www.vekn.net/event-calendar/event/8470
+
+Crypt (2 cards, min=4, max=4, avg=4)
+-------------------------------------
+2x Nathan Turner      4 PRO ani                 Gangrel:6
+
+Library (1 cards)
+Master (1)
+1x Blood Doll
+"""
+
+
+def _make_tournament() -> Tournament:
+    return Tournament(
+        name="Test Event",
+        location="Paris, France",
+        date_start=date(2023, 3, 25),
+        rounds_format="3R+F",
+        players_count=15,
+        winner="Jane Doe",
+        event_url="https://www.vekn.net/event-calendar/event/9999",
+        deck=Deck(
+            crypt=[
+                CryptCard(
+                    count=2,
+                    name="Nathan Turner",
+                    capacity=4,
+                    disciplines="PRO ani",
+                    clan="Gangrel",
+                    grouping=6,
+                )
+            ],
+            crypt_count=2,
+            crypt_min=4,
+            crypt_max=4,
+            crypt_avg=4.0,
+            library_sections=[
+                LibrarySection(
+                    name="Master",
+                    count=1,
+                    cards=[LibraryCard(count=1, name="Blood Doll")],
+                )
+            ],
+            library_count=1,
+        ),
+    )
+
+
+# ---------------------------------------------------------------------------
+# _build_parser / main
+# ---------------------------------------------------------------------------
+
+
+class TestBuildParser:
+    def test_parser_created(self):
+        parser = _build_parser()
+        assert parser is not None
+
+    def test_subcommands_registered(self):
+        parser = _build_parser()
+        # Parse known subcommands — should not raise
+        args = parser.parse_args(["parse", "somefile.txt"])
+        assert args.command == "parse"
+
+    def test_scrape_subcommand(self):
+        parser = _build_parser()
+        args = parser.parse_args(["scrape"])
+        assert args.command == "scrape"
+
+    def test_validate_subcommand(self):
+        parser = _build_parser()
+        args = parser.parse_args(["validate"])
+        assert args.command == "validate"
+
+
+class TestMain:
+    def test_main_dispatches_and_exits(self):
+        with patch("sys.argv", ["vtes-scraper", "scrape"]), patch(
+            "vtes_scraper.cli._reconfigure_windows_stdio"
+        ), patch("vtes_scraper.cli.scrape.run", return_value=0) as mock_run:
+            with pytest.raises(SystemExit) as exc_info:
+                main()
+            assert exc_info.value.code == 0
+            mock_run.assert_called_once()
+
+
+# ---------------------------------------------------------------------------
+# _reconfigure_windows_stdio
+# ---------------------------------------------------------------------------
+
+
+class TestReconfigureWindowsStdio:
+    def test_noop_on_non_windows(self):
+        import sys as real_sys
+
+        original_stdout = real_sys.stdout
+        with patch("vtes_scraper.cli._common.sys") as mock_sys:
+            mock_sys.platform = "linux"
+            _reconfigure_windows_stdio()
+        # Real sys.stdout must be untouched
+        assert real_sys.stdout is original_stdout
+
+    def test_reconfigures_on_windows(self):
+        import io
+
+        fake_buffer = io.BytesIO(b"")
+        fake_stdout = io.TextIOWrapper(fake_buffer)
+        fake_stderr_buffer = io.BytesIO(b"")
+        fake_stderr = io.TextIOWrapper(fake_stderr_buffer)
+        with patch("vtes_scraper.cli._common.sys") as mock_sys:
+            mock_sys.platform = "win32"
+            mock_sys.stdout = fake_stdout
+            mock_sys.stderr = fake_stderr
+            _reconfigure_windows_stdio()
+            # After reconfiguration, mock_sys.stdout should be a new TextIOWrapper
+            assert isinstance(mock_sys.stdout, io.TextIOWrapper)
+            assert mock_sys.stdout is not fake_stdout
+
+    def test_skips_when_no_buffer(self):
+        import io
+
+        no_buffer_stdout = io.StringIO()
+        no_buffer_stderr = io.StringIO()
+        with patch("vtes_scraper.cli._common.sys") as mock_sys:
+            mock_sys.platform = "win32"
+            mock_sys.stdout = no_buffer_stdout
+            mock_sys.stderr = no_buffer_stderr
+            # Should not raise even without .buffer
+            _reconfigure_windows_stdio()
+            assert isinstance(mock_sys.stdout, io.StringIO)
+
+
+# ---------------------------------------------------------------------------
+# setup_logging
+# ---------------------------------------------------------------------------
+
+
+class TestSetupLogging:
+    def test_verbose_false(self):
+        setup_logging(False)
+        logger = logging.getLogger("vtes_scraper")
+        # In non-verbose mode, vtes_scraper logger should NOT be at DEBUG
+        assert logger.level != logging.DEBUG
+
+    def test_verbose_true(self):
+        setup_logging(True)
+        logger = logging.getLogger("vtes_scraper")
+        assert logger.level == logging.DEBUG
+
+
+# ---------------------------------------------------------------------------
+# parse command
+# ---------------------------------------------------------------------------
+
+
+class TestParseCommand:
+    def test_register(self):
+        parser = argparse.ArgumentParser()
+        sub = parser.add_subparsers(dest="command")
+        parse_cmd.register(sub)
+        args = parser.parse_args(["parse", "input.txt"])
+        assert args.command == "parse"
+
+    def test_run_stdout(self):
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".txt", delete=False) as f:
+            f.write(SIMPLE_TWD)
+            tmpfile = Path(f.name)
+
+        args = argparse.Namespace(
+            input_file=tmpfile,
+            output_dir=None,
+            overwrite=False,
+            verbose=False,
+        )
+        ret = parse_cmd.run(args)
+        assert ret == 0
+        tmpfile.unlink()
+
+    def test_run_with_output_dir(self):
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".txt", delete=False) as f:
+            f.write(SIMPLE_TWD)
+            tmpfile = Path(f.name)
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = argparse.Namespace(
+                input_file=tmpfile,
+                output_dir=Path(tmpdir),
+                overwrite=False,
+                verbose=False,
+            )
+            ret = parse_cmd.run(args)
+            assert ret == 0
+
+        tmpfile.unlink()
+
+    def test_run_parse_error(self):
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".txt", delete=False) as f:
+            f.write("Not a valid TWD file")
+            tmpfile = Path(f.name)
+
+        args = argparse.Namespace(
+            input_file=tmpfile,
+            output_dir=None,
+            overwrite=False,
+            verbose=False,
+        )
+        ret = parse_cmd.run(args)
+        assert ret == 1
+        tmpfile.unlink()
+
+    def test_run_file_exists_no_overwrite(self):
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".txt", delete=False) as f:
+            f.write(SIMPLE_TWD)
+            tmpfile = Path(f.name)
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = argparse.Namespace(
+                input_file=tmpfile,
+                output_dir=Path(tmpdir),
+                overwrite=False,
+                verbose=False,
+            )
+            parse_cmd.run(args)  # first write
+            ret = parse_cmd.run(args)  # second write — skipped
+            assert ret == 0  # FileExistsError is caught, returns 0
+
+        tmpfile.unlink()
+
+
+# ---------------------------------------------------------------------------
+# scrape command
+# ---------------------------------------------------------------------------
+
+
+class TestScrapeCommand:
+    def test_register(self):
+        parser = argparse.ArgumentParser()
+        sub = parser.add_subparsers(dest="command")
+        scrape_cmd.register(sub)
+        args = parser.parse_args(["scrape"])
+        assert args.command == "scrape"
+
+    def test_run_no_tournaments(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = argparse.Namespace(
+                output_dir=Path(tmpdir),
+                max_pages=1,
+                delay=0,
+                overwrite=False,
+                verbose=False,
+            )
+            with patch("vtes_scraper.cli.scrape.scrape_forum", return_value=iter([])):
+                ret = scrape_cmd.run(args)
+            assert ret == 0
+
+    def test_run_with_tournament_written(self):
+        t = _make_tournament()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = argparse.Namespace(
+                output_dir=Path(tmpdir),
+                max_pages=1,
+                delay=0,
+                overwrite=False,
+                verbose=False,
+            )
+            with patch("vtes_scraper.cli.scrape.scrape_forum", return_value=iter([t])):
+                ret = scrape_cmd.run(args)
+            assert ret == 0
+
+    def test_run_with_file_exists_skipped(self):
+        t = _make_tournament()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = argparse.Namespace(
+                output_dir=Path(tmpdir),
+                max_pages=1,
+                delay=0,
+                overwrite=False,
+                verbose=False,
+            )
+            with patch(
+                "vtes_scraper.cli.scrape.scrape_forum", return_value=iter([t])
+            ), patch(
+                "vtes_scraper.cli.scrape.write_tournament_yaml",
+                side_effect=FileExistsError("exists"),
+            ):
+                ret = scrape_cmd.run(args)
+            assert ret == 0
+
+    def test_run_with_general_error(self):
+        t = _make_tournament()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = argparse.Namespace(
+                output_dir=Path(tmpdir),
+                max_pages=1,
+                delay=0,
+                overwrite=False,
+                verbose=False,
+            )
+            with patch(
+                "vtes_scraper.cli.scrape.scrape_forum", return_value=iter([t])
+            ), patch(
+                "vtes_scraper.cli.scrape.write_tournament_yaml",
+                side_effect=Exception("error"),
+            ):
+                ret = scrape_cmd.run(args)
+            assert ret == 1
+
+
+# ---------------------------------------------------------------------------
+# validate command
+# ---------------------------------------------------------------------------
+
+VALID_YAML = """\
+name: Test Event
+location: Paris, France
+date_start: 2023-03-25
+rounds_format: 3R+F
+players_count: 15
+winner: Jane Doe
+event_url: https://www.vekn.net/event-calendar/event/9999
+deck:
+  crypt:
+    - count: 2
+      name: Nathan Turner
+      capacity: 4
+      disciplines: PRO ani
+      clan: Gangrel
+      grouping: 6
+  crypt_count: 2
+  crypt_min: 4
+  crypt_max: 4
+  crypt_avg: 4.0
+  library_count: 1
+  library_sections:
+    - name: Master
+      count: 1
+      cards:
+        - count: 1
+          name: Blood Doll
+"""
+
+INVALID_YAML = """\
+name: ""
+location: ""
+date_start: null
+rounds_format: ""
+players_count: 0
+winner: ""
+event_url: ""
+deck:
+  crypt: []
+  library_sections: []
+"""
+
+
+class TestValidateCommand:
+    def test_register(self):
+        parser = argparse.ArgumentParser()
+        sub = parser.add_subparsers(dest="command")
+        validate_cmd.register(sub)
+        args = parser.parse_args(["validate"])
+        assert args.command == "validate"
+
+    def test_run_no_dir(self):
+        args = argparse.Namespace(
+            output_dir=Path("/nonexistent/path"),
+            check_dates=False,
+            delay=0,
+            verbose=False,
+        )
+        ret = validate_cmd.run(args)
+        assert ret == 1
+
+    def test_run_empty_dir(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = argparse.Namespace(
+                output_dir=Path(tmpdir),
+                check_dates=False,
+                delay=0,
+                verbose=False,
+            )
+            ret = validate_cmd.run(args)
+            assert ret == 0
+
+    def test_run_valid_file(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text(VALID_YAML, encoding="utf-8")
+            args = argparse.Namespace(
+                output_dir=Path(tmpdir),
+                check_dates=False,
+                delay=0,
+                verbose=False,
+            )
+            ret = validate_cmd.run(args)
+            assert ret == 0
+
+    def test_run_invalid_file_moved(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "bad.yaml"
+            yaml_file.write_text(INVALID_YAML, encoding="utf-8")
+            args = argparse.Namespace(
+                output_dir=Path(tmpdir),
+                check_dates=False,
+                delay=0,
+                verbose=False,
+            )
+            ret = validate_cmd.run(args)
+            assert ret == 1
+
+    def test_run_unreadable_yaml(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "bad.yaml"
+            yaml_file.write_text(": : : invalid yaml {{{{", encoding="utf-8")
+            args = argparse.Namespace(
+                output_dir=Path(tmpdir),
+                check_dates=False,
+                delay=0,
+                verbose=False,
+            )
+            ret = validate_cmd.run(args)
+            assert ret == 1
+
+    def test_error_types_all_missing(self):
+        errors = validate_cmd._error_types({})
+        assert "missing_name" in errors
+        assert "missing_location" in errors
+        assert "missing_date_start" in errors
+        assert "missing_rounds_format" in errors
+        assert "missing_players_count" in errors
+        assert "missing_winner" in errors
+        assert "missing_event_url" in errors
+        assert "empty_crypt" in errors
+        assert "empty_library" in errors
+
+    def test_error_types_incoherent_date(self):
+        data = {
+            "name": "Test",
+            "location": "Loc",
+            "date_start": "2023-01-01",
+            "rounds_format": "2R+F",
+            "players_count": 10,
+            "winner": "W",
+            "event_url": "https://www.vekn.net/event-calendar/event/1",
+            "deck": {"crypt": [1], "library_sections": [1]},
+        }
+        errors = validate_cmd._error_types(data, calendar_date=date(2023, 2, 2))
+        assert "incoherent_date" in errors
+
+    def test_error_types_coherent_date(self):
+        data = {
+            "name": "Test",
+            "location": "Loc",
+            "date_start": "2023-01-01",
+            "rounds_format": "2R+F",
+            "players_count": 10,
+            "winner": "W",
+            "event_url": "https://www.vekn.net/event-calendar/event/1",
+            "deck": {"crypt": [1], "library_sections": [1]},
+        }
+        errors = validate_cmd._error_types(data, calendar_date=date(2023, 1, 1))
+        assert "incoherent_date" not in errors
+
+    def test_parse_date_field_none(self):
+        result = validate_cmd._parse_date_field(None)
+        assert result is None
+
+    def test_parse_date_field_date_object(self):
+        d = date(2023, 1, 1)
+        result = validate_cmd._parse_date_field(d)
+        assert result == d
+
+    def test_parse_date_field_string(self):
+        result = validate_cmd._parse_date_field("2023-01-01")
+        assert result == date(2023, 1, 1)
+
+    def test_parse_date_field_invalid(self):
+        result = validate_cmd._parse_date_field("not-a-date")
+        assert result is None
+
+    def test_move_to_error(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            src = Path(tmpdir) / "test.yaml"
+            src.write_text("name: test", encoding="utf-8")
+            dest = validate_cmd._move_to_error(src, Path(tmpdir), "missing_name")
+            assert dest.exists()
+            assert "missing_name" in str(dest)
+            assert not src.exists()
+
+
+# ---------------------------------------------------------------------------
+# fix_dates command
+# ---------------------------------------------------------------------------
+
+
+class TestFixDatesCommand:
+    def test_register(self):
+        parser = argparse.ArgumentParser()
+        sub = parser.add_subparsers(dest="command")
+        fix_dates_cmd.register(sub)
+        args = parser.parse_args(["fix-date", "file.yaml"])
+        assert args.command == "fix-date"
+
+    def test_run_file_not_found(self):
+        args = argparse.Namespace(
+            files=[Path("/nonexistent/file.yaml")],
+            delay=0,
+            dry_run=False,
+            verbose=False,
+        )
+        with patch(
+            "vtes_scraper.cli.fix_dates.fetch_event_date", return_value=date(2023, 1, 1)
+        ):
+            ret = fix_dates_cmd.run(args)
+        assert ret == 1
+
+    def test_run_no_event_url(self):
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".yaml", delete=False) as f:
+            f.write("name: Test\n")
+            tmpfile = Path(f.name)
+
+        args = argparse.Namespace(
+            files=[tmpfile],
+            delay=0,
+            dry_run=False,
+            verbose=False,
+        )
+        ret = fix_dates_cmd.run(args)
+        assert ret == 0
+        tmpfile.unlink()
+
+    def test_run_date_already_correct(self):
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".yaml", delete=False) as f:
+            f.write(
+                "date_start: 2023-03-25\nevent_url: https://www.vekn.net/event-calendar/event/1\n"
+            )
+            tmpfile = Path(f.name)
+
+        args = argparse.Namespace(
+            files=[tmpfile],
+            delay=0,
+            dry_run=False,
+            verbose=False,
+        )
+        with patch(
+            "vtes_scraper.cli.fix_dates.fetch_event_date",
+            return_value=date(2023, 3, 25),
+        ):
+            ret = fix_dates_cmd.run(args)
+        assert ret == 0
+        tmpfile.unlink()
+
+    def test_run_updates_date(self):
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".yaml", delete=False) as f:
+            f.write(
+                "date_start: 2023-01-01\nevent_url: https://www.vekn.net/event-calendar/event/1\n"
+            )
+            tmpfile = Path(f.name)
+
+        args = argparse.Namespace(
+            files=[tmpfile],
+            delay=0,
+            dry_run=False,
+            verbose=False,
+        )
+        with patch(
+            "vtes_scraper.cli.fix_dates.fetch_event_date",
+            return_value=date(2023, 3, 25),
+        ):
+            ret = fix_dates_cmd.run(args)
+        assert ret == 0
+        content = tmpfile.read_text()
+        assert "2023-03-25" in content
+        tmpfile.unlink()
+
+    def test_run_dry_run_does_not_write(self):
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".yaml", delete=False) as f:
+            f.write(
+                "date_start: 2023-01-01\nevent_url: https://www.vekn.net/event-calendar/event/1\n"
+            )
+            tmpfile = Path(f.name)
+
+        args = argparse.Namespace(
+            files=[tmpfile],
+            delay=0,
+            dry_run=True,
+            verbose=False,
+        )
+        with patch(
+            "vtes_scraper.cli.fix_dates.fetch_event_date",
+            return_value=date(2023, 3, 25),
+        ):
+            ret = fix_dates_cmd.run(args)
+        assert ret == 0
+        content = tmpfile.read_text()
+        assert "2023-01-01" in content  # unchanged
+        tmpfile.unlink()
+
+    def test_run_fetch_error(self):
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".yaml", delete=False) as f:
+            f.write(
+                "date_start: 2023-01-01\nevent_url: https://www.vekn.net/event-calendar/event/1\n"
+            )
+            tmpfile = Path(f.name)
+
+        args = argparse.Namespace(
+            files=[tmpfile],
+            delay=0,
+            dry_run=False,
+            verbose=False,
+        )
+        with patch(
+            "vtes_scraper.cli.fix_dates.fetch_event_date",
+            side_effect=Exception("network error"),
+        ):
+            ret = fix_dates_cmd.run(args)
+        assert ret == 1
+        tmpfile.unlink()
+
+    def test_run_calendar_date_none(self):
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".yaml", delete=False) as f:
+            f.write(
+                "date_start: 2023-01-01\nevent_url: https://www.vekn.net/event-calendar/event/1\n"
+            )
+            tmpfile = Path(f.name)
+
+        args = argparse.Namespace(
+            files=[tmpfile],
+            delay=0,
+            dry_run=False,
+            verbose=False,
+        )
+        with patch("vtes_scraper.cli.fix_dates.fetch_event_date", return_value=None):
+            ret = fix_dates_cmd.run(args)
+        assert ret == 0
+        tmpfile.unlink()
+
+    def test_current_date_start_none(self):
+        result = fix_dates_cmd._current_date_start({})
+        assert result is None
+
+    def test_current_date_start_date_obj(self):
+        d = date(2023, 1, 1)
+        result = fix_dates_cmd._current_date_start({"date_start": d})
+        assert result == d
+
+    def test_current_date_start_string(self):
+        result = fix_dates_cmd._current_date_start({"date_start": "2023-01-01"})
+        assert result == date(2023, 1, 1)
+
+
+# ---------------------------------------------------------------------------
+# rescrape command
+# ---------------------------------------------------------------------------
+
+
+class TestRescrapeCommand:
+    def test_register(self):
+        parser = argparse.ArgumentParser()
+        sub = parser.add_subparsers(dest="command")
+        rescrape_cmd.register(sub)
+        args = parser.parse_args(["rescrape"])
+        assert args.command == "rescrape"
+
+    def test_run_no_files(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = argparse.Namespace(
+                errors_dir=Path(tmpdir),
+                output_dir=Path(tmpdir),
+                delay=0,
+                verbose=False,
+            )
+            ret = rescrape_cmd.run(args)
+            assert ret == 0
+
+    def test_run_file_with_no_forum_url(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text("name: test\n", encoding="utf-8")
+            args = argparse.Namespace(
+                errors_dir=Path(tmpdir),
+                output_dir=Path(tmpdir),
+                delay=0,
+                verbose=False,
+            )
+            ret = rescrape_cmd.run(args)
+            assert ret == 0
+
+    def test_run_file_with_forum_url_parse_fails(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text(
+                "forum_post_url: https://www.vekn.net/forum/twd/123\n", encoding="utf-8"
+            )
+            args = argparse.Namespace(
+                errors_dir=Path(tmpdir),
+                output_dir=Path(tmpdir),
+                delay=0,
+                verbose=False,
+            )
+            with patch(
+                "vtes_scraper.cli.rescrape.extract_twd_from_thread", return_value=None
+            ):
+                ret = rescrape_cmd.run(args)
+            assert ret == 1
+
+    def test_run_file_with_forum_url_success(self):
+        t = _make_tournament()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text(
+                "forum_post_url: https://www.vekn.net/forum/twd/123\n", encoding="utf-8"
+            )
+            args = argparse.Namespace(
+                errors_dir=Path(tmpdir),
+                output_dir=Path(tmpdir),
+                delay=0,
+                verbose=False,
+            )
+            with patch(
+                "vtes_scraper.cli.rescrape.extract_twd_from_thread", return_value=t
+            ), patch(
+                "vtes_scraper.cli.rescrape.write_tournament_yaml",
+                return_value=Path(tmpdir) / "9999.yaml",
+            ):
+                ret = rescrape_cmd.run(args)
+            assert ret == 0
+
+    def test_run_file_with_forum_url_write_error(self):
+        t = _make_tournament()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text(
+                "forum_post_url: https://www.vekn.net/forum/twd/123\n", encoding="utf-8"
+            )
+            args = argparse.Namespace(
+                errors_dir=Path(tmpdir),
+                output_dir=Path(tmpdir),
+                delay=0,
+                verbose=False,
+            )
+            with patch(
+                "vtes_scraper.cli.rescrape.extract_twd_from_thread", return_value=t
+            ), patch(
+                "vtes_scraper.cli.rescrape.write_tournament_yaml",
+                side_effect=Exception("write failed"),
+            ):
+                ret = rescrape_cmd.run(args)
+            assert ret == 1
+
+    def test_run_forum_url_on_next_line(self):
+        """Test parsing multi-line YAML with URL on next line after key."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text(
+                "forum_post_url:\n  https://www.vekn.net/forum/twd/456\n",
+                encoding="utf-8",
+            )
+            args = argparse.Namespace(
+                errors_dir=Path(tmpdir),
+                output_dir=Path(tmpdir),
+                delay=0,
+                verbose=False,
+            )
+            with patch(
+                "vtes_scraper.cli.rescrape.extract_twd_from_thread", return_value=None
+            ):
+                ret = rescrape_cmd.run(args)
+            assert ret == 1  # parse failed
+
+
+# ---------------------------------------------------------------------------
+# publish command
+# ---------------------------------------------------------------------------
+
+
+class TestPublishCommand:
+    def test_register(self):
+        parser = argparse.ArgumentParser()
+        sub = parser.add_subparsers(dest="command")
+        publish_cmd.register(sub)
+        args = parser.parse_args(["publish"])
+        assert args.command == "publish"
+
+    def test_run_no_token(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = argparse.Namespace(
+                twds_dir=Path(tmpdir),
+                delay=1.0,
+                github_token=None,
+                publish_dir=Path(tmpdir) / "publish",
+                verbose=False,
+            )
+            with patch.dict("os.environ", {}, clear=True):
+                with patch("vtes_scraper.cli.publish.os.environ.get", return_value=""):
+                    ret = publish_cmd.run(args)
+            assert ret == 1
+
+    def test_run_no_yaml_files(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = argparse.Namespace(
+                twds_dir=Path(tmpdir),
+                delay=1.0,
+                github_token="mytoken",
+                publish_dir=Path(tmpdir) / "publish",
+                verbose=False,
+            )
+            ret = publish_cmd.run(args)
+            assert ret == 0
+
+    def test_run_with_yaml_files(self):
+        t = _make_tournament()
+        result = BatchPRResult(pr_url="https://github.com/pr/1", published=["9999"])
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            # Write a valid YAML file
+            from vtes_scraper.output.yaml import write_tournament_yaml
+
+            write_tournament_yaml(t, Path(tmpdir), overwrite=True)
+
+            args = argparse.Namespace(
+                twds_dir=Path(tmpdir),
+                delay=0,
+                github_token="mytoken",
+                publish_dir=Path(tmpdir) / "publish",
+                verbose=False,
+            )
+            with patch(
+                "vtes_scraper.cli.publish.publish_all_as_single_pr", return_value=result
+            ):
+                ret = publish_cmd.run(args)
+            assert ret == 0
+
+    def test_run_skipped_all(self):
+        t = _make_tournament()
+        result = BatchPRResult(skipped_all=True, skipped=["9999"])
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            from vtes_scraper.output.yaml import write_tournament_yaml
+
+            write_tournament_yaml(t, Path(tmpdir), overwrite=True)
+
+            args = argparse.Namespace(
+                twds_dir=Path(tmpdir),
+                delay=0,
+                github_token="mytoken",
+                publish_dir=Path(tmpdir) / "publish",
+                verbose=False,
+            )
+            with patch(
+                "vtes_scraper.cli.publish.publish_all_as_single_pr", return_value=result
+            ):
+                ret = publish_cmd.run(args)
+            assert ret == 0
+
+    def test_run_with_errors(self):
+        t = _make_tournament()
+        result = BatchPRResult(
+            pr_url="https://github.com/pr/2",
+            published=["9999"],
+            errors=[("bad_id", "some error")],
+        )
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            from vtes_scraper.output.yaml import write_tournament_yaml
+
+            write_tournament_yaml(t, Path(tmpdir), overwrite=True)
+
+            args = argparse.Namespace(
+                twds_dir=Path(tmpdir),
+                delay=0,
+                github_token="mytoken",
+                publish_dir=Path(tmpdir) / "publish",
+                verbose=False,
+            )
+            with patch(
+                "vtes_scraper.cli.publish.publish_all_as_single_pr", return_value=result
+            ):
+                ret = publish_cmd.run(args)
+            assert ret == 1
+
+    def test_run_no_pr_url(self):
+        t = _make_tournament()
+        result = BatchPRResult(published=["9999"])  # no pr_url
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            from vtes_scraper.output.yaml import write_tournament_yaml
+
+            write_tournament_yaml(t, Path(tmpdir), overwrite=True)
+
+            args = argparse.Namespace(
+                twds_dir=Path(tmpdir),
+                delay=0,
+                github_token="mytoken",
+                publish_dir=Path(tmpdir) / "publish",
+                verbose=False,
+            )
+            with patch(
+                "vtes_scraper.cli.publish.publish_all_as_single_pr", return_value=result
+            ):
+                ret = publish_cmd.run(args)
+            assert ret == 0
+
+    def test_run_nothing_to_publish_after_load(self):
+        """Test when all YAML files fail to load."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            bad_yaml = Path(tmpdir) / "bad.yaml"
+            bad_yaml.write_text(": : : invalid yaml {{{{", encoding="utf-8")
+
+            args = argparse.Namespace(
+                twds_dir=Path(tmpdir),
+                delay=0,
+                github_token="mytoken",
+                publish_dir=Path(tmpdir) / "publish",
+                verbose=False,
+            )
+            ret = publish_cmd.run(args)
+            # No valid tournaments loaded
+            assert ret == 0
+
+    def test_write_publish_report_with_pr_url(self):
+        t = _make_tournament()
+        result = BatchPRResult(pr_url="https://github.com/pr/1", published=["9999"])
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = publish_cmd._write_publish_report(
+                result, Path(tmpdir), "2023-03-25", [t]
+            )
+            assert path.exists()
+            content = path.read_text()
+            assert "https://github.com/pr/1" in content
+
+    def test_write_publish_report_skipped_all(self):
+        result = BatchPRResult(skipped_all=True)
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = publish_cmd._write_publish_report(
+                result, Path(tmpdir), "2023-03-25", []
+            )
+            content = path.read_text()
+            assert "already present on master" in content
+
+    def test_write_publish_report_no_pr(self):
+        result = BatchPRResult()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = publish_cmd._write_publish_report(
+                result, Path(tmpdir), "2023-03-25", []
+            )
+            content = path.read_text()
+            assert "No PR opened" in content
+
+    def test_write_publish_report_with_errors(self):
+        result = BatchPRResult(
+            published=["9999"],
+            errors=[("bad_id", "Failed to commit")],
+        )
+        t = _make_tournament()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = publish_cmd._write_publish_report(
+                result, Path(tmpdir), "2023-03-25", [t]
+            )
+            content = path.read_text()
+            assert "bad_id" in content
+
+    def test_write_publish_report_with_skipped(self):
+        result = BatchPRResult(skipped=["8888"])
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = publish_cmd._write_publish_report(
+                result, Path(tmpdir), "2023-03-25", []
+            )
+            content = path.read_text()
+            assert "8888" in content
