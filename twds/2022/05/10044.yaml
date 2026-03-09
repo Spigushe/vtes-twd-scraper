@@ -1,0 +1,140 @@
+name: Atlantic Cup
+location: Online
+date_start: '2022-05-21'
+rounds_format: 3R+F
+players_count: 54
+winner: Bill Troxel
+event_url: https://www.vekn.net/event-calendar/event/10044
+event_id: '10044'
+vp_comment: 2GW8.5 + 5VP in final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79796-ac-2022
+deck:
+  name: Dumpster Fire of Pure Hate
+  description: ''
+  crypt_count: 13
+  crypt_min: 15
+  crypt_max: 24
+  crypt_avg: 4.92
+  crypt:
+  - count: 1
+    name: François "Warden" Loehr
+    capacity: 3
+    disciplines: def jud
+    clan: Judge
+    grouping: 4
+  - count: 2
+    name: Jack "Hannibal137" Harmon
+    capacity: 4
+    disciplines: def jud
+    clan: Defender
+    grouping: 4
+  - count: 4
+    name: Jennie "Cassie247" Orne
+    capacity: 5
+    disciplines: inn jud vis
+    clan: Visionary
+    grouping: 4
+  - count: 1
+    name: Marion "Teacher193" Perks
+    capacity: 4
+    disciplines: red jud
+    clan: Redeemer
+    grouping: 4
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 29
+    cards:
+    - count: 1
+      name: Barrens, The
+    - count: 1
+      name: Church of Vindicated Faith, The
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fortschritt Library
+    - count: 1
+      name: Fragment of the Book of Nod
+    - count: 9
+      name: Liquidation
+    - count: 4
+      name: Parthenon, The
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: Specialization
+    - count: 4
+      name: Unity
+    - count: 4
+      name: Wider View
+  - name: Conviction
+    count: 13
+    cards:
+    - count: 3
+      name: React with Conviction
+    - count: 7
+      name: Second Sight
+    - count: 3
+      name: Strike with Conviction
+  - name: Ally
+    count: 14
+    cards:
+    - count: 2
+      name: Carlton Van Wyk
+    - count: 10
+      name: Emerald Legionnaire
+    - count: 2
+      name: Vagabond Mystic
+  - name: Equipment
+    count: 6
+    cards:
+    - count: 2
+      name: Crusader Sword, The
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 3
+      name: Ivory Bow
+  - name: Power
+    count: 8
+    cards:
+    - count: 1
+      name: Champion
+    - count: 3
+      name: Discern
+    - count: 4
+      name: Vigilance
+  - name: Action Modifier
+    count: 3
+    cards:
+    - count: 1
+      name: Call of the Hungry Dead
+    - count: 2
+      name: Change of Target
+  - name: Action Modifier/Combat
+    count: 5
+    cards:
+    - count: 5
+      name: Breath of Thanatos
+  - name: Action Modifier/Reaction
+    count: 1
+    cards:
+    - count: 1
+      name: Spectral Divination
+  - name: Reaction
+    count: 3
+    cards:
+    - count: 1
+      name: Determine
+    - count: 2
+      name: On the Qui Vive
+  - name: Event
+    count: 8
+    cards:
+    - count: 1
+      name: Nightmares upon Nightmares
+    - count: 1
+      name: Recalled to the Founder
+    - count: 4
+      name: Unmasking, The
+    - count: 2
+      name: Veil of Darkness

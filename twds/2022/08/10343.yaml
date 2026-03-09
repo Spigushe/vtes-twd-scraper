@@ -1,0 +1,133 @@
+name: Body of Sun
+location: Paris, France
+date_start: '2022-08-20'
+rounds_format: 3R+F
+players_count: 20
+winner: Karim Baloul
+event_url: https://www.vekn.net/event-calendar/event/10343
+event_id: '10343'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80104-twd-body-of-sun-paris-france-aug-20-2022
+deck:
+  name: Saulot Towerwall Classic
+  description: ''
+  crypt_count: 12
+  crypt_min: 1
+  crypt_max: 11
+  crypt_avg: 5.75
+  crypt:
+  - count: 1
+    name: Blackhorse Tanner
+    capacity: 7
+    disciplines: AUS DOM FOR
+    clan: '!Ventrue'
+    grouping: 3
+  - count: 1
+    name: Maldavis ADV
+    capacity: 4
+    disciplines: for pre AUS
+    clan: Caitiff
+    grouping: 3
+  - count: 1
+    name: Neighbor John
+    capacity: 5
+    disciplines: dom for AUS
+    clan: '!Ventrue'
+    grouping: 4
+  - count: 4
+    name: Saulot, The Wanderer
+    capacity: 11
+    disciplines: dai AUS FOR OBE THA VAL
+    clan: Salubri
+    grouping: 4
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 19
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Depravity
+    - count: 2
+      name: Direct Intervention
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Life Boon
+    - count: 1
+      name: Metro Underground
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 2
+      name: Rack, The
+    - count: 2
+      name: Smiling Jack, The Anarch
+    - count: 3
+      name: Vessel
+    - count: 3
+      name: Villein
+  - name: Action
+    count: 6
+    cards:
+    - count: 1
+      name: Biothaumaturgic Experiment
+    - count: 1
+      name: Constant Revolution
+    - count: 3
+      name: Magic of the Smith
+    - count: 1
+      name: Rutor's Hand
+  - name: Equipment
+    count: 4
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Ivory Bow
+    - count: 1
+      name: Sniper Rifle
+  - name: Action Modifier
+    count: 3
+    cards:
+    - count: 1
+      name: Enkil Cog
+    - count: 2
+      name: Monkey Wrench
+  - name: Reaction
+    count: 38
+    cards:
+    - count: 2
+      name: Delaying Tactics
+    - count: 5
+      name: Eagle's Sight
+    - count: 3
+      name: Enhanced Senses
+    - count: 8
+      name: Eyes of Argus
+    - count: 2
+      name: Forced Awakening
+    - count: 6
+      name: Guardian Vigil
+    - count: 2
+      name: My Enemy's Enemy
+    - count: 4
+      name: On the Qui Vive
+    - count: 6
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 20
+    cards:
+    - count: 6
+      name: Hidden Strength
+    - count: 4
+      name: Indomitability
+    - count: 3
+      name: Rolling with the Punches
+    - count: 3
+      name: Soak
+    - count: 4
+      name: Unflinching Persistence

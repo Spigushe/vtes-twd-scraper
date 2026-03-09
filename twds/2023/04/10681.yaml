@@ -1,0 +1,134 @@
+name: Italian NC 2023
+location: Bologna, Emilia-Romagna, Italy
+date_start: '2023-04-30'
+rounds_format: 3R+F
+players_count: 48
+winner: Andrea Paderni
+event_url: https://www.vekn.net/player-registry/event/10681
+event_id: '10681'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82058-twd-italian-national-championship-2023
+deck:
+  name: New deck
+  description: Bleed
+  crypt_count: 12
+  crypt_min: 22
+  crypt_max: 28
+  crypt_avg: 6.25
+  crypt:
+  - count: 3
+    name: Nathaniel Bordruff
+    capacity: 7
+    disciplines: DOM OBF POT ani
+    clan: Nosferatu
+    grouping: 6
+  - count: 2
+    name: Cedrick Calhoun
+    capacity: 7
+    disciplines: ANI DOM OBF pot
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Horace Radcliffe
+    capacity: 5
+    disciplines: ANI POT obf
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Ruxandra
+    capacity: 5
+    disciplines: OBF ani aus
+    clan: Nosferatu
+    grouping: 5
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 18
+    cards:
+    - count: 2
+      name: Dominate
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Labyrinth, The
+    - count: 6
+      name: Villein
+    - count: 3
+      name: Warsaw Station
+    - count: 2
+      name: Wash
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 25
+    cards:
+    - count: 6
+      name: Deep Song
+    - count: 1
+      name: Far Mastery
+    - count: 14
+      name: Govern the Unaligned
+    - count: 4
+      name: Tier of Souls
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 23
+    cards:
+    - count: 3
+      name: Cloak the Gathering
+    - count: 7
+      name: Conditioning
+    - count: 3
+      name: Elder Impersonation
+    - count: 4
+      name: Faceless Night
+    - count: 4
+      name: Lost in Crowds
+    - count: 2
+      name: Spying Mission
+  - name: Action Modifier/Combat
+    count: 4
+    cards:
+    - count: 2
+      name: Hide the Mind
+    - count: 2
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 10
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 2
+      name: Delaying Tactics
+    - count: 2
+      name: Guard Dogs
+  - name: Combat
+    count: 9
+    cards:
+    - count: 5
+      name: Aid from Bats
+    - count: 4
+      name: Carrion Crows
+  - name: Vampires
+    count: 12
+    cards: []
+  - name: Master
+    count: 18
+    cards: []
+  - name: Action
+    count: 26
+    cards: []
+  - name: Action Modifier
+    count: 27
+    cards: []
+  - name: Combat
+    count: 9
+    cards: []
+  - name: Reaction
+    count: 10
+    cards: []

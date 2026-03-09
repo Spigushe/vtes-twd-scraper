@@ -1,0 +1,400 @@
+name: Finnish Nationals 2023
+location: Espoo, Finland
+date_start: '2023-11-04'
+rounds_format: 3R+F
+players_count: 33
+winner: 'winner: Akseli Jalava'
+event_url: https://www.vekn.net/event-calendar/event/11023
+event_id: '11023'
+vp_comment: 'The final table:'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80971-twd-finnish-nationals-2023-2023-11-04
+deck:
+  description: ''
+  crypt_count: 12
+  crypt_min: 6
+  crypt_max: 40
+  crypt_avg: 6.0
+  crypt:
+  - count: 1
+    name: Andre LeRoux
+    capacity: 3
+    disciplines: aus
+    clan: Toreador
+    grouping: 5
+  - count: 1
+    name: Laurent de Valois
+    capacity: 4
+    disciplines: ani dom obf
+    clan: Nosferatu
+    grouping: 2
+  - count: 1
+    name: Chandler Hungerford
+    capacity: 3
+    disciplines: PRO
+    clan: Gangrel
+    grouping: 2
+  library_count: 80
+  library_sections:
+  - name: Master
+    count: 18
+    cards:
+    - count: 1
+      name: Backways
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Direct Intervention
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Secure Haven
+    - count: 6
+      name: Villein
+    - count: 1
+      name: Wider View
+    - count: 1
+      name: Zoo Hunting Ground
+  - name: Action
+    count: 7
+    cards:
+    - count: 7
+      name: Govern the Unaligned
+  - name: Political Action
+    count: 13
+    cards:
+    - count: 2
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 2
+      name: Ancilla Empowerment
+    - count: 3
+      name: Banishment
+    - count: 2
+      name: Kine Resources Contested
+    - count: 2
+      name: Parity Shift
+    - count: 1
+      name: Reins of Power
+  - name: Action Modifier
+    count: 21
+    cards:
+    - count: 3
+      name: Conditioning
+    - count: 6
+      name: Earth Control
+    - count: 1
+      name: Enkil Cog
+    - count: 5
+      name: Forced March
+    - count: 1
+      name: Foreshadowing Destruction
+    - count: 5
+      name: Instantaneous Transformation
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Rapid Change
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Murmur of the False Will
+  - name: Reaction
+    count: 8
+    cards:
+    - count: 7
+      name: Deflection
+    - count: 1
+      name: On the Qui Vive
+  - name: Combat
+    count: 8
+    cards:
+    - count: 1
+      name: Earth Meld
+    - count: 7
+      name: Form of Mist
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Fourth Cycle, The
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 3
+      name: Montano 11 ANI DOM FOR OBT POT 2 votes Lasombra:3
+    - count: 2
+      name: Ambrosio Luis Monçada, Plenipotentiary 10 DOM OBT POT PRE aus for cardinal Lasombra:2
+    - count: 1
+      name: Angelica, The Canonicus 10 DOM OBT POT cel obf cardinal Lasombra:2
+    - count: 1
+      name: Ayelea, The Manipulator 10 AUS DOM OBT THA pre cardinal Tremere antitribu:2
+    - count: 1
+      name: Marcus Vitel 10 DOM FOR OBF OBT PRE prince Ventrue:3
+    - count: 1
+      name: Alvaro, The Scion of Angelica 9 OBT POT dom pre archbishop Lasombra:2
+    - count: 1
+      name: Antonio Delgado 9 DOM OBT POT tha archbishop Lasombra:2
+    - count: 1
+      name: Francisco Domingo de Polonia 9 DOM OBT POT PRE pro archbishop Lasombra:2
+    - count: 1
+      name: Gratiano 8 DOM OBT obf pot priscus Lasombra:2
+  - name: Library
+    count: 73
+    cards: []
+  - name: Master
+    count: 35
+    cards:
+    - count: 1
+      name: Archon Investigation
+    - count: 6
+      name: Ashur Tablets
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Elysian Fields
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Heidelberg Castle, Germany
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Metro Underground
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Papillon
+    - count: 3
+      name: Parthenon, The
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: Power Structure
+    - count: 7
+      name: Villein
+    - count: 1
+      name: Wider View
+    - count: 3
+      name: Zillah's Valley
+  - name: Action
+    count: 7
+    cards:
+    - count: 1
+      name: Baltimore Purge
+    - count: 4
+      name: Govern the Unaligned
+    - count: 1
+      name: Mind Rape
+    - count: 1
+      name: Under Siege
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Political Action
+    count: 9
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 3
+      name: Banishment
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+    - count: 1
+      name: Rumors of Gehenna
+  - name: Action Modifier
+    count: 10
+    cards:
+    - count: 1
+      name: Blanket of Night
+    - count: 1
+      name: Enkil Cog
+    - count: 3
+      name: Shadow Play
+    - count: 3
+      name: Shroud of Absence
+    - count: 1
+      name: Shroud of Night
+    - count: 1
+      name: Voter Captivation
+  - name: Action Modifier/Reaction
+    count: 1
+    cards:
+    - count: 1
+      name: Murmur of the False Will
+  - name: Reaction
+    count: 8
+    cards:
+    - count: 4
+      name: Deflection
+    - count: 3
+      name: Obedience
+    - count: 1
+      name: On the Qui Vive
+  - name: Combat
+    count: 1
+    cards:
+    - count: 1
+      name: Oubliette
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Scourge of the Enochians
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 2
+      name: Sergio Bueno 8 OBF PRE PRO aus pot baron Ministry:6
+    - count: 1
+      name: Nonu Dis 8 OBF PRE PRO for Ministry:6
+    - count: 2
+      name: Vivian VI 7 PRE PRO obf tha baron Ministry:6
+    - count: 2
+      name: Elisha Tucker 6 PRE cel obf pro baron Ministry:6
+    - count: 1
+      name: Crystal Lynn 6 OBF PRE PRO Ministry:6
+    - count: 1
+      name: Aluc Romas de Leon 5 PRE aus obf pro Ministry:6
+    - count: 1
+      name: Doctor Morocco 5 PRO cel obf pre Ministry:6
+    - count: 1
+      name: Jenny Silver 5 PRE PRO obf Ministry:6
+    - count: 1
+      name: Milton Fox 3 pre pro Ministry:6
+  - name: Library
+    count: 80
+    cards: []
+  - name: Master
+    count: 31
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Archon Investigation
+    - count: 6
+      name: Ashur Tablets
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Coven, The
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fear of Mekhet
+    - count: 1
+      name: Ferraille
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Opium Den
+    - count: 1
+      name: Papillon
+    - count: 3
+      name: Parthenon, The
+    - count: 7
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 10
+    cards:
+    - count: 1
+      name: Chameleon
+    - count: 1
+      name: 'Fee Stake: Boston'
+    - count: 1
+      name: 'Fee Stake: Corte'
+    - count: 1
+      name: 'Fee Stake: Los Angeles'
+    - count: 1
+      name: 'Fee Stake: Perth'
+    - count: 5
+      name: Mesu Bedshet
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Political Action
+    count: 13
+    cards:
+    - count: 4
+      name: Consanguineous Boon
+    - count: 1
+      name: Eat the Rich
+    - count: 1
+      name: Firebrand
+    - count: 1
+      name: Patsy
+    - count: 3
+      name: Reckless Agitation
+    - count: 2
+      name: Revolutionary Council
+    - count: 1
+      name: Rumors of Gehenna
+  - name: Action Modifier
+    count: 9
+    cards:
+    - count: 2
+      name: Earth Control
+    - count: 1
+      name: Faceless Night
+    - count: 2
+      name: Forgotten Labyrinth
+    - count: 2
+      name: Lost in Crowds
+    - count: 1
+      name: Perfect Paragon
+    - count: 1
+      name: Voter Captivation
+  - name: Action Modifier/Reaction
+    count: 3
+    cards:
+    - count: 3
+      name: Form of the Bat
+  - name: Reaction
+    count: 6
+    cards:
+    - count: 3
+      name: Bait and Switch
+    - count: 1
+      name: On the Qui Vive
+    - count: 2
+      name: Organized Resistance
+  - name: Combat
+    count: 6
+    cards:
+    - count: 2
+      name: Earth Meld
+    - count: 4
+      name: Form of Mist
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Scourge of the Enochians

@@ -1,0 +1,93 @@
+name: Torneio Petropolitano 2ed
+location: Petropolis, Brazil
+date_start: '2024-12-08'
+rounds_format: 2R+F
+players_count: 14
+winner: Daniel Motta
+event_url: https://www.vekn.net/event-calendar/event/11881
+event_id: '11881'
+vp_comment: 1 GW4,5 + 2 vp in the finals
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82296-twd-torneio-petropolitano-2ed-petropolis-brasil-08-dec-2024
+deck:
+  name: Tzimisce Tetê [by Daniel Motta]
+  created_by: Daniel Motta
+  description: ''
+  crypt_count: 12
+  crypt_min: 16
+  crypt_max: 32
+  crypt_avg: 6.42
+  crypt:
+  - count: 3
+    name: Dragos
+    capacity: 7
+    disciplines: ANI AUS vic
+    clan: Tzimisce
+    grouping: 2
+  - count: 1
+    name: Lolita Houston
+    capacity: 4
+    disciplines: VIC aus
+    clan: Tzimisce
+    grouping: 2
+  - count: 1
+    name: Terrence
+    capacity: 4
+    disciplines: vic aus ani
+    clan: Tzimisce
+    grouping: 2
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 21
+    cards:
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Library Hunting Ground
+    - count: 1
+      name: Millicent Smith, Puritan Vampire Hunter
+    - count: 1
+      name: Path of Metamorphosis, The
+    - count: 1
+      name: 'Powerbase: Barranquilla'
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+  - name: Equipment
+    count: 3
+    cards:
+    - count: 1
+      name: Palatial Estate
+    - count: 1
+      name: Under Siege
+    - count: 1
+      name: bowl of comvergence
+  - name: Reaction
+    count: 34
+    cards:
+    - count: 4
+      name: Cats' Guidance
+    - count: 8
+      name: Eagle's Sight
+    - count: 1
+      name: Precognition
+    - count: 6
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 32
+    cards:
+    - count: 6
+      name: Breath of the Dragon
+    - count: 8
+      name: Chiropteran Marauder
+    - count: 2
+      name: Meld with the Land
+    - count: 2
+      name: Inner Essence
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Dragonbound
