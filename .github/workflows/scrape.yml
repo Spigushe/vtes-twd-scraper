@@ -56,7 +56,7 @@ jobs:
       - name: Build scrape command
         id: build_cmd
         run: |
-          CMD="vtes-scraper scrape --output-dir output/"
+          CMD="vtes-scraper scrape"
           if [ -n "${{ github.event.inputs.max_pages }}" ]; then
             CMD="$CMD --max-pages ${{ github.event.inputs.max_pages }}"
           fi
@@ -68,10 +68,14 @@ jobs:
       - name: Scrape forum
         run: ${{ steps.build_cmd.outputs.cmd }}
 
+      - name: Validate scrapes
+        run: |
+          vtes-scraper validate
+
       - name: Check for new files
         id: git_status
         run: |
-          git add output/
+          git add twds/
           if git diff --staged --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else

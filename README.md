@@ -114,13 +114,13 @@ deck:
 ```
 vtes-twd-scraper/
 ├── vtes_scraper/
-│   └── cli/
+│   ├── cli/
 │   │   ├── __init__.py # CLI entry point and shared argparse instance
 │   │   ├── _common.py  # CLI shared utilities
 │   │   ├── parse.py    # CLI command for parsing local .txt files
 │   │   ├── publish.py  # CLI command for publishing to GitHub
 │   │   └── scrape.py   # CLI command for scraping the VEKN forum
-│   └── output/
+│   ├── output/
 │   │   ├── __init__.py
 │   │   ├── _common.py  # Output shared utilities
 │   │   ├── txt.py      # TXT serializer

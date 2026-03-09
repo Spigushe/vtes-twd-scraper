@@ -231,7 +231,7 @@ def fetch_event_date(
     for script in soup.find_all("script", type="application/ld+json"):
         try:
             data = json.loads(script.string or "")
-        except json.JSONDecodeError, AttributeError:
+        except (json.JSONDecodeError, AttributeError):
             continue
         # data may be a single object or a list
         items = data if isinstance(data, list) else [data]
@@ -284,7 +284,7 @@ def scrape_forum(
     Yields:
         Tournament objects for each successfully parsed TWD post.
     """
-    with httpx.Client(headers=HEADERS, timeout=30.0) as client:
+    with httpx.Client(headers=HEADERS, timeout=60.0) as client:
         for thread_url in iter_thread_urls(client, max_pages=max_pages, delay=delay):
             tournament = extract_twd_from_thread(client, thread_url, delay=delay)
             if tournament:
