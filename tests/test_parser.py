@@ -250,6 +250,105 @@ class TestCryptCompactFormat:
 
 
 # ---------------------------------------------------------------------------
+# Multi-word clan names (e.g. "Brujah antitribu")
+# ---------------------------------------------------------------------------
+
+EXAMPLE_ANTITRIBU_CLAN = """\
+Dogs of War
+Modena (MO) Italy
+March 2nd 2025
+2R+F
+45 players
+Marcin Szybkowski
+https://www.vekn.net/event-calendar/event/11937
+
+Crypt (4 cards, min=10, max=22, avg=3.83)
+==========================================
+2x Miguel Santo Domingo 7 POT PRE cel for Brujah antitribu:3
+1x Evangeline 4 cel pot pre Brujah antitribu:2
+1x Jacob Bragg 3 cel pot Brujah antitribu:2
+
+Library (1 cards)
+Master (1)
+1x Blood Doll
+"""
+
+
+class TestMultiWordClan:
+    def test_clan_with_space(self):
+        t = parse_twd_text(EXAMPLE_ANTITRIBU_CLAN)
+        assert t.deck.crypt[0].clan == "Brujah antitribu"
+
+    def test_all_cards_parsed(self):
+        t = parse_twd_text(EXAMPLE_ANTITRIBU_CLAN)
+        assert len(t.deck.crypt) == 3
+
+    def test_grouping(self):
+        t = parse_twd_text(EXAMPLE_ANTITRIBU_CLAN)
+        assert t.deck.crypt[0].grouping == 3
+        assert t.deck.crypt[1].grouping == 2
+
+
+# ---------------------------------------------------------------------------
+# Title parsing (baron, prince, justicar, archbishop, ...)
+# ---------------------------------------------------------------------------
+
+EXAMPLE_WITH_TITLES = """\
+Eat the Rich
+Aix en Provence, France
+June 19th 2022
+3R+F
+15 players
+Jérémy Mercier
+https://www.vekn.net/event-calendar/event/10124
+
+Deck Name: Eat the Rich, but with philosophy!
+Author: LonelyLasombra
+
+Crypt (7 cards, min=24, max=32, avg=6.92)
+==========================================
+3x Aline Gädeke 7 cel POT PRE baron Brujah:6
+2x Dmitra Ilyanova 9 obf CEL FOR POT PRE justicar Brujah:5
+1x Tara 6 cel POT PRE prince Brujah:5
+1x Thucimia 10 CEL DEM OBF QUI for pro 1 vote Banu Haqim:4
+
+Library (1 cards)
+Master (1)
+1x Blood Doll
+"""
+
+
+class TestTitleParsing:
+    def test_baron_title_extracted(self):
+        t = parse_twd_text(EXAMPLE_WITH_TITLES)
+        aline = t.deck.crypt[0]
+        assert aline.title == "baron"
+        assert aline.clan == "Brujah"
+
+    def test_justicar_title_extracted(self):
+        t = parse_twd_text(EXAMPLE_WITH_TITLES)
+        dmitra = t.deck.crypt[1]
+        assert dmitra.title == "justicar"
+        assert dmitra.clan == "Brujah"
+
+    def test_prince_title_extracted(self):
+        t = parse_twd_text(EXAMPLE_WITH_TITLES)
+        tara = t.deck.crypt[2]
+        assert tara.title == "prince"
+        assert tara.clan == "Brujah"
+
+    def test_1vote_title_extracted(self):
+        t = parse_twd_text(EXAMPLE_WITH_TITLES)
+        thucimia = t.deck.crypt[3]
+        assert thucimia.title == "1 vote"
+        assert thucimia.clan == "Banu Haqim"
+
+    def test_no_title_is_none(self):
+        t = parse_twd_text(EXAMPLE_ANTITRIBU_CLAN)
+        assert t.deck.crypt[0].title is None
+
+
+# ---------------------------------------------------------------------------
 # Library parsing
 # ---------------------------------------------------------------------------
 

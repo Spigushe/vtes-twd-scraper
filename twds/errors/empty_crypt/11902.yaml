@@ -15,7 +15,42 @@ deck:
   crypt_min: 24
   crypt_max: 28
   crypt_avg: 6.33
-  crypt: []
+  crypt:
+  - count: 2
+    name: Alice Chen
+    capacity: 7
+    disciplines: FOR PRE dom obf
+    title: prince
+    clan: Ventrue
+    grouping: 6
+  - count: 2
+    name: Karen Suadela
+    capacity: 7
+    disciplines: CEL POT obf pre
+    title: prince
+    clan: Brujah
+    grouping: 5
+  - count: 4
+    name: Arishat
+    capacity: 6
+    disciplines: DAI OBF PRE
+    title: 1 vote
+    clan: Baali
+    grouping: 6
+  - count: 2
+    name: Andi Liu
+    capacity: 6
+    disciplines: DOM aus obf pre
+    title: prince
+    clan: Malkavian
+    grouping: 6
+  - count: 2
+    name: Belinde
+    capacity: 6
+    disciplines: OBF ani aus pot
+    title: prince
+    clan: Nosferatu
+    grouping: 6
   library_count: 79
   library_sections:
   - name: Master

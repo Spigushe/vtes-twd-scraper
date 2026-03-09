@@ -15,7 +15,48 @@ deck:
   crypt_min: 26
   crypt_max: 32
   crypt_avg: 7.17
-  crypt: []
+  crypt:
+  - count: 4
+    name: Beast, The Leatherface of Detroit
+    capacity: 7
+    disciplines: OBF POT ani cel
+    clan: Nosferatu antitribu
+    grouping: 2
+  - count: 3
+    name: Nikolaus Vermeulen
+    capacity: 7
+    disciplines: POT ani for obf
+    title: prince
+    clan: Nosferatu
+    grouping: 2
+  - count: 2
+    name: Selma the Repugnant
+    capacity: 8
+    disciplines: OBF POT ani for
+    title: prince
+    clan: Nosferatu
+    grouping: 1
+  - count: 1
+    name: Calebros, The Martyr
+    capacity: 5
+    disciplines: ANI obf pot
+    title: prince
+    clan: Nosferatu
+    grouping: 2
+  - count: 1
+    name: Murat
+    capacity: 7
+    disciplines: OBF POT ser
+    title: prince
+    clan: Nosferatu
+    grouping: 2
+  - count: 1
+    name: Sheldon, Lord of the Clog
+    capacity: 9
+    disciplines: ANI AUS OBF POT for
+    title: justicar
+    clan: Nosferatu
+    grouping: 1
   library_count: 80
   library_sections:
   - name: Master

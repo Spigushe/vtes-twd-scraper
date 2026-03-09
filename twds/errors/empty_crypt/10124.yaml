@@ -15,7 +15,49 @@ deck:
   crypt_min: 24
   crypt_max: 32
   crypt_avg: 6.92
-  crypt: []
+  crypt:
+  - count: 3
+    name: Aline Gädeke
+    capacity: 7
+    disciplines: cel POT PRE
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Dmitra Ilyanova
+    capacity: 9
+    disciplines: obf CEL FOR POT PRE
+    title: justicar
+    clan: Brujah
+    grouping: 5
+  - count: 2
+    name: Valeriya Zinovieva
+    capacity: 7
+    disciplines: cel pre pro POT
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Atiena
+    capacity: 6
+    disciplines: pot pre obf CEL
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Leumeah
+    capacity: 6
+    disciplines: cel for pot PRE
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Tara
+    capacity: 6
+    disciplines: cel POT PRE
+    title: prince
+    clan: Brujah
+    grouping: 5
   library_count: 67
   library_sections:
   - name: Master

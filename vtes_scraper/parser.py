@@ -43,10 +43,18 @@ CRYPT_LINE_RE = re.compile(
     r"(?P<name>.+?)\s+"
     r"(?P<capacity>\d{1,2})"
     r"(?P<disciplines>(?:\s+[a-zA-Z]{3})+)\s+"
-    r"(?P<clan>[^:\s]+):(?P<grouping>\d+)\s*$"
+    r"(?P<clan>[^:]+):(?P<grouping>\d+)\s*$"
 )
 LIBRARY_LINE_RE = re.compile(r"^(?P<count>\d+)x\s+(?P<name>.+)$")
 SECTION_HEADER_RE = re.compile(r"^(?P<name>[A-Za-z /,()]+)\s*\((?P<count>\d+).*\)$")
+
+# Known VTES titles that appear between disciplines and clan name in crypt lines
+_TITLE_RE = re.compile(
+    r"^(baron|prince|primogen|justicar|inner circle"
+    r"|archbishop|bishop|priscus|cardinal|regent"
+    r"|magaji|1 vote|2 votes)\s+",
+    re.IGNORECASE,
+)
 
 ROUNDS_RE = re.compile(r"(\d+)\s*R\s*\+\s*F(?:inal)?", re.IGNORECASE)
 PLAYERS_RE = re.compile(r"(\d+)\s*[Pp]layers?")
@@ -124,14 +132,22 @@ def _parse_crypt_line(line: str) -> CryptCard | None:
     m = CRYPT_LINE_RE.match(line)
     if not m:
         return None
+    raw_clan = m.group("clan").strip()
+    title_m = _TITLE_RE.match(raw_clan)
+    if title_m:
+        title: str | None = title_m.group(1)
+        clan = raw_clan[title_m.end() :].strip()
+    else:
+        title = None
+        clan = raw_clan
     return CryptCard(
         count=int(m.group("count")),
         name=m.group("name").strip(),
         capacity=int(m.group("capacity")),
         disciplines=m.group("disciplines").strip(),
-        clan=m.group("clan").strip(),
+        clan=clan,
         grouping=int(m.group("grouping")),
-        title=None,
+        title=title,
         comment=comment,
     )
 

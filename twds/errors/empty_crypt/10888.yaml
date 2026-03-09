@@ -14,7 +14,42 @@ deck:
   crypt_min: 37
   crypt_max: 44
   crypt_avg: 10.17
-  crypt: []
+  crypt:
+  - count: 5
+    name: Stanislava
+    capacity: 11
+    disciplines: ANI CEL DOM FOR PRO
+    title: inner circle
+    clan: Gangrel
+    grouping: 2
+  - count: 2
+    name: Hartmut Stover
+    capacity: 10
+    disciplines: CEL OBF PRO dom for
+    title: archbishop
+    clan: Gangrel antitribu
+    grouping: 3
+  - count: 1
+    name: Genevieve
+    capacity: 10
+    disciplines: ANI FOR PRO aus dom
+    title: priscus
+    clan: Gangrel antitribu
+    grouping: 2
+  - count: 1
+    name: Xaviar (ADV)
+    capacity: 10
+    disciplines: ABO ANI FOR PRO aus cel pot
+    title: justicar
+    clan: Gangrel
+    grouping: 3
+  - count: 3
+    name: Ingrid Rossler
+    capacity: 9
+    disciplines: ANI FOR PRO dom
+    title: prince
+    clan: Gangrel
+    grouping: 2
   library_count: 81
   library_sections:
   - name: Master

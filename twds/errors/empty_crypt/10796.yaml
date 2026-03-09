@@ -15,7 +15,37 @@ deck:
   crypt_min: 24
   crypt_max: 32
   crypt_avg: 7.25
-  crypt: []
+  crypt:
+  - count: 5
+    name: Khurshid
+    capacity: 8
+    disciplines: AUS FOR NEC POT
+    clan: Harbinger of Skulls
+    grouping: 6
+  - count: 2
+    name: Mordechai Ben-Nun
+    capacity: 8
+    disciplines: ANI AUS FOR NEC
+    clan: Harbinger of Skulls
+    grouping: 5
+  - count: 1
+    name: Alcoan
+    capacity: 7
+    disciplines: AUS CEL NEC for
+    clan: Harbinger of Skulls
+    grouping: 6
+  - count: 3
+    name: Hecate
+    capacity: 6
+    disciplines: AUS FOR NEC
+    clan: Harbinger of Skulls
+    grouping: 5
+  - count: 1
+    name: La Viuda Blanca
+    capacity: 6
+    disciplines: AUS NEC for obf
+    clan: Harbinger of Skulls
+    grouping: 6
   library_count: 90
   library_sections:
   - name: Master

@@ -16,7 +16,56 @@ deck:
   crypt_min: 40
   crypt_max: 34
   crypt_avg: 9.17
-  crypt: []
+  crypt:
+  - count: 5
+    name: Bruce de Guy
+    capacity: 10
+    disciplines: AUS DOM FOR OBT
+    title: cardinal
+    clan: Ventrue antitribu
+    grouping: 4
+  - count: 2
+    name: Lord Leopold Valdemar
+    capacity: 8
+    disciplines: OBT POT cel dom obf
+    title: priscus
+    clan: Lasombra
+    grouping: 5
+  - count: 1
+    name: Antón de Concepción
+    capacity: 9
+    disciplines: ANI DOM OBT POT aus
+    title: archbishop
+    clan: Lasombra
+    grouping: 4
+  - count: 1
+    name: Carolina Vález
+    capacity: 9
+    disciplines: DOM OBT POT PRE aus
+    title: archbishop
+    clan: Lasombra
+    grouping: 5
+  - count: 1
+    name: Charles Delmare
+    capacity: 8
+    disciplines: DOM OBT POT cel
+    title: cardinal
+    clan: Lasombra
+    grouping: 5
+  - count: 1
+    name: Luca Italicus
+    capacity: 10
+    disciplines: DOM FOR NEC OBT POT tha
+    title: archbishop
+    clan: Lasombra
+    grouping: 4
+  - count: 1
+    name: Percival
+    capacity: 8
+    disciplines: FOR OBT POT aus dom
+    title: archbishop
+    clan: Lasombra
+    grouping: 5
   library_count: 82
   library_sections:
   - name: Master

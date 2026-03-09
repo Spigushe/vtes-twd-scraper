@@ -15,7 +15,55 @@ deck:
   crypt_min: 20
   crypt_max: 29
   crypt_avg: 6.08
-  crypt: []
+  crypt:
+  - count: 1
+    name: Kasim Bayar
+    capacity: 9
+    disciplines: CEL OBF THA aus pot
+    title: justicar
+    clan: Banu Haqim
+    grouping: 6
+  - count: 2
+    name: Farah Sarroub
+    capacity: 7
+    disciplines: CEL THA aus obf
+    title: prince
+    clan: Banu Haqim
+    grouping: 6
+  - count: 3
+    name: Kassandra Tassaki
+    capacity: 6
+    disciplines: CEL THA obf
+    title: prince
+    clan: Banu Haqim
+    grouping: 6
+  - count: 2
+    name: Khadija Al-Kindi
+    capacity: 6
+    disciplines: CEL OBF THA
+    title: primogen
+    clan: Banu Haqim
+    grouping: 6
+  - count: 1
+    name: Kalinda
+    capacity: 6
+    disciplines: CEL OBF tha
+    title: primogen
+    clan: Banu Haqim
+    grouping: 6
+  - count: 2
+    name: Warmaksan
+    capacity: 5
+    disciplines: THA cel obf
+    title: prince
+    clan: Banu Haqim
+    grouping: 6
+  - count: 1
+    name: Nayarana
+    capacity: 4
+    disciplines: THA cel
+    clan: Banu Haqim
+    grouping: 6
   library_count: 78
   library_sections:
   - name: Master

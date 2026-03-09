@@ -15,7 +15,55 @@ deck:
   crypt_min: 28
   crypt_max: 32
   crypt_avg: 7.42
-  crypt: []
+  crypt:
+  - count: 2
+    name: Anneke
+    capacity: 10
+    disciplines: AUS CEL PRE dom
+    title: justicar
+    clan: Toreador
+    grouping: 1
+  - count: 4
+    name: Anson
+    capacity: 8
+    disciplines: CEL PRE aus dom
+    title: prince
+    clan: Toreador
+    grouping: 1
+  - count: 1
+    name: Constanza Vinti
+    capacity: 8
+    disciplines: CEL DOM POT
+    title: prince
+    clan: Brujah
+    grouping: 2
+  - count: 1
+    name: Dónal O'Connor
+    capacity: 8
+    disciplines: CEL DOM POT
+    title: prince
+    clan: Brujah
+    grouping: 2
+  - count: 1
+    name: Marcellus
+    capacity: 8
+    disciplines: AUS CEL pro
+    title: prince
+    clan: Toreador
+    grouping: 2
+  - count: 2
+    name: Volker, The Puppet Prince
+    capacity: 5
+    disciplines: CEL pot
+    title: prince
+    clan: Brujah
+    grouping: 2
+  - count: 1
+    name: Sarah Brando
+    capacity: 3
+    disciplines: CEL
+    clan: Brujah antitribu
+    grouping: 2
   library_count: 85
   library_sections:
   - name: Master

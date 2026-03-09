@@ -15,7 +15,55 @@ deck:
   crypt_min: 10
   crypt_max: 22
   crypt_avg: 3.83
-  crypt: []
+  crypt:
+  - count: 2
+    name: Miguel Santo Domingo
+    capacity: 7
+    disciplines: POT PRE cel for
+    clan: Brujah antitribu
+    grouping: 3
+  - count: 1
+    name: Evangeline
+    capacity: 4
+    disciplines: cel pot pre
+    clan: Brujah antitribu
+    grouping: 2
+  - count: 1
+    name: Hugo
+    capacity: 4
+    disciplines: POT pre vic
+    clan: Brujah antitribu
+    grouping: 2
+  - count: 1
+    name: Mariano Pomposo
+    capacity: 4
+    disciplines: aus cel pot
+    clan: Brujah antitribu
+    grouping: 3
+  - count: 1
+    name: Victor Tolliver
+    capacity: 4
+    disciplines: CEL pot
+    clan: Brujah antitribu
+    grouping: 2
+  - count: 2
+    name: Jacob Bragg
+    capacity: 3
+    disciplines: cel pot
+    clan: Brujah antitribu
+    grouping: 2
+  - count: 2
+    name: Sarah Brando
+    capacity: 3
+    disciplines: CEL
+    clan: Brujah antitribu
+    grouping: 2
+  - count: 2
+    name: Frederick the Weak
+    capacity: 2
+    disciplines: pre
+    clan: Brujah antitribu
+    grouping: 2
   library_count: 74
   library_sections:
   - name: Master
