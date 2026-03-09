@@ -1,0 +1,210 @@
+name: French NC 2024
+location: Lyon, France
+date_start: '2024-10-19'
+rounds_format: 3R+F
+players_count: 50
+winner: Vincent Ripoll
+event_url: https://www.vekn.net/event-calendar/event/11754
+event_id: '11754'
+vp_comment: 2GW8 + 1.5vp in final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81851-twd-french-nc-2024-lyon-france
+deck:
+  name: Baron Protean
+  created_by: Ankha
+  description: "This deck is heavily inspired by Simo Tiippana's \"Garou Rim: Foreshadowing Destruction\" deck (TWD 11456)
+    but I tweaked it a lot, removing the \"bad\" 8-cap barons to include smaller PRO vampire and reworking the master module."
+  crypt_count: 12
+  crypt_min: 17
+  crypt_max: 29
+  crypt_avg: 5.92
+  crypt:
+  - count: 1
+    name: Sergio Bueno
+    capacity: 8
+    disciplines: OBF PRE PRO aus pot
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Ángel Guerrero
+    capacity: 7
+    disciplines: ANI DOM PRO
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Massimiliano
+    capacity: 7
+    disciplines: ANI FOR pro
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Valeriya Zinovieva
+    capacity: 7
+    disciplines: POT cel pre pro
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Vivian VI
+    capacity: 7
+    disciplines: PRE PRO obf tha
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Branimira
+    capacity: 6
+    disciplines: ANI dom pre pro
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Elisha Tucker
+    capacity: 6
+    disciplines: PRE cel obf pro
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Kamile Paukstys
+    capacity: 5
+    disciplines: PRO ani for
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Indira
+    capacity: 3
+    disciplines: PRO
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Joseph Fischer
+    capacity: 3
+    disciplines: PRO
+    clan: Gangrel antitribu
+    grouping: 5
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 27
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Anarch Troublemaker
+      comment: to burn any annoying weapon (Sniper, Ivory Bow) or to deliver the final blow
+    - count: 2
+      name: Carfax Abbey
+      comment: '"The blood is the life!"'
+    - count: 2
+      name: Club Illusion
+      comment: plan A for ousting
+    - count: 1
+      name: Dark Influences
+      comment: a great defensive card
+    - count: 1
+      name: Erciyes Fragments, The
+      comment: a last-minute addition, allowed me to oust to preys with their own bleed cards
+    - count: 2
+      name: Garibaldi-Meucci Museum
+      comment: as usual, gets back the bounce or intercept, or the killing votes
+    - count: 1
+      name: Papillon
+      comment: '"The blood is the life!"'
+    - count: 1
+      name: Poacher's Hunting Ground
+      comment: more blood, or if someone has already a Papillon or Carfax out
+    - count: 1
+      name: 'Powerbase: Los Angeles'
+      comment: required to cycle more
+    - count: 6
+      name: Protean
+      comment: we don't need 8 of them for the 8 Childe, as we never play them all. Can be used on some barons to give 
+        them PRO
+    - count: 1
+      name: Rötschreck
+      comment: nice ot have, but not crucial at all
+    - count: 1
+      name: Tribute to the Master
+      comment: never drawn at the right time
+    - count: 6
+      name: Villein
+      comment: probably better than Vessel / Blood Doll, allows to get more vampires out, and I rely on the HG to regain
+        blood
+  - name: Action
+    count: 10
+    cards:
+    - count: 1
+      name: Aranthebes, The Immortal
+      comment: to contest, always useful anyway
+    - count: 8
+      name: Childe of the Revolution
+      comment: bleed or Revolutionary fodder
+    - count: 1
+      name: Constant Revolution
+      comment: I removed it, then put it back because it's a great end-game card (before, it's just fun, no need to 
+        defend it)
+  - name: Political Action
+    count: 2
+    cards:
+    - count: 1
+      name: Eat the Rich
+      comment: easy to call, recursive with Garibaldi
+    - count: 1
+      name: Revolutionary Council
+      comment: endgame oust and/or threat removal (Ivory Bow or strong locations)
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 2
+      name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 6
+    cards:
+    - count: 4
+      name: Earth Control
+    - count: 2
+      name: Monkey Wrench
+      comment: for the surprise bleed boost, recursive
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Form of the Bat
+  - name: Reaction
+    count: 25
+    cards:
+    - count: 6
+      name: Bait and Switch
+    - count: 1
+      name: Delaying Tactics
+      comment: I added it for the EC, never used
+    - count: 16
+      name: Organized Resistance
+      comment: spam! spam! spam!
+    - count: 2
+      name: Protection Racket
+  - name: Combat
+    count: 14
+    cards:
+    - count: 6
+      name: Donnybrook
+      comment: agg threat is efficient (can be retrieved with Garibaldi)
+    - count: 8
+      name: Earth Meld

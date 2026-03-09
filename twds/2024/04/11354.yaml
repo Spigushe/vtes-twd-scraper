@@ -1,0 +1,150 @@
+name: Anarch Secession
+location: Valencia (Spain)
+date_start: '2024-04-14'
+rounds_format: 3R+F
+players_count: 13
+winner: Jose Vte "Millicent" Coll (
+event_url: https://www.vekn.net/event-calendar/event/11354
+event_id: '11354'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81367-twd-anarch-secession-valencia-spain-14-april-2024
+deck:
+  name: Concilium 14
+  created_by: Millicent
+  description: ''
+  crypt_count: 12
+  crypt_min: 18
+  crypt_max: 31
+  crypt_avg: 6.17
+  crypt:
+  - count: 3
+    name: Adrino Manauara
+    capacity: 8
+    disciplines: ANI DOM PRO pot
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 2
+    name: Ángel Guerrero
+    capacity: 7
+    disciplines: ANI DOM PRO
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 2
+    name: Branimira
+    capacity: 6
+    disciplines: ANI dom pre pro
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Neserian
+    capacity: 6
+    disciplines: ANI DOM cel pro
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Clara Hjortshøj
+    capacity: 5
+    disciplines: PRO ani aus dom
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Marialena
+    capacity: 5
+    disciplines: DOM PRO ani
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Whisper
+    capacity: 5
+    disciplines: ANI DOM pro
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Susie Kano
+    capacity: 3
+    disciplines: ani dom
+    clan: Tzimisce
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 14
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Anarch Troublemaker
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 1
+      name: Coven, The
+    - count: 2
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 6
+      name: Villein
+  - name: Action
+    count: 20
+    cards:
+    - count: 6
+      name: Childe of the Revolution
+    - count: 1
+      name: 'Fee Stake: Corte'
+    - count: 1
+      name: 'Fee Stake: New York'
+    - count: 1
+      name: 'Fee Stake: Perth'
+    - count: 1
+      name: 'Fee Stake: Seattle'
+    - count: 10
+      name: Govern the Unaligned
+  - name: Political Action
+    count: 14
+    cards:
+    - count: 3
+      name: Consanguineous Boon
+    - count: 3
+      name: Eat the Rich
+    - count: 3
+      name: Kine Resources Contested
+    - count: 3
+      name: Reckless Agitation
+    - count: 2
+      name: Revolutionary Council
+  - name: Action Modifier
+    count: 14
+    cards:
+    - count: 6
+      name: Earth Control
+    - count: 1
+      name: Foreshadowing Destruction
+    - count: 1
+      name: Monkey Wrench
+    - count: 6
+      name: Propaganda of the Deed
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Form of the Bat
+  - name: Reaction
+    count: 12
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 6
+      name: Organized Resistance
+  - name: Combat
+    count: 12
+    cards:
+    - count: 2
+      name: Donnybrook
+    - count: 4
+      name: Earth Meld
+    - count: 6
+      name: Form of Mist

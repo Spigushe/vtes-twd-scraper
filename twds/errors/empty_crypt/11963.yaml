@@ -1,0 +1,100 @@
+name: True Love's Face
+location: Mechelen, Belgium
+date_start: '2025-02-15'
+rounds_format: 3R+F
+players_count: 36
+winner: Rodinei Camargo
+event_url: https://www.vekn.net/event-calendar/event/11963
+event_id: '11963'
+vp_comment: '5 different countries were represented at the final table:'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82145-twd-true-love-s-face-mechelen-belgium-15-02-2025
+deck:
+  name: The Revenge of Ceoris
+  created_by: Nei
+  description: ''
+  crypt_count: 12
+  crypt_min: 12
+  crypt_max: 27
+  crypt_avg: 5.0
+  crypt: []
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 38
+    cards:
+    - count: 12
+      name: Ashur Tablets
+    - count: 1
+      name: Bleeding the Vine
+    - count: 3
+      name: Direct Intervention
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Information Highway
+    - count: 2
+      name: Jake Washington
+    - count: 1
+      name: Life Boon
+    - count: 6
+      name: Liquidation
+    - count: 7
+      name: Parthenon, The
+    - count: 2
+      name: Shard, London, The
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 2
+    cards:
+    - count: 1
+      name: Dominate Kine
+    - count: 1
+      name: Magic of the Smith
+  - name: Ally
+    count: 10
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 9
+      name: Nephandus
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Conditioning
+    - count: 7
+      name: Mirror Walk
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Murmur of the False Will
+  - name: Reaction
+    count: 24
+    cards:
+    - count: 9
+      name: Deflection
+    - count: 2
+      name: Delaying Tactics
+    - count: 4
+      name: Eyes of Argus
+    - count: 4
+      name: On the Qui Vive
+    - count: 2
+      name: Redirection
+    - count: 3
+      name: Telepathic Misdirection
+  - name: Event
+    count: 4
+    cards:
+    - count: 1
+      name: Scourge of the Enochians
+    - count: 3
+      name: Unmasking, The

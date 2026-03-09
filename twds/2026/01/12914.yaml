@@ -1,0 +1,155 @@
+name: 3a Jornada Liga Levante Norte
+location: Valencia, Spain
+date_start: '2026-01-11'
+rounds_format: 3R+F
+players_count: 30
+winner: Luis Castillejo Capilla
+event_url: https://www.vekn.net/event-calendar/event/12914
+event_id: '12914'
+vp_comment: 1GW6VP + 1GW1.5VP in the final (2GW7.5VP)
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82776-twd-3a-jornada-liga-levante-norte-valencia-11-january-2026
+deck:
+  name: Hecata Death seer
+  created_by: Mccastle
+  description: ''
+  crypt_count: 12
+  crypt_min: 13
+  crypt_max: 27
+  crypt_avg: 5.33
+  crypt:
+  - count: 3
+    name: Mora, the Death Seer
+    capacity: 7
+    disciplines: AUS FOR OBL ani
+    clan: Hecata
+    grouping: 6
+  - count: 2
+    name: Aitana, The Unholy
+    capacity: 6
+    disciplines: AUS OBL for tha
+    clan: Hecata
+    grouping: 6
+  - count: 2
+    name: Lenelle, Mambo of Birmingham
+    capacity: 6
+    disciplines: FOR OBL aus
+    clan: Hecata
+    grouping: 6
+  - count: 1
+    name: Monica Giovanni
+    capacity: 6
+    disciplines: AUS FOR OBL
+    clan: Hecata
+    grouping: 6
+  - count: 1
+    name: Gebeyehu Abdu
+    capacity: 5
+    disciplines: AUS OBL for
+    clan: Hecata
+    grouping: 6
+  - count: 1
+    name: Alek König
+    capacity: 3
+    disciplines: OBL
+    clan: Hecata
+    grouping: 6
+  - count: 1
+    name: Nadezhda
+    capacity: 3
+    disciplines: aus obl
+    clan: Hecata
+    grouping: 6
+  - count: 1
+    name: Peter St. John
+    capacity: 2
+    disciplines: obl
+    clan: Hecata
+    grouping: 6
+  library_count: 77
+  library_sections:
+  - name: Master
+    count: 17
+    cards:
+    - count: 1
+      name: Anarch Troublemaker
+    - count: 1
+      name: Biotech Company Hunting Ground
+    - count: 1
+      name: Cappadocian Crypt
+    - count: 1
+      name: Direct Intervention
+    - count: 6
+      name: Family Gathering
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Jake Washington
+    - count: 2
+      name: Perfectionist
+    - count: 1
+      name: 'Powerbase: Munich'
+    - count: 2
+      name: Vessel
+  - name: Action
+    count: 12
+    cards:
+    - count: 1
+      name: Arson
+    - count: 1
+      name: Dance of the Dead
+    - count: 2
+      name: Psychophagia
+    - count: 6
+      name: Shroud of Decay
+    - count: 2
+      name: Split the Veil
+  - name: Ally
+    count: 16
+    cards:
+    - count: 8
+      name: Aggressive Corpse
+    - count: 1
+      name: Fiorella, Empty One
+    - count: 1
+      name: Gianna di Canneto
+    - count: 5
+      name: Spectral Servitor
+    - count: 1
+      name: Tye Cooper
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 16
+    cards:
+    - count: 2
+      name: Freak Drive
+    - count: 5
+      name: Shadow Cast
+    - count: 5
+      name: Shadow Cloak
+    - count: 2
+      name: Stygian Shroud
+    - count: 2
+      name: Where the Veil Thins
+  - name: Reaction
+    count: 12
+    cards:
+    - count: 1
+      name: Delaying Tactics
+    - count: 2
+      name: Eyes of Argus
+    - count: 3
+      name: Shadow Sentinel
+    - count: 6
+      name: Telepathic Misdirection
+  - name: Event
+    count: 3
+    cards:
+    - count: 1
+      name: FBI Special Affairs Division
+    - count: 2
+      name: Unmasking, The

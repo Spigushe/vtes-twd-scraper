@@ -1,0 +1,149 @@
+name: 3th Road to Pulled Fang
+location: Prague, Czech Republic
+date_start: '2024-01-14'
+rounds_format: 3R+F
+players_count: 20
+winner: Jan Kočí
+event_url: https://www.vekn.net/event-calendar/event/11181
+event_id: '11181'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81175-twd-3th-road-to-pulled-fang-13-prague-czech-republic-14th-jan-2024
+deck:
+  name: Stanislava, lady of the wood
+  description: ''
+  crypt_count: 12
+  crypt_min: 36
+  crypt_max: 44
+  crypt_avg: 10.08
+  crypt:
+  - count: 5
+    name: Stanislava
+    capacity: 11
+    disciplines: ANI CEL DOM FOR PRO
+    title: inner circle
+    clan: Gangrel
+    grouping: 2
+  - count: 2
+    name: Xaviar (ADV)
+    capacity: 10
+    disciplines: ABO ANI FOR PRO aus cel pot
+    title: justicar
+    clan: Gangrel
+    grouping: 3
+  - count: 1
+    name: Genevieve
+    capacity: 10
+    disciplines: ANI FOR PRO aus dom
+    title: priscus
+    clan: Gangrel antitribu
+    grouping: 2
+  - count: 1
+    name: Hartmut Stover
+    capacity: 10
+    disciplines: CEL OBF PRO dom for
+    title: archbishop
+    clan: Gangrel antitribu
+    grouping: 3
+  - count: 2
+    name: Ingrid Rossler
+    capacity: 9
+    disciplines: ANI FOR PRO dom
+    title: prince
+    clan: Gangrel
+    grouping: 2
+  - count: 1
+    name: Mark Decker
+    capacity: 8
+    disciplines: CEL PRO ani for obf pot
+    title: prince
+    clan: Gangrel
+    grouping: 3
+  library_count: 80
+  library_sections:
+  - name: Master
+    count: 22
+    cards:
+    - count: 1
+      name: Backways
+    - count: 1
+      name: Coven, The
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Perfectionist
+    - count: 6
+      name: Villein
+    - count: 1
+      name: Wider View
+    - count: 6
+      name: Zillah's Valley
+  - name: Action
+    count: 7
+    cards:
+    - count: 7
+      name: Govern the Unaligned
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Seal of Veddartha
+  - name: Political Action
+    count: 10
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 3
+      name: Banishment
+    - count: 3
+      name: Parity Shift
+    - count: 1
+      name: Reins of Power
+  - name: Action Modifier
+    count: 18
+    cards:
+    - count: 3
+      name: Conditioning
+    - count: 6
+      name: Earth Control
+    - count: 1
+      name: Enkil Cog
+    - count: 4
+      name: Forced March
+    - count: 4
+      name: Instantaneous Transformation
+  - name: Action Modifier/Combat
+    count: 1
+    cards:
+    - count: 1
+      name: Rapid Change
+  - name: Action Modifier/Reaction
+    count: 1
+    cards:
+    - count: 1
+      name: Murmur of the False Will
+  - name: Reaction
+    count: 9
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 1
+      name: Guard Dogs
+    - count: 2
+      name: Sense the Savage Way
+  - name: Combat
+    count: 11
+    cards:
+    - count: 5
+      name: Earth Meld
+    - count: 6
+      name: Form of Mist

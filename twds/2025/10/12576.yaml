@@ -1,0 +1,156 @@
+name: All Hallow's Eve
+location: Gap, PA
+date_start: '2025-10-31'
+rounds_format: 2R+F
+players_count: 10
+winner: 'Winner: Albert Presto'
+event_url: https://www.vekn.net/event-calendar/event/12576
+event_id: '12576'
+vp_comment: 2GW + 3 VP in final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82749-twd-all-hallow-s-eve-gap-pa-usa-31-october-2025
+deck:
+  name: Basic Banu Business
+  created_by: Albert Presto
+  description: ''
+  crypt_count: 12
+  crypt_min: 16
+  crypt_max: 28
+  crypt_avg: 5.58
+  crypt:
+  - count: 1
+    name: Oluwafunmilayo
+    capacity: 8
+    disciplines: AUS CEL OBF THA
+    title: prince
+    clan: Banu Haqim
+    grouping: 6
+  - count: 2
+    name: Farah Sarroub
+    capacity: 7
+    disciplines: CEL THA aus obf
+    title: prince
+    clan: Banu Haqim
+    grouping: 6
+  - count: 2
+    name: Kassandra Tassaki
+    capacity: 6
+    disciplines: CEL THA obf
+    title: prince
+    clan: Banu Haqim
+    grouping: 6
+  - count: 1
+    name: Kalinda
+    capacity: 6
+    disciplines: CEL OBF tha
+    title: primogen
+    clan: Banu Haqim
+    grouping: 6
+  - count: 1
+    name: Khadija Al-Kindi
+    capacity: 6
+    disciplines: CEL OBF THA
+    title: primogen
+    clan: Banu Haqim
+    grouping: 6
+  - count: 2
+    name: Warmaksan
+    capacity: 5
+    disciplines: THA cel obf
+    title: prince
+    clan: Banu Haqim
+    grouping: 6
+  - count: 1
+    name: Greg Mazouni
+    capacity: 4
+    disciplines: cel obf tha
+    clan: Banu Haqim
+    grouping: 6
+  - count: 1
+    name: Nayarana
+    capacity: 4
+    disciplines: THA cel
+    clan: Banu Haqim
+    grouping: 6
+  - count: 1
+    name: Bijou
+    capacity: 3
+    disciplines: cel tha
+    clan: Banu Haqim
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 17
+    cards:
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Guardian Angel
+    - count: 4
+      name: "Haqim's Law: Retribution"
+    - count: 1
+      name: Market Square
+    - count: 3
+      name: Priority Contract
+    - count: 1
+      name: Vessel
+    - count: 5
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 14
+    cards:
+    - count: 5
+      name: Flurry of Action
+    - count: 5
+      name: Hunter's Mark
+    - count: 1
+      name: 'Khabar: Glory'
+    - count: 2
+      name: Magic of the Smith
+    - count: 1
+      name: Rutor's Hand
+  - name: Equipment
+    count: 3
+    cards:
+    - count: 2
+      name: .44 Magnum
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Retainer
+    count: 1
+    cards:
+    - count: 1
+      name: Mr. Winthrop
+  - name: Action Modifier/Combat
+    count: 10
+    cards:
+    - count: 5
+      name: Resist Earth's Grasp
+    - count: 5
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 9
+    cards:
+    - count: 9
+      name: 'Second Tradition: Domain'
+  - name: Combat
+    count: 36
+    cards:
+    - count: 5
+      name: Blur
+    - count: 2
+      name: Flash
+    - count: 14
+      name: Hunger of Marduk
+    - count: 2
+      name: Psyche!
+    - count: 4
+      name: Pursuit
+    - count: 5
+      name: Quickness
+    - count: 3
+      name: Rego Motum
+    - count: 1
+      name: Walk of Flame

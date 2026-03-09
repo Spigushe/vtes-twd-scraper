@@ -1,0 +1,172 @@
+name: 'Dortmunder: Columbus'
+location: Columbus OH, USA
+date_start: '2023-06-20'
+rounds_format: 2R+F
+players_count: 28
+winner: Darby Keeney
+event_url: https://www.vekn.net/event-calendar/event/10660
+event_id: '10660'
+vp_comment: 1GW+4, 2VP in finals, win on seeding
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80654-twd-dortmunder-columbus-oh-on-20-june-2023
+deck:
+  name: The Shape of Things to Come (MesoAmerican Wing Build)
+  created_by: Darby Keeney
+  description: A modification of "Flay the Game" (www.vekn.fr/decks/twd.htm
+  crypt_count: 12
+  crypt_min: 23
+  crypt_max: 36
+  crypt_avg: 7.58
+  crypt:
+  - count: 5
+    name: Xipe Totec
+    capacity: 9
+    disciplines: ANI AUS PRO VIC
+    title: archbishop
+    clan: Tzimisce
+    grouping: 5
+  - count: 2
+    name: Darvag, The Butcher of Rus
+    capacity: 8
+    disciplines: ANI VIC aus pot pro
+    clan: Tzimisce
+    grouping: 4
+  - count: 2
+    name: Stephen Bateson
+    capacity: 6
+    disciplines: ani aus tha vic
+    clan: Tzimisce
+    grouping: 5
+  - count: 1
+    name: Dr. Morrow, The Skindoctor
+    capacity: 5
+    disciplines: AUS VIC for
+    clan: Tzimisce
+    grouping: 5
+  - count: 1
+    name: Duality
+    capacity: 6
+    disciplines: AUS VIC ani
+    clan: Tzimisce
+    grouping: 4
+  - count: 1
+    name: Ludmijla Rakoczy
+    capacity: 7
+    disciplines: ANI AUS VIC
+    title: bishop
+    clan: Tzimisce
+    grouping: 5
+  library_count: 78
+  library_sections:
+  - name: Master
+    count: 24
+    cards:
+    - count: 5
+      name: British Museum, London, The
+    - count: 1
+      name: Coven, The
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Grooming the Protégé
+      comment: one of the few decks where this works
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: Perfectionist - could be a Direct Intervention?
+    - count: 5
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 8
+    cards:
+    - count: 1
+      name: Abbot
+    - count: 2
+      name: Deep Song
+      comment: could be Fiendish if the Femur gets removed, but the lock effect is good.
+    - count: 3
+      name: Fiendish Tongue
+    - count: 2
+      name: Under Siege
+      comment: a little harder to pull off in this build, but still worth duplication.
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: War Ghoul
+      comment: upgrade something randomly stolen.
+  - name: Equipment
+    count: 15
+    cards:
+    - count: 1
+      name: Blood Tears of Kephran
+    - count: 1
+      name: Bowl of Convergence
+    - count: 2
+      name: Cooler
+      comment: finances Xipe's special
+    - count: 1
+      name: Femur of Toomler
+      comment: Weirding Stone or Sargon Fragment would be better.
+    - count: 2
+      name: Heart of Nizchetus
+    - count: 7
+      name: Living Manse
+    - count: 1
+      name: Palatial Estate
+  - name: Action Modifier
+    count: 9
+    cards:
+    - count: 4
+      name: Changeling
+    - count: 2
+      name: Earth Control
+    - count: 3
+      name: Mind of the Wilds
+  - name: Action Modifier/Combat
+    count: 3
+    cards:
+    - count: 2
+      name: Plasmic Form
+    - count: 1
+      name: Rapid Change
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Form of the Bat
+      comment: another reason the Femur isn't helpful.
+  - name: Reaction
+    count: 11
+    cards:
+    - count: 3
+      name: Eyes of Argus
+    - count: 1
+      name: My Enemy's Enemy
+    - count: 2
+      name: On the Qui Vive
+    - count: 5
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 3
+    cards:
+    - count: 3
+      name: Form of Mist
+  - name: Event
+    count: 2
+    cards:
+    - count: 1
+      name: NRA PAC
+      comment: multiple unlocks with standing combat ends can't be bad.
+    - count: 1
+      name: Scourge of the Enochians
+      comment: Aranthebes might be better?

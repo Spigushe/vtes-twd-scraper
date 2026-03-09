@@ -1,0 +1,145 @@
+name: Revelation of Wrath
+location: Gulfport, Mississippi
+date_start: '2025-08-22'
+rounds_format: 2R+F
+players_count: 15
+winner: Kelly Lyons
+event_url: https://www.vekn.net/event-calendar/event/12183
+event_id: '12183'
+vp_comment: 1GW+6VP + 2VP in final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82533-twd-revelation-of-wrath
+deck:
+  name: Water Dog - Dream a Little DIRTY Dream
+  created_by: Kelly Lyons and Karl Schaefer
+  description: This deck started with a conversation with Karl Schaefer. I wasn’t going to be able to attend the NAC 
+    this year. I needed a way to live vicariously for the summer so, when Karl said he was seeking ideas for the Week of
+    Nightmares and Origins I jumped right in with suggestions.
+  crypt_count: 12
+  crypt_min: 12
+  crypt_max: 34
+  crypt_avg: 6.0
+  crypt:
+  - count: 2
+    name: Strohmann
+    capacity: 9
+    disciplines: ANI OBF POT THA dom
+    title: archbishop
+    clan: Nosferatu antitribu
+    grouping: 5
+  - count: 2
+    name: Lukas
+    capacity: 8
+    disciplines: ANI OBF POT pre ser
+    title: archbishop
+    clan: Nosferatu antitribu
+    grouping: 4
+  - count: 3
+    name: Greensleeves
+    capacity: 7
+    disciplines: ANI OBF for pot
+    title: priscus
+    clan: Nosferatu antitribu
+    grouping: 4
+  - count: 1
+    name: Frank Litzpar
+    capacity: 5
+    disciplines: OBF ani for pot
+    clan: Nosferatu antitribu
+    grouping: 4
+  - count: 1
+    name: Skulk
+    capacity: 4
+    disciplines: OBF ani
+    clan: Nosferatu antitribu
+    grouping: 5
+  - count: 1
+    name: Blister
+    capacity: 3
+    disciplines: obf pot
+    clan: Nosferatu antitribu
+    grouping: 4
+  - count: 1
+    name: Lubomira Hradok
+    capacity: 3
+    disciplines: OBF
+    clan: Nosferatu antitribu
+    grouping: 5
+  - count: 1
+    name: Old Neddacka
+    capacity: 2
+    disciplines: obf
+    clan: Nosferatu antitribu
+    grouping: 4
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 19
+    cards:
+    - count: 1
+      name: Admonitions, The
+    - count: 1
+      name: Black Forest Base
+    - count: 1
+      name: 'Communal Haven: Cathedral'
+    - count: 2
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 3
+      name: Hungry Coyote, The
+    - count: 4
+      name: Obfuscate
+    - count: 1
+      name: Shanty Town Hunting Ground
+    - count: 3
+      name: Villein
+  - name: Action
+    count: 28
+    cards:
+    - count: 5
+      name: Creation Rites
+    - count: 6
+      name: Embrace, The
+    - count: 12
+      name: Inside Dirt
+    - count: 5
+      name: Night Moves
+  - name: Political Action
+    count: 11
+    cards:
+    - count: 8
+      name: Consanguineous Boon
+    - count: 1
+      name: 'Crusade: Chicago'
+    - count: 1
+      name: 'Crusade: Istanbul'
+    - count: 1
+      name: 'Crusade: London'
+  - name: Action Modifier
+    count: 31
+    cards:
+    - count: 3
+      name: Change of Target
+    - count: 2
+      name: Cloak the Gathering
+    - count: 3
+      name: Cryptic Rider
+    - count: 3
+      name: Elder Impersonation
+    - count: 2
+      name: Faceless Night
+    - count: 5
+      name: Forgotten Labyrinth
+    - count: 4
+      name: Lost in Crowds
+    - count: 7
+      name: Private Audience
+    - count: 2
+      name: Veil the Legions
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Uncoiling, The

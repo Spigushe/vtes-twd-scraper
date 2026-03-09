@@ -1,0 +1,185 @@
+name: Primeirão - Itaocara 2024
+location: Itaocara, Rio de Janeiro, Brazil
+date_start: '2024-01-21'
+rounds_format: 2R+F
+players_count: 10
+winner: Matheus Duarte Faria
+event_url: https://www.vekn.net/event-calendar/event/11209
+event_id: '11209'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81172-twd-primeirao-itaocara-2024-brazil
+deck:
+  name: Malk Dom
+  created_by: Matheus
+  description: ''
+  crypt_count: 12
+  crypt_min: 18
+  crypt_max: 32
+  crypt_avg: 6.25
+  crypt:
+  - count: 2
+    name: Abraham Mellon
+    capacity: 8
+    disciplines: AUS DOM OBF for tha
+    clan: Malkavian
+    grouping: 6
+  - count: 2
+    name: Alexander Silverson
+    capacity: 8
+    disciplines: AUS DOM OBF pre
+    title: prince
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Gilbert Duane
+    capacity: 7
+    disciplines: AUS DOM OBF
+    title: baron
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Andi Liu
+    capacity: 6
+    disciplines: DOM aus obf pre
+    title: prince
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Darius Shirazi
+    capacity: 6
+    disciplines: AUS DOM obf
+    clan: Malkavian
+    grouping: 5
+  - count: 1
+    name: Donny Kowalczyk
+    capacity: 6
+    disciplines: AUS cel dom obf
+    title: prince
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Gelasia Fotiou
+    capacity: 6
+    disciplines: AUS DOM obf pre
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Colette
+    capacity: 5
+    disciplines: AUS OBF dom
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Sully
+    capacity: 4
+    disciplines: aus dom obf
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Ashley
+    capacity: 3
+    disciplines: dom obf
+    clan: Malkavian
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 1
+      name: Asylum Hunting Ground
+    - count: 1
+      name: Barrens, The
+    - count: 2
+      name: Cavalier
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Elder Library
+    - count: 1
+      name: Game of Malkav
+    - count: 2
+      name: Life in the City
+    - count: 1
+      name: Obfuscate
+    - count: 1
+      name: Sudden Reversal
+    - count: 1
+      name: Information Highway
+    - count: 3
+      name: Vessel
+  - name: Action
+    count: 17
+    cards:
+    - count: 12
+      name: Govern the Unaligned
+    - count: 1
+      name: Sanguine Instruction
+    - count: 2
+      name: Revelations
+    - count: 2
+      name: Scouting Mission
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of  Nizchetus
+  - name: Action Modifier
+    count: 36
+    cards:
+    - count: 3
+      name: Bonding
+    - count: 4
+      name: Cloak the Gathering
+    - count: 2
+      name: Command of the Beast
+    - count: 2
+      name: Conditioning
+    - count: 3
+      name: Elder Impersonation
+    - count: 1
+      name: Leverage
+    - count: 2
+      name: Mask of a Thousand Faces
+    - count: 5
+      name: Spying Mission
+    - count: 3
+      name: Faceless Night
+    - count: 4
+      name: Lost in Crowds
+    - count: 2
+      name: Foreshadowing Destruction
+    - count: 3
+      name: Threats
+    - count: 2
+      name: Veil the Legions
+  - name: Action Modifier/Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Swallowed by the Night
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 1
+      name: Gift of Sleep
+    - count: 1
+      name: Murmur of the False Will
+  - name: Reaction
+    count: 10
+    cards:
+    - count: 5
+      name: Deflection
+    - count: 3
+      name: Eyes of Argus
+    - count: 2
+      name: On the Qui Vive
+  - name: Combat
+    count: 4
+    cards:
+    - count: 4
+      name: No Trace
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Bitter and Sweet Story, The

@@ -1,0 +1,165 @@
+name: Origins - Friday 2
+location: Columbus (OH), USA
+date_start: '2023-06-23'
+rounds_format: 2R+F
+players_count: 32
+winner: Karl Schaefer
+event_url: https://www.vekn.net/event-calendar/event/10733
+event_id: '10733'
+vp_comment: 2GW7 + 2 vps in the final, won on seeding
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80634-origins-friday-2
+deck:
+  name: Death Star (Setite Version)
+  description: Another of my Death Star variants based on Matt Morgan's design.
+  crypt_count: 12
+  crypt_min: 4
+  crypt_max: 25
+  crypt_avg: 3.67
+  crypt:
+  - count: 1
+    name: Qufur am-Heru
+    capacity: 7
+    disciplines: OBF PRE SER cel tha
+    clan: Ministry
+    grouping: 2
+  - count: 1
+    name: Ezekiel, Lord of Montreal
+    capacity: 6
+    disciplines: PRE SER obf pot
+    clan: Ministry
+    grouping: 3
+  - count: 1
+    name: Hesha Ruhadze
+    capacity: 6
+    disciplines: SER ani obf pre
+    clan: Ministry
+    grouping: 2
+  - count: 1
+    name: Samat Ramal-Ra, Archon
+    capacity: 6
+    disciplines: OBF pre ser tha
+    clan: Ministry
+    grouping: 2
+  - count: 1
+    name: Count Ormonde
+    capacity: 5
+    disciplines: OBF dom pre ser
+    clan: Ministry
+    grouping: 2
+  - count: 1
+    name: Sir Marriot D'Urban
+    capacity: 5
+    disciplines: PRE aus obf ser
+    clan: Ministry
+    grouping: 2
+  - count: 1
+    name: Elizabeth Dimitros
+    capacity: 4
+    disciplines: SER obf
+    clan: Ministry
+    grouping: 3
+  library_count: 78
+  library_sections:
+  - name: Master
+    count: 16
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Archon Investigation
+    - count: 1
+      name: Barrens, The
+    - count: 2
+      name: Blood Doll
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Fear of Mekhet
+    - count: 1
+      name: Ferraille
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 3
+      name: Obfuscate
+    - count: 1
+      name: Opium Den
+    - count: 3
+      name: Villein
+  - name: Action
+    count: 19
+    cards:
+    - count: 2
+      name: Entrancement
+    - count: 1
+      name: 'Fee Stake: Boston'
+    - count: 1
+      name: 'Fee Stake: Corte'
+    - count: 1
+      name: 'Fee Stake: Los Angeles'
+    - count: 1
+      name: 'Fee Stake: New York'
+    - count: 1
+      name: 'Fee Stake: Perth'
+    - count: 1
+      name: 'Fee Stake: Seattle'
+    - count: 4
+      name: Temptation
+    - count: 7
+      name: Waters of Duat
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Saatet-ta
+  - name: Political Action
+    count: 15
+    cards:
+    - count: 4
+      name: Consanguineous Boon
+    - count: 1
+      name: Domain Challenge
+    - count: 2
+      name: Eat the Rich
+    - count: 1
+      name: Exclusion Principle
+    - count: 2
+      name: Firebrand
+    - count: 1
+      name: Kine Resources Contested
+    - count: 2
+      name: Reckless Agitation
+    - count: 2
+      name: Revolutionary Council
+  - name: Action Modifier
+    count: 23
+    cards:
+    - count: 2
+      name: Bewitching Oration
+    - count: 1
+      name: CrimethInc.
+    - count: 2
+      name: Cryptic Rider
+    - count: 3
+      name: Elder Impersonation
+    - count: 3
+      name: Faceless Night
+    - count: 2
+      name: Lost in Crowds
+    - count: 2
+      name: Memory Rift
+    - count: 3
+      name: Perfect Paragon
+    - count: 2
+      name: Spying Mission
+    - count: 3
+      name: Voter Captivation
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Swallowed by the Night
+  - name: Event
+    count: 2
+    cards:
+    - count: 2
+      name: Uncoiling, The

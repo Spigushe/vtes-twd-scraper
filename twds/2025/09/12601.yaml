@@ -1,0 +1,154 @@
+name: Liga GL/PT - Braga 25/26 (Ronda 1)
+location: DrawStep - Braga (Portugal)
+date_start: '2025-09-13'
+rounds_format: 2R+F
+players_count: 21
+winner: Sérgio Louçã Martins
+event_url: https://www.vekn.net/event-calendar/event/12601
+event_id: '12601'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82767-twd-liga-gl-pt-braga-25-26-ronda-1
+deck:
+  description: ''
+  crypt_count: 12
+  crypt_min: 36
+  crypt_max: 44
+  crypt_avg: 9.75
+  crypt:
+  - count: 4
+    name: Capuchin, The
+    capacity: 11
+    disciplines: AUS DOM FOR NEC THA THN
+    clan: Harbinger of Skulls
+    grouping: 5
+  - count: 1
+    name: Gabrielle di Righetti
+    capacity: 10
+    disciplines: ANI AUS DOM THA obf pot
+    title: justicar
+    clan: Tremere
+    grouping: 5
+  - count: 2
+    name: Gerald Windham
+    capacity: 9
+    disciplines: AUS DOM FOR THA
+    clan: Tremere
+    grouping: 5
+  - count: 2
+    name: Malgorzata
+    capacity: 9
+    disciplines: AUS DOM THA VIC pre
+    title: priscus
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 2
+    name: Orlando Oriundus
+    capacity: 9
+    disciplines: AUS DOM THA obf
+    title: bishop
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Strohmann
+    capacity: 9
+    disciplines: ANI OBF POT THA dom
+    title: archbishop
+    clan: Nosferatu antitribu
+    grouping: 5
+  library_count: 81
+  library_sections:
+  - name: Master
+    count: 20
+    cards:
+    - count: 4
+      name: Ashur Tablets
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Maabara
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Parthenon, The
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 5
+      name: Villein
+    - count: 1
+      name: Wash
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 7
+    cards:
+    - count: 6
+      name: Govern the Unaligned
+    - count: 1
+      name: Magic of the Smith
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+  - name: Equipment
+    count: 6
+    cards:
+    - count: 1
+      name: .44 Magnum
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Erebus Mask
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Ivory Bow
+    - count: 1
+      name: Signet of King Saul, The
+  - name: Action Modifier
+    count: 14
+    cards:
+    - count: 2
+      name: Bonding
+    - count: 1
+      name: Enkil Cog
+    - count: 1
+      name: Foreshadowing Destruction
+    - count: 4
+      name: Hag's Wrinkles
+    - count: 4
+      name: Mirror Walk
+    - count: 2
+      name: Under My Skin
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Murmur of the False Will
+  - name: Reaction
+    count: 28
+    cards:
+    - count: 4
+      name: Deflection
+    - count: 6
+      name: Eyes of Argus
+    - count: 1
+      name: Forced Awakening
+    - count: 4
+      name: My Enemy's Enemy
+    - count: 5
+      name: Obedience
+    - count: 4
+      name: On the Qui Vive
+    - count: 4
+      name: Telepathic Misdirection
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Scourge of the Enochians

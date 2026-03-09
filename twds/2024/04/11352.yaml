@@ -1,0 +1,133 @@
+name: Dallas Will of the Council
+location: Dallas Texas, USA
+date_start: '2024-04-26'
+rounds_format: 2R+F
+players_count: 19
+winner: Darby Keeney
+event_url: https://www.vekn.net/event-calendar/event/11352
+event_id: '11352'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81412-twd-dallas-will-of-the-council-dallas-tx-usa-26-april-2024
+deck:
+  name: A Fortnight of Bad Dreams
+  created_by: Darby Keeney
+  description: 'V2: “To Absurdity and Beyond!”'
+  crypt_count: 12
+  crypt_min: 16
+  crypt_max: 26
+  crypt_avg: 5.25
+  crypt:
+  - count: 2
+    name: Gathii
+    capacity: 5
+    disciplines: ANI PRE obf
+    clan: Ravnos
+    grouping: 7
+  - count: 2
+    name: Phaibun
+    capacity: 5
+    disciplines: OBF PRE ani
+    clan: Ravnos
+    grouping: 7
+  - count: 2
+    name: Roberto Rivamonte
+    capacity: 6
+    disciplines: ANI OBF PRE
+    clan: Ravnos
+    grouping: 7
+  - count: 1
+    name: Doc Martina
+    capacity: 6
+    disciplines: ANI OBF for pre
+    clan: Ravnos
+    grouping: 7
+  - count: 1
+    name: Jean-François
+    capacity: 4
+    disciplines: ani obf pre
+    clan: Ravnos
+    grouping: 7
+  - count: 1
+    name: Luciano Carvalho
+    capacity: 6
+    disciplines: ANI OBF pre
+    clan: Ravnos
+    grouping: 7
+  - count: 1
+    name: Oleg Kaprizov
+    capacity: 3
+    disciplines: obf pre
+    clan: Ravnos
+    grouping: 7
+  - count: 1
+    name: Sreelekha
+    capacity: 8
+    disciplines: ANI FOR OBF PRE
+    clan: Ravnos
+    grouping: 7
+  - count: 1
+    name: Zafira
+    capacity: 4
+    disciplines: PRE obf
+    clan: Ravnos
+    grouping: 7
+  library_count: 79
+  library_sections:
+  - name: Master
+    count: 16
+    cards:
+    - count: 1
+      name: Club Illusion
+    - count: 3
+      name: Dabbler
+      comment: almost exclusively blood gain
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 7
+      name: Villein
+      comment: generally down to 1 blood
+    - count: 2
+      name: Week of Nightmares
+  - name: Action
+    count: 21
+    cards:
+    - count: 18
+      name: Break the Bonds
+    - count: 3
+      name: Field Training
+      comment: ani before PRE before OBF
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Treasured Samadji
+      comment: discarded in 2 of 3 games
+  - name: Action Modifier
+    count: 39
+    cards:
+    - count: 2
+      name: Elder Impersonation
+    - count: 5
+      name: Faceless Night
+      comment: brutal with BtB
+    - count: 4
+      name: Lost in Crowds
+    - count: 12
+      name: Memory Rift
+      comment: delivery engine core component
+    - count: 4
+      name: Power of One
+    - count: 2
+      name: True Love's Face
+    - count: 10
+      name: Visions of Gehenna
+      comment: cycle at pre as needed
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Swallowed by the Night

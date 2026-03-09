@@ -1,0 +1,171 @@
+name: Blood on a Roundabout AKA Well-Aimed Car
+location: Bletchey, United Kingdom
+date_start: '2025-07-19'
+rounds_format: 3R+F
+players_count: 22
+winner: James Freimuller
+event_url: https://www.vekn.net/event-calendar/event/12353
+event_id: '12353'
+vp_comment: 2GW10 + 0.5 (1st seed) in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82470-twd-blood-on-a-roundabout-aka-well-aimed-car-bletchey-uk-19-jul-2025
+deck:
+  name: Exit Through the Gift Shop
+  created_by: James Freimuller
+  description: Tweaks on Jesper Boje's loot the museum deck with an expectation of ally spam appearing.
+  crypt_count: 12
+  crypt_min: 16
+  crypt_max: 28
+  crypt_avg: 5.42
+  crypt:
+  - count: 2
+    name: Gathii
+    capacity: 5
+    disciplines: ANI PRE obf
+    clan: Ravnos
+    grouping: 7
+  - count: 2
+    name: Phaibun
+    capacity: 5
+    disciplines: OBF PRE ani
+    clan: Ravnos
+    grouping: 7
+  - count: 2
+    name: Sreelekha
+    capacity: 8
+    disciplines: ANI FOR OBF PRE
+    clan: Ravnos
+    grouping: 7
+  - count: 1
+    name: Doc Martina
+    capacity: 6
+    disciplines: ANI OBF for pre
+    clan: Ravnos
+    grouping: 7
+  - count: 1
+    name: Jean-François
+    capacity: 4
+    disciplines: ani obf pre
+    clan: Ravnos
+    grouping: 7
+  - count: 1
+    name: Luciano Carvalho
+    capacity: 6
+    disciplines: ANI OBF pre
+    clan: Ravnos
+    grouping: 7
+  - count: 1
+    name: Oleg Kaprizov
+    capacity: 3
+    disciplines: obf pre
+    clan: Ravnos
+    grouping: 7
+  - count: 1
+    name: Roberto Rivamonte
+    capacity: 6
+    disciplines: ANI OBF PRE
+    clan: Ravnos
+    grouping: 7
+  - count: 1
+    name: Zafira
+    capacity: 4
+    disciplines: PRE obf
+    clan: Ravnos
+    grouping: 7
+  library_count: 87
+  library_sections:
+  - name: Master
+    count: 20
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Bleeding the Vine
+    - count: 6
+      name: British Museum, London, The
+    - count: 1
+      name: Club Illusion
+    - count: 3
+      name: Dabbler
+    - count: 1
+      name: Fortune Teller Shop
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Heidelberg Castle, Germany
+    - count: 3
+      name: Villein
+    - count: 2
+      name: Week of Nightmares
+  - name: Action
+    count: 17
+    cards:
+    - count: 16
+      name: Break the Bonds
+    - count: 1
+      name: Entrancement
+  - name: Equipment
+    count: 15
+    cards:
+    - count: 5
+      name: Anarch Manifesto, An
+    - count: 1
+      name: Blood Tears of Kephran
+    - count: 1
+      name: Body Bag
+    - count: 1
+      name: Concoction of Vitality
+    - count: 1
+      name: Cooler
+    - count: 1
+      name: Gran Madre di Dio, Italy
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Ritual Goblet
+    - count: 1
+      name: Shilmulo Tarot
+    - count: 1
+      name: Signet of King Saul, The
+    - count: 1
+      name: Treasured Samadji
+  - name: Action Modifier
+    count: 24
+    cards:
+    - count: 3
+      name: Cloak the Gathering
+    - count: 2
+      name: Elder Impersonation
+    - count: 1
+      name: Faceless Night
+    - count: 2
+      name: Lost in Crowds
+    - count: 6
+      name: Memory Rift
+    - count: 3
+      name: Spying Mission
+    - count: 2
+      name: True Love's Face
+    - count: 1
+      name: Veil the Legions
+    - count: 4
+      name: Visions of Gehenna
+  - name: Action Modifier/Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 5
+    cards:
+    - count: 1
+      name: Party Out Of Bounds
+    - count: 4
+      name: Visions of Zapathasura
+  - name: Event
+    count: 2
+    cards:
+    - count: 1
+      name: NRA PAC
+    - count: 1
+      name: Narrow Minds

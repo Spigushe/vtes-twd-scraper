@@ -1,0 +1,196 @@
+name: Taste of Vitae
+location: Escondido, California, United States
+date_start: '2025-03-15'
+rounds_format: 2R+F
+players_count: 12
+winner: Ian Lee
+event_url: https://www.vekn.net/event-calendar/event/12109
+event_id: '12109'
+vp_comment: 1GW4 + 1.5VP in final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82182-twd-taste-of-vitae-escondido-us-15-march-2025
+deck:
+  name: Promise of 619
+  description: ''
+  crypt_count: 12
+  crypt_min: 6
+  crypt_max: 35
+  crypt_avg: 5.25
+  crypt:
+  - count: 3
+    name: Guillaume Giovanni
+    capacity: 9
+    disciplines: CEL DOM NEC POT obt
+    clan: Giovanni
+    grouping: 4
+  - count: 3
+    name: Tupdog
+    capacity: 1
+    disciplines: POT VIS
+    clan: Gargoyle
+    grouping: 3
+  - count: 1
+    name: Gualtiero Ghiberti
+    capacity: 7
+    disciplines: DOM NEC cel pot tha
+    clan: Giovanni
+    grouping: 4
+  - count: 1
+    name: Lia Milliner
+    capacity: 3
+    disciplines: dom nec
+    clan: Giovanni
+    grouping: 3
+  - count: 1
+    name: Margaret Milliner
+    capacity: 5
+    disciplines: dom for nec pot pre
+    clan: Giovanni
+    grouping: 4
+  - count: 1
+    name: Primo Giovanni
+    capacity: 4
+    disciplines: dom nec pot
+    clan: Giovanni
+    grouping: 4
+  - count: 1
+    name: Raphaela Giovanni
+    capacity: 6
+    disciplines: DOM NEC pot pre
+    clan: Giovanni
+    grouping: 4
+  - count: 1
+    name: Yavu Matebo
+    capacity: 8
+    disciplines: AUS DOM NEC abo
+    clan: Nagaraja
+    grouping: 4
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 22
+    cards:
+    - count: 1
+      name: Barrens, The
+    - count: 2
+      name: Blood Doll
+    - count: 2
+      name: Direct Intervention
+    - count: 1
+      name: Dis Pater
+    - count: 1
+      name: Dummy Corporation
+    - count: 1
+      name: Heidelberg Castle, Germany
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Insurance Scam
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: Metro Underground
+    - count: 1
+      name: Necromancy
+    - count: 1
+      name: Parthenon, The
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: 'Powerbase: Cape Verde'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Vessel
+    - count: 4
+      name: Villein
+  - name: Action
+    count: 10
+    cards:
+    - count: 1
+      name: Computer Hacking
+    - count: 1
+      name: Dominate Kine
+    - count: 1
+      name: Grasp the Ghostly
+    - count: 1
+      name: Jar the Soul
+    - count: 4
+      name: Scouting Mission
+    - count: 2
+      name: Sudario Refraction
+  - name: Ally
+    count: 2
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 1
+      name: Leonardo, Mortician
+  - name: Equipment
+    count: 3
+    cards:
+    - count: 1
+      name: Gran Madre di Dio, Italy
+    - count: 1
+      name: Palatial Estate
+    - count: 1
+      name: Sacré-Cœur Cathedral, France
+  - name: Retainer
+    count: 2
+    cards:
+    - count: 1
+      name: J. S. Simmons, Esq.
+    - count: 1
+      name: Tasha Morgan
+  - name: Action Modifier
+    count: 12
+    cards:
+    - count: 4
+      name: Bonding
+    - count: 5
+      name: Call of the Hungry Dead
+    - count: 1
+      name: Leverage
+    - count: 1
+      name: Seduction
+    - count: 1
+      name: Sleeping Mind, The
+  - name: Action Modifier/Combat
+    count: 1
+    cards:
+    - count: 1
+      name: Breath of Thanatos
+  - name: Action Modifier/Reaction
+    count: 8
+    cards:
+    - count: 1
+      name: Murmur of the False Will
+    - count: 2
+      name: Promise of 1528
+    - count: 5
+      name: Spectral Divination
+  - name: Reaction
+    count: 19
+    cards:
+    - count: 5
+      name: Deflection
+    - count: 2
+      name: Delaying Tactics
+    - count: 1
+      name: Eluding the Arms of Morpheus
+    - count: 2
+      name: Obedience
+    - count: 7
+      name: On the Qui Vive
+    - count: 2
+      name: Redirection
+  - name: Combat
+    count: 11
+    cards:
+    - count: 2
+      name: Blight
+    - count: 2
+      name: Roundhouse
+    - count: 1
+      name: Spiritual Guidance
+    - count: 6
+      name: Spiritual Intervention

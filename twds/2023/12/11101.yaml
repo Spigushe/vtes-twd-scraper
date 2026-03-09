@@ -1,0 +1,141 @@
+name: Santa's Slay
+location: Liverpool, United Kingdom
+date_start: '2023-12-17'
+rounds_format: 2R+F
+players_count: 14
+winner: 'Winner: Paul Jones'
+event_url: https://www.vekn.net/player-registry/event/11101
+event_id: '11101'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81062-twd-santa-s-slay-liverpool-united-kingdom-17th-december-2023
+deck:
+  name: Man in the Mirror
+  description: ''
+  crypt_count: 12
+  crypt_min: 9
+  crypt_max: 40
+  crypt_avg: 6.67
+  crypt:
+  - count: 4
+    name: Goratrix
+    capacity: 10
+    disciplines: ANI AUS DOM THA vic
+    clan: Tremere antitribu
+    grouping: 2
+  - count: 1
+    name: Lambach
+    capacity: 10
+    disciplines: ANI AUS DOM VIC pre
+    title: cardinal
+    clan: Tzimisce
+    grouping: 2
+  - count: 3
+    name: Omaya
+    capacity: 7
+    disciplines: ANI AUS FOR pro
+    clan: Gangrel antitribu
+    grouping: 2
+  - count: 1
+    name: Devin Bisley
+    capacity: 5
+    disciplines: ANI AUS vic
+    clan: Tzimisce
+    grouping: 2
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 20
+    cards:
+    - count: 1
+      name: Antediluvian Awakening
+    - count: 1
+      name: Carver's Meat Packing and Storage
+    - count: 1
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Erciyes Fragments, The
+    - count: 1
+      name: Guardian Angel
+    - count: 1
+      name: 'Powerbase: Barranquilla'
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 2
+      name: Smiling Jack, The Anarch
+    - count: 1
+      name: University Hunting Ground
+    - count: 3
+      name: Vessel
+    - count: 3
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 5
+    cards:
+    - count: 1
+      name: Army of Rats
+    - count: 3
+      name: Magic of the Smith
+    - count: 1
+      name: Rutor's Hand
+  - name: Equipment
+    count: 5
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Ivory Bow
+    - count: 1
+      name: Ruins of Ceoris
+    - count: 1
+      name: Sport Bike
+  - name: Action Modifier
+    count: 1
+    cards:
+    - count: 1
+      name: Enkil Cog
+  - name: Reaction
+    count: 49
+    cards:
+    - count: 4
+      name: Cats' Guidance
+    - count: 3
+      name: Deflection
+    - count: 2
+      name: Delaying Tactics
+    - count: 6
+      name: Eagle's Sight
+    - count: 3
+      name: Enhanced Senses
+    - count: 8
+      name: Eyes of Argus
+    - count: 3
+      name: Obedience
+    - count: 2
+      name: On the Qui Vive
+    - count: 1
+      name: Precognition
+    - count: 4
+      name: Read the Winds
+    - count: 6
+      name: Sense the Savage Way
+    - count: 1
+      name: Spirit's Touch
+    - count: 6
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 10
+    cards:
+    - count: 1
+      name: Canine Horde
+    - count: 8
+      name: Carrion Crows
+    - count: 1
+      name: Still the Mortal Flesh

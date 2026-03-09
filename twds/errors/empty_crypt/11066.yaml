@@ -1,0 +1,97 @@
+name: Campeónato Nacional Mexicano 2023 (MX)
+location: Mexico City, Mexico
+date_start: '2023-11-26'
+rounds_format: 3R+F
+players_count: 20
+winner: 'Winner: Eduardo García ('
+event_url: https://www.vekn.net/event-calendar/event/11066
+event_id: '11066'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81009-campeonato-nacional-mexicano-2023
+deck:
+  name: Nocturnos new age.
+  created_by: Lalo Vtes
+  description: Mazo de nocturnos.
+  crypt_count: 12
+  crypt_min: 19
+  crypt_max: 32
+  crypt_avg: 6.5
+  crypt: []
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 12
+    cards:
+    - count: 1
+      name: Alborotador anarquista
+    - count: 1
+      name: Autopista de la información
+    - count: 1
+      name: Elysian Fields
+    - count: 2
+      name: Muñeca de sangre
+    - count: 2
+      name: Path of Night, The
+    - count: 2
+      name: Recipiente
+    - count: 1
+      name: Revés repentino
+    - count: 1
+      name: Sueños de la Esfinge
+    - count: 1
+      name: 'Zona de caza: Ámbito político'
+  - name: Action
+    count: 13
+    cards:
+    - count: 1
+      name: Far Mastery
+    - count: 12
+      name: Regir a los no alineados
+  - name: Ally
+    count: 12
+    cards:
+    - count: 12
+      name: Nocturn
+  - name: Action Modifier
+    count: 26
+    cards:
+    - count: 4
+      name: Command of the Beast
+    - count: 4
+      name: Condicionamiento
+    - count: 4
+      name: Empowering the Puppet King
+    - count: 2
+      name: Forma tenebrosa
+    - count: 6
+      name: Juego de sombras
+    - count: 2
+      name: Presagiar la destrucción
+    - count: 4
+      name: Velo de ausencia
+  - name: Reaction
+    count: 18
+    cards:
+    - count: 8
+      name: Desviación
+    - count: 6
+      name: En estado de alerta
+    - count: 1
+      name: Pulling Strings
+    - count: 2
+      name: Redirection
+    - count: 1
+      name: Tácticas dilatorias
+  - name: Combat
+    count: 8
+    cards:
+    - count: 2
+      name: Cuerpo sombrío
+    - count: 4
+      name: Mazmorra
+    - count: 2
+      name: Sepultura
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Bitter and Sweet Story, The

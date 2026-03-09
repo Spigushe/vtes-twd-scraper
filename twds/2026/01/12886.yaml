@@ -1,0 +1,183 @@
+name: Information Highway.
+location: Fortaleza - Ceará - Brazil
+date_start: '2026-01-11'
+rounds_format: 2R+F
+players_count: 23
+winner: Mauro César (
+event_url: https://www.vekn.net/event-calendar/event/12886
+event_id: '12886'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82777-twd-information-highway
+deck:
+  name: MiniTziGrel Barão Vermelho
+  created_by: Mauro César
+  description: ''
+  crypt_count: 12
+  crypt_min: 24
+  crypt_max: 30
+  crypt_avg: 6.67
+  crypt:
+  - count: 1
+    name: Adrino Manauara
+    capacity: 8
+    disciplines: ANI DOM PRO pot
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Sergio Bueno
+    capacity: 8
+    disciplines: OBF PRE PRO aus pot
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 2
+    name: Ángel Guerrero
+    capacity: 7
+    disciplines: ANI DOM PRO
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Massimiliano
+    capacity: 7
+    disciplines: ANI FOR pro
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Vivian VI
+    capacity: 7
+    disciplines: PRE PRO obf tha
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 2
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 2
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Branimira
+    capacity: 6
+    disciplines: ANI dom pre pro
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Elisha Tucker
+    capacity: 6
+    disciplines: PRE cel obf pro
+    title: baron
+    clan: Ministry
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 19
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 1
+      name: Fear of Mekhet
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Library Hunting Ground
+    - count: 3
+      name: Protean
+    - count: 3
+      name: Rötschreck
+    - count: 6
+      name: Villein
+    - count: 1
+      name: Zoo Hunting Ground
+  - name: Action
+    count: 5
+    cards:
+    - count: 3
+      name: Childe of the Revolution
+    - count: 1
+      name: Constant Revolution
+    - count: 1
+      name: Graverobbing
+  - name: Political Action
+    count: 2
+    cards:
+    - count: 1
+      name: Eat the Rich
+    - count: 1
+      name: Revolutionary Council
+  - name: Ally
+    count: 4
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 1
+      name: ECTU Operative
+    - count: 1
+      name: Gregory Winter
+    - count: 1
+      name: War Ghoul
+  - name: Retainer
+    count: 3
+    cards:
+    - count: 3
+      name: Raven Spy
+  - name: Action Modifier
+    count: 4
+    cards:
+    - count: 2
+      name: Earth Control
+    - count: 2
+      name: Monkey Wrench
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Form of the Cobra
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Form of the Bat
+  - name: Reaction
+    count: 30
+    cards:
+    - count: 8
+      name: Bait and Switch
+    - count: 6
+      name: Deep Ecology
+    - count: 2
+      name: Delaying Tactics
+    - count: 10
+      name: Organized Resistance
+    - count: 1
+      name: Poison Pill
+    - count: 3
+      name: Protection Racket
+  - name: Combat
+    count: 19
+    cards:
+    - count: 6
+      name: Donnybrook
+    - count: 3
+      name: Earth Meld
+    - count: 6
+      name: Form of Mist
+    - count: 3
+      name: Pack Alpha
+    - count: 1
+      name: Voracious Vermin

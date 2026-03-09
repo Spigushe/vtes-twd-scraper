@@ -1,0 +1,138 @@
+name: 'Powerbase: Bielsko-Biała'
+location: Bielsko-Biała, Poland
+date_start: '2024-06-29'
+rounds_format: 3R+F
+players_count: 16
+winner: Martin Weinmayer
+event_url: https://www.vekn.net/event-calendar/event/11457
+event_id: '11457'
+vp_comment: 3GW10vp + 4vp in the final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82233-twd-powerbase-bielsko-biala-bielsko-biala-poland-29-june-2024
+deck:
+  name: Back to table hate
+  created_by: Martin Weinmayer
+  description: ''
+  crypt_count: 12
+  crypt_min: 14
+  crypt_max: 25
+  crypt_avg: 4.92
+  crypt:
+  - count: 1
+    name: Ladislas Toth, The Torch
+    capacity: 7
+    disciplines: AUS DOM THA for
+    title: archbishop
+    clan: Tremere antitribu
+    grouping: 3
+  - count: 1
+    name: Elena Mendoza Vasquez
+    capacity: 6
+    disciplines: AUS THA dom obt
+    clan: Tremere antitribu
+    grouping: 3
+  - count: 1
+    name: Selena
+    capacity: 6
+    disciplines: AUS DOM THA
+    clan: Tremere antitribu
+    grouping: 3
+  - count: 1
+    name: Yasmin the Black
+    capacity: 6
+    disciplines: AUS THA dom pre
+    clan: Tremere antitribu
+    grouping: 3
+  - count: 5
+    name: Antonio d'Erlette
+    capacity: 5
+    disciplines: THA dom for pot
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Ember Wright
+    capacity: 3
+    disciplines: aus dom
+    clan: Tremere antitribu
+    grouping: 3
+  - count: 1
+    name: Lectora
+    capacity: 3
+    disciplines: aus tha
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Martin Franckel
+    capacity: 3
+    disciplines: AUS tha
+    clan: Tremere
+    grouping: 3
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 34
+    cards:
+    - count: 12
+      name: Ashur Tablets
+    - count: 2
+      name: Direct Intervention
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Infernal Pact
+    - count: 2
+      name: Jake Washington
+    - count: 6
+      name: Liquidation
+    - count: 6
+      name: Parthenon, The
+    - count: 2
+      name: Shard, London, The
+  - name: Action
+    count: 2
+    cards:
+    - count: 2
+      name: Magic of the Smith
+  - name: Ally
+    count: 10
+    cards:
+    - count: 10
+      name: Nephandus
+  - name: Equipment
+    count: 3
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Sniper Rifle
+  - name: Action Modifier
+    count: 10
+    cards:
+    - count: 2
+      name: Conditioning
+    - count: 8
+      name: Mirror Walk
+  - name: Reaction
+    count: 27
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 2
+      name: Delaying Tactics
+    - count: 6
+      name: Eyes of Argus
+    - count: 1
+      name: My Enemy's Enemy
+    - count: 6
+      name: On the Qui Vive
+    - count: 6
+      name: Telepathic Misdirection
+  - name: Event
+    count: 4
+    cards:
+    - count: 1
+      name: FBI Special Affairs Division
+    - count: 3
+      name: Unmasking, The

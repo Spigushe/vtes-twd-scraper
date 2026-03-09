@@ -1,0 +1,160 @@
+name: Rumo ao SAC 03
+location: Online
+date_start: '2024-05-13'
+rounds_format: 2R+F
+players_count: 13
+winner: Peitsa Suominen
+event_url: https://www.vekn.net/event-calendar/event/11445
+event_id: '11445'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81976-twd-rumo-ao-sac-03-online-may-13-2024
+deck:
+  name: British manse for brazil!
+  description: My take on british museum of london and living manses deck
+  crypt_count: 12
+  crypt_min: 15
+  crypt_max: 25
+  crypt_avg: 5.08
+  crypt:
+  - count: 2
+    name: Caliban
+    capacity: 6
+    disciplines: ANI AUS VIC
+    clan: Tzimisce
+    grouping: 2
+  - count: 2
+    name: Corine Marcón
+    capacity: 6
+    disciplines: AUS VIC ani
+    clan: Tzimisce
+    grouping: 2
+  - count: 1
+    name: Ana Rita Montaña
+    capacity: 5
+    disciplines: VIC aus dom obf
+    clan: Tzimisce
+    grouping: 3
+  - count: 1
+    name: Devin Bisley
+    capacity: 5
+    disciplines: ANI AUS vic
+    clan: Tzimisce
+    grouping: 2
+  - count: 1
+    name: Elizabeth Westcott
+    capacity: 5
+    disciplines: AUS ani cel vic
+    clan: Tzimisce
+    grouping: 3
+  - count: 1
+    name: Horatio
+    capacity: 2
+    disciplines: vic
+    clan: Tzimisce
+    grouping: 2
+  - count: 1
+    name: Kazimir Savostin
+    capacity: 7
+    disciplines: AUS VIC ani pot
+    clan: Tzimisce
+    grouping: 3
+  - count: 1
+    name: Lolita Houston
+    capacity: 4
+    disciplines: VIC aus
+    clan: Tzimisce
+    grouping: 2
+  - count: 1
+    name: Rose, The
+    capacity: 5
+    disciplines: PRE VIC aus
+    clan: Tzimisce
+    grouping: 3
+  - count: 1
+    name: Terrence
+    capacity: 4
+    disciplines: ani aus vic
+    clan: Tzimisce
+    grouping: 2
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 23
+    cards:
+    - count: 2
+      name: Anarch Troublemaker
+    - count: 5
+      name: British Museum, London, The
+    - count: 1
+      name: Centralized Background Check
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Library Hunting Ground
+    - count: 1
+      name: Life in the City
+    - count: 1
+      name: Misdirection
+    - count: 1
+      name: Path of Metamorphosis, The
+    - count: 2
+      name: Pentex(TM) Subversion
+    - count: 2
+      name: Rötschreck
+    - count: 1
+      name: Vicissitude
+    - count: 2
+      name: Villein
+  - name: Action
+    count: 13
+    cards:
+    - count: 2
+      name: Abbot
+    - count: 11
+      name: Fiendish Tongue
+  - name: Equipment
+    count: 7
+    cards:
+    - count: 7
+      name: Living Manse
+  - name: Action Modifier
+    count: 12
+    cards:
+    - count: 10
+      name: Changeling
+    - count: 2
+      name: Mind of the Wilds
+  - name: Action Modifier/Combat
+    count: 5
+    cards:
+    - count: 5
+      name: Plasmic Form
+  - name: Reaction
+    count: 17
+    cards:
+    - count: 1
+      name: Delaying Tactics
+    - count: 4
+      name: Eyes of Argus
+    - count: 3
+      name: My Enemy's Enemy
+    - count: 4
+      name: On the Qui Vive
+    - count: 5
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 13
+    cards:
+    - count: 3
+      name: Breath of the Dragon
+    - count: 6
+      name: Chiropteran Marauder
+    - count: 2
+      name: Inner Essence
+    - count: 2
+      name: Quick Jab

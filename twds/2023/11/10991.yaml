@@ -1,0 +1,91 @@
+name: 'V:TES Mechelen: Peace Treaty'
+location: Mechelen, Belgium
+date_start: '2023-11-11'
+rounds_format: 3R+F
+players_count: 20
+winner: Jozef Patrnciak
+event_url: https://www.vekn.net/event-calendar/event/10991
+event_id: '10991'
+vp_comment: 'Final Seating: Hector (Carna wall) > Bram (Auspex Cel Guns) > Bart (Black Hand Assamite) > Jozef (Tupdog emerald
+  summon history) > Koen (Wienie Dem)'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80963-twd-v-tes-mechelen-peace-treaty-mechelen-november-11-2023
+deck:
+  name: Emerald Tupdog Breeding Programme
+  created_by: Jozef Patrnciak
+  description: ''
+  crypt_count: 47
+  crypt_min: 4
+  crypt_max: 7
+  crypt_avg: 1.06
+  crypt:
+  - count: 1
+    name: Saiz
+    capacity: 3
+    disciplines: aus dom
+    clan: Tremere antitribu
+    grouping: 3
+  - count: 1
+    name: Heinrick Schlempt
+    capacity: 2
+    disciplines: tha
+    clan: Tremere antitribu
+    grouping: 2
+  - count: 45
+    name: Tupdog
+    capacity: 1
+    disciplines: POT VIS
+    clan: Gargoyle
+    grouping: 3
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 36
+    cards:
+    - count: 11
+      name: Agent of Power
+    - count: 2
+      name: Archon Investigation
+    - count: 1
+      name: Direct Intervention
+    - count: 8
+      name: Inceptor
+    - count: 7
+      name: Liquidation
+    - count: 7
+      name: Parthenon, The
+  - name: Action
+    count: 20
+    cards:
+    - count: 7
+      name: Scrounging
+    - count: 13
+      name: Summon History
+  - name: Ally
+    count: 14
+    cards:
+    - count: 11
+      name: Emerald Legionnaire
+    - count: 1
+      name: Gianna di Canneto
+    - count: 1
+      name: Mylan Horseed
+    - count: 1
+      name: Veneficti
+  - name: Action Modifier
+    count: 8
+    cards:
+    - count: 8
+      name: Skin of the Chameleon
+  - name: Reaction
+    count: 11
+    cards:
+    - count: 6
+      name: Delaying Tactics
+    - count: 5
+      name: Voices of the Castle
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Unmasking, The

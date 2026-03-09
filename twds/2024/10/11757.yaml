@@ -1,0 +1,613 @@
+name: Vampiric Disease
+location: Hatvan, Hungary
+date_start: '2024-10-20'
+rounds_format: 3R+F
+players_count: 19
+winner: Tamás Glied's Tournament Winning Deck with 1,5 VPs in the Finals
+event_url: https://www.vekn.net/event-calendar/event/11757
+event_id: '11757'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81845-twd-vampiric-disease
+deck:
+  name: Tzimish Baron Hatvan
+  created_by: Erdős Gyula
+  description: ''
+  crypt_count: 12
+  crypt_min: 21
+  crypt_max: 31
+  crypt_avg: 6.42
+  crypt:
+  - count: 3
+    name: Adrino Manauara
+    capacity: 8
+    disciplines: ANI DOM PRO pot
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 2
+    name: Ángel Guerrero
+    capacity: 7
+    disciplines: ANI DOM PRO
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Branimira
+    capacity: 6
+    disciplines: ANI dom pre pro
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Neserian
+    capacity: 6
+    disciplines: ANI DOM cel pro
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Clara Hjortshøj
+    capacity: 5
+    disciplines: PRO ani aus dom
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Kamile Paukstys
+    capacity: 5
+    disciplines: PRO ani for
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Marialena
+    capacity: 5
+    disciplines: DOM PRO ani
+    clan: Tzimisce
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 18
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Carfax Abbey
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 2
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 4
+      name: Villein
+    - count: 2
+      name: Wider View
+  - name: Action
+    count: 15
+    cards:
+    - count: 3
+      name: Deep Song
+    - count: 12
+      name: Govern the Unaligned
+  - name: Political Action
+    count: 2
+    cards:
+    - count: 1
+      name: Eat the Rich
+    - count: 1
+      name: Revolutionary Council
+  - name: Retainer
+    count: 1
+    cards:
+    - count: 1
+      name: Mr. Winthrop
+  - name: Action Modifier
+    count: 8
+    cards:
+    - count: 4
+      name: Conditioning
+    - count: 4
+      name: Earth Control
+  - name: Action Modifier/Combat
+    count: 1
+    cards:
+    - count: 1
+      name: Rapid Change
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Form of the Bat
+  - name: Reaction
+    count: 25
+    cards:
+    - count: 4
+      name: Bait and Switch
+    - count: 4
+      name: Deep Ecology
+    - count: 3
+      name: Deflection
+    - count: 3
+      name: Delaying Tactics
+    - count: 1
+      name: On the Qui Vive
+    - count: 7
+      name: Organized Resistance
+    - count: 2
+      name: Protection Racket
+    - count: 1
+      name: Redirection
+  - name: Combat
+    count: 16
+    cards:
+    - count: 9
+      name: Earth Meld
+    - count: 7
+      name: Form of Mist
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 4
+      name: Sergio Bueno         8 OBF PRE PRO aus pot   baron   Ministry:6
+    - count: 2
+      name: Vivian VI            7 PRE PRO obf tha       baron   Ministry:6
+    - count: 1
+      name: Atiena               6 CEL obf pot pre       baron   Brujah:6
+    - count: 1
+      name: Elisha Tucker        6 PRE cel obf pro       baron   Ministry:6
+    - count: 1
+      name: Jacques Rouge        6 OBF ani pot pre       baron   Nosferatu:6
+    - count: 1
+      name: Aluc Romas de Leon   5 PRE aus obf pro               Ministry:6
+    - count: 1
+      name: Jenny Silver         5 PRE PRO obf                   Ministry:6
+    - count: 1
+      name: Anarch Convert       1                               Caitiff:any
+  - name: Library
+    count: 78
+    cards: []
+  - name: Master
+    count: 23
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 6
+      name: Ashur Tablets
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Coven, The
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fear of Mekhet
+    - count: 1
+      name: Ferraille
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Heidelberg Castle, Germany
+    - count: 1
+      name: Opium Den
+    - count: 2
+      name: Parthenon, The
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 2
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 8
+    cards:
+    - count: 6
+      name: Chameleon
+    - count: 1
+      name: 'Fee Stake: Corte'
+    - count: 1
+      name: 'Fee Stake: Perth'
+  - name: Political Action
+    count: 7
+    cards:
+    - count: 2
+      name: Banishment
+    - count: 1
+      name: Exclusion Principle
+    - count: 1
+      name: Firebrand
+    - count: 1
+      name: Reckless Agitation
+    - count: 1
+      name: Revolutionary Council
+    - count: 1
+      name: Rumors of Gehenna
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 2
+      name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 28
+    cards:
+    - count: 2
+      name: Bewitching Oration
+    - count: 4
+      name: Cloak the Gathering
+    - count: 4
+      name: CrimethInc.
+    - count: 1
+      name: Elder Impersonation
+    - count: 1
+      name: Forgotten Labyrinth
+    - count: 3
+      name: Lost in Crowds
+    - count: 4
+      name: Memory Rift
+    - count: 1
+      name: Monkey Wrench
+    - count: 2
+      name: Perfect Paragon
+    - count: 2
+      name: Smoke and Mirrors
+    - count: 4
+      name: Voter Captivation
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Force of Personality
+  - name: Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Bait and Switch
+  - name: Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Form of Mist
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 1
+      name: Massimiliano            7 ANI FOR pro       baron   Gangrel:6
+    - count: 2
+      name: Casey Snyder            6 PRO ani cel for   baron   Gangrel:6
+    - count: 2
+      name: Kuyén                   6 ANI PRO           baron   Gangrel:6
+    - count: 1
+      name: André the Manipulator   6 FOR PRO                   Gangrel:5
+    - count: 1
+      name: Kamile Paukstys         5 PRO ani for               Gangrel:6
+    - count: 1
+      name: Hanna Nokelainen        4 ani for pro               Gangrel:6
+    - count: 1
+      name: Nathan Turner           4 PRO ani                   Gangrel:6
+    - count: 1
+      name: Indira                  3 PRO                       Gangrel:6
+    - count: 1
+      name: Joaquín de Cádiz        3 for pro                   Gangrel:6
+    - count: 1
+      name: Ruslan Fedorenko        2 pro                       Gangrel:6
+  - name: Library
+    count: 90
+    cards: []
+  - name: Master
+    count: 21
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Backways
+    - count: 1
+      name: Carfax Abbey
+    - count: 2
+      name: Club Illusion
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Ecoterrorists
+    - count: 1
+      name: Ennoia's Theater
+    - count: 1
+      name: Gangrel Revel
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 2
+      name: 'Powerbase: Savannah'
+    - count: 5
+      name: Villein
+    - count: 1
+      name: Zoo Hunting Ground
+  - name: Action
+    count: 18
+    cards:
+    - count: 1
+      name: Rewilding
+    - count: 17
+      name: Thing
+  - name: Political Action
+    count: 2
+    cards:
+    - count: 2
+      name: Revolutionary Council
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Double Deuce
+  - name: Equipment
+    count: 3
+    cards:
+    - count: 2
+      name: Camera Phone
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Retainer
+    count: 3
+    cards:
+    - count: 1
+      name: Mr. Winthrop
+    - count: 2
+      name: Raven Spy
+  - name: Action Modifier
+    count: 5
+    cards:
+    - count: 3
+      name: Earth Control
+    - count: 2
+      name: Monkey Wrench
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Rapid Change
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Form of the Bat
+  - name: Reaction
+    count: 19
+    cards:
+    - count: 7
+      name: Bait and Switch
+    - count: 6
+      name: Deep Ecology
+    - count: 6
+      name: Organized Resistance
+  - name: Combat
+    count: 12
+    cards:
+    - count: 8
+      name: Earth Meld
+    - count: 4
+      name: Form of Mist
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 3
+      name: Muricia           7 ANI PRE SPI          Ahrimane:4
+    - count: 1
+      name: Gentha Shale      6 ANI PRE pot spi      Ahrimane:4
+    - count: 3
+      name: Effie Lowery      5 ANI SPI obf          Ahrimane:4
+    - count: 1
+      name: Sahana            5 ANI pre pro spi      Ahrimane:4
+    - count: 1
+      name: Stick             3 ANI                  Nosferatu antitribu:4
+    - count: 1
+      name: Darlene Killian   2 ani spi              Ahrimane:5
+    - count: 1
+      name: Malcolm           2 ani                  Gangrel:5
+    - count: 1
+      name: Walker Grimes     1 ani                  Caitiff:5
+  - name: Library
+    count: 90
+    cards: []
+  - name: Master
+    count: 13
+    cards:
+    - count: 1
+      name: Archon Investigation
+    - count: 1
+      name: Blood Doll
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Fame
+    - count: 1
+      name: KRCG News Radio
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Smiling Jack, The Anarch
+    - count: 2
+      name: Vessel
+    - count: 2
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 12
+    cards:
+    - count: 1
+      name: Aranthebes, The Immortal
+    - count: 1
+      name: Army of Rats
+    - count: 9
+      name: Deep Song
+    - count: 1
+      name: Entrancement
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Sniper Rifle
+  - name: Retainer
+    count: 2
+    cards:
+    - count: 1
+      name: Mr. Winthrop
+    - count: 1
+      name: Raven Spy
+  - name: Action Modifier/Combat
+    count: 8
+    cards:
+    - count: 8
+      name: Swiftness of the Stag
+  - name: Reaction
+    count: 27
+    cards:
+    - count: 3
+      name: Cats' Guidance
+    - count: 2
+      name: Delaying Tactics
+    - count: 5
+      name: Ears of the Hare
+    - count: 4
+      name: Falcon's Eye
+    - count: 1
+      name: Forced Awakening
+    - count: 2
+      name: On the Qui Vive
+    - count: 10
+      name: Speak with Spirits
+  - name: Combat
+    count: 27
+    cards:
+    - count: 8
+      name: Aid from Bats
+    - count: 9
+      name: Carrion Crows
+    - count: 4
+      name: Target Vitals
+    - count: 4
+      name: Taste of Vitae
+    - count: 2
+      name: Voracious Vermin
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 5
+      name: Cybele                    10 ANI DAI OBF PRE SER THA             Baali:4
+    - count: 3
+      name: Annazir                    9 DAI OBF POT PRE           2 votes   Baali:5
+    - count: 1
+      name: Azaneal                    7 DAI OBF OBT pre tha                 Baali:4
+    - count: 3
+      name: Maureen, Dark Priestess    6 DAI PRE dom obf           1 vote    Baali:4
+  - name: Library
+    count: 73
+    cards: []
+  - name: Master
+    count: 33
+    cards:
+    - count: 1
+      name: Archon Investigation
+    - count: 9
+      name: Ashur Tablets
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Jake Washington
+    - count: 2
+      name: Metro Underground
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Parthenon, The
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: Perfectionist
+    - count: 1
+      name: Secure Haven
+    - count: 7
+      name: Tend the Flock
+    - count: 3
+      name: Villein
+    - count: 1
+      name: Wash
+  - name: Action
+    count: 7
+    cards:
+    - count: 1
+      name: Contagion
+    - count: 1
+      name: Rutor's Hand
+    - count: 5
+      name: Unleash Hell's Fury
+  - name: Ally
+    count: 2
+    cards:
+    - count: 1
+      name: Mylan Horseed
+    - count: 1
+      name: Veneficti
+  - name: Action Modifier
+    count: 11
+    cards:
+    - count: 2
+      name: Elder Impersonation
+    - count: 2
+      name: Enkil Cog
+    - count: 2
+      name: Faceless Night
+    - count: 1
+      name: I am Legion
+    - count: 4
+      name: Lost in Crowds
+  - name: Action Modifier/Reaction
+    count: 7
+    cards:
+    - count: 7
+      name: Sense the Sin
+  - name: Reaction
+    count: 8
+    cards:
+    - count: 1
+      name: Delaying Tactics
+    - count: 7
+      name: Visions of Zapathasura
+  - name: Combat
+    count: 5
+    cards:
+    - count: 2
+      name: Flames of the Netherworld
+    - count: 3
+      name: Majesty

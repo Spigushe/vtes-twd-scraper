@@ -1,0 +1,137 @@
+name: 'Danse Macabre: Last Danse'
+location: Vidor, Texas USA
+date_start: '2023-12-03'
+rounds_format: 2R+F
+players_count: 15
+winner: Marshall Hogue
+event_url: https://www.vekn.net/event-calendar/event/10834
+event_id: '10834'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81035-twd-danse-macabre-last-dance-vidor-tx-usa-december-3-2023
+deck:
+  name: Win, Lutz, or Draw
+  description: Mild tweaks to my first version, but reliable all the same. We tap, we cap.
+  crypt_count: 12
+  crypt_min: 34
+  crypt_max: 44
+  crypt_avg: 10.0
+  crypt:
+  - count: 4
+    name: Lutz von Hohenzollern
+    capacity: 11
+    disciplines: AUS DEM OBF PRE pot
+    title: inner circle
+    clan: Malkavian
+    grouping: 4
+  - count: 2
+    name: Adana de Sforza
+    capacity: 11
+    disciplines: CEL OBF POT PRE PRO aus
+    title: inner circle
+    clan: Brujah
+    grouping: 4
+  - count: 2
+    name: Dmitra Ilyanova
+    capacity: 9
+    disciplines: CEL FOR POT PRE obf
+    title: justicar
+    clan: Brujah
+    grouping: 5
+  - count: 2
+    name: Undele
+    capacity: 9
+    disciplines: CEL FOR obf pre ser
+    title: magaji
+    clan: Ishtarri
+    grouping: 5
+  - count: 1
+    name: Rafael de Corazon
+    capacity: 11
+    disciplines: AUS CEL DOM OBF PRE
+    title: inner circle
+    clan: Toreador
+    grouping: 4
+  - count: 1
+    name: Stavros
+    capacity: 7
+    disciplines: AUS OBF PRE dem
+    title: priscus
+    clan: Malkavian antitribu
+    grouping: 4
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 18
+    cards:
+    - count: 3
+      name: Information Highway
+    - count: 8
+      name: Minion Tap
+    - count: 2
+      name: Wider View
+    - count: 5
+      name: Zillah's Valley
+  - name: Equipment
+    count: 3
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 2
+      name: Helicopter
+  - name: Political Action
+    count: 24
+    cards:
+    - count: 2
+      name: Alastor
+    - count: 2
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 2
+      name: Ancilla Empowerment
+    - count: 3
+      name: Banishment
+    - count: 3
+      name: Conservative Agitation
+    - count: 1
+      name: Disputed Territory
+    - count: 8
+      name: Kine Resources Contested
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+  - name: Action Modifier
+    count: 33
+    cards:
+    - count: 3
+      name: Awe
+    - count: 3
+      name: Bewitching Oration
+    - count: 2
+      name: Elder Impersonation
+    - count: 4
+      name: Forgotten Labyrinth
+    - count: 5
+      name: Lost in Crowds
+    - count: 6
+      name: Perfect Paragon
+    - count: 10
+      name: Voter Captivation
+  - name: Action Modifier/Combat
+    count: 7
+    cards:
+    - count: 4
+      name: Force of Personality
+    - count: 3
+      name: Swallowed by the Night
+  - name: Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Majesty
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Bitter and Sweet Story, The

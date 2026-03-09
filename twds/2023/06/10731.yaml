@@ -1,0 +1,159 @@
+name: Origins - Thursday 2
+location: Columbus (OH), USA
+date_start: '2023-06-22'
+rounds_format: 2R+F
+players_count: 30
+winner: Kelly Schultz
+event_url: https://www.vekn.net/event-calendar/event/10731
+event_id: '10731'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80667-twd-origins-thursday-2
+deck:
+  name: Adona de Bleedzooka
+  description: ''
+  crypt_count: 12
+  crypt_min: 12
+  crypt_max: 44
+  crypt_avg: 7.0
+  crypt:
+  - count: 5
+    name: Adana de Sforza
+    capacity: 11
+    disciplines: CEL OBF POT PRE PRO aus
+    title: inner circle
+    clan: Brujah
+    grouping: 4
+  - count: 2
+    name: Leo Washington
+    capacity: 2
+    disciplines: cel pro
+    clan: Gangrel antitribu
+    grouping: 4
+  - count: 1
+    name: Alex Camille
+    capacity: 5
+    disciplines: PRO cel for obf
+    clan: Gangrel antitribu
+    grouping: 5
+  - count: 1
+    name: Axel Von Anders
+    capacity: 5
+    disciplines: PRE cel obf pot
+    clan: Brujah antitribu
+    grouping: 4
+  - count: 1
+    name: Loonar
+    capacity: 4
+    disciplines: PRE cel
+    clan: Toreador antitribu
+    grouping: 4
+  - count: 1
+    name: Reginald Moore
+    capacity: 4
+    disciplines: PRE
+    title: primogen
+    clan: Brujah
+    grouping: 4
+  - count: 1
+    name: Xendil Charmer
+    capacity: 7
+    disciplines: CEL PRO SER obf
+    title: priscus
+    clan: Gangrel antitribu
+    grouping: 4
+  library_count: 69
+  library_sections:
+  - name: Master
+    count: 11
+    cards:
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Metro Underground
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 2
+      name: Perfectionist
+    - count: 1
+      name: Vessel
+    - count: 2
+      name: Villein
+    - count: 1
+      name: Wash
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 13
+    cards:
+    - count: 5
+      name: Enchant Kindred
+    - count: 1
+      name: Entrancement
+    - count: 5
+      name: Flurry of Action
+    - count: 2
+      name: Heart of the City
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Political Action
+    count: 7
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 1
+      name: Banishment
+    - count: 2
+      name: Kine Resources Contested
+    - count: 1
+      name: Reins of Power
+  - name: Action Modifier
+    count: 24
+    cards:
+    - count: 2
+      name: Cloak the Gathering
+    - count: 4
+      name: Enkil Cog
+    - count: 2
+      name: Faceless Night
+    - count: 10
+      name: Instantaneous Transformation
+    - count: 2
+      name: Iron Glare
+    - count: 2
+      name: Perfect Paragon
+    - count: 2
+      name: Voter Captivation
+  - name: Action Modifier/Combat
+    count: 6
+    cards:
+    - count: 3
+      name: Form of the Cobra
+    - count: 1
+      name: Rapid Change
+    - count: 2
+      name: Resist Earth's Grasp
+  - name: Action Modifier/Reaction
+    count: 1
+    cards:
+    - count: 1
+      name: Form of the Bat
+  - name: Combat
+    count: 5
+    cards:
+    - count: 1
+      name: Earth Meld
+    - count: 4
+      name: Form of Mist

@@ -1,0 +1,76 @@
+name: White Turtle
+location: Vác, Hungary
+date_start: '2024-01-27'
+rounds_format: 2R+F
+players_count: 20
+winner: Márk Virsinger's Tournament Winning Deck with 3 VPs in the Finals
+event_url: https://www.vekn.net/event-calendar/event/11192
+event_id: '11192'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81206-twd-white-turtle
+deck:
+  description: ''
+  crypt_count: 12
+  crypt_min: 9
+  crypt_max: 44
+  crypt_avg: 7.5
+  crypt: []
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 17
+    cards:
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 3
+      name: Information Highway
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: Rack, The
+    - count: 6
+      name: Villein
+    - count: 3
+      name: Zillah's Valley
+  - name: Action
+    count: 16
+    cards:
+    - count: 7
+      name: Deep Song
+    - count: 9
+      name: Govern the Unaligned
+  - name: Action Modifier
+    count: 2
+    cards:
+    - count: 2
+      name: Enkil Cog
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Murmur of the False Will
+  - name: Reaction
+    count: 20
+    cards:
+    - count: 3
+      name: Cats' Guidance
+    - count: 6
+      name: Deflection
+    - count: 1
+      name: On the Qui Vive
+    - count: 10
+      name: Sense the Savage Way
+  - name: Combat
+    count: 31
+    cards:
+    - count: 8
+      name: Carrion Crows
+    - count: 8
+      name: Dark Steel
+    - count: 6
+      name: Immortal Grapple
+    - count: 3
+      name: Slam
+    - count: 6
+      name: Taste of Vitae

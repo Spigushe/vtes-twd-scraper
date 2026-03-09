@@ -1,0 +1,398 @@
+name: Blood League part 1.
+location: Kecskemét, Hungary
+date_start: '2024-02-17'
+rounds_format: 2R+F
+players_count: 19
+winner: Balázs Ihász's Tournament Winning Deck with 3 VPs in the Finals
+event_url: https://www.vekn.net/event-calendar/event/11282
+event_id: '11282'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81343-twd-blood-league-i
+deck:
+  name: Mistress Kecskemét
+  created_by: Erdős Gyula
+  description: ''
+  crypt_count: 12
+  crypt_min: 30
+  crypt_max: 43
+  crypt_avg: 9.17
+  crypt:
+  - count: 3
+    name: Mistress Fanchon
+    capacity: 11
+    disciplines: AUS CEL DOM OBF THA VIC
+    title: inner circle
+    clan: Tremere
+    grouping: 4
+  - count: 2
+    name: Gabrielle di Righetti
+    capacity: 10
+    disciplines: ANI AUS DOM THA obf pot
+    title: justicar
+    clan: Tremere
+    grouping: 5
+  - count: 2
+    name: Orlando Oriundus
+    capacity: 9
+    disciplines: AUS DOM THA obf
+    title: bishop
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Dr. John Dee
+    capacity: 9
+    disciplines: ANI AUS DOM THA chi
+    title: prince
+    clan: Tremere
+    grouping: 4
+  - count: 1
+    name: Gerald Windham
+    capacity: 9
+    disciplines: AUS DOM FOR THA
+    clan: Tremere
+    grouping: 5
+  - count: 1
+    name: Troius
+    capacity: 8
+    disciplines: AUS DOM THA cel
+    title: prince
+    clan: Tremere
+    grouping: 4
+  - count: 1
+    name: Graham Gottesman
+    capacity: 7
+    disciplines: DOM FOR obf pre tha
+    title: prince
+    clan: Ventrue
+    grouping: 5
+  - count: 1
+    name: Johannes Worringen
+    capacity: 6
+    disciplines: AUS THA dom
+    title: archbishop
+    clan: Tremere antitribu
+    grouping: 5
+  library_count: 79
+  library_sections:
+  - name: Master
+    count: 33
+    cards:
+    - count: 1
+      name: Archon Investigation
+    - count: 6
+      name: Ashur Tablets
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Metro Underground
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Papillon
+    - count: 3
+      name: Parthenon, The
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 7
+      name: Villein
+    - count: 1
+      name: Wider View
+    - count: 4
+      name: Zillah's Valley
+  - name: Action
+    count: 6
+    cards:
+    - count: 4
+      name: Govern the Unaligned
+    - count: 2
+      name: Magic of the Smith
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Political Action
+    count: 11
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 3
+      name: Banishment
+    - count: 3
+      name: Parity Shift
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+    - count: 1
+      name: Rumors of Gehenna
+  - name: Action Modifier
+    count: 8
+    cards:
+    - count: 2
+      name: Forgotten Labyrinth
+    - count: 6
+      name: Mirror Walk
+  - name: Reaction
+    count: 19
+    cards:
+    - count: 4
+      name: Deflection
+    - count: 4
+      name: Eyes of Argus
+    - count: 1
+      name: Guardian Vigil
+    - count: 1
+      name: My Enemy's Enemy
+    - count: 5
+      name: Obedience
+    - count: 2
+      name: On the Qui Vive
+    - count: 1
+      name: 'Second Tradition: Domain'
+    - count: 1
+      name: Telepathic Misdirection
+  - name: Crypt
+    count: 16
+    cards:
+    - count: 1
+      name: Keegan                  8 ANI FOR PRO aus cel           Gangrel:6
+    - count: 1
+      name: Ragnar Nordstrom        8 ANI FOR PRO cel pot           Gangrel:6
+    - count: 1
+      name: Massimiliano            7 ANI FOR pro           baron   Gangrel:6
+    - count: 1
+      name: André the Manipulator   6 FOR PRO                       Gangrel:5
+    - count: 1
+      name: Casey Snyder            6 PRO ani cel for       baron   Gangrel:6
+    - count: 1
+      name: Kuyén                   6 ANI PRO               baron   Gangrel:6
+    - count: 1
+      name: Martina Srnankova       6 FOR PRO ani                   Gangrel:6
+    - count: 1
+      name: Crow                    5 ANI for pro tha               Gangrel:5
+    - count: 1
+      name: Dario Ziggler           5 FOR ani pro tha               Gangrel:6
+    - count: 1
+      name: Kamile Paukstys         5 PRO ani for                   Gangrel:6
+    - count: 1
+      name: Mickey Wheeler          5 ani cel for pro               Gangrel:6
+    - count: 1
+      name: Hanna Nokelainen        4 ani for pro                   Gangrel:6
+    - count: 1
+      name: Nathan Turner           4 PRO ani                       Gangrel:6
+    - count: 1
+      name: Indira                  3 PRO                           Gangrel:6
+    - count: 1
+      name: Joaquín de Cádiz        3 for pro                       Gangrel:6
+    - count: 1
+      name: Ruslan Fedorenko        2 pro                           Gangrel:6
+  - name: Library
+    count: 90
+    cards: []
+  - name: Master
+    count: 21
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Backways
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Carver's Meat Packing and Storage
+    - count: 1
+      name: Ecoterrorists
+    - count: 1
+      name: Ennoia's Theater
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Giant's Blood
+    - count: 3
+      name: Information Highway
+    - count: 1
+      name: Piper
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Tension in the Ranks
+    - count: 7
+      name: Villein
+  - name: Action
+    count: 15
+    cards:
+    - count: 1
+      name: Aranthebes, The Immortal
+    - count: 1
+      name: Rewilding
+    - count: 1
+      name: Skaald
+    - count: 12
+      name: Thing
+  - name: Ally
+    count: 7
+    cards:
+    - count: 7
+      name: Renegade Garou
+  - name: Political Action
+    count: 4
+    cards:
+    - count: 3
+      name: Autarkis Persecution
+    - count: 1
+      name: Consanguineous Boon
+  - name: Action Modifier
+    count: 7
+    cards:
+    - count: 2
+      name: Bribes
+    - count: 5
+      name: Earth Control
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Rapid Change
+  - name: Action Modifier/Reaction
+    count: 5
+    cards:
+    - count: 5
+      name: Form of the Bat
+  - name: Reaction
+    count: 15
+    cards:
+    - count: 5
+      name: Deep Ecology
+    - count: 8
+      name: Eyes of the Wild
+    - count: 2
+      name: Protection Racket
+  - name: Combat
+    count: 12
+    cards:
+    - count: 5
+      name: Earth Meld
+    - count: 7
+      name: Form of Mist
+  - name: Event
+    count: 2
+    cards:
+    - count: 1
+      name: Dragonbound
+    - count: 1
+      name: Unmasking, The
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 3
+      name: Abraham Mellon         8 AUS DOM OBF for tha              Malkavian:6
+    - count: 2
+      name: Jason "Son" Newberry   7 AUS DOM OBF pre       primogen   Malkavian:6
+    - count: 1
+      name: Gilbert Duane          7 AUS DOM OBF           baron      Malkavian:6
+    - count: 2
+      name: Darius Shirazi         6 AUS DOM obf                      Malkavian:5
+    - count: 2
+      name: Colette                5 AUS OBF dom                      Malkavian:6
+    - count: 1
+      name: Sully                  4 aus dom obf                      Malkavian:6
+    - count: 1
+      name: Ashley                 3 dom obf                          Malkavian:6
+  - name: Library
+    count: 82
+    cards: []
+  - name: Master
+    count: 17
+    cards:
+    - count: 1
+      name: Barrens, The
+    - count: 1
+      name: Bleeding the Vine
+    - count: 5
+      name: Brainwash
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: Perfectionist
+    - count: 1
+      name: Secure Haven
+    - count: 1
+      name: Wash
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 15
+    cards:
+    - count: 11
+      name: Govern the Unaligned
+    - count: 2
+      name: Revelations
+    - count: 2
+      name: Scouting Mission
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Muddled Vampire Hunter
+  - name: Action Modifier
+    count: 32
+    cards:
+    - count: 6
+      name: Bonding
+    - count: 2
+      name: Cloak the Gathering
+    - count: 6
+      name: Conditioning
+    - count: 3
+      name: Elder Impersonation
+    - count: 3
+      name: Faceless Night
+    - count: 1
+      name: Foreshadowing Destruction
+    - count: 4
+      name: Lost in Crowds
+    - count: 2
+      name: Seduction
+    - count: 5
+      name: Spying Mission
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 12
+    cards:
+    - count: 4
+      name: Deflection
+    - count: 3
+      name: Eyes of Argus
+    - count: 1
+      name: My Enemy's Enemy
+    - count: 2
+      name: On the Qui Vive
+    - count: 2
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 3
+    cards:
+    - count: 3
+      name: No Trace

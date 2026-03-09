@@ -1,0 +1,130 @@
+name: Haven Uncovered
+location: Makati, Philippines
+date_start: '2024-03-23'
+rounds_format: 2R+F
+players_count: 15
+winner: Joscar Gamaliel Malacaman
+event_url: https://www.vekn.net/event-calendar/event/11368
+event_id: '11368'
+vp_comment: 1GW 4.5VP 3VP in the Final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81317-twd-haven-uncovered-03-23-2024-makati-philippines-15-players
+deck:
+  name: Guardian LSFM 2.0
+  description: ''
+  crypt_count: 12
+  crypt_min: 4
+  crypt_max: 40
+  crypt_avg: 5.67
+  crypt:
+  - count: 4
+    name: Matasuntha
+    capacity: 10
+    disciplines: ANI AUS CEL FOR PRO
+    clan: Gangrel
+    grouping: 5
+  - count: 2
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Massimiliano
+    capacity: 7
+    disciplines: ANI FOR pro
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Mickey Wheeler
+    capacity: 5
+    disciplines: ani cel for pro
+    clan: Gangrel
+    grouping: 6
+  library_count: 89
+  library_sections:
+  - name: Master
+    count: 16
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Gangrel Revel
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: 'Powerbase: Los Angeles'
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Smiling Jack, The Anarch
+    - count: 3
+      name: Vessel
+    - count: 2
+      name: Villein
+    - count: 2
+      name: Wider View
+  - name: Action
+    count: 6
+    cards:
+    - count: 6
+      name: Deep Song
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Retainer
+    count: 6
+    cards:
+    - count: 2
+      name: Dog Pack
+    - count: 4
+      name: Raven Spy
+  - name: Action Modifier
+    count: 7
+    cards:
+    - count: 1
+      name: Enkil Cog
+    - count: 3
+      name: Forced March
+    - count: 3
+      name: Instantaneous Transformation
+  - name: Reaction
+    count: 22
+    cards:
+    - count: 4
+      name: Bait and Switch
+    - count: 4
+      name: Deep Ecology
+    - count: 2
+      name: Eyes of the Wild
+    - count: 6
+      name: Guardian Vigil
+    - count: 2
+      name: On the Qui Vive
+    - count: 4
+      name: Organized Resistance
+  - name: Combat
+    count: 31
+    cards:
+    - count: 9
+      name: Diversion
+    - count: 5
+      name: Drawing Out the Beast
+    - count: 6
+      name: Hell-for-Leather
+    - count: 5
+      name: Taste of Vitae
+    - count: 4
+      name: Trap
+    - count: 2
+      name: Voracious Vermin

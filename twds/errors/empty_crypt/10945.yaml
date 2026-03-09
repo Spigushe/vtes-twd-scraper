@@ -1,0 +1,140 @@
+name: 'Elysium: Sevilla'
+location: Sevilla, Spainn
+date_start: '2023-09-02'
+rounds_format: 3R+F
+players_count: 26
+winner: Javier Naranjo
+event_url: https://www.vekn.net/player-registry/event/10945
+event_id: '10945'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80857-twd-elysium-sevilla-september-2nd-sevilla
+deck:
+  name: Maabara Recursion
+  created_by: Alexandros
+  description: ''
+  crypt_count: 12
+  crypt_min: 20
+  crypt_max: 31
+  crypt_avg: 6.25
+  crypt: []
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 26
+    cards:
+    - count: 1
+      name: Archon Investigation
+    - count: 1
+      name: Barrens, The
+    - count: 1
+      name: Corporate Hunting Ground
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Erciyes Fragments, The
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: Lazarene Inquisitor
+    - count: 3
+      name: Maabara
+    - count: 3
+      name: Parthenon, The
+    - count: 1
+      name: 'Powerbase: Barranquilla'
+    - count: 1
+      name: 'Powerbase: Chicago'
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Rötschreck
+    - count: 2
+      name: Smiling Jack, The Anarch
+    - count: 1
+      name: Society of Leopold
+    - count: 1
+      name: Unnatural Disaster
+    - count: 3
+      name: Vessel
+    - count: 1
+      name: Wash
+  - name: Action
+    count: 7
+    cards:
+    - count: 2
+      name: Abbot
+    - count: 1
+      name: Aranthebes, The Immortal
+    - count: 1
+      name: Army of Rats
+    - count: 3
+      name: Zillah's Tears
+  - name: Ally
+    count: 6
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 4
+      name: Emerald Legionnaire
+    - count: 1
+      name: Ossian
+  - name: Equipment
+    count: 4
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Ivory Bow
+    - count: 1
+      name: Shaal Fragment
+  - name: Retainer
+    count: 4
+    cards:
+    - count: 4
+      name: Vengeful Spirit
+  - name: Action Modifier
+    count: 3
+    cards:
+    - count: 1
+      name: Daring the Dawn
+    - count: 2
+      name: Kiss of Ra, The
+  - name: Action Modifier/Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Breath of Thanatos
+  - name: Reaction
+    count: 25
+    cards:
+    - count: 3
+      name: Delaying Tactics
+    - count: 3
+      name: Eagle's Sight
+    - count: 4
+      name: Enhanced Senses
+    - count: 6
+      name: Eyes of Argus
+    - count: 3
+      name: My Enemy's Enemy
+    - count: 2
+      name: On the Qui Vive
+    - count: 4
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 10
+    cards:
+    - count: 4
+      name: Hidden Strength
+    - count: 3
+      name: Indomitability
+    - count: 3
+      name: Rolling with the Punches
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Unmasking, The

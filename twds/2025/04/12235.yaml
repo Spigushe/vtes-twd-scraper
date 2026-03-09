@@ -1,0 +1,160 @@
+name: Thursday Night Special vol 1 - Warsaw
+location: Warsaw, Poland
+date_start: '2025-04-24'
+rounds_format: 2R+F
+players_count: 10
+winner: Tomasz Pietkiewicz
+event_url: https://www.vekn.net/event-calendar/event/12235
+event_id: '12235'
+vp_comment: 0 GW 2.5 VP + 2 VP in the final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82257-twd-thursday-night-special-vol-1-warsaw-24-04-2025
+deck:
+  name: Aim & Chain
+  created_by: Tomasz Pietkiewicz
+  description: ''
+  crypt_count: 12
+  crypt_min: 12
+  crypt_max: 24
+  crypt_avg: 4.58
+  crypt:
+  - count: 3
+    name: Edward Vignes
+    capacity: 6
+    disciplines: DOM PRE for
+    clan: Ventrue
+    grouping: 3
+  - count: 1
+    name: Juniper
+    capacity: 6
+    disciplines: FOR ani dom pre
+    clan: Ventrue
+    grouping: 4
+  - count: 1
+    name: Catherine du Bois
+    capacity: 5
+    disciplines: DOM for obf pre
+    clan: Ventrue
+    grouping: 3
+  - count: 1
+    name: Jephta Hester
+    capacity: 5
+    disciplines: DOM FOR aus
+    clan: Ventrue antitribu
+    grouping: 4
+  - count: 1
+    name: João Bilé
+    capacity: 5
+    disciplines: DOM FOR pre
+    clan: Ventrue
+    grouping: 4
+  - count: 1
+    name: Earl
+    capacity: 4
+    disciplines: dom for pot
+    clan: Ventrue
+    grouping: 3
+  - count: 1
+    name: Katherine Stoddard
+    capacity: 4
+    disciplines: dom for
+    clan: Ventrue antitribu
+    grouping: 3
+  - count: 1
+    name: Keith Moody
+    capacity: 3
+    disciplines: DOM
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Lana Butcher
+    capacity: 3
+    disciplines: dom for
+    clan: Ventrue
+    grouping: 3
+  - count: 1
+    name: Jackson Asher
+    capacity: 2
+    disciplines: dom
+    clan: Ventrue
+    grouping: 4
+  library_count: 80
+  library_sections:
+  - name: Master
+    count: 13
+    cards:
+    - count: 1
+      name: Anarch Troublemaker
+    - count: 1
+      name: Coven, The
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Haven Uncovered
+    - count: 1
+      name: Jake Washington
+    - count: 4
+      name: Life in the City
+    - count: 1
+      name: Misdirection
+    - count: 1
+      name: Pentex(TM) Subversion
+  - name: Action
+    count: 14
+    cards:
+    - count: 1
+      name: Dominate Kine
+    - count: 12
+      name: Govern the Unaligned
+    - count: 1
+      name: Slaughtering the Herd
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 16
+    cards:
+    - count: 1
+      name: Bonding
+    - count: 7
+      name: Conditioning
+    - count: 3
+      name: Daring the Dawn
+    - count: 2
+      name: Foreshadowing Destruction
+    - count: 2
+      name: Seduction
+    - count: 1
+      name: Sleeping Mind, The
+  - name: Reaction
+    count: 15
+    cards:
+    - count: 8
+      name: Deflection
+    - count: 2
+      name: Delaying Tactics
+    - count: 3
+      name: On the Qui Vive
+    - count: 2
+      name: Redirection
+  - name: Combat
+    count: 21
+    cards:
+    - count: 1
+      name: Pulled Fangs
+    - count: 5
+      name: Soak
+    - count: 5
+      name: Target Vitals
+    - count: 2
+      name: Taste of Vitae
+    - count: 2
+      name: Unflinching Persistence
+    - count: 5
+      name: Weighted Walking Stick
+    - count: 1
+      name: Zip Gun

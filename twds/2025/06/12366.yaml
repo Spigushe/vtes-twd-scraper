@@ -1,0 +1,100 @@
+name: The King The Power The Best
+location: São Paulo SP
+date_start: '2025-06-01'
+rounds_format: 2R+F
+players_count: 30
+winner: DK Magaji
+event_url: https://www.vekn.net/event-calendar/event/12366
+event_id: '12366'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82390-twd-the-king-the-power-the-best-sao-paulo-brazil-01-jun-2025
+deck:
+  name: Turbo Unnamed
+  created_by: Dk Magaji
+  description: ''
+  crypt_count: 12
+  crypt_min: 40
+  crypt_max: 40
+  crypt_avg: 10.0
+  crypt:
+  - count: 12
+    name: unnamed, The
+    capacity: 10
+    disciplines: CEL DAI OBF PRE PRO
+    clan: Baali
+    grouping: 6
+  library_count: 77
+  library_sections:
+  - name: Master
+    count: 28
+    cards:
+    - count: 8
+      name: Abombwe
+    - count: 1
+      name: Antediluvian Awakening
+    - count: 1
+      name: Bleeding the Vine
+    - count: 6
+      name: Dreams of the Sphinx
+    - count: 3
+      name: 'Golconda: Inner Peace'
+    - count: 1
+      name: Life Boon
+    - count: 1
+      name: Metro Underground
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Redeem the Lost Soul
+    - count: 4
+      name: Villein
+    - count: 1
+      name: Vulnerability
+  - name: Action
+    count: 10
+    cards:
+    - count: 6
+      name: Call the Great Beast
+    - count: 1
+      name: Contagion
+    - count: 3
+      name: Unleash Hell's Fury
+  - name: Ally
+    count: 3
+    cards:
+    - count: 1
+      name: Infernal Servitor
+    - count: 1
+      name: Mylan Horseed
+    - count: 1
+      name: Veneficti
+  - name: Equipment
+    count: 7
+    cards:
+    - count: 7
+      name: Soul Gem of Etrius
+  - name: Action Modifier
+    count: 21
+    cards:
+    - count: 2
+      name: Earth Control
+    - count: 4
+      name: Elder Impersonation
+    - count: 2
+      name: Enkil Cog
+    - count: 3
+      name: Forgotten Labyrinth
+    - count: 8
+      name: Instantaneous Transformation
+    - count: 2
+      name: Lost in Crowds
+  - name: Combat
+    count: 6
+    cards:
+    - count: 6
+      name: Form of Mist
+  - name: Event
+    count: 2
+    cards:
+    - count: 2
+      name: Scourge of the Enochians

@@ -1,0 +1,132 @@
+name: 'Garou Rim: Family Gathering'
+location: Joensuu, Finland
+date_start: '2025-09-20'
+rounds_format: 3R+F
+players_count: 12
+winner: Jani Malmi
+event_url: https://www.vekn.net/event-calendar/event/12563
+event_id: '12563'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82588-twd-garou-rim-family-gathering
+deck:
+  name: Let's have a talk
+  description: ''
+  crypt_count: 12
+  crypt_min: 23
+  crypt_max: 36
+  crypt_avg: 7.67
+  crypt:
+  - count: 5
+    name: Juliet Parr
+    capacity: 9
+    disciplines: AUS DOM OBF cel pot
+    title: justicar
+    clan: Malkavian
+    grouping: 7
+  - count: 3
+    name: Alexander Silverson
+    capacity: 8
+    disciplines: AUS DOM OBF pre
+    title: prince
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Andi Liu
+    capacity: 6
+    disciplines: DOM aus obf pre
+    title: prince
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Belinde
+    capacity: 6
+    disciplines: OBF ani aus pot
+    title: prince
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Donny Kowalczyk
+    capacity: 6
+    disciplines: AUS cel dom obf
+    title: prince
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Warmaksan
+    capacity: 5
+    disciplines: THA cel obf
+    title: prince
+    clan: Banu Haqim
+    grouping: 6
+  library_count: 80
+  library_sections:
+  - name: Master
+    count: 22
+    cards:
+    - count: 4
+      name: Camarilla Conclave
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 3
+      name: Information Highway
+    - count: 2
+      name: Papillon
+    - count: 2
+      name: Protected Resources
+    - count: 1
+      name: Secure Haven
+    - count: 7
+      name: Villein
+  - name: Action
+    count: 4
+    cards:
+    - count: 4
+      name: 'Judgment: Camarilla Segregation'
+  - name: Political Action
+    count: 21
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 2
+      name: Banishment
+    - count: 5
+      name: Camarilla's Iron Fist
+    - count: 6
+      name: Kine Resources Contested
+    - count: 5
+      name: Parity Shift
+    - count: 1
+      name: Reins of Power
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Muddled Vampire Hunter
+  - name: Action Modifier
+    count: 19
+    cards:
+    - count: 2
+      name: Cloak the Gathering
+    - count: 4
+      name: Closed Session
+    - count: 1
+      name: Cryptic Rider
+    - count: 2
+      name: Elder Impersonation
+    - count: 4
+      name: Forgotten Labyrinth
+    - count: 6
+      name: Lost in Crowds
+  - name: Action Modifier/Combat
+    count: 5
+    cards:
+    - count: 5
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 8
+    cards:
+    - count: 3
+      name: On the Qui Vive
+    - count: 5
+      name: Telepathic Misdirection

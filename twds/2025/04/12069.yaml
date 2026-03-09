@@ -1,0 +1,139 @@
+name: VtES Finnish Nationals 2025
+location: Vantaa, Finland
+date_start: '2025-04-12'
+rounds_format: 3R+F
+players_count: 39
+winner: Teemu Sainomaa
+event_url: https://www.vekn.net/event-calendar/event/12069
+event_id: '12069'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82292-twd-vtes-finnish-nationals-2025
+deck:
+  name: Toreador wall
+  description: ''
+  crypt_count: 12
+  crypt_min: 26
+  crypt_max: 41
+  crypt_avg: 8.42
+  crypt:
+  - count: 4
+    name: Anneke
+    capacity: 10
+    disciplines: AUS CEL PRE dom
+    title: justicar
+    clan: Toreador
+    grouping: 1
+  - count: 4
+    name: Anson
+    capacity: 8
+    disciplines: CEL PRE aus dom
+    title: prince
+    clan: Toreador
+    grouping: 1
+  - count: 1
+    name: Alexandra
+    capacity: 11
+    disciplines: ANI AUS CEL PRE dom
+    title: inner circle
+    clan: Toreador
+    grouping: 2
+  - count: 1
+    name: Marcellus
+    capacity: 8
+    disciplines: AUS CEL pro
+    title: prince
+    clan: Toreador
+    grouping: 2
+  - count: 1
+    name: Tatiana Romanov
+    capacity: 7
+    disciplines: AUS cel pre
+    title: prince
+    clan: Toreador
+    grouping: 1
+  - count: 1
+    name: Zöe
+    capacity: 3
+    disciplines: AUS cel obf
+    clan: Malkavian
+    grouping: 2
+  library_count: 89
+  library_sections:
+  - name: Master
+    count: 31
+    cards:
+    - count: 1
+      name: Art Museum
+    - count: 9
+      name: Ashur Tablets
+    - count: 1
+      name: Auspex
+    - count: 1
+      name: Bleeding the Vine
+    - count: 2
+      name: Direct Intervention
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Erciyes Fragments, The
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: Parthenon, The
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Society of Leopold
+    - count: 1
+      name: Vessel
+    - count: 6
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Equipment
+    count: 10
+    cards:
+    - count: 8
+      name: .44 Magnum
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Reaction
+    count: 20
+    cards:
+    - count: 5
+      name: Eyes of Argus
+    - count: 3
+      name: My Enemy's Enemy
+    - count: 1
+      name: On the Qui Vive
+    - count: 6
+      name: 'Second Tradition: Domain'
+    - count: 5
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 26
+    cards:
+    - count: 7
+      name: Concealed Weapon
+    - count: 5
+      name: Infernal Pursuit
+    - count: 6
+      name: Psyche!
+    - count: 6
+      name: Pursuit
+    - count: 2
+      name: Taste of Vitae
+  - name: Event
+    count: 2
+    cards:
+    - count: 1
+      name: Nightmares upon Nightmares
+    - count: 1
+      name: Scourge of the Enochians

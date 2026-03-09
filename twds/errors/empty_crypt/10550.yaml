@@ -1,0 +1,111 @@
+name: Swiss Championship 2023
+location: Geneva, Switzerland
+date_start: '2023-07-02'
+rounds_format: 3R+F
+players_count: 30
+winner: Marius Iscru
+event_url: https://www.vekn.net/event-calendar/event/10550
+event_id: '10550'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80728-swiss-championship-report-and-twd
+deck:
+  name: Carnawall
+  created_by: Marius Iscru inspired by Danilo
+  description: ''
+  crypt_count: 12
+  crypt_min: 14
+  crypt_max: 28
+  crypt_avg: 5.5
+  crypt: []
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 21
+    cards:
+    - count: 1
+      name: Academic Hunting Ground
+    - count: 1
+      name: Arcane Library
+    - count: 1
+      name: Chantry
+    - count: 1
+      name: Dark Influences
+    - count: 1
+      name: KRCG News Radio
+    - count: 1
+      name: Life Boon
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 2
+      name: 'Powerbase: Montreal'
+    - count: 2
+      name: Rack, The
+    - count: 3
+      name: Smiling Jack, The Anarch
+    - count: 6
+      name: Vessel
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 8
+    cards:
+    - count: 2
+      name: Anonymous Freight
+    - count: 6
+      name: Magic of the Smith
+  - name: Equipment
+    count: 11
+    cards:
+    - count: 2
+      name: .44 Magnum
+    - count: 1
+      name: Bowl of Convergence
+    - count: 2
+      name: Heart of Nizchetus
+    - count: 1
+      name: Ivory Bow
+    - count: 1
+      name: Kevlar Vest
+    - count: 1
+      name: Sawed-Off Shotgun
+    - count: 2
+      name: Sniper Rifle
+    - count: 1
+      name: Sport Bike
+  - name: Retainer
+    count: 1
+    cards:
+    - count: 1
+      name: Mr. Winthrop
+  - name: Action Modifier
+    count: 2
+    cards:
+    - count: 2
+      name: Conditioning
+  - name: Reaction
+    count: 39
+    cards:
+    - count: 8
+      name: Deflection
+    - count: 3
+      name: Delaying Tactics
+    - count: 4
+      name: Eagle's Sight
+    - count: 4
+      name: Enhanced Senses
+    - count: 8
+      name: Eyes of Argus
+    - count: 3
+      name: Forced Awakening
+    - count: 2
+      name: My Enemy's Enemy
+    - count: 3
+      name: On the Qui Vive
+    - count: 4
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 8
+    cards:
+    - count: 4
+      name: Rego Motum
+    - count: 4
+      name: Theft of Vitae

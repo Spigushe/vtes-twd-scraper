@@ -1,0 +1,147 @@
+name: European Championship Day 1
+location: Mannheim, Germany
+date_start: '2014-10-04'
+rounds_format: 3R+F
+players_count: 111
+winner: Ruben Feldman
+event_url: https://www.vekn.net/event-calendar/event/7828
+event_id: '7828'
+vp_comment: 3GW11.5 + 1.5vp in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82048-twd-european-championship-day-1-2014-mannheim-germany-4-oct-2014
+deck:
+  name: Ugly Aggression
+  description: ''
+  crypt_count: 12
+  crypt_min: 15
+  crypt_max: 34
+  crypt_avg: 6.5
+  crypt:
+  - count: 2
+    name: Suhailah
+    capacity: 9
+    disciplines: FOR OBF pot ser
+    title: prince
+    clan: Ventrue
+    grouping: 2
+  - count: 3
+    name: Selma the Repugnant
+    capacity: 8
+    disciplines: OBF POT ani for
+    title: prince
+    clan: Nosferatu
+    grouping: 1
+  - count: 2
+    name: Nikolaus Vermeulen
+    capacity: 7
+    disciplines: POT ani for obf
+    title: prince
+    clan: Nosferatu
+    grouping: 2
+  - count: 1
+    name: Gilbert Duane
+    capacity: 7
+    disciplines: AUS DOM OBF
+    title: prince
+    clan: Malkavian
+    grouping: 1
+  - count: 1
+    name: Murat
+    capacity: 7
+    disciplines: OBF POT ser
+    title: prince
+    clan: Nosferatu
+    grouping: 2
+  - count: 1
+    name: Dan Murdock
+    capacity: 3
+    disciplines: aus obf
+    clan: Caitiff
+    grouping: 1
+  - count: 1
+    name: Duck
+    capacity: 3
+    disciplines: obf pot
+    clan: Nosferatu
+    grouping: 1
+  - count: 1
+    name: Dimple
+    capacity: 2
+    disciplines: obf
+    clan: Nosferatu
+    grouping: 1
+  library_count: 75
+  library_sections:
+  - name: Master
+    count: 22
+    cards:
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Kaymakli Nightmares
+    - count: 1
+      name: Labyrinth, The
+    - count: 4
+      name: Legendary Vampire
+    - count: 2
+      name: Parthenon, The
+    - count: 2
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: Villein
+    - count: 1
+      name: Warsaw Station
+    - count: 8
+      name: Zillah's Valley
+  - name: Action
+    count: 5
+    cards:
+    - count: 2
+      name: 'Fourth Tradition: The Accounting'
+    - count: 1
+      name: Scrounging
+    - count: 2
+      name: 'Third Tradition: Progeny'
+  - name: Political Action
+    count: 14
+    cards:
+    - count: 1
+      name: Consanguineous Boon
+    - count: 2
+      name: Conservative Agitation
+    - count: 3
+      name: Kine Resources Contested
+    - count: 1
+      name: Neonate Breach
+    - count: 7
+      name: Parity Shift
+  - name: Action Modifier
+    count: 24
+    cards:
+    - count: 4
+      name: Elder Impersonation
+    - count: 4
+      name: Faceless Night
+    - count: 7
+      name: Freak Drive
+    - count: 9
+      name: Lost in Crowds
+  - name: Action Modifier/Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 4
+    cards:
+    - count: 2
+      name: Mental Maze
+    - count: 2
+      name: 'Second Tradition: Domain'
+  - name: Event
+    count: 2
+    cards:
+    - count: 1
+      name: Anthelios, The Red Star
+    - count: 1
+      name: Bitter and Sweet Story, The

@@ -1,0 +1,159 @@
+name: Thessaloniki's Monthly Brawl
+location: Thessaloniki - Greece
+date_start: '2025-01-18'
+rounds_format: 2R+F
+players_count: 8
+winner: Standard Constructed
+event_url: https://www.vekn.net/event-calendar/event/11998
+event_id: '11998'
+vp_comment: 0GW + 1VPs + 4VPs in the Finals
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82039-twd-thessaloniki-s-monthly-brawl-thessaloniki-greece-18-jan-2025
+deck:
+  name: Bell's Gang
+  created_by: Babis Giannios
+  description: ''
+  crypt_count: 12
+  crypt_min: 19
+  crypt_max: 31
+  crypt_avg: 6.42
+  crypt:
+  - count: 2
+    name: Aline Gädeke
+    capacity: 7
+    disciplines: POT PRE cel
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Atiena
+    capacity: 6
+    disciplines: CEL obf pot pre
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Theo Bell
+    capacity: 8
+    disciplines: CEL POT PRE aus dom
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Ariane
+    capacity: 3
+    disciplines: cel pot pre
+    clan: Brujah
+    grouping: 5
+  - count: 1
+    name: Chun Hei
+    capacity: 7
+    disciplines: CEL POT PRE
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Elen Kamjian
+    capacity: 4
+    disciplines: CEL POT
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Octane
+    capacity: 6
+    disciplines: CEL POT PRE
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Saku Pihlajamäki
+    capacity: 8
+    disciplines: CEL POT PRE for pro
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Valeriya Zinovieva
+    capacity: 7
+    disciplines: POT cel pre pro
+    title: baron
+    clan: Brujah
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Dummy Corporation
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Fragment of the Book of Nod
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Haven Uncovered
+    - count: 1
+      name: Rumor Mill, Tabloid Newspaper, The
+    - count: 1
+      name: Tension in the Ranks
+    - count: 4
+      name: Vessel
+    - count: 1
+      name: Warzone Hunting Ground
+  - name: Action
+    count: 15
+    cards:
+    - count: 3
+      name: Illegalism
+    - count: 7
+      name: Line Brawl
+    - count: 3
+      name: Make the Misere
+    - count: 2
+      name: Show of Force
+  - name: Political Action
+    count: 2
+    cards:
+    - count: 2
+      name: Eat the Rich
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: 47th Street Royals
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Stolen Police Cruiser
+  - name: Reaction
+    count: 12
+    cards:
+    - count: 4
+      name: Bait and Switch
+    - count: 8
+      name: Organized Resistance
+  - name: Combat
+    count: 44
+    cards:
+    - count: 2
+      name: Blur
+    - count: 3
+      name: Bollix
+    - count: 5
+      name: Dust Up
+    - count: 7
+      name: Immortal Grapple
+    - count: 5
+      name: Pursuit
+    - count: 6
+      name: Quickness
+    - count: 3
+      name: Roundhouse
+    - count: 6
+      name: Taste of Vitae
+    - count: 7
+      name: Torn Signpost

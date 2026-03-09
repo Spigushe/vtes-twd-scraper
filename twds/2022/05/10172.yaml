@@ -1,0 +1,189 @@
+name: O devorador
+location: Campina Grande, Brasil
+date_start: '2022-05-01'
+rounds_format: 3R+F
+players_count: 10
+winner: Rafael Barbosa
+event_url: https://www.vekn.net/player-registry/event/10172
+event_id: '10172'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79772-twda-o-devorador-campina-grande-brasil-1-may-2022
+deck:
+  name: gangrel antitribu
+  description: ''
+  crypt_count: 12
+  crypt_min: 16
+  crypt_max: 31
+  crypt_avg: 5.92
+  crypt:
+  - count: 2
+    name: Doyle Fincher
+    capacity: 7
+    disciplines: ANI PRO aus for obf
+    clan: Gangrel antitribu
+    grouping: 4
+  - count: 2
+    name: Céleste Lamontagne
+    capacity: 5
+    disciplines: ANI PRO for
+    clan: Gangrel antitribu
+    grouping: 4
+  - count: 1
+    name: Una
+    capacity: 9
+    disciplines: ANI FOR PRE PRO dem
+    title: archbishop
+    clan: Gangrel antitribu
+    grouping: 3
+  - count: 1
+    name: Nostoket
+    capacity: 8
+    disciplines: ANI DEM PRO for obt
+    clan: Gangrel antitribu
+    grouping: 4
+  - count: 1
+    name: Shaggydog
+    capacity: 7
+    disciplines: FOR PRO ani obf qui
+    clan: Gangrel antitribu
+    grouping: 5
+  - count: 1
+    name: Janey Pickman
+    capacity: 6
+    disciplines: ANI PRO for
+    clan: Gangrel antitribu
+    grouping: 4
+  - count: 1
+    name: Spider
+    capacity: 6
+    disciplines: CEL PRO ani for
+    clan: Gangrel antitribu
+    grouping: 4
+  - count: 1
+    name: Mowgli
+    capacity: 5
+    disciplines: FOR PRO ani cel
+    clan: Gangrel antitribu
+    grouping: 4
+  - count: 1
+    name: Scarlet Carson O'Toole
+    capacity: 4
+    disciplines: CEL pro
+    clan: Gangrel antitribu
+    grouping: 3
+  - count: 1
+    name: Jesús Alcalá
+    capacity: 2
+    disciplines: cel
+    clan: Gangrel antitribu
+    grouping: 3
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 16
+    cards:
+    - count: 1
+      name: Animalism
+    - count: 1
+      name: Bay and Howl
+    - count: 3
+      name: Blood Doll
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Haven Uncovered
+    - count: 1
+      name: Path of the Feral Heart, The
+    - count: 1
+      name: Protean
+    - count: 1
+      name: Sudden Reversal
+    - count: 1
+      name: Talons of the Dead
+    - count: 2
+      name: Vessel
+    - count: 1
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 8
+    cards:
+    - count: 1
+      name: Bum's Rush
+    - count: 4
+      name: Deep Song
+    - count: 1
+      name: Shadow of the Beast
+    - count: 2
+      name: Taunt the Caged Beast
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Black Spiral Buddy
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 1
+      name: Hawg
+    - count: 1
+      name: Sport Bike
+  - name: Retainer
+    count: 1
+    cards:
+    - count: 1
+      name: Raven Spy
+  - name: Reaction
+    count: 9
+    cards:
+    - count: 3
+      name: Cats' Guidance
+    - count: 1
+      name: Eyes of the Beast
+    - count: 2
+      name: Forced Awakening
+    - count: 2
+      name: On the Qui Vive
+    - count: 1
+      name: Sonar
+  - name: Combat
+    count: 53
+    cards:
+    - count: 4
+      name: Bone Spur
+    - count: 3
+      name: Call the Wild Hunt
+    - count: 7
+      name: Carrion Crows
+    - count: 5
+      name: Drawing Out the Beast
+    - count: 3
+      name: Earth Meld
+    - count: 6
+      name: Flesh of Marble
+    - count: 1
+      name: Form of the Ghost
+    - count: 6
+      name: Form of the Wolf
+    - count: 1
+      name: Gleam of Red Eyes
+    - count: 1
+      name: Indomitability
+    - count: 5
+      name: Leathery Hide
+    - count: 1
+      name: Rolling with the Punches
+    - count: 1
+      name: Scorpion Sting
+    - count: 1
+      name: Skin of Rock
+    - count: 1
+      name: Soak
+    - count: 2
+      name: Superior Mettle
+    - count: 1
+      name: Unflinching Persistence
+    - count: 4
+      name: Wolf Claws

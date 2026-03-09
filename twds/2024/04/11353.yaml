@@ -1,0 +1,187 @@
+name: Dallas Revolutionary Council
+location: Dallas, Texas, USA
+date_start: '2024-04-28'
+rounds_format: 3R+F
+players_count: 19
+winner: Darby Keeney
+event_url: https://www.vekn.net/event-calendar/event/11353
+event_id: '11353'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81414-twd-dallas-revolutionary-council-dallas-tx-usa-28-april-2024
+deck:
+  name: Obanium (312)
+  created_by: Darby Keeney
+  description: Anarch-based Gangrel Wall (5 Baron Crypt).
+  crypt_count: 12
+  crypt_min: 14
+  crypt_max: 25
+  crypt_avg: 5.08
+  crypt:
+  - count: 2
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 2
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Hanna Nokelainen
+    capacity: 4
+    disciplines: ani for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Indira
+    capacity: 3
+    disciplines: PRO
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Joaquín de Cádiz
+    capacity: 3
+    disciplines: for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Kamile Paukstys
+    capacity: 5
+    disciplines: PRO ani for
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Martina Srnankova
+    capacity: 6
+    disciplines: FOR PRO ani
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Massimiliano
+    capacity: 7
+    disciplines: ANI FOR pro
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Mickey Wheeler
+    capacity: 5
+    disciplines: ani cel for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Nathan Turner
+    capacity: 4
+    disciplines: PRO ani
+    clan: Gangrel
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 19
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Backways
+    - count: 2
+      name: Blood Doll
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 1
+      name: Ecoterrorists
+    - count: 2
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: 'Powerbase: Los Angeles – kinda sorta marginal today'
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Smiling Jack, The Anarch
+    - count: 3
+      name: Villein
+    - count: 1
+      name: Zoo Hunting Ground – could be Papillion
+  - name: Action
+    count: 12
+    cards:
+    - count: 1
+      name: Aranthebes, The Immortal
+    - count: 2
+      name: Rewilding
+    - count: 1
+      name: Status Perfectus, The
+      comment: no Form of Mist for you and more Blood Doll for me!
+    - count: 8
+      name: Thing
+  - name: Equipment
+    count: 5
+    cards:
+    - count: 1
+      name: Camera Phone – still the iffy, but I want reliable pre-Illusion offense.
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Ivory Bow
+    - count: 2
+      name: Sniper Rifle
+  - name: Retainer
+    count: 5
+    cards:
+    - count: 1
+      name: Dog Pack
+      comment: did I mention "no Form of Mist for you?"
+    - count: 4
+      name: Raven Spy
+  - name: Action Modifier
+    count: 3
+    cards:
+    - count: 3
+      name: Earth Control
+  - name: Action Modifier/Combat
+    count: 1
+    cards:
+    - count: 1
+      name: Rapid Change
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Form of the Bat
+  - name: Reaction
+    count: 27
+    cards:
+    - count: 5
+      name: Bait and Switch
+    - count: 6
+      name: Deep Ecology
+    - count: 4
+      name: Eyes of the Wild
+      comment: every time I want to drop this, it proves too useful
+    - count: 2
+      name: On the Qui Vive
+    - count: 8
+      name: Organized Resistance
+    - count: 2
+      name: Protection Racket
+      comment: another card I can’t seem to drop
+  - name: Combat
+    count: 14
+    cards:
+    - count: 10
+      name: Earth Meld
+    - count: 4
+      name: Form of Mist

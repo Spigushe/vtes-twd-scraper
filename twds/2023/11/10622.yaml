@@ -1,0 +1,135 @@
+name: Décimo Oitavo Dia
+location: Fortaleza - Ceará - Brazil
+date_start: '2023-11-19'
+rounds_format: 2R+F
+players_count: 20
+winner: Márcio Pinheiro (
+event_url: https://www.vekn.net/event-calendar/event/10622
+event_id: '10622'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80978-twd-decimo-oitavo-dia
+deck:
+  name: Fee Stake Brujah
+  description: ''
+  crypt_count: 12
+  crypt_min: 18
+  crypt_max: 29
+  crypt_avg: 5.92
+  crypt:
+  - count: 3
+    name: Leumeah
+    capacity: 6
+    disciplines: PRE cel for pot
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Aline GÃ¤deke
+    capacity: 7
+    disciplines: POT PRE cel
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Atiena
+    capacity: 6
+    disciplines: CEL obf pot pre
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Ariane
+    capacity: 3
+    disciplines: cel pot pre
+    clan: Brujah
+    grouping: 5
+  - count: 1
+    name: Elen Kamjian
+    capacity: 4
+    disciplines: CEL POT
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Saku PihlajamÃ¤ki
+    capacity: 8
+    disciplines: CEL POT PRE for pro
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Siarhei Levchenko
+    capacity: 5
+    disciplines: CEL PRE pot
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Valeriya Zinovieva
+    capacity: 7
+    disciplines: POT cel pre pro
+    title: baron
+    clan: Brujah
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 14
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 4
+      name: Anarch Revolt
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fame
+    - count: 2
+      name: Fortitude
+    - count: 3
+      name: Vessel
+    - count: 1
+      name: Warzone Hunting Ground
+  - name: Action
+    count: 13
+    cards:
+    - count: 4
+      name: Illegalism
+    - count: 7
+      name: Line Brawl
+    - count: 2
+      name: Smash and Grab
+  - name: Ally
+    count: 2
+    cards:
+    - count: 1
+      name: 47th Street Royals
+    - count: 1
+      name: Grey Thorne
+  - name: Reaction
+    count: 12
+    cards:
+    - count: 2
+      name: Bait and Switch
+    - count: 3
+      name: On the Qui Vive
+    - count: 4
+      name: Organized Resistance
+    - count: 3
+      name: Protection Racket
+  - name: Combat
+    count: 49
+    cards:
+    - count: 4
+      name: Bollix
+    - count: 3
+      name: Disarm
+    - count: 13
+      name: Diversion
+    - count: 14
+      name: Dust Up
+    - count: 4
+      name: Groundfighting
+    - count: 5
+      name: Hell-for-Leather
+    - count: 6
+      name: Immortal Grapple

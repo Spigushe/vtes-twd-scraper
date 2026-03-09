@@ -1,0 +1,146 @@
+name: 'Garou Rim: Louhi Winter Wonderland'
+location: Joensuu, Finland
+date_start: '2024-12-28'
+rounds_format: 2R+F
+players_count: 15
+winner: Toni Karjalainen
+event_url: https://www.vekn.net/event-calendar/event/11945
+event_id: '11945'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81979-twd-garou-rim-louhi-winter-wonderland
+deck:
+  name: 'Garou Rim: Louhi Winter Wonderland'
+  created_by: Toni Karjalainen
+  description: ''
+  crypt_count: 12
+  crypt_min: 11
+  crypt_max: 44
+  crypt_avg: 6.67
+  crypt:
+  - count: 5
+    name: Saulot, The Wanderer
+    capacity: 11
+    disciplines: AUS FOR OBE THA VAL dai
+    clan: Salubri
+    grouping: 4
+  - count: 2
+    name: Neighbor John
+    capacity: 5
+    disciplines: AUS dom for
+    clan: Ventrue antitribu
+    grouping: 4
+  - count: 1
+    name: Maldavis (ADV)
+    capacity: 4
+    disciplines: AUS for pre
+    clan: Caitiff
+    grouping: 3
+  - count: 1
+    name: Ember Wright
+    capacity: 3
+    disciplines: aus dom
+    clan: Tremere antitribu
+    grouping: 3
+  - count: 1
+    name: Saiz
+    capacity: 3
+    disciplines: aus dom
+    clan: Tremere antitribu
+    grouping: 3
+  - count: 1
+    name: Sister Evelyn
+    capacity: 3
+    disciplines: aus dom
+    clan: Ventrue antitribu
+    grouping: 3
+  - count: 1
+    name: Nicholas Chang
+    capacity: 2
+    disciplines: aus
+    clan: Toreador antitribu
+    grouping: 3
+  library_count: 83
+  library_sections:
+  - name: Master
+    count: 14
+    cards:
+    - count: 1
+      name: Anarch Troublemaker
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Heidelberg Castle, Germany
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: Metro Underground
+    - count: 1
+      name: Misdirection
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: Sight Beyond Sight
+    - count: 1
+      name: Smiling Jack, The Anarch
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 9
+    cards:
+    - count: 1
+      name: Aranthebes, The Immortal
+    - count: 8
+      name: Spirit Marionette
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+  - name: Action Modifier
+    count: 13
+    cards:
+    - count: 2
+      name: Enkil Cog
+    - count: 5
+      name: Freak Drive
+    - count: 3
+      name: Neutral Guard
+    - count: 3
+      name: Repulsion
+  - name: Reaction
+    count: 25
+    cards:
+    - count: 2
+      name: Delaying Tactics
+    - count: 2
+      name: Eagle's Sight
+    - count: 3
+      name: Enhanced Senses
+    - count: 6
+      name: Eyes of Argus
+    - count: 1
+      name: My Enemy's Enemy
+    - count: 4
+      name: On the Qui Vive
+    - count: 7
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 21
+    cards:
+    - count: 8
+      name: Anesthetic Touch
+    - count: 2
+      name: Aura Reading
+    - count: 2
+      name: Blissful Agony
+    - count: 3
+      name: Hidden Strength
+    - count: 4
+      name: Target Vitals
+    - count: 2
+      name: Unflinching Persistence

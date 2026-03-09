@@ -1,0 +1,178 @@
+name: Rumo ao GP 7
+location: Online
+date_start: '2025-05-12'
+rounds_format: 2R+F
+players_count: 12
+winner: Rodinei Teixeira de Camargo
+event_url: https://www.vekn.net/event-calendar/event/12339
+event_id: '12339'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82494-twd-rumo-ao-gp-7
+deck:
+  name: Viva La Revolución
+  created_by: Rodinei Teixeira de Camargo
+  description: ''
+  crypt_count: 12
+  crypt_min: 17
+  crypt_max: 30
+  crypt_avg: 6.0
+  crypt:
+  - count: 1
+    name: Adrino Manauara
+    capacity: 8
+    disciplines: ANI DOM PRO pot
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Ángel Guerrero
+    capacity: 7
+    disciplines: ANI DOM PRO
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Branimira
+    capacity: 6
+    disciplines: ANI dom pre pro
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Elisha Tucker
+    capacity: 6
+    disciplines: PRE cel obf pro
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Indira
+    capacity: 3
+    disciplines: PRO
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Joseph Fischer
+    capacity: 3
+    disciplines: PRO
+    clan: Gangrel antitribu
+    grouping: 5
+  - count: 1
+    name: Kamile Paukstys
+    capacity: 5
+    disciplines: PRO ani for
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Massimiliano
+    capacity: 7
+    disciplines: ANI FOR pro
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Sergio Bueno
+    capacity: 8
+    disciplines: OBF PRE PRO aus pot
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Vivian VI
+    capacity: 7
+    disciplines: PRE PRO obf tha
+    title: baron
+    clan: Ministry
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 20
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Life Boon
+    - count: 1
+      name: Papillon
+    - count: 4
+      name: Protean
+    - count: 2
+      name: Vessel
+    - count: 6
+      name: Villein
+    - count: 1
+      name: Zoo Hunting Ground
+  - name: Action
+    count: 8
+    cards:
+    - count: 8
+      name: Childe of the Revolution
+  - name: Political Action
+    count: 5
+    cards:
+    - count: 2
+      name: Reckless Agitation
+    - count: 3
+      name: Revolutionary Council
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 2
+      name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 12
+    cards:
+    - count: 4
+      name: Earth Control
+    - count: 2
+      name: Monkey Wrench
+    - count: 6
+      name: Propaganda of the Deed
+  - name: Action Modifier/Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Rapid Change
+  - name: Reaction
+    count: 24
+    cards:
+    - count: 10
+      name: Bait and Switch
+    - count: 1
+      name: Delaying Tactics
+    - count: 13
+      name: Organized Resistance
+  - name: Combat
+    count: 14
+    cards:
+    - count: 11
+      name: Earth Meld
+    - count: 3
+      name: Form of Mist
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Uncoiling, The

@@ -1,0 +1,148 @@
+name: Origins - Sunday
+location: Columbus (OH), USA
+date_start: '2023-06-25'
+rounds_format: 2R+F
+players_count: 27
+winner: Karl Schaefer
+event_url: https://www.vekn.net/event-calendar/event/10734
+event_id: '10734'
+vp_comment: 2GW6 + 3 vps in the final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80630-twd-origins-sunday
+deck:
+  name: Shambling into the Void v2
+  description: Shambling Hordes and Emerald Legionnaires
+  crypt_count: 13
+  crypt_min: 15
+  crypt_max: 36
+  crypt_avg: 6.46
+  crypt:
+  - count: 5
+    name: Angelique
+    capacity: 9
+    disciplines: AUS FOR NEC SER THA
+    clan: Harbinger of Skulls
+    grouping: 6
+  - count: 2
+    name: Hecate
+    capacity: 6
+    disciplines: AUS FOR NEC
+    clan: Harbinger of Skulls
+    grouping: 5
+  - count: 2
+    name: La Viuda Blanca
+    capacity: 6
+    disciplines: AUS NEC for obf
+    clan: Harbinger of Skulls
+    grouping: 6
+  - count: 1
+    name: America Johnson
+    capacity: 4
+    disciplines: AUS vic
+    clan: Tzimisce
+    grouping: 5
+  - count: 1
+    name: Pearl
+    capacity: 4
+    disciplines: AUS obf
+    clan: Malkavian antitribu
+    grouping: 5
+  - count: 1
+    name: Tyler McGill
+    capacity: 4
+    disciplines: AUS pre
+    clan: Toreador
+    grouping: 5
+  - count: 1
+    name: Veejay Vinod
+    capacity: 3
+    disciplines: AUS
+    clan: Nagaraja
+    grouping: 6
+  library_count: 73
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 1
+      name: Anarch Troublemaker
+    - count: 2
+      name: Blood Doll
+    - count: 1
+      name: Charisma
+    - count: 1
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Mob Connections
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 2
+      name: Perfectionist
+    - count: 2
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Ally
+    count: 20
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 7
+      name: Emerald Legionnaire
+    - count: 1
+      name: Mylan Horseed
+    - count: 11
+      name: Shambling Hordes
+  - name: Action Modifier
+    count: 8
+    cards:
+    - count: 2
+      name: Acheron Vortex
+    - count: 4
+      name: Call of the Hungry Dead
+    - count: 2
+      name: Trochomancy
+  - name: Action Modifier/Combat
+    count: 3
+    cards:
+    - count: 3
+      name: Breath of Thanatos
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Spectral Divination
+  - name: Reaction
+    count: 14
+    cards:
+    - count: 3
+      name: Eyes of Argus
+    - count: 2
+      name: Funeral Wake
+    - count: 3
+      name: My Enemy's Enemy
+    - count: 3
+      name: On the Qui Vive
+    - count: 3
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 5
+    cards:
+    - count: 2
+      name: Fake Out
+    - count: 2
+      name: Target Vitals
+    - count: 1
+      name: Trap
+  - name: Event
+    count: 4
+    cards:
+    - count: 1
+      name: Dragonbound
+    - count: 1
+      name: FBI Special Affairs Division
+    - count: 2
+      name: Unmasking, The

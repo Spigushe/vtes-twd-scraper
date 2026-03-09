@@ -1,0 +1,140 @@
+name: 'Fee Stake: Warsaw'
+location: Warsaw, Poland
+date_start: '2024-12-14'
+rounds_format: 3R+F
+players_count: 15
+winner: Tomasz Pietkiewicz
+event_url: https://www.vekn.net/event-calendar/event/11799
+event_id: '11799'
+vp_comment: 2 GW 7 VP + 3 VP
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82003-twd-fee-stake-warsaw-20-x-mas-edition-14-12-24
+deck:
+  name: Lasombra Progeny
+  created_by: Tomasz Pietkiewicz
+  description: ''
+  crypt_count: 12
+  crypt_min: 18
+  crypt_max: 34
+  crypt_avg: 6.75
+  crypt:
+  - count: 3
+    name: María del Toro
+    capacity: 7
+    disciplines: DOM OBL POT
+    title: prince
+    clan: Lasombra
+    grouping: 6
+  - count: 3
+    name: Yewon Ong
+    capacity: 8
+    disciplines: DOM OBL POT for
+    title: prince
+    clan: Lasombra
+    grouping: 6
+  - count: 2
+    name: Gnaeus Aemilius Augustinus
+    capacity: 9
+    disciplines: DOM OBL POT PRO tha
+    title: prince
+    clan: Lasombra
+    grouping: 6
+  - count: 1
+    name: Araceli "Celia" Rivera
+    capacity: 3
+    disciplines: dom obl
+    clan: Lasombra
+    grouping: 6
+  - count: 1
+    name: Azucena
+    capacity: 5
+    disciplines: DOM OBL pot
+    clan: Lasombra
+    grouping: 6
+  - count: 1
+    name: Braden White
+    capacity: 4
+    disciplines: dom obl pot
+    clan: Lasombra
+    grouping: 6
+  - count: 1
+    name: Kamaluddin
+    capacity: 6
+    disciplines: DOM OBL for pot
+    title: primogen
+    clan: Lasombra
+    grouping: 6
+  library_count: 75
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 1
+      name: Coven, The
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Elysian Fields
+    - count: 1
+      name: 'Elysium: The Palace of Versailles'
+    - count: 3
+      name: Information Highway
+    - count: 4
+      name: Legendary Vampire
+    - count: 3
+      name: Power Structure
+  - name: Action
+    count: 10
+    cards:
+    - count: 2
+      name: 'Judgment: Camarilla Segregation'
+    - count: 8
+      name: 'Third Tradition: Progeny'
+  - name: Political Action
+    count: 22
+    cards:
+    - count: 3
+      name: Camarilla's Iron Fist
+    - count: 7
+      name: Consanguineous Boon
+    - count: 1
+      name: Domain Challenge
+    - count: 6
+      name: Kine Resources Contested
+    - count: 1
+      name: Lasombra Justicar
+    - count: 4
+      name: Parity Shift
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Zaire River Ferry
+  - name: Action Modifier
+    count: 20
+    cards:
+    - count: 2
+      name: Amici Noctis
+    - count: 1
+      name: Conditioning
+    - count: 1
+      name: Cryptic Rider
+    - count: 4
+      name: Shadow Cast
+    - count: 4
+      name: Shadow Cloak
+    - count: 4
+      name: Stygian Shroud
+    - count: 4
+      name: Where the Veil Thins
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Ominous Chorus
+  - name: Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Deflection

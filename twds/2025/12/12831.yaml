@@ -1,0 +1,114 @@
+name: Almada's Bloody Xmas! Again!
+location: Almada, Portugal
+date_start: '2025-12-20'
+rounds_format: 2R+F
+players_count: 17
+winner: Jorge Ramos
+event_url: https://www.vekn.net/player-registry/event/12831
+event_id: '12831'
+vp_comment: 1GW3.5VP + 3VP in the final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82847-twd-almada-s-bloody-xmas-again
+deck:
+  name: Contrato precário
+  created_by: Jorge Ramos
+  description: ''
+  crypt_count: 12
+  crypt_min: 26
+  crypt_max: 40
+  crypt_avg: 8.08
+  crypt:
+  - count: 5
+    name: Karif al Numair
+    capacity: 10
+    disciplines: AUS CEL OBF QUI for
+    clan: Banu Haqim
+    grouping: 5
+  - count: 3
+    name: Joe "Boot" Hill
+    capacity: 7
+    disciplines: CEL QUI for obf
+    clan: Banu Haqim
+    grouping: 4
+  - count: 2
+    name: Djuhah, The Bronze Bow
+    capacity: 7
+    disciplines: OBF QUI aus cel pre
+    clan: Banu Haqim
+    grouping: 5
+  - count: 2
+    name: Reza Fatir, The Dark Angel
+    capacity: 6
+    disciplines: CEL QUI obf pro
+    clan: Banu Haqim
+    grouping: 4
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 28
+    cards:
+    - count: 2
+      name: Archon Investigation
+    - count: 1
+      name: Fame
+    - count: 10
+      name: Hand Contract
+    - count: 3
+      name: "Haqim's Law: Retribution"
+    - count: 2
+      name: Monster
+    - count: 3
+      name: Priority Contract
+    - count: 1
+      name: Shakar
+    - count: 1
+      name: 'Shakar: the Hunt'
+    - count: 5
+      name: Villein
+  - name: Action
+    count: 2
+    cards:
+    - count: 2
+      name: Loss
+  - name: Action Modifier
+    count: 1
+    cards:
+    - count: 1
+      name: Enkil Cog
+  - name: Action Modifier/Reaction
+    count: 3
+    cards:
+    - count: 3
+      name: Provision of the Silsila
+  - name: Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Black Sunrise
+  - name: Combat
+    count: 50
+    cards:
+    - count: 8
+      name: Dam the Heart's River
+    - count: 2
+      name: Focus the Blood
+    - count: 10
+      name: Pursuit
+    - count: 4
+      name: Quickness
+    - count: 8
+      name: Sanguine Entrapment
+    - count: 2
+      name: Sideslip
+    - count: 4
+      name: Taste of Death
+    - count: 4
+      name: Taste of Vitae
+    - count: 8
+      name: Thin Blood
+  - name: Event
+    count: 2
+    cards:
+    - count: 1
+      name: Dragonbound
+    - count: 1
+      name: Narrow Minds

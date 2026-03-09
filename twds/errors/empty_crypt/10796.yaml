@@ -1,0 +1,114 @@
+name: Bloody Summer
+location: Sevilla, Spain
+date_start: '2023-07-01'
+rounds_format: 3R+F
+players_count: 21
+winner: Daniel Fernández Rivero
+event_url: https://www.vekn.net/player-registry/event/10796
+event_id: '10796'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80856-twd-bloody-summer-july-1st-2023-sevilla
+deck:
+  name: MONTADO 1.1 - HERALDOS - LEGIONARIOS BLOKER
+  created_by: Daniel Fernández Rivero
+  description: ''
+  crypt_count: 12
+  crypt_min: 24
+  crypt_max: 32
+  crypt_avg: 7.25
+  crypt: []
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 13
+    cards:
+    - count: 2
+      name: Direct Intervention
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Erciyes Fragments, The
+    - count: 1
+      name: Failsafe
+    - count: 1
+      name: Fragment of the Book of Nod
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Lupine Assault
+    - count: 1
+      name: Maabara
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+  - name: Action
+    count: 1
+    cards:
+    - count: 1
+      name: Abbot
+  - name: Ally
+    count: 11
+    cards:
+    - count: 11
+      name: Emerald Legionnaire
+  - name: Equipment
+    count: 6
+    cards:
+    - count: 1
+      name: .44 Magnum
+    - count: 2
+      name: Bowl of Convergence
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Ivory Bow
+    - count: 1
+      name: Sniper Rifle
+  - name: Action Modifier
+    count: 3
+    cards:
+    - count: 3
+      name: Trochomancy
+  - name: Action Modifier/Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Breath of Thanatos
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Spectral Divination
+  - name: Reaction
+    count: 31
+    cards:
+    - count: 4
+      name: Eagle's Sight
+    - count: 3
+      name: Enhanced Senses
+    - count: 8
+      name: Eyes of Argus
+    - count: 4
+      name: My Enemy's Enemy
+    - count: 5
+      name: On the Qui Vive
+    - count: 7
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 16
+    cards:
+    - count: 7
+      name: Hidden Strength
+    - count: 3
+      name: Rolling with the Punches
+    - count: 3
+      name: Unflinching Persistence
+    - count: 3
+      name: Weighted Walking Stick
+  - name: Event
+    count: 3
+    cards:
+    - count: 1
+      name: FBI Special Affairs Division
+    - count: 2
+      name: Unmasking, The

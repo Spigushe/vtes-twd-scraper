@@ -1,0 +1,148 @@
+name: 'Praxis Seizure: Garou Rim'
+location: Joensuu, Finland
+date_start: '2025-04-26'
+rounds_format: 3R+F
+players_count: 13
+winner: Antti Penttilä
+event_url: https://www.vekn.net/event-calendar/event/12143
+event_id: '12143'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82266-twd-praxis-seizure-garou-rim
+deck:
+  name: Isän kädestä(trolling with Saulot
+  created_by: Antti Penttilä
+  description: After long heart-warming talks with Azazel.
+  crypt_count: 12
+  crypt_min: 15
+  crypt_max: 44
+  crypt_avg: 7.25
+  crypt:
+  - count: 5
+    name: Saulot, The Wanderer
+    capacity: 11
+    disciplines: AUS FOR OBE THA VAL dai
+    clan: Salubri
+    grouping: 4
+  - count: 1
+    name: Abiku
+    capacity: 6
+    disciplines: AUS POT cel obt
+    clan: Osebo
+    grouping: 4
+  - count: 1
+    name: Homa
+    capacity: 6
+    disciplines: AUS CEL POT
+    clan: Osebo
+    grouping: 4
+  - count: 1
+    name: Solomon Batanea
+    capacity: 5
+    disciplines: AUS FOR nec
+    clan: Harbinger of Skulls
+    grouping: 4
+  - count: 1
+    name: Titi Camara
+    capacity: 5
+    disciplines: AUS CEL pot
+    clan: Osebo
+    grouping: 5
+  - count: 1
+    name: Tyler McGill
+    capacity: 4
+    disciplines: AUS pre
+    clan: Toreador
+    grouping: 5
+  - count: 1
+    name: Andre LeRoux
+    capacity: 3
+    disciplines: aus
+    clan: Toreador
+    grouping: 5
+  - count: 1
+    name: Kamaria
+    capacity: 3
+    disciplines: aus pot
+    clan: Osebo
+    grouping: 4
+  library_count: 77
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 6
+      name: Ashur Tablets
+    - count: 1
+      name: Depravity
+    - count: 1
+      name: Monster
+    - count: 1
+      name: 'Powerbase: Luanda'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Saulot's Avenging Fist
+    - count: 3
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 6
+    cards:
+    - count: 1
+      name: Biothaumaturgic Experiment
+    - count: 4
+      name: Magic of the Smith
+    - count: 1
+      name: Rutor's Hand
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Mylan Horseed
+  - name: Equipment
+    count: 4
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Hand of Conrad
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Light Intensifying Goggles
+  - name: Action Modifier
+    count: 4
+    cards:
+    - count: 2
+      name: Enkil Cog
+    - count: 2
+      name: Repulsion
+  - name: Reaction
+    count: 20
+    cards:
+    - count: 8
+      name: Eyes of Argus
+    - count: 3
+      name: My Enemy's Enemy
+    - count: 3
+      name: On the Qui Vive
+    - count: 6
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 25
+    cards:
+    - count: 12
+      name: Anesthetic Touch
+    - count: 3
+      name: Aura Reading
+    - count: 6
+      name: Immortal Grapple
+    - count: 4
+      name: Taste of Vitae
+  - name: Event
+    count: 2
+    cards:
+    - count: 1
+      name: Nightmares upon Nightmares
+    - count: 1
+      name: Scourge of the Enochians

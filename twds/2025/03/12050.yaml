@@ -1,0 +1,249 @@
+name: 'Second Tradition: Domain - HQS'
+location: Hatvan, Hungary
+date_start: '2025-03-23'
+rounds_format: 3R+F
+players_count: 42
+winner: Norbert Nagy's Tournament Winning Deck with 4 VPs in the Finals
+event_url: https://www.vekn.net/event-calendar/event/12050
+event_id: '12050'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82190-twd-hungarian-qualifier-series-2
+deck:
+  name: Lutz von Hohenzollern, Der
+  created_by: Arnold Riegler
+  description: <p>Simple as a slap.</p>
+  crypt_count: 12
+  crypt_min: 36
+  crypt_max: 44
+  crypt_avg: 10.33
+  crypt:
+  - count: 4
+    name: Lutz von Hohenzollern
+    capacity: 11
+    disciplines: AUS DEM OBF PRE pot
+    title: inner circle
+    clan: Malkavian
+    grouping: 4
+  - count: 2
+    name: Adana de Sforza
+    capacity: 11
+    disciplines: CEL OBF POT PRE PRO aus
+    title: inner circle
+    clan: Brujah
+    grouping: 4
+  - count: 2
+    name: Rafael de Corazon
+    capacity: 11
+    disciplines: AUS CEL DOM OBF PRE
+    title: inner circle
+    clan: Toreador
+    grouping: 4
+  - count: 2
+    name: Alicia Barrows
+    capacity: 9
+    disciplines: AUS DEM OBF POT PRE
+    title: archbishop
+    clan: Malkavian antitribu
+    grouping: 4
+  - count: 2
+    name: Dmitra Ilyanova
+    capacity: 9
+    disciplines: CEL FOR POT PRE obf
+    title: justicar
+    clan: Brujah
+    grouping: 5
+  library_count: 75
+  library_sections:
+  - name: Master
+    count: 20
+    cards:
+    - count: 1
+      name: Camarilla Conclave
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Monastery of Shadows
+    - count: 7
+      name: Villein
+    - count: 6
+      name: Zillah's Valley
+  - name: Political Action
+    count: 14
+    cards:
+    - count: 1
+      name: Ancient Influence
+    - count: 4
+      name: Camarilla's Iron Fist
+    - count: 7
+      name: Kine Resources Contested
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+  - name: Action Modifier
+    count: 25
+    cards:
+    - count: 2
+      name: Bewitching Oration
+    - count: 2
+      name: Elder Impersonation
+    - count: 2
+      name: Faceless Night
+    - count: 2
+      name: Forgotten Labyrinth
+    - count: 2
+      name: Iron Glare
+    - count: 3
+      name: Lost in Crowds
+    - count: 1
+      name: Old Friends
+    - count: 2
+      name: Perfect Paragon
+    - count: 2
+      name: Spying Mission
+    - count: 2
+      name: True Love's Face
+    - count: 5
+      name: Voter Captivation
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 6
+    cards:
+    - count: 2
+      name: Eyes of Argus
+    - count: 1
+      name: On the Qui Vive
+    - count: 3
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 8
+    cards:
+    - count: 2
+      name: Charismatic Aura
+    - count: 2
+      name: Majesty
+    - count: 1
+      name: Roundhouse
+    - count: 3
+      name: Staredown
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 2
+      name: Nonu Dis         8 OBF PRE PRO for               Ministry:6
+    - count: 2
+      name: Sergio Bueno     8 OBF PRE PRO aus pot   baron   Ministry:6
+    - count: 2
+      name: Vivian VI        7 PRE PRO obf tha       baron   Ministry:6
+    - count: 2
+      name: Elisha Tucker    6 PRE cel obf pro       baron   Ministry:6
+    - count: 1
+      name: Crystal Lynn     6 OBF PRE PRO                   Ministry:6
+    - count: 1
+      name: Doctor Morocco   5 PRO cel obf pre               Ministry:6
+    - count: 1
+      name: Jenny Silver     5 PRE PRO obf                   Ministry:6
+    - count: 1
+      name: Marcel           4 obf pre pro                   Ministry:6
+  - name: Library
+    count: 89
+    cards: []
+  - name: Master
+    count: 23
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Archon Investigation
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 1
+      name: Coven, The
+    - count: 3
+      name: Dabbler
+    - count: 1
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 2
+      name: Garibaldi-Meucci Museum
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Opium Den
+    - count: 2
+      name: 'Powerbase: Los Angeles'
+    - count: 1
+      name: Secure Haven
+    - count: 3
+      name: Villein
+    - count: 1
+      name: Wash
+  - name: Action
+    count: 12
+    cards:
+    - count: 1
+      name: Entrancement
+    - count: 11
+      name: Platinum Protocol, The
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Saatet-ta
+  - name: Action Modifier
+    count: 21
+    cards:
+    - count: 4
+      name: Elder Impersonation
+    - count: 3
+      name: Enchanting Gaze
+    - count: 2
+      name: Faceless Night
+    - count: 2
+      name: Lost in Crowds
+    - count: 1
+      name: Monkey Wrench
+    - count: 6
+      name: Revelation of the Serpent
+    - count: 3
+      name: Spying Mission
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Swallowed by the Night
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Form of the Bat
+  - name: Reaction
+    count: 20
+    cards:
+    - count: 6
+      name: Bait and Switch
+    - count: 2
+      name: Delaying Tactics
+    - count: 4
+      name: On the Qui Vive
+    - count: 4
+      name: Organized Resistance
+    - count: 4
+      name: Party Out Of Bounds
+  - name: Combat
+    count: 8
+    cards:
+    - count: 4
+      name: Earth Meld
+    - count: 4
+      name: Form of Mist

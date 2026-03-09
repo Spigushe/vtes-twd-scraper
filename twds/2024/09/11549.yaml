@@ -1,0 +1,157 @@
+name: 'Powerbase: Liverpool'
+location: Liverpool, UK
+date_start: '2024-09-28'
+rounds_format: 3R+F
+players_count: 10
+winner: Warren Clarke
+event_url: https://www.vekn.net/event-calendar/event/11549
+event_id: '11549'
+vp_comment: 1GW4 + 1.5VP in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81805-twd-powerbase-liverpool-liverpool-28th-september-2024
+deck:
+  name: Yes, Minister
+  description: Ministry Stealth Bleed
+  crypt_count: 12
+  crypt_min: 17
+  crypt_max: 30
+  crypt_avg: 5.92
+  crypt:
+  - count: 1
+    name: Nonu Dis
+    capacity: 8
+    disciplines: OBF PRE PRO for
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Sergio Bueno
+    capacity: 8
+    disciplines: OBF PRE PRO aus pot
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 3
+    name: Vivian VI
+    capacity: 7
+    disciplines: PRE PRO obf tha
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Crystal Lynn
+    capacity: 6
+    disciplines: OBF PRE PRO
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Elisha Tucker
+    capacity: 6
+    disciplines: PRE cel obf pro
+    clan: baron Ministry
+    grouping: 6
+  - count: 1
+    name: Aluc Romas de Leon
+    capacity: 5
+    disciplines: PRE aus obf pro
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Doctor Morocco
+    capacity: 5
+    disciplines: PRO cel obf pre
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Jenny Silver
+    capacity: 5
+    disciplines: PRE PRO obf
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Marcel
+    capacity: 4
+    disciplines: obf pre pro
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: '"Coach" Tyrone Soros'
+    capacity: 3
+    disciplines: obf pre
+    clan: Ministry
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 14
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 4
+      name: Dabbler
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Opium Den
+    - count: 1
+      name: Sudden Reversal
+    - count: 4
+      name: Villein
+  - name: Action
+    count: 17
+    cards:
+    - count: 17
+      name: Platinum Protocol, The
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Saatet-ta
+  - name: Action Modifier
+    count: 21
+    cards:
+    - count: 2
+      name: Earth Control
+    - count: 4
+      name: Enchanting Gaze
+    - count: 2
+      name: Faceless Night
+    - count: 4
+      name: Memory Rift
+    - count: 9
+      name: Revelation of the Serpent
+  - name: Action Modifier/Combat
+    count: 4
+    cards:
+    - count: 2
+      name: Form of the Cobra
+    - count: 2
+      name: Swallowed by the Night
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Form of the Bat
+  - name: Reaction
+    count: 15
+    cards:
+    - count: 5
+      name: Bait and Switch
+    - count: 3
+      name: On the Qui Vive
+    - count: 5
+      name: Organized Resistance
+    - count: 2
+      name: Party Out Of Bounds
+  - name: Combat
+    count: 14
+    cards:
+    - count: 4
+      name: Donnybrook
+    - count: 4
+      name: Earth Meld
+    - count: 6
+      name: Form of Mist

@@ -1,0 +1,146 @@
+name: Computer Hacking
+location: Epita, Paris, France
+date_start: '2023-11-25'
+rounds_format: 3R+F
+players_count: 16
+winner: Vincent Ripoll
+event_url: https://www.vekn.net/event-calendar/event/11110
+event_id: '11110'
+vp_comment: 1.5vp in final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81058-twd-computer-hacking-paris-france-nov-25-2023
+deck:
+  name: Royal with Cheese
+  description: This is a new version of the deck. The deck was pretty slow so I've added a lot of Zillah's Valley and 
+    Aksinya Daclau (who happens to have all the right disciplines but no title, hence the Regent). The conclusion is 
+    that even when you pack 11 Zillah's, you won't draw more than one in the early game! But it's probably bad luck.
+  crypt_count: 13
+  crypt_min: 35
+  crypt_max: 44
+  crypt_avg: 10.15
+  crypt:
+  - count: 5
+    name: Adana de Sforza
+    capacity: 11
+    disciplines: CEL OBF POT PRE PRO aus
+    title: inner circle
+    clan: Brujah
+    grouping: 4
+  - count: 3
+    name: Hardestadt
+    capacity: 11
+    disciplines: DOM FOR POT PRE cel pro
+    title: inner circle
+    clan: Ventrue
+    grouping: 4
+  - count: 4
+    name: Aksinya Daclau
+    capacity: 9
+    disciplines: ANI FOR PRE PRO cel tha
+    clan: Gangrel antitribu
+    grouping: 4
+  - count: 1
+    name: Lodin (Olaf Holte)
+    capacity: 8
+    disciplines: DOM FOR PRE aus pro
+    title: prince
+    clan: Ventrue
+    grouping: 5
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 28
+    cards:
+    - count: 1
+      name: Erciyes Fragments, The
+    - count: 1
+      name: Hostile Takeover
+      comment: big fun with the barons
+    - count: 1
+      name: Information Highway
+      comment: because it means an IC in two turns if you have 4 transfers
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: Protean
+      comment: for Hardestadt, also useful for Banishment
+    - count: 1
+      name: Regent
+      comment: for Aksinya
+    - count: 8
+      name: Villein
+    - count: 2
+      name: Wider View
+    - count: 11
+      name: Zillah's Valley
+  - name: Action
+    count: 1
+    cards:
+    - count: 1
+      name: Entrancement
+  - name: Political Action
+    count: 13
+    cards:
+    - count: 2
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 6
+      name: Banishment
+    - count: 1
+      name: Conservative Agitation
+    - count: 1
+      name: Domain Challenge
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+  - name: Action Modifier
+    count: 22
+    cards:
+    - count: 1
+      name: Approximation of Loyalty
+    - count: 4
+      name: Earth Control
+    - count: 2
+      name: Enchanting Gaze
+    - count: 1
+      name: Enkil Cog
+    - count: 2
+      name: Horrific Countenance
+      comment: once again, one HC = one VP in most games
+    - count: 5
+      name: Instantaneous Transformation
+    - count: 2
+      name: Revelation of the Serpent
+    - count: 5
+      name: Voter Captivation
+  - name: Action Modifier/Combat
+    count: 3
+    cards:
+    - count: 3
+      name: Rapid Change
+  - name: Action Modifier/Reaction
+    count: 3
+    cards:
+    - count: 2
+      name: Form of the Bat
+    - count: 1
+      name: Scalpel Tongue
+  - name: Reaction
+    count: 4
+    cards:
+    - count: 2
+      name: Deflection
+    - count: 2
+      name: On the Qui Vive
+  - name: Combat
+    count: 16
+    cards:
+    - count: 2
+      name: Claws of the Dead
+    - count: 8
+      name: Earth Meld
+    - count: 6
+      name: Form of Mist

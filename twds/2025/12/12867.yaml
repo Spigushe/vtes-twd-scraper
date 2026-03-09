@@ -1,0 +1,170 @@
+name: Cariocão de VtES 2025!
+location: Rio de Janeiro, Rio de Janeiro, BRASIL
+date_start: '2025-12-28'
+rounds_format: 2R+F
+players_count: 26
+winner: Gabriel Mattos
+event_url: https://www.vekn.net/event-calendar/event/12867
+event_id: '12867'
+vp_comment: 'Final Table: Gangrel V5 Toolbox > Malkshat > Tzim Living Manse > !Ventrue Blackhorse > Toreador Grand Ball'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82766-twd-cariocao-de-vtes-2025-brasil-28-12-2025
+deck:
+  name: Gangrel Anarch Toolbox
+  description: ''
+  crypt_count: 12
+  crypt_min: 16
+  crypt_max: 25
+  crypt_avg: 5.42
+  crypt:
+  - count: 1
+    name: Massimiliano
+    capacity: 7
+    disciplines: ANI FOR pro
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 2
+    name: André the Manipulator
+    capacity: 6
+    disciplines: FOR PRO
+    clan: Gangrel
+    grouping: 5
+  - count: 2
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 2
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Martina Srnankova
+    capacity: 6
+    disciplines: FOR PRO ani
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Kamile Paukstys
+    capacity: 5
+    disciplines: PRO ani for
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Hanna Nokelainen
+    capacity: 4
+    disciplines: ani for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Nathan Turner
+    capacity: 4
+    disciplines: PRO ani
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Indira
+    capacity: 3
+    disciplines: PRO
+    clan: Gangrel
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 21
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Anarch Revolt
+    - count: 1
+      name: Backways
+    - count: 1
+      name: Club Illusion
+    - count: 2
+      name: Direct Intervention
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Ecoterrorists
+    - count: 4
+      name: Effective Management
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Smiling Jack, The Anarch
+    - count: 3
+      name: Vessel
+    - count: 2
+      name: Villein
+  - name: Action
+    count: 21
+    cards:
+    - count: 1
+      name: Army of Rats
+    - count: 2
+      name: Constant Revolution
+    - count: 4
+      name: Deep Song
+    - count: 1
+      name: 'Fee Stake: Perth'
+    - count: 1
+      name: Rewilding
+    - count: 12
+      name: Thing
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Double Deuce
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Retainer
+    count: 1
+    cards:
+    - count: 1
+      name: Mr. Winthrop
+  - name: Action Modifier
+    count: 5
+    cards:
+    - count: 3
+      name: Earth Control
+    - count: 2
+      name: Monkey Wrench
+  - name: Action Modifier/Reaction
+    count: 3
+    cards:
+    - count: 3
+      name: Form of the Bat
+  - name: Reaction
+    count: 22
+    cards:
+    - count: 6
+      name: Bait and Switch
+    - count: 4
+      name: Deep Ecology
+    - count: 2
+      name: Delaying Tactics
+    - count: 10
+      name: Organized Resistance
+  - name: Combat
+    count: 15
+    cards:
+    - count: 2
+      name: Claws of the Dead
+    - count: 10
+      name: Earth Meld
+    - count: 3
+      name: Form of Mist

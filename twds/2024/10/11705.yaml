@@ -1,0 +1,170 @@
+name: Pulled Fangs Belgrade
+location: Belgrade, Serbia
+date_start: '2024-10-12'
+rounds_format: 3R+F
+players_count: 12
+winner: Djordje Sutic
+event_url: https://www.vekn.net/player-registry/event/11705
+event_id: '11705'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81818-twd-pulled-fangs-belgrade-12-10-2024
+deck:
+  name: Trujah toolbox
+  created_by: Shootic / Djordje Sutic 5940003
+  description: ''
+  crypt_count: 12
+  crypt_min: 9
+  crypt_max: 32
+  crypt_avg: 5.5
+  crypt:
+  - count: 5
+    name: Al-Muntathir, God's Witness
+    capacity: 8
+    disciplines: AUS FOR PRE TEM obf qui
+    clan: True Brujah
+    grouping: 5
+  - count: 2
+    name: Sennadurek
+    capacity: 6
+    disciplines: AUS NEC dom
+    clan: Nagaraja
+    grouping: 4
+  - count: 1
+    name: Andre LeRoux
+    capacity: 3
+    disciplines: aus
+    clan: Toreador
+    grouping: 5
+  - count: 1
+    name: Neighbor John
+    capacity: 5
+    disciplines: AUS dom for
+    clan: Ventrue antitribu
+    grouping: 4
+  - count: 1
+    name: Tyler McGill
+    capacity: 4
+    disciplines: AUS pre
+    clan: Toreador
+    grouping: 5
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 14
+    cards:
+    - count: 1
+      name: Dominion
+    - count: 1
+      name: Erciyes Fragments, The
+    - count: 1
+      name: Fear of Mekhet
+    - count: 1
+      name: Fragment of the Book of Nod
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: KRCG News Radio
+    - count: 1
+      name: Perfectionist
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Remover
+    - count: 1
+      name: 'Shakar: the Hunt'
+    - count: 1
+      name: Smiling Jack, The Anarch
+    - count: 1
+      name: Society of Leopold
+    - count: 1
+      name: Tabriz Assembly
+  - name: Action
+    count: 16
+    cards:
+    - count: 1
+      name: Aranthebes, The Immortal
+    - count: 2
+      name: Clotho's Gift
+    - count: 2
+      name: Kiss of Lachesis
+    - count: 1
+      name: Path of the Scorched Heart, The
+    - count: 1
+      name: Pulse of the Canaille
+    - count: 9
+      name: Summon History
+  - name: Ally
+    count: 6
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 1
+      name: Escaped Mental Patient
+    - count: 1
+      name: Mylan Horseed
+    - count: 1
+      name: Ossian
+    - count: 1
+      name: Political Ally
+    - count: 1
+      name: Tye Cooper
+  - name: Equipment
+    count: 5
+    cards:
+    - count: 1
+      name: AK-47
+    - count: 1
+      name: Ankara Citadel, Turkey, The
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Helicopter
+    - count: 1
+      name: Signet of King Saul, The
+  - name: Retainer
+    count: 1
+    cards:
+    - count: 1
+      name: Dog Pack
+  - name: Action Modifier
+    count: 18
+    cards:
+    - count: 10
+      name: Domain of Evernight
+    - count: 3
+      name: Freak Drive
+    - count: 2
+      name: Mask of a Thousand Faces
+    - count: 3
+      name: Tangle Atropos' Hand
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Quicksilver Contemplation
+  - name: Reaction
+    count: 16
+    cards:
+    - count: 2
+      name: Delaying Tactics
+    - count: 3
+      name: Eyes of Argus
+    - count: 4
+      name: On the Qui Vive
+    - count: 7
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 11
+    cards:
+    - count: 4
+      name: Hidden Strength
+    - count: 1
+      name: Lapse
+    - count: 6
+      name: Outside the Hourglass
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Unmasking, The

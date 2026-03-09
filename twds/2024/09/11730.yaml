@@ -1,0 +1,547 @@
+name: First 30Th
+location: Vác, Hungary
+date_start: '2024-09-22'
+rounds_format: 3R+F
+players_count: 17
+winner: Márk Virsinger's Tournament Winning Deck with 1,5 VPs in the Finals
+event_url: https://www.vekn.net/event-calendar/event/11730
+event_id: '11730'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81876-twd-first-30th
+deck:
+  name: nosfi anarch block
+  created_by: Ádám Horváth
+  description: ''
+  crypt_count: 12
+  crypt_min: 9
+  crypt_max: 30
+  crypt_avg: 5.25
+  crypt:
+  - count: 3
+    name: Oskar Anasov
+    capacity: 8
+    disciplines: ANI OBF cel pot
+    clan: Nosferatu
+    grouping: 6
+  - count: 3
+    name: Jacques Rouge
+    capacity: 6
+    disciplines: OBF ani pot pre
+    title: baron
+    clan: Nosferatu
+    grouping: 6
+  - count: 2
+    name: Benedito, a Lanterna
+    capacity: 6
+    disciplines: POT ani aus obf
+    title: baron
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Medic, The
+    capacity: 6
+    disciplines: OBF POT dem for
+    clan: Nosferatu
+    grouping: 5
+  library_count: 80
+  library_sections:
+  - name: Master
+    count: 20
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 2
+      name: Hackerspace
+    - count: 1
+      name: Labyrinth, The
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: 'Powerbase: Los Angeles'
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Slum Hunting Ground
+    - count: 1
+      name: Smiling Jack, The Anarch
+    - count: 6
+      name: Vessel
+    - count: 1
+      name: Warsaw Station
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 10
+    cards:
+    - count: 1
+      name: Aranthebes, The Immortal
+    - count: 2
+      name: Army of Rats
+    - count: 7
+      name: Creeping Sabotage
+  - name: Equipment
+    count: 8
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 3
+      name: Improvised Flamethrower
+    - count: 1
+      name: Ivory Bow
+    - count: 2
+      name: Sniper Rifle
+    - count: 1
+      name: Sport Bike
+  - name: Retainer
+    count: 1
+    cards:
+    - count: 1
+      name: Mr. Winthrop
+  - name: Action Modifier
+    count: 2
+    cards:
+    - count: 2
+      name: Monkey Wrench
+  - name: Action Modifier/Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 29
+    cards:
+    - count: 8
+      name: Bait and Switch
+    - count: 2
+      name: On the Qui Vive
+    - count: 14
+      name: Organized Resistance
+    - count: 3
+      name: Protection Racket
+    - count: 2
+      name: Warrens, The
+  - name: Combat
+    count: 6
+    cards:
+    - count: 6
+      name: Disguised Weapon
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 1
+      name: Kite                          7 obf pre AUS DEM          Malkavian antitribu:2
+    - count: 2
+      name: Korah                         7 ani AUS DEM OBF          Malkavian antitribu:2
+    - count: 2
+      name: Artemis                       6 aus cel for DEM OBF      Malkavian antitribu:2
+    - count: 1
+      name: Quentin King III              7 obf pre AUS DEM          Malkavian:3
+    - count: 1
+      name: Quentin King III (ADV3)       7 cel pre AUS DEM OBF      Malkavian:3
+    - count: 1
+      name: Tony                          6 dom obf AUS DEM          Malkavian:3
+    - count: 2
+      name: Virgil                        8 cel AUS DEM OBF          Malkavian antitribu:2
+    - count: 2
+      name: Dolphin Black                 6 AUS DEM OBF              Malkavian antitribu:2
+  - name: Master
+    count: 15
+    cards:
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 3
+      name: Sudden Reversal
+    - count: 2
+      name: Wash
+    - count: 3
+      name: Blood Doll
+    - count: 1
+      name: Direct Intervention
+    - count: 3
+      name: Dreams of the Sphinx
+  - name: Action
+    count: 21
+    cards:
+    - count: 18
+      name: Kindred Spirits
+    - count: 3
+      name: Call, The
+  - name: Action Modifier
+    count: 31
+    cards:
+    - count: 4
+      name: Elder Impersonation
+    - count: 5
+      name: Eyes of Chaos
+    - count: 4
+      name: Faceless Night
+    - count: 4
+      name: Lost in Crowds
+    - count: 4
+      name: Spying Mission
+    - count: 1
+      name: Walk through Arcadia
+    - count: 9
+      name: Confusion
+  - name: Action Modifier/Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Swallowed by the Night
+  - name: Action Modifier/Reaction
+    count: 1
+    cards:
+    - count: 1
+      name: Touch of Clarity
+  - name: Combat
+    count: 4
+    cards:
+    - count: 4
+      name: No Trace
+  - name: Reaction
+    count: 14
+    cards:
+    - count: 4
+      name: Eyes of Argus
+    - count: 3
+      name: On the Qui Vive
+    - count: 7
+      name: Telepathic Misdirection
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 6
+      name: Massassi       9 AUS CEL POT QUI obf            Osebo:4
+    - count: 2
+      name: Khalu          7 AUS CEL POT ani pro            Osebo:3
+    - count: 1
+      name: Homa           6 AUS CEL POT                    Osebo:4
+    - count: 2
+      name: Kisha Bhimji   5 AUS cel obf pot       magaji   Osebo:3
+    - count: 1
+      name: Ismitta        4 aus cel pot                    Osebo:4
+  - name: Library
+    count: 90
+    cards: []
+  - name: Master
+    count: 15
+    cards:
+    - count: 2
+      name: British Museum, London, The
+    - count: 1
+      name: Depravity
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: Monster
+    - count: 1
+      name: 'Powerbase: Luanda'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Tension in the Ranks
+    - count: 1
+      name: Vessel
+    - count: 2
+      name: Villein
+    - count: 1
+      name: Wash
+  - name: Action
+    count: 5
+    cards:
+    - count: 1
+      name: Nose of the Hound
+    - count: 2
+      name: Preternatural Strength
+    - count: 2
+      name: Well-Marked
+  - name: Equipment
+    count: 9
+    cards:
+    - count: 1
+      name: Blood Shield
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Codex of the Edenic Groundskeepers
+    - count: 2
+      name: Flak Jacket
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 2
+      name: Kevlar Vest
+    - count: 1
+      name: Signet of King Saul, The
+  - name: Action Modifier
+    count: 2
+    cards:
+    - count: 2
+      name: Zephyr
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Resist Earth's Grasp
+  - name: Reaction
+    count: 30
+    cards:
+    - count: 4
+      name: Black Sunrise
+    - count: 2
+      name: Eagle's Sight
+    - count: 2
+      name: Enhanced Senses
+    - count: 7
+      name: Eyes of Argus
+    - count: 3
+      name: My Enemy's Enemy
+    - count: 2
+      name: On the Qui Vive
+    - count: 1
+      name: Precognition
+    - count: 3
+      name: Quicken Sight
+    - count: 1
+      name: Spirit's Touch
+    - count: 3
+      name: Telepathic Misdirection
+    - count: 2
+      name: Terra Incognita
+  - name: Combat
+    count: 26
+    cards:
+    - count: 2
+      name: Aura Reading
+    - count: 8
+      name: Disarm
+    - count: 8
+      name: Immortal Grapple
+    - count: 2
+      name: Psyche!
+    - count: 3
+      name: Pursuit
+    - count: 3
+      name: Sideslip
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Dragonbound
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 3
+      name: Adrino Manauara   8 ANI DOM PRO pot   baron   Tzimisce:6
+    - count: 3
+      name: Ángel Guerrero    7 ANI DOM PRO       baron   Tzimisce:6
+    - count: 1
+      name: Branimira         6 ANI dom pre pro   baron   Tzimisce:6
+    - count: 1
+      name: Clara Hjortshøj   5 PRO ani aus dom           Tzimisce:6
+    - count: 1
+      name: Marialena         5 DOM PRO ani               Tzimisce:6
+    - count: 1
+      name: Whisper           5 ANI DOM pro               Tzimisce:6
+    - count: 1
+      name: Prentis Derby     4 ani dom pro               Tzimisce:6
+    - count: 1
+      name: Susie Kano        3 ani dom                   Tzimisce:6
+  - name: Library
+    count: 88
+    cards: []
+  - name: Master
+    count: 17
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 4
+      name: British Museum, London, The
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Libertas
+    - count: 1
+      name: Poacher's Hunting Ground
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: 'Powerbase: Savannah'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Vessel
+  - name: Action
+    count: 11
+    cards:
+    - count: 1
+      name: Army of Rats
+    - count: 10
+      name: Govern the Unaligned
+  - name: Equipment
+    count: 12
+    cards:
+    - count: 2
+      name: Cooler
+    - count: 1
+      name: Gran Madre di Dio, Italy
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 6
+      name: Living Manse
+    - count: 1
+      name: Ritual Goblet
+    - count: 1
+      name: Signet of King Saul, The
+  - name: Retainer
+    count: 1
+    cards:
+    - count: 1
+      name: Crypt's Sons
+  - name: Action Modifier
+    count: 5
+    cards:
+    - count: 2
+      name: Conditioning
+    - count: 3
+      name: Earth Control
+  - name: Action Modifier/Reaction
+    count: 5
+    cards:
+    - count: 5
+      name: Form of the Bat
+  - name: Reaction
+    count: 24
+    cards:
+    - count: 5
+      name: Bait and Switch
+    - count: 2
+      name: Deep Ecology
+    - count: 4
+      name: Deflection
+    - count: 1
+      name: Delaying Tactics
+    - count: 4
+      name: One With the Land
+    - count: 8
+      name: Organized Resistance
+  - name: Combat
+    count: 13
+    cards:
+    - count: 2
+      name: Donnybrook
+    - count: 5
+      name: Earth Meld
+    - count: 6
+      name: Form of Mist
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 3
+      name: Lord Tremere                  11 obe ANI AUS DOM THA VIC  Tremere:5
+    - count: 5
+      name: Malgorzata                    9 pre AUS DOM THA VIC      Tremere antitribu:4
+    - count: 2
+      name: Mistress Fanchon              11 AUS CEL DOM OBF THA VIC  Tremere:4
+    - count: 2
+      name: Dracon, The                   11 ANI AUS POT THA VIC      Tzimisce:5
+  - name: Master
+    count: 22
+    cards:
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Heidelberg Castle, Germany
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Rack, The
+    - count: 2
+      name: Rötschreck
+    - count: 1
+      name: University Hunting Ground
+    - count: 6
+      name: Villein
+    - count: 1
+      name: Wash
+    - count: 5
+      name: Zillah's Valley
+    - count: 1
+      name: Dreams of the Sphinx
+  - name: Action
+    count: 7
+    cards:
+    - count: 4
+      name: Graverobbing
+    - count: 3
+      name: Magic of the Smith
+  - name: Action Modifier
+    count: 8
+    cards:
+    - count: 4
+      name: Mirror Walk
+    - count: 4
+      name: Changeling
+  - name: Combat
+    count: 21
+    cards:
+    - count: 4
+      name: Rego Motum
+    - count: 2
+      name: Blood Rage
+    - count: 5
+      name: Breath of the Dragon
+    - count: 10
+      name: Chiropteran Marauder
+  - name: Equipment
+    count: 5
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Ivory Bow
+    - count: 1
+      name: Kevlar Vest
+    - count: 1
+      name: Palatial Estate
+    - count: 1
+      name: Bowl of Convergence
+  - name: Reaction
+    count: 27
+    cards:
+    - count: 3
+      name: Enhanced Senses
+    - count: 6
+      name: Eyes of Argus
+    - count: 3
+      name: Forced Awakening
+    - count: 2
+      name: My Enemy's Enemy
+    - count: 3
+      name: On the Qui Vive
+    - count: 2
+      name: Telepathic Misdirection
+    - count: 4
+      name: Deflection
+    - count: 4
+      name: Eagle's Sight

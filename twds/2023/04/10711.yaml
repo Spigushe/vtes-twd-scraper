@@ -1,0 +1,151 @@
+name: VII Torneo Liga Noroeste
+location: Gijon, Spain
+date_start: '2023-04-23'
+rounds_format: 2R+F
+players_count: 29
+winner: Noé Grigera Fernandez
+event_url: https://www.vekn.net/event-calendar/event/10711
+event_id: '10711'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80735-twd-7th-torneo-liga-noroeste-gijon-spain-23-apr-2023
+deck:
+  name: Malgorzata
+  created_by: Noegrigera
+  description: ''
+  crypt_count: 12
+  crypt_min: 36
+  crypt_max: 44
+  crypt_avg: 10.17
+  crypt:
+  - count: 4
+    name: Lord Tremere
+    capacity: 11
+    disciplines: ANI AUS DOM THA VIC obe
+    clan: Tremere
+    grouping: 5
+  - count: 3
+    name: Mistress Fanchon
+    capacity: 11
+    disciplines: AUS CEL DOM OBF THA VIC
+    title: inner circle
+    clan: Tremere
+    grouping: 4
+  - count: 5
+    name: Malgorzata
+    capacity: 9
+    disciplines: AUS DOM THA VIC pre
+    title: priscus
+    clan: Tremere antitribu
+    grouping: 4
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 18
+    cards:
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 4
+      name: Information Highway
+    - count: 1
+      name: Metro Underground
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 5
+      name: Villein
+  - name: Action
+    count: 8
+    cards:
+    - count: 1
+      name: Aranthebes, The Immortal
+    - count: 1
+      name: Far Mastery
+    - count: 4
+      name: Magic of the Smith
+    - count: 1
+      name: Mind Rape
+    - count: 1
+      name: Rutor's Hand
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+  - name: Equipment
+    count: 5
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Helicopter
+    - count: 1
+      name: Ivory Bow
+    - count: 1
+      name: Sniper Rifle
+  - name: Political Action
+    count: 5
+    cards:
+    - count: 1
+      name: Ancient Influence
+    - count: 2
+      name: Banishment
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+  - name: Action Modifier
+    count: 16
+    cards:
+    - count: 2
+      name: Bonding
+    - count: 4
+      name: Changeling
+    - count: 3
+      name: Conditioning
+    - count: 1
+      name: Enkil Cog
+    - count: 6
+      name: Mirror Walk
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Plasmic Form
+  - name: Reaction
+    count: 28
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 6
+      name: Eyes of Argus
+    - count: 2
+      name: My Enemy's Enemy
+    - count: 6
+      name: Obedience
+    - count: 2
+      name: On the Qui Vive
+    - count: 2
+      name: Redirection
+    - count: 4
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 6
+    cards:
+    - count: 6
+      name: Meld with the Land
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Scourge of the Enochians

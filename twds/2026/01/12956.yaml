@@ -1,0 +1,141 @@
+name: 'Garou Rim: Cold Front'
+location: Joensuu, Finland
+date_start: '2026-01-31'
+rounds_format: 3R+F
+players_count: 13
+winner: Markus Määttänen
+event_url: https://www.vekn.net/event-calendar/event/12956
+event_id: '12956'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82811-twd-garou-rim-cold-front
+deck:
+  name: Selina Vote
+  created_by: Phelddagrif
+  description: ''
+  crypt_count: 12
+  crypt_min: 32
+  crypt_max: 38
+  crypt_avg: 8.83
+  crypt:
+  - count: 2
+    name: Aaradhya, The Callous Tyrant
+    capacity: 10
+    disciplines: ANI DOM FOR POT PRE
+    title: cardinal
+    clan: Ventrue
+    grouping: 6
+  - count: 4
+    name: Dark Selina
+    capacity: 9
+    disciplines: CEL POT PRE dom for
+    title: cardinal
+    clan: Brujah antitribu
+    grouping: 5
+  - count: 2
+    name: Věnceslava, The Implacable
+    capacity: 9
+    disciplines: DOM FOR POT PRE cel
+    title: archbishop
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: De Sade
+    capacity: 9
+    disciplines: AUS DOM FOR PRE
+    title: archbishop
+    clan: Ventrue antitribu
+    grouping: 5
+  - count: 1
+    name: Rexton "Savage" Abernathy
+    capacity: 8
+    disciplines: DOM POT PRE cel
+    title: archbishop
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Üresség
+    capacity: 8
+    disciplines: CEL POT PRE dom for
+    title: archbishop
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Khin Aye
+    capacity: 7
+    disciplines: POT PRE dom for
+    title: priscus
+    clan: Ventrue
+    grouping: 6
+  library_count: 83
+  library_sections:
+  - name: Master
+    count: 21
+    cards:
+    - count: 1
+      name: Black Forest Base
+    - count: 1
+      name: Creepshow Casino
+    - count: 1
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Privileged Position
+    - count: 7
+      name: Unholy Sacrament
+    - count: 7
+      name: Villein
+  - name: Political Action
+    count: 21
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 2
+      name: Banishment
+    - count: 4
+      name: Cold War
+    - count: 3
+      name: Empires Fall
+    - count: 8
+      name: Kine Resources Contested
+    - count: 2
+      name: War of Ages
+  - name: Action Modifier
+    count: 26
+    cards:
+    - count: 4
+      name: Bewitching Oration
+    - count: 4
+      name: Dominant Personality
+    - count: 2
+      name: Magnetic Authority
+    - count: 2
+      name: Perfect Paragon
+    - count: 2
+      name: Private Audience
+    - count: 2
+      name: Relentlessness
+    - count: 4
+      name: Unthinkable Humiliation
+    - count: 6
+      name: Voter Captivation
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Absolute Tyranny
+  - name: Reaction
+    count: 10
+    cards:
+    - count: 7
+      name: Deflection
+    - count: 3
+      name: Obedience
+  - name: Combat
+    count: 3
+    cards:
+    - count: 3
+      name: Majesty

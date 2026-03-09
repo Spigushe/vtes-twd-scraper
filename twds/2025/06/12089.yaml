@@ -1,0 +1,138 @@
+name: Origins Friday 2 (2025)
+location: Columbus (OH), USA
+date_start: '2025-06-20'
+rounds_format: 2R+F
+players_count: 48
+winner: Darby Keeney
+event_url: https://www.vekn.net/event-calendar/event/12089
+event_id: '12089'
+vp_comment: 1 GW 4 VP in prelims, 1 GW 4 VP in finals
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82431-twd-origins-friday-2
+deck:
+  name: Alpha Beta
+  created_by: InferiorBabble (Darby Keeney)
+  description: '[2024-06-11] V1.4 WON 24 Build.'
+  crypt_count: 12
+  crypt_min: 22
+  crypt_max: 32
+  crypt_avg: 6.83
+  crypt:
+  - count: 2
+    name: Saku Pihlajamäki
+    capacity: 8
+    disciplines: CEL POT PRE for pro
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Theo Bell
+    capacity: 8
+    disciplines: CEL POT PRE aus dom
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Aline Gädeke
+    capacity: 7
+    disciplines: POT PRE cel
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Valeriya Zinovieva
+    capacity: 7
+    disciplines: POT cel pre pro
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Leumeah
+    capacity: 6
+    disciplines: PRE cel for pot
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Atiena
+    capacity: 6
+    disciplines: CEL obf pot pre
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Elen Kamjian
+    capacity: 4
+    disciplines: CEL POT
+    clan: Brujah
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 17
+    cards:
+    - count: 2
+      name: Blood Doll
+    - count: 1
+      name: Carfax Abbey
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: New Carthage
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: 'Powerbase: Los Angeles'
+    - count: 5
+      name: Villein
+  - name: Action
+    count: 20
+    cards:
+    - count: 9
+      name: Illegalism
+    - count: 10
+      name: Line Brawl
+    - count: 1
+      name: Open War
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Anarch Manifesto, An
+  - name: Action Modifier
+    count: 6
+    cards:
+    - count: 6
+      name: Power of One
+  - name: Reaction
+    count: 8
+    cards:
+    - count: 6
+      name: Bait and Switch
+    - count: 2
+      name: Organized Resistance
+  - name: Combat
+    count: 38
+    cards:
+    - count: 2
+      name: Bollix
+    - count: 2
+      name: Disarm
+    - count: 4
+      name: Diversion
+    - count: 9
+      name: Dust Up
+    - count: 6
+      name: Immortal Grapple
+    - count: 2
+      name: Pulled Fangs
+    - count: 5
+      name: Target Vitals
+    - count: 4
+      name: Taste of Vitae
+    - count: 4
+      name: Thrown Gate

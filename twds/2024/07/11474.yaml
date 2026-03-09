@@ -1,0 +1,135 @@
+name: Liga Portuguesa - Burning Wrath
+location: Lisbon, Portugal
+date_start: '2024-07-13'
+rounds_format: 3R+F
+players_count: 18
+winner: Diogo Pratas
+event_url: https://www.vekn.net/event-calendar/event/11474
+event_id: '11474'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81810-twd-burning-wrath-13-07-2024
+deck:
+  name: Nameless and Shiny
+  created_by: Diogo Pratas
+  description: If you don't want to think...a multi-action deck is your best strategy.
+  crypt_count: 12
+  crypt_min: 4
+  crypt_max: 40
+  crypt_avg: 4.67
+  crypt:
+  - count: 4
+    name: unnamed, The
+    capacity: 10
+    disciplines: CEL DAI OBF PRE PRO
+    clan: Baali
+    grouping: 6
+  - count: 3
+    name: Horde, The
+    capacity: 3
+    disciplines: dai obf pre
+    clan: Baali
+    grouping: 6
+  - count: 1
+    name: '"Coach" Tyrone Soros'
+    capacity: 3
+    disciplines: obf pre
+    clan: Ministry
+    grouping: 6
+  library_count: 75
+  library_sections:
+  - name: Master
+    count: 14
+    cards:
+    - count: 2
+      name: Archon Investigation
+    - count: 3
+      name: Dabbler
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Libertas
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Secure Haven
+    - count: 1
+      name: Vessel
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 10
+    cards:
+    - count: 1
+      name: Contagion
+    - count: 6
+      name: Platinum Protocol, The
+    - count: 3
+      name: Unleash Hell's Fury
+  - name: Equipment
+    count: 3
+    cards:
+    - count: 2
+      name: Heart of Nizchetus
+    - count: 1
+      name: Kaymakli Fragment
+  - name: Retainer
+    count: 3
+    cards:
+    - count: 3
+      name: Homunculus
+  - name: Action Modifier
+    count: 26
+    cards:
+    - count: 2
+      name: Approximation of Loyalty
+    - count: 2
+      name: CrimethInc.
+    - count: 3
+      name: Earth Control
+    - count: 2
+      name: Elder Impersonation
+    - count: 2
+      name: Enchanting Gaze
+    - count: 2
+      name: Enkil Cog
+    - count: 2
+      name: I am Legion
+    - count: 6
+      name: Instantaneous Transformation
+    - count: 3
+      name: Lost in Crowds
+    - count: 2
+      name: Revelation of the Serpent
+  - name: Action Modifier/Reaction
+    count: 5
+    cards:
+    - count: 5
+      name: Sense the Sin
+  - name: Reaction
+    count: 6
+    cards:
+    - count: 1
+      name: Delaying Tactics
+    - count: 1
+      name: Lost in Translation
+    - count: 3
+      name: Party Out Of Bounds
+    - count: 1
+      name: Visions of Zapathasura
+  - name: Combat
+    count: 7
+    cards:
+    - count: 3
+      name: Earth Meld
+    - count: 4
+      name: Form of Mist
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Narrow Minds

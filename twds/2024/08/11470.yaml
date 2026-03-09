@@ -1,0 +1,163 @@
+name: Recruiting Party
+location: Gulfport MS, USA
+date_start: '2024-08-23'
+rounds_format: 2R+F
+players_count: 20
+winner: Darby Keeney
+event_url: https://www.vekn.net/event-calendar/event/11470
+event_id: '11470'
+vp_comment: 2GW+8VP + 2 VP in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81718-twd-recruiting-party-gulfport-ms-usa-august-23-2024
+deck:
+  name: Y.A.F.T.P.D.
+  created_by: Darby Keeney
+  description: '"Funda-Fist" revision.'
+  crypt_count: 12
+  crypt_min: 20
+  crypt_max: 34
+  crypt_avg: 6.67
+  crypt:
+  - count: 2
+    name: Farah Sarroub
+    capacity: 7
+    disciplines: CEL THA aus obf
+    title: prince
+    clan: Banu Haqim
+    grouping: 6
+  - count: 2
+    name: Kasim Bayar
+    capacity: 9
+    disciplines: CEL OBF THA aus pot
+    title: justicar
+    clan: Banu Haqim
+    grouping: 6
+  - count: 2
+    name: Kassandra Tassaki
+    capacity: 6
+    disciplines: CEL THA obf
+    title: prince
+    clan: Banu Haqim
+    grouping: 6
+  - count: 2
+    name: Oluwafunmilayo
+    capacity: 8
+    disciplines: AUS CEL OBF THA
+    title: prince
+    clan: Banu Haqim
+    grouping: 6
+  - count: 2
+    name: Warmaksan
+    capacity: 5
+    disciplines: THA cel obf
+    title: prince
+    clan: Banu Haqim
+    grouping: 6
+  - count: 1
+    name: Greg Mazouni
+    capacity: 4
+    disciplines: cel obf tha
+    clan: Banu Haqim
+    grouping: 6
+  - count: 1
+    name: Khadija Al-Kindi
+    capacity: 6
+    disciplines: CEL OBF THA
+    title: primogen
+    clan: Banu Haqim
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 2
+      name: Alamut
+      comment: defense before offense
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Giant's Blood
+      comment: Better me than them
+    - count: 3
+      name: "Haqim's Law: Retribution"
+      comment: Enough in this version
+    - count: 2
+      name: Priority Contract
+      comment: Been the right number so far, 3 caused hand jam
+    - count: 6
+      name: Villein
+      comment: This could increase to 7 and the deck might be better
+  - name: Action
+    count: 5
+    cards:
+    - count: 5
+      name: Hunter's Mark
+  - name: Political Action
+    count: 5
+    cards:
+    - count: 4
+      name: Camarilla's Iron Fist
+      comment: incredible midgame potential, even if not realized this weekend
+    - count: 1
+      name: Disputed Territory
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+      comment: half the crypt has [aus/AUS]
+    - count: 1
+      name: Sport Bike
+  - name: Action Modifier
+    count: 3
+    cards:
+    - count: 3
+      name: Forgotten Labyrinth
+      comment: critical for Hunter's Mark with crypt's prevalent [obf] drawback
+  - name: Action Modifier/Combat
+    count: 10
+    cards:
+    - count: 6
+      name: Resist Earth's Grasp
+    - count: 4
+      name: Swallowed by the Night
+      comment: More [CEL] than [OBF] means more Resists
+  - name: Reaction
+    count: 9
+    cards:
+    - count: 9
+      name: 'Second Tradition: Domain'
+      comment: prototypical BH Prince card count
+  - name: Combat
+    count: 39
+    cards:
+    - count: 3
+      name: Blur
+    - count: 16
+      name: Hunger of Marduk
+    - count: 2
+      name: Lightning Reflexes
+      comment: Just can't drop these, they always make a difference
+    - count: 3
+      name: Psyche!
+      comment: just enough to make Form of Mist/Majesty think twice
+    - count: 7
+      name: Pursuit
+    - count: 3
+      name: Quickness
+      comment: I sometimes wonder about this card's errata and a deck might result
+    - count: 3
+      name: Rego Motum
+    - count: 2
+      name: Zip Gun
+      comment: love this wrinkle
+  - name: Event
+    count: 2
+    cards:
+    - count: 1
+      name: NSA Trio
+      comment: I can't tell you how often this buys a turn without predation
+    - count: 1
+      name: Scourge of the Enochians
+      comment: replaced Aranthebes when Iron Fist replaced Ancilla/Anarchist

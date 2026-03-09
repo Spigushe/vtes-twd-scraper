@@ -1,0 +1,162 @@
+name: Atlantic Cup 2024
+location: Online
+date_start: '2024-03-02'
+date_end: '2024-03-03'
+rounds_format: 3R+F
+players_count: 64
+winner: Teemu Sainomaa
+event_url: https://www.vekn.net/event-calendar/event/11184
+event_id: '11184'
+vp_comment: 3GW9.5+3
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81296-twd-atlantic-cup-2024-march-3rd-2024
+deck:
+  name: Chameleon
+  description: ''
+  crypt_count: 12
+  crypt_min: 17
+  crypt_max: 32
+  crypt_avg: 6.42
+  crypt:
+  - count: 1
+    name: Jacques Rouge
+    capacity: 6
+    disciplines: OBF ani pot pre
+    title: baron
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Elisha Tucker
+    capacity: 6
+    disciplines: PRE cel obf pro
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Marcel
+    capacity: 4
+    disciplines: obf pre pro
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Melech
+    capacity: 4
+    disciplines: OBF pro
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Vivian VI
+    capacity: 7
+    disciplines: PRE PRO obf tha
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Gilbert Duane (G6)
+    capacity: 7
+    disciplines: AUS DOM OBF
+    title: baron
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: '"Coach" Tyrone Soros'
+    capacity: 3
+    disciplines: obf pre
+    clan: Ministry
+    grouping: 6
+  - count: 5
+    name: Sergio Bueno
+    capacity: 8
+    disciplines: OBF PRE PRO aus pot
+    title: baron
+    clan: Ministry
+    grouping: 6
+  library_count: 77
+  library_sections:
+  - name: Master
+    count: 26
+    cards:
+    - count: 3
+      name: Abombwe
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Club Illusion
+    - count: 1
+      name: Coven, The
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 2
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Giant's Blood
+    - count: 3
+      name: Heidelberg Castle, Germany
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Opium Den
+    - count: 2
+      name: Vessel
+    - count: 1
+      name: Wider View
+    - count: 6
+      name: Zillah's Valley
+  - name: Action
+    count: 13
+    cards:
+    - count: 10
+      name: Chameleon
+    - count: 1
+      name: 'Fee Stake: Corte'
+    - count: 1
+      name: 'Fee Stake: Los Angeles'
+    - count: 1
+      name: 'Fee Stake: Perth'
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Political Action
+    count: 8
+    cards:
+    - count: 1
+      name: Ancient Influence
+    - count: 5
+      name: Banishment
+    - count: 2
+      name: Revolutionary Council
+  - name: Action Modifier
+    count: 17
+    cards:
+    - count: 3
+      name: Cloak the Gathering
+    - count: 3
+      name: Elder Impersonation
+    - count: 3
+      name: Forgotten Labyrinth
+    - count: 4
+      name: Lost in Crowds
+    - count: 2
+      name: Veil the Legions
+    - count: 2
+      name: Voter Captivation
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 6
+    cards:
+    - count: 5
+      name: Bait and Switch
+    - count: 1
+      name: On the Qui Vive
+  - name: Combat
+    count: 4
+    cards:
+    - count: 2
+      name: Earth Meld
+    - count: 2
+      name: Form of Mist

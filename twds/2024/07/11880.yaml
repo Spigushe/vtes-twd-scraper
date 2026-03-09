@@ -1,0 +1,147 @@
+name: Voice of Madness
+location: Paris, France
+date_start: '2024-07-20'
+rounds_format: 3R+F
+players_count: 19
+winner: Edouard Menneson
+event_url: https://www.vekn.net/player-registry/event/11880
+event_id: '11880'
+vp_comment: 1GW, 7VP, 1GW, 4VP final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82030-twd-voice-of-madness-paris
+deck:
+  name: Caitiff Nosfe Bruise and Bleed
+  created_by: Rhazoo
+  description: ''
+  crypt_count: 12
+  crypt_min: 16
+  crypt_max: 32
+  crypt_avg: 6.17
+  crypt:
+  - count: 3
+    name: Theo Bell
+    capacity: 8
+    disciplines: CEL POT PRE aus dom
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Saku Pihlajamäki
+    capacity: 8
+    disciplines: CEL POT PRE for pro
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Aline Gädeke
+    capacity: 7
+    disciplines: POT PRE cel
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Valeriya Zinovieva
+    capacity: 7
+    disciplines: POT cel pre pro
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Atiena
+    capacity: 6
+    disciplines: CEL obf pot pre
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Benedito, a Lanterna
+    capacity: 6
+    disciplines: POT ani aus obf
+    title: baron
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Leumeah
+    capacity: 6
+    disciplines: PRE cel for pot
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Elen Kamjian
+    capacity: 4
+    disciplines: CEL POT
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Gabriel Tremblay
+    capacity: 4
+    disciplines: aus pot pro
+    clan: Caitiff
+    grouping: 6
+  - count: 1
+    name: Rayne
+    capacity: 2
+    disciplines: pot
+    clan: Brujah
+    grouping: 6
+  library_count: 80
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Carver's Meat Packing and Storage
+    - count: 1
+      name: Club Illusion
+    - count: 1
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Giant's Blood
+    - count: 6
+      name: Villein
+  - name: Action
+    count: 12
+    cards:
+    - count: 10
+      name: Line Brawl
+    - count: 2
+      name: Open War
+  - name: Political Action
+    count: 1
+    cards:
+    - count: 1
+      name: Reckless Agitation
+  - name: Action Modifier
+    count: 1
+    cards:
+    - count: 1
+      name: Monkey Wrench
+  - name: Reaction
+    count: 14
+    cards:
+    - count: 7
+      name: Bait and Switch
+    - count: 7
+      name: Organized Resistance
+  - name: Combat
+    count: 37
+    cards:
+    - count: 2
+      name: Disarm
+    - count: 7
+      name: Dust Up
+    - count: 9
+      name: Immortal Grapple
+    - count: 8
+      name: Taste of Vitae
+    - count: 4
+      name: Thrown Sewer Lid
+    - count: 7
+      name: Torn Signpost

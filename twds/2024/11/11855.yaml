@@ -1,0 +1,595 @@
+name: Hurry up!
+location: Vác, Hungary
+date_start: '2024-11-10'
+rounds_format: 2R+F
+players_count: 10
+winner: Dávid Kmotricza' Tournament Winning Deck with 3 VPs in the Finals
+event_url: https://www.vekn.net/event-calendar/event/11855
+event_id: '11855'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81918-twd-hurry-up
+deck:
+  name: Tremere big bleed
+  created_by: Péter Talmácsi
+  description: ''
+  crypt_count: 12
+  crypt_min: 18
+  crypt_max: 40
+  crypt_avg: 7.92
+  crypt:
+  - count: 7
+    name: Karl Schrekt
+    capacity: 10
+    disciplines: AUS DOM FOR PRE THA
+    title: 2 votes
+    clan: Tremere
+    grouping: 6
+  - count: 1
+    name: Chalcedony
+    capacity: 7
+    disciplines: FOR POT THA VIS
+    clan: Gargoyle
+    grouping: 6
+  - count: 1
+    name: Claus Wegener
+    capacity: 5
+    disciplines: DOM aus for tha
+    clan: Tremere
+    grouping: 5
+  - count: 1
+    name: Verbruch
+    capacity: 5
+    disciplines: POT VIS for
+    clan: Gargoyle
+    grouping: 5
+  - count: 2
+    name: Rusticus
+    capacity: 4
+    disciplines: VIS for
+    clan: Gargoyle
+    grouping: 5
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 17
+    cards:
+    - count: 1
+      name: Academic Hunting Ground
+    - count: 1
+      name: Arcane Library
+    - count: 4
+      name: Dominate
+    - count: 1
+      name: From a Sinking Ship
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: Perfectionist
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Tribute to the Master
+    - count: 2
+      name: Vessel
+    - count: 2
+      name: Villein
+  - name: Action
+    count: 18
+    cards:
+    - count: 7
+      name: Govern the Unaligned
+    - count: 1
+      name: 'Judgment: Camarilla Segregation'
+    - count: 4
+      name: Magic of the Smith
+    - count: 6
+      name: 'Third Tradition: Progeny'
+  - name: Equipment
+    count: 5
+    cards:
+    - count: 1
+      name: Ankara Citadel, Turkey, The
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Ivory Bow
+    - count: 1
+      name: Palatial Estate
+  - name: Retainer
+    count: 1
+    cards:
+    - count: 1
+      name: Charnas the Imp
+  - name: Action Modifier
+    count: 28
+    cards:
+    - count: 1
+      name: Approximation of Loyalty
+    - count: 3
+      name: Conditioning
+    - count: 2
+      name: Daring the Dawn
+    - count: 1
+      name: Enkil Cog
+    - count: 8
+      name: Freak Drive
+    - count: 5
+      name: Mirror Walk
+    - count: 1
+      name: Momentary Delay
+    - count: 4
+      name: Seduction
+    - count: 3
+      name: Unleash the Hounds
+  - name: Reaction
+    count: 18
+    cards:
+    - count: 5
+      name: Deflection
+    - count: 2
+      name: Eyes of Argus
+    - count: 5
+      name: Obedience
+    - count: 2
+      name: On the Qui Vive
+    - count: 2
+      name: Redirection
+    - count: 2
+      name: 'Second Tradition: Domain'
+  - name: Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Rolling with the Punches
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Uncoiling, The
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 1
+      name: Eric Milliner                 2 pot                      Giovanni:5
+    - count: 1
+      name: Anarch Convert                1 -none-                   Caitiff:ANY
+    - count: 2
+      name: Freddy Gage                   1 pot                      Caitiff:5
+    - count: 1
+      name: Andre LeRoux                  3 aus                      Toreador:5
+    - count: 4
+      name: Anu Diptinatpa                7 aus vic DOM NEC          Nagaraja:6
+    - count: 1
+      name: Nichodemus                    2 pot                      Nosferatu:5
+    - count: 1
+      name: Bez Dunsirn                   2 POT                      Giovanni:6
+    - count: 1
+      name: Rayne                         2 pot                      Brujah:6
+  - name: Master
+    count: 24
+    cards:
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Anachronism
+    - count: 1
+      name: Anarch Troublemaker
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Information Highway
+    - count: 6
+      name: Life in the City
+    - count: 3
+      name: Archon Investigation
+    - count: 3
+      name: Potence
+    - count: 2
+      name: Secure Haven
+    - count: 2
+      name: Vessel
+    - count: 2
+      name: Wider View
+    - count: 1
+      name: Direct Intervention
+  - name: Action
+    count: 14
+    cards:
+    - count: 3
+      name: Ambush
+    - count: 5
+      name: Bum's Rush
+    - count: 6
+      name: Computer Hacking
+  - name: Combat
+    count: 35
+    cards:
+    - count: 2
+      name: Glancing Blow
+    - count: 7
+      name: Immortal Grapple
+    - count: 7
+      name: Taste of Vitae
+    - count: 7
+      name: Torn Signpost
+    - count: 7
+      name: Roundhouse
+    - count: 5
+      name: Disarm
+  - name: Reaction
+    count: 17
+    cards:
+    - count: 6
+      name: On the Qui Vive
+    - count: 9
+      name: Deflection
+    - count: 2
+      name: Delaying Tactics
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 1
+      name: Evan Klein                    5 aus dom pre OBF          Malkavian:6
+    - count: 1
+      name: Gilbert Duane                 7 AUS DOM OBF              Malkavian:6
+    - count: 1
+      name: Alexander Silverson           8 pre AUS DOM OBF          Malkavian:6
+    - count: 1
+      name: Andi Liu                      6 aus obf pre DOM          Malkavian:6
+    - count: 1
+      name: Ashley                        3 dom obf                  Malkavian:6
+    - count: 1
+      name: Colette                       5 dom AUS OBF              Malkavian:6
+    - count: 1
+      name: Gelasia Fotiou                6 obf pre AUS DOM          Malkavian:6
+    - count: 1
+      name: Sully                         4 aus dom obf              Malkavian:6
+    - count: 1
+      name: Abraham Mellon                8 for tha AUS DOM OBF      Malkavian:6
+    - count: 1
+      name: Darius Shirazi                6 obf AUS DOM              Malkavian:5
+    - count: 1
+      name: Jason "Son" Newberry          7 pre AUS DOM OBF          Malkavian:6
+    - count: 1
+      name: Nathaniel Bordruff            7 ani DOM OBF POT          Nosferatu:6
+  - name: Master
+    count: 9
+    cards:
+    - count: 1
+      name: Fame
+    - count: 1
+      name: From a Sinking Ship
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Misdirection
+    - count: 1
+      name: Barrens, The
+    - count: 1
+      name: Coven, The
+    - count: 2
+      name: Dreams of the Sphinx
+  - name: Action
+    count: 15
+    cards:
+    - count: 15
+      name: Govern the Unaligned
+  - name: Action Modifier
+    count: 37
+    cards:
+    - count: 4
+      name: Elder Impersonation
+    - count: 3
+      name: Faceless Night
+    - count: 2
+      name: Foreshadowing Destruction
+    - count: 5
+      name: Lost in Crowds
+    - count: 3
+      name: Seduction
+    - count: 4
+      name: Sleeping Mind, The
+    - count: 5
+      name: Spying Mission
+    - count: 1
+      name: Bonding
+    - count: 4
+      name: Cloak the Gathering
+    - count: 6
+      name: Conditioning
+  - name: Action Modifier/Combat
+    count: 4
+    cards:
+    - count: 1
+      name: Hide the Mind
+    - count: 3
+      name: Swallowed by the Night
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Murmur of the False Will
+  - name: Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Disguised Weapon
+  - name: Equipment
+    count: 4
+    cards:
+    - count: 1
+      name: Ivory Bow
+    - count: 3
+      name: Enhanced Coagulant
+  - name: Reaction
+    count: 14
+    cards:
+    - count: 3
+      name: Eyes of Argus
+    - count: 1
+      name: Obedience
+    - count: 2
+      name: On the Qui Vive
+    - count: 1
+      name: Telepathic Misdirection
+    - count: 5
+      name: Deflection
+    - count: 2
+      name: Delaying Tactics
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Bitter and Sweet Story, The
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 5
+      name: Stanislava       11 ANI CEL DOM FOR PRO           inner circle   Gangrel:2
+    - count: 2
+      name: Hartmut Stover   10 CEL OBF PRO dom for           archbishop     Gangrel antitribu:3
+    - count: 2
+      name: Xaviar (ADV)     10 ABO ANI FOR PRO aus cel pot   justicar       Gangrel:3
+    - count: 2
+      name: Ingrid Rossler    9 ANI FOR PRO dom               prince         Gangrel:2
+    - count: 1
+      name: Mark Decker       8 CEL PRO ani for obf pot       prince         Gangrel:3
+  - name: Library
+    count: 90
+    cards: []
+  - name: Master
+    count: 25
+    cards:
+    - count: 1
+      name: Backways
+    - count: 1
+      name: Camarilla Conclave
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Ennoia's Theater
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Papillon
+    - count: 6
+      name: Villein
+    - count: 8
+      name: Zillah's Valley
+    - count: 1
+      name: Zoo Hunting Ground
+  - name: Action
+    count: 9
+    cards:
+    - count: 6
+      name: Govern the Unaligned
+    - count: 3
+      name: Scouting Mission
+  - name: Political Action
+    count: 12
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 1
+      name: Banishment
+    - count: 6
+      name: Kine Resources Contested
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+  - name: Equipment
+    count: 3
+    cards:
+    - count: 1
+      name: Helicopter
+    - count: 1
+      name: Seal of Veddartha
+    - count: 1
+      name: Signet of King Saul, The
+  - name: Action Modifier
+    count: 16
+    cards:
+    - count: 6
+      name: Earth Control
+    - count: 1
+      name: Enkil Cog
+    - count: 3
+      name: Forced March
+    - count: 3
+      name: Freak Drive
+    - count: 3
+      name: Instantaneous Transformation
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Rapid Change
+  - name: Reaction
+    count: 10
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 2
+      name: On the Qui Vive
+    - count: 2
+      name: 'Second Tradition: Domain'
+  - name: Combat
+    count: 12
+    cards:
+    - count: 5
+      name: Earth Meld
+    - count: 7
+      name: Form of Mist
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Scourge of the Enochians
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 2
+      name: Armin Brenner    10 CEL FOR POT PRE ani obf   archbishop   Brujah antitribu:4
+    - count: 4
+      name: Hektor            9 CEL POT PRE QUI for       priscus      Brujah antitribu:4
+    - count: 2
+      name: Dark Selina       9 CEL POT PRE dom for       cardinal     Brujah antitribu:5
+    - count: 1
+      name: Jacques Molay     9 CEL POT PRE obf val                    Brujah antitribu:4
+    - count: 1
+      name: DeSalle           7 CEL POT PRE                            Brujah antitribu:4
+    - count: 1
+      name: Gold Pan Dan      6 POT PRE cel                            Brujah antitribu:5
+    - count: 1
+      name: Shawnda Dorrit    6 CEL obt pot pre           priscus      Brujah antitribu:4
+  - name: Library
+    count: 90
+    cards: []
+  - name: Master
+    count: 21
+    cards:
+    - count: 1
+      name: Amusement Park Hunting Ground
+    - count: 1
+      name: Archon Investigation
+    - count: 1
+      name: Black Forest Base
+    - count: 1
+      name: Depravity
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Gang Territory
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Monster
+    - count: 1
+      name: Retribution
+    - count: 1
+      name: Tension in the Ranks
+    - count: 2
+      name: Vessel
+    - count: 6
+      name: Villein
+    - count: 1
+      name: Wider View
+    - count: 1
+      name: Yawp Court
+  - name: Action
+    count: 21
+    cards:
+    - count: 1
+      name: Abbot
+    - count: 1
+      name: Aranthebes, The Immortal
+    - count: 2
+      name: Bum's Rush
+    - count: 2
+      name: Enchant Kindred
+    - count: 1
+      name: Entrancement
+    - count: 5
+      name: Esprit de Corps
+    - count: 1
+      name: Eternal Vigilance
+    - count: 5
+      name: Show of Force
+    - count: 3
+      name: Under Siege
+  - name: Political Action
+    count: 9
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 5
+      name: Dogs of War
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+  - name: Action Modifier
+    count: 8
+    cards:
+    - count: 3
+      name: Forced March
+    - count: 2
+      name: Freak Drive
+    - count: 3
+      name: Voter Captivation
+  - name: Action Modifier/Combat
+    count: 3
+    cards:
+    - count: 3
+      name: Resist Earth's Grasp
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Unexpected Coalition
+  - name: Reaction
+    count: 1
+    cards:
+    - count: 1
+      name: Vendetta
+  - name: Combat
+    count: 25
+    cards:
+    - count: 4
+      name: Amaranth
+    - count: 1
+      name: Earthshock
+    - count: 7
+      name: Immortal Grapple
+    - count: 1
+      name: Psyche!
+    - count: 3
+      name: Side Strike
+    - count: 2
+      name: Skin of Steel
+    - count: 2
+      name: Slam
+    - count: 2
+      name: Superior Mettle
+    - count: 3
+      name: Taste of Vitae

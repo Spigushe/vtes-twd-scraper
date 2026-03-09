@@ -1,0 +1,145 @@
+name: Inside Dirt Stockholm 2023
+location: Stockholm, Sweden
+date_start: '2023-09-23'
+rounds_format: 3R+F
+players_count: 13
+winner: 'Winner: Jonas Ståhle'
+event_url: https://www.vekn.net/event-calendar/event/10979
+event_id: '10979'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80847-twd-inside-dirt-stockholm-sweden-september-23-2023
+deck:
+  name: Girls Will Get Personal
+  created_by: Louhi
+  description: Mostly based on deck by Jorge Delgado, with some tweaks to personal playstyle.
+  crypt_count: 12
+  crypt_min: 36
+  crypt_max: 44
+  crypt_avg: 10.0
+  crypt:
+  - count: 1
+    name: Adana de Sforza
+    capacity: 11
+    disciplines: CEL OBF POT PRE PRO aus
+    title: inner circle
+    clan: Brujah
+    grouping: 4
+  - count: 1
+    name: Lutz von Hohenzollern
+    capacity: 11
+    disciplines: AUS DEM OBF PRE pot
+    title: inner circle
+    clan: Malkavian
+    grouping: 4
+  - count: 1
+    name: Mistress Fanchon
+    capacity: 11
+    disciplines: AUS CEL DOM OBF THA VIC
+    title: inner circle
+    clan: Tremere
+    grouping: 4
+  - count: 1
+    name: Rafael de Corazon
+    capacity: 11
+    disciplines: AUS CEL DOM OBF PRE
+    title: inner circle
+    clan: Toreador
+    grouping: 4
+  - count: 4
+    name: Cybele
+    capacity: 10
+    disciplines: ANI DAI OBF PRE SER THA
+    clan: Baali
+    grouping: 4
+  - count: 4
+    name: Aksinya Daclau
+    capacity: 9
+    disciplines: ANI FOR PRE PRO cel tha
+    clan: Gangrel antitribu
+    grouping: 4
+  library_count: 77
+  library_sections:
+  - name: Master
+    count: 49
+    cards:
+    - count: 1
+      name: Archon Investigation
+    - count: 12
+      name: Ashur Tablets
+    - count: 1
+      name: Coven, The
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: 'Golconda: Inner Peace'
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Jake Washington
+    - count: 5
+      name: Liquidation
+    - count: 1
+      name: Metro Underground
+    - count: 1
+      name: Monastery of Shadows
+    - count: 2
+      name: Parthenon, The
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 3
+      name: Personal Involvement
+    - count: 6
+      name: Villein
+    - count: 2
+      name: Wider View
+    - count: 7
+      name: Zillah's Valley
+  - name: Action
+    count: 4
+    cards:
+    - count: 2
+      name: Entrancement
+    - count: 2
+      name: Unleash Hell's Fury
+  - name: Action Modifier
+    count: 16
+    cards:
+    - count: 3
+      name: Aire of Elation
+    - count: 1
+      name: Approximation of Loyalty
+    - count: 2
+      name: Elder Impersonation
+    - count: 1
+      name: Enkil Cog
+    - count: 2
+      name: Faceless Night
+    - count: 3
+      name: Into Thin Air
+    - count: 1
+      name: Lost in Crowds
+    - count: 1
+      name: Mirror Walk
+    - count: 1
+      name: Spying Mission
+    - count: 1
+      name: Veil the Legions
+  - name: Action Modifier/Combat
+    count: 1
+    cards:
+    - count: 1
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 4
+    cards:
+    - count: 2
+      name: Guard Dogs
+    - count: 2
+      name: Lost in Translation
+  - name: Combat
+    count: 3
+    cards:
+    - count: 3
+      name: Majesty

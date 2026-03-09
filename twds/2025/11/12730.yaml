@@ -1,0 +1,146 @@
+name: 2025 Iberain GP
+location: Lisboa (Portugal)
+date_start: '2025-11-29'
+rounds_format: 3R+F
+players_count: 41
+winner: Martin Weinmayer
+event_url: https://www.vekn.net/event-calendar/event/12730
+event_id: '12730'
+vp_comment: "1\t3340035\tMartin Weinmayer\tVienna\t\tAustria\t3GW11.5"
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82770-twd-2025-iberain-gp-lisboa-29-nov-2025
+deck:
+  name: Cold War
+  created_by: Martin Weinmayer
+  description: ''
+  crypt_count: 12
+  crypt_min: 32
+  crypt_max: 40
+  crypt_avg: 9.08
+  crypt:
+  - count: 5
+    name: Aaradhya, The Callous Tyrant
+    capacity: 10
+    disciplines: ANI DOM FOR POT PRE
+    title: cardinal
+    clan: Ventrue
+    grouping: 6
+  - count: 2
+    name: Dark Selina
+    capacity: 9
+    disciplines: CEL POT PRE dom for
+    title: cardinal
+    clan: Brujah antitribu
+    grouping: 5
+  - count: 2
+    name: Věnceslava, The Implacable
+    capacity: 9
+    disciplines: DOM FOR POT PRE cel
+    title: archbishop
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Rexton "Savage" Abernathy
+    capacity: 8
+    disciplines: DOM POT PRE cel
+    title: archbishop
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Üresség
+    capacity: 8
+    disciplines: CEL POT PRE dom for
+    title: archbishop
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Khin Aye
+    capacity: 7
+    disciplines: POT PRE dom for
+    title: priscus
+    clan: Ventrue
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 22
+    cards:
+    - count: 1
+      name: Creepshow Casino
+    - count: 2
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Elder Library
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Gurchon Hall
+    - count: 1
+      name: Information Highway
+    - count: 2
+      name: Monastery of Shadows
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: Privileged Position
+    - count: 1
+      name: Secure Haven
+    - count: 2
+      name: Ventrue Headquarters
+    - count: 6
+      name: Villein
+  - name: Action
+    count: 10
+    cards:
+    - count: 2
+      name: Eternal Vigilance
+    - count: 8
+      name: Govern the Unaligned
+  - name: Political Action
+    count: 16
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 4
+      name: Banishment
+    - count: 8
+      name: Cold War
+    - count: 1
+      name: Political Stranglehold
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 2
+      name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 28
+    cards:
+    - count: 4
+      name: Dominant Personality
+    - count: 2
+      name: Enkil Cog
+    - count: 4
+      name: Iron Glare
+    - count: 4
+      name: Perfect Paragon
+    - count: 4
+      name: Relentlessness
+    - count: 6
+      name: Unthinkable Humiliation
+    - count: 4
+      name: Voter Captivation
+  - name: Reaction
+    count: 6
+    cards:
+    - count: 6
+      name: Deflection
+  - name: Combat
+    count: 6
+    cards:
+    - count: 6
+      name: Majesty

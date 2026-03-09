@@ -1,0 +1,107 @@
+name: Norwegian NC 2023
+location: Moss, Norway
+date_start: '2023-08-05'
+rounds_format: 3R+F
+players_count: 15
+winner: Jon Grønset
+event_url: https://www.vekn.net/event-calendar/event/10589
+event_id: '10589'
+vp_comment: 1GW, 6VP + 5VP in final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80778-twd-norwegian-nc-2023-moss-norway-5-aug-2023
+deck:
+  name: The Strokes
+  description: ''
+  crypt_count: 13
+  crypt_min: 4
+  crypt_max: 29
+  crypt_avg: 4.15
+  crypt:
+  - count: 4
+    name: Babalawo Alafin
+    capacity: 7
+    disciplines: AUS FOR NEC ani
+    clan: Harbinger of Skulls
+    grouping: 4
+  - count: 2
+    name: Crow
+    capacity: 5
+    disciplines: ANI for pro tha
+    clan: Gangrel
+    grouping: 5
+  - count: 1
+    name: Monica Chang
+    capacity: 3
+    disciplines: dom tha
+    clan: Tremere
+    grouping: 5
+  - count: 1
+    name: Mordechai Ben-Nun
+    capacity: 8
+    disciplines: ANI AUS FOR NEC
+    clan: Harbinger of Skulls
+    grouping: 5
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 27
+    cards:
+    - count: 2
+      name: Direct Intervention
+    - count: 11
+      name: Liquidation
+    - count: 3
+      name: Maabara
+    - count: 1
+      name: Metro Underground
+    - count: 5
+      name: Parthenon, The
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: 'Powerbase: Los Angeles'
+    - count: 1
+      name: Sudden Reversal
+    - count: 2
+      name: Wider View
+  - name: Ally
+    count: 11
+    cards:
+    - count: 11
+      name: Emerald Legionnaire
+  - name: Action Modifier
+    count: 6
+    cards:
+    - count: 5
+      name: Call of the Hungry Dead
+    - count: 1
+      name: Monkey Wrench
+  - name: Action Modifier/Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Breath of Thanatos
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Spectral Divination
+  - name: Reaction
+    count: 35
+    cards:
+    - count: 5
+      name: Delaying Tactics
+    - count: 15
+      name: Detect Authority
+    - count: 5
+      name: Eyes of Argus
+    - count: 3
+      name: On the Qui Vive
+    - count: 7
+      name: Telepathic Misdirection
+  - name: Event
+    count: 5
+    cards:
+    - count: 2
+      name: FBI Special Affairs Division
+    - count: 3
+      name: Unmasking, The

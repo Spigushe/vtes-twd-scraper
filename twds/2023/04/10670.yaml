@@ -1,0 +1,150 @@
+name: Granada by Night
+location: Granada, Spain
+date_start: '2023-04-15'
+rounds_format: 3R+F
+players_count: 26
+winner: Javier Naranjo Ortiz
+event_url: https://www.vekn.net/event-calendar/event/10670
+event_id: '10670'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80523-twd-granada-by-night-granada-spain-15-apr-2023
+deck:
+  name: Another boring political deck
+  description: ''
+  crypt_count: 12
+  crypt_min: 32
+  crypt_max: 40
+  crypt_avg: 9.17
+  crypt:
+  - count: 5
+    name: Bruce de Guy
+    capacity: 10
+    disciplines: AUS DOM FOR OBT
+    title: cardinal
+    clan: Ventrue antitribu
+    grouping: 4
+  - count: 1
+    name: Luca Italicus
+    capacity: 10
+    disciplines: DOM FOR NEC OBT POT tha
+    title: archbishop
+    clan: Lasombra
+    grouping: 4
+  - count: 1
+    name: Antón de Concepción
+    capacity: 9
+    disciplines: ANI DOM OBT POT aus
+    title: archbishop
+    clan: Lasombra
+    grouping: 4
+  - count: 1
+    name: Carolina Vález
+    capacity: 9
+    disciplines: DOM OBT POT PRE aus
+    title: archbishop
+    clan: Lasombra
+    grouping: 5
+  - count: 2
+    name: Lord Leopold Valdemar
+    capacity: 8
+    disciplines: OBT POT cel dom obf
+    title: priscus
+    clan: Lasombra
+    grouping: 5
+  - count: 1
+    name: Charles Delmare
+    capacity: 8
+    disciplines: DOM OBT POT cel
+    title: cardinal
+    clan: Lasombra
+    grouping: 5
+  - count: 1
+    name: Percival
+    capacity: 8
+    disciplines: FOR OBT POT aus dom
+    title: archbishop
+    clan: Lasombra
+    grouping: 5
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 21
+    cards:
+    - count: 1
+      name: Demonstration
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Elysian Fields
+    - count: 1
+      name: Festivo dello Estinto
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Gurchon Hall
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: Secure Haven
+    - count: 7
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 14
+    cards:
+    - count: 1
+      name: Eternal Vigilance
+    - count: 10
+      name: Govern the Unaligned
+    - count: 3
+      name: Under Siege
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Zaire River Ferry
+  - name: Political Action
+    count: 11
+    cards:
+    - count: 2
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 2
+      name: Ancilla Empowerment
+    - count: 4
+      name: Banishment
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+  - name: Action Modifier
+    count: 23
+    cards:
+    - count: 2
+      name: Conditioning
+    - count: 2
+      name: Enkil Cog
+    - count: 6
+      name: Freak Drive
+    - count: 5
+      name: Shadow Play
+    - count: 4
+      name: Shroud of Absence
+    - count: 4
+      name: Shroud of Night
+  - name: Reaction
+    count: 19
+    cards:
+    - count: 8
+      name: Deflection
+    - count: 11
+      name: Obedience

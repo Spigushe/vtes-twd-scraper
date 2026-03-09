@@ -1,0 +1,138 @@
+name: Aemilia by night - episode 1
+location: Spilamberto MO, Italy
+date_start: '2024-01-28'
+rounds_format: 2R+F
+players_count: 25
+winner: Standard Constructed
+event_url: https://www.vekn.net/event-calendar/event/11208
+event_id: '11208'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81191-twd-aemilia-by-night-episode-1-spilamberto-mo-italy-28th-january-2024
+deck:
+  name: Nosferatu Antitribu - Dirt & drive 3.0
+  description: ''
+  crypt_count: 12
+  crypt_min: 9
+  crypt_max: 28
+  crypt_avg: 4.75
+  crypt:
+  - count: 5
+    name: Mata Hari
+    capacity: 7
+    disciplines: CHI OBF aus for qui
+    title: 2 votes
+    clan: Ravnos
+    grouping: 4
+  - count: 1
+    name: Aaron Bathurst
+    capacity: 4
+    disciplines: for obf pot
+    clan: Nosferatu antitribu
+    grouping: 4
+  - count: 1
+    name: Blister
+    capacity: 3
+    disciplines: obf pot
+    clan: Nosferatu antitribu
+    grouping: 4
+  - count: 1
+    name: Bloodfeud
+    capacity: 2
+    disciplines: obf
+    clan: Malkavian antitribu
+    grouping: 4
+  - count: 1
+    name: Denette Stensen
+    capacity: 2
+    disciplines: obf
+    clan: Gangrel antitribu
+    grouping: 4
+  - count: 1
+    name: Frank Litzpar
+    capacity: 5
+    disciplines: OBF ani for pot
+    clan: Nosferatu antitribu
+    grouping: 4
+  - count: 1
+    name: Old Neddacka
+    capacity: 2
+    disciplines: obf
+    clan: Nosferatu antitribu
+    grouping: 4
+  - count: 1
+    name: Skulk
+    capacity: 4
+    disciplines: OBF ani
+    clan: Nosferatu antitribu
+    grouping: 5
+  library_count: 77
+  library_sections:
+  - name: Master
+    count: 14
+    cards:
+    - count: 2
+      name: Archon Investigation
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Ennoia's Theater
+    - count: 1
+      name: Mapatano Utando
+    - count: 1
+      name: Perfectionist
+    - count: 1
+      name: Secret Library of Alexandria, The
+    - count: 3
+      name: Secure Haven
+    - count: 1
+      name: Wash
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 21
+    cards:
+    - count: 10
+      name: Inside Dirt
+    - count: 8
+      name: Night Moves
+    - count: 2
+      name: Off Kilter
+    - count: 1
+      name: Rewilding
+  - name: Ally
+    count: 7
+    cards:
+    - count: 7
+      name: Emerald Legionnaire
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Shilmulo Tarot
+  - name: Action Modifier
+    count: 31
+    cards:
+    - count: 4
+      name: Cloak the Gathering
+    - count: 2
+      name: Faceless Night
+    - count: 4
+      name: Forgotten Labyrinth
+    - count: 9
+      name: Freak Drive
+    - count: 4
+      name: Lost in Crowds
+    - count: 5
+      name: Spoils of War
+    - count: 3
+      name: Spying Mission
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 1
+    cards:
+    - count: 1
+      name: Delaying Tactics

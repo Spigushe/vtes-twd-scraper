@@ -1,0 +1,159 @@
+name: V Torneo Liga Norte
+location: Gijón, Spain
+date_start: '2023-02-19'
+rounds_format: 2R+F
+players_count: 27
+winner: José Ramón Rodríguez Álvarez-Solís
+event_url: https://www.vekn.net/event-calendar/event/10590
+event_id: '10590'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80732-twd-v-torneo-liga-norte-gijon-spain-19-feb-2023
+deck:
+  name: Tremere Multiacción Camarilla Segregation
+  created_by: Rollshausen
+  description: '[2023-02-18]'
+  crypt_count: 12
+  crypt_min: 26
+  crypt_max: 37
+  crypt_avg: 7.92
+  crypt:
+  - count: 1
+    name: Karl Schrekt
+    capacity: 10
+    disciplines: AUS DOM FOR PRE THA
+    title: 2 votes
+    clan: Tremere
+    grouping: 6
+  - count: 4
+    name: Gerald Windham
+    capacity: 9
+    disciplines: AUS DOM FOR THA
+    clan: Tremere
+    grouping: 5
+  - count: 2
+    name: Abraham DuSable
+    capacity: 8
+    disciplines: AUS DOM FOR THA
+    clan: Tremere
+    grouping: 6
+  - count: 1
+    name: Ayelech
+    capacity: 7
+    disciplines: AUS DOM THA
+    title: prince
+    clan: Tremere
+    grouping: 6
+  - count: 1
+    name: Graham Gottesman
+    capacity: 7
+    disciplines: DOM FOR obf pre tha
+    title: prince
+    clan: Ventrue
+    grouping: 5
+  - count: 1
+    name: Sybren van Oosten
+    capacity: 7
+    disciplines: FOR PRE dom tha
+    title: prince
+    clan: Ventrue
+    grouping: 6
+  - count: 1
+    name: Inês Tristão
+    capacity: 6
+    disciplines: THA aus dom pre
+    title: prince
+    clan: Tremere
+    grouping: 6
+  - count: 1
+    name: Trevon Parker
+    capacity: 6
+    disciplines: AUS DOM THA
+    clan: Tremere
+    grouping: 6
+  library_count: 82
+  library_sections:
+  - name: Master
+    count: 13
+    cards:
+    - count: 1
+      name: Academic Hunting Ground
+    - count: 1
+      name: Arcane Library
+    - count: 1
+      name: Chantry
+    - count: 1
+      name: Coven, The
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 2
+      name: Perfectionist
+    - count: 1
+      name: Visit from the Capuchin
+    - count: 1
+      name: Wasserschloss Anif, Austria
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 16
+    cards:
+    - count: 1
+      name: Dominate Kine
+    - count: 1
+      name: Far Mastery
+    - count: 10
+      name: Govern the Unaligned
+    - count: 2
+      name: 'Judgment: Camarilla Segregation'
+    - count: 2
+      name: Magic of the Smith
+  - name: Equipment
+    count: 4
+    cards:
+    - count: 1
+      name: .44 Magnum
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Ivory Bow
+  - name: Political Action
+    count: 4
+    cards:
+    - count: 3
+      name: Banishment
+    - count: 1
+      name: Meddling of Semsith, The
+  - name: Action Modifier
+    count: 23
+    cards:
+    - count: 9
+      name: Freak Drive
+    - count: 7
+      name: Mirror Walk
+    - count: 2
+      name: Seduction
+    - count: 5
+      name: Threats
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Murmur of the False Will
+  - name: Reaction
+    count: 14
+    cards:
+    - count: 7
+      name: Deflection
+    - count: 5
+      name: Eyes of Argus
+    - count: 2
+      name: On the Qui Vive
+  - name: Combat
+    count: 6
+    cards:
+    - count: 6
+      name: Theft of Vitae

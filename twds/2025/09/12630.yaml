@@ -1,0 +1,152 @@
+name: Independência!!! Se a eaposa permitir... - Liga Brasil 2
+location: Teresina - Brasil
+date_start: '2025-09-28'
+rounds_format: 2R+F
+players_count: 10
+winner: Igor de Arimatéa Carmo
+event_url: https://www.vekn.net/event-calendar/event/12630
+event_id: '12630'
+vp_comment: Igor wins with 1,5vp in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82593-twd-independencia-se-a-esposa-permitir-liga-brasil-teresina-28-09-2025
+deck:
+  name: Brujando
+  created_by: Igor Carmo
+  description: ''
+  crypt_count: 12
+  crypt_min: 15
+  crypt_max: 28
+  crypt_avg: 5.58
+  crypt:
+  - count: 3
+    name: Aline Gädeke
+    capacity: 7
+    disciplines: POT PRE cel
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Valeriya Zinovieva
+    capacity: 7
+    disciplines: POT cel pre pro
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Atiena
+    capacity: 6
+    disciplines: CEL obf pot pre
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Jacques Rouge
+    capacity: 6
+    disciplines: OBF ani pot pre
+    title: baron
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Leumeah
+    capacity: 6
+    disciplines: PRE cel for pot
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Octane
+    capacity: 6
+    disciplines: CEL POT PRE
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Elen Kamjian
+    capacity: 4
+    disciplines: CEL POT
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Ariane
+    capacity: 3
+    disciplines: cel pot pre
+    clan: Brujah
+    grouping: 5
+  - count: 1
+    name: Rayne
+    capacity: 2
+    disciplines: pot
+    clan: Brujah
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 20
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 2
+      name: Anarch Revolt
+    - count: 2
+      name: Blood Doll
+    - count: 5
+      name: Brujah Debate
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: New Carthage
+    - count: 1
+      name: 'Powerbase: Los Angeles'
+    - count: 4
+      name: Villein
+  - name: Action
+    count: 14
+    cards:
+    - count: 3
+      name: Enchant Kindred
+    - count: 3
+      name: Illegalism
+    - count: 7
+      name: Line Brawl
+    - count: 1
+      name: Open War
+  - name: Action Modifier
+    count: 2
+    cards:
+    - count: 2
+      name: Monkey Wrench
+  - name: Reaction
+    count: 17
+    cards:
+    - count: 5
+      name: Bait and Switch
+    - count: 2
+      name: On the Qui Vive
+    - count: 8
+      name: Organized Resistance
+    - count: 2
+      name: Protection Racket
+  - name: Combat
+    count: 37
+    cards:
+    - count: 2
+      name: Bollix
+    - count: 2
+      name: Disarm
+    - count: 3
+      name: Diversion
+    - count: 8
+      name: Dust Up
+    - count: 5
+      name: Hell-for-Leather
+    - count: 9
+      name: Immortal Grapple
+    - count: 4
+      name: Taste of Vitae
+    - count: 4
+      name: Torn Signpost

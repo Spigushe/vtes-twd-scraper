@@ -1,0 +1,180 @@
+name: Gulf Coast Roast – Dallas Grand Prix
+location: Dallas, Texas, USA
+date_start: '2024-04-27'
+rounds_format: 3R+F
+players_count: 24
+winner: Darby Keeney
+event_url: https://www.vekn.net/event-calendar/event/11350
+event_id: '11350'
+vp_comment: "Description: This is an evolution of a previous Museum-Manse design, now with more Dominate! The library is currently
+  formatted for the Gulf Coast's untimed finals format. A more tuned version with a thinner library is already being tested.\
+  \  The deck should also get better as the crypt rounds out."
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81413-twd-gulf-coast-roast-dallas-grand-prix-dallas-tx-usa-27-april-2024
+deck:
+  name: Defy the Edict of Worms
+  created_by: Darby Keeney
+  description: This is an evolution of a previous Museum-Manse design, now with more Dominate! The library is currently 
+    formatted for the Gulf Coast's untimed finals format. A more tuned version with a thinner library is already being 
+    tested.  The deck should also get better as the crypt rounds out.
+  crypt_count: 12
+  crypt_min: 19
+  crypt_max: 31
+  crypt_avg: 6.25
+  crypt:
+  - count: 3
+    name: Adrino Manauara
+    capacity: 8
+    disciplines: ANI DOM PRO pot
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 2
+    name: Ángel Guerrero
+    capacity: 7
+    disciplines: ANI DOM PRO
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 2
+    name: Neserian
+    capacity: 6
+    disciplines: ANI DOM cel pro
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Clara Hjortshøj
+    capacity: 5
+    disciplines: PRO ani aus dom
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Marialena
+    capacity: 5
+    disciplines: DOM PRO ani
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Prentis Derby
+    capacity: 4
+    disciplines: ani dom pro
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Stephen Bateson
+    capacity: 6
+    disciplines: ani aus tha vic
+    clan: Tzimisce
+    grouping: 5
+  - count: 1
+    name: Whisper
+    capacity: 5
+    disciplines: ANI DOM pro
+    clan: Tzimisce
+    grouping: 6
+  library_count: 88
+  library_sections:
+  - name: Master
+    count: 22
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 5
+      name: British Museum, London, The
+      comment: not as mission critical here
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Direct Intervention
+    - count: 3
+      name: Dreams of the Sphinx
+      comment: I hate this crutch, but it works
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Jake Washington
+    - count: 2
+      name: Libertas
+      comment: Worthless in this design, fodder for improvement
+    - count: 1
+      name: Papillon
+      comment: would be better as a 3rd Cooler with this crypt
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: 'Powerbase: Savannah'
+    - count: 3
+      name: Villein
+      comment: should be +1 Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 11
+    cards:
+    - count: 11
+      name: Govern the Unaligned
+  - name: Equipment
+    count: 13
+    cards:
+    - count: 1
+      name: Blood Tears of Kephran
+    - count: 2
+      name: Cooler
+    - count: 2
+      name: Heart of Nizchetus
+    - count: 7
+      name: Living Manse
+      comment: stellar when it is free and effectively actionless
+    - count: 1
+      name: Palatial Estate
+  - name: Political Action
+    count: 2
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancilla Empowerment
+  - name: Action Modifier
+    count: 5
+    cards:
+    - count: 5
+      name: Earth Control
+  - name: Action Modifier/Combat
+    count: 3
+    cards:
+    - count: 2
+      name: Obedient Flesh – 3rd copy would be welcome w/o Libertas.
+    - count: 1
+      name: Rapid Change
+  - name: Action Modifier/Reaction
+    count: 7
+    cards:
+    - count: 4
+      name: Form of the Bat
+    - count: 3
+      name: Murmur of the False Will
+  - name: Reaction
+    count: 15
+    cards:
+    - count: 2
+      name: Deep Ecology
+    - count: 7
+      name: Deflection
+    - count: 2
+      name: One With the Land – squeeze in a 3rd copy?
+    - count: 4
+      name: Organized Resistance
+  - name: Combat
+    count: 8
+    cards:
+    - count: 3
+      name: Earth Meld
+    - count: 5
+      name: Form of Mist
+  - name: Event
+    count: 2
+    cards:
+    - count: 1
+      name: NRA PAC
+    - count: 1
+      name: Scourge of the Enochians

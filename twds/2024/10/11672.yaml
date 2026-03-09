@@ -1,0 +1,169 @@
+name: Gulf Coast Roast Grand Prix 2024 - New Orleans - Leg 4
+location: New Orleans, Louisiana, USA
+date_start: '2024-10-12'
+rounds_format: 3R+F
+players_count: 18
+winner: Kelly Lyons
+event_url: https://www.vekn.net/event-calendar/event/11672
+event_id: '11672'
+vp_comment: 1GW+2.5VP + 4 VP in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81822-twd-gulf-coast-roast-grand-prix-leg-4-new-orleans-usa-12-oct-24
+deck:
+  name: Water Dog - Flower Power
+  created_by: Kelly Lyons and Randal Rudstam
+  description: 'This is the same deck I ran in Mississippi and got to the Final Table. I did make a few modifications from
+    that deck to suit the current meta I was seeing. You can see the original deck on my YouTube Channel, READING BETWEEN
+    THE LYONS:'
+  crypt_count: 12
+  crypt_min: 16
+  crypt_max: 34
+  crypt_avg: 6.33
+  crypt:
+  - count: 2
+    name: Diana Iadanza
+    capacity: 9
+    disciplines: AUS CEL FOR PRE
+    title: justicar
+    clan: Toreador
+    grouping: 7
+  - count: 2
+    name: Catalina Vega
+    capacity: 8
+    disciplines: AUS CEL PRE for
+    title: prince
+    clan: Toreador
+    grouping: 6
+  - count: 2
+    name: Flávio Gonçalves
+    capacity: 7
+    disciplines: CEL PRE aus for
+    title: prince
+    clan: Toreador
+    grouping: 6
+  - count: 2
+    name: Mkhokheli
+    capacity: 6
+    disciplines: PRE aus cel for
+    title: prince
+    clan: Toreador
+    grouping: 6
+  - count: 1
+    name: Maila
+    capacity: 6
+    disciplines: AUS PRE cel
+    title: primogen
+    clan: Toreador
+    grouping: 6
+  - count: 1
+    name: Victoria Ash
+    capacity: 6
+    disciplines: PRE aus cel dom
+    clan: Toreador
+    grouping: 7
+  - count: 1
+    name: Kazuki Hanabira
+    capacity: 2
+    disciplines: aus
+    clan: Toreador
+    grouping: 7
+  - count: 1
+    name: Mateo García
+    capacity: 2
+    disciplines: pre
+    clan: Toreador
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 20
+    cards:
+    - count: 1
+      name: Art Museum
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 3
+      name: Protected Resources
+    - count: 1
+      name: Secret Passage
+    - count: 2
+      name: Secure Haven
+    - count: 6
+      name: Toreador Grand Ball
+    - count: 3
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 8
+    cards:
+    - count: 2
+      name: Embrace, The
+    - count: 2
+      name: Entrancement
+    - count: 2
+      name: Heart of the City
+    - count: 2
+      name: 'Third Tradition: Progeny'
+  - name: Political Action
+    count: 15
+    cards:
+    - count: 2
+      name: Banishment
+    - count: 7
+      name: Camarilla's Iron Fist
+    - count: 3
+      name: Kine Resources Contested
+    - count: 3
+      name: Parity Shift
+  - name: Action Modifier
+    count: 25
+    cards:
+    - count: 2
+      name: Aire of Elation
+    - count: 4
+      name: Awe
+    - count: 2
+      name: Bewitching Oration
+    - count: 4
+      name: Forced March
+    - count: 3
+      name: Freak Drive
+    - count: 2
+      name: Loup
+    - count: 2
+      name: Perfect Paragon
+    - count: 6
+      name: Voter Captivation
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Resist Earth's Grasp
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Scalpel Tongue
+  - name: Reaction
+    count: 10
+    cards:
+    - count: 2
+      name: Eyes of Argus
+    - count: 2
+      name: On the Qui Vive
+    - count: 2
+      name: 'Second Tradition: Domain'
+    - count: 4
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 8
+    cards:
+    - count: 2
+      name: Charismatic Aura
+    - count: 4
+      name: Majesty
+    - count: 2
+      name: Torrent

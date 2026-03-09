@@ -56,7 +56,7 @@ jobs:
       - name: Build scrape command
         id: build_cmd
         run: |
-          CMD="vtes-scraper scrape"
+          CMD="vtes-scraper scrape --max-pages 2"
           if [ -n "${{ github.event.inputs.max_pages }}" ]; then
             CMD="$CMD --max-pages ${{ github.event.inputs.max_pages }}"
           fi

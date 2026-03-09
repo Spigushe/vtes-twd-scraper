@@ -1,0 +1,155 @@
+name: Gulf Coast Roast Grand Prix (3rd Leg) - Biloxi/Gulfport
+location: Gulfport, Mississippi
+date_start: '2025-08-23'
+rounds_format: 3R+F
+players_count: 19
+winner: Parth Patel
+event_url: https://www.vekn.net/event-calendar/event/12184
+event_id: '12184'
+vp_comment: 1GW+6.5VP + 3VP in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82527-twd-gulf-coast-roast-grand-prix-3rd-leg-biloxi-gulfport
+deck:
+  name: Scouse politics (New)
+  created_by: Tr0tt3r
+  description: So, I started playing V:TES at the end of April. I played twice at Miles 2 Adventure learning the game 
+    and borrowing a few decks before heading back to the U.K., where after a few weeks I found a group in Liverpool.
+  crypt_count: 12
+  crypt_min: 15
+  crypt_max: 35
+  crypt_avg: 6.5
+  crypt:
+  - count: 3
+    name: Diana Iadanza
+    capacity: 9
+    disciplines: AUS CEL FOR PRE
+    title: justicar
+    clan: Toreador
+    grouping: 7
+  - count: 2
+    name: Catalina Vega
+    capacity: 8
+    disciplines: AUS CEL PRE for
+    title: prince
+    clan: Toreador
+    grouping: 6
+  - count: 2
+    name: Flávio Gonçalves
+    capacity: 7
+    disciplines: CEL PRE aus for
+    title: prince
+    clan: Toreador
+    grouping: 6
+  - count: 2
+    name: Maila
+    capacity: 6
+    disciplines: AUS PRE cel
+    title: primogen
+    clan: Toreador
+    grouping: 6
+  - count: 1
+    name: Bret Stryker
+    capacity: 4
+    disciplines: CEL PRE
+    clan: Toreador
+    grouping: 6
+  - count: 1
+    name: Valentina Osako
+    capacity: 3
+    disciplines: PRE
+    clan: Toreador
+    grouping: 7
+  - count: 1
+    name: Kazuki Hanabira
+    capacity: 2
+    disciplines: aus
+    clan: Toreador
+    grouping: 7
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 18
+    cards:
+    - count: 1
+      name: Art Museum
+    - count: 1
+      name: Creepshow Casino
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: Protected Resources
+    - count: 6
+      name: Toreador Grand Ball
+    - count: 3
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 8
+    cards:
+    - count: 6
+      name: Enchant Kindred
+    - count: 1
+      name: Entrancement
+    - count: 1
+      name: Heart of the City
+  - name: Political Action
+    count: 14
+    cards:
+    - count: 2
+      name: Banishment
+    - count: 4
+      name: Camarilla's Iron Fist
+    - count: 4
+      name: Kine Resources Contested
+    - count: 4
+      name: Parity Shift
+  - name: Action Modifier
+    count: 23
+    cards:
+    - count: 2
+      name: Aire of Elation
+    - count: 2
+      name: Awe
+    - count: 2
+      name: Bewitching Oration
+    - count: 4
+      name: Forced March
+    - count: 4
+      name: Loup
+    - count: 2
+      name: Perfect Paragon
+    - count: 7
+      name: Voter Captivation
+  - name: Action Modifier/Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Resist Earth's Grasp
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Scalpel Tongue
+  - name: Reaction
+    count: 15
+    cards:
+    - count: 4
+      name: Eyes of Argus
+    - count: 4
+      name: 'Second Tradition: Domain'
+    - count: 7
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 6
+    cards:
+    - count: 2
+      name: Charismatic Aura
+    - count: 4
+      name: Majesty

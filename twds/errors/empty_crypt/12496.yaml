@@ -1,0 +1,108 @@
+name: Symposium Italicum MMXXV - Barga
+location: Barga, Italy
+date_start: '2025-08-30'
+rounds_format: 3R+F
+players_count: 42
+winner: Federico Neri's Tournament Winning Deck
+event_url: https://www.vekn.net/event-calendar/event/12496
+event_id: '12496'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82553-twd-symposium-italicum-mmxxv-barga
+deck:
+  name: Garou, mi piaci tu
+  created_by: Federico Neri
+  description: ''
+  crypt_count: 12
+  crypt_min: 15
+  crypt_max: 25
+  crypt_avg: 5.25
+  crypt: []
+  library_count: 77
+  library_sections:
+  - name: Master
+    count: 17
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 2
+      name: Direct Intervention
+    - count: 1
+      name: Ecoterrorists
+    - count: 1
+      name: Fame
+    - count: 2
+      name: Left for Dead
+    - count: 3
+      name: Piper
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 4
+      name: Villein
+  - name: Action
+    count: 9
+    cards:
+    - count: 1
+      name: Rewilding
+    - count: 8
+      name: Thing
+  - name: Ally
+    count: 10
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 1
+      name: Double Deuce
+    - count: 1
+      name: Ossian
+    - count: 7
+      name: Renegade Garou
+  - name: Action Modifier
+    count: 2
+    cards:
+    - count: 2
+      name: Earth Control
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Form of the Bat
+  - name: Reaction
+    count: 17
+    cards:
+    - count: 5
+      name: Bait and Switch
+    - count: 3
+      name: Deep Ecology
+    - count: 3
+      name: Eyes of the Wild
+    - count: 1
+      name: On the Qui Vive
+    - count: 5
+      name: Organized Resistance
+  - name: Combat
+    count: 16
+    cards:
+    - count: 1
+      name: Canine Horde
+    - count: 2
+      name: Dodge
+    - count: 3
+      name: Donnybrook
+    - count: 4
+      name: Earth Meld
+    - count: 4
+      name: Glancing Blow
+    - count: 2
+      name: Pulled Fangs
+  - name: Event
+    count: 4
+    cards:
+    - count: 1
+      name: Dragonbound
+    - count: 1
+      name: FBI Special Affairs Division
+    - count: 2
+      name: Unmasking, The

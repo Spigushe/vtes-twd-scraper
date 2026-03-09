@@ -1,0 +1,175 @@
+name: '"Haranni Madness"'
+location: Herne, Germany
+date_start: '2023-05-13'
+rounds_format: 2R+F
+players_count: 15
+winner: Rudolf Scholz
+event_url: https://www.vekn.net/event-calendar/event/10625
+event_id: '10625'
+vp_comment: 1.5 VP, 0.5 VP; 4 VP + GW
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80532-twd-haranni-madness-may-13th-2023-herne-germany
+deck:
+  name: Vor neun Wochen (Nine weeks ago)
+  description: This deck is dedicated to my son Robin who was born exactly nine weeks before the tournament. It is 
+    pretty much the same deck as Otso's "Feral High Council" (Thank you for your inspiring decks!) which entered the 
+    TWDA seven weeks ago.
+  crypt_count: 12
+  crypt_min: 35
+  crypt_max: 44
+  crypt_avg: 9.92
+  crypt:
+  - count: 4
+    name: Stanislava
+    capacity: 11
+    disciplines: ANI CEL DOM FOR PRO
+    title: inner circle
+    clan: Gangrel
+    grouping: 2
+  - count: 3
+    name: Ingrid Rossler
+    capacity: 9
+    disciplines: ANI FOR PRO dom
+    title: prince
+    clan: Gangrel
+    grouping: 2
+  - count: 2
+    name: Hartmut Stover
+    capacity: 10
+    disciplines: CEL OBF PRO dom for
+    title: archbishop
+    clan: Gangrel antitribu
+    grouping: 3
+  - count: 1
+    name: Genevieve
+    capacity: 10
+    disciplines: ANI FOR PRO aus dom
+    title: priscus
+    clan: Gangrel antitribu
+    grouping: 2
+  - count: 1
+    name: Mark Decker
+    capacity: 8
+    disciplines: CEL PRO ani for obf pot
+    title: prince
+    clan: Gangrel
+    grouping: 3
+  - count: 1
+    name: Xaviar (ADV)
+    capacity: 10
+    disciplines: ABO ANI FOR PRO aus cel pot
+    title: justicar
+    clan: Gangrel
+    grouping: 3
+  library_count: 76
+  library_sections:
+  - name: Master
+    count: 32
+    cards:
+    - count: 1
+      name: Archon Investigation
+    - count: 6
+      name: Ashur Tablets
+    - count: 1
+      name: Backways
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Metro Underground
+      comment: I enjoyed this addition
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Papillon
+    - count: 2
+      name: Parthenon, The
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 7
+      name: Villein
+    - count: 2
+      name: Wider View
+      comment: never used this card in the tournament
+    - count: 2
+      name: Zillah's Valley
+  - name: Action
+    count: 4
+    cards:
+    - count: 1
+      name: Far Mastery
+    - count: 3
+      name: Govern the Unaligned
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+      comment: maybe add a second copy
+  - name: Political Action
+    count: 12
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 3
+      name: Banishment
+    - count: 3
+      name: Parity Shift
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+    - count: 1
+      name: Rumors of Gehenna
+  - name: Action Modifier
+    count: 9
+    cards:
+    - count: 4
+      name: Earth Control
+    - count: 1
+      name: Enkil Cog
+    - count: 1
+      name: Forced March
+      comment: maybe one more
+    - count: 3
+      name: Instantaneous Transformation
+  - name: Action Modifier/Combat
+    count: 1
+    cards:
+    - count: 1
+      name: Rapid Change
+  - name: Reaction
+    count: 9
+    cards:
+    - count: 4
+      name: Deflection
+    - count: 2
+      name: Obedience
+      comment: was not needed
+    - count: 1
+      name: On the Qui Vive
+    - count: 2
+      name: Sense the Savage Way
+      comment: one seems to be enough (as Otso commented himself)
+  - name: Combat
+    count: 7
+    cards:
+    - count: 3
+      name: Earth Meld
+    - count: 4
+      name: Form of Mist
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Scourge of the Enochians

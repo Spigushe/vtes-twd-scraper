@@ -1,0 +1,110 @@
+name: Danse Macabre II – First Dance
+location: Vidor, Texas USA
+date_start: '2024-12-06'
+rounds_format: 2R+F
+players_count: 29
+winner: Kelly Lyons
+event_url: https://www.vekn.net/player-registry/event/11285
+event_id: '11285'
+vp_comment: 1GW+4VP + 5VP in final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81955-twd-danse-macabre-ii-first-dance-vidor-texas-usa
+deck:
+  name: Water Dog - Illegal Tactics
+  created_by: Kelly Lyons
+  description: My prince, Norm Brown, won a tournament in Vidor in 2022 with a Brujah Illegalism Deck. He relied on 
+    Reckless Agitation as a second action. Here is his deck list.
+  crypt_count: 12
+  crypt_min: 16
+  crypt_max: 29
+  crypt_avg: 5.67
+  crypt:
+  - count: 2
+    name: Aline Gädeke
+    capacity: 7
+    disciplines: POT PRE cel
+    clan: "baron\tBrujah"
+    grouping: 6
+  - count: 1
+    name: Octane
+    capacity: 6
+    disciplines: CEL POT PRE
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Ariane
+    capacity: 3
+    disciplines: cel pot pre
+    clan: Brujah
+    grouping: 5
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 24
+    cards:
+    - count: 2
+      name: Archon Investigation
+    - count: 1
+      name: Carfax Abbey
+    - count: 4
+      name: Chimerstry
+    - count: 4
+      name: Dabbler
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 2
+      name: New Carthage
+    - count: 1
+      name: 'Powerbase: Los Angeles'
+    - count: 1
+      name: Thaumaturgy
+    - count: 5
+      name: Villein
+    - count: 1
+      name: Warzone Hunting Ground
+  - name: Action
+    count: 20
+    cards:
+    - count: 10
+      name: Illegalism
+    - count: 9
+      name: Line Brawl
+    - count: 1
+      name: Open War
+  - name: Political Action
+    count: 2
+    cards:
+    - count: 2
+      name: Patsy
+  - name: Action Modifier
+    count: 10
+    cards:
+    - count: 2
+      name: CrimethInc.
+    - count: 6
+      name: Power of One
+    - count: 2
+      name: Smoke and Mirrors
+  - name: Reaction
+    count: 11
+    cards:
+    - count: 5
+      name: Bait and Switch
+    - count: 6
+      name: Organized Resistance
+  - name: Combat
+    count: 23
+    cards:
+    - count: 3
+      name: Bollix
+    - count: 9
+      name: Dust Up
+    - count: 3
+      name: Immortal Grapple
+    - count: 2
+      name: Pursuit
+    - count: 2
+      name: Side Strike
+    - count: 4
+      name: Taste of Vitae

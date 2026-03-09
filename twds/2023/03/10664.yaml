@@ -1,0 +1,125 @@
+name: VI Torneo Liga Noroeste
+location: Oviedo, Spain
+date_start: '2023-03-11'
+rounds_format: 2R+F
+players_count: 20
+winner: Daniel Mendez Carreño
+event_url: https://www.vekn.net/event-calendar/event/10664
+event_id: '10664'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80734-twd-6th-torneo-liga-noroeste-oviedo-spain-11-mar-2023
+deck:
+  name: Anneke&Anson' 11 MARZO
+  created_by: Dany Gijón
+  description: ''
+  crypt_count: 12
+  crypt_min: 21
+  crypt_max: 38
+  crypt_avg: 7.5
+  crypt:
+  - count: 3
+    name: Anneke
+    capacity: 10
+    disciplines: AUS CEL PRE dom
+    title: justicar
+    clan: Toreador
+    grouping: 1
+  - count: 4
+    name: Anson
+    capacity: 8
+    disciplines: CEL PRE aus dom
+    title: prince
+    clan: Toreador
+    grouping: 1
+  - count: 3
+    name: Tatiana Romanov
+    capacity: 7
+    disciplines: AUS cel pre
+    title: prince
+    clan: Toreador
+    grouping: 1
+  - count: 1
+    name: Dorian Strack
+    capacity: 4
+    disciplines: AUS cel
+    clan: Toreador
+    grouping: 1
+  - count: 1
+    name: Isabel de Leon
+    capacity: 3
+    disciplines: AUS
+    clan: Toreador
+    grouping: 2
+  library_count: 84
+  library_sections:
+  - name: Master
+    count: 29
+    cards:
+    - count: 1
+      name: Art Museum
+    - count: 1
+      name: Channel 10
+    - count: 1
+      name: Fragment of the Book of Nod
+    - count: 3
+      name: Guardian Angel
+    - count: 4
+      name: Millicent Smith, Puritan Vampire Hunter
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: Parthenon, The
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Rebel
+    - count: 4
+      name: Smiling Jack, The Anarch
+    - count: 1
+      name: Society of Leopold
+    - count: 1
+      name: Spontaneous Power
+    - count: 2
+      name: Vessel
+    - count: 5
+      name: Villein
+  - name: Equipment
+    count: 7
+    cards:
+    - count: 7
+      name: Sniper Rifle
+  - name: Reaction
+    count: 29
+    cards:
+    - count: 2
+      name: Enhanced Senses
+    - count: 10
+      name: Eyes of Argus
+    - count: 2
+      name: Quicken Sight
+    - count: 10
+      name: 'Second Tradition: Domain'
+    - count: 5
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 15
+    cards:
+    - count: 4
+      name: Charismatic Aura
+    - count: 7
+      name: Concealed Weapon
+    - count: 4
+      name: Majesty
+  - name: Event
+    count: 4
+    cards:
+    - count: 2
+      name: Dr. Marisa Fletcher, CDC
+    - count: 1
+      name: Dragonbound
+    - count: 1
+      name: Waiting Game

@@ -1,0 +1,135 @@
+name: Mellandagsturnering
+location: Örebro, Sweden
+date_start: '2024-12-28'
+rounds_format: 3R+F
+players_count: 17
+winner: Erik Wallgren
+event_url: https://www.vekn.net/event-calendar/event/11857
+event_id: '11857'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81983-twda-mellandagsturnering-oerebro-sweden-28-dec-2024
+deck:
+  name: Huitzilopochtli & Giotto 2.0
+  created_by: Carakkaz
+  description: ''
+  crypt_count: 13
+  crypt_min: 5
+  crypt_max: 40
+  crypt_avg: 6.46
+  crypt:
+  - count: 5
+    name: Huitzilopochtli
+    capacity: 10
+    disciplines: AUS DAI DOM OBF POT PRE
+    clan: Baali
+    grouping: 2
+  - count: 1
+    name: High Priest Angra Mainyu
+    capacity: 8
+    disciplines: DAI OBF PRE dem ser
+    clan: Baali
+    grouping: 2
+  - count: 3
+    name: Giotto Verducci
+    capacity: 7
+    disciplines: DAI OBF for pot pre
+    clan: Baali
+    grouping: 2
+  library_count: 77
+  library_sections:
+  - name: Master
+    count: 36
+    cards:
+    - count: 9
+      name: Ashur Tablets
+    - count: 1
+      name: Blind Spot
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: Life Boon
+    - count: 4
+      name: Liquidation
+    - count: 2
+      name: Metro Underground
+    - count: 1
+      name: Monastery of Shadows
+    - count: 2
+      name: Parthenon, The
+    - count: 2
+      name: Secure Haven
+    - count: 1
+      name: Sudden Reversal
+    - count: 4
+      name: Tend the Flock
+    - count: 2
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 6
+    cards:
+    - count: 1
+      name: Contagion
+    - count: 1
+      name: Entrancement
+    - count: 4
+      name: Unleash Hell's Fury
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Veneficti
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 19
+    cards:
+    - count: 1
+      name: Approximation of Loyalty
+    - count: 4
+      name: Elder Impersonation
+    - count: 2
+      name: Enkil Cog
+    - count: 1
+      name: Faceless Night
+    - count: 1
+      name: I am Legion
+    - count: 4
+      name: Lost in Crowds
+    - count: 4
+      name: Psychomachia
+    - count: 2
+      name: Tangle Atropos' Hand
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Sense the Sin
+  - name: Reaction
+    count: 8
+    cards:
+    - count: 4
+      name: Deflection
+    - count: 1
+      name: Delaying Tactics
+    - count: 2
+      name: Obedience
+    - count: 1
+      name: On the Qui Vive
+  - name: Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Majesty

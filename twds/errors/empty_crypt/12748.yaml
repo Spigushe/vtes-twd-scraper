@@ -1,0 +1,91 @@
+name: Campeonato Nacional Mexicano 2025 (MX)
+location: Mexico City, Mexico
+date_start: '2025-11-30'
+rounds_format: 3R+F
+players_count: 24
+winner: Winner; Alberto Ramírez León (
+event_url: https://www.vekn.net/event-calendar/event/12748
+event_id: '12748'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82734-campeonato-nacional-mexicano-2025-mx
+deck:
+  name: La sal de la tierra
+  created_by: mrleon
+  description: ''
+  crypt_count: 12
+  crypt_min: 21
+  crypt_max: 40
+  crypt_avg: 7.92
+  crypt: []
+  library_count: 89
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 1
+      name: Anarch Troublemaker
+    - count: 3
+      name: Blood Doll
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 5
+      name: Zillah's Valley
+  - name: Action
+    count: 14
+    cards:
+    - count: 10
+      name: Govern the Unaligned
+    - count: 4
+      name: Restoration
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 37
+    cards:
+    - count: 3
+      name: Bonding
+    - count: 5
+      name: Conditioning
+    - count: 1
+      name: Daring the Dawn
+    - count: 5
+      name: Faceless Night
+    - count: 10
+      name: Freak Drive
+    - count: 5
+      name: Lost in Crowds
+    - count: 3
+      name: Mask of a Thousand Faces
+    - count: 5
+      name: Seduction
+  - name: Action Modifier/Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 12
+    cards:
+    - count: 5
+      name: Deflection
+    - count: 3
+      name: Eyes of Argus
+    - count: 2
+      name: My Enemy's Enemy
+    - count: 2
+      name: On the Qui Vive
+  - name: Combat
+    count: 6
+    cards:
+    - count: 6
+      name: Kiss of Cathari

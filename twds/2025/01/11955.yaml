@@ -1,0 +1,528 @@
+name: Hungarian National Championship 2024
+location: Bduapest, Hungary
+date_start: '2025-01-26'
+rounds_format: 3R+F
+players_count: 65
+winner: Tamás Glied's Tournament Winning Deck with 1,5 VPs in the Finals
+event_url: https://www.vekn.net/event-calendar/event/11955
+event_id: '11955'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82069-twd-hungarian-national-championship-2024
+deck:
+  name: Sakk-matt
+  created_by: Balázs Sebestyén
+  description: ''
+  crypt_count: 12
+  crypt_min: 8
+  crypt_max: 40
+  crypt_avg: 5.83
+  crypt:
+  - count: 5
+    name: Shalmath
+    capacity: 10
+    disciplines: POT PRE TEM
+    clan: True Brujah
+    grouping: 6
+  - count: 1
+    name: America Johnson
+    capacity: 4
+    disciplines: AUS vic
+    clan: Tzimisce
+    grouping: 5
+  - count: 1
+    name: Pearl
+    capacity: 4
+    disciplines: AUS obf
+    clan: Malkavian antitribu
+    grouping: 5
+  - count: 1
+    name: Tyler McGill
+    capacity: 4
+    disciplines: AUS pre
+    clan: Toreador
+    grouping: 5
+  - count: 1
+    name: Andre LeRoux
+    capacity: 3
+    disciplines: aus
+    clan: Toreador
+    grouping: 5
+  - count: 1
+    name: Veejay Vinod
+    capacity: 3
+    disciplines: AUS
+    clan: Nagaraja
+    grouping: 6
+  - count: 1
+    name: Donald Cargill
+    capacity: 1
+    disciplines: aus
+    clan: Caitiff
+    grouping: 5
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 2
+      name: Direct Intervention
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Erciyes Fragments, The
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: Perfectionist
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Tabriz Assembly
+    - count: 2
+      name: Vessel
+    - count: 1
+      name: Villein
+    - count: 2
+      name: Wider View
+  - name: Action
+    count: 12
+    cards:
+    - count: 2
+      name: Anima Gathering
+    - count: 1
+      name: Aranthebes, The Immortal
+    - count: 8
+      name: Summon History
+    - count: 1
+      name: Vaticination
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Veneficti
+  - name: Equipment
+    count: 5
+    cards:
+    - count: 1
+      name: .44 Magnum
+    - count: 1
+      name: Eye of Hazimel
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Sport Bike
+    - count: 1
+      name: Talbot's Chainsaw
+  - name: Retainer
+    count: 1
+    cards:
+    - count: 1
+      name: Mr. Winthrop
+  - name: Action Modifier
+    count: 9
+    cards:
+    - count: 5
+      name: Domain of Evernight
+    - count: 3
+      name: Enkil Cog
+    - count: 1
+      name: Pocket Out of Time
+  - name: Reaction
+    count: 20
+    cards:
+    - count: 2
+      name: Delaying Tactics
+    - count: 2
+      name: Eyes of Argus
+    - count: 3
+      name: My Enemy's Enemy
+    - count: 3
+      name: On the Qui Vive
+    - count: 2
+      name: Rewind Time
+    - count: 8
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 27
+    cards:
+    - count: 2
+      name: Decapitate
+    - count: 4
+      name: Disarm
+    - count: 7
+      name: Majesty
+    - count: 14
+      name: Outside the Hourglass
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 2
+      name: Kasim Bayar         9 CEL OBF THA aus pot   justicar   Banu Haqim:6
+    - count: 2
+      name: Oluwafunmilayo      8 AUS CEL OBF THA       prince     Banu Haqim:6
+    - count: 2
+      name: Farah Sarroub       7 CEL THA aus obf       prince     Banu Haqim:6
+    - count: 3
+      name: Kassandra Tassaki   6 CEL THA obf           prince     Banu Haqim:6
+    - count: 1
+      name: Khadija Al-Kindi    6 CEL OBF THA           primogen   Banu Haqim:6
+    - count: 1
+      name: Warmaksan           5 THA cel obf           prince     Banu Haqim:6
+    - count: 1
+      name: Nayarana            4 THA cel                          Banu Haqim:6
+  - name: Library
+    count: 90
+    cards: []
+  - name: Master
+    count: 29
+    cards:
+    - count: 1
+      name: Archon Investigation
+    - count: 9
+      name: Ashur Tablets
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: "Haqim's Law: Retribution"
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Papillon
+    - count: 3
+      name: Parthenon, The
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 2
+      name: Priority Contract
+    - count: 5
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 7
+    cards:
+    - count: 6
+      name: Hunter's Mark
+    - count: 1
+      name: Rutor's Hand
+  - name: Political Action
+    count: 2
+    cards:
+    - count: 1
+      name: Anathema
+    - count: 1
+      name: Rumors of Gehenna
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: .44 Magnum
+  - name: Action Modifier/Combat
+    count: 4
+    cards:
+    - count: 3
+      name: Resist Earth's Grasp
+    - count: 1
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 9
+    cards:
+    - count: 9
+      name: 'Second Tradition: Domain'
+  - name: Combat
+    count: 38
+    cards:
+    - count: 3
+      name: Blur
+    - count: 9
+      name: Hunger of Marduk
+    - count: 5
+      name: Infernal Pursuit
+    - count: 5
+      name: Psyche!
+    - count: 7
+      name: Pursuit
+    - count: 4
+      name: Quickness
+    - count: 2
+      name: Rego Motum
+    - count: 1
+      name: Sideslip
+    - count: 2
+      name: Zip Gun
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 1
+      name: Branimira         6 ANI dom pre pro   baron   Tzimisce:6
+    - count: 2
+      name: Marialena         5 DOM PRO ani               Tzimisce:6
+    - count: 1
+      name: Clara Hjortshøj   5 PRO ani aus dom           Tzimisce:6
+    - count: 1
+      name: Whisper           5 ANI DOM pro               Tzimisce:6
+    - count: 2
+      name: Prentis Derby     4 ani dom pro               Tzimisce:6
+    - count: 2
+      name: Susie Kano        3 ani dom                   Tzimisce:6
+    - count: 3
+      name: Anarch Convert    1                           Caitiff:ANY
+  - name: Library
+    count: 64
+    cards: []
+  - name: Master
+    count: 21
+    cards:
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Failsafe
+    - count: 1
+      name: Fame
+    - count: 7
+      name: Jake Washington
+    - count: 1
+      name: Mob Connections
+    - count: 7
+      name: Piper
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Vessel
+    - count: 1
+      name: Villein
+  - name: Ally
+    count: 11
+    cards:
+    - count: 1
+      name: Asanbonsam Ghoul
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 1
+      name: Ossian
+    - count: 1
+      name: Vagabond Mystic
+    - count: 1
+      name: Vozhd of Sofia
+    - count: 6
+      name: War Ghoul
+  - name: Retainer
+    count: 4
+    cards:
+    - count: 1
+      name: J. S. Simmons, Esq.
+    - count: 1
+      name: Jackie Therman
+    - count: 1
+      name: Mr. Winthrop
+    - count: 1
+      name: Tasha Morgan
+  - name: Reaction
+    count: 16
+    cards:
+    - count: 3
+      name: Deep Ecology
+    - count: 6
+      name: Deflection
+    - count: 1
+      name: Delaying Tactics
+    - count: 3
+      name: On the Qui Vive
+    - count: 3
+      name: One With the Land
+  - name: Combat
+    count: 8
+    cards:
+    - count: 3
+      name: Donnybrook
+    - count: 2
+      name: Fake Out
+    - count: 3
+      name: Trap
+  - name: Event
+    count: 4
+    cards:
+    - count: 1
+      name: Dragonbound
+    - count: 1
+      name: FBI Special Affairs Division
+    - count: 2
+      name: Unmasking, The
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 4
+      name: Montano                  11 ANI DOM FOR OBT POT       2 votes      Lasombra:3
+    - count: 1
+      name: Nahir                    10 ANI DOM OBT POT tha                    Lasombra:3
+    - count: 1
+      name: Servius Marius Pustula   10 ANI CHI DOM OBT POT obf                Nosferatu antitribu:4
+    - count: 1
+      name: Antón de Concepción       9 ANI DOM OBT POT aus       archbishop   Lasombra:4
+    - count: 1
+      name: Conrad Adoula             8 DOM OBT POT ani cel                    Lasombra:4
+    - count: 1
+      name: Otieno                    6 OBT POT ani dom                        Lasombra:4
+    - count: 3
+      name: Anarch Convert            1                                        Caitiff:ANY
+  - name: Library
+    count: 90
+    cards: []
+  - name: Master
+    count: 17
+    cards:
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 3
+      name: Information Highway
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: Rack, The
+    - count: 6
+      name: Villein
+    - count: 3
+      name: Zillah's Valley
+  - name: Action
+    count: 16
+    cards:
+    - count: 7
+      name: Deep Song
+    - count: 9
+      name: Govern the Unaligned
+  - name: Action Modifier
+    count: 2
+    cards:
+    - count: 2
+      name: Enkil Cog
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Murmur of the False Will
+  - name: Reaction
+    count: 20
+    cards:
+    - count: 3
+      name: Cats' Guidance
+    - count: 6
+      name: Deflection
+    - count: 1
+      name: On the Qui Vive
+    - count: 10
+      name: Sense the Savage Way
+  - name: Combat
+    count: 31
+    cards:
+    - count: 8
+      name: Carrion Crows
+    - count: 8
+      name: Dark Steel
+    - count: 6
+      name: Immortal Grapple
+    - count: 3
+      name: Slam
+    - count: 6
+      name: Taste of Vitae
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 1
+      name: Alexandra                 11 ANI AUS CEL PRE dom       inner circle   Toreador:2
+    - count: 1
+      name: Arika                     11 DOM FOR OBF PRE aus cel   inner circle   Ventrue:2
+    - count: 1
+      name: Leandro                   11 AUS OBF PRE cel dom       inner circle   Malkavian:2
+    - count: 1
+      name: Anneke                    10 AUS CEL PRE dom           justicar       Toreador:1
+    - count: 1
+      name: Democritus                10 DOM PRE aus cel for       justicar       Ventrue:1
+    - count: 1
+      name: Don Cruez, The Idealist   10 CEL POT PRE ani dom pro   justicar       Brujah:1
+    - count: 1
+      name: Queen Anne                10 DOM FOR PRE aus obf       prince         Ventrue:2
+    - count: 4
+      name: Anson                      8 CEL PRE aus dom           prince         Toreador:1
+    - count: 1
+      name: Emerson Bridges            8 DOM FOR PRE pot           prince         Ventrue:1
+  - name: Library
+    count: 90
+    cards: []
+  - name: Master
+    count: 45
+    cards:
+    - count: 9
+      name: Ashur Tablets
+    - count: 2
+      name: Camarilla Conclave
+    - count: 1
+      name: Creepshow Casino
+    - count: 2
+      name: Direct Intervention
+    - count: 1
+      name: 'Elysium: The Palace of Versailles'
+    - count: 1
+      name: Giant's Blood
+    - count: 3
+      name: Information Highway
+    - count: 4
+      name: Liquidation
+    - count: 3
+      name: Minion Tap
+    - count: 2
+      name: Monastery of Shadows
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: Parthenon, The
+    - count: 3
+      name: Protected Resources
+    - count: 5
+      name: Villein
+    - count: 7
+      name: Zillah's Valley
+  - name: Political Action
+    count: 18
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 4
+      name: Banishment
+    - count: 3
+      name: Camarilla's Iron Fist
+    - count: 7
+      name: Parity Shift
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+  - name: Action Modifier
+    count: 10
+    cards:
+    - count: 6
+      name: Perfect Paragon
+    - count: 4
+      name: Voter Captivation
+  - name: Reaction
+    count: 11
+    cards:
+    - count: 4
+      name: Redirection
+    - count: 7
+      name: 'Second Tradition: Domain'
+  - name: Combat
+    count: 6
+    cards:
+    - count: 6
+      name: Majesty

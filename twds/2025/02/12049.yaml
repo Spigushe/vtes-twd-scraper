@@ -1,0 +1,631 @@
+name: 'The beginning of the end: The 1st chapter of the final resistance - HQS'
+location: Bduapest, Hungary
+date_start: '2025-02-08'
+rounds_format: 3R+F
+players_count: 30
+winner: Donát Adorján's Tournament Winning Deck with 2,5 VPs in the Finals
+event_url: https://www.vekn.net/event-calendar/event/12049
+event_id: '12049'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82095-twd-hungarian-qualifier-series-1
+deck:
+  name: multibarro
+  created_by: Colos
+  description: ''
+  crypt_count: 12
+  crypt_min: 24
+  crypt_max: 31
+  crypt_avg: 6.75
+  crypt:
+  - count: 2
+    name: Sergio Bueno
+    capacity: 8
+    disciplines: OBF PRE PRO aus pot
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Adrino Manauara
+    capacity: 8
+    disciplines: ANI DOM PRO pot
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 2
+    name: Vivian VI
+    capacity: 7
+    disciplines: PRE PRO obf tha
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Ángel Guerrero
+    capacity: 7
+    disciplines: ANI DOM PRO
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 2
+    name: André the Manipulator
+    capacity: 6
+    disciplines: FOR PRO
+    clan: Gangrel
+    grouping: 5
+  - count: 2
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 2
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  library_count: 87
+  library_sections:
+  - name: Master
+    count: 23
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 2
+      name: Archon Investigation
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Ferraille
+    - count: 2
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 2
+      name: Protean
+    - count: 1
+      name: Rack, The
+    - count: 2
+      name: Tribute to the Master
+    - count: 5
+      name: Villein
+  - name: Action
+    count: 6
+    cards:
+    - count: 5
+      name: Childe of the Revolution
+    - count: 1
+      name: Constant Revolution
+  - name: Political Action
+    count: 2
+    cards:
+    - count: 2
+      name: Revolutionary Council
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Retainer
+    count: 2
+    cards:
+    - count: 2
+      name: Raven Spy
+  - name: Action Modifier
+    count: 4
+    cards:
+    - count: 2
+      name: Earth Control
+    - count: 2
+      name: Monkey Wrench
+  - name: Action Modifier/Reaction
+    count: 5
+    cards:
+    - count: 5
+      name: Form of the Bat
+  - name: Reaction
+    count: 25
+    cards:
+    - count: 7
+      name: Bait and Switch
+    - count: 5
+      name: Deep Ecology
+    - count: 2
+      name: Delaying Tactics
+    - count: 9
+      name: Organized Resistance
+    - count: 2
+      name: Protection Racket
+  - name: Combat
+    count: 19
+    cards:
+    - count: 1
+      name: Body Flare
+    - count: 1
+      name: Claws of the Dead
+    - count: 2
+      name: Donnybrook
+    - count: 11
+      name: Earth Meld
+    - count: 4
+      name: Form of Mist
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 1
+      name: Ángel Guerrero     7 ANI DOM PRO       baron   Tzimisce:6
+    - count: 1
+      name: Massimiliano       7 ANI FOR pro       baron   Gangrel:6
+    - count: 1
+      name: Vivian VI          7 PRE PRO obf tha   baron   Ministry:6
+    - count: 2
+      name: Casey Snyder       6 PRO ani cel for   baron   Gangrel:6
+    - count: 1
+      name: Branimira          6 ANI dom pre pro   baron   Tzimisce:6
+    - count: 1
+      name: Elisha Tucker      6 PRE cel obf pro   baron   Ministry:6
+    - count: 1
+      name: Kuyén              6 ANI PRO           baron   Gangrel:6
+    - count: 1
+      name: Kamile Paukstys    5 PRO ani for               Gangrel:6
+    - count: 1
+      name: Nathan Turner      4 PRO ani                   Gangrel:6
+    - count: 1
+      name: Indira             3 PRO                       Gangrel:6
+    - count: 1
+      name: Ruslan Fedorenko   2 pro                       Gangrel:6
+  - name: Library
+    count: 90
+    cards: []
+  - name: Master
+    count: 23
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Backways
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Ecoterrorists
+    - count: 1
+      name: Ennoia's Theater
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: 'Powerbase: Savannah'
+    - count: 2
+      name: Protean
+    - count: 5
+      name: Villein
+  - name: Action
+    count: 13
+    cards:
+    - count: 4
+      name: Childe of the Revolution
+    - count: 2
+      name: Loki's Gift
+    - count: 7
+      name: Thing
+  - name: Political Action
+    count: 4
+    cards:
+    - count: 1
+      name: Consanguineous Boon
+    - count: 2
+      name: Eat the Rich
+    - count: 1
+      name: Revolutionary Council
+  - name: Retainer
+    count: 1
+    cards:
+    - count: 1
+      name: Mr. Winthrop
+  - name: Action Modifier
+    count: 8
+    cards:
+    - count: 5
+      name: Earth Control
+    - count: 1
+      name: Monkey Wrench
+    - count: 2
+      name: Propaganda of the Deed
+  - name: Action Modifier/Reaction
+    count: 5
+    cards:
+    - count: 5
+      name: Form of the Bat
+  - name: Reaction
+    count: 21
+    cards:
+    - count: 6
+      name: Bait and Switch
+    - count: 3
+      name: Deep Ecology
+    - count: 1
+      name: Delaying Tactics
+    - count: 1
+      name: Eyes of the Wild
+    - count: 1
+      name: On the Qui Vive
+    - count: 7
+      name: Organized Resistance
+    - count: 1
+      name: Poison Pill
+    - count: 1
+      name: Protection Racket
+  - name: Combat
+    count: 15
+    cards:
+    - count: 1
+      name: Claws of the Dead
+    - count: 2
+      name: Donnybrook
+    - count: 8
+      name: Earth Meld
+    - count: 4
+      name: Form of Mist
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 1
+      name: Ángel Guerrero          7 ANI DOM PRO       baron   Tzimisce:6
+    - count: 1
+      name: Massimiliano            7 ANI FOR pro       baron   Gangrel:6
+    - count: 2
+      name: Casey Snyder            6 PRO ani cel for   baron   Gangrel:6
+    - count: 1
+      name: André the Manipulator   6 FOR PRO                   Gangrel:5
+    - count: 1
+      name: Kuyén                   6 ANI PRO           baron   Gangrel:6
+    - count: 1
+      name: Martina Srnankova       6 FOR PRO ani               Gangrel:6
+    - count: 1
+      name: Kamile Paukstys         5 PRO ani for               Gangrel:6
+    - count: 1
+      name: Nathan Turner           4 PRO ani                   Gangrel:6
+    - count: 1
+      name: Indira                  3 PRO                       Gangrel:6
+    - count: 1
+      name: Joaquín de Cádiz        3 for pro                   Gangrel:6
+    - count: 1
+      name: Ruslan Fedorenko        2 pro                       Gangrel:6
+  - name: Library
+    count: 90
+    cards: []
+  - name: Master
+    count: 20
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Backways
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 2
+      name: Direct Intervention
+    - count: 1
+      name: Ecoterrorists
+    - count: 1
+      name: Ennoia's Theater
+    - count: 2
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: 'Powerbase: Los Angeles'
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: 'Powerbase: Savannah'
+    - count: 4
+      name: Villein
+  - name: Action
+    count: 10
+    cards:
+    - count: 10
+      name: Thing
+  - name: Political Action
+    count: 2
+    cards:
+    - count: 2
+      name: Revolutionary Council
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 2
+      name: Heart of Nizchetus
+  - name: Retainer
+    count: 4
+    cards:
+    - count: 1
+      name: Mr. Winthrop
+    - count: 3
+      name: Raven Spy
+  - name: Action Modifier
+    count: 8
+    cards:
+    - count: 1
+      name: Daring the Dawn
+    - count: 2
+      name: Earth Control
+    - count: 1
+      name: Monkey Wrench
+    - count: 4
+      name: Propaganda of the Deed
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Form of the Bat
+  - name: Reaction
+    count: 24
+    cards:
+    - count: 8
+      name: Bait and Switch
+    - count: 8
+      name: Deep Ecology
+    - count: 8
+      name: Organized Resistance
+  - name: Combat
+    count: 16
+    cards:
+    - count: 2
+      name: Donnybrook
+    - count: 10
+      name: Earth Meld
+    - count: 4
+      name: Form of Mist
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 1
+      name: Massimiliano       7 ANI FOR pro       baron   Gangrel:6
+    - count: 2
+      name: Casey Snyder       6 PRO ani cel for   baron   Gangrel:6
+    - count: 2
+      name: Kuyén              6 ANI PRO           baron   Gangrel:6
+    - count: 1
+      name: Kamile Paukstys    5 PRO ani for               Gangrel:6
+    - count: 1
+      name: Mickey Wheeler     5 ani cel for pro           Gangrel:6
+    - count: 1
+      name: Hanna Nokelainen   4 ani for pro               Gangrel:6
+    - count: 1
+      name: Nathan Turner      4 PRO ani                   Gangrel:6
+    - count: 1
+      name: Indira             3 PRO                       Gangrel:6
+    - count: 1
+      name: Joaquín de Cádiz   3 for pro                   Gangrel:6
+    - count: 1
+      name: Ruslan Fedorenko   2 pro                       Gangrel:6
+  - name: Library
+    count: 90
+    cards: []
+  - name: Master
+    count: 21
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Backways
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 1
+      name: Ecoterrorists
+    - count: 1
+      name: Ennoia's Theater
+    - count: 2
+      name: Gangrel Revel
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: 'Powerbase: Los Angeles'
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Smiling Jack, The Anarch
+    - count: 3
+      name: Vessel
+    - count: 2
+      name: Villein
+    - count: 1
+      name: Zoo Hunting Ground
+  - name: Action
+    count: 15
+    cards:
+    - count: 1
+      name: Army of Rats
+    - count: 1
+      name: Constant Revolution
+    - count: 1
+      name: Rewilding
+    - count: 12
+      name: Thing
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Retainer
+    count: 5
+    cards:
+    - count: 1
+      name: Mr. Winthrop
+    - count: 4
+      name: Raven Spy
+  - name: Action Modifier
+    count: 5
+    cards:
+    - count: 3
+      name: Earth Control
+    - count: 2
+      name: Monkey Wrench
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Form of the Bat
+  - name: Reaction
+    count: 30
+    cards:
+    - count: 7
+      name: Bait and Switch
+    - count: 3
+      name: Deep Ecology
+    - count: 2
+      name: Delaying Tactics
+    - count: 2
+      name: Eyes of the Wild
+    - count: 14
+      name: Organized Resistance
+    - count: 2
+      name: Protection Racket
+  - name: Combat
+    count: 9
+    cards:
+    - count: 5
+      name: Donnybrook
+    - count: 4
+      name: Form of Mist
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 4
+      name: Kalinda                  6 CEL OBF tha       primogen   Banu Haqim:6
+    - count: 1
+      name: Flavia, Avenging Angel   6 CEL OBF QUI                  Banu Haqim:6
+    - count: 1
+      name: Hafsa, The Watcher       6 OBF QUI aus cel              Banu Haqim:5
+    - count: 1
+      name: Kassandra Tassaki        6 CEL THA obf       prince     Banu Haqim:6
+    - count: 1
+      name: Khadija Al-Kindi         6 CEL OBF THA       primogen   Banu Haqim:6
+    - count: 1
+      name: Warmaksan                5 THA cel obf       prince     Banu Haqim:6
+    - count: 1
+      name: Wise Frog                5 OBF aus cel qui              Banu Haqim:6
+    - count: 1
+      name: Adisa                    3 cel obf                      Banu Haqim:6
+    - count: 1
+      name: Alu                      2 obf                          Banu Haqim:5
+  - name: Library
+    count: 78
+    cards: []
+  - name: Master
+    count: 20
+    cards:
+    - count: 2
+      name: Alamut
+    - count: 6
+      name: Ashur Tablets
+    - count: 1
+      name: Coven, The
+    - count: 5
+      name: "Haqim's Law: Retribution"
+    - count: 4
+      name: Villein
+    - count: 2
+      name: Wider View
+  - name: Action
+    count: 1
+    cards:
+    - count: 1
+      name: Web of Knives Recruit
+  - name: Political Action
+    count: 4
+    cards:
+    - count: 1
+      name: Banu Haqim Justicar
+    - count: 3
+      name: Camarilla's Iron Fist
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Camera Phone
+  - name: Action Modifier
+    count: 16
+    cards:
+    - count: 2
+      name: Cloak the Gathering
+    - count: 2
+      name: Elder Impersonation
+    - count: 3
+      name: Faceless Night
+    - count: 7
+      name: Lost in Crowds
+    - count: 2
+      name: Spying Mission
+  - name: Action Modifier/Combat
+    count: 11
+    cards:
+    - count: 2
+      name: Resist Earth's Grasp
+    - count: 9
+      name: Swallowed by the Night
+  - name: Action Modifier/Reaction
+    count: 1
+    cards:
+    - count: 1
+      name: Gift of Sleep
+  - name: Reaction
+    count: 7
+    cards:
+    - count: 7
+      name: Protected District
+  - name: Combat
+    count: 17
+    cards:
+    - count: 1
+      name: Behind You!
+    - count: 5
+      name: Hunger of Marduk
+    - count: 2
+      name: Infernal Pursuit
+    - count: 1
+      name: No Trace
+    - count: 1
+      name: Preternatural Evasion
+    - count: 4
+      name: Pursuit
+    - count: 2
+      name: Side Strike
+    - count: 1
+      name: Torrent

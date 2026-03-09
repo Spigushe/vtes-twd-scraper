@@ -1,0 +1,110 @@
+name: Unleashing the Bestial Soul
+location: Florence, Italy
+date_start: '2024-05-12'
+rounds_format: 2R+F
+players_count: 15
+winner: Gianluca Bianco
+event_url: https://www.vekn.net/event-calendar/event/11431
+event_id: '11431'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81555-twd-unleashing-the-bestial-soul-florence-italy-12-may-2024
+deck:
+  name: This Girl Has No Name
+  created_by: Nekros
+  description: ''
+  crypt_count: 12
+  crypt_min: 4
+  crypt_max: 40
+  crypt_avg: 4.67
+  crypt: []
+  library_count: 70
+  library_sections:
+  - name: Master
+    count: 12
+    cards:
+    - count: 1
+      name: Archon Investigation
+    - count: 3
+      name: Dabbler
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Libertas
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Secure Haven
+    - count: 1
+      name: Vessel
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 10
+    cards:
+    - count: 1
+      name: Contagion
+    - count: 6
+      name: Platinum Protocol, The
+    - count: 3
+      name: Unleash Hell's Fury
+  - name: Equipment
+    count: 3
+    cards:
+    - count: 3
+      name: Heart of Nizchetus
+  - name: Retainer
+    count: 3
+    cards:
+    - count: 3
+      name: Homunculus
+  - name: Action Modifier
+    count: 27
+    cards:
+    - count: 2
+      name: Approximation of Loyalty
+    - count: 2
+      name: CrimethInc.
+    - count: 3
+      name: Earth Control
+    - count: 2
+      name: Elder Impersonation
+    - count: 2
+      name: Enchanting Gaze
+    - count: 3
+      name: Enkil Cog
+    - count: 2
+      name: I am Legion
+    - count: 6
+      name: Instantaneous Transformation
+    - count: 3
+      name: Lost in Crowds
+    - count: 2
+      name: Revelation of the Serpent
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Sense the Sin
+  - name: Reaction
+    count: 5
+    cards:
+    - count: 1
+      name: Delaying Tactics
+    - count: 4
+      name: Visions of Zapathasura
+  - name: Combat
+    count: 5
+    cards:
+    - count: 2
+      name: Earth Meld
+    - count: 3
+      name: Form of Mist
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Narrow Minds

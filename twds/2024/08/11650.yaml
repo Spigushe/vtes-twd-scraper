@@ -1,0 +1,150 @@
+name: The Deed Stockholm 2024
+location: Stockholm, Sweden
+date_start: '2024-08-31'
+rounds_format: 3R+F
+players_count: 18
+winner: 'Winner: Patrik Spjut'
+event_url: https://www.vekn.net/event-calendar/event/11650
+event_id: '11650'
+vp_comment: 1,5 VP in the final.
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81729-twd-the-deed-stockholm-2024-stockholm-sweden-7-july-2024
+deck:
+  description: ''
+  crypt_count: 12
+  crypt_min: 18
+  crypt_max: 36
+  crypt_avg: 7.17
+  crypt:
+  - count: 4
+    name: Diana Iadanza
+    capacity: 9
+    disciplines: AUS CEL FOR PRE
+    title: justicar
+    clan: Toreador
+    grouping: 7
+  - count: 2
+    name: Catalina Vega
+    capacity: 8
+    disciplines: AUS CEL PRE for
+    title: prince
+    clan: Toreador
+    grouping: 6
+  - count: 1
+    name: Marcos Belegrad
+    capacity: 8
+    disciplines: AUS CEL PRE ani
+    title: prince
+    clan: Toreador
+    grouping: 7
+  - count: 1
+    name: Modius
+    capacity: 8
+    disciplines: AUS CEL PRE obf
+    title: prince
+    clan: Toreador
+    grouping: 7
+  - count: 1
+    name: Flávio Gonçalves
+    capacity: 7
+    disciplines: CEL PRE aus for
+    title: prince
+    clan: Toreador
+    grouping: 6
+  - count: 1
+    name: Mkhokheli
+    capacity: 6
+    disciplines: PRE aus cel for
+    title: prince
+    clan: Toreador
+    grouping: 6
+  - count: 1
+    name: Valentina Osako
+    capacity: 3
+    disciplines: PRE
+    clan: Toreador
+    grouping: 7
+  - count: 1
+    name: Mateo García
+    capacity: 2
+    disciplines: pre
+    clan: Toreador
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 18
+    cards:
+    - count: 1
+      name: Art Museum
+    - count: 1
+      name: Camarilla Conclave
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: 'Elysium: The Palace of Versailles'
+    - count: 1
+      name: Information Highway
+    - count: 2
+      name: Toreador Grand Ball
+    - count: 6
+      name: Villein
+    - count: 5
+      name: Zillah's Valley
+  - name: Action
+    count: 8
+    cards:
+    - count: 4
+      name: Enchant Kindred
+    - count: 1
+      name: Entrancement
+    - count: 3
+      name: 'Fourth Tradition: The Accounting'
+  - name: Political Action
+    count: 17
+    cards:
+    - count: 5
+      name: Camarilla's Iron Fist
+    - count: 6
+      name: Kine Resources Contested
+    - count: 6
+      name: Parity Shift
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+  - name: Action Modifier
+    count: 25
+    cards:
+    - count: 2
+      name: Aire of Elation
+    - count: 2
+      name: Bewitching Oration
+    - count: 8
+      name: Forced March
+    - count: 5
+      name: Loup
+    - count: 2
+      name: Perfect Paragon
+    - count: 6
+      name: Voter Captivation
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Scalpel Tongue
+  - name: Combat
+    count: 7
+    cards:
+    - count: 7
+      name: Majesty
+  - name: Reaction
+    count: 12
+    cards:
+    - count: 2
+      name: My Enemy's Enemy
+    - count: 5
+      name: 'Second Tradition: Domain'
+    - count: 5
+      name: Telepathic Misdirection

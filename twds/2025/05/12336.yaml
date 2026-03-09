@@ -1,0 +1,154 @@
+name: Family Gathering
+location: Paris, France
+date_start: '2025-05-31'
+rounds_format: 3R+F
+players_count: 10
+winner: Jorge Delgado
+event_url: https://www.vekn.net/event-calendar/event/12336
+event_id: '12336'
+vp_comment: Very happy with how the deck worked (2GW6 in the preliminary rounds and 4VPs in the finals it seems like a 
+  pretty good score). I had 2 very good tables in which the deck played as a dream (graverobbing Fanchon and Lucinde 
+  Alastor from 2 different players in the first round or playing Ancient Influence and Reins when no one had vamps). 
+  Sometimes people tend to overestimate the capacity of  the deck, but it works very well. The Alpha Glints is an idea I
+  had some time ago, because I wasn't very hapy with either Obediences or Shadow Body. Less even with Nocturns. OK it's 
+  just for Montano but we don't care much about the other vampires to be honest. I also recall one league game where I 
+  managed to graverob Stanislava and then she was there playing the Alpha Glints, awesome.
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82350-twd-family-gathering
+deck:
+  name: Montano Baltimore Purge
+  created_by: Jorge Delgado with suggestions from Antonio Cobo Cuenca
+  description: ''
+  crypt_count: 12
+  crypt_min: 7
+  crypt_max: 44
+  crypt_avg: 6.08
+  crypt:
+  - count: 5
+    name: Montano
+    capacity: 11
+    disciplines: ANI DOM FOR OBT POT
+    title: 2 votes
+    clan: Lasombra
+    grouping: 3
+    comment: I will most likely do +1 Montano and remove Cameron in the next iteration.
+  - count: 1
+    name: Cameron
+    capacity: 3
+    disciplines: dom pot
+    clan: Lasombra
+    grouping: 2
+    comment: remove him from the next version
+  - count: 1
+    name: Ignacio, The Black Priest
+    capacity: 4
+    disciplines: dom obt pot
+    clan: Lasombra
+    grouping: 2
+  - count: 1
+    name: Marciana Giovanni, Investigator
+    capacity: 2
+    disciplines: dom
+    clan: Giovanni
+    grouping: 2
+  - count: 1
+    name: Mustafa Rahman
+    capacity: 2
+    disciplines: dom
+    clan: Tremere
+    grouping: 2
+  - count: 1
+    name: Ramiro
+    capacity: 4
+    disciplines: dom obt vic
+    clan: Lasombra
+    grouping: 2
+  - count: 1
+    name: Royce
+    capacity: 1
+    disciplines: dom
+    clan: Pander
+    grouping: 2
+  library_count: 65
+  library_sections:
+  - name: Master
+    count: 12
+    cards:
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Elysian Fields
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Heidelberg Castle, Germany
+      comment: played without it in some games. if you use your MR well you can play without.
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Monastery of Shadows
+    - count: 2
+      name: 'Powerbase: Montreal'
+      comment: Montreal is great. let's you accelerate, makes you save some pool and people do useless actions to get 
+        Montreal while you prepare for your purges
+    - count: 2
+      name: Villein
+      comment: ideally for the vampires you steal, mental note to not Villein Montano for more than 2
+  - name: Action
+    count: 13
+    cards:
+    - count: 6
+      name: Baltimore Purge
+    - count: 3
+      name: Graverobbing
+    - count: 4
+      name: Puppet Master
+  - name: Political Action
+    count: 2
+    cards:
+    - count: 1
+      name: Ancient Influence
+    - count: 1
+      name: Reins of Power
+  - name: Ally
+    count: 2
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+      comment: only play if no one can steal. never played him on the tournament because of fear of Entrancement. also 
+        other players where not playing Carlon themselves.
+    - count: 1
+      name: Mylan Horseed
+  - name: Action Modifier
+    count: 27
+    cards:
+    - count: 2
+      name: Enkil Cog
+    - count: 12
+      name: Freak Drive
+    - count: 1
+      name: Seduction
+    - count: 4
+      name: Shadow Play
+    - count: 4
+      name: Shroud of Absence
+    - count: 2
+      name: Shroud of Night
+    - count: 2
+      name: Tenebrous Form
+  - name: Reaction
+    count: 3
+    cards:
+    - count: 3
+      name: Deflection
+  - name: Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Alpha Glint
+  - name: Event
+    count: 2
+    cards:
+    - count: 1
+      name: Fueled by Heart's Blood
+    - count: 1
+      name: Scourge of the Enochians

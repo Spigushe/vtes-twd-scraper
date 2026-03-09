@@ -1,0 +1,84 @@
+name: V Jornada de Liga Levante Norte
+location: Valencia, Spain
+date_start: '2025-05-11'
+rounds_format: 3R+F
+players_count: 24
+winner: Javier Centella
+event_url: https://www.vekn.net/event-calendar/event/12200
+event_id: '12200'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82303-twd-v-jornada-de-liga-levante-norte-valencia-sp-11-05-2025
+deck:
+  name: Bleed for monguers
+  created_by: Javier Centella
+  description: ''
+  crypt_count: 12
+  crypt_min: 19
+  crypt_max: 32
+  crypt_avg: 6.42
+  crypt: []
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 22
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 2
+      name: Dabbler
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Opium Den
+    - count: 9
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 26
+    cards:
+    - count: 6
+      name: Mesu Bedshet
+    - count: 20
+      name: Platinum Protocol, The
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 2
+      name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 22
+    cards:
+    - count: 1
+      name: CrimethInc.
+    - count: 3
+      name: Enchanting Gaze
+    - count: 2
+      name: Lost in Crowds
+    - count: 16
+      name: Revelation of the Serpent
+  - name: Reaction
+    count: 12
+    cards:
+    - count: 8
+      name: Bait and Switch
+    - count: 4
+      name: On the Qui Vive
+  - name: Combat
+    count: 5
+    cards:
+    - count: 5
+      name: Form of Mist
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Uncoiling, The

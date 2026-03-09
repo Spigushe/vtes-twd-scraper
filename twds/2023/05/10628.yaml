@@ -1,0 +1,121 @@
+name: Bobby Lemon Bedlam
+location: Liverpool, United Kingdom
+date_start: '2023-05-21'
+rounds_format: 3R+F
+players_count: 15
+winner: Tero Aalto
+event_url: https://www.vekn.net/event-calendar/event/10628
+event_id: '10628'
+vp_comment: 1 GW 6 + 3 in the final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80544-twd-bobby-lemon-bedlam-2023-05-21
+deck:
+  name: 'The Fanchon Show: Floating Torso'
+  created_by: Tero Aalto
+  description: ''
+  crypt_count: 12
+  crypt_min: 36
+  crypt_max: 44
+  crypt_avg: 10.17
+  crypt:
+  - count: 5
+    name: Malgorzata
+    capacity: 9
+    disciplines: AUS DOM THA VIC pre
+    title: priscus
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 4
+    name: Lord Tremere
+    capacity: 11
+    disciplines: ANI AUS DOM THA VIC obe
+    clan: Tremere
+    grouping: 5
+  - count: 3
+    name: Mistress Fanchon
+    capacity: 11
+    disciplines: AUS CEL DOM OBF THA VIC
+    title: inner circle
+    clan: Tremere
+    grouping: 4
+  library_count: 77
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Perfectionist
+    - count: 1
+      name: University Hunting Ground
+    - count: 6
+      name: Villein
+  - name: Action
+    count: 2
+    cards:
+    - count: 2
+      name: Magic of the Smith
+  - name: Equipment
+    count: 3
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 2
+      name: Heart of Nizchetus
+  - name: Political Action
+    count: 9
+    cards:
+    - count: 2
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 4
+      name: Banishment
+    - count: 1
+      name: Kine Resources Contested
+    - count: 1
+      name: Reins of Power
+  - name: Action Modifier
+    count: 22
+    cards:
+    - count: 6
+      name: Changeling
+    - count: 4
+      name: Conditioning
+    - count: 1
+      name: Foreshadowing Destruction
+    - count: 7
+      name: Mirror Walk
+    - count: 4
+      name: Seduction
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Plasmic Form
+  - name: Action Modifier/Reaction
+    count: 1
+    cards:
+    - count: 1
+      name: Murmur of the False Will
+  - name: Reaction
+    count: 23
+    cards:
+    - count: 5
+      name: Deflection
+    - count: 7
+      name: Eyes of Argus
+    - count: 7
+      name: Obedience
+    - count: 2
+      name: On the Qui Vive
+    - count: 1
+      name: Redirection
+    - count: 1
+      name: Telepathic Misdirection

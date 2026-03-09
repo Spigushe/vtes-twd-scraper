@@ -1,0 +1,140 @@
+name: Torneio Estadual do Rio de Janeiro - 2025
+location: Rio de Janeiro, Brasil
+date_start: '2025-08-03'
+rounds_format: 2R+F
+players_count: 38
+winner: Ricardo Nelson (
+event_url: https://www.vekn.net/event-calendar/event/12698
+event_id: '12698'
+vp_comment: 3VP in the final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82501-twd-torneio-estadual-do-rio-de-janeiro-2025
+deck:
+  name: Helena
+  created_by: Thiago Sousa
+  description: ''
+  crypt_count: 12
+  crypt_min: 24
+  crypt_max: 40
+  crypt_avg: 8.08
+  crypt:
+  - count: 4
+    name: Helena
+    capacity: 10
+    disciplines: AUS CEL DOM obf pre tha
+    clan: Toreador
+    grouping: 3
+  - count: 2
+    name: Joaquin Murietta
+    capacity: 9
+    disciplines: AUS CEL obf pre qui
+    clan: Toreador
+    grouping: 3
+  - count: 1
+    name: Eugene
+    capacity: 8
+    disciplines: AUS CEL FOR PRE
+    title: primogen
+    clan: Toreador
+    grouping: 4
+  - count: 3
+    name: Ira Rivers
+    capacity: 7
+    disciplines: AUS CEL ani pre
+    title: prince
+    clan: Toreador
+    grouping: 3
+  - count: 1
+    name: Khalu
+    capacity: 7
+    disciplines: AUS CEL POT ani pro
+    clan: Osebo
+    grouping: 3
+  - count: 1
+    name: Yvette, The Hopeless
+    capacity: 3
+    disciplines: aus cel
+    clan: Toreador
+    grouping: 3
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 16
+    cards:
+    - count: 1
+      name: Art Museum
+    - count: 1
+      name: Blood Puppy
+    - count: 2
+      name: Direct Intervention
+    - count: 1
+      name: Erciyes Fragments, The
+    - count: 1
+      name: Fame
+    - count: 1
+      name: KRCG News Radio
+    - count: 1
+      name: Millicent Smith, Puritan Vampire Hunter
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Smiling Jack, The Anarch
+    - count: 1
+      name: Society Hunting Ground
+    - count: 3
+      name: Vessel
+    - count: 1
+      name: Wash
+  - name: Action
+    count: 1
+    cards:
+    - count: 1
+      name: Revelations
+  - name: Equipment
+    count: 7
+    cards:
+    - count: 4
+      name: .44 Magnum
+    - count: 1
+      name: Bowl of Convergence
+    - count: 2
+      name: Sniper Rifle
+  - name: Reaction
+    count: 34
+    cards:
+    - count: 5
+      name: Eagle's Sight
+    - count: 5
+      name: Enhanced Senses
+    - count: 5
+      name: Eyes of Argus
+    - count: 2
+      name: Forced Awakening
+    - count: 2
+      name: My Enemy's Enemy
+    - count: 2
+      name: On the Qui Vive
+    - count: 5
+      name: Quicken Sight
+    - count: 2
+      name: Spirit's Touch
+    - count: 6
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 32
+    cards:
+    - count: 4
+      name: Blur
+    - count: 6
+      name: Concealed Weapon
+    - count: 2
+      name: Infernal Pursuit
+    - count: 5
+      name: Psyche!
+    - count: 6
+      name: Pursuit
+    - count: 4
+      name: Sideslip
+    - count: 5
+      name: Taste of Vitae

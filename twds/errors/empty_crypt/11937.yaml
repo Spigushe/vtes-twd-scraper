@@ -1,0 +1,84 @@
+name: Redemption Tournament
+location: Modena (MO) Italy
+date_start: '2025-03-02'
+rounds_format: 2R+F
+players_count: 45
+winner: Laurent Ribeyre
+event_url: https://www.vekn.net/event-calendar/event/11937
+event_id: '11937'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82141-twd-redemption-tournament-modena
+deck:
+  name: Dogs of War
+  created_by: Marcin Szybkowski
+  description: ''
+  crypt_count: 12
+  crypt_min: 10
+  crypt_max: 22
+  crypt_avg: 3.83
+  crypt: []
+  library_count: 74
+  library_sections:
+  - name: Master
+    count: 11
+    cards:
+    - count: 1
+      name: Archon Investigation
+    - count: 1
+      name: Black Forest Base
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Hungry Coyote, The
+    - count: 1
+      name: Information Highway
+    - count: 2
+      name: Not to Be
+    - count: 2
+      name: Waste Management Operation
+    - count: 2
+      name: Wider View
+  - name: Action
+    count: 8
+    cards:
+    - count: 8
+      name: Embrace, The
+  - name: Political Action
+    count: 19
+    cards:
+    - count: 6
+      name: Consanguineous Boon
+    - count: 1
+      name: 'Crusade: Atlanta'
+    - count: 1
+      name: 'Crusade: Detroit'
+    - count: 1
+      name: 'Crusade: Pittsburgh'
+    - count: 1
+      name: 'Crusade: Rome'
+    - count: 1
+      name: 'Crusade: Toronto'
+    - count: 5
+      name: Dogs of War
+    - count: 1
+      name: Domain Challenge
+    - count: 2
+      name: Kine Resources Contested
+  - name: Equipment
+    count: 10
+    cards:
+    - count: 10
+      name: Saturday-Night Special
+  - name: Action Modifier/Reaction
+    count: 10
+    cards:
+    - count: 10
+      name: Unexpected Coalition
+  - name: Combat
+    count: 16
+    cards:
+    - count: 1
+      name: Amaranth
+    - count: 7
+      name: Concealed Weapon
+    - count: 8
+      name: Dragon's Breath Rounds

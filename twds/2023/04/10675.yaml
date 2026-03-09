@@ -1,0 +1,164 @@
+name: HAVEN UNCOVERED
+location: PARIS (FRANCE)
+date_start: '2023-04-22'
+rounds_format: 2R+F
+players_count: 17
+winner: Edouard MENNESON
+event_url: https://www.vekn.net/event-calendar/event/10675
+event_id: '10675'
+vp_comment: 'Description : Classic Gangrel Wall. Hell-For-Leather is a real mvp. Sniper may be reomved or replaced by Ivory
+  Bow. A 2nd Carfax Abbey or a Zoo Hunting Grounded may be needed. 2nd Gangrel Revel could also help.'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80502-twd-haven-uncovered-paris-2023-04-22
+deck:
+  name: PROWall streamlined
+  created_by: Rhazoo
+  description: Classic Gangrel Wall. Hell-For-Leather is a real mvp. Sniper may be reomved or replaced by Ivory Bow. A 
+    2nd Carfax Abbey or a Zoo Hunting Grounded may be needed. 2nd Gangrel Revel could also help.
+  crypt_count: 12
+  crypt_min: 13
+  crypt_max: 25
+  crypt_avg: 5.0
+  crypt:
+  - count: 1
+    name: Massimiliano
+    capacity: 7
+    disciplines: ANI FOR pro
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 2
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 2
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Martina Srnankova
+    capacity: 6
+    disciplines: FOR PRO ani
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Kamile Paukstys
+    capacity: 5
+    disciplines: PRO ani for
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Mickey Wheeler
+    capacity: 5
+    disciplines: ani cel for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Hanna Nokelainen
+    capacity: 4
+    disciplines: ani for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Nathan Turner
+    capacity: 4
+    disciplines: PRO ani
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Indira
+    capacity: 3
+    disciplines: PRO
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Ruslan Fedorenko
+    capacity: 2
+    disciplines: pro
+    clan: Gangrel
+    grouping: 6
+  library_count: 77
+  library_sections:
+  - name: Master
+    count: 17
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Carfax Abbey
+    - count: 2
+      name: Club Illusion
+    - count: 2
+      name: Direct Intervention
+    - count: 1
+      name: Ecoterrorists
+    - count: 1
+      name: Gangrel Revel
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: 'Powerbase: Los Angeles'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Rötschreck
+    - count: 1
+      name: Smiling Jack, The Anarch
+    - count: 4
+      name: Villein
+  - name: Action
+    count: 8
+    cards:
+    - count: 8
+      name: Thing
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Sniper Rifle
+  - name: Political Action
+    count: 1
+    cards:
+    - count: 1
+      name: Reckless Agitation
+  - name: Retainer
+    count: 4
+    cards:
+    - count: 4
+      name: Raven Spy
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Form of the Bat
+  - name: Reaction
+    count: 26
+    cards:
+    - count: 5
+      name: Bait and Switch
+    - count: 6
+      name: Deep Ecology
+    - count: 2
+      name: Delaying Tactics
+    - count: 2
+      name: Eyes of the Wild
+    - count: 9
+      name: Organized Resistance
+    - count: 2
+      name: Protection Racket
+  - name: Combat
+    count: 16
+    cards:
+    - count: 2
+      name: Claws of the Dead
+    - count: 6
+      name: Donnybrook
+    - count: 4
+      name: Earth Meld
+    - count: 4
+      name: Hell-for-Leather

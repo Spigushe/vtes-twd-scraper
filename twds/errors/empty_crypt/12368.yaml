@@ -1,0 +1,103 @@
+name: IT 25 Milano
+location: Milano, Italy
+date_start: '2025-11-16'
+rounds_format: 2R+F
+players_count: 25
+winner: 'Winner: Nicola Lonardi'
+event_url: https://www.vekn.net/event-calendar/event/12368
+event_id: '12368'
+vp_comment: 1,5VP in final, winner for Best Seating
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82672-twd-it-25-milan-italy-16-nov-2025
+deck:
+  name: New family 1.1
+  created_by: Dominik
+  description: ''
+  crypt_count: 12
+  crypt_min: 12
+  crypt_max: 25
+  crypt_avg: 4.75
+  crypt: []
+  library_count: 81
+  library_sections:
+  - name: Master
+    count: 29
+    cards:
+    - count: 6
+      name: Ashur Tablets
+    - count: 1
+      name: Cappadocian Crypt
+    - count: 1
+      name: Charisma
+    - count: 1
+      name: Cursed Abattoir
+    - count: 1
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Fortschritt Library
+    - count: 1
+      name: Jake Washington
+    - count: 4
+      name: Liquidation
+    - count: 4
+      name: Parthenon, The
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: Perfectionist
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 2
+      name: Shard, London, The
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 9
+    cards:
+    - count: 3
+      name: Dance of the Dead
+    - count: 6
+      name: Split the Veil
+  - name: Ally
+    count: 20
+    cards:
+    - count: 12
+      name: Aggressive Corpse
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 1
+      name: Fiorella, Empty One
+    - count: 6
+      name: Rotting Behemoth
+  - name: Action Modifier
+    count: 8
+    cards:
+    - count: 2
+      name: Paths in Two Worlds
+    - count: 3
+      name: Stygian Shroud
+    - count: 3
+      name: Where the Veil Thins
+  - name: Reaction
+    count: 10
+    cards:
+    - count: 2
+      name: Delaying Tactics
+    - count: 2
+      name: On the Qui Vive
+    - count: 6
+      name: Telepathic Misdirection
+  - name: Event
+    count: 5
+    cards:
+    - count: 1
+      name: Dragonbound
+    - count: 1
+      name: FBI Special Affairs Division
+    - count: 1
+      name: Scourge of the Enochians
+    - count: 2
+      name: Unmasking, The

@@ -1,0 +1,147 @@
+name: Liga GL/PT 24/25 – Almada
+location: Almada, Setúbal, Portugal
+date_start: '2025-02-08'
+rounds_format: 3R+F
+players_count: 18
+winner: Paul Direktor
+event_url: https://www.vekn.net/event-calendar/event/12042
+event_id: '12042'
+vp_comment: 2GW 7VP in preliminary, 3VPs in final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82076-twd-liga-gl-pt-24-25-almada
+deck:
+  name: How Martin would play Arika
+  created_by: Paul Direktor
+  description: ''
+  crypt_count: 12
+  crypt_min: 38
+  crypt_max: 44
+  crypt_avg: 10.25
+  crypt:
+  - count: 5
+    name: Arika
+    capacity: 11
+    disciplines: DOM FOR OBF PRE aus cel
+    title: inner circle
+    clan: Ventrue
+    grouping: 2
+  - count: 3
+    name: Lucinde, Alastor
+    capacity: 10
+    disciplines: DOM FOR PRE obf pot tha
+    title: justicar
+    clan: Ventrue
+    grouping: 3
+  - count: 2
+    name: Queen Anne
+    capacity: 10
+    disciplines: DOM FOR PRE aus obf
+    title: prince
+    clan: Ventrue
+    grouping: 2
+  - count: 1
+    name: Gratiano
+    capacity: 8
+    disciplines: DOM OBT obf pot
+    title: priscus
+    clan: Lasombra
+    grouping: 2
+  - count: 1
+    name: Marcus Vitel
+    capacity: 10
+    disciplines: DOM FOR OBF OBT PRE
+    title: prince
+    clan: Ventrue
+    grouping: 3
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 42
+    cards:
+    - count: 12
+      name: Ashur Tablets
+    - count: 1
+      name: Bleeding the Vine
+    - count: 1
+      name: Camarilla Conclave
+    - count: 3
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: 'Golconda: Inner Peace'
+    - count: 7
+      name: Liquidation
+    - count: 1
+      name: Metro Underground
+    - count: 1
+      name: Minion Tap
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Papillon
+    - count: 7
+      name: Parthenon, The
+    - count: 1
+      name: Secure Haven
+    - count: 1
+      name: Ventrue Headquarters
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 6
+    cards:
+    - count: 1
+      name: Dominate Kine
+    - count: 5
+      name: Govern the Unaligned
+  - name: Political Action
+    count: 9
+    cards:
+    - count: 1
+      name: Ancient Influence
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 2
+      name: Banishment
+    - count: 2
+      name: Camarilla's Iron Fist
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+    - count: 1
+      name: Rumors of Gehenna
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 19
+    cards:
+    - count: 2
+      name: Conditioning
+    - count: 2
+      name: Enkil Cog
+    - count: 4
+      name: Forgotten Labyrinth
+    - count: 7
+      name: Freak Drive
+    - count: 3
+      name: Lost in Crowds
+    - count: 1
+      name: Voter Captivation
+  - name: Reaction
+    count: 11
+    cards:
+    - count: 7
+      name: Deflection
+    - count: 4
+      name: Obedience
+  - name: Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Majesty

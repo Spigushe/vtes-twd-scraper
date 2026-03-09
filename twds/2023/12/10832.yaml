@@ -1,0 +1,197 @@
+name: 'Danse Macabre: First Danse'
+location: Vidor, Texas USA
+date_start: '2023-12-01'
+rounds_format: 2R+F
+players_count: 25
+winner: Darby Keeney
+event_url: https://www.vekn.net/event-calendar/event/10832
+event_id: '10832'
+vp_comment: Tournament Summary --
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81225-twd-danse-macabre-first-dance-vidor-tx-usa-december-1-2023
+deck:
+  name: Obamium (312)
+  created_by: Darby Keeney
+  description: Anarch-based Gangrel Wall (5 Baron version).
+  crypt_count: 12
+  crypt_min: 14
+  crypt_max: 25
+  crypt_avg: 5.08
+  crypt:
+  - count: 2
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 2
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Hanna Nokelainen
+    capacity: 4
+    disciplines: ani for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Indira
+    capacity: 3
+    disciplines: PRO
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Joaquín de Cádiz
+    capacity: 3
+    disciplines: for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Kamile Paukstys
+    capacity: 5
+    disciplines: PRO ani for
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Martina Srnankova
+    capacity: 6
+    disciplines: FOR PRO ani
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Massimiliano
+    capacity: 7
+    disciplines: ANI FOR pro
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Mickey Wheeler
+    capacity: 5
+    disciplines: ani cel for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Nathan Turner
+    capacity: 4
+    disciplines: PRO ani
+    clan: Gangrel
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 18
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+      comment: somewhat iffy as a Master slot here.
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Backways
+    - count: 2
+      name: Blood Doll
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 1
+      name: Ecoterrorists
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: 'Powerbase: Los Angeles'
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Smiling Jack, The Anarch
+      comment: would love to stuff a second copy in here, but can't find room.
+    - count: 3
+      name: Villein
+    - count: 1
+      name: Zoo Hunting Ground
+  - name: Action
+    count: 12
+    cards:
+    - count: 1
+      name: Aranthebes, The Immortal
+      comment: dual purpose card, but not needed in this tournament.
+    - count: 2
+      name: Rewilding
+      comment: 2 feels like the bare minimum.
+    - count: 1
+      name: Status Perfectus, The
+      comment: didn't need the third anti-Form of Mist card this tournament.
+    - count: 8
+      name: Thing
+  - name: Equipment
+    count: 5
+    cards:
+    - count: 1
+      name: Camera Phone
+      comment: would still love to duplicate this, but went with a Heart instead.
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Ivory Bow
+      comment: sits on either a 2-bleeder or the dedicated Status vampire.
+    - count: 2
+      name: Sniper Rifle
+  - name: Retainer
+    count: 5
+    cards:
+    - count: 1
+      name: Dog Pack
+    - count: 4
+      name: Raven Spy
+  - name: Action Modifier
+    count: 3
+    cards:
+    - count: 3
+      name: Earth Control
+  - name: Action Modifier/Combat
+    count: 1
+    cards:
+    - count: 1
+      name: Rapid Change
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Form of the Bat
+  - name: Reaction
+    count: 27
+    cards:
+    - count: 5
+      name: Bait and Switch
+    - count: 6
+      name: Deep Ecology
+    - count: 4
+      name: Eyes of the Wild
+    - count: 2
+      name: On the Qui Vive
+    - count: 8
+      name: Organized Resistance
+    - count: 2
+      name: Protection Racket
+  - name: Combat
+    count: 14
+    cards:
+    - count: 10
+      name: Earth Meld
+    - count: 4
+      name: Form of Mist
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Uncoiling, The
+      comment: either great or useless.

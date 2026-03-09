@@ -1,0 +1,94 @@
+name: Liga Chilanga "Jornada 6" (MX)
+location: Mexico City, Mexico
+date_start: '2023-07-30'
+rounds_format: 3R+F
+players_count: 9
+winner: Winner:Alberto Ramirez León
+event_url: https://www.vekn.net/event-calendar/event/10870
+event_id: '10870'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80786-liga-chilanga-jornada-6
+deck:
+  name: ¡Con los terroristas!
+  created_by: mrleon
+  description: Basado en el preconstruido de V5
+  crypt_count: 12
+  crypt_min: 20
+  crypt_max: 29
+  crypt_avg: 6.08
+  crypt: []
+  library_count: 78
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 1
+      name: Direct Intervention
+    - count: 4
+      name: "Haqim's Law: Retribution"
+    - count: 1
+      name: 'Khabar: Community, The'
+    - count: 2
+      name: Priority Contract
+    - count: 1
+      name: Sudden Reversal
+    - count: 1
+      name: Underworld Hunting Ground
+    - count: 5
+      name: Villein
+  - name: Action
+    count: 11
+    cards:
+    - count: 3
+      name: Flurry of Action
+    - count: 3
+      name: Hunter's Mark
+    - count: 3
+      name: 'Khabar: Glory'
+    - count: 2
+      name: Magic of the Smith
+  - name: Equipment
+    count: 3
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Ivory Bow
+    - count: 1
+      name: Kevlar Vest
+  - name: Political Action
+    count: 2
+    cards:
+    - count: 2
+      name: Anathema
+  - name: Action Modifier/Combat
+    count: 6
+    cards:
+    - count: 3
+      name: Resist Earth's Grasp
+    - count: 3
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 8
+    cards:
+    - count: 8
+      name: 'Second Tradition: Domain'
+  - name: Combat
+    count: 31
+    cards:
+    - count: 2
+      name: Blur
+    - count: 15
+      name: Hunger of Marduk
+    - count: 7
+      name: Pursuit
+    - count: 5
+      name: Quickness
+    - count: 2
+      name: Zip Gun
+  - name: Event
+    count: 2
+    cards:
+    - count: 1
+      name: Narrow Minds
+    - count: 1
+      name: Scourge of the Enochians

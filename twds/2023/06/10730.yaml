@@ -1,0 +1,147 @@
+name: Origins - Thursday 1
+location: Columbus (OH), USA
+date_start: '2023-06-22'
+rounds_format: 2R+F
+players_count: 29
+winner: Norman Brown
+event_url: https://www.vekn.net/event-calendar/event/10730
+event_id: '10730'
+vp_comment: 2GW6 + 3vp in the final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80651-twd-origins-thursday-1
+deck:
+  name: Thieves of Magic Glitches
+  description: ''
+  crypt_count: 16
+  crypt_min: 8
+  crypt_max: 36
+  crypt_avg: 6.25
+  crypt:
+  - count: 5
+    name: Malgorzata
+    capacity: 9
+    disciplines: AUS DOM THA VIC pre
+    title: priscus
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Anastasz di Zagreb
+    capacity: 8
+    disciplines: AUS THA ani cel dom
+    title: justicar
+    clan: Tremere
+    grouping: 3
+  - count: 1
+    name: Ardan Lane
+    capacity: 8
+    disciplines: AUS THA dom obf pre
+    title: primogen
+    clan: Tremere
+    grouping: 3
+  - count: 1
+    name: Uta Kovacs
+    capacity: 8
+    disciplines: AUS DOM THA ser
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Carna, The Princess Witch
+    capacity: 7
+    disciplines: AUS DOM THA
+    title: primogen
+    clan: Tremere
+    grouping: 3
+  - count: 1
+    name: Valerius Maior, Hell's Fool
+    capacity: 7
+    disciplines: AUS DAI DOM THA nec pre
+    clan: Tremere
+    grouping: 4
+  - count: 1
+    name: Valerius Maior, Hell's Fool (ADV)
+    capacity: 7
+    disciplines: AUS DAI DOM THA nec pre
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 5
+    name: Jacob, The Glitch
+    capacity: 2
+    disciplines: THA
+    clan: Tremere antitribu
+    grouping: 3
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 20
+    cards:
+    - count: 7
+      name: Dominate
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 4
+      name: Effective Management
+    - count: 3
+      name: 'Golconda: Inner Peace'
+    - count: 1
+      name: Information Highway
+    - count: 4
+      name: Villein
+  - name: Action
+    count: 13
+    cards:
+    - count: 11
+      name: Govern the Unaligned
+    - count: 1
+      name: Rutor's Hand
+    - count: 1
+      name: Under Siege
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Ivory Bow
+  - name: Political Action
+    count: 3
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 1
+      name: Banishment
+  - name: Action Modifier
+    count: 8
+    cards:
+    - count: 4
+      name: Change of Target
+    - count: 4
+      name: Mirror Walk
+  - name: Action Modifier/Reaction
+    count: 7
+    cards:
+    - count: 7
+      name: Murmur of the False Will
+  - name: Reaction
+    count: 9
+    cards:
+    - count: 7
+      name: Deflection
+    - count: 2
+      name: On the Qui Vive
+  - name: Combat
+    count: 27
+    cards:
+    - count: 6
+      name: Apportation
+    - count: 5
+      name: Flames of the Netherworld
+    - count: 6
+      name: Movement of the Mind
+    - count: 10
+      name: Theft of Vitae
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Scourge of the Enochians

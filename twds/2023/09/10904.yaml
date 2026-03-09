@@ -1,0 +1,136 @@
+name: Nefertiti Advanced
+location: Lafayette (LA), USA
+date_start: '2023-09-24'
+rounds_format: 2R+F
+players_count: 20
+winner: Kelly Lyons
+event_url: https://www.vekn.net/event-calendar/event/10904
+event_id: '10904'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80906-twd-nefertiti-advanced-lafayette-la-usa-2023-09-24
+deck:
+  name: Water Dog - Ben Pealing the Ghost of Adam Hulse
+  created_by: Kelly Lyons, Ben Peal and Adam Hulse
+  description: 'I started with a deck list from Ben Peal. Here is the link to that deck: vdb.im/decks/2018u2bma'
+  crypt_count: 12
+  crypt_min: 24
+  crypt_max: 35
+  crypt_avg: 7.58
+  crypt:
+  - count: 3
+    name: Angelique
+    capacity: 9
+    disciplines: AUS FOR NEC SER THA
+    clan: Harbinger of Skulls
+    grouping: 6
+  - count: 3
+    name: Khurshid
+    capacity: 8
+    disciplines: AUS FOR NEC POT
+    clan: Harbinger of Skulls
+    grouping: 6
+  - count: 2
+    name: Mordechai Ben-Nun
+    capacity: 8
+    disciplines: ANI AUS FOR NEC
+    clan: Harbinger of Skulls
+    grouping: 5
+  - count: 3
+    name: Hecate
+    capacity: 6
+    disciplines: AUS FOR NEC
+    clan: Harbinger of Skulls
+    grouping: 5
+  - count: 1
+    name: La Viuda Blanca
+    capacity: 6
+    disciplines: AUS NEC for obf
+    clan: Harbinger of Skulls
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 1
+      name: Admonitions, The
+    - count: 1
+      name: Barrens, The
+    - count: 1
+      name: Charisma
+    - count: 4
+      name: Dreams of the Sphinx
+    - count: 2
+      name: Fragment of the Book of Nod
+    - count: 1
+      name: Giant's Blood
+    - count: 4
+      name: Liquidation
+    - count: 1
+      name: Metro Underground
+  - name: Ally
+    count: 12
+    cards:
+    - count: 12
+      name: Emerald Legionnaire
+  - name: Retainer
+    count: 2
+    cards:
+    - count: 2
+      name: Vengeful Spirit
+  - name: Action Modifier
+    count: 17
+    cards:
+    - count: 3
+      name: Acheron Vortex
+    - count: 4
+      name: Call of the Hungry Dead
+    - count: 2
+      name: Freak Drive
+    - count: 5
+      name: Shroud Mastery
+    - count: 3
+      name: Trochomancy
+  - name: Action Modifier/Combat
+    count: 3
+    cards:
+    - count: 3
+      name: Breath of Thanatos
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Spectral Divination
+  - name: Reaction
+    count: 22
+    cards:
+    - count: 2
+      name: Eagle's Sight
+    - count: 5
+      name: Eyes of Argus
+    - count: 2
+      name: Funeral Wake
+    - count: 2
+      name: My Enemy's Enemy
+    - count: 5
+      name: On the Qui Vive
+    - count: 6
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 12
+    cards:
+    - count: 3
+      name: Armor of Vitality
+    - count: 3
+      name: Indomitability
+    - count: 3
+      name: Martyr's Resilience
+    - count: 3
+      name: Spiritual Intervention
+  - name: Event
+    count: 3
+    cards:
+    - count: 1
+      name: FBI Special Affairs Division
+    - count: 2
+      name: Unmasking, The

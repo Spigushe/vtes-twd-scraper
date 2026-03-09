@@ -1,0 +1,100 @@
+name: Last Chance Qualifier
+location: Mannheim, Germany
+date_start: '2014-10-03'
+rounds_format: 3R+F
+players_count: 91
+winner: Ruben Feldman
+event_url: https://www.vekn.net/event-calendar/event/7830
+event_id: '7830'
+vp_comment: 3GW11 + 2vp in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82045-twd-last-chance-qualifier-2014-mannheim-germany-3-oct-2014
+deck:
+  name: Fast Eddie
+  description: ''
+  crypt_count: 12
+  crypt_min: 7
+  crypt_max: 17
+  crypt_avg: 3.0
+  crypt:
+  - count: 3
+    name: Jackie
+    capacity: 3
+    disciplines: DEM
+    clan: Malkavian antitribu
+    grouping: 4
+  - count: 2
+    name: Eddie Gaines
+    capacity: 1
+    disciplines: dem pot
+    clan: Caitiff
+    grouping: 3
+  - count: 2
+    name: Midget
+    capacity: 3
+    disciplines: DEM obf pre
+    clan: Malkavian antitribu
+    grouping: 3
+  - count: 1
+    name: Apache Jones
+    capacity: 5
+    disciplines: DEM aus for obf
+    clan: Malkavian antitribu
+    grouping: 4
+  - count: 1
+    name: Cassandra Langely, The Waif
+    capacity: 2
+    disciplines: dem
+    clan: Malkavian
+    grouping: 4
+  - count: 1
+    name: Fabrizia Contreraz
+    capacity: 4
+    disciplines: dem pot
+    title: archbishop
+    clan: Malkavian antitribu
+    grouping: 4
+  - count: 1
+    name: Marta
+    capacity: 3
+    disciplines: aus dem
+    clan: Malkavian antitribu
+    grouping: 4
+  - count: 1
+    name: Persia, The Beautiful Statue
+    capacity: 5
+    disciplines: DEM aus obf
+    clan: Malkavian
+    grouping: 3
+  library_count: 74
+  library_sections:
+  - name: Master
+    count: 14
+    cards:
+    - count: 5
+      name: Agent of Power
+    - count: 4
+      name: Dementation
+    - count: 3
+      name: Kaymakli Nightmares
+    - count: 2
+      name: Pentex(TM) Subversion
+  - name: Action
+    count: 26
+    cards:
+    - count: 26
+      name: Kindred Spirits
+  - name: Action Modifier
+    count: 28
+    cards:
+    - count: 16
+      name: Confusion
+    - count: 10
+      name: Eyes of Chaos
+    - count: 2
+      name: Mind Tricks
+  - name: Action Modifier/Combat
+    count: 6
+    cards:
+    - count: 6
+      name: Deny

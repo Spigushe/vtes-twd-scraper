@@ -1,0 +1,155 @@
+name: Body of Sun 2
+location: Paris, France
+date_start: '2023-09-23'
+rounds_format: 3R+F
+players_count: 19
+winner: Jorge Delgado
+event_url: https://www.vekn.net/event-calendar/event/10891
+event_id: '10891'
+vp_comment: I set myself the challenge to try and play less AT and play other decks that I think are strong or I simply 
+  like. The result has been 5 finals in the last year with decks without AT (Weenie AUS, Shambling, Khazar, Carna and 
+  Stanislava) and 2 tournament wins (Carna & Stanislava). I have to say that it feels much more powerful to play 
+  Stanislava than to play Girls in most of the tables and I generally have better results playing without than with AT.
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80860-twd-body-of-sun-2-23rd-september-paris
+deck:
+  name: Gang of fur
+  created_by: Jorge Delgado
+  description: ''
+  crypt_count: 12
+  crypt_min: 36
+  crypt_max: 44
+  crypt_avg: 10.08
+  crypt:
+  - count: 5
+    name: Stanislava
+    capacity: 11
+    disciplines: ANI CEL DOM FOR PRO
+    title: inner circle
+    clan: Gangrel
+    grouping: 2
+  - count: 2
+    name: Ingrid Rossler
+    capacity: 9
+    disciplines: ANI FOR PRO dom
+    title: prince
+    clan: Gangrel
+    grouping: 2
+  - count: 2
+    name: Xaviar (ADV)
+    capacity: 10
+    disciplines: ABO ANI FOR PRO aus cel pot
+    title: justicar
+    clan: Gangrel
+    grouping: 3
+  - count: 1
+    name: Genevieve
+    capacity: 10
+    disciplines: ANI FOR PRO aus dom
+    title: priscus
+    clan: Gangrel antitribu
+    grouping: 2
+  - count: 1
+    name: Hartmut Stover
+    capacity: 10
+    disciplines: CEL OBF PRO dom for
+    title: archbishop
+    clan: Gangrel antitribu
+    grouping: 3
+    comment: amazing special, during the 1st round made me win 7 pool! thinking about getting someone out to double 
+      Hartmut.
+  - count: 1
+    name: Mark Decker
+    capacity: 8
+    disciplines: CEL PRO ani for obf pot
+    title: prince
+    clan: Gangrel
+    grouping: 3
+  library_count: 80
+  library_sections:
+  - name: Master
+    count: 22
+    cards:
+    - count: 1
+      name: Backways
+    - count: 1
+      name: Coven, The
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Perfectionist
+    - count: 6
+      name: Villein
+    - count: 1
+      name: Wider View
+    - count: 6
+      name: Zillah's Valley
+  - name: Action
+    count: 7
+    cards:
+    - count: 7
+      name: Govern the Unaligned
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Seal of Veddartha
+  - name: Political Action
+    count: 10
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 3
+      name: Banishment
+    - count: 3
+      name: Parity Shift
+      comment: probably should remove 1 Parity Shift to add 1 more Banishment. Overall Banishments are generally more 
+        useful.
+    - count: 1
+      name: Reins of Power
+  - name: Action Modifier
+    count: 18
+    cards:
+    - count: 3
+      name: Conditioning
+    - count: 6
+      name: Earth Control
+    - count: 1
+      name: Enkil Cog
+    - count: 4
+      name: Forced March
+    - count: 4
+      name: Instantaneous Transformation
+  - name: Action Modifier/Combat
+    count: 1
+    cards:
+    - count: 1
+      name: Rapid Change
+  - name: Action Modifier/Reaction
+    count: 1
+    cards:
+    - count: 1
+      name: Murmur of the False Will
+  - name: Reaction
+    count: 9
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 3
+      name: Sense the Savage Way
+  - name: Combat
+    count: 11
+    cards:
+    - count: 5
+      name: Earth Meld
+    - count: 6
+      name: Form of Mist

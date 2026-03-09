@@ -1,0 +1,142 @@
+name: Batalha pela Jureia
+location: Peruibe , SÃO PAULO, BRASIL
+date_start: '2025-12-06'
+rounds_format: 2R+F
+players_count: 10
+winner: Gabriel  Rodrigues de Marqui
+event_url: https://www.vekn.net/event-calendar/event/12816
+event_id: '12816'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82721-twd-batalha-pela-jureia-brasil-06-12-2025
+deck:
+  name: voto 3, desvira, bleed 7
+  created_by: razi
+  description: ''
+  crypt_count: 12
+  crypt_min: 32
+  crypt_max: 40
+  crypt_avg: 9.08
+  crypt:
+  - count: 5
+    name: Aaradhya, The Callous Tyrant
+    capacity: 10
+    disciplines: ANI DOM FOR POT PRE
+    title: cardinal
+    clan: Ventrue
+    grouping: 6
+  - count: 1
+    name: Carolina Vález
+    capacity: 9
+    disciplines: DOM OBT POT PRE aus
+    title: archbishop
+    clan: Lasombra
+    grouping: 5
+  - count: 1
+    name: Dark Selina
+    capacity: 9
+    disciplines: CEL POT PRE dom for
+    title: cardinal
+    clan: Brujah antitribu
+    grouping: 5
+  - count: 1
+    name: De Sade
+    capacity: 9
+    disciplines: AUS DOM FOR PRE
+    title: archbishop
+    clan: Ventrue antitribu
+    grouping: 5
+  - count: 1
+    name: Věnceslava, The Implacable
+    capacity: 9
+    disciplines: DOM FOR POT PRE cel
+    title: archbishop
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Rexton "Savage" Abernathy
+    capacity: 8
+    disciplines: DOM POT PRE cel
+    title: archbishop
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Üresség
+    capacity: 8
+    disciplines: CEL POT PRE dom for
+    title: archbishop
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Khin Aye
+    capacity: 7
+    disciplines: POT PRE dom for
+    title: priscus
+    clan: Ventrue
+    grouping: 6
+  library_count: 80
+  library_sections:
+  - name: Master
+    count: 17
+    cards:
+    - count: 1
+      name: Base da Floresta Negra
+    - count: 1
+      name: Monastério das Sombras
+    - count: 1
+      name: Quartel General Ventrue
+    - count: 1
+      name: Refúgio Seguro
+    - count: 1
+      name: Sangue do Gigante
+    - count: 2
+      name: Sonhos da Esfinge
+    - count: 4
+      name: Supervia da Informação
+    - count: 6
+      name: Vassalo
+  - name: Action
+    count: 5
+    cards:
+    - count: 5
+      name: Governar os Desalinhados
+  - name: Political Action
+    count: 16
+    cards:
+    - count: 4
+      name: Banimento
+    - count: 6
+      name: Cold War
+    - count: 4
+      name: Contestar Recursos do Rebanho
+    - count: 1
+      name: Estrangulamento Político
+    - count: 1
+      name: Rédeas do Poder
+  - name: Action Modifier
+    count: 30
+    cards:
+    - count: 5
+      name: Cativando Eleitores
+    - count: 4
+      name: Dominant Personality
+    - count: 5
+      name: Iron Glare
+    - count: 4
+      name: Paradigma Perfeito
+    - count: 1
+      name: Peão de Enkil
+    - count: 2
+      name: Private Audience
+    - count: 4
+      name: Relentlessness
+    - count: 5
+      name: Unthinkable Humiliation
+  - name: Action Modifier/Combat
+    count: 5
+    cards:
+    - count: 5
+      name: Força da Personalidade
+  - name: Reaction
+    count: 7
+    cards:
+    - count: 7
+      name: Deflexão

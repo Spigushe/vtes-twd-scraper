@@ -1,0 +1,84 @@
+name: Campeónato Nacional Mexicano 2024(MX)
+location: Mexico City, Mexico
+date_start: '2024-12-08'
+rounds_format: 3R+F
+players_count: 28
+winner: Edgar David Caudillo Garrido (
+event_url: https://www.vekn.net/event-calendar/event/11902
+event_id: '11902'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81947-campeonato-nacional-mexicano-2024
+deck:
+  name: arishat op
+  created_by: EDGAR DAVID CAUDILLO GARRIDO
+  description: ''
+  crypt_count: 12
+  crypt_min: 24
+  crypt_max: 28
+  crypt_avg: 6.33
+  crypt: []
+  library_count: 79
+  library_sections:
+  - name: Master
+    count: 20
+    cards:
+    - count: 1
+      name: Camarilla Conclave
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fear of Mekhet
+    - count: 1
+      name: Ferraille
+    - count: 1
+      name: Giant's Blood
+    - count: 3
+      name: Information Highway
+    - count: 3
+      name: Protected Resources
+    - count: 1
+      name: Ventrue Headquarters
+    - count: 4
+      name: Villein
+    - count: 3
+      name: Obfuscate
+  - name: Action
+    count: 6
+    cards:
+    - count: 3
+      name: 'Condemnation: Mute'
+    - count: 3
+      name: Unleash Hell's Fury
+  - name: Political Action
+    count: 20
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 7
+      name: Camarilla's Iron Fist
+    - count: 2
+      name: 'First Tradition: The Masquerade'
+    - count: 6
+      name: Kine Resources Contested
+    - count: 4
+      name: Parity Shift
+  - name: Action Modifier
+    count: 24
+    cards:
+    - count: 6
+      name: Awe
+    - count: 7
+      name: Forgotten Labyrinth
+    - count: 4
+      name: Lost in Crowds
+    - count: 7
+      name: Voter Captivation
+  - name: Action Modifier/Combat
+    count: 3
+    cards:
+    - count: 3
+      name: Swallowed by the Night
+  - name: Combat
+    count: 6
+    cards:
+    - count: 6
+      name: Majesty

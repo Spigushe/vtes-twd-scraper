@@ -1,0 +1,167 @@
+name: Gehenna Store Championship 2024
+location: Belo Horizonte
+date_start: '2024-10-19'
+rounds_format: 3R+F
+players_count: 17
+winner: João Salvato (
+event_url: https://www.vekn.net/event-calendar/event/11756
+event_id: '11756'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81841-gehenna-store-championship-belo-horizonte-brasil-19-october-2024
+deck:
+  name: Outcast
+  description: ''
+  crypt_count: 13
+  crypt_min: 25
+  crypt_max: 40
+  crypt_avg: 8.31
+  crypt:
+  - count: 5
+    name: Grimgroth
+    capacity: 10
+    disciplines: AUS DOM PRE THA for
+    clan: Tremere
+    grouping: 6
+  - count: 2
+    name: Gerald Windham
+    capacity: 9
+    disciplines: AUS DOM FOR THA
+    clan: Tremere
+    grouping: 5
+  - count: 1
+    name: Abraham DuSable
+    capacity: 8
+    disciplines: AUS DOM FOR THA
+    clan: Tremere
+    grouping: 6
+  - count: 1
+    name: Aidan Lyle
+    capacity: 7
+    disciplines: AUS CHI THA dom
+    clan: Tremere
+    grouping: 5
+  - count: 1
+    name: Ayelech
+    capacity: 7
+    disciplines: AUS DOM THA
+    title: prince
+    clan: Tremere
+    grouping: 6
+  - count: 1
+    name: Lord Ephraim Wainwright
+    capacity: 6
+    disciplines: AUS THA for pre
+    clan: Tremere
+    grouping: 5
+  - count: 1
+    name: MacAlister Marshall
+    capacity: 6
+    disciplines: THA aus dom obf pre
+    clan: Tremere
+    grouping: 5
+  - count: 1
+    name: Trevon Parker
+    capacity: 6
+    disciplines: AUS DOM THA
+    clan: Tremere
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 19
+    cards:
+    - count: 1
+      name: Academic Hunting Ground
+    - count: 1
+      name: Arcane Library
+    - count: 1
+      name: Charisma
+    - count: 1
+      name: Creepshow Casino
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 4
+      name: Vessel
+    - count: 2
+      name: Wider View
+    - count: 4
+      name: Zillah's Valley
+  - name: Action
+    count: 11
+    cards:
+    - count: 6
+      name: Govern the Unaligned
+    - count: 3
+      name: Magic of the Smith
+    - count: 2
+      name: Rutor's Hand
+  - name: Ally
+    count: 13
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 10
+      name: Outcast Mage
+    - count: 1
+      name: Ponticulus
+    - count: 1
+      name: Thadius Zho
+  - name: Equipment
+    count: 6
+    cards:
+    - count: 1
+      name: .44 Magnum
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Ivory Bow
+    - count: 1
+      name: Sargon Fragment, The
+    - count: 1
+      name: Sniper Rifle
+  - name: Action Modifier
+    count: 13
+    cards:
+    - count: 1
+      name: Conditioning
+    - count: 4
+      name: Freak Drive
+    - count: 8
+      name: Mirror Walk
+  - name: Reaction
+    count: 17
+    cards:
+    - count: 3
+      name: Deflection
+    - count: 1
+      name: Delaying Tactics
+    - count: 5
+      name: Eyes of Argus
+    - count: 2
+      name: My Enemy's Enemy
+    - count: 3
+      name: On the Qui Vive
+    - count: 3
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 10
+    cards:
+    - count: 4
+      name: Rego Motum
+    - count: 6
+      name: Theft of Vitae
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Unmasking, The

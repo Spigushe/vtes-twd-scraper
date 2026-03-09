@@ -1,0 +1,110 @@
+name: Bleeding in Wroclaw
+location: Wroclaw, Poland
+date_start: '2023-07-22'
+rounds_format: 3R+F
+players_count: 19
+winner: Pawel Domanski
+event_url: https://www.vekn.net/event-calendar/event/10858
+event_id: '10858'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80827-twd-bleeding-in-wroclaw-wroclaw-poland-22-july-2023
+deck:
+  name: Punching party vol 1.01
+  created_by: Pawel Domanski
+  description: ''
+  crypt_count: 12
+  crypt_min: 7
+  crypt_max: 32
+  crypt_avg: 5.5
+  crypt:
+  - count: 4
+    name: Theo Bell
+    capacity: 8
+    disciplines: CEL POT PRE aus dom
+    clan: Brujah
+    grouping: 6
+  - count: 3
+    name: Chun Hei
+    capacity: 7
+    disciplines: CEL POT PRE
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Octane
+    capacity: 6
+    disciplines: CEL POT PRE
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Elen Kamjian
+    capacity: 4
+    disciplines: CEL POT
+    clan: Brujah
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 21
+    cards:
+    - count: 9
+      name: Ashur Tablets
+    - count: 1
+      name: Carver's Meat Packing and Storage
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Monster
+    - count: 1
+      name: Obtenebration
+    - count: 1
+      name: Parthenon, The
+    - count: 1
+      name: Secure Haven
+    - count: 1
+      name: Tension in the Ranks
+    - count: 4
+      name: Villein
+  - name: Action
+    count: 14
+    cards:
+    - count: 4
+      name: Bum's Rush
+    - count: 7
+      name: Line Brawl
+    - count: 3
+      name: Make the Misere
+  - name: Action Modifier
+    count: 2
+    cards:
+    - count: 2
+      name: Zephyr
+  - name: Combat
+    count: 52
+    cards:
+    - count: 5
+      name: Bollix
+    - count: 6
+      name: Dust Up
+    - count: 6
+      name: Hell-for-Leather
+    - count: 9
+      name: Immortal Grapple
+    - count: 2
+      name: Psyche!
+    - count: 6
+      name: Pursuit
+    - count: 2
+      name: Sideslip
+    - count: 5
+      name: Taste of Vitae
+    - count: 2
+      name: Thrown Sewer Lid
+    - count: 9
+      name: Torn Signpost
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Dragonbound

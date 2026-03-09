@@ -1,0 +1,142 @@
+name: Path of Death and the Soul Los Angeles
+location: Los Angeles (CA), USA
+date_start: '2026-02-14'
+rounds_format: 2R+F
+players_count: 14
+winner: Karl Schaefer
+event_url: https://www.vekn.net/event-calendar/event/12826
+event_id: '12826'
+vp_comment: 1GW4.5 + 4vp in final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82858-twd-path-of-death-and-the-soul-los-angeles
+deck:
+  name: Diana's Demise
+  description: ''
+  crypt_count: 13
+  crypt_min: 30
+  crypt_max: 43
+  crypt_avg: 9.0
+  crypt:
+  - count: 5
+    name: Anson
+    capacity: 8
+    disciplines: CEL PRE aus dom
+    title: prince
+    clan: Toreador
+    grouping: 1
+  - count: 3
+    name: Alexandra
+    capacity: 11
+    disciplines: ANI AUS CEL PRE dom
+    title: inner circle
+    clan: Toreador
+    grouping: 2
+  - count: 2
+    name: Anneke
+    capacity: 10
+    disciplines: AUS CEL PRE dom
+    title: justicar
+    clan: Toreador
+    grouping: 1
+  - count: 1
+    name: François Villon
+    capacity: 10
+    disciplines: AUS CEL PRE chi obf pot
+    title: prince
+    clan: Toreador
+    grouping: 2
+  - count: 1
+    name: Marcellus
+    capacity: 8
+    disciplines: AUS CEL pro
+    title: prince
+    clan: Toreador
+    grouping: 2
+    comment: you don't want this guy early, vamp 3
+  - count: 1
+    name: Victoria Ash
+    capacity: 6
+    disciplines: PRE aus cel dom
+    title: primogen
+    clan: Toreador
+    grouping: 2
+    comment: cheap titled bouncer that can Fist and Cap at superior
+  library_count: 82
+  library_sections:
+  - name: Master
+    count: 32
+    cards:
+    - count: 6
+      name: Ashur Tablets
+    - count: 2
+      name: Camarilla Conclave
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: 'Golconda: Inner Peace'
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: Pentex(TM) Subversion
+      comment: still good
+    - count: 1
+      name: Toreador Grand Ball
+      comment: in case of emergency, was useful in round 2
+    - count: 6
+      name: Villein
+    - count: 1
+      name: Wider View
+    - count: 9
+      name: Zillah's Valley
+  - name: Political Action
+    count: 17
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 3
+      name: Banishment
+    - count: 6
+      name: Camarilla's Iron Fist
+    - count: 4
+      name: Parity Shift
+    - count: 1
+      name: Political Stranglehold
+      comment: less valuable post-Sabbat, still necessary
+  - name: Action Modifier
+    count: 16
+    cards:
+    - count: 5
+      name: Loup
+    - count: 5
+      name: Perfect Paragon
+    - count: 6
+      name: Voter Captivation
+  - name: Action Modifier/Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Resist Earth's Grasp
+  - name: Reaction
+    count: 7
+    cards:
+    - count: 5
+      name: Deflection
+      comment: seemed like enough today, better than AUS, which Anson cannot use
+    - count: 2
+      name: On the Qui Vive
+      comment: could possibly be removed only used one for wake-and-bounce
+  - name: Combat
+    count: 6
+    cards:
+    - count: 6
+      name: Majesty
+      comment: could possibly add 1-2 more copies depending the meta

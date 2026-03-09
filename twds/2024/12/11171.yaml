@@ -1,0 +1,153 @@
+name: Cearense 2024 - Etapa GP Brasil
+location: Fortaleza, Ceará, Brazil
+date_start: '2024-12-15'
+rounds_format: 3R+F
+players_count: 41
+winner: Lucas Teixeira
+event_url: https://www.vekn.net/event-calendar/event/11171
+event_id: '11171'
+vp_comment: 4vp in final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81958-twd-cearense-2024-etapa-gp-brasil
+deck:
+  name: Nephandus de Pobre
+  description: ''
+  crypt_count: 12
+  crypt_min: 14
+  crypt_max: 25
+  crypt_avg: 4.92
+  crypt:
+  - count: 1
+    name: Ladislas Toth, The Torch
+    capacity: 7
+    disciplines: AUS DOM THA for
+    title: archbishop
+    clan: Tremere antitribu
+    grouping: 3
+  - count: 1
+    name: Elena Mendoza Vasquez
+    capacity: 6
+    disciplines: AUS THA dom obt
+    clan: Tremere antitribu
+    grouping: 3
+  - count: 1
+    name: Selena
+    capacity: 6
+    disciplines: AUS DOM THA
+    clan: Tremere antitribu
+    grouping: 3
+  - count: 1
+    name: Yasmin the Black
+    capacity: 6
+    disciplines: AUS THA dom pre
+    clan: Tremere antitribu
+    grouping: 3
+  - count: 5
+    name: Antonio d'Erlette
+    capacity: 5
+    disciplines: THA dom for pot
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Ember Wright
+    capacity: 3
+    disciplines: aus dom
+    clan: Tremere antitribu
+    grouping: 3
+  - count: 1
+    name: Lectora
+    capacity: 3
+    disciplines: aus tha
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Martin Franckel
+    capacity: 3
+    disciplines: AUS tha
+    clan: Tremere
+    grouping: 3
+  library_count: 79
+  library_sections:
+  - name: Master
+    count: 23
+    cards:
+    - count: 9
+      name: Ashur Tablets
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Haven Uncovered
+    - count: 1
+      name: Infernal Pact
+    - count: 1
+      name: Jake Washington
+    - count: 3
+      name: Liquidation
+    - count: 2
+      name: Parthenon, The
+    - count: 1
+      name: Secure Haven
+    - count: 1
+      name: Shard, London, The
+    - count: 1
+      name: Wash
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 2
+    cards:
+    - count: 2
+      name: Magic of the Smith
+  - name: Ally
+    count: 9
+    cards:
+    - count: 9
+      name: Nephandus
+  - name: Equipment
+    count: 3
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Sniper Rifle
+  - name: Action Modifier
+    count: 8
+    cards:
+    - count: 2
+      name: Conditioning
+    - count: 6
+      name: Mirror Walk
+  - name: Reaction
+    count: 24
+    cards:
+    - count: 5
+      name: Deflection
+    - count: 2
+      name: Delaying Tactics
+    - count: 5
+      name: Eyes of Argus
+    - count: 2
+      name: My Enemy's Enemy
+    - count: 5
+      name: On the Qui Vive
+    - count: 5
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 7
+    cards:
+    - count: 2
+      name: Molotov Cocktail
+    - count: 3
+      name: Target Vitals
+    - count: 2
+      name: Trap
+  - name: Event
+    count: 3
+    cards:
+    - count: 1
+      name: FBI Special Affairs Division
+    - count: 2
+      name: Unmasking, The

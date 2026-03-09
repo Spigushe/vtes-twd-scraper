@@ -1,0 +1,107 @@
+name: Italian Tour 2023 - Massa
+location: Massa, Italy
+date_start: '2023-06-25'
+rounds_format: 2R+F
+players_count: 20
+winner: 'Winner: Alessandro Donati'
+event_url: https://www.vekn.net/event-calendar/event/10788
+event_id: '10788'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80694-twd-italian-tour-2023-massa-italy-25-june-2023
+deck:
+  name: Snake Charmers
+  created_by: Alessandro Donati
+  description: ''
+  crypt_count: 12
+  crypt_min: 23
+  crypt_max: 36
+  crypt_avg: 7.5
+  crypt: []
+  library_count: 70
+  library_sections:
+  - name: Master
+    count: 25
+    cards:
+    - count: 1
+      name: Archon Investigation
+    - count: 6
+      name: Ashur Tablets
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Mbare Market, Harare
+    - count: 1
+      name: Monster
+    - count: 1
+      name: 'Powerbase: Luanda'
+    - count: 1
+      name: Secure Haven
+    - count: 2
+      name: Serpentis
+    - count: 1
+      name: Tension in the Ranks
+    - count: 5
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 5
+    cards:
+    - count: 3
+      name: Deep Song
+    - count: 1
+      name: Entrancement
+    - count: 1
+      name: Founders of the Ebony Kingdom
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Book of Going Forth by Night, The
+  - name: Retainer
+    count: 2
+    cards:
+    - count: 1
+      name: Raven Spy
+    - count: 1
+      name: Shaman
+  - name: Reaction
+    count: 6
+    cards:
+    - count: 1
+      name: Delaying Tactics
+    - count: 1
+      name: Lost in Translation
+    - count: 2
+      name: On the Qui Vive
+    - count: 2
+      name: Sense the Savage Way
+  - name: Combat
+    count: 30
+    cards:
+    - count: 1
+      name: Canine Horde
+    - count: 5
+      name: Carrion Crows
+    - count: 1
+      name: Drawing Out the Beast
+    - count: 1
+      name: Earthshock
+    - count: 5
+      name: Immortal Grapple
+    - count: 5
+      name: Taste of Vitae
+    - count: 12
+      name: Typhonic Beast
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Dragonbound

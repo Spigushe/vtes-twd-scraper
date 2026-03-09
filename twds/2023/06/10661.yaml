@@ -1,0 +1,162 @@
+name: 'WoN event 5 - Elder Library: Columbus'
+location: Columbus (OH), USA
+date_start: '2023-06-21'
+rounds_format: 2R+F
+players_count: 22
+winner: Karl Schaefer
+event_url: https://www.vekn.net/event-calendar/event/10661
+event_id: '10661'
+vp_comment: 2GW7 + 2.5vp in the final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80645-twd-won-event-5-elder-library-columbus
+deck:
+  name: Hell Rising (Homework 2021)
+  description: unnamed + The Rising
+  crypt_count: 12
+  crypt_min: 11
+  crypt_max: 40
+  crypt_avg: 6.58
+  crypt:
+  - count: 6
+    name: unnamed, The
+    capacity: 10
+    disciplines: CEL DAI OBF PRE PRO
+    clan: Baali
+    grouping: 6
+  - count: 1
+    name: Melech
+    capacity: 4
+    disciplines: OBF pro
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Skulk
+    capacity: 4
+    disciplines: OBF ani
+    clan: Nosferatu antitribu
+    grouping: 5
+  - count: 1
+    name: Adisa
+    capacity: 3
+    disciplines: cel obf
+    clan: Banu Haqim
+    grouping: 6
+  - count: 1
+    name: Ashley
+    capacity: 3
+    disciplines: dom obf
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Lubomira Hradok
+    capacity: 3
+    disciplines: OBF
+    clan: Nosferatu antitribu
+    grouping: 5
+  library_count: 66
+  library_sections:
+  - name: Master
+    count: 13
+    cards:
+    - count: 4
+      name: Ashur Tablets
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Fortschritt Library
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: Perfectionist
+    - count: 1
+      name: Secure Haven
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 8
+    cards:
+    - count: 1
+      name: Aranthebes, The Immortal
+    - count: 2
+      name: Blithe Acceptance
+    - count: 1
+      name: Contagion
+    - count: 1
+      name: Entrancement
+    - count: 3
+      name: Unleash Hell's Fury
+  - name: Ally
+    count: 5
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 2
+      name: Infernal Servitor
+    - count: 1
+      name: Mylan Horseed
+    - count: 1
+      name: Veneficti
+  - name: Equipment
+    count: 5
+    cards:
+    - count: 2
+      name: Camera Phone
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Learjet
+    - count: 1
+      name: Signet of King Saul, The
+  - name: Retainer
+    count: 2
+    cards:
+    - count: 2
+      name: Homunculus
+  - name: Action Modifier
+    count: 20
+    cards:
+    - count: 2
+      name: Elder Impersonation
+    - count: 3
+      name: Enkil Cog
+    - count: 3
+      name: Faceless Night
+    - count: 2
+      name: I am Legion
+    - count: 7
+      name: Instantaneous Transformation
+    - count: 2
+      name: Lost in Crowds
+    - count: 1
+      name: Psychomachia
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Swallowed by the Night
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Sense the Sin
+  - name: Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Form of Mist
+  - name: Event
+    count: 5
+    cards:
+    - count: 1
+      name: Break the Code
+    - count: 1
+      name: Nightmares upon Nightmares
+    - count: 2
+      name: Rising, The
+    - count: 1
+      name: Thirst

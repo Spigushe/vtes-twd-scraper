@@ -1,0 +1,115 @@
+name: Emergency Preparations
+location: Alabang Muntinlupa, Philippines
+date_start: '2025-05-24'
+rounds_format: 2R+F
+players_count: 12
+winner: Richard Barnett
+event_url: https://www.vekn.net/event-calendar/event/12362
+event_id: '12362'
+vp_comment: '[Scores]'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82383-twd-emergency-preparations-muntinlupa-philippines-may-24-2025
+deck:
+  name: HCR-Heavy Combat Request
+  description: ''
+  crypt_count: 12
+  crypt_min: 15
+  crypt_max: 28
+  crypt_avg: 5.58
+  crypt:
+  - count: 4
+    name: Jimmy Dunn
+    capacity: 4
+    disciplines: CEL POT for
+    clan: Pander
+    grouping: 2
+  - count: 4
+    name: Richter, The Templar of Du Mont
+    capacity: 7
+    disciplines: CEL POT for pre
+    clan: Brujah antitribu
+    grouping: 2
+  - count: 2
+    name: Miguel Santo Domingo
+    capacity: 7
+    disciplines: POT PRE cel for
+    clan: Brujah antitribu
+    grouping: 3
+  - count: 1
+    name: Jacob Bragg
+    capacity: 3
+    disciplines: cel pot
+    clan: Brujah antitribu
+    grouping: 2
+  - count: 1
+    name: Pug Jackson
+    capacity: 6
+    disciplines: CEL POT for pre
+    title: primogen
+    clan: Brujah
+    grouping: 3
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 12
+    cards:
+    - count: 2
+      name: Fame
+    - count: 1
+      name: Gang Territory
+    - count: 1
+      name: Monster
+    - count: 2
+      name: Sociopath
+    - count: 2
+      name: Tension in the Ranks
+    - count: 4
+      name: Villein
+  - name: Action
+    count: 16
+    cards:
+    - count: 5
+      name: Ambush
+    - count: 3
+      name: Bum's Rush
+    - count: 4
+      name: Harass
+    - count: 3
+      name: Heroic Might
+    - count: 1
+      name: Rampage
+  - name: Action Modifier
+    count: 8
+    cards:
+    - count: 3
+      name: Forced March
+    - count: 3
+      name: Freak Drive
+    - count: 2
+      name: Zephyr
+  - name: Reaction
+    count: 10
+    cards:
+    - count: 5
+      name: Lost in Translation
+    - count: 5
+      name: On the Qui Vive
+  - name: Combat
+    count: 44
+    cards:
+    - count: 8
+      name: Armor of Vitality
+    - count: 4
+      name: Blur
+    - count: 2
+      name: Decapitate
+    - count: 2
+      name: Fast Hands
+    - count: 8
+      name: Immortal Grapple
+    - count: 8
+      name: Pursuit
+    - count: 5
+      name: Taste of Vitae
+    - count: 7
+      name: Torn Signpost

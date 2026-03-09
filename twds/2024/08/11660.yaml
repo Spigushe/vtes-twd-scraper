@@ -1,0 +1,119 @@
+name: 8th Great Symposium
+location: Mikkeli, Finland
+date_start: '2024-08-24'
+rounds_format: 2R+F
+players_count: 16
+winner: Teemu Pulkkinen
+event_url: https://www.vekn.net/event-calendar/event/11660
+event_id: '11660'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81720-twd-8th-great-symposium-mikkeli-finland-24-aug-2024
+deck:
+  name: Muussauskoulu
+  created_by: Teemu Pulkkinen
+  description: Thank you to Antti Penttilä for providing a great list that I customized by adding some rushes. Antti got
+    an idea of using Raw Recruit + As the Crow + Codex of the Edenic Groundskeepers with the intent of actually removing
+    vampires instead of just torporizing them and to turn objectives into assets.
+  crypt_count: 12
+  crypt_min: 14
+  crypt_max: 28
+  crypt_avg: 5.33
+  crypt:
+  - count: 5
+    name: Alabástrom
+    capacity: 7
+    disciplines: POT VIS aus cel for
+    clan: Gargoyle
+    grouping: 6
+  - count: 3
+    name: Verbruch
+    capacity: 5
+    disciplines: POT VIS for
+    clan: Gargoyle
+    grouping: 5
+  - count: 2
+    name: Porphyry
+    capacity: 4
+    disciplines: POT vis
+    clan: Gargoyle
+    grouping: 6
+  - count: 1
+    name: Monica Chang
+    capacity: 3
+    disciplines: dom tha
+    clan: Tremere
+    grouping: 5
+  - count: 1
+    name: Rosalina Cortez
+    capacity: 3
+    disciplines: THA
+    clan: Tremere
+    grouping: 6
+  library_count: 85
+  library_sections:
+  - name: Master
+    count: 14
+    cards:
+    - count: 1
+      name: Alvusia
+    - count: 6
+      name: Ashur Tablets
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Frontal Assault
+    - count: 1
+      name: 'Golconda: Inner Peace'
+    - count: 1
+      name: Secure Haven
+    - count: 2
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 25
+    cards:
+    - count: 5
+      name: Bum's Rush
+    - count: 8
+      name: Dive Bomb
+    - count: 3
+      name: Harass
+    - count: 3
+      name: Preternatural Strength
+    - count: 6
+      name: Raw Recruit
+  - name: Equipment
+    count: 3
+    cards:
+    - count: 2
+      name: Codex of the Edenic Groundskeepers
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 6
+    cards:
+    - count: 6
+      name: As the Crow
+  - name: Combat
+    count: 35
+    cards:
+    - count: 5
+      name: Brick by Brick
+    - count: 2
+      name: Disarm
+    - count: 8
+      name: Immortal Grapple
+    - count: 8
+      name: Raking Talons
+    - count: 6
+      name: Roundhouse
+    - count: 4
+      name: Stonestrength
+    - count: 2
+      name: Taste of Vitae
+  - name: Event
+    count: 2
+    cards:
+    - count: 2
+      name: Narrow Minds

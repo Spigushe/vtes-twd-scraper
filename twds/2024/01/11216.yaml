@@ -1,0 +1,132 @@
+name: January's Jocular Jawbreaking Jamboree
+location: Pasig City, Philippines
+date_start: '2024-01-27'
+rounds_format: 3R+F
+players_count: 11
+winner: Joscar Gamaliel Malacaman
+event_url: https://www.vekn.net/event-calendar/event/11216
+event_id: '11216'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81189-twd-january-s-jocular-jawbreaking-jamboree-ph-11-players-27-jan-2024
+deck:
+  name: Guardian LSFM
+  description: A Matasuntha Wall deck that is inspired by Le Sserafim's The Gaurdian. It aims to block key actions and 
+    send key vampires to torpor in order to bloat, relieve pressure, and clear away blockers. Once it gets it's rhythm 
+    going, it can run through the deck pretty fast which necessitates the inclusion of Ashur Tablets and Parthenon. The 
+    Baron package helps to get an early oust via bounce.
+  crypt_count: 12
+  crypt_min: 4
+  crypt_max: 40
+  crypt_avg: 5.67
+  crypt:
+  - count: 4
+    name: Matasuntha
+    capacity: 10
+    disciplines: ANI AUS CEL FOR PRO
+    clan: Gangrel
+    grouping: 5
+  - count: 2
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Massimiliano
+    capacity: 7
+    disciplines: ANI FOR pro
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Mickey Wheeler
+    capacity: 5
+    disciplines: ani cel for pro
+    clan: Gangrel
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 24
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 6
+      name: Ashur Tablets
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Gangrel Revel
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 2
+      name: Parthenon, The
+    - count: 1
+      name: 'Powerbase: Los Angeles'
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Smiling Jack, The Anarch
+    - count: 3
+      name: Vessel
+    - count: 2
+      name: Villein
+    - count: 2
+      name: Wider View
+  - name: Action
+    count: 6
+    cards:
+    - count: 6
+      name: Deep Song
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Retainer
+    count: 6
+    cards:
+    - count: 2
+      name: Dog Pack
+    - count: 4
+      name: Raven Spy
+  - name: Action Modifier
+    count: 7
+    cards:
+    - count: 1
+      name: Enkil Cog
+    - count: 3
+      name: Forced March
+    - count: 3
+      name: Instantaneous Transformation
+  - name: Reaction
+    count: 22
+    cards:
+    - count: 4
+      name: Bait and Switch
+    - count: 4
+      name: Deep Ecology
+    - count: 2
+      name: Eyes of the Wild
+    - count: 6
+      name: Guardian Vigil
+    - count: 2
+      name: On the Qui Vive
+    - count: 4
+      name: Organized Resistance
+  - name: Combat
+    count: 24
+    cards:
+    - count: 9
+      name: Diversion
+    - count: 6
+      name: Hell-for-Leather
+    - count: 5
+      name: Taste of Vitae
+    - count: 4
+      name: Trap

@@ -1,0 +1,166 @@
+name: Itamar G Jr.
+location: Fortaleza - Ceará - Brazil
+date_start: '2025-11-30'
+rounds_format: 2R+F
+players_count: 13
+winner: Márcio Pinheiro (
+event_url: https://www.vekn.net/event-calendar/event/11987
+event_id: '11987'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82704-twd-itamar-g-jr
+deck:
+  name: A anarquia Sabá
+  created_by: Baron
+  description: ''
+  crypt_count: 12
+  crypt_min: 30
+  crypt_max: 37
+  crypt_avg: 8.42
+  crypt:
+  - count: 1
+    name: Aaradhya, The Callous Tyrant
+    capacity: 10
+    disciplines: ANI DOM FOR POT PRE
+    title: cardinal
+    clan: Ventrue
+    grouping: 6
+  - count: 2
+    name: Dark Selina
+    capacity: 9
+    disciplines: CEL POT PRE dom for
+    title: cardinal
+    clan: Brujah antitribu
+    grouping: 5
+  - count: 1
+    name: Carolina Vález
+    capacity: 9
+    disciplines: DOM OBT POT PRE aus
+    title: archbishop
+    clan: Lasombra
+    grouping: 5
+  - count: 1
+    name: De Sade
+    capacity: 9
+    disciplines: AUS DOM FOR PRE
+    title: archbishop
+    clan: Ventrue antitribu
+    grouping: 5
+  - count: 1
+    name: Venceslava, The Implacable
+    capacity: 9
+    disciplines: DOM FOR POT PRE cel
+    title: archbishop
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Üresség
+    capacity: 8
+    disciplines: CEL POT PRE dom for
+    title: archbishop
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Damian
+    capacity: 8
+    disciplines: DOM OBL POT for pre
+    title: archbishop
+    clan: Lasombra
+    grouping: 6
+  - count: 1
+    name: Rexton "Savage" Abernathy
+    capacity: 8
+    disciplines: DOM POT PRE cel
+    title: archbishop
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Khin Aye
+    capacity: 7
+    disciplines: POT PRE dom for
+    title: priscus
+    clan: Ventrue
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 18
+    cards:
+    - count: 1
+      name: Black Forest Base
+    - count: 1
+      name: Creepshow Casino
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Dí­a de los Muertos
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: 'Powerbase: Madrid'
+    - count: 1
+      name: Privileged Position
+    - count: 6
+      name: Unholy Sacrament
+    - count: 5
+      name: Villein
+  - name: Action
+    count: 3
+    cards:
+    - count: 1
+      name: Entrancement
+    - count: 1
+      name: Govern the Unaligned
+    - count: 1
+      name: Under Siege
+  - name: Political Action
+    count: 15
+    cards:
+    - count: 2
+      name: Banishment
+    - count: 2
+      name: Cold War
+    - count: 3
+      name: Empires Fall
+    - count: 6
+      name: Kine Resources Contested
+    - count: 2
+      name: War of Ages
+  - name: Action Modifier
+    count: 37
+    cards:
+    - count: 1
+      name: Daring the Dawn
+    - count: 7
+      name: Dominant Personality
+    - count: 4
+      name: Freak Drive
+    - count: 2
+      name: Iron Glare
+    - count: 5
+      name: Magnetic Authority
+    - count: 5
+      name: Private Audience
+    - count: 5
+      name: Relentlessness
+    - count: 3
+      name: Unthinkable Humiliation
+    - count: 5
+      name: Voter Captivation
+  - name: Action Modifier/Reaction
+    count: 3
+    cards:
+    - count: 3
+      name: Absolute Tyranny
+  - name: Reaction
+    count: 12
+    cards:
+    - count: 7
+      name: Deflection
+    - count: 5
+      name: On the Qui Vive
+  - name: Combat
+    count: 2
+    cards:
+    - count: 1
+      name: Catatonic Fear
+    - count: 1
+      name: Majesty

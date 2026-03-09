@@ -1,0 +1,159 @@
+name: AMICI NOCTIS
+location: Nantes, France
+date_start: '2024-11-23'
+rounds_format: 3R+F
+players_count: 10
+winner: Frederic Pin 3200006
+event_url: https://www.vekn.net/event-calendar/event/12393
+event_id: '12393'
+vp_comment: 2GW8.5 / +5vp in final, sweep in one hour
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81942-twd-amici-noctis-nantes-france-23-nov-2024
+deck:
+  name: Baron protean
+  created_by: Fred Pin
+  description: ''
+  crypt_count: 12
+  crypt_min: 20
+  crypt_max: 31
+  crypt_avg: 6.5
+  crypt:
+  - count: 1
+    name: Adrino Manauara
+    capacity: 8
+    disciplines: ANI DOM PRO pot
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Saku Pihlajamäki
+    capacity: 8
+    disciplines: CEL POT PRE for pro
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Sergio Bueno
+    capacity: 8
+    disciplines: OBF PRE PRO aus pot
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Ángel Guerrero
+    capacity: 7
+    disciplines: ANI DOM PRO
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Massimiliano
+    capacity: 7
+    disciplines: ANI FOR pro
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Valeriya Zinovieva
+    capacity: 7
+    disciplines: POT cel pre pro
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Vivian VI
+    capacity: 7
+    disciplines: PRE PRO obf tha
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Branimira
+    capacity: 6
+    disciplines: ANI dom pre pro
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Elisha Tucker
+    capacity: 6
+    disciplines: PRE cel obf pro
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 21
+    cards:
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 2
+      name: Erciyes Fragments, The
+    - count: 1
+      name: Frontal Assault
+    - count: 1
+      name: Giant's Blood
+    - count: 3
+      name: Information Highway
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 2
+      name: Protean
+    - count: 8
+      name: Villein
+  - name: Action
+    count: 10
+    cards:
+    - count: 5
+      name: Bum's Rush
+    - count: 3
+      name: Childe of the Revolution
+    - count: 2
+      name: Open War
+  - name: Political Action
+    count: 7
+    cards:
+    - count: 5
+      name: Reckless Agitation
+    - count: 2
+      name: Revolutionary Council
+  - name: Reaction
+    count: 22
+    cards:
+    - count: 6
+      name: Bait and Switch
+    - count: 16
+      name: Organized Resistance
+  - name: Combat
+    count: 30
+    cards:
+    - count: 6
+      name: Amaranth
+    - count: 3
+      name: Body Flare
+    - count: 4
+      name: Claws of the Dead
+    - count: 11
+      name: Donnybrook
+    - count: 3
+      name: Form of Mist
+    - count: 3
+      name: Form of the Ghost

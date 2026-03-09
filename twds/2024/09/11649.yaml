@@ -1,0 +1,152 @@
+name: TWD - I Jornada Liga Levante Norte
+location: Valencia, Spain
+date_start: '2024-09-08'
+rounds_format: 3R+F
+players_count: 18
+winner: Albert Hidalgo 2350007
+event_url: https://www.vekn.net/event-calendar/event/11649
+event_id: '11649'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81763-twd-i-jornada-liga-levante-norte-spain
+deck:
+  name: Trigesima Dianae Chorus
+  created_by: Albert Hidalgo
+  description: ''
+  crypt_count: 12
+  crypt_min: 24
+  crypt_max: 36
+  crypt_avg: 7.67
+  crypt:
+  - count: 4
+    name: Diana Iadanza
+    capacity: 9
+    disciplines: AUS CEL FOR PRE
+    title: justicar
+    clan: Toreador
+    grouping: 7
+  - count: 2
+    name: Catalina Vega
+    capacity: 8
+    disciplines: AUS CEL PRE for
+    title: prince
+    clan: Toreador
+    grouping: 6
+  - count: 2
+    name: Marcos Belegrad
+    capacity: 8
+    disciplines: AUS CEL PRE ani
+    title: prince
+    clan: Toreador
+    grouping: 7
+  - count: 1
+    name: Flávio Gonçalves
+    capacity: 7
+    disciplines: CEL PRE aus for
+    title: prince
+    clan: Toreador
+    grouping: 6
+  - count: 1
+    name: Maila
+    capacity: 6
+    disciplines: AUS PRE cel
+    title: primogen
+    clan: Toreador
+    grouping: 6
+  - count: 1
+    name: Mkhokheli
+    capacity: 6
+    disciplines: PRE aus cel for
+    title: prince
+    clan: Toreador
+    grouping: 6
+  - count: 1
+    name: Regina Blake
+    capacity: 5
+    disciplines: AUS PRE
+    clan: Toreador
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 16
+    cards:
+    - count: 1
+      name: Art Museum
+    - count: 2
+      name: Camarilla Conclave
+    - count: 1
+      name: Creepshow Casino
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: 'Elysium: The Palace of Versailles'
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Society Hunting Ground
+    - count: 6
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 6
+    cards:
+    - count: 4
+      name: Enchant Kindred
+    - count: 2
+      name: Entrancement
+  - name: Political Action
+    count: 16
+    cards:
+    - count: 3
+      name: Camarilla's Iron Fist
+    - count: 8
+      name: Kine Resources Contested
+    - count: 5
+      name: Parity Shift
+  - name: Action Modifier
+    count: 21
+    cards:
+    - count: 2
+      name: Aire of Elation
+    - count: 2
+      name: Daring the Dawn
+    - count: 3
+      name: Forced March
+    - count: 2
+      name: Freak Drive
+    - count: 5
+      name: Loup
+    - count: 2
+      name: Perfect Paragon
+    - count: 5
+      name: Voter Captivation
+  - name: Action Modifier/Combat
+    count: 3
+    cards:
+    - count: 3
+      name: Resist Earth's Grasp
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Scalpel Tongue
+  - name: Reaction
+    count: 16
+    cards:
+    - count: 2
+      name: Eyes of Argus
+    - count: 2
+      name: My Enemy's Enemy
+    - count: 2
+      name: On the Qui Vive
+    - count: 4
+      name: 'Second Tradition: Domain'
+    - count: 6
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 10
+    cards:
+    - count: 2
+      name: Charismatic Aura
+    - count: 8
+      name: Majesty

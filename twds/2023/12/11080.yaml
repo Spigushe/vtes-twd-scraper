@@ -1,0 +1,80 @@
+name: 'Fee Stake: Jyväskylä 3'
+location: Jyväskylä, Finland
+date_start: '2023-12-09'
+rounds_format: 2R+F
+players_count: 13
+winner: Ari Lensu
+event_url: https://www.vekn.net/event-calendar/event/11080
+event_id: '11080'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81039-twd-fee-stake-jyvaeskylae-3-jyvaeskylae-finland-9-dec-2023
+deck:
+  name: We Are the Sisterhood
+  created_by: Ari Lensu
+  description: Valkyrie breeder
+  crypt_count: 19
+  crypt_min: 16
+  crypt_max: 28
+  crypt_avg: 4.63
+  crypt:
+  - count: 3
+    name: Brunhilde (ADV)
+    capacity: 8
+    disciplines: ANI FOR PRO pre
+    title: baron
+    clan: Gangrel
+    grouping: 3
+  - count: 16
+    name: Valkyrie
+    capacity: 4
+    disciplines: for pre pro
+    clan: Gangrel
+    grouping: 3
+  library_count: 79
+  library_sections:
+  - name: Master
+    count: 17
+    cards:
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Ecoterrorists
+    - count: 2
+      name: Gangrel Revel
+    - count: 2
+      name: Information Highway
+    - count: 2
+      name: Protected Resources
+    - count: 1
+      name: Seattle Committee
+    - count: 3
+      name: Tribute to the Master
+    - count: 2
+      name: Visit from the Capuchin
+    - count: 1
+      name: Vox Domini
+  - name: Action
+    count: 55
+    cards:
+    - count: 1
+      name: Aranthebes, The Immortal
+    - count: 10
+      name: Gramle
+    - count: 44
+      name: Thing
+  - name: Reaction
+    count: 6
+    cards:
+    - count: 3
+      name: Delaying Tactics
+    - count: 3
+      name: Poison Pill
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Narrow Minds

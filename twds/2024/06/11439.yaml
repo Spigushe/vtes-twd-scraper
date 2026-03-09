@@ -1,0 +1,119 @@
+name: Origins - Thursday 1
+location: Columbus (OH), USA
+date_start: '2024-06-20'
+rounds_format: 2R+F
+players_count: 37
+winner: Vadim Matveev
+event_url: https://www.vekn.net/event-calendar/event/11439
+event_id: '11439'
+vp_comment: 2GW6.5 + 2.5VP in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81567-twd-origins-thursday-1-columbus-oh-usa-20-june-2024
+deck:
+  name: Museum Sisters
+  description: ''
+  crypt_count: 12
+  crypt_min: 11
+  crypt_max: 23
+  crypt_avg: 4.17
+  crypt:
+  - count: 3
+    name: Ági
+    capacity: 6
+    disciplines: FOR SAN VIC
+    clan: Blood Brother
+    grouping: 6
+  - count: 2
+    name: Dorka
+    capacity: 4
+    disciplines: for san vic
+    clan: Blood Brother
+    grouping: 6
+  - count: 2
+    name: Gabi
+    capacity: 5
+    disciplines: SAN VIC for
+    clan: Blood Brother
+    grouping: 6
+  - count: 2
+    name: Viri
+    capacity: 3
+    disciplines: san vic
+    clan: Blood Brother
+    grouping: 6
+  - count: 2
+    name: Zizi
+    capacity: 3
+    disciplines: san vic
+    clan: Blood Brother
+    grouping: 6
+  library_count: 78
+  library_sections:
+  - name: Master
+    count: 19
+    cards:
+    - count: 1
+      name: Anarch Troublemaker
+    - count: 3
+      name: Blood Buff
+    - count: 5
+      name: British Museum, London, The
+    - count: 1
+      name: Coven, The
+    - count: 3
+      name: Effective Management
+    - count: 1
+      name: Heidelberg Castle, Germany
+    - count: 2
+      name: Information Highway
+    - count: 3
+      name: Tribute to the Master
+  - name: Action
+    count: 18
+    cards:
+    - count: 6
+      name: Hive Mind
+    - count: 5
+      name: Redistribution
+    - count: 7
+      name: Unwholesome Bond
+  - name: Equipment
+    count: 13
+    cards:
+    - count: 3
+      name: Blood Tears of Kephran
+    - count: 1
+      name: Camera Phone
+    - count: 2
+      name: Codex of the Edenic Groundskeepers
+    - count: 4
+      name: Concoction of Vitality
+    - count: 1
+      name: Flaming Candle
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Monocle of Clarity
+  - name: Action Modifier
+    count: 20
+    cards:
+    - count: 5
+      name: Changeling
+    - count: 6
+      name: Claiming the Body
+    - count: 4
+      name: Shell Game
+    - count: 5
+      name: Walk of Caine
+  - name: Action Modifier/Combat
+    count: 7
+    cards:
+    - count: 3
+      name: Plasmic Form
+    - count: 4
+      name: Slake the Thirst
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: NRA PAC

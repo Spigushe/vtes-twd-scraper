@@ -1,0 +1,160 @@
+name: Polish National VTES Championship 2024
+location: Lublin, Poland
+date_start: '2024-05-18'
+rounds_format: 3R+F
+players_count: 38
+winner: Marcin Zakrzewski
+event_url: https://www.vekn.net/event-calendar/event/11325
+event_id: '11325'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81469-twd-polish-national-vtes-championship-2024
+deck:
+  name: Do you deny the evil?
+  created_by: Marcin 'Kalesoner' Zakrzewski
+  description: ''
+  crypt_count: 12
+  crypt_min: 9
+  crypt_max: 40
+  crypt_avg: 6.08
+  crypt:
+  - count: 5
+    name: unnamed, The
+    capacity: 10
+    disciplines: CEL DAI OBF PRE PRO
+    clan: Baali
+    grouping: 6
+  - count: 1
+    name: Gathii
+    capacity: 5
+    disciplines: ANI PRE obf
+    clan: Ravnos
+    grouping: 7
+  - count: 1
+    name: Phaibun
+    capacity: 5
+    disciplines: OBF PRE ani
+    clan: Ravnos
+    grouping: 7
+  - count: 1
+    name: Jean-François
+    capacity: 4
+    disciplines: ani obf pre
+    clan: Ravnos
+    grouping: 7
+  - count: 1
+    name: Zafira
+    capacity: 4
+    disciplines: PRE obf
+    clan: Ravnos
+    grouping: 7
+  - count: 1
+    name: Oleg Kaprizov
+    capacity: 3
+    disciplines: obf pre
+    clan: Ravnos
+    grouping: 7
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 14
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 2
+      name: Dabbler
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: 'Golconda: Inner Peace'
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 2
+      name: Rötschreck
+    - count: 1
+      name: Secure Haven
+    - count: 1
+      name: Villein
+    - count: 1
+      name: Week of Nightmares
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 14
+    cards:
+    - count: 1
+      name: Contagion
+    - count: 1
+      name: Illegalism
+    - count: 9
+      name: Platinum Protocol, The
+    - count: 3
+      name: Unleash Hell's Fury
+  - name: Ally
+    count: 4
+    cards:
+    - count: 3
+      name: Infernal Servitor
+    - count: 1
+      name: Veneficti
+  - name: Retainer
+    count: 2
+    cards:
+    - count: 2
+      name: Homunculus
+  - name: Action Modifier
+    count: 39
+    cards:
+    - count: 2
+      name: Aire of Elation
+    - count: 1
+      name: Cloak the Gathering
+    - count: 2
+      name: Elder Impersonation
+    - count: 1
+      name: Enchanting Gaze
+    - count: 4
+      name: Enkil Cog
+    - count: 4
+      name: Faceless Night
+    - count: 4
+      name: I am Legion
+    - count: 9
+      name: Instantaneous Transformation
+    - count: 4
+      name: Lost in Crowds
+    - count: 5
+      name: Memory Rift
+    - count: 2
+      name: Spying Mission
+    - count: 1
+      name: True Love's Face
+  - name: Action Modifier/Combat
+    count: 1
+    cards:
+    - count: 1
+      name: Swallowed by the Night
+  - name: Action Modifier/Reaction
+    count: 3
+    cards:
+    - count: 3
+      name: Sense the Sin
+  - name: Reaction
+    count: 7
+    cards:
+    - count: 6
+      name: Party Out Of Bounds
+    - count: 1
+      name: Visions of Zapathasura
+  - name: Combat
+    count: 5
+    cards:
+    - count: 3
+      name: Form of Mist
+    - count: 2
+      name: Majesty
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Narrow Minds

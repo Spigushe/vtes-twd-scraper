@@ -1,0 +1,174 @@
+name: 'Danse Macabre: Main Danse'
+location: Vidor, Texas USA
+date_start: '2023-12-02'
+rounds_format: 3R+F
+players_count: 22
+winner: Norm Brown
+event_url: https://www.vekn.net/event-calendar/event/10833
+event_id: '10833'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81026-twd-danse-macabre-main-danse-vidor-texas-usa-december-2-2023-event-10833
+deck:
+  name: Anarch Thing Cooler Freak Drive
+  description: ''
+  crypt_count: 17
+  crypt_min: 10
+  crypt_max: 27
+  crypt_avg: 4.53
+  crypt:
+  - count: 1
+    name: Keegan
+    capacity: 8
+    disciplines: ANI FOR PRO aus cel
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Massimiliano
+    capacity: 7
+    disciplines: ANI FOR pro
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Martina Srnankova
+    capacity: 6
+    disciplines: FOR PRO ani
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Crow
+    capacity: 5
+    disciplines: ANI for pro tha
+    clan: Gangrel
+    grouping: 5
+  - count: 1
+    name: Dario Ziggler
+    capacity: 5
+    disciplines: FOR ani pro tha
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Kamile Paukstys
+    capacity: 5
+    disciplines: PRO ani for
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Mickey Wheeler
+    capacity: 5
+    disciplines: ani cel for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Hanna Nokelainen
+    capacity: 4
+    disciplines: ani for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Nathan Turner
+    capacity: 4
+    disciplines: PRO ani
+    clan: Gangrel
+    grouping: 6
+  - count: 2
+    name: Indira
+    capacity: 3
+    disciplines: PRO
+    clan: Gangrel
+    grouping: 6
+  - count: 2
+    name: Joaquín de Cádiz
+    capacity: 3
+    disciplines: for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 2
+    name: Ruslan Fedorenko
+    capacity: 2
+    disciplines: pro
+    clan: Gangrel
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 17
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Backways
+    - count: 1
+      name: British Museum, London, The
+    - count: 1
+      name: Club Illusion
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Ecoterrorists
+    - count: 1
+      name: Ennoia's Theater
+    - count: 1
+      name: Filchware's Pawn Shop
+    - count: 1
+      name: Gangrel Revel
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: 'Powerbase: Los Angeles'
+    - count: 6
+      name: Villein
+  - name: Action
+    count: 28
+    cards:
+    - count: 2
+      name: Gift of Proteus
+    - count: 2
+      name: Rewilding
+    - count: 24
+      name: Thing
+  - name: Equipment
+    count: 6
+    cards:
+    - count: 3
+      name: Cooler
+    - count: 3
+      name: Leather Jacket
+  - name: Action Modifier
+    count: 10
+    cards:
+    - count: 6
+      name: Freak Drive
+    - count: 4
+      name: Monkey Wrench
+  - name: Reaction
+    count: 23
+    cards:
+    - count: 20
+      name: Deep Ecology
+    - count: 3
+      name: Delaying Tactics
+  - name: Combat
+    count: 5
+    cards:
+    - count: 5
+      name: Donnybrook
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Uncoiling, The

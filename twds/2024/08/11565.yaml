@@ -1,0 +1,138 @@
+name: Abomination 7
+location: Gap (PA), USA
+date_start: '2024-08-03'
+rounds_format: 2R+F
+players_count: 10
+winner: Karl Schaefer
+event_url: https://www.vekn.net/event-calendar/event/11565
+event_id: '11565'
+vp_comment: No Arishat in the opening draw in round 2 or the finals.  Managed to find her in the finals.  Wider View 
+  needs to be added back to the deck.  Not sure why I dropped it.
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81682-twd-abomination-7
+deck:
+  name: Fix the Problem at the Source (Safety-Net Version)
+  description: Arishat + Barons + Protected Resources
+  crypt_count: 13
+  crypt_min: 24
+  crypt_max: 26
+  crypt_avg: 6.15
+  crypt:
+  - count: 5
+    name: Arishat
+    capacity: 6
+    disciplines: DAI OBF PRE
+    title: 1 vote
+    clan: Baali
+    grouping: 6
+  - count: 2
+    name: Atiena
+    capacity: 6
+    disciplines: CEL obf pot pre
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Elisha Tucker
+    capacity: 6
+    disciplines: PRE cel obf pro
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 2
+    name: Jacques Rouge
+    capacity: 6
+    disciplines: OBF ani pot pre
+    title: baron
+    clan: Nosferatu
+    grouping: 6
+  - count: 2
+    name: Vivian VI
+    capacity: 7
+    disciplines: PRE PRO obf tha
+    title: baron
+    clan: Ministry
+    grouping: 6
+  library_count: 67
+  library_sections:
+  - name: Master
+    count: 14
+    cards:
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Ferraille
+    - count: 1
+      name: Garibaldi-Meucci Museum
+      comment: recursion is still broken
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 3
+      name: Protected Resources
+    - count: 5
+      name: Villein
+      comment: don't be afraid double-Villein your vampires
+  - name: Action
+    count: 7
+    cards:
+    - count: 4
+      name: 'Condemnation: Mute'
+      comment: all I needed today, but will show faster with another copy
+    - count: 3
+      name: Unleash Hell's Fury
+  - name: Political Action
+    count: 15
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 1
+      name: Conservative Agitation
+      comment: nice change up vote, discard late
+    - count: 1
+      name: Domain Challenge
+    - count: 2
+      name: Eat the Rich
+      comment: so good in today's meta in the heads-up
+    - count: 5
+      name: Kine Resources Contested
+    - count: 4
+      name: Reckless Agitation
+  - name: Action Modifier
+    count: 21
+    cards:
+    - count: 2
+      name: Bewitching Oration
+    - count: 2
+      name: Cloak the Gathering
+    - count: 2
+      name: Faceless Night
+    - count: 5
+      name: Forgotten Labyrinth
+    - count: 3
+      name: Lost in Crowds
+    - count: 2
+      name: Perfect Paragon
+    - count: 5
+      name: Voter Captivation
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 4
+    cards:
+    - count: 2
+      name: Bait and Switch
+    - count: 2
+      name: On the Qui Vive
+  - name: Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Majesty

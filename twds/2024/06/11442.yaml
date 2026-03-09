@@ -1,0 +1,154 @@
+name: Origins - Friday 2
+location: Columbus OH, USA
+date_start: '2024-06-21'
+rounds_format: 2R+F
+players_count: 44
+winner: Darby Keeney
+event_url: https://www.vekn.net/event-calendar/event/11442
+event_id: '11442'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81585-twd-origins-friday-2-columbus-oh-usa-21-june-2024
+deck:
+  name: Six Demon Bag
+  created_by: Darby Keeney
+  description: Vintage deck slightly modified for V5 meta. I wasn't sure this would be fast enough for 2024 but with 
+    some careful play it still works.
+  crypt_count: 12
+  crypt_min: 15
+  crypt_max: 40
+  crypt_avg: 7.33
+  crypt:
+  - count: 5
+    name: unnamed, The
+    capacity: 10
+    disciplines: CEL DAI OBF PRE PRO
+    clan: Baali
+    grouping: 6
+  - count: 3
+    name: Horde, The
+    capacity: 3
+    disciplines: dai obf pre
+    clan: Baali
+    grouping: 6
+  - count: 2
+    name: Xeper, Sultan of Lepers
+    capacity: 7
+    disciplines: OBF PRE ani dai pro
+    clan: Baali
+    grouping: 6
+  - count: 1
+    name: Annazir
+    capacity: 9
+    disciplines: DAI OBF POT PRE
+    title: 2 votes
+    clan: Baali
+    grouping: 5
+  - count: 1
+    name: Arishat
+    capacity: 6
+    disciplines: DAI OBF PRE
+    title: 1 vote
+    clan: Baali
+    grouping: 6
+  library_count: 78
+  library_sections:
+  - name: Master
+    count: 16
+    cards:
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Path of Evil Revelations
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: Perfectionist
+      comment: less useful in the V5 meta
+    - count: 6
+      name: Tend the Flock
+    - count: 1
+      name: Vessel
+    - count: 1
+      name: Villein
+    - count: 2
+      name: Wider View
+  - name: Action
+    count: 12
+    cards:
+    - count: 1
+      name: Blithe Acceptance
+      comment: not needed as much in this tournament
+    - count: 2
+      name: Contagion
+    - count: 6
+      name: Flurry of Action
+    - count: 3
+      name: Unleash Hell's Fury
+  - name: Ally
+    count: 5
+    cards:
+    - count: 3
+      name: Infernal Servitor
+    - count: 1
+      name: Mylan Horseed
+    - count: 1
+      name: Veneficti
+  - name: Retainer
+    count: 4
+    cards:
+    - count: 1
+      name: D'habi Revenant
+      comment: added to circumvent "reduce by 2" reactions
+    - count: 3
+      name: Homunculus
+  - name: Action Modifier
+    count: 25
+    cards:
+    - count: 2
+      name: Approximation of Loyalty
+      comment: cancel Bait & Switch or deny blocks
+    - count: 2
+      name: Elder Impersonation
+    - count: 3
+      name: Enkil Cog
+    - count: 2
+      name: Faceless Night
+    - count: 3
+      name: I am Legion
+      comment: fewer copies with Baron/Prince replacing [AUS] in the meta.
+    - count: 6
+      name: Instantaneous Transformation
+    - count: 2
+      name: Lost in Crowds
+    - count: 2
+      name: Psychomachia
+      comment: slightly better in V5 meta
+    - count: 3
+      name: Revelation of the Serpent - shifting from Sense the Sin for additional stealth
+  - name: Action Modifier/Combat
+    count: 5
+    cards:
+    - count: 5
+      name: Swallowed by the Night
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 2
+      name: Form of the Bat
+      comment: stealth and makes up for some loss of Sense the Sin intercept
+    - count: 2
+      name: Sense the Sin
+  - name: Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Eluding the Arms of Morpheus
+  - name: Combat
+    count: 3
+    cards:
+    - count: 3
+      name: Majesty
+      comment: Majesty over Form of Mist to protect wingmen

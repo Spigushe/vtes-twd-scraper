@@ -1,0 +1,149 @@
+name: IV JORNADA DE LIGA ASTURIANA
+location: El Berron, Asturias
+date_start: '2023-01-29'
+rounds_format: 2R+F
+players_count: 26
+winner: Alfonso Barrientos Alvarez
+event_url: https://www.vekn.net/player-registry/event/10506
+event_id: '10506'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80731-twd-iv-jornada-de-liga-asturiana-el-berron-espana-29-jan-2023
+deck:
+  name: Mordiscos in the night
+  created_by: Barri
+  description: '[2023-01-25]'
+  crypt_count: 12
+  crypt_min: 21
+  crypt_max: 30
+  crypt_avg: 6.5
+  crypt:
+  - count: 2
+    name: Conrad Adoula
+    capacity: 8
+    disciplines: DOM OBT POT ani cel
+    clan: Lasombra
+    grouping: 4
+  - count: 3
+    name: Badr, Shadow of Granada
+    capacity: 7
+    disciplines: DOM OBT POT
+    clan: Lasombra
+    grouping: 5
+  - count: 2
+    name: Lord Vauxhall
+    capacity: 7
+    disciplines: DOM OBT POT THA
+    clan: Lasombra
+    grouping: 4
+  - count: 1
+    name: Otieno
+    capacity: 6
+    disciplines: OBT POT ani dom
+    clan: Lasombra
+    grouping: 4
+  - count: 1
+    name: Virginie, Prodigy
+    capacity: 6
+    disciplines: DOM POT obt
+    title: bishop
+    clan: Lasombra
+    grouping: 4
+  - count: 2
+    name: Ermenegildo, The Rake
+    capacity: 5
+    disciplines: DOM OBT pot
+    clan: Lasombra
+    grouping: 4
+  - count: 1
+    name: Andrew Emory
+    capacity: 5
+    disciplines: OBT aus dom pot
+    title: bishop
+    clan: Lasombra
+    grouping: 4
+  library_count: 83
+  library_sections:
+  - name: Master
+    count: 13
+    cards:
+    - count: 2
+      name: Blood Doll
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Elysian Fields
+    - count: 1
+      name: Festivo dello Estinto
+    - count: 4
+      name: Grooming the Protégé
+    - count: 1
+      name: Path of Night, The
+    - count: 1
+      name: Political Hunting Ground
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 16
+    cards:
+    - count: 2
+      name: Dominate Kine
+    - count: 2
+      name: Far Mastery
+    - count: 12
+      name: Govern the Unaligned
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Political Action
+    count: 2
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancilla Empowerment
+  - name: Action Modifier
+    count: 29
+    cards:
+    - count: 2
+      name: Blanket of Night
+    - count: 4
+      name: Bonding
+    - count: 2
+      name: Conditioning
+    - count: 2
+      name: Foreshadowing Destruction
+    - count: 3
+      name: Seduction
+    - count: 4
+      name: Shadow Play
+    - count: 6
+      name: Shroud of Absence
+    - count: 4
+      name: Shroud of Night
+    - count: 2
+      name: Tenebrous Form
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Murmur of the False Will
+  - name: Reaction
+    count: 14
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 1
+      name: Delaying Tactics
+    - count: 6
+      name: On the Qui Vive
+    - count: 1
+      name: Redirection
+  - name: Combat
+    count: 6
+    cards:
+    - count: 1
+      name: Entombment
+    - count: 5
+      name: Oubliette

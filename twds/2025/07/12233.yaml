@@ -1,0 +1,122 @@
+name: Belgian National Championship 2025
+location: Mechelen, Belgium
+date_start: '2025-07-20'
+rounds_format: 3R+F
+players_count: 30
+winner: Jesper Bøje
+event_url: https://www.vekn.net/event-calendar/event/12233
+event_id: '12233'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82491-twd-belgian-national-championship-2025-mechelen-belgium-20th-july-2025
+deck:
+  name: Press 9 to Call the Great Beast
+  created_by: Jesper Bøje
+  description: Empowering evil, one Freak Drive at a time.
+  crypt_count: 12
+  crypt_min: 40
+  crypt_max: 40
+  crypt_avg: 10.0
+  crypt:
+  - count: 9
+    name: Nergal
+    capacity: 10
+    disciplines: AUS DAI FOR OBF PRE THA
+    clan: Baali
+    grouping: 5
+  - count: 3
+    name: Nergal (ADV)
+    capacity: 10
+    disciplines: AUS DAI FOR OBF PRE THA
+    clan: Baali
+    grouping: 5
+  library_count: 78
+  library_sections:
+  - name: Master
+    count: 16
+    cards:
+    - count: 2
+      name: Antediluvian Awakening
+    - count: 2
+      name: Archon Investigation
+    - count: 4
+      name: Dementation
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Society of Leopold
+    - count: 3
+      name: Villein
+    - count: 1
+      name: Visit from the Capuchin
+  - name: Action
+    count: 16
+    cards:
+    - count: 4
+      name: Call the Great Beast
+    - count: 1
+      name: Entrancement
+    - count: 5
+      name: Legal Manipulations
+    - count: 3
+      name: Magic of the Smith
+    - count: 3
+      name: Unleash Hell's Fury
+  - name: Equipment
+    count: 3
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 2
+      name: Soul Gem of Etrius
+  - name: Action Modifier
+    count: 32
+    cards:
+    - count: 5
+      name: Aire of Elation
+    - count: 3
+      name: Daring the Dawn
+    - count: 2
+      name: Elder Impersonation
+    - count: 1
+      name: Enkil Cog
+    - count: 12
+      name: Freak Drive
+    - count: 2
+      name: I am Legion
+    - count: 5
+      name: Lost in Crowds
+    - count: 1
+      name: Perfect Clarity
+    - count: 1
+      name: Spying Mission
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Hide the Mind
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 1
+      name: Sense the Sin
+    - count: 1
+      name: Touch of Clarity
+  - name: Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Visions of Zapathasura
+  - name: Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Majesty
+  - name: Event
+    count: 3
+    cards:
+    - count: 1
+      name: Bitter and Sweet Story, The
+    - count: 2
+      name: Narrow Minds

@@ -1,0 +1,145 @@
+name: Diana Iadanza
+location: Fortaleza - Ceará - Brazil
+date_start: '2026-02-22'
+rounds_format: 2R+F
+players_count: 16
+winner: Johnson Gonçalves (
+event_url: https://www.vekn.net/event-calendar/event/12888
+event_id: '12888'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82845-twd-diana-iadanza
+deck:
+  name: Governando o Oblívio
+  created_by: Johnson
+  description: ''
+  crypt_count: 12
+  crypt_min: 27
+  crypt_max: 38
+  crypt_avg: 8.08
+  crypt:
+  - count: 2
+    name: Ashur-uballit, Son of the Abyss
+    capacity: 10
+    disciplines: AUS DOM FOR OBL THA
+    title: cardinal
+    clan: Hecata
+    grouping: 6
+  - count: 2
+    name: Marchesa Liliana
+    capacity: 9
+    disciplines: ANI AUS FOR OBL dom
+    clan: Hecata
+    grouping: 6
+  - count: 2
+    name: Damian
+    capacity: 8
+    disciplines: DOM OBL POT for pre
+    title: archbishop
+    clan: Lasombra
+    grouping: 6
+  - count: 2
+    name: Yewon Ong
+    capacity: 8
+    disciplines: DOM OBL POT for
+    title: prince
+    clan: Lasombra
+    grouping: 6
+  - count: 1
+    name: Dafina Hanganu
+    capacity: 8
+    disciplines: DOM OBL POT for
+    title: prince
+    clan: Lasombra
+    grouping: 6
+  - count: 1
+    name: Parijat, the Dark Oracle
+    capacity: 7
+    disciplines: AUS DOM FOR OBL
+    clan: Hecata
+    grouping: 6
+  - count: 2
+    name: Kamaluddin
+    capacity: 6
+    disciplines: DOM OBL for pot
+    title: primogen
+    clan: Lasombra
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 17
+    cards:
+    - count: 1
+      name: Anarch Troublemaker
+    - count: 1
+      name: Archon Investigation
+    - count: 1
+      name: Biotech Company Hunting Ground
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: Perfectionist
+    - count: 1
+      name: 'Powerbase: Munich'
+    - count: 2
+      name: Vessel
+    - count: 4
+      name: Villein
+  - name: Action
+    count: 18
+    cards:
+    - count: 6
+      name: Govern the Unaligned
+    - count: 4
+      name: Scouting Mission
+    - count: 8
+      name: Shroud of Decay
+  - name: Ally
+    count: 2
+    cards:
+    - count: 2
+      name: Spectral Servitor
+  - name: Action Modifier
+    count: 31
+    cards:
+    - count: 4
+      name: Bonding
+    - count: 2
+      name: Conditioning
+    - count: 2
+      name: Consign to Oblivion
+    - count: 2
+      name: Foreshadowing Destruction
+    - count: 5
+      name: Freak Drive
+    - count: 4
+      name: Shadow Cast
+    - count: 4
+      name: Shadow Cloak
+    - count: 4
+      name: Stygian Shroud
+    - count: 4
+      name: Where the Veil Thins
+  - name: Reaction
+    count: 18
+    cards:
+    - count: 5
+      name: Deflection
+    - count: 3
+      name: Obedience
+    - count: 3
+      name: On the Qui Vive
+    - count: 3
+      name: Redirection
+    - count: 4
+      name: Shadow Sentinel
+  - name: Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Pass Through Shadow

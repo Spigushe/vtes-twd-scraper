@@ -1,0 +1,133 @@
+name: 3rd Road to Pulled Fang
+location: Lichnov, Czech Republic
+date_start: '2025-03-15'
+rounds_format: 3R+F
+players_count: 24
+winner: Martin Weinmayer
+event_url: https://www.vekn.net/player-registry/event/12073
+event_id: '12073'
+vp_comment: 3GW11VP + 5VP in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82715-twd-3rd-road-to-pulled-fang-14-lichnov-czech-republic-15-march-2025
+deck:
+  name: Tupdog & Nephandus
+  created_by: Martin Weinmayer
+  description: ''
+  crypt_count: 30
+  crypt_min: 4
+  crypt_max: 20
+  crypt_avg: 2.07
+  crypt:
+  - count: 5
+    name: Antonio d'Erlette
+    capacity: 5
+    disciplines: THA dom for pot
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Janine
+    capacity: 4
+    disciplines: aus dom tha
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Mosfair
+    capacity: 4
+    disciplines: cel dom tha
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Ember Wright
+    capacity: 3
+    disciplines: aus dom
+    clan: Tremere antitribu
+    grouping: 3
+  - count: 1
+    name: Keith Moody
+    capacity: 3
+    disciplines: DOM
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 1
+    name: Saiz
+    capacity: 3
+    disciplines: aus dom
+    clan: Tremere antitribu
+    grouping: 3
+  - count: 20
+    name: Tupdog
+    capacity: 1
+    disciplines: POT VIS
+    clan: Gargoyle
+    grouping: 3
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 38
+    cards:
+    - count: 12
+      name: Ashur Tablets
+    - count: 2
+      name: Direct Intervention
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Information Highway
+    - count: 7
+      name: Liquidation
+    - count: 7
+      name: Parthenon, The
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Secure Haven
+    - count: 1
+      name: Shard, London, The
+    - count: 2
+      name: Wider View
+    - count: 1
+      name: Yawp Court
+  - name: Action
+    count: 1
+    cards:
+    - count: 1
+      name: Magic of the Smith
+  - name: Ally
+    count: 8
+    cards:
+    - count: 8
+      name: Nephandus
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Reaction
+    count: 10
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 2
+      name: Delaying Tactics
+    - count: 2
+      name: On the Qui Vive
+  - name: Combat
+    count: 30
+    cards:
+    - count: 4
+      name: Brick by Brick
+    - count: 10
+      name: Immortal Grapple
+    - count: 10
+      name: Raking Talons
+    - count: 2
+      name: Roundhouse
+    - count: 2
+      name: Slam
+    - count: 2
+      name: Torn Signpost
+  - name: Event
+    count: 2
+    cards:
+    - count: 2
+      name: Unmasking, The

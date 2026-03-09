@@ -1,0 +1,149 @@
+name: Vem pra cá Sabbat
+location: Recife- Pernambuco - Brazil
+date_start: '2025-11-08'
+rounds_format: 2R+F
+players_count: 10
+winner: Wolney André Sampaio Alves de Oliveira (
+event_url: https://www.vekn.net/event-calendar/event/12806
+event_id: '12806'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82846-twd-vem-pra-ca-sabbat-dia-2025-11-08
+deck:
+  name: Dark Inner Voice [by Wolbrujah]
+  created_by: Wolbrujah
+  description: ''
+  crypt_count: 12
+  crypt_min: 31
+  crypt_max: 39
+  crypt_avg: 8.75
+  crypt:
+  - count: 3
+    name: Aaradhya, The Callous Tyrant
+    capacity: 10
+    disciplines: ANI DOM FOR POT PRE
+    title: cardinal
+    clan: Ventrue
+    grouping: 6
+  - count: 2
+    name: Dark Selina
+    capacity: 9
+    disciplines: CEL POT PRE dom for
+    title: cardinal
+    clan: Brujah antitribu
+    grouping: 5
+  - count: 2
+    name: Věnceslava, The Implacable
+    capacity: 9
+    disciplines: DOM FOR POT PRE cel
+    title: archbishop
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Rexton "Savage" Abernathy
+    capacity: 8
+    disciplines: DOM POT PRE cel
+    title: archbishop
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Üresség
+    capacity: 8
+    disciplines: CEL POT PRE dom for
+    title: archbishop
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Khin Aye
+    capacity: 7
+    disciplines: POT PRE dom for
+    title: priscus
+    clan: Ventrue
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 17
+    cards:
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: 'Powerbase: Madrid'
+    - count: 1
+      name: Privileged Position
+    - count: 1
+      name: Sudden Reversal
+    - count: 4
+      name: Unholy Sacrament
+    - count: 5
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 8
+    cards:
+    - count: 5
+      name: Enchant Kindred
+    - count: 1
+      name: Entrancement
+    - count: 1
+      name: Heart of the City
+    - count: 1
+      name: Under Siege
+  - name: Political Action
+    count: 15
+    cards:
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 1
+      name: Banishment
+    - count: 3
+      name: Cold War
+    - count: 1
+      name: Empires Fall
+    - count: 6
+      name: Kine Resources Contested
+    - count: 1
+      name: Neonate Breach
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: War of Ages
+  - name: Action Modifier
+    count: 28
+    cards:
+    - count: 3
+      name: Dominant Personality
+    - count: 7
+      name: Freak Drive
+    - count: 4
+      name: Iron Glare
+    - count: 5
+      name: Magnetic Authority
+    - count: 3
+      name: Perfect Paragon
+    - count: 3
+      name: Unthinkable Humiliation
+    - count: 3
+      name: Voter Captivation
+  - name: Action Modifier/Reaction
+    count: 3
+    cards:
+    - count: 3
+      name: Absolute Tyranny
+  - name: Reaction
+    count: 12
+    cards:
+    - count: 7
+      name: Deflection
+    - count: 5
+      name: On the Qui Vive
+  - name: Combat
+    count: 7
+    cards:
+    - count: 7
+      name: Majesty

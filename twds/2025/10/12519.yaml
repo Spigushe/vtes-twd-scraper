@@ -1,0 +1,148 @@
+name: 'WoN: Monday Madness'
+location: Arhus, Denmark
+date_start: '2025-10-13'
+rounds_format: 3R+F
+players_count: 28
+winner: Sebestyen Balazs
+event_url: https://www.vekn.net/player-registry/event/12519
+event_id: '12519'
+vp_comment: 2GW6 + 5VP in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82631-twd-won-monday-madness-aarhus-denmark-13-october-2025
+deck:
+  name: Shalmath papa finally
+  created_by: SBmester
+  description: ''
+  crypt_count: 12
+  crypt_min: 7
+  crypt_max: 40
+  crypt_avg: 5.5
+  crypt:
+  - count: 5
+    name: Shalmath
+    capacity: 10
+    disciplines: POT PRE TEM
+    clan: True Brujah
+    grouping: 6
+  - count: 1
+    name: Araceli "Celia" Rivera
+    capacity: 3
+    disciplines: dom obl
+    clan: Lasombra
+    grouping: 6
+  - count: 1
+    name: Ashley
+    capacity: 3
+    disciplines: dom obf
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Monica Chang
+    capacity: 3
+    disciplines: dom tha
+    clan: Tremere
+    grouping: 5
+  - count: 1
+    name: Susie Kano
+    capacity: 3
+    disciplines: ani dom
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Dr. Solomon Grey
+    capacity: 2
+    disciplines: dom pre
+    clan: Caitiff
+    grouping: 5
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 13
+    cards:
+    - count: 1
+      name: Carver's Meat Packing and Storage
+    - count: 2
+      name: Direct Intervention
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 2
+      name: Perfectionist
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Tabriz Assembly
+    - count: 1
+      name: Vessel
+    - count: 1
+      name: Villein
+  - name: Action
+    count: 10
+    cards:
+    - count: 9
+      name: Summon History
+    - count: 1
+      name: Vaticination
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Veneficti
+  - name: Equipment
+    count: 6
+    cards:
+    - count: 1
+      name: .44 Magnum
+    - count: 1
+      name: Eye of Hazimel
+    - count: 1
+      name: Gran Madre di Dio, Italy
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Seal of Veddartha
+    - count: 1
+      name: Sport Bike
+  - name: Retainer
+    count: 2
+    cards:
+    - count: 1
+      name: Corpse Minion
+    - count: 1
+      name: Mr. Winthrop
+  - name: Action Modifier
+    count: 11
+    cards:
+    - count: 7
+      name: Domain of Evernight
+    - count: 3
+      name: Enkil Cog
+    - count: 1
+      name: Pocket Out of Time
+  - name: Reaction
+    count: 17
+    cards:
+    - count: 10
+      name: Deflection
+    - count: 2
+      name: Delaying Tactics
+    - count: 3
+      name: On the Qui Vive
+    - count: 2
+      name: Rewind Time
+  - name: Combat
+    count: 30
+    cards:
+    - count: 3
+      name: Decapitate
+    - count: 4
+      name: Disarm
+    - count: 7
+      name: Majesty
+    - count: 16
+      name: Outside the Hourglass

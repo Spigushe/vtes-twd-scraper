@@ -1,0 +1,153 @@
+name: 'Childe of the Revolution: Newark'
+location: Newark, Ohio
+date_start: '2023-12-10'
+rounds_format: 2R+F
+players_count: 15
+winner: Alex Romano
+event_url: https://www.vekn.net/event-calendar/event/11048
+event_id: '11048'
+vp_comment: The final was really interesting as the seating was
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81042-twd-childe-of-the-revolution-newark-newark-ohio-december-10-2023
+deck:
+  name: Dirge
+  description: ''
+  crypt_count: 12
+  crypt_min: 18
+  crypt_max: 25
+  crypt_avg: 5.58
+  crypt:
+  - count: 4
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 3
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 2
+    name: Elisha Tucker
+    capacity: 6
+    disciplines: PRE cel obf pro
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Indira
+    capacity: 3
+    disciplines: PRO
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Joseph Fischer
+    capacity: 3
+    disciplines: PRO
+    clan: Gangrel antitribu
+    grouping: 5
+  - count: 1
+    name: Vivian VI
+    capacity: 7
+    disciplines: PRE PRO obf tha
+    title: baron
+    clan: Ministry
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 24
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Archon Investigation
+    - count: 1
+      name: Backways
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Ecoterrorists
+    - count: 1
+      name: Ennoia's Theater
+    - count: 1
+      name: Fear of Mekhet
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Guardian Angel
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 2
+      name: Smiling Jack, The Anarch
+    - count: 4
+      name: Vessel
+    - count: 3
+      name: Villein
+    - count: 2
+      name: Wider View
+  - name: Action
+    count: 3
+    cards:
+    - count: 1
+      name: Constant Revolution
+    - count: 2
+      name: Rewilding
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Retainer
+    count: 8
+    cards:
+    - count: 1
+      name: J. S. Simmons, Esq.
+    - count: 1
+      name: Owl Companion
+    - count: 5
+      name: Raven Spy
+    - count: 1
+      name: Tasha Morgan
+  - name: Reaction
+    count: 21
+    cards:
+    - count: 2
+      name: Bait and Switch
+    - count: 2
+      name: Eyes of the Wild
+    - count: 3
+      name: On the Qui Vive
+    - count: 14
+      name: Organized Resistance
+  - name: Combat
+    count: 31
+    cards:
+    - count: 2
+      name: Donnybrook
+    - count: 19
+      name: Earth Meld
+    - count: 5
+      name: Form of Mist
+    - count: 5
+      name: Pack Alpha
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Scourge of the Enochians

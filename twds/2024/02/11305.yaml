@@ -1,0 +1,152 @@
+name: Torneio mensal Curitiba
+location: Curitiba/Brasil
+date_start: '2024-02-24'
+rounds_format: 2R+F
+players_count: 15
+winner: Eduardo Lemos
+event_url: https://www.vekn.net/event-calendar/event/11305
+event_id: '11305'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81258-twd-mensal-curitiba-curitiba-brasil-february-24-2024
+deck:
+  name: Owain grinder
+  created_by: Eduardo Lemos Fiala
+  description: ''
+  crypt_count: 12
+  crypt_min: 19
+  crypt_max: 31
+  crypt_avg: 6.42
+  crypt:
+  - count: 3
+    name: Owain Evans, The Wanderer
+    capacity: 8
+    disciplines: AUS DOM FOR cel pre
+    clan: Ventrue antitribu
+    grouping: 3
+  - count: 2
+    name: Blackhorse Tanner
+    capacity: 7
+    disciplines: AUS DOM FOR
+    clan: Ventrue antitribu
+    grouping: 3
+  - count: 1
+    name: Edward Neally
+    capacity: 7
+    disciplines: DOM FOR aus pre
+    clan: Ventrue antitribu
+    grouping: 3
+  - count: 1
+    name: Joseph O'Grady
+    capacity: 7
+    disciplines: DOM FOR aus cel
+    clan: Ventrue antitribu
+    grouping: 3
+  - count: 1
+    name: Jefferson Foster
+    capacity: 6
+    disciplines: AUS DOM for tha
+    title: bishop
+    clan: Ventrue antitribu
+    grouping: 4
+  - count: 1
+    name: Mariel St. John
+    capacity: 6
+    disciplines: AUS FOR dom pro
+    clan: Ventrue antitribu
+    grouping: 4
+  - count: 2
+    name: Neighbor John
+    capacity: 5
+    disciplines: AUS dom for
+    clan: Ventrue antitribu
+    grouping: 4
+  - count: 1
+    name: Ulrike Rothbart
+    capacity: 3
+    disciplines: dom for
+    clan: Ventrue antitribu
+    grouping: 4
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 19
+    cards:
+    - count: 1
+      name: Anarch Troublemaker
+    - count: 1
+      name: Channel 10
+    - count: 1
+      name: Corporate Hunting Ground
+    - count: 1
+      name: Demonstration
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Erciyes Fragments, The
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Misdirection
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 3
+      name: Vessel
+    - count: 2
+      name: Wash
+    - count: 2
+      name: Wider View
+  - name: Action
+    count: 14
+    cards:
+    - count: 14
+      name: Govern the Unaligned
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 8
+    cards:
+    - count: 2
+      name: Bonding
+    - count: 5
+      name: Conditioning
+    - count: 1
+      name: Daring the Dawn
+  - name: Reaction
+    count: 27
+    cards:
+    - count: 4
+      name: Deflection
+    - count: 2
+      name: Delaying Tactics
+    - count: 2
+      name: Eagle's Sight
+    - count: 6
+      name: Eyes of Argus
+    - count: 3
+      name: My Enemy's Enemy
+    - count: 5
+      name: On the Qui Vive
+    - count: 5
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 21
+    cards:
+    - count: 3
+      name: Hidden Strength
+    - count: 2
+      name: Indomitability
+    - count: 3
+      name: Rolling with the Punches
+    - count: 2
+      name: Skin of Steel
+    - count: 3
+      name: Soak
+    - count: 2
+      name: Superior Mettle
+    - count: 6
+      name: Weighted Walking Stick

@@ -1,0 +1,103 @@
+name: The Rocky Road to Lublin
+location: Lublin, Poland
+date_start: '2023-04-22'
+rounds_format: 3R+F
+players_count: 12
+winner: Nerijus Mikalajunas
+event_url: https://www.vekn.net/event-calendar/event/10649
+event_id: '10649'
+vp_comment: 1 VP, 2 VP (GW), 2 VP, 3 VP in the final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80507-twd-the-rocky-road-to-lublin-poland-22-april-2023
+deck:
+  name: Satan for President! (Baali vote)
+  created_by: Nerijus Mikalajunas
+  description: ''
+  crypt_count: 12
+  crypt_min: 24
+  crypt_max: 36
+  crypt_avg: 7.33
+  crypt:
+  - count: 4
+    name: Annazir
+    capacity: 9
+    disciplines: DAI OBF POT PRE
+    title: 2 votes
+    clan: Baali
+    grouping: 5
+  - count: 4
+    name: Arishat
+    capacity: 6
+    disciplines: DAI OBF PRE
+    title: 1 vote
+    clan: Baali
+    grouping: 6
+  - count: 4
+    name: Xeper, Sultan of Lepers
+    capacity: 7
+    disciplines: OBF PRE ani dai pro
+    clan: Baali
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 21
+    cards:
+    - count: 2
+      name: Archon Investigation
+    - count: 1
+      name: Creepshow Casino
+    - count: 4
+      name: Dreams of the Sphinx
+    - count: 3
+      name: Path of Evil Revelations
+    - count: 2
+      name: Path of the Void
+    - count: 5
+      name: Tend the Flock
+    - count: 4
+      name: Villein
+  - name: Action
+    count: 8
+    cards:
+    - count: 2
+      name: 'Condemnation: Mute'
+    - count: 6
+      name: Unleash Hell's Fury
+  - name: Political Action
+    count: 20
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 6
+      name: Kine Resources Contested
+    - count: 12
+      name: Reckless Agitation
+  - name: Action Modifier
+    count: 32
+    cards:
+    - count: 6
+      name: Bewitching Oration
+    - count: 5
+      name: Elder Impersonation
+    - count: 5
+      name: Forgotten Labyrinth
+    - count: 3
+      name: I am Legion
+    - count: 3
+      name: Lost in Crowds
+    - count: 2
+      name: Veil the Legions
+    - count: 8
+      name: Voter Captivation
+  - name: Combat
+    count: 8
+    cards:
+    - count: 8
+      name: Majesty
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Uncoiling, The

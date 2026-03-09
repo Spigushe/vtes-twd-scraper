@@ -1,0 +1,176 @@
+name: 'Resurrection: Pittsburgh'
+location: Pittsburgh (PA), USA
+date_start: '2024-03-30'
+rounds_format: 2R+F
+players_count: 10
+winner: Karl Schaefer
+event_url: https://www.vekn.net/event-calendar/event/11312
+event_id: '11312'
+vp_comment: 2 VPs + 1.5s VP in the final, won on seeding
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81327-twd-resurrection-pittsburgh
+deck:
+  name: If You Live Long Enough...
+  description: ''
+  crypt_count: 12
+  crypt_min: 17
+  crypt_max: 28
+  crypt_avg: 5.58
+  crypt:
+  - count: 4
+    name: Carna, The Princess Witch
+    capacity: 7
+    disciplines: AUS DOM THA
+    title: primogen
+    clan: Tremere
+    grouping: 3
+  - count: 1
+    name: Eugenio Estevez
+    capacity: 6
+    disciplines: AUS THA dom for
+    clan: Tremere
+    grouping: 3
+  - count: 1
+    name: Valois Sang, The Watcher
+    capacity: 6
+    disciplines: AUS DOM nec tha
+    clan: Tremere
+    grouping: 3
+  - count: 1
+    name: Andrew Stuart
+    capacity: 5
+    disciplines: AUS DOM THA
+    clan: Tremere
+    grouping: 4
+  - count: 1
+    name: Frondator
+    capacity: 5
+    disciplines: AUS dom tha
+    title: bishop
+    clan: Tremere antitribu
+    grouping: 4
+  - count: 2
+    name: Neighbor John
+    capacity: 5
+    disciplines: AUS dom for
+    clan: Ventrue antitribu
+    grouping: 4
+  - count: 1
+    name: Maldavis (ADV)
+    capacity: 4
+    disciplines: AUS for pre
+    clan: Caitiff
+    grouping: 3
+  - count: 1
+    name: Martin Franckel
+    capacity: 3
+    disciplines: AUS tha
+    clan: Tremere
+    grouping: 3
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 16
+    cards:
+    - count: 1
+      name: Arcane Library
+    - count: 1
+      name: Blood Doll
+    - count: 1
+      name: Chantry
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Guardian Angel
+      comment: gold in the current meta; might try to work in another copy
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 2
+      name: Smiling Jack, The Anarch
+      comment: never got to an end game with it
+    - count: 2
+      name: Vessel
+    - count: 2
+      name: Villein
+    - count: 1
+      name: Wasserschloss Anif, Austria
+      comment: like an indirect Blood Doll; was solid
+    - count: 1
+      name: Wider View
+      comment: could be swapped for something else
+  - name: Action
+    count: 9
+    cards:
+    - count: 6
+      name: Govern the Unaligned
+    - count: 3
+      name: Magic of the Smith
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 1
+      name: Ponticulus
+  - name: Equipment
+    count: 9
+    cards:
+    - count: 2
+      name: .44 Magnum
+      comment: could drop one or both; not used
+    - count: 1
+      name: Ankara Citadel, Turkey, The
+      comment: should be another Govern
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Heart of Nizchetus
+      comment: amazing as always
+    - count: 1
+      name: Ivory Bow
+    - count: 1
+      name: Kevlar Vest
+    - count: 1
+      name: Sniper Rifle
+    - count: 1
+      name: Sport Bike
+  - name: Action Modifier
+    count: 8
+    cards:
+    - count: 4
+      name: Conditioning
+    - count: 4
+      name: Mirror Walk
+    - count: 4
+      name: Deflection
+    - count: 2
+      name: Delaying Tactics
+    - count: 5
+      name: Eagle's Sight
+    - count: 8
+      name: Eyes of Argus
+    - count: 3
+      name: Forced Awakening
+      comment: swapped in more for this version; necessary
+    - count: 4
+      name: My Enemy's Enemy
+    - count: 5
+      name: On the Qui Vive
+    - count: 2
+      name: Salt of Thoth
+      comment: saved me from worrying about The Rack, etc; solid today
+    - count: 6
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 6
+    cards:
+    - count: 2
+      name: Rego Motum
+    - count: 4
+      name: Theft of Vitae
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Scourge of the Enochians
+      comment: almost useless today

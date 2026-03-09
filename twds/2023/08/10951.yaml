@@ -1,0 +1,165 @@
+name: Leeds Bleebs
+location: Leeds, UK
+date_start: '2023-08-26'
+rounds_format: 3R+F
+players_count: 10
+winner: Paul Jones
+event_url: https://www.vekn.net/player-registry/event/10951
+event_id: '10951'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80800-twd-leeds-blleebs-leeds-united-kingdom-26-august-2023
+deck:
+  name: Gangrel Grinder? I hardly know her!
+  description: Not really much I can say here, it's nothing you've not seen before. I put an Ivory Bow in to a starter 
+    deck. Efficient vampires doing efficient things.
+  crypt_count: 12
+  crypt_min: 12
+  crypt_max: 26
+  crypt_avg: 4.92
+  crypt:
+  - count: 2
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 2
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 2
+    name: Massimiliano
+    capacity: 7
+    disciplines: ANI FOR pro
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Hanna Nokelainen
+    capacity: 4
+    disciplines: ani for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Indira
+    capacity: 3
+    disciplines: PRO
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Joaquín de Cádiz
+    capacity: 3
+    disciplines: for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Kamile Paukstys
+    capacity: 5
+    disciplines: PRO ani for
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Nathan Turner
+    capacity: 4
+    disciplines: PRO ani
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Ruslan Fedorenko
+    capacity: 2
+    disciplines: pro
+    clan: Gangrel
+    grouping: 6
+  library_count: 80
+  library_sections:
+  - name: Master
+    count: 18
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Ecoterrorists
+    - count: 1
+      name: Gangrel Revel
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: 'Powerbase: Los Angeles'
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Rötschreck
+    - count: 1
+      name: Smiling Jack, The Anarch
+    - count: 5
+      name: Vessel
+    - count: 1
+      name: Wider View
+    - count: 1
+      name: Zoo Hunting Ground
+  - name: Action
+    count: 11
+    cards:
+    - count: 1
+      name: Aranthebes, The Immortal
+    - count: 1
+      name: Army of Rats
+    - count: 2
+      name: Constant Revolution
+    - count: 1
+      name: Rewilding
+    - count: 6
+      name: Thing
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Ivory Bow
+  - name: Retainer
+    count: 4
+    cards:
+    - count: 1
+      name: Mr. Winthrop
+    - count: 3
+      name: Raven Spy
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Form of the Bat
+  - name: Reaction
+    count: 27
+    cards:
+    - count: 6
+      name: Bait and Switch
+    - count: 5
+      name: Deep Ecology
+    - count: 4
+      name: Eyes of the Wild
+    - count: 3
+      name: On the Qui Vive
+    - count: 5
+      name: Organized Resistance
+    - count: 4
+      name: Protection Racket
+  - name: Combat
+    count: 15
+    cards:
+    - count: 4
+      name: Claws of the Dead
+    - count: 2
+      name: Donnybrook
+    - count: 6
+      name: Earth Meld
+    - count: 3
+      name: Form of Mist
