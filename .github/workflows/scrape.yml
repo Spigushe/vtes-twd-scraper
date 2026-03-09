@@ -68,6 +68,11 @@ jobs:
       - name: Scrape forum
         run: ${{ steps.build_cmd.outputs.cmd }}
 
+      - name: Validate scraped decks
+        id: validate
+        continue-on-error: true
+        run: vtes-scraper validate --verbose
+
       - name: Check for new files
         id: git_status
         run: |
