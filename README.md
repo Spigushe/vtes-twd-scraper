@@ -37,6 +37,12 @@ vtes-scraper parse decks/8470.txt
 
 # Parse and print to stdout (no file written)
 vtes-scraper parse decks/8470.txt
+
+# Validate scraped decks and sort them by error
+vtes-scraper validate
+
+# Validate scraped decks and checking VEKN Calendar to cross reference dates
+vtes-scraper validate --check-dates
 ```
 
 ### Python API

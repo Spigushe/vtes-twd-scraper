@@ -19,10 +19,12 @@ Strategy:
 
 from __future__ import annotations
 
+import json
 import logging
 import re
 import time
 from collections.abc import Iterator
+from datetime import date
 from typing import cast
 from urllib.parse import urljoin
 
@@ -202,8 +204,70 @@ def extract_twd_from_thread(
 
 
 # ---------------------------------------------------------------------------
-# Main scrape function
+# Main scrape functions
 # ---------------------------------------------------------------------------
+
+
+def fetch_event_date(
+    client: httpx.Client,
+    event_url: str,
+    delay: float = DEFAULT_DELAY_SECONDS,
+) -> date | None:
+    """
+    Fetch the official start date from a VEKN event calendar page.
+    Tries three strategies in order:
+      1. JSON-LD structured data (``<script type="application/ld+json">``
+         with ``startDate`` key).
+      2. HTML ``<time>`` element with a ``datetime`` attribute.
+      3. Regex scan of visible page text for an ISO-format date (``YYYY-MM-DD``)
+         near a "date" label.
+    Returns a ``date`` object, or ``None`` if the date cannot be extracted.
+    """
+    from datetime import datetime
+
+    soup = _get(client, event_url, delay)
+
+    # --- Strategy 1: JSON-LD ---
+    for script in soup.find_all("script", type="application/ld+json"):
+        try:
+            data = json.loads(script.string or "")
+        except json.JSONDecodeError, AttributeError:
+            continue
+        # data may be a single object or a list
+        items = data if isinstance(data, list) else [data]
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            start = item.get("startDate") or item.get("start_date")
+            if start and isinstance(start, str):
+                # startDate may include time: "2026-01-31T..." — take date part
+                date_part = start[:10]
+                try:
+                    return datetime.strptime(date_part, "%Y-%m-%d").date()
+                except ValueError:
+                    pass
+
+    # --- Strategy 2: <time datetime="..."> ---
+    time_tag = soup.find("time", attrs={"datetime": True})
+    if time_tag:
+        dt_str = cast(str, time_tag.get("datetime", ""))[:10]
+        try:
+            return datetime.strptime(dt_str, "%Y-%m-%d").date()
+        except ValueError:
+            pass
+
+    # --- Strategy 3: text scan near a "date" label ---
+    page_text = soup.get_text(separator=" ")
+    # Look for "date" followed within 60 chars by an ISO date
+    iso_near_label = re.search(r"(?i)\bdate[:\s]+(\d{4}-\d{2}-\d{2})", page_text)
+    if iso_near_label:
+        try:
+            return datetime.strptime(iso_near_label.group(1), "%Y-%m-%d").date()
+        except ValueError:
+            pass
+
+    logger.warning("Could not extract date from event page: %s", event_url)
+    return None
 
 
 def scrape_forum(

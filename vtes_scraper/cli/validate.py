@@ -19,6 +19,12 @@ Mandatory deck fields
 empty_crypt    : deck.crypt list is empty (no vampire cards found)
 empty_library  : deck.library_sections list is empty (no library cards found)
 
+Date coherence (requires --check-dates)
+----------------------------------------
+incoherent_date : date_start in the file does not match the date published on
+                  the VEKN event calendar page (event_url).  Use the fix-date
+                  command to correct affected files automatically.
+
 When multiple errors are present the file is moved to the directory of the
 first error encountered (in the order listed above) and all error labels are
 shown in the console output.
@@ -29,11 +35,14 @@ from __future__ import annotations
 import argparse
 import logging
 import shutil
+from datetime import date
 from pathlib import Path
 
+import httpx
 from ruamel.yaml import YAML
 
 from vtes_scraper.cli._common import console, setup_logging
+from vtes_scraper.scraper import DEFAULT_DELAY_SECONDS, HEADERS, fetch_event_date
 
 
 def _load_yaml(path: Path) -> dict:
@@ -41,7 +50,21 @@ def _load_yaml(path: Path) -> dict:
     return yaml.load(path.read_text(encoding="utf-8"))
 
 
-def _error_types(data: dict) -> list[str]:
+def _parse_date_field(raw) -> date | None:
+    """Coerce whatever ruamel.yaml hands back for date_start into a date."""
+    if raw is None:
+        return None
+    if isinstance(raw, date):
+        return raw
+    from vtes_scraper.models import Tournament
+
+    try:
+        return Tournament.parse_date(str(raw))
+    except ValueError:
+        return None
+
+
+def _error_types(data: dict, calendar_date: date | None = None) -> list[str]:
     """Return a list of validation error-type strings for one YAML file."""
     errors: list[str] = []
 
@@ -68,6 +91,12 @@ def _error_types(data: dict) -> list[str]:
     if not deck.get("library_sections"):
         errors.append("empty_library")
 
+    # --- Date coherence (only when calendar_date was fetched) ---
+    if calendar_date is not None:
+        file_date = _parse_date_field(data.get("date_start"))
+        if file_date is not None and file_date != calendar_date:
+            errors.append("incoherent_date")
+
     return errors
 
 
@@ -93,6 +122,25 @@ def register(sub: argparse._SubParsersAction) -> None:
         dest="output_dir",
         help="Root directory that was used by the scrape command. (default: twds)",
     )
+    p.add_argument(
+        "--check-dates",
+        action="store_true",
+        dest="check_dates",
+        help=(
+            "Fetch each file's event_url from the VEKN calendar and flag files "
+            "whose date_start disagrees with the official date (incoherent_date). "
+            "Requires network access; implies one extra HTTP request per file."
+        ),
+    )
+    p.add_argument(
+        "--delay",
+        type=float,
+        default=DEFAULT_DELAY_SECONDS,
+        help=(
+            "Seconds between HTTP requests when --check-dates is active "
+            + f"(default: {DEFAULT_DELAY_SECONDS})."
+        ),
+    )
     p.add_argument("--verbose", "-v", action="store_true")
     p.set_defaults(func=run)
 
@@ -103,6 +151,8 @@ def run(args: argparse.Namespace) -> int:
     logger = logging.getLogger(__name__)
 
     output_dir: Path = args.output_dir
+    check_dates: bool = getattr(args, "check_dates", False)
+    delay: float = getattr(args, "delay", DEFAULT_DELAY_SECONDS)
 
     if not output_dir.exists():
         console.print(f"[red]✗[/red] Output directory does not exist: {output_dir}")
@@ -111,9 +161,7 @@ def run(args: argparse.Namespace) -> int:
     # Collect all .yaml files, excluding the errors/ subtree
     errors_dir = output_dir / "errors"
     yaml_files = [
-        p
-        for p in output_dir.rglob("*.yaml")
-        if not p.is_relative_to(errors_dir)
+        p for p in output_dir.rglob("*.yaml") if not p.is_relative_to(errors_dir)
     ]
 
     if not yaml_files:
@@ -122,27 +170,42 @@ def run(args: argparse.Namespace) -> int:
 
     valid = moved = load_errors = 0
 
-    for path in sorted(yaml_files):
-        try:
-            data = _load_yaml(path)
-        except Exception as exc:
-            console.print(f"[red]✗[/red] {path.name}: could not load YAML — {exc}")
-            logger.debug("Stack trace:", exc_info=True)
-            load_errors += 1
-            continue
+    with httpx.Client(headers=HEADERS, timeout=30.0) as client:
+        for path in sorted(yaml_files):
+            try:
+                data = _load_yaml(path)
+            except Exception as exc:
+                console.print(f"[red]✗[/red] {path.name}: could not load YAML — {exc}")
+                logger.debug("Stack trace:", exc_info=True)
+                load_errors += 1
+                continue
 
-        errs = _error_types(data)
-        if not errs:
-            logger.debug("OK  %s", path.name)
-            valid += 1
-            continue
+            # Optionally fetch the official date from the VEKN event calendar.
+            calendar_date: date | None = None
+            if check_dates:
+                event_url = data.get("event_url")
+                if event_url:
+                    try:
+                        calendar_date = fetch_event_date(client, event_url, delay=delay)
+                    except Exception as exc:
+                        logger.warning(
+                            "Could not fetch calendar date for %s: %s", path.name, exc
+                        )
 
-        # Use the first (most critical) error as the directory name; move once.
-        error_type = errs[0]
-        dest = _move_to_error(path, output_dir, error_type)
-        label = ", ".join(errs)
-        console.print(f"[red]✗[/red] {path.name}  [{label}]  → {dest.relative_to(output_dir)}")
-        moved += 1
+            errs = _error_types(data, calendar_date=calendar_date)
+            if not errs:
+                logger.debug("OK  %s", path.name)
+                valid += 1
+                continue
+
+            # Use the first (most critical) error as the directory name; move once.
+            error_type = errs[0]
+            dest = _move_to_error(path, output_dir, error_type)
+            label = ", ".join(errs)
+            console.print(
+                f"[red]✗[/red] {path.name}  [{label}]  → {dest.relative_to(output_dir)}"
+            )
+            moved += 1
 
     console.rule()
     console.print(
