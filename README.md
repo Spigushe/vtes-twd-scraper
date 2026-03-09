@@ -43,6 +43,9 @@ vtes-scraper validate
 
 # Validate scraped decks and checking VEKN Calendar to cross reference dates
 vtes-scraper validate --check-dates
+
+# Scrape and publish new decks as PRs to GiottoVerducci/TWD
+GITHUB_TOKEN=ghp_xxx python -m vtes_scraper publish
 ```
 
 ### Python API
@@ -127,8 +130,12 @@ vtes-twd-scraper/
 │   └── scraper.py      # Forum scraper (httpx + BeautifulSoup)
 ├── tests/
 │   └── test_parser.py
-├── .github/workflows/scrape.yml
-└── pyproject.toml
+├── .github/
+│   └── workflows/
+│       ├── scrape.yml  # CRON scrape at 6:00 UTC every day
+│       └── publish.yml # CRON publish at 8:00 UTC every monday
+├── pyproject.toml
+└── .env.example
 ```
 
 ## Notes

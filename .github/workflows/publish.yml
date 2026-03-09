@@ -1,0 +1,57 @@
+name: Publish TWD Deck PRs
+
+on:
+  # Run every Monday at 08:00 UTC (after the daily scrape has run)
+  schedule:
+    - cron: "0 8 * * 1"
+
+  # Manual trigger from the Actions tab
+  workflow_dispatch:
+    inputs:
+      max_pages:
+        description: "Max forum pages to scrape (leave empty for all)"
+        required: false
+        default: ""
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read   # only reads this repo; writes go to GiottoVerducci/TWD via API
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          allow-prereleases: true
+          cache: "pip"
+
+      - name: Set UTF-8 encoding
+        run: echo "PYTHONUTF8=1" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: pip install -e ".[dev]"
+
+      - name: Run tests
+        run: pytest tests/ -v
+
+      - name: Build publish command
+        id: build_cmd
+        run: |
+          CMD="vtes-scraper publish"
+          if [ -n "${{ github.event.inputs.max_pages }}" ]; then
+            CMD="$CMD --max-pages ${{ github.event.inputs.max_pages }}"
+          fi
+          echo "cmd=$CMD" >> "$GITHUB_OUTPUT"
+
+      - name: Publish deck PRs to GiottoVerducci/TWD
+        env:
+          # A PAT (classic or fine-grained) with 'public_repo' write access to
+          # GiottoVerducci/TWD must be stored as a repository secret named
+          # TWD_GITHUB_TOKEN.
+          GITHUB_TOKEN: ${{ secrets.TWD_GITHUB_TOKEN }}
+        run: ${{ steps.build_cmd.outputs.cmd }}
