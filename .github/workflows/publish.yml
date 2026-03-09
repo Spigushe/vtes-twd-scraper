@@ -1,23 +1,18 @@
 name: Publish TWD Deck PRs
 
 on:
-  # Run every Monday at 08:00 UTC (after the daily scrape has run)
+  # Run every Monday at 08:00 UTC (after the weekly scrape has run)
   schedule:
     - cron: "0 8 * * 1"
 
   # Manual trigger from the Actions tab
   workflow_dispatch:
-    inputs:
-      max_pages:
-        description: "Max forum pages to scrape (leave empty for all)"
-        required: false
-        default: ""
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: read   # only reads this repo; writes go to GiottoVerducci/TWD via API
+      contents: write   # needed to commit the publish report back to this repo
 
     steps:
       - name: Checkout repository
@@ -39,19 +34,22 @@ jobs:
       - name: Run tests
         run: pytest tests/ -v
 
-      - name: Build publish command
-        id: build_cmd
-        run: |
-          CMD="vtes-scraper publish"
-          if [ -n "${{ github.event.inputs.max_pages }}" ]; then
-            CMD="$CMD --max-pages ${{ github.event.inputs.max_pages }}"
-          fi
-          echo "cmd=$CMD" >> "$GITHUB_OUTPUT"
-
       - name: Publish deck PRs to GiottoVerducci/TWD
         env:
-          # A PAT (classic or fine-grained) with 'public_repo' write access to
-          # GiottoVerducci/TWD must be stored as a repository secret named
-          # TWD_GITHUB_TOKEN.
-          GITHUB_TOKEN: ${{ secrets.TWD_GITHUB_TOKEN }}
-        run: ${{ steps.build_cmd.outputs.cmd }}
+          # A PAT with 'public_repo' scope stored as TWD_GITHUB_TOKEN.
+          # The script forks GiottoVerducci/TWD into the token owner's account
+          # and opens a PR from the fork — no direct write access to that repo needed.
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: vtes-scraper publish --verbose
+
+      - name: Commit publish report
+        run: |
+          git add publish/
+          if git diff --staged --quiet; then
+            echo "No report changes to commit."
+          else
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: publish report $(date -u +%Y-%m-%d)"
+            git push
+          fi

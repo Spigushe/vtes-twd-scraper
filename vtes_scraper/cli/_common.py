@@ -27,9 +27,11 @@ console = Console()
 
 
 def setup_logging(verbose: bool) -> None:
-    level = logging.DEBUG if verbose else logging.ERROR
+    handler = RichHandler(rich_tracebacks=True, show_path=False)
     logging.basicConfig(
-        level=level,
+        level=logging.ERROR,
         format="%(message)s",
-        handlers=[RichHandler(rich_tracebacks=True, show_path=False)],
+        handlers=[handler],
     )
+    if verbose:
+        logging.getLogger("vtes_scraper").setLevel(logging.DEBUG)

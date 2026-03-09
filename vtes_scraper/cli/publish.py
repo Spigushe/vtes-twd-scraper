@@ -3,32 +3,37 @@
 from __future__ import annotations
 
 import argparse
+import logging
 import os
+from datetime import UTC, datetime
 from pathlib import Path
 
+from ruamel.yaml import YAML
+
 from vtes_scraper.cli._common import console, setup_logging
-from vtes_scraper.output import write_tournament_txt
-from vtes_scraper.publisher import publish_all_as_single_pr
-from vtes_scraper.scraper import scrape_forum
+from vtes_scraper.models import Tournament
+from vtes_scraper.publisher import BatchPRResult, publish_all_as_single_pr
+
+logger = logging.getLogger(__name__)
 
 
 def register(sub: argparse._SubParsersAction) -> None:
     p = sub.add_parser(
         "publish",
-        help="Scrape and open a single PR in GiottoVerducci/TWD with all new decks.",
+        help="Open a single PR in GiottoVerducci/TWD with all new decks from local YAML files.",
     )
     p.add_argument(
-        "--max-pages",
-        type=int,
-        default=None,
-        dest="max_pages",
-        help="Limit the number of forum index pages to scrape (default: all).",
+        "--twds-dir",
+        type=Path,
+        default=Path("twds"),
+        dest="twds_dir",
+        help="Directory containing scraped YAML files (default: twds/).",
     )
     p.add_argument(
         "--delay",
         type=float,
-        default=1.5,
-        help="Seconds between HTTP requests (default: 1.5).",
+        default=1.0,
+        help="Seconds between GitHub API file commits (default: 1.0).",
     )
     p.add_argument(
         "--github-token",
@@ -37,19 +42,71 @@ def register(sub: argparse._SubParsersAction) -> None:
         help="GitHub PAT with 'public_repo' scope. Falls back to $GITHUB_TOKEN.",
     )
     p.add_argument(
-        "--output-dir",
-        "-o",
+        "--publish-dir",
         type=Path,
-        default=None,
-        dest="output_dir",
-        help="Also write TXT files locally to this directory (optional).",
+        default=Path("publish"),
+        dest="publish_dir",
+        help="Directory to write Markdown publish reports (default: publish/).",
     )
     p.add_argument("--verbose", "-v", action="store_true")
     p.set_defaults(func=run)
 
 
+def _write_publish_report(
+    result: BatchPRResult,
+    publish_dir: Path,
+    today: str,
+    tournaments: list[Tournament],
+) -> Path:
+    """Write a Markdown summary of a publish run to publish/YYYY/MM/{today}.md."""
+    year, month = today[:4], today[5:7]
+    report_dir = publish_dir / year / month
+    report_dir.mkdir(parents=True, exist_ok=True)
+    report_path = report_dir / f"{today}.md"
+
+    lines = [f"# TWD Publish Report — {today}", ""]
+
+    if result.pr_url:
+        lines += [f"**PR**: [{result.pr_url}]({result.pr_url})", ""]
+    elif result.skipped_all:
+        lines += ["_All decks already present on master — no PR opened._", ""]
+    else:
+        lines += ["_No PR opened._", ""]
+
+    lines += [f"## Published ({len(result.published)})", ""]
+    if result.published:
+        published_set = set(result.published)
+        lines += [
+            "| Event ID | Event Name | Location | Date | Winner |",
+            "|---|---|---|---|---|",
+        ]
+        for t in tournaments:
+            if (t.event_id or "unknown") in published_set:
+                name_link = f"[{t.name}]({t.event_url})" if t.event_url else t.name
+                lines.append(
+                    f"| {t.event_id} | {name_link} | {t.location} | {t.date_start} | {t.winner} |"
+                )
+    else:
+        lines.append("_None._")
+    lines.append("")
+
+    lines += [f"## Skipped — already on master ({len(result.skipped)})", ""]
+    lines.append(", ".join(result.skipped) if result.skipped else "_None._")
+    lines.append("")
+
+    lines += [f"## Errors ({len(result.errors)})", ""]
+    if result.errors:
+        for event_id, err in result.errors:
+            lines.append(f"- `{event_id}`: {err}")
+    else:
+        lines.append("_None._")
+
+    report_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return report_path
+
+
 def run(args: argparse.Namespace) -> int:
-    """Scrape the VEKN forum and open a single Pull Request in GiottoVerducci/TWD."""
+    """Load local YAML files and open a single Pull Request in GiottoVerducci/TWD."""
     setup_logging(args.verbose)
 
     token = args.github_token or os.environ.get("GITHUB_TOKEN", "")
@@ -60,26 +117,51 @@ def run(args: argparse.Namespace) -> int:
         )
         return 1
 
-    tournaments = []
-    for tournament in scrape_forum(max_pages=args.max_pages, delay=args.delay):
-        tournaments.append(tournament)
-        if args.output_dir is not None:
-            try:
-                path = write_tournament_txt(tournament, args.output_dir)
-                console.print(f"[dim]  wrote {path}[/dim]")
-            except FileExistsError:
-                pass
+    # ── Load local YAML files ──────────────────────────────────────────────
+    yaml = YAML()
+    twds_dir: Path = args.twds_dir
+    yaml_files = sorted(twds_dir.rglob("*.yaml"))
+    logger.debug("Found %d YAML file(s) in %s.", len(yaml_files), twds_dir)
 
-    console.print(f"Scraped [green]{len(tournaments)}[/green] tournaments.")
+    if not yaml_files:
+        console.print(f"[yellow]No YAML files found in {twds_dir}.[/yellow]")
+        return 0
+
+    tournaments: list[Tournament] = []
+    for path in yaml_files:
+        try:
+            data = yaml.load(path.read_text(encoding="utf-8"))
+            t = Tournament.model_validate(data)
+            tournaments.append(t)
+            logger.debug("Loaded %s: %s (%s)", t.event_id, t.name, t.location)
+        except Exception as exc:
+            logger.warning("Skipping %s — could not load: %s", path, exc)
+
+    console.print(
+        f"Loaded [green]{len(tournaments)}[/green] tournament(s) from {twds_dir}."
+    )
 
     if not tournaments:
         console.print("[yellow]Nothing to publish.[/yellow]")
         return 0
 
+    # ── Publish ────────────────────────────────────────────────────────────
+    today = datetime.now(UTC).strftime("%Y-%m-%d")
     console.print(
-        f"Publishing [cyan]{len(tournaments)}[/cyan] scraped decks as a single PR…"
+        f"Publishing [cyan]{len(tournaments)}[/cyan] tournament(s) as a single PR…"
     )
+    logger.debug("Submitting %d tournament(s) to publisher.", len(tournaments))
     result = publish_all_as_single_pr(tournaments, token=token, delay=args.delay)
+
+    # ── Save Markdown report ───────────────────────────────────────────────
+    try:
+        report_path = _write_publish_report(
+            result, args.publish_dir, today, tournaments
+        )
+        console.print(f"Report saved → [dim]{report_path}[/dim]")
+        logger.debug("Publish report written to %s.", report_path)
+    except Exception as exc:
+        logger.warning("Could not write publish report: %s", exc)
 
     if result.skipped_all:
         console.print(
@@ -97,10 +179,8 @@ def run(args: argparse.Namespace) -> int:
     console.rule()
     if result.pr_url:
         console.print(
-            (
-                "[green]PR opened[/green] with [green]",
-                f"{len(result.published)}[/green] deck(s) → {result.pr_url}",
-            )
+            f"[green]PR opened[/green] with [green]{len(result.published)}[/green]"
+            f" deck(s) → {result.pr_url}"
         )
     else:
         console.print(
