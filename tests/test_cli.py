@@ -16,6 +16,7 @@ from vtes_scraper.cli._common import _reconfigure_windows_stdio, setup_logging
 from vtes_scraper.cli import parse as parse_cmd
 from vtes_scraper.cli import scrape as scrape_cmd
 from vtes_scraper.cli import validate as validate_cmd
+from vtes_scraper import validator
 from vtes_scraper.cli import fix_dates as fix_dates_cmd
 from vtes_scraper.cli import rescrape as rescrape_cmd
 from vtes_scraper.cli import publish as publish_cmd
@@ -457,7 +458,7 @@ class TestValidateCommand:
             assert ret == 1
 
     def test_error_types_all_missing(self):
-        errors = validate_cmd._error_types({})
+        errors = validator.error_types({})
         assert "missing_name" in errors
         assert "missing_location" in errors
         assert "missing_date_start" in errors
@@ -479,7 +480,7 @@ class TestValidateCommand:
             "event_url": "https://www.vekn.net/event-calendar/event/1",
             "deck": {"crypt": [1], "library_sections": [1]},
         }
-        errors = validate_cmd._error_types(data, calendar_date=date(2023, 2, 2))
+        errors = validator.error_types(data, calendar_date=date(2023, 2, 2))
         assert "incoherent_date" in errors
 
     def test_error_types_coherent_date(self):
@@ -493,24 +494,192 @@ class TestValidateCommand:
             "event_url": "https://www.vekn.net/event-calendar/event/1",
             "deck": {"crypt": [1], "library_sections": [1]},
         }
-        errors = validate_cmd._error_types(data, calendar_date=date(2023, 1, 1))
+        errors = validator.error_types(data, calendar_date=date(2023, 1, 1))
         assert "incoherent_date" not in errors
 
+    def test_error_types_too_few_players(self):
+        data = {
+            "name": "Test",
+            "location": "Loc",
+            "date_start": "2023-01-01",
+            "rounds_format": "2R+F",
+            "players_count": 9,
+            "winner": "W",
+            "event_url": "https://www.vekn.net/event-calendar/event/1",
+            "deck": {"crypt": [1], "library_sections": [1]},
+        }
+        errors = validator.error_types(data)
+        assert "too_few_players" in errors
+
+    def test_error_types_not_too_few_players_at_minimum(self):
+        data = {
+            "name": "Test",
+            "location": "Loc",
+            "date_start": "2023-01-01",
+            "rounds_format": "2R+F",
+            "players_count": 12,
+            "winner": "W",
+            "event_url": "https://www.vekn.net/event-calendar/event/1",
+            "deck": {"crypt": [1], "library_sections": [1]},
+        }
+        errors = validator.error_types(data)
+        assert "too_few_players" not in errors
+
+    def test_error_types_limited_format(self):
+        data = {
+            "name": "Belgian Limited National Championship 2022",
+            "location": "Loc",
+            "date_start": "2023-01-01",
+            "rounds_format": "2R+F",
+            "players_count": 14,
+            "winner": "W",
+            "event_url": "https://www.vekn.net/event-calendar/event/1",
+            "deck": {"crypt": [1], "library_sections": [1]},
+        }
+        errors = validator.error_types(data)
+        assert "limited_format" in errors
+
+    def test_error_types_not_limited_format(self):
+        data = {
+            "name": "Test Event",
+            "location": "Loc",
+            "date_start": "2023-01-01",
+            "rounds_format": "2R+F",
+            "players_count": 14,
+            "winner": "W",
+            "event_url": "https://www.vekn.net/event-calendar/event/1",
+            "deck": {"crypt": [1], "library_sections": [1]},
+        }
+        errors = validator.error_types(data)
+        assert "limited_format" not in errors
+
+    def _make_crypt_card(self, grouping):
+        return {
+            "count": 1,
+            "name": "Test Vampire",
+            "capacity": 5,
+            "disciplines": "cel",
+            "clan": "Brujah",
+            "grouping": grouping,
+        }
+
+    def test_error_types_illegal_crypt_three_groups(self):
+        data = {
+            "name": "Test",
+            "location": "Loc",
+            "date_start": "2023-01-01",
+            "rounds_format": "2R+F",
+            "players_count": 12,
+            "winner": "W",
+            "event_url": "https://www.vekn.net/event-calendar/event/1",
+            "deck": {
+                "crypt": [
+                    self._make_crypt_card(3),
+                    self._make_crypt_card(4),
+                    self._make_crypt_card(5),
+                ],
+                "library_sections": [1],
+            },
+        }
+        errors = validator.error_types(data)
+        assert "illegal_crypt" in errors
+
+    def test_error_types_illegal_crypt_non_consecutive(self):
+        data = {
+            "name": "Test",
+            "location": "Loc",
+            "date_start": "2023-01-01",
+            "rounds_format": "2R+F",
+            "players_count": 12,
+            "winner": "W",
+            "event_url": "https://www.vekn.net/event-calendar/event/1",
+            "deck": {
+                "crypt": [
+                    self._make_crypt_card(1),
+                    self._make_crypt_card(6),
+                ],
+                "library_sections": [1],
+            },
+        }
+        errors = validator.error_types(data)
+        assert "illegal_crypt" in errors
+
+    def test_error_types_legal_crypt_consecutive_pair(self):
+        data = {
+            "name": "Test",
+            "location": "Loc",
+            "date_start": "2023-01-01",
+            "rounds_format": "2R+F",
+            "players_count": 12,
+            "winner": "W",
+            "event_url": "https://www.vekn.net/event-calendar/event/1",
+            "deck": {
+                "crypt": [
+                    self._make_crypt_card(4),
+                    self._make_crypt_card(5),
+                ],
+                "library_sections": [1],
+            },
+        }
+        errors = validator.error_types(data)
+        assert "illegal_crypt" not in errors
+
+    def test_error_types_legal_crypt_single_group(self):
+        data = {
+            "name": "Test",
+            "location": "Loc",
+            "date_start": "2023-01-01",
+            "rounds_format": "2R+F",
+            "players_count": 12,
+            "winner": "W",
+            "event_url": "https://www.vekn.net/event-calendar/event/1",
+            "deck": {
+                "crypt": [
+                    self._make_crypt_card(4),
+                    self._make_crypt_card(4),
+                ],
+                "library_sections": [1],
+            },
+        }
+        errors = validator.error_types(data)
+        assert "illegal_crypt" not in errors
+
+    def test_error_types_illegal_crypt_ignores_any(self):
+        data = {
+            "name": "Test",
+            "location": "Loc",
+            "date_start": "2023-01-01",
+            "rounds_format": "2R+F",
+            "players_count": 12,
+            "winner": "W",
+            "event_url": "https://www.vekn.net/event-calendar/event/1",
+            "deck": {
+                "crypt": [
+                    self._make_crypt_card(4),
+                    self._make_crypt_card(5),
+                    self._make_crypt_card("ANY"),
+                ],
+                "library_sections": [1],
+            },
+        }
+        errors = validator.error_types(data)
+        assert "illegal_crypt" not in errors
+
     def test_parse_date_field_none(self):
-        result = validate_cmd._parse_date_field(None)
+        result = validator.parse_date_field(None)
         assert result is None
 
     def test_parse_date_field_date_object(self):
         d = date(2023, 1, 1)
-        result = validate_cmd._parse_date_field(d)
+        result = validator.parse_date_field(d)
         assert result == d
 
     def test_parse_date_field_string(self):
-        result = validate_cmd._parse_date_field("2023-01-01")
+        result = validator.parse_date_field("2023-01-01")
         assert result == date(2023, 1, 1)
 
     def test_parse_date_field_invalid(self):
-        result = validate_cmd._parse_date_field("not-a-date")
+        result = validator.parse_date_field("not-a-date")
         assert result is None
 
     def test_move_to_error(self):

@@ -1,33 +1,7 @@
 """CLI subcommand: validate.
 
-Checks that scraped YAML files contain all mandatory tournament and deck data.
-Files that fail validation are moved to <output-dir>/errors/<error_type>/ for
-manual review.
-
-Mandatory tournament fields
----------------------------
-missing_name           : top-level name is absent or blank
-missing_location       : top-level location is absent or blank
-missing_date_start     : top-level date_start is absent
-missing_rounds_format  : top-level rounds_format is absent or blank
-missing_players_count  : top-level players_count is absent or zero
-missing_winner         : top-level winner is absent or blank
-missing_event_url      : top-level event_url is absent or blank
-
-Mandatory deck fields
----------------------
-empty_crypt    : deck.crypt list is empty (no vampire cards found)
-empty_library  : deck.library_sections list is empty (no library cards found)
-
-Date coherence (requires --check-dates)
-----------------------------------------
-incoherent_date : date_start in the file does not match the date published on
-                  the VEKN event calendar page (event_url).  Use the fix-date
-                  command to correct affected files automatically.
-
-When multiple errors are present the file is moved to the directory of the
-first error encountered (in the order listed above) and all error labels are
-shown in the console output.
+Loads every YAML file under <output-dir> (excluding errors/), runs it through
+the validator, and moves failing files to <output-dir>/errors/<error_type>/.
 """
 
 from __future__ import annotations
@@ -43,61 +17,12 @@ from ruamel.yaml import YAML
 
 from vtes_scraper.cli._common import console, setup_logging
 from vtes_scraper.scraper import DEFAULT_DELAY_SECONDS, HEADERS, fetch_event_date
+from vtes_scraper.validator import error_types
 
 
 def _load_yaml(path: Path) -> dict:
     yaml = YAML()
     return yaml.load(path.read_text(encoding="utf-8"))
-
-
-def _parse_date_field(raw) -> date | None:
-    """Coerce whatever ruamel.yaml hands back for date_start into a date."""
-    if raw is None:
-        return None
-    if isinstance(raw, date):
-        return raw
-    from vtes_scraper.models import Tournament
-
-    try:
-        return Tournament.parse_date(str(raw))
-    except ValueError:
-        return None
-
-
-def _error_types(data: dict, calendar_date: date | None = None) -> list[str]:
-    """Return a list of validation error-type strings for one YAML file."""
-    errors: list[str] = []
-
-    # --- Mandatory tournament fields ---
-    if not data.get("name"):
-        errors.append("missing_name")
-    if not data.get("location"):
-        errors.append("missing_location")
-    if data.get("date_start") is None:
-        errors.append("missing_date_start")
-    if not data.get("rounds_format"):
-        errors.append("missing_rounds_format")
-    if not data.get("players_count"):
-        errors.append("missing_players_count")
-    if not data.get("winner"):
-        errors.append("missing_winner")
-    if not data.get("event_url"):
-        errors.append("missing_event_url")
-
-    # --- Mandatory deck fields ---
-    deck = data.get("deck") or {}
-    if not deck.get("crypt"):
-        errors.append("empty_crypt")
-    if not deck.get("library_sections"):
-        errors.append("empty_library")
-
-    # --- Date coherence (only when calendar_date was fetched) ---
-    if calendar_date is not None:
-        file_date = _parse_date_field(data.get("date_start"))
-        if file_date is not None and file_date != calendar_date:
-            errors.append("incoherent_date")
-
-    return errors
 
 
 def _move_to_error(path: Path, output_dir: Path, error_type: str) -> Path:
@@ -192,15 +117,15 @@ def run(args: argparse.Namespace) -> int:
                             "Could not fetch calendar date for %s: %s", path.name, exc
                         )
 
-            errs = _error_types(data, calendar_date=calendar_date)
+            errs = error_types(data, calendar_date=calendar_date)
             if not errs:
                 logger.debug("OK  %s", path.name)
                 valid += 1
                 continue
 
             # Use the first (most critical) error as the directory name; move once.
-            error_type = errs[0]
-            dest = _move_to_error(path, output_dir, error_type)
+            first_error = errs[0]
+            dest = _move_to_error(path, output_dir, first_error)
             label = ", ".join(errs)
             console.print(
                 f"[red]✗[/red] {path.name}  [{label}]  → {dest.relative_to(output_dir)}"
