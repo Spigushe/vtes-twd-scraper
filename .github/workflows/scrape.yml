@@ -66,6 +66,7 @@ jobs:
           echo "cmd=$CMD" >> "$GITHUB_OUTPUT"
 
       - name: Scrape forum
+        continue-on-error: true
         run: ${{ steps.build_cmd.outputs.cmd }}
 
       - name: Validate scraped decks
