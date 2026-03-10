@@ -24,6 +24,13 @@ deck:
   crypt_max: 44
   crypt_avg: 6.17
   crypt:
+  - count: 5
+    name: Montano
+    capacity: 11
+    disciplines: ANI DOM FOR OBT POT
+    title: 2 votes
+    clan: Lasombra
+    grouping: 3
   - count: 1
     name: Banjoko
     capacity: 5

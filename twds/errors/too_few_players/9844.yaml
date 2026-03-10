@@ -27,7 +27,8 @@ deck:
     name: Ambrosio Luis Monçada, Plenipotentiary
     capacity: 10
     disciplines: DOM OBT POT PRE aus for
-    clan: cardinal Lasombra
+    title: cardinal
+    clan: Lasombra
     grouping: 2
   - count: 2
     name: Marcus Vitel

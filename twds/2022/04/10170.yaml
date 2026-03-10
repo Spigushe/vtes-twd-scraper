@@ -1,0 +1,137 @@
+name: Secure Haven
+location: Critical Hit Games
+date_start: '2022-04-23'
+rounds_format: 2R+F
+players_count: 15
+winner: Diogo Pratas
+event_url: https://www.vekn.net/event-calendar/event/10170
+event_id: '10170'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79800-twd-secure-haven-23-04-2022
+deck:
+  name: Stanislava, the Black Cat
+  description: ''
+  crypt_count: 12
+  crypt_min: 34
+  crypt_max: 44
+  crypt_avg: 9.75
+  crypt:
+  - count: 1
+    name: Hartmut Stover
+    capacity: 10
+    disciplines: dom for CEL OBF PRO
+    title: archbishop
+    clan: Gangrel antitribu
+    grouping: 3
+  - count: 3
+    name: Ingrid Rossler
+    capacity: 9
+    disciplines: dom ANI FOR PRO
+    title: prince
+    clan: Gangrel
+    grouping: 2
+  - count: 2
+    name: Mark Decker
+    capacity: 8
+    disciplines: ani for obf pot CEL PRO
+    title: prince
+    clan: Gangrel
+    grouping: 3
+  - count: 4
+    name: Stanislava
+    capacity: 11
+    disciplines: ANI CEL DOM FOR PRO
+    title: inner circle
+    clan: Gangrel
+    grouping: 2
+  - count: 2
+    name: Xaviar (ADV)
+    capacity: 10
+    disciplines: aus cel pot ABO ANI FOR PRO
+    clan: Gangrel
+    grouping: 3
+  library_count: 83
+  library_sections:
+  - name: Master
+    count: 21
+    cards:
+    - count: 1
+      name: Backways
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Ennoia's Theater
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 3
+      name: Vessel
+    - count: 4
+      name: Villein
+    - count: 1
+      name: Wash
+    - count: 5
+      name: Zillah's Valley
+  - name: Action
+    count: 8
+    cards:
+    - count: 8
+      name: Govern the Unaligned
+  - name: Political Action
+    count: 11
+    cards:
+    - count: 1
+      name: Ancient Influence
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 2
+      name: Banishment
+    - count: 4
+      name: Kine Resources Contested
+    - count: 3
+      name: Parity Shift
+  - name: Action Modifier
+    count: 17
+    cards:
+    - count: 6
+      name: Earth Control
+    - count: 1
+      name: Enkil Cog
+    - count: 3
+      name: Forced March
+    - count: 4
+      name: Freak Drive
+    - count: 3
+      name: Instantaneous Transformation
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Rapid Change
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Murmur of the False Will
+  - name: Reaction
+    count: 12
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 2
+      name: Guard Dogs
+    - count: 2
+      name: On the Qui Vive
+    - count: 2
+      name: 'Second Tradition: Domain'
+  - name: Combat
+    count: 10
+    cards:
+    - count: 6
+      name: Earth Meld
+    - count: 4
+      name: Form of Mist

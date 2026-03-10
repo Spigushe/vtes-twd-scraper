@@ -47,6 +47,12 @@ deck:
     clan: Malkavian
     grouping: 2
   - count: 1
+    name: Samson
+    capacity: 2
+    disciplines: dom
+    clan: Ventrue antitribu
+    grouping: 2
+  - count: 1
     name: Antoinette DuChamp
     capacity: 1
     disciplines: cel pre

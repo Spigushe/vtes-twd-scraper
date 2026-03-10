@@ -47,7 +47,8 @@ deck:
     name: Elisha Tucker
     capacity: 6
     disciplines: PRE cel obf pro
-    clan: baron Ministry
+    title: baron
+    clan: Ministry
     grouping: 6
   - count: 1
     name: Aluc Romas de Leon

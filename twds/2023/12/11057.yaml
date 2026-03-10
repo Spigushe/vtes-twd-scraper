@@ -17,6 +17,20 @@ deck:
   crypt_max: 32
   crypt_avg: 6.17
   crypt:
+  - count: 3
+    name: Meshenka
+    capacity: 8
+    disciplines: ANI AUS VIC
+    title: priscus
+    clan: Tzimisce
+    grouping: 2
+  - count: 2
+    name: Sascha Vykos, The Angel of Caine (ADV)
+    capacity: 8
+    disciplines: AUS THA VIC ani dom
+    title: archbishop
+    clan: Tzimisce
+    grouping: 2
   - count: 2
     name: Corine Marcón
     capacity: 6

@@ -1,0 +1,153 @@
+name: Third Tradition
+location: Nancy, France
+date_start: '2021-10-30'
+rounds_format: 3R+F
+players_count: 30
+winner: Vincent Ripoll
+event_url: https://www.vekn.net/event-calendar/event/9895
+event_id: '9895'
+vp_comment: GW 5 + 3 VP in finals
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/79454-twd-third-tradition-nancy-france-october-30th-2021
+deck:
+  name: With a little help from Giotto
+  created_by: Ankha
+  description: ''
+  crypt_count: 12
+  crypt_min: 23
+  crypt_max: 44
+  crypt_avg: 8.5
+  crypt:
+  - count: 5
+    name: Giotto Verducci
+    capacity: 7
+    disciplines: for pot pre DAI OBF
+    clan: Baali
+    grouping: 2
+  - count: 3
+    name: Arika
+    capacity: 11
+    disciplines: aus cel DOM FOR OBF PRE
+    title: inner circle
+    clan: Ventrue
+    grouping: 2
+  - count: 2
+    name: Leandro
+    capacity: 11
+    disciplines: cel dom AUS OBF PRE
+    title: inner circle
+    clan: Malkavian
+    grouping: 2
+  - count: 1
+    name: Jaroslav Pascek
+    capacity: 10
+    disciplines: for obf CEL POT PRE
+    title: justicar
+    clan: Brujah
+    grouping: 3
+  library_count: 85
+  library_sections:
+  - name: Master
+    count: 29
+    cards:
+    - count: 3
+      name: Archon Investigation
+    - count: 6
+      name: Ashur Tablets
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Creepshow Casino
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Parthenon, The
+    - count: 2
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: Perfectionist
+    - count: 2
+      name: 'Powerbase: Montreal'
+    - count: 6
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 5
+    cards:
+    - count: 1
+      name: 'Condemnation: Mute'
+    - count: 1
+      name: Entrancement
+    - count: 1
+      name: Revelations
+    - count: 2
+      name: Unleash Hell's Fury
+  - name: Equipment
+    count: 8
+    cards:
+    - count: 8
+      name: Kaymakli Fragment
+  - name: Political Action
+    count: 9
+    cards:
+    - count: 2
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 2
+      name: Banishment
+    - count: 1
+      name: Domain Challenge
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+  - name: Action Modifier
+    count: 19
+    cards:
+    - count: 1
+      name: Conditioning
+    - count: 3
+      name: Elder Impersonation
+    - count: 2
+      name: Faceless Night
+    - count: 7
+      name: Freak Drive
+    - count: 6
+      name: Lost in Crowds
+  - name: Action Modifier/Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Swallowed by the Night
+  - name: Action Modifier/Reaction
+    count: 1
+    cards:
+    - count: 1
+      name: Scalpel Tongue
+  - name: Reaction
+    count: 4
+    cards:
+    - count: 2
+      name: Deflection
+    - count: 2
+      name: On the Qui Vive
+  - name: Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Majesty
+  - name: Event
+    count: 2
+    cards:
+    - count: 1
+      name: Scourge of the Enochians
+    - count: 1
+      name: Uncoiling, The

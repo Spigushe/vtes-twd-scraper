@@ -1,0 +1,161 @@
+name: Coupe de Paris 2022
+location: Paris, France
+date_start: '2022-03-19'
+rounds_format: 3R+F
+players_count: 18
+winner: Vincent Ripoll
+event_url: https://www.vekn.net/event-calendar/event/10122
+event_id: '10122'
+vp_comment: GW4 + 1,5 in the final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79709-twd-coupe-de-paris-france-19-mar-2022
+deck:
+  description: A new iteration of my Royal with Cheese deck (see www.vekn.fr/decks/twd.htm
+  crypt_count: 12
+  crypt_min: 33
+  crypt_max: 44
+  crypt_avg: 10.08
+  crypt:
+  - count: 5
+    name: Adana de Sforza
+    capacity: 11
+    disciplines: aus CEL OBF POT PRE PRO
+    title: inner circle
+    clan: Brujah
+    grouping: 4
+  - count: 3
+    name: Hardestadt
+    capacity: 11
+    disciplines: cel pro DOM FOR POT PRE
+    title: inner circle
+    clan: Ventrue
+    grouping: 4
+  - count: 3
+    name: Lodin (Olaf Holte)
+    capacity: 8
+    disciplines: aus pro DOM FOR PRE
+    title: prince
+    clan: Ventrue
+    grouping: 5
+  - count: 1
+    name: Malabranca
+    capacity: 9
+    disciplines: obf AUS CEL PRE PRO
+    title: archbishop
+    clan: Toreador antitribu
+    grouping: 4
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 18
+    cards:
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Pentex(TM) Subversion
+      comment: wasn't needed during this tournament
+    - count: 1
+      name: Protean
+    - count: 8
+      name: Villein
+      comment: necessary, but would work better with a more diverse crypt
+    - count: 1
+      name: Wider View
+      comment: should be doubled
+    - count: 5
+      name: Zillah's Valley
+  - name: Action
+    count: 1
+    cards:
+    - count: 1
+      name: Entrancement
+      comment: I tried to steal a Shambling Horde during the final, but it didn't work. Still useful I guess.
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+      comment: very helpful during the 3rd game to draw Villeins
+  - name: Political Action
+    count: 14
+    cards:
+    - count: 2
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 6
+      name: Banishment
+      comment: very strong to set the tempo of the game, slowing down players when needed
+    - count: 1
+      name: Conservative Agitation
+    - count: 1
+      name: Domain Challenge
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+  - name: Retainer
+    count: 2
+    cards:
+    - count: 2
+      name: Homunculus
+      comment: I added those in place of wakes. Was useful, but should probably go first on the vampires with Dominate.
+  - name: Action Modifier
+    count: 24
+    cards:
+    - count: 4
+      name: Earth Control
+    - count: 2
+      name: Enchanting Gaze
+      comment: useful for the vampires that don't have superior Protean
+    - count: 1
+      name: Enkil Cog
+    - count: 1
+      name: Horrific Countenance
+      comment: the game changing card! there were 4 in the previous iteration which was a bit too many
+    - count: 6
+      name: Instantaneous Transformation
+    - count: 4
+      name: Revelation of the Serpent
+      comment: useful for the vampires that don't have superior Protean
+    - count: 6
+      name: Voter Captivation
+  - name: Action Modifier/Combat
+    count: 3
+    cards:
+    - count: 3
+      name: Rapid Change
+  - name: Action Modifier/Reaction
+    count: 5
+    cards:
+    - count: 2
+      name: Form of the Bat
+      comment: works great with the other stealth sources, and can give a little surprise intercept
+    - count: 3
+      name: Scalpel Tongue
+      comment: 6 were too many, 3 is a bit too short, slots are scarce
+  - name: Reaction
+    count: 5
+    cards:
+    - count: 4
+      name: Deflection
+    - count: 1
+      name: On the Qui Vive
+  - name: Combat
+    count: 16
+    cards:
+    - count: 2
+      name: Claws of the Dead
+    - count: 8
+      name: Earth Meld
+    - count: 6
+      name: Form of Mist
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Fourth Cycle, The
+      comment: I was expecting more events, wasn't useful during the tournament

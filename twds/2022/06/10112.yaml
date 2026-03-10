@@ -1,0 +1,182 @@
+name: Week of Nightmares Event 4
+location: Columbus, Ohio
+date_start: '2022-06-07'
+rounds_format: 2R+F
+players_count: 15
+winner: Karl Schaefer
+event_url: https://www.vekn.net/event-calendar/event/10112
+event_id: '10112'
+vp_comment: 2gw6 + 4vp in final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79845-twd-week-of-nightmares-4
+deck:
+  name: Shilmulo Death Star
+  description: A Ravnos Death Star deck. A reworking of my other Death Star designs.  Based
+  crypt_count: 12
+  crypt_min: 4
+  crypt_max: 28
+  crypt_avg: 3.92
+  crypt:
+  - count: 1
+    name: Alexis Sorokin
+    capacity: 8
+    disciplines: for CEL CHI OBF PRO
+    clan: Ravnos
+    grouping: 4
+  - count: 1
+    name: Chavi Oraczko
+    capacity: 7
+    disciplines: nec ANI CHI FOR
+    clan: Ravnos
+    grouping: 5
+  - count: 1
+    name: Tatiana Stepanova, Alastor
+    capacity: 7
+    disciplines: ani for obf CHI PRE
+    clan: Ravnos
+    grouping: 4
+  - count: 1
+    name: Vassily Taltos
+    capacity: 6
+    disciplines: aus cel chi dom for obf
+    clan: Ravnos
+    grouping: 4
+  - count: 1
+    name: Irena
+    capacity: 5
+    disciplines: ani for pre CHI
+    clan: Ravnos
+    grouping: 5
+  - count: 1
+    name: Paul Forrest, False Prophet
+    capacity: 5
+    disciplines: chi for pre
+    clan: Ravnos
+    grouping: 4
+  - count: 1
+    name: Devyn
+    capacity: 4
+    disciplines: ani chi pre
+    clan: Ravnos
+    grouping: 4
+  library_count: 75
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Archon Investigation
+      comment: if you need it, you need it
+    - count: 1
+      name: Barrens, The
+    - count: 2
+      name: Blood Doll
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Fear of Mekhet
+      comment: not needed today; meta dependent
+    - count: 1
+      name: Fortune Teller Shop
+    - count: 1
+      name: Garibaldi-Meucci Museum
+      comment: recursion is still broken
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Infamous Insurgent
+      comment: Suddened today, but generally good
+    - count: 1
+      name: Pentex(TM) Subversion
+      comment: still good
+    - count: 1
+      name: Twilight Camp
+    - count: 1
+      name: Week of Nightmares
+  - name: Action
+    count: 15
+    cards:
+    - count: 1
+      name: 'Fee Stake: Boston'
+    - count: 1
+      name: 'Fee Stake: Corte'
+    - count: 1
+      name: 'Fee Stake: Los Angeles'
+    - count: 1
+      name: 'Fee Stake: New York'
+    - count: 1
+      name: 'Fee Stake: Perth'
+    - count: 1
+      name: 'Fee Stake: Seattle'
+    - count: 2
+      name: Illegalism
+      comment: most of the crypt can use two functions
+    - count: 7
+      name: Tumnimos
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Shilmulo Tarot
+      comment: great for setting up your hand flow
+  - name: Political Action
+    count: 16
+    cards:
+    - count: 2
+      name: Anarch Salon
+      comment: refilling Ravnos during the Week is important
+    - count: 4
+      name: Consanguineous Boon
+    - count: 1
+      name: Domain Challenge
+    - count: 2
+      name: Eat the Rich
+      comment: great in the current vote-heavy meta
+    - count: 1
+      name: Exclusion Principle
+      comment: good for Delayed Boons, never had that issue
+    - count: 1
+      name: Kine Resources Contested
+    - count: 1
+      name: Neonate Breach
+    - count: 2
+      name: Reckless Agitation
+    - count: 2
+      name: Revolutionary Council
+  - name: Action Modifier
+    count: 22
+    cards:
+    - count: 5
+      name: Adhocracy
+    - count: 2
+      name: Bewitching Oration
+      comment: stacks with Adhocracy on vote heavy tables
+    - count: 2
+      name: Cryptic Rider
+      comment: ensure the important vote cannot be Delayed
+    - count: 2
+      name: False Resonance
+    - count: 2
+      name: Fata Morgana
+    - count: 1
+      name: Forgotten Labyrinth
+    - count: 2
+      name: Mirror's Visage
+    - count: 2
+      name: Propaganda of the Deed
+      comment: cycles easily
+    - count: 3
+      name: Smoke and Mirrors
+    - count: 1
+      name: Voter Captivation
+      comment: so good even the chance of getting it is worth the slot
+  - name: Action Modifier/Combat
+    count: 6
+    cards:
+    - count: 3
+      name: Mirror Image
+    - count: 3
+      name: Occlusion

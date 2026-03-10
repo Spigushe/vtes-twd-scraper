@@ -48,6 +48,12 @@ deck:
     disciplines: POT nec
     clan: Giovanni
     grouping: 6
+  - count: 1
+    name: Volo
+    capacity: 4
+    disciplines: POT pro san
+    clan: Blood Brother
+    grouping: 5
   - count: 2
     name: Bez Dunsirn
     capacity: 2

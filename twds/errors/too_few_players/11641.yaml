@@ -17,6 +17,20 @@ deck:
   crypt_avg: 4.5
   crypt:
   - count: 1
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
     name: Martina Srnankova
     capacity: 6
     disciplines: FOR PRO ani

@@ -17,6 +17,19 @@ deck:
   crypt_avg: 7.83
   crypt:
   - count: 1
+    name: Erlik
+    capacity: 10
+    disciplines: AUS CEL FOR NEC THN
+    clan: Harbinger of Skulls
+    grouping: 3
+  - count: 1
+    name: Baron, The
+    capacity: 9
+    disciplines: FOR NEC OBF THN dom
+    title: 2 votes
+    clan: Samedi
+    grouping: 2
+  - count: 1
     name: Ignazio Giovanni
     capacity: 9
     disciplines: DOM FOR NEC POT obf
@@ -28,6 +41,13 @@ deck:
     disciplines: DOM FOR NEC POT THN
     clan: Giovanni
     grouping: 3
+  - count: 1
+    name: Unre, Keeper of Golgotha
+    capacity: 9
+    disciplines: AUS FOR NEC dom ser thn
+    title: bishop
+    clan: Harbinger of Skulls
+    grouping: 2
   - count: 1
     name: Pochtli
     capacity: 8
@@ -46,6 +66,25 @@ deck:
     disciplines: NEC POT dom obf
     clan: Giovanni
     grouping: 2
+  - count: 1
+    name: Egothha
+    capacity: 7
+    disciplines: AUS FOR NEC obf
+    clan: Harbinger of Skulls
+    grouping: 2
+  - count: 1
+    name: Gisela Harden, The Winnower
+    capacity: 7
+    disciplines: FOR NEC aus dem
+    title: priscus
+    clan: Harbinger of Skulls
+    grouping: 2
+  - count: 1
+    name: Mina Grotius
+    capacity: 6
+    disciplines: FOR NEC cel
+    clan: Harbinger of Skulls
+    grouping: 3
   - count: 1
     name: Rafaele Giovanni
     capacity: 6

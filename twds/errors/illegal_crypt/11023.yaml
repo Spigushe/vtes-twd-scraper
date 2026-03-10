@@ -15,6 +15,18 @@ deck:
   crypt_max: 40
   crypt_avg: 6.0
   crypt:
+  - count: 6
+    name: Shalmath
+    capacity: 10
+    disciplines: POT PRE TEM
+    clan: True Brujah
+    grouping: 6
+  - count: 1
+    name: Adisa
+    capacity: 3
+    disciplines: cel obf
+    clan: Banu Haqim
+    grouping: 6
   - count: 1
     name: Andre LeRoux
     capacity: 3
@@ -22,11 +34,88 @@ deck:
     clan: Toreador
     grouping: 5
   - count: 1
+    name: Alu
+    capacity: 2
+    disciplines: obf
+    clan: Banu Haqim
+    grouping: 5
+  - count: 1
+    name: Josef
+    capacity: 4
+    disciplines: ani obf obt
+    clan: Nosferatu antitribu
+    grouping: 2
+  - count: 4
+    name: Julio Martinez
+    capacity: 9
+    disciplines: nec ANI DOM OBF POT
+    clan: Nosferatu antitribu
+    grouping: 3
+  - count: 1
     name: Laurent de Valois
     capacity: 4
     disciplines: ani dom obf
     clan: Nosferatu
     grouping: 2
+  - count: 1
+    name: Nigel the Shunned
+    capacity: 5
+    disciplines: obf ANI POT
+    clan: Nosferatu antitribu
+    grouping: 2
+  - count: 1
+    name: Ox, Viceroy of the Hollows
+    capacity: 6
+    disciplines: ANI OBF POT
+    clan: Nosferatu antitribu
+    grouping: 2
+  - count: 1
+    name: Teresita, The Godmother
+    capacity: 7
+    disciplines: for ANI OBF POT
+    clan: Nosferatu antitribu
+    grouping: 3
+  - count: 2
+    name: Len Konopka
+    capacity: 8
+    disciplines: dom ser ANI OBF POT
+    clan: Nosferatu antitribu
+    grouping: 3
+  - count: 5
+    name: Stanislava
+    capacity: 11
+    disciplines: ANI CEL DOM FOR PRO
+    title: inner circle
+    clan: Gangrel
+    grouping: 2
+  - count: 1
+    name: Hartmut Stover
+    capacity: 10
+    disciplines: CEL OBF PRO dom for
+    title: archbishop
+    clan: Gangrel antitribu
+    grouping: 3
+  - count: 1
+    name: Xaviar (ADV)
+    capacity: 10
+    disciplines: ABO ANI FOR PRO aus cel pot
+    title: justicar
+    clan: Gangrel
+    grouping: 3
+  - count: 4
+    name: Ingrid Rossler
+    capacity: 9
+    disciplines: ANI FOR PRO dom
+    title: prince
+    clan: Gangrel
+    grouping: 2
+  - count: 1
+    name: Mark Decker
+    capacity: 8
+    disciplines: CEL PRO ani for obf pot
+    title: prince
+    clan: Gangrel
+    grouping: 3
   - count: 1
     name: Chandler Hungerford
     capacity: 3

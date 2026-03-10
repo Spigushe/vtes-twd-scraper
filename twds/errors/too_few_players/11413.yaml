@@ -23,6 +23,12 @@ deck:
     clan: Malkavian
     grouping: 1
   - count: 2
+    name: Badr al-Budur
+    capacity: 5
+    disciplines: OBF cel dom qui
+    clan: Banu Haqim
+    grouping: 2
+  - count: 2
     name: Didi Meyers
     capacity: 5
     disciplines: DOM aus cel obf

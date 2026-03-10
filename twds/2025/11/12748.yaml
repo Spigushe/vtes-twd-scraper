@@ -17,6 +17,19 @@ deck:
   crypt_avg: 7.92
   crypt:
   - count: 2
+    name: Elimelech the Twice-Damned
+    capacity: 11
+    disciplines: AUS DEM DOM FOR OBF pro
+    clan: Ventrue antitribu
+    grouping: 5
+  - count: 4
+    name: Aelswith, The Irresistible
+    capacity: 9
+    disciplines: AUS DOM FOR OBF pot
+    title: cardinal
+    clan: Malkavian
+    grouping: 6
+  - count: 2
     name: Abraham Mellon
     capacity: 8
     disciplines: AUS DOM OBF for tha

@@ -22,6 +22,20 @@ deck:
     disciplines: AUS DOM OBF for tha
     clan: Malkavian
     grouping: 6
+  - count: 2
+    name: Gilbert Duane
+    capacity: 7
+    disciplines: AUS DOM OBF
+    title: baron
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Andi Liu
+    capacity: 6
+    disciplines: DOM aus obf pre
+    title: prince
+    clan: Malkavian
+    grouping: 6
   - count: 1
     name: Darius Shirazi
     capacity: 6

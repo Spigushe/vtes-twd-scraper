@@ -17,10 +17,31 @@ deck:
   crypt_avg: 5.17
   crypt:
   - count: 1
+    name: María del Toro
+    capacity: 7
+    disciplines: DOM OBL POT
+    title: prince
+    clan: Lasombra
+    grouping: 6
+  - count: 1
     name: Parijat, the Dark Oracle
     capacity: 7
     disciplines: AUS DOM FOR OBL
     clan: Hecata
+    grouping: 6
+  - count: 1
+    name: Rinaldo Albizzi
+    capacity: 7
+    disciplines: DOM OBL POT pre
+    title: primogen
+    clan: Lasombra
+    grouping: 6
+  - count: 2
+    name: Kamaluddin
+    capacity: 6
+    disciplines: DOM OBL for pot
+    title: primogen
+    clan: Lasombra
     grouping: 6
   - count: 1
     name: Aintzane Arriaga

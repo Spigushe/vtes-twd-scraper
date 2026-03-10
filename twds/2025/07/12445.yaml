@@ -1,0 +1,185 @@
+name: Vtes - Last Stand
+location: Helsinki, Finland
+date_start: '2025-07-27'
+rounds_format: 2R+F
+players_count: 18
+winner: Michael Holmström
+event_url: https://www.vekn.net/event-calendar/event/12445
+event_id: '12445'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82484-twd-vtes-last-stand-helsinki-finland-27-jul-2025
+deck:
+  name: Organize for deer life
+  created_by: Mikkimon
+  description: Baron block with gehenna support and blood engine. Using jack, revolt and constant for forward motion.
+  crypt_count: 12
+  crypt_min: 24
+  crypt_max: 27
+  crypt_avg: 6.25
+  crypt:
+  - count: 1
+    name: Massimiliano
+    capacity: 7
+    disciplines: ANI FOR pro
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Valeriya Zinovieva
+    capacity: 7
+    disciplines: POT cel pro pre
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Ángel Guerrero
+    capacity: 7
+    disciplines: DOM PRO ANI
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO cel ani for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Jacques Rouge
+    capacity: 6
+    disciplines: OBF pre ani pot
+    title: baron
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Benedito, a Lanterna
+    capacity: 6
+    disciplines: POT aus obf ani
+    title: baron
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Bituin
+    capacity: 6
+    disciplines: THA cel dom ani
+    title: baron
+    clan: Tremere
+    grouping: 6
+  - count: 1
+    name: Leumeah
+    capacity: 6
+    disciplines: PRE cel pot for
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Kuyén
+    capacity: 6
+    disciplines: PRO ANI
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Atiena
+    capacity: 6
+    disciplines: CEL obf pre pot
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Elisha Tucker
+    capacity: 6
+    disciplines: PRE cel pro obf
+    title: baron
+    clan: Follower of Set
+    grouping: 6
+  - count: 1
+    name: Branimira
+    capacity: 6
+    disciplines: ANI dom pro pre
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  library_count: 80
+  library_sections:
+  - name: Master
+    count: 27
+    cards:
+    - count: 6
+      name: Ashur Tablets
+    - count: 5
+      name: Villein
+    - count: 3
+      name: Vessel
+    - count: 2
+      name: Smiling Jack, The Anarch
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Anarch Revolt
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Erciyes Fragments, The
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: Poacher's Hunting Ground
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+  - name: Action
+    count: 2
+    cards:
+    - count: 1
+      name: Army of Rats
+    - count: 1
+      name: Constant Revolution
+  - name: Equipment
+    count: 6
+    cards:
+    - count: 5
+      name: .44 Magnum
+    - count: 1
+      name: Deer Rifle
+  - name: Combat
+    count: 6
+    cards:
+    - count: 6
+      name: Concealed Weapon
+  - name: Event
+    count: 5
+    cards:
+    - count: 2
+      name: Blood Weakens
+    - count: 1
+      name: Blood Trade
+    - count: 1
+      name: Scourge of the Enochians
+    - count: 1
+      name: Slow Withering, The
+  - name: Political Action
+    count: 1
+    cards:
+    - count: 1
+      name: Revolutionary Council
+  - name: Reaction
+    count: 33
+    cards:
+    - count: 19
+      name: Organized Resistance
+    - count: 8
+      name: Bait and Switch
+    - count: 4
+      name: Protection Racket
+    - count: 1
+      name: Delaying Tactics
+    - count: 1
+      name: On the Qui Vive

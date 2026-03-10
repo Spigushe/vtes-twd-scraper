@@ -30,9 +30,22 @@ deck:
     clan: Tremere
     grouping: 6
   - count: 1
+    name: Rinaldo Albizzi
+    capacity: 7
+    disciplines: DOM OBL POT pre
+    clan: primoge Lasombra
+    grouping: 6
+  - count: 1
     name: Aintzane Arriaga
     capacity: 6
     disciplines: DOM OBL POT
+    clan: Lasombra
+    grouping: 6
+  - count: 1
+    name: Kamaluddin
+    capacity: 6
+    disciplines: DOM OBL for pot
+    title: primogen
     clan: Lasombra
     grouping: 6
   - count: 1

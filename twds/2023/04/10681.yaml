@@ -27,10 +27,38 @@ deck:
     disciplines: ANI DOM OBF pot
     clan: Nosferatu
     grouping: 6
+  - count: 2
+    name: Larissa Moreira
+    capacity: 6
+    disciplines: ANI OBF pot
+    title: primogen
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Dowager, The
+    capacity: 6
+    disciplines: ANI OBF aus pot
+    title: primogen
+    clan: Nosferatu
+    grouping: 6
   - count: 1
     name: Horace Radcliffe
     capacity: 5
     disciplines: ANI POT obf
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Jacques Rouge
+    capacity: 6
+    disciplines: OBF ani pot pre
+    title: baron
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Lenny Burkhead
+    capacity: 6
+    disciplines: ANI obf pot pre
+    title: primogen
     clan: Nosferatu
     grouping: 6
   - count: 1

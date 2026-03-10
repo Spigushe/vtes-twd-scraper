@@ -1,0 +1,125 @@
+name: 3rd Road to Pulled Fang
+location: Lichnov, Czech Republic
+date_start: '2022-02-26'
+rounds_format: 3R+F
+players_count: 19
+winner: Ondrej Marek
+event_url: https://www.vekn.net/event-calendar/event/10049
+event_id: '10049'
+vp_comment: Ondrej Marek's Tournament Winning Deck with 4 VPs in the Finals
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/79671-twd-3rd-road-to-pulled-fang-11-lichnov-czech-february-26th-2022
+deck:
+  name: Maris and Giotto - v2
+  created_by: Ondrej "Aahzmandius" Marek
+  description: ''
+  crypt_count: 12
+  crypt_min: 4
+  crypt_max: 34
+  crypt_avg: 5.0
+  crypt:
+  - count: 4
+    name: Giotto Verducci
+    capacity: 7
+    disciplines: for pot pre DAI OBF
+    clan: Baali
+    grouping: 2
+  - count: 3
+    name: Maris Streck
+    capacity: 9
+    disciplines: ani dem dom AUS OBF
+    title: justicar
+    clan: Malkavian
+    grouping: 3
+  - count: 5
+    name: Tupdog
+    capacity: 1
+    disciplines: POT VIS
+    clan: Gargoyle
+    grouping: 3
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 29
+    cards:
+    - count: 1
+      name: Anarch Troublemaker
+    - count: 9
+      name: Ashur Tablets
+    - count: 1
+      name: Direct Intervention
+    - count: 4
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: 'Golconda: Inner Peace'
+    - count: 6
+      name: Liquidation
+    - count: 1
+      name: Millicent Smith, Puritan Vampire Hunter
+    - count: 4
+      name: Parthenon, The
+    - count: 1
+      name: Pentex(TM) Subversion
+  - name: Action
+    count: 10
+    cards:
+    - count: 1
+      name: Army of Rats
+    - count: 6
+      name: Clan Impersonation
+    - count: 1
+      name: Contagion
+    - count: 2
+      name: Unleash Hell's Fury
+  - name: Ally
+    count: 18
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 11
+      name: Emerald Legionnaire
+    - count: 2
+      name: Infernal Servitor
+    - count: 4
+      name: Rock Cat
+  - name: Equipment
+    count: 5
+    cards:
+    - count: 5
+      name: Kaymakli Fragment
+  - name: Action Modifier
+    count: 21
+    cards:
+    - count: 2
+      name: Cloak the Gathering
+    - count: 2
+      name: Elder Impersonation
+    - count: 2
+      name: Faceless Night
+    - count: 2
+      name: Forgotten Labyrinth
+    - count: 9
+      name: Freak Drive
+    - count: 3
+      name: Lost in Crowds
+    - count: 1
+      name: Veil the Legions
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 3
+    cards:
+    - count: 1
+      name: Delaying Tactics
+    - count: 2
+      name: Poison Pill
+  - name: Event
+    count: 2
+    cards:
+    - count: 2
+      name: Unmasking, The

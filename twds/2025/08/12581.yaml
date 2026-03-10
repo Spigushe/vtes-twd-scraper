@@ -18,6 +18,34 @@ deck:
   crypt_max: 28
   crypt_avg: 5.08
   crypt:
+  - count: 3
+    name: Aline Gädeke
+    capacity: 7
+    disciplines: POT PRE cel
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Valeriya Zinovieva
+    capacity: 7
+    disciplines: POT cel pre pro
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Atiena
+    capacity: 6
+    disciplines: CEL obf pot pre
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Leumeah
+    capacity: 6
+    disciplines: PRE cel for pot
+    title: baron
+    clan: Brujah
+    grouping: 6
   - count: 1
     name: Elen Kamjian
     capacity: 4

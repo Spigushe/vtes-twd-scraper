@@ -28,6 +28,12 @@ deck:
     disciplines: ANI pro
     clan: Gangrel
     grouping: 3
+  - count: 2
+    name: Stick
+    capacity: 3
+    disciplines: ANI
+    clan: Nosferatu antitribu
+    grouping: 4
   - count: 1
     name: Bothwell
     capacity: 3

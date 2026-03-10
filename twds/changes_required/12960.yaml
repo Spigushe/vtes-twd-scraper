@@ -88,7 +88,7 @@ deck:
     - count: 1
       name: Puppet Master
   - name: Political Action
-    count: 16
+    count: 15
     cards:
     - count: 2
       name: Ancilla Empowerment
@@ -98,7 +98,7 @@ deck:
       name: Camarilla's Iron Fist
     - count: 1
       name: Expulsion
-    - count: 4
+    - count: 3
       name: Kine Resources Contested
     - count: 4
       name: Parity Shift

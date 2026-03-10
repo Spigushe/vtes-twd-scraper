@@ -1,0 +1,149 @@
+name: Thessaloniki's Monthly Brawl
+location: Thessaloniki - Greece
+date_start: '2025-11-22'
+rounds_format: 2R+F
+players_count: 10
+winner: Standard Constructed
+event_url: https://www.vekn.net/event-calendar/event/12799
+event_id: '12799'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82695-twd-thessaloniki-s-monthly-brawl-thessaloniki-22-11-2025
+deck:
+  name: Giovannity Fair
+  description: ''
+  crypt_count: 12
+  crypt_min: 24
+  crypt_max: 28
+  crypt_avg: 6.5
+  crypt:
+  - count: 4
+    name: Anu Diptinatpa
+    capacity: 7
+    disciplines: DOM NEC aus vic
+    clan: Nagaraja
+    grouping: 6
+  - count: 2
+    name: Martino della Passaglia
+    capacity: 7
+    disciplines: DOM NEC POT obf
+    clan: Giovanni
+    grouping: 6
+  - count: 2
+    name: Dr. Oliver Genet
+    capacity: 6
+    disciplines: DOM NEC pot
+    clan: Giovanni
+    grouping: 6
+  - count: 2
+    name: Salvatore Giovanni
+    capacity: 5
+    disciplines: NEC POT dom
+    clan: Giovanni
+    grouping: 6
+  - count: 1
+    name: Giovanni del Georgio
+    capacity: 8
+    disciplines: DOM NEC PRO POT
+    clan: Giovanni
+    grouping: 5
+  - count: 1
+    name: Accorri Giovanni
+    capacity: 6
+    disciplines: DOM POT nec ani
+    clan: Giovanni
+    grouping: 5
+  library_count: 86
+  library_sections:
+  - name: Master
+    count: 18
+    cards:
+    - count: 4
+      name: Blood Doll
+    - count: 2
+      name: Frontal Assault
+    - count: 1
+      name: Barrens, The
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Dis Pater
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Haven Uncovered
+    - count: 1
+      name: Life in the City
+    - count: 1
+      name: Mob Connections
+    - count: 1
+      name: Morgue Hunting Ground
+    - count: 1
+      name: 'Powerbase: Cape Verde'
+    - count: 1
+      name: Two Wrongs
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 10
+    cards:
+    - count: 7
+      name: Govern the Unaligned
+    - count: 2
+      name: Sudario Refraction
+    - count: 1
+      name: Graverobbing
+  - name: Action Modifier
+    count: 17
+    cards:
+    - count: 5
+      name: Call of the Hungry Dead
+    - count: 3
+      name: Bonding
+    - count: 3
+      name: Conditioning
+    - count: 3
+      name: Seduction
+    - count: 2
+      name: Sleeping Mind, The
+    - count: 1
+      name: Command of the Beast
+  - name: Action Modifier/Reaction
+    count: 3
+    cards:
+    - count: 3
+      name: Spectral Divination
+  - name: Ally
+    count: 3
+    cards:
+    - count: 1
+      name: Gianna di Canneto
+    - count: 1
+      name: Giulia Giovanni Abruzzina
+    - count: 1
+      name: Tye Cooper
+  - name: Combat
+    count: 22
+    cards:
+    - count: 4
+      name: Immortal Grapple
+    - count: 4
+      name: Spiritual Guidance
+    - count: 4
+      name: Taste of Vitae
+    - count: 4
+      name: Roundhouse
+    - count: 3
+      name: Spiritual Intervention
+    - count: 3
+      name: Torn Signpost
+  - name: Reaction
+    count: 13
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 5
+      name: On the Qui Vive
+    - count: 2
+      name: Poison Pill

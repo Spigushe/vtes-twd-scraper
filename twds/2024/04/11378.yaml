@@ -23,6 +23,12 @@ deck:
     disciplines: AUS PRE cel dom for obf
     clan: Toreador
     grouping: 2
+  - count: 2
+    name: Sheila Mezarin
+    capacity: 6
+    disciplines: AUS PRE cel for
+    clan: Toreador antitribu
+    grouping: 2
   - count: 1
     name: Victoria
     capacity: 5

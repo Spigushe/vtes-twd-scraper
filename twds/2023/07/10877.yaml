@@ -16,12 +16,40 @@ deck:
   crypt_max: 40
   crypt_avg: 7.42
   crypt:
+  - count: 4
+    name: Masika
+    capacity: 10
+    disciplines: AUS CEL PRE
+    title: primogen
+    clan: Toreador
+    grouping: 1
+  - count: 2
+    name: Anson
+    capacity: 8
+    disciplines: CEL PRE aus dom
+    title: prince
+    clan: Toreador
+    grouping: 1
+  - count: 1
+    name: Eliott Sinclair, Virtuoso Thespian
+    capacity: 7
+    disciplines: PRE aus cel
+    title: primogen
+    clan: Toreador
+    grouping: 1
   - count: 1
     name: Kallista, Master Sculptor
     capacity: 6
     disciplines: AUS CEL pre pro
     clan: Toreador
     grouping: 1
+  - count: 1
+    name: Victoria Ash
+    capacity: 6
+    disciplines: PRE aus cel dom
+    title: primogen
+    clan: Toreador
+    grouping: 2
   - count: 2
     name: Felicia Mostrom
     capacity: 5

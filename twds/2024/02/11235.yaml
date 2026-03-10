@@ -17,6 +17,12 @@ deck:
   crypt_max: 44
   crypt_avg: 9.17
   crypt:
+  - count: 5
+    name: Capuchin, The
+    capacity: 11
+    disciplines: AUS DOM FOR NEC THA THN
+    clan: Harbinger of Skulls
+    grouping: 5
   - count: 3
     name: Troglodytia
     capacity: 10

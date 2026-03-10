@@ -15,6 +15,27 @@ deck:
   crypt_max: 31
   crypt_avg: 6.08
   crypt:
+  - count: 3
+    name: Catalina Vega
+    capacity: 8
+    disciplines: AUS CEL PRE for
+    title: prince
+    clan: Toreador
+    grouping: 6
+  - count: 3
+    name: Flávio Gonçalves
+    capacity: 7
+    disciplines: CEL PRE aus for
+    title: prince
+    clan: Toreador
+    grouping: 6
+  - count: 3
+    name: Mkhokheli
+    capacity: 6
+    disciplines: PRE aus cel for
+    title: prince
+    clan: Toreador
+    grouping: 6
   - count: 1
     name: Carmelita Neillson
     capacity: 5

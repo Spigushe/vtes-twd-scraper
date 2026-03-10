@@ -19,6 +19,13 @@ deck:
   crypt_avg: 6.42
   crypt:
   - count: 3
+    name: Meshenka
+    capacity: 8
+    disciplines: ANI AUS VIC
+    title: priscus
+    clan: Tzimisce
+    grouping: 2
+  - count: 3
     name: Dragos
     capacity: 7
     disciplines: ANI AUS vic

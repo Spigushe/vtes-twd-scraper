@@ -22,6 +22,20 @@ deck:
     disciplines: ANI AUS DOM THA VIC obe
     clan: Tremere
     grouping: 5
+  - count: 3
+    name: Mistress Fanchon
+    capacity: 11
+    disciplines: AUS CEL DOM OBF THA VIC
+    title: inner circle
+    clan: Tremere
+    grouping: 4
+  - count: 5
+    name: Malgorzata
+    capacity: 9
+    disciplines: AUS DOM THA VIC pre
+    title: priscus
+    clan: Tremere antitribu
+    grouping: 4
   library_count: 78
   library_sections:
   - name: Master

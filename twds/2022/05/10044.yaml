@@ -40,6 +40,18 @@ deck:
     disciplines: red jud
     clan: Redeemer
     grouping: 4
+  - count: 4
+    name: Mina Grotius
+    capacity: 6
+    disciplines: cel FOR NEC
+    clan: Harbinger of Skulls
+    grouping: 3
+  - count: 1
+    name: Nicomedes
+    capacity: 5
+    disciplines: aus for nec vic
+    clan: Harbinger of Skulls
+    grouping: 4
   library_count: 90
   library_sections:
   - name: Master

@@ -41,9 +41,8 @@ deck:
   - count: 1
     name: Branimira
     capacity: 6
-    disciplines: ANI dompre pro
-    title: baron
-    clan: Tzimisce
+    disciplines: ANI
+    clan: dompre pro   baron   Tzimisce
     grouping: 6
   - count: 1
     name: Marialena

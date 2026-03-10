@@ -17,6 +17,69 @@ deck:
   crypt_max: 30
   crypt_avg: 6.0
   crypt:
+  - count: 1
+    name: Scout Youngwood
+    capacity: 8
+    disciplines: MEL OBF PRE for qui
+    title: 2 votes
+    clan: Daughter of Cacophony
+    grouping: 6
+  - count: 1
+    name: Sergio Bueno
+    capacity: 8
+    disciplines: OBF PRE PRO aus pot
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Alice Chen
+    capacity: 7
+    disciplines: FOR PRE dom obf
+    title: prince
+    clan: Ventrue
+    grouping: 6
+  - count: 1
+    name: Vivian VI
+    capacity: 7
+    disciplines: PRE PRO obf tha
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 2
+    name: Arishat
+    capacity: 6
+    disciplines: DAI OBF PRE
+    title: 1 vote
+    clan: Baali
+    grouping: 6
+  - count: 1
+    name: Andi Liu
+    capacity: 6
+    disciplines: DOM aus obf pre
+    title: prince
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Atiena
+    capacity: 6
+    disciplines: CEL obf pot pre
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Elisha Tucker
+    capacity: 6
+    disciplines: PRE cel obf pro
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Jacques Rouge
+    capacity: 6
+    disciplines: OBF ani pot pre
+    title: baron
+    clan: Nosferatu
+    grouping: 6
   - count: 2
     name: Dominica
     capacity: 3

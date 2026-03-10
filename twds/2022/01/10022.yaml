@@ -1,0 +1,145 @@
+name: Campionato Nazionale Italiano 2021 (Italian National Championship 2021)
+location: Bologna, Italy
+date_start: '2022-01-08'
+rounds_format: 3R+F
+players_count: 23
+winner: Gianluca Bianco
+event_url: https://www.vekn.net/event-calendar/event/10022
+event_id: '10022'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79594-twd-campionato-nazionale-italiano-2021
+deck:
+  name: TWD Campionato Nazionale 2021 [
+  created_by: Gianluca Bianco
+  description: ''
+  crypt_count: 12
+  crypt_min: 18
+  crypt_max: 27
+  crypt_avg: 5.67
+  crypt:
+  - count: 3
+    name: Massimiliano
+    capacity: 7
+    disciplines: pro ANI FOR
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 3
+    name: Casey Snyder
+    capacity: 6
+    disciplines: ani for cel PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Martina Srnankova
+    capacity: 6
+    disciplines: ani FOR PRO
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Crow
+    capacity: 5
+    disciplines: for pro tha ANI
+    clan: Gangrel
+    grouping: 5
+  - count: 1
+    name: Dario Ziggler
+    capacity: 5
+    disciplines: ani pro tha FOR
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Kamile Paukstys
+    capacity: 5
+    disciplines: ani for PRO
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Hanna Nokelainen
+    capacity: 4
+    disciplines: ani for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Nathan Turner
+    capacity: 4
+    disciplines: ani PRO
+    clan: Gangrel
+    grouping: 6
+  library_count: 75
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Ecoterrorists
+    - count: 2
+      name: Grooming the Protégé
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 2
+      name: Smiling Jack, The Anarch
+    - count: 3
+      name: Vessel
+    - count: 2
+      name: Wider View
+  - name: Action
+    count: 3
+    cards:
+    - count: 1
+      name: Army of Rats
+    - count: 2
+      name: Constant Revolution
+  - name: Equipment
+    count: 4
+    cards:
+    - count: 3
+      name: .44 Magnum
+    - count: 1
+      name: Sniper Rifle
+  - name: Retainer
+    count: 4
+    cards:
+    - count: 4
+      name: Raven Spy
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Form of the Bat
+  - name: Reaction
+    count: 37
+    cards:
+    - count: 6
+      name: Bait and Switch
+    - count: 10
+      name: Deep Ecology
+    - count: 2
+      name: Delaying Tactics
+    - count: 2
+      name: Eyes of the Beast
+    - count: 5
+      name: Eyes of the Wild
+    - count: 6
+      name: Organized Resistance
+    - count: 2
+      name: Party Out Of Bounds
+    - count: 4
+      name: Protection Racket
+  - name: Combat
+    count: 10
+    cards:
+    - count: 4
+      name: Concealed Weapon
+    - count: 2
+      name: Form of Mist
+    - count: 4
+      name: Pack Alpha

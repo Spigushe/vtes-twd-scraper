@@ -14,12 +14,32 @@ deck:
   crypt_max: 44
   crypt_avg: 7.5
   crypt:
+  - count: 4
+    name: Montano
+    capacity: 11
+    disciplines: ANI DOM FOR OBT POT
+    title: 2 votes
+    clan: Lasombra
+    grouping: 3
   - count: 1
     name: Nahir
     capacity: 10
     disciplines: ANI DOM OBT POT tha
     clan: Lasombra
     grouping: 3
+  - count: 1
+    name: Servius Marius Pustula
+    capacity: 10
+    disciplines: ANI CHI DOM OBT POT obf
+    clan: Nosferatu antitribu
+    grouping: 4
+  - count: 1
+    name: Antón de Concepción
+    capacity: 9
+    disciplines: ANI DOM OBT POT aus
+    title: archbishop
+    clan: Lasombra
+    grouping: 4
   - count: 1
     name: Conrad Adoula
     capacity: 8

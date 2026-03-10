@@ -16,6 +16,20 @@ deck:
   crypt_max: 31
   crypt_avg: 6.25
   crypt:
+  - count: 3
+    name: Adrino Manauara
+    capacity: 8
+    disciplines: ANI DOM PRO pot
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 3
+    name: Ángel Guerrero
+    capacity: 7
+    disciplines: ANI DOM PRO
+    title: baron
+    clan: Tzimisce
+    grouping: 6
   - count: 1
     name: Neserian
     capacity: 6

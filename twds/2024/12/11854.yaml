@@ -22,6 +22,27 @@ deck:
     disciplines: ANI FOR PRO aus cel
     clan: Gangrel
     grouping: 6
+  - count: 2
+    name: Massimiliano
+    capacity: 7
+    disciplines: ANI FOR pro
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 2
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 2
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
   - count: 1
     name: André the Manipulator
     capacity: 6

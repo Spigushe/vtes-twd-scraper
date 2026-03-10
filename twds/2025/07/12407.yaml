@@ -20,6 +20,13 @@ deck:
   crypt_avg: 6.25
   crypt:
   - count: 1
+    name: Roger de Camden
+    capacity: 10
+    disciplines: AUS FOR OBF OBL PRE
+    title: prince
+    clan: Hecata
+    grouping: 6
+  - count: 1
     name: Marchesa Liliana
     capacity: 9
     disciplines: ANI AUS FOR OBL dom

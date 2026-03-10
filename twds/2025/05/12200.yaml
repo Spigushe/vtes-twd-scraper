@@ -24,9 +24,30 @@ deck:
     clan: Ministry
     grouping: 6
   - count: 1
+    name: Sergio Bueno
+    capacity: 8
+    disciplines: OBF PRE PRO aus pot
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 2
+    name: Vivian VI
+    capacity: 7
+    disciplines: PRE PRO obf tha
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
     name: Crystal Lynn
     capacity: 6
     disciplines: OBF PRE PRO
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Elisha Tucker
+    capacity: 6
+    disciplines: PRE cel obf pro
+    title: baron
     clan: Ministry
     grouping: 6
   - count: 1

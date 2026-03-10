@@ -39,6 +39,12 @@ deck:
     disciplines: dai AUS FOR OBE THA VAL
     clan: Salubri
     grouping: 4
+  - count: 1
+    name: Solomon Batanea
+    capacity: 5
+    disciplines: nec AUS FOR
+    clan: Harbinger of Skulls
+    grouping: 4
   library_count: 90
   library_sections:
   - name: Master

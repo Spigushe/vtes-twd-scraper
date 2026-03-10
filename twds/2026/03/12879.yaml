@@ -1,0 +1,138 @@
+name: Portuguese National Championship 2026
+location: Coimbra, Portugal
+date_start: '2026-03-07'
+rounds_format: 3R+F
+players_count: 57
+winner: Augusto Ponce de León
+event_url: https://www.vekn.net/event-calendar/event/12879
+event_id: '12879'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82886-twd-portuguese-nc-2026-coimbra-portugal-7-mar-2026
+deck:
+  name: Malkavian Pols
+  description: ''
+  crypt_count: 12
+  crypt_min: 25
+  crypt_max: 36
+  crypt_avg: 7.67
+  crypt:
+  - count: 4
+    name: Juliet Parr
+    capacity: 9
+    disciplines: AUS DOM OBF cel pot
+    title: justicar
+    clan: Malkavian
+    grouping: 7
+  - count: 3
+    name: Alexander Silverson
+    capacity: 8
+    disciplines: AUS DOM OBF pre
+    title: prince
+    clan: Malkavian
+    grouping: 6
+  - count: 2
+    name: Jason "Son" Newberry
+    capacity: 7
+    disciplines: AUS DOM OBF pre
+    title: primogen
+    clan: Malkavian
+    grouping: 6
+  - count: 2
+    name: Andi Liu
+    capacity: 6
+    disciplines: DOM aus obf pre
+    title: prince
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Donny Kowalczyk
+    capacity: 6
+    disciplines: AUS cel dom obf
+    title: prince
+    clan: Malkavian
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 10
+    cards:
+    - count: 2
+      name: Camarilla Conclave
+    - count: 1
+      name: Dark Influences
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Jake Washington
+    - count: 2
+      name: Pentex(TM) Subversion
+  - name: Action
+    count: 14
+    cards:
+    - count: 14
+      name: Govern the Unaligned
+  - name: Political Action
+    count: 17
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 5
+      name: Camarilla's Iron Fist
+    - count: 1
+      name: Expulsion
+    - count: 4
+      name: Kine Resources Contested
+    - count: 1
+      name: My Kin Against the World
+    - count: 4
+      name: Parity Shift
+  - name: Action Modifier
+    count: 24
+    cards:
+    - count: 2
+      name: Bonding
+    - count: 3
+      name: Conditioning
+    - count: 5
+      name: Elder Impersonation
+    - count: 2
+      name: Faceless Night
+    - count: 1
+      name: Foreshadowing Destruction
+    - count: 4
+      name: Forgotten Labyrinth
+    - count: 5
+      name: Lost in Crowds
+    - count: 2
+      name: Telepathic Vote Counting
+  - name: Action Modifier/Combat
+    count: 1
+    cards:
+    - count: 1
+      name: Hide the Mind
+  - name: Reaction
+    count: 23
+    cards:
+    - count: 8
+      name: Deflection
+    - count: 2
+      name: Eyes of Argus
+    - count: 1
+      name: Mental Maze
+    - count: 4
+      name: Obedience
+    - count: 3
+      name: On the Qui Vive
+    - count: 1
+      name: Redirection
+    - count: 4
+      name: 'Second Tradition: Domain'
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Waiting Game

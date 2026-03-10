@@ -16,6 +16,12 @@ deck:
   crypt_max: 40
   crypt_avg: 5.92
   crypt:
+  - count: 5
+    name: Shalmath
+    capacity: 10
+    disciplines: POT PRE TEM
+    clan: True Brujah
+    grouping: 6
   - count: 1
     name: Zafira
     capacity: 4

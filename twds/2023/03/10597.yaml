@@ -1,0 +1,159 @@
+name: No duermas
+location: Badia del Valles, Spain
+date_start: '2023-03-05'
+rounds_format: 3R+F
+players_count: 27
+winner: Albert Dulcet Belmonte (4960023)
+event_url: https://www.vekn.net/event-calendar/event/10597
+event_id: '10597'
+vp_comment: 3VP in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80361-twd-no-duermas-2023-badia-del-valles-spain-5-march-2023
+deck:
+  name: Nobody expects the Spanish Inquisition
+  created_by: Albert Dulcet Belmonte
+  description: ''
+  crypt_count: 12
+  crypt_min: 6
+  crypt_max: 32
+  crypt_avg: 3.83
+  crypt:
+  - count: 4
+    name: Anson
+    capacity: 8
+    disciplines: CEL PRE aus dom
+    title: prince
+    clan: Toreador
+    grouping: 1
+  - count: 1
+    name: Christine Boscacci
+    capacity: 2
+    disciplines: dom vic
+    clan: Pander
+    grouping: 2
+  - count: 1
+    name: Marciana Giovanni, Investigator
+    capacity: 2
+    disciplines: dom
+    clan: Giovanni
+    grouping: 2
+  - count: 1
+    name: Mustafa Rahman
+    capacity: 2
+    disciplines: dom
+    clan: Tremere
+    grouping: 2
+  - count: 1
+    name: Ohanna
+    capacity: 2
+    disciplines: dom
+    clan: Malkavian
+    grouping: 2
+  - count: 1
+    name: Samson
+    capacity: 2
+    disciplines: dom
+    clan: Ventrue antitribu
+    grouping: 2
+  - count: 1
+    name: Royce
+    capacity: 1
+    disciplines: dom
+    clan: Pander
+    grouping: 2
+  library_count: 75
+  library_sections:
+  - name: Master
+    count: 35
+    cards:
+    - count: 12
+      name: Ashur Tablets
+    - count: 1
+      name: Charisma
+    - count: 2
+      name: Direct Intervention
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fortschritt Library
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: KRCG News Radio
+    - count: 4
+      name: Liquidation
+    - count: 2
+      name: Mobile HQ, Operation Antigen
+    - count: 1
+      name: Not to Be
+    - count: 3
+      name: Parthenon, The
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: Smiling Jack, The Anarch
+    - count: 1
+      name: Sunset Strip, Hollywood
+    - count: 1
+      name: Vampiric Disease
+  - name: Action
+    count: 1
+    cards:
+    - count: 1
+      name: Aranthebes, The Immortal
+  - name: Ally
+    count: 11
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 5
+      name: ECTU Operative
+    - count: 1
+      name: Gregory Winter
+    - count: 1
+      name: Michael Harris, the Incinerator
+    - count: 1
+      name: Ossian
+    - count: 1
+      name: Vagabond Mystic
+    - count: 1
+      name: Valerie Diaz, Antigen Commander
+  - name: Equipment
+    count: 7
+    cards:
+    - count: 3
+      name: Camera Phone
+    - count: 4
+      name: Enhanced Coagulant
+  - name: Action Modifier
+    count: 1
+    cards:
+    - count: 1
+      name: Conditioning
+  - name: Reaction
+    count: 8
+    cards:
+    - count: 5
+      name: Deflection
+    - count: 2
+      name: Delaying Tactics
+    - count: 1
+      name: On the Qui Vive
+  - name: Combat
+    count: 8
+    cards:
+    - count: 3
+      name: Concealed Weapon
+    - count: 5
+      name: Target Vitals
+  - name: Event
+    count: 4
+    cards:
+    - count: 1
+      name: Blood Weakens
+    - count: 1
+      name: FBI Special Affairs Division
+    - count: 1
+      name: Slow Withering, The
+    - count: 1
+      name: Unmasking, The

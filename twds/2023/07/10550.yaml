@@ -16,11 +16,30 @@ deck:
   crypt_max: 28
   crypt_avg: 5.5
   crypt:
+  - count: 4
+    name: Carna, The Princess Witch
+    capacity: 7
+    disciplines: AUS DOM THA
+    title: primogen
+    clan: Tremere
+    grouping: 3
+  - count: 1
+    name: Elena Mendoza Vasquez
+    capacity: 6
+    disciplines: AUS THA dom obt
+    clan: Tremere antitribu
+    grouping: 3
   - count: 1
     name: Eugenio Estevez
     capacity: 6
     disciplines: AUS THA dom for
     clan: Tremere
+    grouping: 3
+  - count: 1
+    name: Selena
+    capacity: 6
+    disciplines: AUS DOM THA
+    clan: Tremere antitribu
     grouping: 3
   - count: 1
     name: Valois Sang, The Watcher
@@ -33,6 +52,12 @@ deck:
     capacity: 5
     disciplines: AUS THA dom
     clan: Tremere
+    grouping: 2
+  - count: 1
+    name: Hannigan
+    capacity: 5
+    disciplines: AUS THA dom
+    clan: Tremere antitribu
     grouping: 2
   - count: 1
     name: Martin Franckel

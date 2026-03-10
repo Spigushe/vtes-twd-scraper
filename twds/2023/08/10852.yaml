@@ -23,10 +23,34 @@ deck:
     clan: Salubri
     grouping: 6
   - count: 1
+    name: Khurshid
+    capacity: 8
+    disciplines: AUS FOR NEC POT
+    clan: Harbinger of Skulls
+    grouping: 6
+  - count: 1
+    name: Alcoan
+    capacity: 7
+    disciplines: AUS CEL NEC for
+    clan: Harbinger of Skulls
+    grouping: 6
+  - count: 1
     name: Matthew
     capacity: 7
     disciplines: AUS FOR OBE cel
     clan: Salubri
+    grouping: 6
+  - count: 2
+    name: Hecate
+    capacity: 6
+    disciplines: AUS FOR NEC
+    clan: Harbinger of Skulls
+    grouping: 5
+  - count: 2
+    name: La Viuda Blanca
+    capacity: 6
+    disciplines: AUS NEC for obf
+    clan: Harbinger of Skulls
     grouping: 6
   library_count: 90
   library_sections:

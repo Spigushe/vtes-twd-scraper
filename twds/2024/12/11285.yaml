@@ -18,16 +18,63 @@ deck:
   crypt_max: 29
   crypt_avg: 5.67
   crypt:
+  - count: 1
+    name: Saku Pihlajamäki
+    capacity: 8
+    disciplines: CEL POT PRE for pro
+    title: baron
+    clan: Brujah
+    grouping: 6
   - count: 2
     name: Aline Gädeke
     capacity: 7
     disciplines: POT PRE cel
-    clan: "baron\tBrujah"
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Valeriya Zinovieva
+    capacity: 7
+    disciplines: POT cel pre pro
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Atiena
+    capacity: 6
+    disciplines: CEL obf pot pre
+    title: baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Leumeah
+    capacity: 6
+    disciplines: PRE cel for pot
+    title: baron
+    clan: Brujah
     grouping: 6
   - count: 1
     name: Octane
     capacity: 6
     disciplines: CEL POT PRE
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Brandon Grime
+    capacity: 5
+    disciplines: CEL pot pre tha
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Siarhei Levchenko
+    capacity: 5
+    disciplines: CEL PRE pot
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Anita Wainwright
+    capacity: 3
+    disciplines: cel pre
     clan: Brujah
     grouping: 6
   - count: 1

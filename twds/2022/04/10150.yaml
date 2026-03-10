@@ -1,0 +1,161 @@
+name: 'Fee Stake: Ponta Verde'
+location: Maceió, Brazil
+date_start: '2022-04-16'
+rounds_format: 3R+F
+players_count: 12
+winner: Alexandre Marçal de Barros Costa
+event_url: https://www.vekn.net/event-calendar/event/10150
+event_id: '10150'
+vp_comment: 3 Vp in final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79736-twd-fee-stake-maceio-brazil-17-april-2022
+deck:
+  name: The Might of Ur-Shulgi, The Shepherd
+  description: 'Basically this is a toolbox bleed with stealth deck focused on the power of Ur-Shulgi. Using murmur (redirect
+    or bleed) with blood awakening (block fails or intercept) and some shenanigans like spying mission (stealth, anti redirections
+    or extra bleed with the 5 caps), I managed to honor our mighty assamite clan with a glorious victory crushing the filthy
+    ventrue on a very tight finals (with some off the books helps from the ministry). Holding Khabar: Glory for the right
+    time for that extra 4 pool is crucial. Also Black Sunrise or mylan with enkil cog is really interesting.'
+  crypt_count: 12
+  crypt_min: 20
+  crypt_max: 44
+  crypt_avg: 8.17
+  crypt:
+  - count: 4
+    name: Ur-Shulgi, The Shepherd
+    capacity: 11
+    disciplines: aus CEL DOM OBF QUI THA
+    title: 2 votes
+    clan: Banu Haqim
+    grouping: 2
+  - count: 2
+    name: Rebekah
+    capacity: 9
+    disciplines: AUS CEL DOM OBF QUI
+    title: prince
+    clan: Banu Haqim
+    grouping: 3
+  - count: 2
+    name: Badr al-Budur
+    capacity: 5
+    disciplines: cel dom qui OBF
+    clan: Banu Haqim
+    grouping: 2
+  - count: 2
+    name: Count Ormonde
+    capacity: 5
+    disciplines: dom pre ser OBF
+    clan: Ministry
+    grouping: 2
+  - count: 1
+    name: Yazid Tamari
+    capacity: 8
+    disciplines: ani dom obf CEL QUI
+    clan: Banu Haqim
+    grouping: 3
+  - count: 1
+    name: Yazid Tamari (ADV)
+    capacity: 8
+    disciplines: ani dom obf CEL QUI
+    clan: Banu Haqim
+    grouping: 3
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 17
+    cards:
+    - count: 2
+      name: Dominate
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: 'Golconda: Inner Peace'
+    - count: 1
+      name: Market Square
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Perfectionist
+    - count: 2
+      name: Sudden Reversal
+    - count: 1
+      name: Tajdid
+    - count: 1
+      name: Underworld Hunting Ground
+    - count: 2
+      name: Vessel
+    - count: 2
+      name: Villein
+    - count: 1
+      name: Wash
+  - name: Action
+    count: 17
+    cards:
+    - count: 1
+      name: Dominate Kine
+    - count: 1
+      name: Far Mastery
+    - count: 11
+      name: Govern the Unaligned
+    - count: 3
+      name: 'Khabar: Glory'
+    - count: 1
+      name: Rutor's Hand
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Mylan Horseed
+  - name: Action Modifier
+    count: 24
+    cards:
+    - count: 5
+      name: Bonding
+    - count: 2
+      name: Deed the Heart's Desire
+    - count: 1
+      name: Enkil Cog
+    - count: 3
+      name: Faceless Night
+    - count: 2
+      name: Foreshadowing Destruction
+    - count: 6
+      name: Lost in Crowds
+    - count: 5
+      name: Spying Mission
+  - name: Action Modifier/Combat
+    count: 3
+    cards:
+    - count: 3
+      name: Swallowed by the Night
+  - name: Action Modifier/Reaction
+    count: 9
+    cards:
+    - count: 4
+      name: Blood Awakening
+    - count: 5
+      name: Murmur of the False Will
+  - name: Reaction
+    count: 12
+    cards:
+    - count: 4
+      name: Black Sunrise
+    - count: 4
+      name: Deflection
+    - count: 2
+      name: Obedience
+    - count: 2
+      name: On the Qui Vive
+  - name: Combat
+    count: 6
+    cards:
+    - count: 5
+      name: Preternatural Evasion
+    - count: 1
+      name: Taste of Death
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Scourge of the Enochians
