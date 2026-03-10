@@ -8,14 +8,13 @@ import pytest
 from bs4 import BeautifulSoup
 
 from vtes_scraper.scraper import (
-    _kunena_div_to_text,
     _get,
+    _kunena_div_to_text,
     extract_twd_from_thread,
     fetch_event_date,
     iter_thread_urls,
     scrape_forum,
 )
-
 
 # ---------------------------------------------------------------------------
 # _kunena_div_to_text

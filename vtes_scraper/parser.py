@@ -390,9 +390,9 @@ def _parse_deck_block(lines: list[str]) -> Deck:
         if not line.strip():  # empty lines between cards — skip, don't break
             idx += 1
             continue
-        card = _parse_crypt_line(line)
-        if card:
-            crypt_cards.append(card)
+        crypt_card = _parse_crypt_line(line)
+        if crypt_card:
+            crypt_cards.append(crypt_card)
         idx += 1
 
     # --- Library (mandatory) ---
@@ -419,12 +419,12 @@ def _parse_deck_block(lines: list[str]) -> Deck:
                     library_sections.append(current_section)
                     idx += 1
                     continue
-                card = _parse_library_line(line)
-                if card:
+                library_card = _parse_library_line(line)
+                if library_card:
                     if current_section is None:
                         current_section = LibrarySection(name="", count=0)
                         library_sections.append(current_section)
-                    current_section.cards.append(card)
+                    current_section.cards.append(library_card)
                 idx += 1
             break
         idx += 1

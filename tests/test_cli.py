@@ -9,19 +9,18 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from vtes_scraper.models import CryptCard, Deck, LibraryCard, LibrarySection, Tournament
-from vtes_scraper.cli import _build_parser, main
-from vtes_scraper.cli import _common
-from vtes_scraper.cli._common import _reconfigure_windows_stdio, setup_logging
+from vtes_scraper import validator
+from vtes_scraper.cli import _build_parser, _common
+from vtes_scraper.cli import fix_dates as fix_dates_cmd
+from vtes_scraper.cli import main
 from vtes_scraper.cli import parse as parse_cmd
+from vtes_scraper.cli import publish as publish_cmd
+from vtes_scraper.cli import rescrape as rescrape_cmd
 from vtes_scraper.cli import scrape as scrape_cmd
 from vtes_scraper.cli import validate as validate_cmd
-from vtes_scraper import validator
-from vtes_scraper.cli import fix_dates as fix_dates_cmd
-from vtes_scraper.cli import rescrape as rescrape_cmd
-from vtes_scraper.cli import publish as publish_cmd
+from vtes_scraper.cli._common import _reconfigure_windows_stdio, setup_logging
+from vtes_scraper.models import CryptCard, Deck, LibraryCard, LibrarySection, Tournament
 from vtes_scraper.publisher import BatchPRResult
-
 
 # ---------------------------------------------------------------------------
 # Shared fixtures
@@ -111,9 +110,11 @@ class TestBuildParser:
 
 class TestMain:
     def test_main_dispatches_and_exits(self):
-        with patch("sys.argv", ["vtes-scraper", "scrape"]), patch(
-            "vtes_scraper.cli._reconfigure_windows_stdio"
-        ), patch("vtes_scraper.cli.scrape.run", return_value=0) as mock_run:
+        with (
+            patch("sys.argv", ["vtes-scraper", "scrape"]),
+            patch("vtes_scraper.cli._reconfigure_windows_stdio"),
+            patch("vtes_scraper.cli.scrape.run", return_value=0) as mock_run,
+        ):
             with pytest.raises(SystemExit) as exc_info:
                 main()
             assert exc_info.value.code == 0
@@ -313,11 +314,12 @@ class TestScrapeCommand:
                 overwrite=False,
                 verbose=False,
             )
-            with patch(
-                "vtes_scraper.cli.scrape.scrape_forum", return_value=iter([t])
-            ), patch(
-                "vtes_scraper.cli.scrape.write_tournament_yaml",
-                side_effect=FileExistsError("exists"),
+            with (
+                patch("vtes_scraper.cli.scrape.scrape_forum", return_value=iter([t])),
+                patch(
+                    "vtes_scraper.cli.scrape.write_tournament_yaml",
+                    side_effect=FileExistsError("exists"),
+                ),
             ):
                 ret = scrape_cmd.run(args)
             assert ret == 0
@@ -332,11 +334,12 @@ class TestScrapeCommand:
                 overwrite=False,
                 verbose=False,
             )
-            with patch(
-                "vtes_scraper.cli.scrape.scrape_forum", return_value=iter([t])
-            ), patch(
-                "vtes_scraper.cli.scrape.write_tournament_yaml",
-                side_effect=Exception("error"),
+            with (
+                patch("vtes_scraper.cli.scrape.scrape_forum", return_value=iter([t])),
+                patch(
+                    "vtes_scraper.cli.scrape.write_tournament_yaml",
+                    side_effect=Exception("error"),
+                ),
             ):
                 ret = scrape_cmd.run(args)
             assert ret == 1
@@ -921,11 +924,14 @@ class TestRescrapeCommand:
                 delay=0,
                 verbose=False,
             )
-            with patch(
-                "vtes_scraper.cli.rescrape.extract_twd_from_thread", return_value=t
-            ), patch(
-                "vtes_scraper.cli.rescrape.write_tournament_yaml",
-                return_value=Path(tmpdir) / "9999.yaml",
+            with (
+                patch(
+                    "vtes_scraper.cli.rescrape.extract_twd_from_thread", return_value=t
+                ),
+                patch(
+                    "vtes_scraper.cli.rescrape.write_tournament_yaml",
+                    return_value=Path(tmpdir) / "9999.yaml",
+                ),
             ):
                 ret = rescrape_cmd.run(args)
             assert ret == 0
@@ -943,11 +949,14 @@ class TestRescrapeCommand:
                 delay=0,
                 verbose=False,
             )
-            with patch(
-                "vtes_scraper.cli.rescrape.extract_twd_from_thread", return_value=t
-            ), patch(
-                "vtes_scraper.cli.rescrape.write_tournament_yaml",
-                side_effect=Exception("write failed"),
+            with (
+                patch(
+                    "vtes_scraper.cli.rescrape.extract_twd_from_thread", return_value=t
+                ),
+                patch(
+                    "vtes_scraper.cli.rescrape.write_tournament_yaml",
+                    side_effect=Exception("write failed"),
+                ),
             ):
                 ret = rescrape_cmd.run(args)
             assert ret == 1

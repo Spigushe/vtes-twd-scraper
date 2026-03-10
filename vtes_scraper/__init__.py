@@ -1,4 +1,17 @@
 from vtes_scraper.output import write_tournament_yaml
-from vtes_scraper.scraper import scrape_forum
+from vtes_scraper.scraper import (
+    ICON_DEFAULT,
+    ICON_IDEA,
+    ICON_MERGED,
+    ICON_SOLVED,
+    scrape_forum,
+)
 
-__all__ = ["scrape_forum", "write_tournament_yaml"]
+__all__ = [
+    "scrape_forum",
+    "write_tournament_yaml",
+    "ICON_DEFAULT",
+    "ICON_IDEA",
+    "ICON_MERGED",
+    "ICON_SOLVED",
+]

@@ -10,11 +10,18 @@ Key HTML structure (Kunena crypsis template):
   - Section separators in decks: <hr class="bbcode_rule"> (not plain text dashes)
   - Topic links on index page: <a> with href matching /forum/event-reports-and-twd/DIGITS-slug
   - Pagination: ?limitstart=N (Kunena/Joomla convention)
+  - Topic icons: <img src=".../media/kunena/topic_icons/default/user/<name>.png">
+      - idea.png    → informational post only, skip scraping
+      - merged.png  → changes requested, scrape to changes_required/
+      - solved.png  → already in TWD, scrape as usual
+      - default.png → not yet in TWD, scrape as usual
 
 Strategy:
-  1. Paginate the forum index to collect thread URLs.
-  2. For each thread, fetch the first post (div.kmsg) and convert to plain text.
-  3. Pass the raw text to parser.parse_twd_text().
+  1. Paginate the forum index to collect thread URLs + their topic icon.
+  2. Skip topics with idea icon (info only).
+  3. For each remaining thread, fetch the first post (div.kmsg) and convert to plain text.
+  4. Pass the raw text to parser.parse_twd_text().
+  5. Merged topics are flagged so the caller can write them to changes_required/.
 """
 
 from __future__ import annotations
@@ -33,6 +40,25 @@ from bs4 import BeautifulSoup, Tag
 
 from vtes_scraper.models import Tournament
 from vtes_scraper.parser import parse_twd_text
+
+# ---------------------------------------------------------------------------
+# Topic icon types
+# ---------------------------------------------------------------------------
+# Icons are served from https://www.vekn.net/media/kunena/topic_icons/default/user/
+# Each constant's value matches the icon filename stem.
+
+#: Changes have been requested — scrape and store in changes_required/.
+ICON_MERGED = "merged"
+
+#: Deck already added to the official TWD — scrape and store as usual.
+ICON_SOLVED = "solved"
+
+#: Informational post only — do not scrape.
+ICON_IDEA = "idea"
+
+#: Not yet in TWD — scrape and store as usual.
+ICON_DEFAULT = "default"
+
 
 logger = logging.getLogger(__name__)
 
@@ -108,6 +134,65 @@ def _kunena_div_to_text(div: Tag) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Topic icon detection
+# ---------------------------------------------------------------------------
+
+# Base URL prefix for Kunena user topic icons on vekn.net
+_ICON_BASE = "media/kunena/topic_icons/default/user/"
+
+# Ordered mapping: icon filename stem → constant.
+# Checked against <img src="..."> in the topic row.
+_ICON_SRC_MAP: tuple[tuple[str, str], ...] = (
+    ("merged", ICON_MERGED),
+    ("solved", ICON_SOLVED),
+    ("idea", ICON_IDEA),
+    ("default", ICON_DEFAULT),
+)
+
+
+def _detect_topic_icon(link_tag: Tag) -> str | None:
+    """
+    Given a topic ``<a>`` tag from the forum index, detect its icon type.
+
+    Walks up the DOM tree to find the nearest row container (``<tr>``,
+    ``<li>``, or ``<div>`` whose class hints at a topic row), then looks
+    for an ``<img>`` whose ``src`` contains the Kunena user-icon path.
+
+    Returns one of :data:`ICON_MERGED`, :data:`ICON_SOLVED`,
+    :data:`ICON_IDEA`, :data:`ICON_DEFAULT`, or ``None`` if no
+    recognised icon is found.
+    """
+    # Walk up to find the row container
+    row: Tag | None = None
+    node = link_tag.parent
+    for _ in range(8):
+        if node is None or node.name in ("html", "body", "[document]"):
+            break
+        name = getattr(node, "name", "") or ""
+        classes = " ".join(node.get("class") or []).lower()
+        if name in ("tr", "li") or any(
+            kw in classes for kw in ("krow", "ktopic", "row", "topic-item", "klist")
+        ):
+            row = node
+            break
+        node = node.parent
+
+    search_root = row if row is not None else link_tag.parent
+    if not search_root:
+        return None
+
+    for img in search_root.find_all("img"):
+        src = str(img.get("src") or "").lower()
+        if _ICON_BASE not in src:
+            continue
+        for stem, icon_type in _ICON_SRC_MAP:
+            if f"{stem}.png" in src:
+                return icon_type
+
+    return None
+
+
+# ---------------------------------------------------------------------------
 # Forum index traversal
 # ---------------------------------------------------------------------------
 
@@ -116,12 +201,15 @@ def iter_thread_urls(
     client: httpx.Client,
     max_pages: int | None = None,
     delay: float = DEFAULT_DELAY_SECONDS,
-) -> Iterator[str]:
+) -> Iterator[tuple[str, str | None]]:
     """
-    Yield all thread URLs from the forum index, paginating automatically.
+    Yield ``(thread_url, icon_type)`` pairs from the forum index.
 
     Kunena pagination: ?limitstart=0, ?limitstart=20, ?limitstart=40, ...
     Topic links are <a href="/forum/event-reports-and-twd/DIGITS-slug">
+
+    ``icon_type`` is one of :data:`ICON_IDEA`, :data:`ICON_MERGED`, or ``None``
+    (no recognised icon).
     """
     page = 0
     seen: set[str] = set()
@@ -149,7 +237,8 @@ def iter_thread_urls(
             if full_url not in seen:
                 seen.add(full_url)
                 found_new = True
-                yield full_url
+                icon = _detect_topic_icon(tag)
+                yield full_url, icon
 
         if not found_new:
             logger.info("No new topics found at limitstart=%d, stopping.", limitstart)
@@ -275,27 +364,40 @@ def fetch_event_date(
 def scrape_forum(
     max_pages: int | None = None,
     delay: float = DEFAULT_DELAY_SECONDS,
-) -> Iterator[Tournament]:
+) -> Iterator[tuple[Tournament, str | None]]:
     """
     Full scrape pipeline: index → threads → parsed Tournament objects.
+
+    Topics with an idea icon (:data:`ICON_IDEA`) are skipped entirely —
+    they contain informational content, not TWD reports.
 
     Args:
         max_pages: limit forum index pages scraped (None = all)
         delay: polite crawl delay in seconds between requests
 
     Yields:
-        Tournament objects for each successfully parsed TWD post.
+        ``(Tournament, icon_type)`` pairs for each successfully parsed TWD post.
+        ``icon_type`` is :data:`ICON_MERGED` when changes are requested
+        (caller should write to ``changes_required/``), or one of
+        :data:`ICON_SOLVED` / :data:`ICON_DEFAULT` / ``None`` for normal topics.
     """
     with httpx.Client(headers=HEADERS, timeout=60.0) as client:
-        for thread_url in iter_thread_urls(client, max_pages=max_pages, delay=delay):
+        for thread_url, icon in iter_thread_urls(
+            client, max_pages=max_pages, delay=delay
+        ):
+            if icon == ICON_IDEA:
+                logger.info("Skipped (idea/info icon): %s", thread_url)
+                continue
+
             tournament = extract_twd_from_thread(client, thread_url, delay=delay)
             if tournament:
                 logger.info(
-                    "Scraped: [%s] %s — %s",
+                    "Scraped%s: [%s] %s — %s",
+                    " (fix required)" if icon == ICON_MERGED else "",
                     tournament.event_id,
                     tournament.name,
                     tournament.date_start,
                 )
-                yield tournament
+                yield tournament, icon
             else:
                 logger.debug("Skipped (no valid TWD): %s", thread_url)
