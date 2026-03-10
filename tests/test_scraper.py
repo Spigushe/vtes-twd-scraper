@@ -109,8 +109,9 @@ class TestIterThreadUrls:
 
         mock_client = MagicMock()
         with patch("vtes_scraper.scraper._get", side_effect=[page1, page2]):
-            urls = list(iter_thread_urls(mock_client, delay=0))
+            results = list(iter_thread_urls(mock_client, delay=0))
 
+        urls = [url for url, _ in results]
         assert (
             "https://www.vekn.net/forum/event-reports-and-twd/12345-test-tournament"
             in urls

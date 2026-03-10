@@ -300,7 +300,9 @@ class TestScrapeCommand:
                 overwrite=False,
                 verbose=False,
             )
-            with patch("vtes_scraper.cli.scrape.scrape_forum", return_value=iter([t])):
+            with patch(
+                "vtes_scraper.cli.scrape.scrape_forum", return_value=iter([(t, None)])
+            ):
                 ret = scrape_cmd.run(args)
             assert ret == 0
 
@@ -315,7 +317,10 @@ class TestScrapeCommand:
                 verbose=False,
             )
             with (
-                patch("vtes_scraper.cli.scrape.scrape_forum", return_value=iter([t])),
+                patch(
+                    "vtes_scraper.cli.scrape.scrape_forum",
+                    return_value=iter([(t, None)]),
+                ),
                 patch(
                     "vtes_scraper.cli.scrape.write_tournament_yaml",
                     side_effect=FileExistsError("exists"),
@@ -335,7 +340,10 @@ class TestScrapeCommand:
                 verbose=False,
             )
             with (
-                patch("vtes_scraper.cli.scrape.scrape_forum", return_value=iter([t])),
+                patch(
+                    "vtes_scraper.cli.scrape.scrape_forum",
+                    return_value=iter([(t, None)]),
+                ),
                 patch(
                     "vtes_scraper.cli.scrape.write_tournament_yaml",
                     side_effect=Exception("error"),
