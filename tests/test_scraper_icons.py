@@ -13,7 +13,6 @@ import pytest
 from bs4 import BeautifulSoup
 
 import vtes_scraper.cli.scrape as _scrape_mod  # import directly, bypasses cli/__init__
-
 from vtes_scraper.scraper import (
     ICON_DEFAULT,
     ICON_IDEA,

@@ -34,7 +34,7 @@ import time
 from collections.abc import Iterator
 from datetime import date
 from typing import cast
-from urllib.parse import urljoin
+from urllib.parse import quote, urljoin
 
 import httpx
 from bs4 import BeautifulSoup, Tag
@@ -69,6 +69,7 @@ logger = logging.getLogger(__name__)
 
 FORUM_BASE = "https://www.vekn.net"
 FORUM_INDEX = "https://www.vekn.net/forum/event-reports-and-twd"
+VEKN_PLAYERS_URL = "https://www.vekn.net/event-calendar/players"
 
 # Kunena paginates with ?limitstart=N
 TOPICS_PER_PAGE = 20
@@ -396,6 +397,79 @@ def fetch_event_date(
             pass
 
     logger.warning("Could not extract date from event page: %s", event_url)
+    return None
+
+
+def fetch_player(
+    client: httpx.Client,
+    name: str,
+    delay: float = DEFAULT_DELAY_SECONDS,
+) -> tuple[str, str] | None:
+    """
+    Look up a player by name in the VEKN member database.
+
+    Queries ``https://www.vekn.net/event-calendar/players?name=<name>&sort=constructed``
+    and parses the result table for a matching entry.
+
+    Returns:
+        ``(player_name, vekn_number)`` if exactly one player is found, ``None`` otherwise.
+    """
+    url = f"{VEKN_PLAYERS_URL}?name={quote(name)}&sort=constructed"
+    soup = _get(client, url, delay)
+
+    # The VEKN player search renders results in an HTML table.
+    # We look for the first <table> that contains player rows and extract
+    # the name and member number columns.
+    for table in soup.find_all("table"):
+        rows = table.find_all("tr")
+        # Need at least a header row and one data row
+        if len(rows) < 2:
+            continue
+
+        # Determine column indices from header row
+        header_cells = rows[0].find_all(["th", "td"])
+        header_texts = [cell.get_text(strip=True).lower() for cell in header_cells]
+
+        name_col: int | None = None
+        number_col: int | None = None
+        for idx, text in enumerate(header_texts):
+            if "name" in text and name_col is None:
+                name_col = idx
+            if "number" in text or "vekn" in text or "member" in text:
+                if number_col is None:
+                    number_col = idx
+
+        if name_col is None or number_col is None:
+            continue
+
+        # Collect data rows
+        results: list[tuple[str, str]] = []
+        for row in rows[1:]:
+            cells = row.find_all(["td", "th"])
+            if len(cells) <= max(name_col, number_col):
+                continue
+            player_name = cells[name_col].get_text(strip=True)
+            player_number = cells[number_col].get_text(strip=True)
+            if player_name and player_number:
+                results.append((player_name, player_number))
+
+        if len(results) == 1:
+            return results[0]
+
+        # Multiple results — try exact case-insensitive name match
+        name_lower = name.lower()
+        exact = [r for r in results if r[0].lower() == name_lower]
+        if len(exact) == 1:
+            return exact[0]
+
+        if results:
+            logger.debug(
+                "Player search for %r returned %d results — skipping ambiguous match",
+                name,
+                len(results),
+            )
+
+    logger.debug("No player found for %r", name)
     return None
 
 

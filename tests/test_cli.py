@@ -706,6 +706,265 @@ class TestValidateCommand:
             assert "missing_name" in str(dest)
             assert not src.exists()
 
+    # ------------------------------------------------------------------
+    # _name_without_digits
+    # ------------------------------------------------------------------
+
+    def test_name_without_digits_plain_name(self):
+        assert validate_cmd._name_without_digits("Jane Doe") == "Jane Doe"
+
+    def test_name_without_digits_name_with_number(self):
+        assert (
+            validate_cmd._name_without_digits("Frederic Pin 3200006") == "Frederic Pin"
+        )
+
+    def test_name_without_digits_only_digits(self):
+        assert validate_cmd._name_without_digits("12345") == ""
+
+    def test_name_without_digits_mixed(self):
+        assert validate_cmd._name_without_digits("John 42 Smith") == "John Smith"
+
+    # ------------------------------------------------------------------
+    # _name_without_accents helper
+    # ------------------------------------------------------------------
+
+    def test_name_without_accents_plain(self):
+        assert validate_cmd._name_without_accents("Jane Doe") == "Jane Doe"
+
+    def test_name_without_accents_with_diacritics(self):
+        assert validate_cmd._name_without_accents("Frédéric Pïn") == "Frederic Pin"
+
+    def test_name_without_accents_with_non_word_chars(self):
+        assert validate_cmd._name_without_accents("O'Brien") == "OBrien"
+
+    def test_name_without_accents_already_ascii(self):
+        assert validate_cmd._name_without_accents("John Smith") == "John Smith"
+
+    # ------------------------------------------------------------------
+    # --check-players argument registered
+    # ------------------------------------------------------------------
+
+    def test_register_check_players_arg(self):
+        parser = argparse.ArgumentParser()
+        sub = parser.add_subparsers(dest="command")
+        validate_cmd.register(sub)
+        args = parser.parse_args(["validate", "--check-players"])
+        assert args.check_players is True
+
+    def test_register_check_players_default_false(self):
+        parser = argparse.ArgumentParser()
+        sub = parser.add_subparsers(dest="command")
+        validate_cmd.register(sub)
+        args = parser.parse_args(["validate"])
+        assert args.check_players is False
+
+    # ------------------------------------------------------------------
+    # _check_player logic
+    # ------------------------------------------------------------------
+
+    def test_check_player_found_exact_name(self):
+        """When fetch_player returns a match with the same name, vekn_number is added."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text(VALID_YAML, encoding="utf-8")
+            data = validate_cmd._load_yaml(yaml_file)
+            mock_client = MagicMock()
+            with patch(
+                "vtes_scraper.cli.validate.fetch_player",
+                return_value=("Jane Doe", "3940009"),
+            ):
+                found, moved = validate_cmd._check_player(
+                    mock_client, yaml_file, data, Path(tmpdir), 0, logging.getLogger()
+                )
+            assert found is True
+            assert moved is False
+            updated = validate_cmd._load_yaml(yaml_file)
+            assert updated["vekn_number"] == "3940009"
+            assert updated["winner"] == "Jane Doe"
+
+    def test_check_player_found_after_digit_strip(self):
+        """When initial search fails but digit-stripped name succeeds, winner is updated."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            dirty_yaml = VALID_YAML.replace(
+                "winner: Jane Doe", "winner: Jane Doe 3940009"
+            )
+            yaml_file.write_text(dirty_yaml, encoding="utf-8")
+            data = validate_cmd._load_yaml(yaml_file)
+
+            def fake_fetch_player(client, name, delay=0):
+                if "3940009" in name:
+                    return None
+                return ("Jane Doe", "3940009")
+
+            mock_client = MagicMock()
+            with patch(
+                "vtes_scraper.cli.validate.fetch_player", side_effect=fake_fetch_player
+            ):
+                found, moved = validate_cmd._check_player(
+                    mock_client, yaml_file, data, Path(tmpdir), 0, logging.getLogger()
+                )
+            assert found is True
+            assert moved is False
+            updated = validate_cmd._load_yaml(yaml_file)
+            assert updated["vekn_number"] == "3940009"
+            assert updated["winner"] == "Jane Doe"
+
+    def test_check_player_found_after_accent_strip(self):
+        """When original and digit-stripped searches fail, accent-stripped name succeeds."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            accented_yaml = VALID_YAML.replace("winner: Jane Doe", "winner: Jàne Döe")
+            yaml_file.write_text(accented_yaml, encoding="utf-8")
+            data = validate_cmd._load_yaml(yaml_file)
+
+            def fake_fetch_player(client, name, delay=0):
+                # Only the plain ASCII form matches
+                if name == "Jane Doe":
+                    return ("Jane Doe", "3940009")
+                return None
+
+            mock_client = MagicMock()
+            with patch(
+                "vtes_scraper.cli.validate.fetch_player", side_effect=fake_fetch_player
+            ):
+                found, moved = validate_cmd._check_player(
+                    mock_client, yaml_file, data, Path(tmpdir), 0, logging.getLogger()
+                )
+            assert found is True
+            assert moved is False
+            updated = validate_cmd._load_yaml(yaml_file)
+            assert updated["vekn_number"] == "3940009"
+            assert updated["winner"] == "Jane Doe"
+
+    def test_check_player_not_found_moves_to_unknown_winner(self):
+        """When fetch_player returns None for both attempts, file is moved."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text(VALID_YAML, encoding="utf-8")
+            data = validate_cmd._load_yaml(yaml_file)
+            mock_client = MagicMock()
+            with patch("vtes_scraper.cli.validate.fetch_player", return_value=None):
+                found, moved = validate_cmd._check_player(
+                    mock_client, yaml_file, data, Path(tmpdir), 0, logging.getLogger()
+                )
+            assert found is False
+            assert moved is True
+            assert not yaml_file.exists()
+            assert (Path(tmpdir) / "errors" / "unknown_winner" / "test.yaml").exists()
+
+    def test_check_player_skips_when_winner_empty(self):
+        """An empty winner field is skipped gracefully without network calls."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text(VALID_YAML, encoding="utf-8")
+            data = validate_cmd._load_yaml(yaml_file)
+            data["winner"] = ""
+            mock_client = MagicMock()
+            with patch("vtes_scraper.cli.validate.fetch_player") as mock_fp:
+                found, moved = validate_cmd._check_player(
+                    mock_client, yaml_file, data, Path(tmpdir), 0, logging.getLogger()
+                )
+            mock_fp.assert_not_called()
+            assert found is False
+            assert moved is False
+
+    def test_check_player_network_error_is_non_fatal(self):
+        """A network exception during player lookup does not move the file."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text(VALID_YAML, encoding="utf-8")
+            data = validate_cmd._load_yaml(yaml_file)
+            mock_client = MagicMock()
+            with patch(
+                "vtes_scraper.cli.validate.fetch_player",
+                side_effect=Exception("network error"),
+            ):
+                found, moved = validate_cmd._check_player(
+                    mock_client, yaml_file, data, Path(tmpdir), 0, logging.getLogger()
+                )
+            assert found is False
+            assert moved is False
+            assert yaml_file.exists()
+
+    # ------------------------------------------------------------------
+    # run() with --check-players
+    # ------------------------------------------------------------------
+
+    def test_run_check_players_skips_when_vekn_number_present(self):
+        """Files that already have a vekn_number are not re-checked."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_with_vekn = VALID_YAML + "vekn_number: '1234567'\n"
+            yaml_file.write_text(yaml_with_vekn, encoding="utf-8")
+            args = argparse.Namespace(
+                output_dir=Path(tmpdir),
+                check_dates=False,
+                check_players=True,
+                delay=0,
+                verbose=False,
+            )
+            with patch("vtes_scraper.cli.validate.fetch_player") as mock_fp:
+                ret = validate_cmd.run(args)
+            mock_fp.assert_not_called()
+            assert ret == 0
+
+    def test_run_check_players_found(self):
+        """run() with --check-players writes vekn_number on success."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text(VALID_YAML, encoding="utf-8")
+            args = argparse.Namespace(
+                output_dir=Path(tmpdir),
+                check_dates=False,
+                check_players=True,
+                delay=0,
+                verbose=False,
+            )
+            with patch(
+                "vtes_scraper.cli.validate.fetch_player",
+                return_value=("Jane Doe", "3940009"),
+            ):
+                ret = validate_cmd.run(args)
+            assert ret == 0
+            updated = validate_cmd._load_yaml(yaml_file)
+            assert updated["vekn_number"] == "3940009"
+
+    def test_run_check_players_not_found_moves_file(self):
+        """run() with --check-players moves unknown winners to errors/unknown_winner."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text(VALID_YAML, encoding="utf-8")
+            args = argparse.Namespace(
+                output_dir=Path(tmpdir),
+                check_dates=False,
+                check_players=True,
+                delay=0,
+                verbose=False,
+            )
+            with patch("vtes_scraper.cli.validate.fetch_player", return_value=None):
+                ret = validate_cmd.run(args)
+            assert ret == 1
+            assert not yaml_file.exists()
+            assert (Path(tmpdir) / "errors" / "unknown_winner" / "test.yaml").exists()
+
+    def test_run_check_players_invalid_file_not_checked(self):
+        """Invalid files are moved by schema validation before player check runs."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "bad.yaml"
+            yaml_file.write_text(INVALID_YAML, encoding="utf-8")
+            args = argparse.Namespace(
+                output_dir=Path(tmpdir),
+                check_dates=False,
+                check_players=True,
+                delay=0,
+                verbose=False,
+            )
+            with patch("vtes_scraper.cli.validate.fetch_player") as mock_fp:
+                ret = validate_cmd.run(args)
+            mock_fp.assert_not_called()
+            assert ret == 1
+
 
 # ---------------------------------------------------------------------------
 # fix_dates command

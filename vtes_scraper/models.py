@@ -77,6 +77,7 @@ class Tournament(BaseModel):
     rounds_format: str  # "2R+F" or "3R+F"
     players_count: int
     winner: str
+    vekn_number: str | None = None  # VEKN member number, e.g. '3940009'
     event_url: str  # https://www.vekn.net/event-calendar/event/XXXX
 
     # --- Derived ---
