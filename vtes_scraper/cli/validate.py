@@ -11,6 +11,7 @@ import io
 import logging
 import re
 import shutil
+import unicodedata
 from datetime import date
 from pathlib import Path
 
@@ -50,6 +51,15 @@ def _move_to_error(path: Path, output_dir: Path, error_type: str) -> Path:
 def _name_without_digits(name: str) -> str:
     """Return *name* with digit sequences stripped and extra whitespace collapsed."""
     return re.sub(r"\s+", " ", re.sub(r"\d+", "", name)).strip()
+
+
+def _name_without_accents(name: str) -> str:
+    """Return *name* with diacritics stripped and non-word, non-space characters removed."""
+    # NFD decomposition splits accented chars into base + combining marks;
+    # encoding to ASCII then drops the combining marks.
+    ascii_name = unicodedata.normalize("NFD", name).encode("ascii", "ignore").decode("ascii")
+    # Drop any remaining non-word, non-space chars (hyphens, apostrophes, etc.)
+    return re.sub(r"\s+", " ", re.sub(r"[^\w\s]", "", ascii_name)).strip()
 
 
 def _check_player(
@@ -92,6 +102,18 @@ def _check_player(
             except Exception as exc:
                 logger.warning(
                     "Could not check player (clean name) for %s: %s", path.name, exc
+                )
+                result = None
+
+    if result is None:
+        # Step 3: retry with accents and non-word characters stripped.
+        ascii_name = _name_without_accents(winner)
+        if ascii_name and ascii_name != winner:
+            try:
+                result = fetch_player(client, ascii_name, delay=delay)
+            except Exception as exc:
+                logger.warning(
+                    "Could not check player (ascii name) for %s: %s", path.name, exc
                 )
                 result = None
 

@@ -723,6 +723,22 @@ class TestValidateCommand:
         assert validate_cmd._name_without_digits("John 42 Smith") == "John Smith"
 
     # ------------------------------------------------------------------
+    # _name_without_accents helper
+    # ------------------------------------------------------------------
+
+    def test_name_without_accents_plain(self):
+        assert validate_cmd._name_without_accents("Jane Doe") == "Jane Doe"
+
+    def test_name_without_accents_with_diacritics(self):
+        assert validate_cmd._name_without_accents("Frédéric Pïn") == "Frederic Pin"
+
+    def test_name_without_accents_with_non_word_chars(self):
+        assert validate_cmd._name_without_accents("O'Brien") == "OBrien"
+
+    def test_name_without_accents_already_ascii(self):
+        assert validate_cmd._name_without_accents("John Smith") == "John Smith"
+
+    # ------------------------------------------------------------------
     # --check-players argument registered
     # ------------------------------------------------------------------
 
@@ -776,6 +792,31 @@ class TestValidateCommand:
                 if "3940009" in name:
                     return None
                 return ("Jane Doe", "3940009")
+
+            mock_client = MagicMock()
+            with patch("vtes_scraper.cli.validate.fetch_player", side_effect=fake_fetch_player):
+                found, moved = validate_cmd._check_player(
+                    mock_client, yaml_file, data, Path(tmpdir), 0, logging.getLogger()
+                )
+            assert found is True
+            assert moved is False
+            updated = validate_cmd._load_yaml(yaml_file)
+            assert updated["vekn_number"] == "3940009"
+            assert updated["winner"] == "Jane Doe"
+
+    def test_check_player_found_after_accent_strip(self):
+        """When original and digit-stripped searches fail, accent-stripped name succeeds."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            accented_yaml = VALID_YAML.replace("winner: Jane Doe", "winner: Jàne Döe")
+            yaml_file.write_text(accented_yaml, encoding="utf-8")
+            data = validate_cmd._load_yaml(yaml_file)
+
+            def fake_fetch_player(client, name, delay=0):
+                # Only the plain ASCII form matches
+                if name == "Jane Doe":
+                    return ("Jane Doe", "3940009")
+                return None
 
             mock_client = MagicMock()
             with patch("vtes_scraper.cli.validate.fetch_player", side_effect=fake_fetch_player):
