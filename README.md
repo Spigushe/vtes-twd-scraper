@@ -32,6 +32,12 @@ vtes-scraper scrape
 # Scrape first 3 pages only, overwrite existing files
 vtes-scraper scrape --max-pages 3 --overwrite
 
+# Start scraping from page 5 (skip pages 0–4)
+vtes-scraper scrape --start-page 5
+
+# Scrape pages 5 and 6 only (useful to resume or target a range)
+vtes-scraper scrape --start-page 5 --max-pages 2
+
 # Parse a single local .txt file
 vtes-scraper parse decks/8470.txt
 
@@ -54,7 +60,7 @@ GITHUB_TOKEN=ghp_xxx python -m vtes_scraper publish
 from vtes_scraper import scrape_forum, write_tournament_yaml
 from pathlib import Path
 
-for tournament in scrape_forum(max_pages=2):
+for tournament in scrape_forum(max_pages=2, start_page=5):
     write_tournament_yaml(tournament, output_dir=Path("output"))
 ```
 
@@ -72,9 +78,16 @@ ruff format vtes_scraper/ tests/
 ## GitHub Action
 
 The workflow in `.github/workflows/scrape.yml`:
+
 - Runs daily at 06:00 UTC
 - Can be triggered manually with optional `max_pages` and `overwrite` inputs
 - Commits new YAML files to the repository automatically
+
+The workflow in `.github/workflows/publish.yml`:
+
+- Runs weekly at 08:00 UTC
+- Can be triggered manually
+- Creates PRs to the GiottoVerducci/TWD repository with new decks
 
 ## YAML output example
 
@@ -111,7 +124,7 @@ deck:
 
 ## Project structure
 
-```
+```txt
 vtes-twd-scraper/
 ├── vtes_scraper/
 │   ├── cli/
@@ -141,5 +154,6 @@ vtes-twd-scraper/
 ## Notes
 
 - The scraper respects a 1.5s delay between requests by default (`--delay`).
+- Use `--start-page` to resume an interrupted run or target a specific page range. Pages are 0-indexed (page 0 = `limitstart=0`, page 1 = `limitstart=20`, etc.).
 - The `User-Agent` header identifies the bot to the server.
 - Always verify `robots.txt` and VEKN forum terms before large-scale scraping.

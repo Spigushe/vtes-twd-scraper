@@ -19,7 +19,8 @@ Key HTML structure (Kunena crypsis template):
 Strategy:
   1. Paginate the forum index to collect thread URLs + their topic icon.
   2. Skip topics with idea icon (info only).
-  3. For each remaining thread, fetch the first post (div.kmsg) and convert to plain text.
+  3. For each remaining thread, paginate through thread pages (limitstart=0, 20, 40, ...)
+     and check each post (div.kmsg) until one parses successfully as a TWD.
   4. Pass the raw text to parser.parse_twd_text().
   5. Merged topics are flagged so the caller can write them to changes_required/.
 """
@@ -71,6 +72,7 @@ FORUM_INDEX = "https://www.vekn.net/forum/event-reports-and-twd"
 
 # Kunena paginates with ?limitstart=N
 TOPICS_PER_PAGE = 20
+POSTS_PER_THREAD_PAGE = 20
 
 DEFAULT_DELAY_SECONDS = 1.5
 
@@ -200,6 +202,7 @@ def _detect_topic_icon(link_tag: Tag) -> str | None:
 def iter_thread_urls(
     client: httpx.Client,
     max_pages: int | None = None,
+    start_page: int = 0,
     delay: float = DEFAULT_DELAY_SECONDS,
 ) -> Iterator[tuple[str, str | None]]:
     """
@@ -211,13 +214,16 @@ def iter_thread_urls(
     ``icon_type`` is one of :data:`ICON_IDEA`, :data:`ICON_MERGED`, or ``None``
     (no recognised icon).
     """
-    page = 0
+    page = start_page
     seen: set[str] = set()
 
     while True:
         limitstart = page * TOPICS_PER_PAGE
         url = (
             FORUM_INDEX if limitstart == 0 else f"{FORUM_INDEX}?limitstart={limitstart}"
+        )
+        logger.info(
+            "Scraping forum index page %d (limitstart=%d).", page + 1, limitstart
         )
         soup = _get(client, url, delay)
 
@@ -261,35 +267,67 @@ def extract_twd_from_thread(
     delay: float = DEFAULT_DELAY_SECONDS,
 ) -> Tournament | None:
     """
-    Fetch a thread page and extract the TWD block from the first post.
+    Fetch a thread, paginating page by page and checking post by post,
+    and extract the TWD block from the first parseable post.
 
-    The first <div class="kmsg"> on the page is the opening post.
+    Kunena thread pagination: ?limitstart=0, ?limitstart=15, ?limitstart=30, ...
+    Post content lives in <div class="kmsg"> elements.
+
     Returns a Tournament or None if no parseable TWD block is found.
     """
-    soup = _get(client, thread_url, delay)
+    page = 0
+    seen_posts: set[str] = set()
 
-    # Kunena post content lives in <div class="kmsg">
-    # The first occurrence is always the opening post
-    kmsg = soup.select_one("div.kmsg")
-    if not kmsg:
-        logger.warning("No div.kmsg found in %s", thread_url)
-        return None
+    while True:
+        limitstart = page * POSTS_PER_THREAD_PAGE
+        url = thread_url if limitstart == 0 else f"{thread_url}?limitstart={limitstart}"
+        logger.info("Scraping thread page %d: %s", page + 1, url)
+        soup = _get(client, url, delay)
 
-    raw_text = _kunena_div_to_text(kmsg)
+        posts = soup.select("div.kmsg")
+        if not posts:
+            logger.warning("No div.kmsg found on page %d of %s", page + 1, thread_url)
+            break
 
-    if not raw_text.strip():
-        logger.warning("Empty post content in %s", thread_url)
-        return None
+        found_new = False
+        for post_idx, kmsg in enumerate(posts, start=1):
+            # Use raw HTML as a fingerprint to detect duplicate posts across pages
+            post_key = str(kmsg)
+            if post_key in seen_posts:
+                continue
+            seen_posts.add(post_key)
+            found_new = True
 
-    logger.debug("Raw text preview:\n%s", raw_text[:300])
+            logger.debug(
+                "Checking post %d on thread page %d of %s",
+                post_idx,
+                page + 1,
+                thread_url,
+            )
+            raw_text = _kunena_div_to_text(kmsg)
+            if not raw_text.strip():
+                logger.debug("Empty post %d on page %d, skipping.", post_idx, page + 1)
+                continue
 
-    try:
-        tournament = parse_twd_text(raw_text, forum_post_url=thread_url)
-        return tournament
-    except (ValueError, Exception) as exc:
-        logger.warning("Failed to parse TWD from %s: %s", thread_url, exc)
-        logger.debug("Parse traceback:", exc_info=True)
-        return None
+            logger.debug("Raw text preview:\n%s", raw_text[:300])
+            try:
+                tournament = parse_twd_text(raw_text, forum_post_url=thread_url)
+                return tournament
+            except (ValueError, Exception) as exc:
+                logger.debug(
+                    "Post %d on page %d not parseable: %s", post_idx, page + 1, exc
+                )
+
+        if not found_new:
+            logger.info(
+                "No new posts on page %d of %s, stopping.", page + 1, thread_url
+            )
+            break
+
+        page += 1
+
+    logger.warning("No parseable TWD post found in %s", thread_url)
+    return None
 
 
 # ---------------------------------------------------------------------------
@@ -363,16 +401,18 @@ def fetch_event_date(
 
 def scrape_forum(
     max_pages: int | None = None,
+    start_page: int = 0,
     delay: float = DEFAULT_DELAY_SECONDS,
 ) -> Iterator[tuple[Tournament, str | None]]:
     """
-    Full scrape pipeline: index → threads → parsed Tournament objects.
+    Full scrape pipeline: index pages → threads (paginated) → posts → parsed Tournament objects.
 
     Topics with an idea icon (:data:`ICON_IDEA`) are skipped entirely —
     they contain informational content, not TWD reports.
 
     Args:
         max_pages: limit forum index pages scraped (None = all)
+        start_page: forum index page to start from (0-indexed, default: 0)
         delay: polite crawl delay in seconds between requests
 
     Yields:
@@ -383,7 +423,7 @@ def scrape_forum(
     """
     with httpx.Client(headers=HEADERS, timeout=60.0) as client:
         for thread_url, icon in iter_thread_urls(
-            client, max_pages=max_pages, delay=delay
+            client, max_pages=max_pages, start_page=start_page, delay=delay
         ):
             if icon == ICON_IDEA:
                 logger.info("Skipped (idea/info icon): %s", thread_url)

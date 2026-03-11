@@ -30,6 +30,13 @@ def register(sub: argparse._SubParsersAction) -> None:
         help="Limit the number of forum index pages to scrape (default: all).",
     )
     p.add_argument(
+        "--start-page",
+        type=int,
+        default=0,
+        dest="start_page",
+        help="Forum index page to start scraping from, 0-indexed (default: 0).",
+    )
+    p.add_argument(
         "--delay",
         type=float,
         default=1.5,
@@ -59,7 +66,9 @@ def run(args: argparse.Namespace) -> int:
 
     written = skipped = failed = 0
 
-    for tournament, icon in scrape_forum(max_pages=args.max_pages, delay=args.delay):
+    for tournament, icon in scrape_forum(
+        max_pages=args.max_pages, start_page=args.start_page, delay=args.delay
+    ):
         if not tournament.event_id:
             console.print(
                 f"[yellow]─[/yellow] {tournament.name!r}  [dim](no event_id — skipped)[/dim]"
