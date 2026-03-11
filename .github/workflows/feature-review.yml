@@ -1,0 +1,92 @@
+name: Copilot Feature Request Review
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  copilot-review:
+    if: contains(github.event.issue.labels.*.name, 'enhancement')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+      - name: Request Copilot feasibility review
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: [
+                "@github-copilot Please review this feature request and provide:",
+                "",
+                "1. **Feasibility assessment** — is this technically feasible given the current codebase and architecture?",
+                "2. **Suggested changes** — improvements or clarifications to the proposal before implementation begins.",
+                "3. **Potential risks or blockers** — anything that could complicate the implementation.",
+              ].join("\n")
+            });
+
+  claude-review:
+    if: contains(github.event.issue.labels.*.name, 'enhancement')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Review feature request with Claude
+        uses: actions/github-script@v7
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        with:
+          script: |
+            const title = context.payload.issue.title;
+            const body = context.payload.issue.body || "(no description provided)";
+
+            const prompt = `You are a senior software engineer reviewing a feature request for a Python project that scrapes VTES (Vampire: The Eternal Struggle) "Tournament Winning Decks" from a forum and publishes them as pull requests on GitHub.
+
+            Review the following feature request and provide:
+            1. **Feasibility assessment** — is this technically feasible? Rate it: High / Medium / Low.
+            2. **Suggested changes** — improvements or clarifications to the proposal before implementation begins.
+            3. **Potential risks or blockers** — anything that could complicate or prevent implementation.
+
+            Be concise and direct. Address the requester in second person.
+
+            ---
+            **Title:** ${title}
+
+            **Request:**
+            ${body}`;
+
+            const response = await fetch("https://api.anthropic.com/v1/messages", {
+              method: "POST",
+              headers: {
+                "x-api-key": process.env.ANTHROPIC_API_KEY,
+                "anthropic-version": "2023-06-01",
+                "content-type": "application/json",
+              },
+              body: JSON.stringify({
+                model: "claude-opus-4-6",
+                max_tokens: 1024,
+                messages: [{ role: "user", content: prompt }],
+              }),
+            });
+
+            if (!response.ok) {
+              throw new Error(`Anthropic API error: ${response.status} ${await response.text()}`);
+            }
+
+            const data = await response.json();
+            const review = data.content[0].text;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `## Claude Review\n\n${review}\n\n---\n*Automated review by [Claude](https://anthropic.com). Add the \`skip-ai-review\` label to disable.*`,
+            });
