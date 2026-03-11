@@ -11,23 +11,29 @@ import io
 import logging
 import re
 import shutil
+import unicodedata
 from datetime import date
 from pathlib import Path
 
 import httpx
-from ruamel.yaml import YAML
+from ruamel.yaml import YAML, CommentedMap
 
 from vtes_scraper.cli._common import console, setup_logging
-from vtes_scraper.scraper import DEFAULT_DELAY_SECONDS, HEADERS, fetch_event_date, fetch_player
+from vtes_scraper.scraper import (
+    DEFAULT_DELAY_SECONDS,
+    HEADERS,
+    fetch_event_date,
+    fetch_player,
+)
 from vtes_scraper.validator import error_types
 
 
-def _load_yaml(path: Path) -> dict:
+def _load_yaml(path: Path) -> CommentedMap:
     yaml = YAML()
     return yaml.load(path.read_text(encoding="utf-8"))
 
 
-def _save_yaml(path: Path, data: dict) -> None:
+def _save_yaml(path: Path, data: CommentedMap) -> None:
     """Write *data* back to *path* preserving ruamel.yaml formatting."""
     yaml = YAML()
     yaml.default_flow_style = False
@@ -52,10 +58,21 @@ def _name_without_digits(name: str) -> str:
     return re.sub(r"\s+", " ", re.sub(r"\d+", "", name)).strip()
 
 
+def _name_without_accents(name: str) -> str:
+    """Return *name* with diacritics stripped and non-word, non-space characters removed."""
+    # NFD decomposition splits accented chars into base + combining marks;
+    # encoding to ASCII then drops the combining marks.
+    ascii_name = (
+        unicodedata.normalize("NFD", name).encode("ascii", "ignore").decode("ascii")
+    )
+    # Drop any remaining non-word, non-space chars (hyphens, apostrophes, etc.)
+    return re.sub(r"\s+", " ", re.sub(r"[^\w\s]", "", ascii_name)).strip()
+
+
 def _check_player(
     client: httpx.Client,
     path: Path,
-    data: dict,
+    data: CommentedMap,
     output_dir: Path,
     delay: float,
     logger: logging.Logger,
@@ -96,6 +113,18 @@ def _check_player(
                 result = None
 
     if result is None:
+        # Step 3: retry with accents and non-word characters stripped.
+        ascii_name = _name_without_accents(winner)
+        if ascii_name and ascii_name != winner:
+            try:
+                result = fetch_player(client, ascii_name, delay=delay)
+            except Exception as exc:
+                logger.warning(
+                    "Could not check player (ascii name) for %s: %s", path.name, exc
+                )
+                result = None
+
+    if result is None:
         # Winner not found in VEKN database — move to errors/unknown_winner.
         dest = _move_to_error(path, output_dir, "unknown_winner")
         console.print(
@@ -115,7 +144,10 @@ def _check_player(
     else:
         logger.debug("Player verified: %s  (VEKN %s)", winner, vekn_number)
 
-    data["vekn_number"] = vekn_number
+    # Insert vekn_number immediately after the winner key, preserving field order.
+    keys = list(data.keys())
+    pos = keys.index("winner") + 1 if "winner" in keys else len(keys)
+    data.insert(pos, "vekn_number", vekn_number)
     _save_yaml(path, data)
     return True, False
 
@@ -248,4 +280,3 @@ def run(args: argparse.Namespace) -> int:
         + (f", [yellow]{load_errors} unreadable[/yellow]" if load_errors else "")
     )
     return 1 if (moved or load_errors) else 0
-
