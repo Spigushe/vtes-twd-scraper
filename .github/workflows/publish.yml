@@ -34,6 +34,9 @@ jobs:
       - name: Run tests
         run: pytest tests/ -v
 
+      - name: Run validation and confirming players identity
+        run: vtes-scraper validate --check-players
+
       - name: Publish deck PRs to GiottoVerducci/TWD
         env:
           # A PAT with 'public_repo' scope stored as TWD_GITHUB_TOKEN.
