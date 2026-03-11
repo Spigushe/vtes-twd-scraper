@@ -12,6 +12,7 @@ from vtes_scraper.scraper import (
     _kunena_div_to_text,
     extract_twd_from_thread,
     fetch_event_date,
+    fetch_player,
     iter_thread_urls,
     scrape_forum,
 )
@@ -338,3 +339,100 @@ class TestScrapeForum:
             results = list(scrape_forum(max_pages=1, delay=0))
 
         assert len(results) > 0
+
+
+# ---------------------------------------------------------------------------
+# fetch_player
+# ---------------------------------------------------------------------------
+
+PLAYER_SEARCH_ONE_RESULT = """
+<html><body>
+<table>
+  <tr><th>Name</th><th>VEKN Number</th><th>Country</th></tr>
+  <tr><td>Aleksander Idziak</td><td>3940009</td><td>Poland</td></tr>
+</table>
+</body></html>
+"""
+
+PLAYER_SEARCH_NO_RESULT = """
+<html><body>
+<table>
+  <tr><th>Name</th><th>VEKN Number</th></tr>
+</table>
+</body></html>
+"""
+
+PLAYER_SEARCH_MULTI_RESULT = """
+<html><body>
+<table>
+  <tr><th>Name</th><th>VEKN Number</th></tr>
+  <tr><td>John Smith</td><td>1000001</td></tr>
+  <tr><td>John Smith</td><td>1000002</td></tr>
+</table>
+</body></html>
+"""
+
+PLAYER_SEARCH_EXACT_MATCH = """
+<html><body>
+<table>
+  <tr><th>Name</th><th>VEKN Number</th></tr>
+  <tr><td>Jane Doe</td><td>2000001</td></tr>
+  <tr><td>Jane Doe Smith</td><td>2000002</td></tr>
+</table>
+</body></html>
+"""
+
+PLAYER_SEARCH_NO_TABLE = "<html><body><p>No results</p></body></html>"
+
+PLAYER_SEARCH_UNRECOGNISED_HEADERS = """
+<html><body>
+<table>
+  <tr><th>Foo</th><th>Bar</th></tr>
+  <tr><td>Alice</td><td>99</td></tr>
+</table>
+</body></html>
+"""
+
+
+class TestFetchPlayer:
+    def test_single_result_returns_name_and_number(self):
+        soup = BeautifulSoup(PLAYER_SEARCH_ONE_RESULT, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = fetch_player(mock_client, "Aleksander Idziak", delay=0)
+        assert result == ("Aleksander Idziak", "3940009")
+
+    def test_no_result_returns_none(self):
+        soup = BeautifulSoup(PLAYER_SEARCH_NO_RESULT, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = fetch_player(mock_client, "Unknown Player", delay=0)
+        assert result is None
+
+    def test_ambiguous_results_returns_none(self):
+        soup = BeautifulSoup(PLAYER_SEARCH_MULTI_RESULT, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = fetch_player(mock_client, "John Smith", delay=0)
+        assert result is None
+
+    def test_exact_name_match_among_multiple(self):
+        soup = BeautifulSoup(PLAYER_SEARCH_EXACT_MATCH, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = fetch_player(mock_client, "Jane Doe", delay=0)
+        assert result == ("Jane Doe", "2000001")
+
+    def test_no_table_returns_none(self):
+        soup = BeautifulSoup(PLAYER_SEARCH_NO_TABLE, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = fetch_player(mock_client, "Alice", delay=0)
+        assert result is None
+
+    def test_unrecognised_headers_returns_none(self):
+        soup = BeautifulSoup(PLAYER_SEARCH_UNRECOGNISED_HEADERS, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = fetch_player(mock_client, "Alice", delay=0)
+        assert result is None
