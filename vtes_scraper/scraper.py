@@ -72,7 +72,7 @@ FORUM_INDEX = "https://www.vekn.net/forum/event-reports-and-twd"
 
 # Kunena paginates with ?limitstart=N
 TOPICS_PER_PAGE = 20
-POSTS_PER_THREAD_PAGE = 20
+POSTS_PER_THREAD_PAGE = 6
 
 DEFAULT_DELAY_SECONDS = 1.5
 
@@ -270,7 +270,7 @@ def extract_twd_from_thread(
     Fetch a thread, paginating page by page and checking post by post,
     and extract the TWD block from the first parseable post.
 
-    Kunena thread pagination: ?limitstart=0, ?limitstart=15, ?limitstart=30, ...
+    Kunena thread pagination: ?limitstart=0, ?limitstart=20, ?limitstart=40, ...
     Post content lives in <div class="kmsg"> elements.
 
     Returns a Tournament or None if no parseable TWD block is found.

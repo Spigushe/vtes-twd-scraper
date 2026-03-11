@@ -282,6 +282,7 @@ class TestScrapeCommand:
             args = argparse.Namespace(
                 output_dir=Path(tmpdir),
                 max_pages=1,
+                start_page=0,
                 delay=0,
                 overwrite=False,
                 verbose=False,
@@ -296,6 +297,7 @@ class TestScrapeCommand:
             args = argparse.Namespace(
                 output_dir=Path(tmpdir),
                 max_pages=1,
+                start_page=0,
                 delay=0,
                 overwrite=False,
                 verbose=False,
@@ -312,6 +314,7 @@ class TestScrapeCommand:
             args = argparse.Namespace(
                 output_dir=Path(tmpdir),
                 max_pages=1,
+                start_page=0,
                 delay=0,
                 overwrite=False,
                 verbose=False,
@@ -335,6 +338,7 @@ class TestScrapeCommand:
             args = argparse.Namespace(
                 output_dir=Path(tmpdir),
                 max_pages=1,
+                start_page=0,
                 delay=0,
                 overwrite=False,
                 verbose=False,
