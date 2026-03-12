@@ -837,6 +837,41 @@ class TestValidateCommand:
             assert updated["vekn_number"] == "3940009"
             assert updated["winner"] == "Jane Doe"
 
+    def test_check_player_found_after_bracket_and_accent_strip(self):
+        """Bracket-stripped form fails but accent-stripped bracket-stripped form succeeds.
+
+        Regression for "David Vallès Gómez (" where the accented+bracket form is
+        not in VEKN but the plain ASCII form "David Valles Gomez" is.  The bracket
+        must be stripped from *winner* before the accent step runs.
+        """
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            raw = "David Vallès Gómez ("
+            yaml_file.write_text(
+                VALID_YAML.replace("winner: Jane Doe", f"winner: '{raw}'"),
+                encoding="utf-8",
+            )
+            data = validate_cmd._load_yaml(yaml_file)
+
+            def fake_fetch_player(client, name, delay=0):
+                # Only the plain ASCII form (no bracket, no accents) matches.
+                if name == "David Valles Gomez":
+                    return ("David Valles Gomez", "1234567")
+                return None
+
+            mock_client = MagicMock()
+            with patch(
+                "vtes_scraper.cli.validate.fetch_player", side_effect=fake_fetch_player
+            ):
+                found, moved = validate_cmd._check_player(
+                    mock_client, yaml_file, data, Path(tmpdir), 0, logging.getLogger()
+                )
+            assert found is True
+            assert moved is False
+            updated = validate_cmd._load_yaml(yaml_file)
+            assert updated["winner"] == "David Valles Gomez"
+            assert updated["vekn_number"] == "1234567"
+
     def test_check_player_not_found_moves_to_unknown_winner(self):
         """When fetch_player returns None for both attempts, file is moved."""
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -964,6 +999,249 @@ class TestValidateCommand:
                 ret = validate_cmd.run(args)
             mock_fp.assert_not_called()
             assert ret == 1
+
+    # ------------------------------------------------------------------
+    # coercions cache
+    # ------------------------------------------------------------------
+
+    def test_check_player_stores_resolution_in_coercions(self):
+        """A successful lookup is recorded in the coercions dict."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text(VALID_YAML, encoding="utf-8")
+            data = validate_cmd._load_yaml(yaml_file)
+            mock_client = MagicMock()
+            coercions: dict = {}
+            with patch(
+                "vtes_scraper.cli.validate.fetch_player",
+                return_value=("Jane Doe", "3940009"),
+            ):
+                validate_cmd._check_player(
+                    mock_client,
+                    yaml_file,
+                    data,
+                    Path(tmpdir),
+                    0,
+                    logging.getLogger(),
+                    coercions=coercions,
+                )
+            assert "Jane Doe" in coercions
+            assert coercions["Jane Doe"]["winner"] == "Jane Doe"
+            assert coercions["Jane Doe"]["vekn_number"] == "3940009"
+
+    def test_check_player_uses_coercions_cache_skips_http(self):
+        """When the winner is in the coercions cache no HTTP request is made."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text(VALID_YAML, encoding="utf-8")
+            data = validate_cmd._load_yaml(yaml_file)
+            mock_client = MagicMock()
+            coercions = {"Jane Doe": {"winner": "Jane Doe", "vekn_number": "3940009"}}
+            with patch("vtes_scraper.cli.validate.fetch_player") as mock_fp:
+                found, moved = validate_cmd._check_player(
+                    mock_client,
+                    yaml_file,
+                    data,
+                    Path(tmpdir),
+                    0,
+                    logging.getLogger(),
+                    coercions=coercions,
+                )
+            mock_fp.assert_not_called()
+            assert found is True
+            assert moved is False
+            updated = validate_cmd._load_yaml(yaml_file)
+            assert updated["vekn_number"] == "3940009"
+
+    def test_check_player_coercions_corrects_winner_name(self):
+        """A cached coercion with a different canonical name updates the YAML winner field."""
+        raw_name = "Jane Doe ("
+        yaml_with_bracket = VALID_YAML.replace(
+            "winner: Jane Doe", f"winner: {raw_name}"
+        )
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text(yaml_with_bracket, encoding="utf-8")
+            data = validate_cmd._load_yaml(yaml_file)
+            mock_client = MagicMock()
+            coercions = {raw_name: {"winner": "Jane Doe", "vekn_number": "3940009"}}
+            with patch("vtes_scraper.cli.validate.fetch_player") as mock_fp:
+                found, moved = validate_cmd._check_player(
+                    mock_client,
+                    yaml_file,
+                    data,
+                    Path(tmpdir),
+                    0,
+                    logging.getLogger(),
+                    coercions=coercions,
+                )
+            mock_fp.assert_not_called()
+            assert found is True
+            updated = validate_cmd._load_yaml(yaml_file)
+            assert updated["winner"] == "Jane Doe"
+            assert updated["vekn_number"] == "3940009"
+
+    def test_check_player_coercions_hit_at_bracket_strip_step_skips_http(self):
+        """Cache hit on the bracket-stripped variant skips the bracket-step HTTP call.
+
+        Step 1 (exact match) still makes one HTTP call because the raw name is not
+        in the cache.  Only the bracket-stripped fallback is short-circuited.
+        """
+        raw_name = "Jane Doe ("
+        yaml_with_bracket = VALID_YAML.replace(
+            "winner: Jane Doe", f"winner: '{raw_name}'"
+        )
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text(yaml_with_bracket, encoding="utf-8")
+            data = validate_cmd._load_yaml(yaml_file)
+            mock_client = MagicMock()
+            # "Jane Doe" (bracket-stripped form) is already in the cache.
+            coercions = {"Jane Doe": {"winner": "Jane Doe", "vekn_number": "3940009"}}
+            with patch(
+                "vtes_scraper.cli.validate.fetch_player", return_value=None
+            ) as mock_fp:
+                found, moved = validate_cmd._check_player(
+                    mock_client,
+                    yaml_file,
+                    data,
+                    Path(tmpdir),
+                    0,
+                    logging.getLogger(),
+                    coercions=coercions,
+                )
+            # Only the step-1 exact-match call is made; bracket-strip step hits cache.
+            mock_fp.assert_called_once()
+            assert found is True
+            updated = validate_cmd._load_yaml(yaml_file)
+            assert updated["winner"] == "Jane Doe"
+            assert updated["vekn_number"] == "3940009"
+            # Both the raw name and the canonical name are stored.
+            assert raw_name in coercions
+            assert "Jane Doe" in coercions
+
+    def test_check_player_coercions_hit_at_digit_strip_step_skips_http(self):
+        """Cache hit on the digit-stripped variant avoids the HTTP call."""
+        raw_name = "Jane Doe 1234"
+        yaml_with_digits = VALID_YAML.replace(
+            "winner: Jane Doe", f"winner: '{raw_name}'"
+        )
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text(yaml_with_digits, encoding="utf-8")
+            data = validate_cmd._load_yaml(yaml_file)
+            mock_client = MagicMock()
+            # Step 1 (exact match) returns None; "Jane Doe" (digit-stripped) is in cache.
+            coercions = {"Jane Doe": {"winner": "Jane Doe", "vekn_number": "3940009"}}
+            with patch(
+                "vtes_scraper.cli.validate.fetch_player", return_value=None
+            ) as mock_fp:
+                found, moved = validate_cmd._check_player(
+                    mock_client,
+                    yaml_file,
+                    data,
+                    Path(tmpdir),
+                    0,
+                    logging.getLogger(),
+                    coercions=coercions,
+                )
+            # Only step 1 (exact) makes an HTTP call; digit-stripped step hits cache.
+            mock_fp.assert_called_once()
+            assert found is True
+            updated = validate_cmd._load_yaml(yaml_file)
+            assert updated["vekn_number"] == "3940009"
+            assert raw_name in coercions
+            assert "Jane Doe" in coercions
+
+    def test_check_player_coercions_hit_at_accent_strip_step_skips_http(self):
+        """Cache hit on the accent-stripped variant skips the accent-step HTTP call.
+
+        For "Jàne Döe" the digit-strip step produces the same string (no digits),
+        so only one HTTP call is made for step 1 (exact match) before the
+        accent-stripped form "Jane Doe" is found in the cache.
+        """
+        raw_name = "Jàne Döe"
+        yaml_accented = VALID_YAML.replace("winner: Jane Doe", f"winner: '{raw_name}'")
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text(yaml_accented, encoding="utf-8")
+            data = validate_cmd._load_yaml(yaml_file)
+            mock_client = MagicMock()
+            # "Jane Doe" (accent-stripped form) is already in the cache.
+            coercions = {"Jane Doe": {"winner": "Jane Doe", "vekn_number": "3940009"}}
+            with patch(
+                "vtes_scraper.cli.validate.fetch_player", return_value=None
+            ) as mock_fp:
+                found, moved = validate_cmd._check_player(
+                    mock_client,
+                    yaml_file,
+                    data,
+                    Path(tmpdir),
+                    0,
+                    logging.getLogger(),
+                    coercions=coercions,
+                )
+            # Only step 1 (exact match) makes an HTTP call; accent-strip step hits cache.
+            mock_fp.assert_called_once()
+            assert found is True
+            updated = validate_cmd._load_yaml(yaml_file)
+            assert updated["vekn_number"] == "3940009"
+            assert raw_name in coercions
+            assert "Jane Doe" in coercions
+
+    def test_run_creates_coercions_file(self):
+        """run() with --check-players creates coercions.json when a lookup succeeds."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text(VALID_YAML, encoding="utf-8")
+            args = argparse.Namespace(
+                output_dir=Path(tmpdir),
+                check_dates=False,
+                check_players=True,
+                delay=0,
+                verbose=False,
+            )
+            with patch(
+                "vtes_scraper.cli.validate.fetch_player",
+                return_value=("Jane Doe", "3940009"),
+            ):
+                validate_cmd.run(args)
+            coercions_path = Path(tmpdir) / "coercions.json"
+            assert coercions_path.exists()
+            import json
+
+            data = json.loads(coercions_path.read_text())
+            assert "Jane Doe" in data
+            assert data["Jane Doe"]["vekn_number"] == "3940009"
+
+    def test_run_reuses_coercions_file_skips_http(self):
+        """run() loads an existing coercions.json and skips HTTP for known winners."""
+        import json
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            # Pre-populate the coercions cache.
+            coercions_path = Path(tmpdir) / "coercions.json"
+            coercions_path.write_text(
+                json.dumps(
+                    {"Jane Doe": {"winner": "Jane Doe", "vekn_number": "3940009"}}
+                ),
+                encoding="utf-8",
+            )
+            yaml_file = Path(tmpdir) / "test.yaml"
+            yaml_file.write_text(VALID_YAML, encoding="utf-8")
+            args = argparse.Namespace(
+                output_dir=Path(tmpdir),
+                check_dates=False,
+                check_players=True,
+                delay=0,
+                verbose=False,
+            )
+            with patch("vtes_scraper.cli.validate.fetch_player") as mock_fp:
+                ret = validate_cmd.run(args)
+            mock_fp.assert_not_called()
+            assert ret == 0
+            updated = validate_cmd._load_yaml(yaml_file)
+            assert updated["vekn_number"] == "3940009"
 
 
 # ---------------------------------------------------------------------------

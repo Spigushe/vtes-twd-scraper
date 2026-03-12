@@ -382,6 +382,56 @@ PLAYER_SEARCH_EXACT_MATCH = """
 </body></html>
 """
 
+import unicodedata as _ud
+
+# Multiple results where one entry's name is NFD-encoded (decomposed accents) and the
+# query is NFC — plain .lower() comparison fails, NFC-normalised comparison succeeds.
+_DAVID_NFD = _ud.normalize("NFD", "David Vallès Gómez")
+PLAYER_SEARCH_NFD_ENCODED = f"""
+<html><body>
+<table>
+  <tr><th>Name</th><th>VEKN Number</th></tr>
+  <tr><td>{_DAVID_NFD}</td><td>1234567</td></tr>
+  <tr><td>David Other</td><td>9999999</td></tr>
+</table>
+</body></html>
+"""
+
+# Multiple results where VEKN stores the ASCII-only form "David Valles Gomez" but
+# the query uses accented characters "David Vallès Gómez".
+PLAYER_SEARCH_ASCII_STORED = """
+<html><body>
+<table>
+  <tr><th>Name</th><th>VEKN Number</th></tr>
+  <tr><td>David Valles Gomez</td><td>1234567</td></tr>
+  <tr><td>David Other</td><td>9999999</td></tr>
+</table>
+</body></html>
+"""
+
+# Multiple results where the query is a shorter form of one canonical VEKN name.
+# "Rafael Barbosa" should match "Rafael Barbosa Santos" by similarity.
+PLAYER_SEARCH_SIMILARITY_UNIQUE = """
+<html><body>
+<table>
+  <tr><th>Name</th><th>VEKN Number</th></tr>
+  <tr><td>Rafael Barbosa Santos</td><td>5000001</td></tr>
+  <tr><td>Ricardo Alves</td><td>5000002</td></tr>
+</table>
+</body></html>
+"""
+
+# Two results that both score highly — must remain ambiguous.
+PLAYER_SEARCH_SIMILARITY_AMBIGUOUS = """
+<html><body>
+<table>
+  <tr><th>Name</th><th>VEKN Number</th></tr>
+  <tr><td>Rafael Barbosa Santos</td><td>5000001</td></tr>
+  <tr><td>Rafael Barbosa Lima</td><td>5000002</td></tr>
+</table>
+</body></html>
+"""
+
 PLAYER_SEARCH_NO_TABLE = "<html><body><p>No results</p></body></html>"
 
 PLAYER_SEARCH_UNRECOGNISED_HEADERS = """
@@ -422,6 +472,46 @@ class TestFetchPlayer:
         with patch("vtes_scraper.scraper._get", return_value=soup):
             result = fetch_player(mock_client, "Jane Doe", delay=0)
         assert result == ("Jane Doe", "2000001")
+
+    def test_nfc_vs_nfd_name_match_among_multiple(self):
+        """NFC query matches an NFD-encoded name in the VEKN table (multiple results)."""
+        soup = BeautifulSoup(PLAYER_SEARCH_NFD_ENCODED, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = fetch_player(mock_client, "David Vallès Gómez", delay=0)
+        assert result is not None
+        # The returned name is whatever VEKN stores (NFD form here); vekn_number is key.
+        assert result[1] == "1234567"
+
+    def test_accent_stripped_name_match_among_multiple(self):
+        """Accented query matches an ASCII-only stored name (regression: event 10032).
+
+        VEKN may store "David Valles Gomez" (no diacritics) while the forum post
+        lists the winner as "David Vallès Gómez".  The accent-stripped fallback in
+        fetch_player should resolve this when multiple results are returned.
+        """
+        soup = BeautifulSoup(PLAYER_SEARCH_ASCII_STORED, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = fetch_player(mock_client, "David Vallès Gómez", delay=0)
+        assert result == ("David Valles Gomez", "1234567")
+
+    def test_similarity_match_unique(self):
+        """Query "Rafael Barbosa" matches "Rafael Barbosa Santos" when it is the only
+        high-similarity result (regression: event 10077)."""
+        soup = BeautifulSoup(PLAYER_SEARCH_SIMILARITY_UNIQUE, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = fetch_player(mock_client, "Rafael Barbosa", delay=0)
+        assert result == ("Rafael Barbosa Santos", "5000001")
+
+    def test_similarity_match_ambiguous_returns_none(self):
+        """Two results with equally high similarity scores are not resolved."""
+        soup = BeautifulSoup(PLAYER_SEARCH_SIMILARITY_AMBIGUOUS, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = fetch_player(mock_client, "Rafael Barbosa", delay=0)
+        assert result is None
 
     def test_no_table_returns_none(self):
         soup = BeautifulSoup(PLAYER_SEARCH_NO_TABLE, "lxml")

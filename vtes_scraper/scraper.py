@@ -31,6 +31,8 @@ import json
 import logging
 import re
 import time
+import unicodedata
+from difflib import SequenceMatcher
 from collections.abc import Iterator
 from datetime import date
 from typing import cast
@@ -400,6 +402,34 @@ def fetch_event_date(
     return None
 
 
+_NAME_SIMILARITY_THRESHOLD = 0.80
+"""
+Minimum SequenceMatcher ratio for a fuzzy name match to be accepted in
+:func:`fetch_player`.  Only used when exactly one result scores at or above
+this threshold; ambiguous cases (≥ 2 high-scoring results) are always skipped.
+"""
+
+
+def _strip_accents_lower(s: str) -> str:
+    """Return *s* with diacritics stripped and lower-cased (used for comparison only)."""
+    return (
+        re.sub(
+            r"[^\w\s]",
+            "",
+            unicodedata.normalize("NFD", s).encode("ascii", "ignore").decode("ascii"),
+        )
+        .strip()
+        .lower()
+    )
+
+
+def _name_similarity(a: str, b: str) -> float:
+    """Return SequenceMatcher ratio between the accent-stripped lower-case forms of *a* and *b*."""
+    return SequenceMatcher(
+        None, _strip_accents_lower(a), _strip_accents_lower(b)
+    ).ratio()
+
+
 def fetch_player(
     client: httpx.Client,
     name: str,
@@ -456,11 +486,48 @@ def fetch_player(
         if len(results) == 1:
             return results[0]
 
-        # Multiple results — try exact case-insensitive name match
+        # Multiple results — try exact case-insensitive name match.
         name_lower = name.lower()
         exact = [r for r in results if r[0].lower() == name_lower]
         if len(exact) == 1:
             return exact[0]
+
+        # NFC-normalised match: the VEKN DB may return names in NFD form (decomposed
+        # accents) while our query string is NFC, making the plain .lower() comparison
+        # fail despite the names being canonically identical.
+        name_nfc = unicodedata.normalize("NFC", name).lower()
+        nfc_match = [
+            r for r in results if unicodedata.normalize("NFC", r[0]).lower() == name_nfc
+        ]
+        if len(nfc_match) == 1:
+            return nfc_match[0]
+
+        # Accent-stripped match: handles cases where the VEKN DB stores ASCII-only
+        # names (e.g. "David Valles Gomez") while the query uses diacritics
+        # ("David Vallès Gómez"), or vice-versa.
+        name_ascii = _strip_accents_lower(name)
+        accent_match = [r for r in results if _strip_accents_lower(r[0]) == name_ascii]
+        if len(accent_match) == 1:
+            return accent_match[0]
+
+        # Similarity match: handles the case where the query name is a shorter form of
+        # the canonical VEKN name (e.g. "Rafael Barbosa" matching "Rafael Barbosa Santos").
+        # Only accepted when exactly one result scores at or above the threshold so that
+        # genuinely ambiguous cases (two different "Rafael Barbosa X" members) are still
+        # skipped.
+        similar = [
+            r
+            for r in results
+            if _name_similarity(name, r[0]) >= _NAME_SIMILARITY_THRESHOLD
+        ]
+        if len(similar) == 1:
+            logger.debug(
+                "Player %r matched by similarity to %r (%.2f)",
+                name,
+                similar[0][0],
+                _name_similarity(name, similar[0][0]),
+            )
+            return similar[0]
 
         if results:
             logger.debug(

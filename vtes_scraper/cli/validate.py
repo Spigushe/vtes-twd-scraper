@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import io
+import json
 import logging
 import re
 import shutil
@@ -44,6 +45,41 @@ def _save_yaml(path: Path, data: CommentedMap) -> None:
     path.write_text(buf.getvalue(), encoding="utf-8")
 
 
+_COERCIONS_FILENAME = "coercions.json"
+"""
+JSON file that permanently records every raw-winner → canonical-winner mapping
+discovered during --check-players runs.  Stored as::
+
+    {
+        "<raw name from YAML>": {"winner": "<canonical name>", "vekn_number": "<id>"},
+        ...
+    }
+
+On subsequent validate runs the cache is consulted first so no HTTP request is
+needed for already-resolved names.
+"""
+
+
+def _load_coercions(output_dir: Path) -> dict[str, dict[str, str]]:
+    """Load the coercions cache from *output_dir*/coercions.json (empty dict if absent)."""
+    path = output_dir / _COERCIONS_FILENAME
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def _save_coercions(output_dir: Path, coercions: dict[str, dict[str, str]]) -> None:
+    """Persist *coercions* to *output_dir*/coercions.json (sorted keys, pretty-printed)."""
+    path = output_dir / _COERCIONS_FILENAME
+    path.write_text(
+        json.dumps(coercions, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+
+
 def _move_to_error(path: Path, output_dir: Path, error_type: str) -> Path:
     """Move *path* to <output_dir>/errors/<error_type>/<filename> and return the new path."""
     dest_dir = output_dir / "errors" / error_type
@@ -76,6 +112,7 @@ def _check_player(
     output_dir: Path,
     delay: float,
     logger: logging.Logger,
+    coercions: dict[str, dict[str, str]] | None = None,
 ) -> tuple[bool, bool]:
     """
     Verify that the winner listed in *data* is a registered VEKN member.
@@ -86,14 +123,63 @@ def _check_player(
 
     Side effects:
     - If found: writes ``vekn_number`` (and optionally corrected ``winner``)
-      back into *data* and saves the file.
+      back into *data* and saves the file.  If *coercions* is provided the
+      raw→canonical mapping is stored there (and the caller is responsible for
+      persisting it with :func:`_save_coercions`).
     - If not found: moves the file to ``errors/unknown_winner/``.
     """
-    winner = str(data.get("winner") or "").strip()
-    if not winner:
+    raw_winner = str(data.get("winner") or "").strip()
+    if not raw_winner:
         return False, False
 
+    winner = raw_winner
+
+    def _coercions_get(candidate: str) -> tuple[str, str] | None:
+        """Return ``(found_name, vekn_number)`` from cache if *candidate* is present."""
+        if coercions is not None and candidate in coercions:
+            entry = coercions[candidate]
+            logger.debug(
+                "Player resolved from coercions cache: %r (via %r) → %r (VEKN %s)",
+                raw_winner,
+                candidate,
+                entry["winner"],
+                entry["vekn_number"],
+            )
+            return entry["winner"], entry["vekn_number"]
+        return None
+
+    def _apply_resolution(
+        found_name: str, vekn_number: str, *, from_cache: bool = False
+    ) -> tuple[bool, bool]:
+        """Write *found_name* / *vekn_number* into *data*, update coercions, save file."""
+        if coercions is not None:
+            entry = {"winner": found_name, "vekn_number": vekn_number}
+            # Store both the raw name and the canonical name so that either can be
+            # looked up at step 0 on a future run without any HTTP requests.
+            coercions[raw_winner] = entry
+            coercions[found_name] = entry
+        if found_name != raw_winner:
+            data["winner"] = found_name
+            suffix = " (cached)" if from_cache else ""
+            console.print(
+                f"[yellow]~[/yellow] {path.name}  winner coerced{suffix}: "
+                f"{raw_winner!r} → {found_name!r}  (VEKN {vekn_number})"
+            )
+        else:
+            logger.debug("Player verified: %s  (VEKN %s)", found_name, vekn_number)
+        keys = list(data.keys())
+        pos = keys.index("winner") + 1 if "winner" in keys else len(keys)
+        data.insert(pos, "vekn_number", vekn_number)
+        _save_yaml(path, data)
+        return True, False
+
+    # Step 0: check the coercions cache with the exact raw name before any HTTP call.
+    hit = _coercions_get(raw_winner)
+    if hit is not None:
+        return _apply_resolution(*hit, from_cache=True)
+
     # Step 1: search with the original winner name.
+    result: tuple[str, str] | None = None
     try:
         result = fetch_player(client, winner, delay=delay)
     except Exception as exc:
@@ -101,9 +187,36 @@ def _check_player(
         return False, False
 
     if result is None:
+        # Step 1b: retry with trailing unclosed brackets stripped.
+        # Forum posts sometimes leave artefacts like "John Smith (" when a VP comment
+        # such as "(3vp in final)" was split across lines by an HTML <br> tag.
+        # winner is updated unconditionally so that steps 2 and 3 continue from the
+        # cleaner form even when this step's HTTP call also fails (e.g. the canonical
+        # VEKN name uses ASCII-only characters so the accented+bracket variant would
+        # never match but the de-accented form without the bracket would).
+        clean_bracket = re.sub(r"\s*[\(\[]+\s*$", "", winner)
+        if clean_bracket and clean_bracket != winner:
+            winner = clean_bracket
+            hit = _coercions_get(winner)
+            if hit is not None:
+                return _apply_resolution(*hit, from_cache=True)
+            try:
+                result = fetch_player(client, winner, delay=delay)
+            except Exception as exc:
+                logger.warning(
+                    "Could not check player (bracket-stripped) for %s: %s",
+                    path.name,
+                    exc,
+                )
+                result = None
+
+    if result is None:
         # Step 2: retry with digits stripped (handles "Frederic Pin 3200006" style names).
         clean_name = _name_without_digits(winner)
         if clean_name and clean_name != winner:
+            hit = _coercions_get(clean_name)
+            if hit is not None:
+                return _apply_resolution(*hit, from_cache=True)
             try:
                 result = fetch_player(client, clean_name, delay=delay)
             except Exception as exc:
@@ -116,6 +229,9 @@ def _check_player(
         # Step 3: retry with accents and non-word characters stripped.
         ascii_name = _name_without_accents(winner)
         if ascii_name and ascii_name != winner:
+            hit = _coercions_get(ascii_name)
+            if hit is not None:
+                return _apply_resolution(*hit, from_cache=True)
             try:
                 result = fetch_player(client, ascii_name, delay=delay)
             except Exception as exc:
@@ -132,24 +248,7 @@ def _check_player(
         )
         return False, True
 
-    found_name, vekn_number = result
-
-    # Update the YAML data in-place and save.
-    if found_name != winner:
-        data["winner"] = found_name
-        console.print(
-            f"[yellow]~[/yellow] {path.name}  winner coerced: "
-            f"{winner!r} → {found_name!r}  (VEKN {vekn_number})"
-        )
-    else:
-        logger.debug("Player verified: %s  (VEKN %s)", winner, vekn_number)
-
-    # Insert vekn_number immediately after the winner key, preserving field order.
-    keys = list(data.keys())
-    pos = keys.index("winner") + 1 if "winner" in keys else len(keys)
-    data.insert(pos, "vekn_number", vekn_number)
-    _save_yaml(path, data)
-    return True, False
+    return _apply_resolution(*result)
 
 
 def register(sub: argparse._SubParsersAction) -> None:
@@ -226,6 +325,12 @@ def run(args: argparse.Namespace) -> int:
 
     valid = moved = load_errors = 0
 
+    # Load the persistent coercions cache once; it will be updated and saved
+    # incrementally as new player lookups are resolved.
+    coercions: dict[str, dict[str, str]] | None = None
+    if check_players:
+        coercions = _load_coercions(output_dir)
+
     with httpx.Client(headers=HEADERS, timeout=30.0) as client:
         for path in sorted(yaml_files):
             try:
@@ -263,9 +368,13 @@ def run(args: argparse.Namespace) -> int:
             # Optionally verify the winner against the VEKN member database.
             # Only check files that don't already have a vekn_number.
             if check_players and data.get("vekn_number") is None:
+                prev_coercions_len = len(coercions) if coercions is not None else 0
                 _found, file_moved = _check_player(
-                    client, path, data, output_dir, delay, logger
+                    client, path, data, output_dir, delay, logger, coercions=coercions
                 )
+                # Persist the coercions file immediately after each new resolution.
+                if coercions is not None and len(coercions) != prev_coercions_len:
+                    _save_coercions(output_dir, coercions)
                 if file_moved:
                     moved += 1
                     continue
