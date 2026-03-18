@@ -145,6 +145,18 @@ def run(args: argparse.Namespace) -> int:
         console.print("[yellow]Nothing to publish.[/yellow]")
         return 0
 
+    # ── Filter out pre-2020 decks ──────────────────────────────────────────
+    before_count = len(tournaments)
+    tournaments = [t for t in tournaments if t.date_start.year >= 2020]
+    excluded = before_count - len(tournaments)
+    if excluded:
+        console.print(
+            f"[yellow]Excluded {excluded} tournament(s) with date prior to 2020.[/yellow]"
+        )
+    if not tournaments:
+        console.print("[yellow]Nothing to publish after year filter.[/yellow]")
+        return 0
+
     # ── Publish ────────────────────────────────────────────────────────────
     today = datetime.now(UTC).strftime("%Y-%m-%d")
     console.print(
