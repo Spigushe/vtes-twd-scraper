@@ -1,0 +1,159 @@
+name: Path of Elysian Choruses
+location: Stockholm, Sweden
+date_start: '2026-03-15'
+rounds_format: 3R+F
+players_count: 15
+winner: Ivan Marin-Rivas
+event_url: https://www.vekn.net/event-calendar/event/13093
+event_id: '13093'
+vp_comment: 1GW5 + 4vp in final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82905-twd-path-of-elysian-choruses-stockholm-sweden
+deck:
+  name: Ickypicky
+  description: ''
+  crypt_count: 12
+  crypt_min: 23
+  crypt_max: 34
+  crypt_avg: 7.17
+  crypt:
+  - count: 2
+    name: Gnaeus Aemilius Augustinus
+    capacity: 9
+    disciplines: DOM OBL POT PRO tha
+    title: prince
+    clan: Lasombra
+    grouping: 6
+  - count: 2
+    name: María del Toro
+    capacity: 7
+    disciplines: DOM OBL POT
+    title: prince
+    clan: Lasombra
+    grouping: 6
+  - count: 2
+    name: Yewon Ong
+    capacity: 8
+    disciplines: DOM OBL POT for
+    title: prince
+    clan: Lasombra
+    grouping: 6
+  - count: 1
+    name: Aintzane Arriaga
+    capacity: 6
+    disciplines: DOM OBL POT
+    clan: Lasombra
+    grouping: 6
+  - count: 1
+    name: Azucena
+    capacity: 5
+    disciplines: DOM OBL pot
+    clan: Lasombra
+    grouping: 6
+  - count: 1
+    name: Dafina Hanganu
+    capacity: 8
+    disciplines: DOM OBL POT for
+    title: prince
+    clan: Lasombra
+    grouping: 6
+  - count: 1
+    name: Kamaluddin
+    capacity: 6
+    disciplines: DOM OBL for pot
+    title: primogen
+    clan: Lasombra
+    grouping: 6
+  - count: 1
+    name: Rasha Tarabzouni
+    capacity: 6
+    disciplines: DOM POT obl pre
+    title: bishop
+    clan: Lasombra
+    grouping: 6
+  - count: 1
+    name: Rinaldo Albizzi
+    capacity: 7
+    disciplines: DOM OBL POT pre
+    title: primogen
+    clan: Lasombra
+    grouping: 6
+  library_count: 84
+  library_sections:
+  - name: Master
+    count: 13
+    cards:
+    - count: 4
+      name: Cavalier
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Elysian Fields
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: Line, The
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: Power Structure
+    - count: 2
+      name: Wider View
+  - name: Action
+    count: 11
+    cards:
+    - count: 8
+      name: Govern the Unaligned
+    - count: 1
+      name: Scouting Mission
+    - count: 2
+      name: Shroud of Decay
+  - name: Political Action
+    count: 9
+    cards:
+    - count: 3
+      name: Camarilla's Iron Fist
+    - count: 6
+      name: Parity Shift
+  - name: Ally
+    count: 10
+    cards:
+    - count: 10
+      name: Spectral Servitor
+  - name: Action Modifier
+    count: 25
+    cards:
+    - count: 2
+      name: Amici Noctis
+    - count: 2
+      name: Bonding
+    - count: 4
+      name: Conditioning
+    - count: 2
+      name: Foreshadowing Destruction
+    - count: 3
+      name: Shadow Cast
+    - count: 4
+      name: Shadow Cloak
+    - count: 3
+      name: Stygian Shroud
+    - count: 5
+      name: Where the Veil Thins
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Ominous Chorus
+  - name: Reaction
+    count: 10
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 4
+      name: Shadow Sentinel
+  - name: Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Pass Through Shadow
