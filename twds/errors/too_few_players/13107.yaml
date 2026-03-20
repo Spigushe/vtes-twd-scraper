@@ -1,0 +1,124 @@
+name: Ressaca de Carnaval
+location: Niterói, Brasil
+date_start: '2026-03-15'
+rounds_format: 2R+F
+players_count: 10
+winner: Italo Girianelli Neto (
+event_url: https://www.vekn.net/event-calendar/event/13107
+event_id: '13107'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82906-twd-ressaca-de-carnaval
+deck:
+  name: Lutz Politics
+  created_by: Italo Girianelli Neto
+  description: ''
+  crypt_count: 12
+  crypt_min: 38
+  crypt_max: 44
+  crypt_avg: 10.5
+  crypt:
+  - count: 4
+    name: Lutz von Hohenzollern
+    capacity: 11
+    disciplines: AUS DEM OBF PRE pot
+    title: inner circle
+    clan: Malkavian
+    grouping: 4
+  - count: 2
+    name: Adana de Sforza
+    capacity: 11
+    disciplines: CEL OBF POT PRE PRO aus
+    title: inner circle
+    clan: Brujah
+    grouping: 4
+  - count: 2
+    name: Rafael de Corazon
+    capacity: 11
+    disciplines: AUS CEL DOM OBF PRE
+    title: inner circle
+    clan: Toreador
+    grouping: 4
+  - count: 2
+    name: Unmada
+    capacity: 10
+    disciplines: AUS DEM OBF VIC cel for
+    title: justicar
+    clan: Malkavian
+    grouping: 5
+  - count: 2
+    name: Dmitra Ilyanova
+    capacity: 9
+    disciplines: CEL FOR POT PRE obf
+    title: justicar
+    clan: Brujah
+    grouping: 5
+  library_count: 88
+  library_sections:
+  - name: Master
+    count: 24
+    cards:
+    - count: 2
+      name: Archon Investigation
+    - count: 1
+      name: Camarilla Conclave
+    - count: 1
+      name: Elder Library
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: 'Golconda: Inner Peace'
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Secure Haven
+    - count: 1
+      name: Smiling Jack, The Anarch
+    - count: 1
+      name: Sudden Reversal
+    - count: 6
+      name: Villein
+    - count: 6
+      name: Zillah's Valley
+  - name: Political Action
+    count: 16
+    cards:
+    - count: 1
+      name: Ancient Influence
+    - count: 2
+      name: Banishment
+    - count: 5
+      name: Camarilla's Iron Fist
+    - count: 6
+      name: Kine Resources Contested
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+  - name: Action Modifier
+    count: 22
+    cards:
+    - count: 4
+      name: Awe
+    - count: 4
+      name: Elder Impersonation
+    - count: 5
+      name: Forgotten Labyrinth
+    - count: 5
+      name: Lost in Crowds
+    - count: 4
+      name: Voter Captivation
+  - name: Reaction
+    count: 15
+    cards:
+    - count: 8
+      name: Eyes of Argus
+    - count: 7
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 11
+    cards:
+    - count: 4
+      name: Charismatic Aura
+    - count: 4
+      name: Majesty
+    - count: 3
+      name: No Trace
