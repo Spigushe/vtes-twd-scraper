@@ -1585,6 +1585,7 @@ class TestPublishCommand:
                 delay=0,
                 github_token="mytoken",
                 publish_dir=Path(tmpdir) / "publish",
+                include_pre_2020=False,
                 verbose=False,
             )
             with patch(
@@ -1607,6 +1608,7 @@ class TestPublishCommand:
                 delay=0,
                 github_token="mytoken",
                 publish_dir=Path(tmpdir) / "publish",
+                include_pre_2020=False,
                 verbose=False,
             )
             with patch(
@@ -1633,6 +1635,7 @@ class TestPublishCommand:
                 delay=0,
                 github_token="mytoken",
                 publish_dir=Path(tmpdir) / "publish",
+                include_pre_2020=False,
                 verbose=False,
             )
             with patch(
@@ -1655,6 +1658,7 @@ class TestPublishCommand:
                 delay=0,
                 github_token="mytoken",
                 publish_dir=Path(tmpdir) / "publish",
+                include_pre_2020=False,
                 verbose=False,
             )
             with patch(
