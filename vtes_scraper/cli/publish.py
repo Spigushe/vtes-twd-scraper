@@ -48,6 +48,12 @@ def register(sub: argparse._SubParsersAction) -> None:
         dest="publish_dir",
         help="Directory to write Markdown publish reports (default: publish/).",
     )
+    p.add_argument(
+        "--include-pre-2020",
+        action="store_true",
+        dest="include_pre_2020",
+        help="Publish decks from before 2020 (skipped by default).",
+    )
     p.add_argument("--verbose", "-v", action="store_true")
     p.set_defaults(func=run)
 
@@ -144,6 +150,19 @@ def run(args: argparse.Namespace) -> int:
     if not tournaments:
         console.print("[yellow]Nothing to publish.[/yellow]")
         return 0
+
+    # ── Filter out pre-2020 decks ──────────────────────────────────────────
+    if not args.include_pre_2020:
+        before_count = len(tournaments)
+        tournaments = [t for t in tournaments if t.date_start.year >= 2020]
+        excluded = before_count - len(tournaments)
+        if excluded:
+            console.print(
+                f"[yellow]Excluded {excluded} tournament(s) with date prior to 2020.[/yellow]"
+            )
+        if not tournaments:
+            console.print("[yellow]Nothing to publish after year filter.[/yellow]")
+            return 0
 
     # ── Publish ────────────────────────────────────────────────────────────
     today = datetime.now(UTC).strftime("%Y-%m-%d")
