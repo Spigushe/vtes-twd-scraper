@@ -4,7 +4,7 @@ Scrape tournament winning decks (TWD) from the [VEKN forum](https://www.vekn.net
 
 ## Data format
 
-Each tournament produces one YAML file named `{event_id}.yaml` where `event_id` is the numeric id from the VEKN event calendar URL (e.g. `/event/8470` → `8470.yaml`).
+Each tournament produces one YAML file named `{event_id}.yaml` where `event_id` is the numeric id from the VEKN event calendar URL (e.g. `/event/8470` → `8470.yaml`). Files are stored under `twds/YYYY/MM/` by default.
 
 This convention mirrors the [GiottoVerducci/TWD](https://github.com/GiottoVerducci/TWD) archive, which uses `decks/{event_id}.txt`.
 
@@ -19,14 +19,14 @@ source .venv/bin/activate      # UNIX
 pip install -e ".[dev]"
 ```
 
-Requires Python ≥ 3.11.
+Requires Python ≥ 3.14.
 
 ## Usage
 
 ### CLI
 
 ```bash
-# Scrape all pages, write YAMLs to ./twds/
+# Scrape all pages, write YAMLs to ./twds/YYYY/MM/
 vtes-scraper scrape
 
 # Scrape first 3 pages only, overwrite existing files
@@ -41,27 +41,38 @@ vtes-scraper scrape --start-page 5 --max-pages 2
 # Parse a single local .txt file
 vtes-scraper parse decks/8470.txt
 
-# Parse and print to stdout (no file written)
-vtes-scraper parse decks/8470.txt
-
-# Validate scraped decks and sort them by error
+# Validate scraped decks and move invalid ones to twds/errors/
 vtes-scraper validate
 
-# Validate scraped decks and checking VEKN Calendar to cross reference dates
+# Also cross-reference dates against the VEKN event calendar
 vtes-scraper validate --check-dates
 
-# Scrape and publish new decks as PRs to GiottoVerducci/TWD
-GITHUB_TOKEN=ghp_xxx python -m vtes_scraper publish
+# Also verify winners against the VEKN member database (writes vekn_number to files)
+vtes-scraper validate --check-players
+
+# Fix date_start in one or more YAML files to match the VEKN calendar
+vtes-scraper fix-date twds/2026/01/12957.yaml
+vtes-scraper fix-date twds/2026/01/*.yaml --dry-run
+
+# Re-fetch decks that ended up in twds/errors/ and rewrite them
+vtes-scraper rescrape
+
+# Publish new decks as a single PR to GiottoVerducci/TWD
+GITHUB_TOKEN=ghp_xxx vtes-scraper publish
+
+# Publish including pre-2020 decks (skipped by default)
+GITHUB_TOKEN=ghp_xxx vtes-scraper publish --include-pre-2020
 ```
 
 ### Python API
 
 ```python
-from vtes_scraper import scrape_forum, write_tournament_yaml
+from vtes_scraper.scraper import scrape_forum
+from vtes_scraper.output import write_tournament_yaml
 from pathlib import Path
 
-for tournament in scrape_forum(max_pages=2, start_page=5):
-    write_tournament_yaml(tournament, output_dir=Path("output"))
+for tournament, icon in scrape_forum(max_pages=2, start_page=5):
+    write_tournament_yaml(tournament, output_dir=Path("twds"))
 ```
 
 ## Development
@@ -75,19 +86,22 @@ ruff check vtes_scraper/ tests/
 ruff format vtes_scraper/ tests/
 ```
 
-## GitHub Action
+## GitHub Actions
 
 The workflow in `.github/workflows/scrape.yml`:
 
 - Runs daily at 06:00 UTC
+- Also triggered on push to `main` when source files change
 - Can be triggered manually with optional `max_pages` and `overwrite` inputs
-- Commits new YAML files to the repository automatically
+- Runs tests, scrapes the forum, validates the results, and commits new YAML files automatically
 
 The workflow in `.github/workflows/publish.yml`:
 
-- Runs weekly at 08:00 UTC
+- Runs every Monday at 08:00 UTC
 - Can be triggered manually
-- Creates PRs to the GiottoVerducci/TWD repository with new decks
+- Runs `validate --check-players` to enrich files with VEKN numbers before publishing
+- Creates a single PR to the GiottoVerducci/TWD repository with all new decks
+- Commits a Markdown publish report to `publish/YYYY/MM/`
 
 ## YAML output example
 
@@ -98,6 +112,7 @@ date_start: October 1st 2016
 rounds_format: 2R+F
 players_count: 12
 winner: Ravel Zorzal
+vekn_number: '3200001'
 event_url: https://www.vekn.net/event-calendar/event/8470
 event_id: '8470'
 vp_comment: 5VP in final
@@ -128,25 +143,40 @@ deck:
 vtes-twd-scraper/
 ├── vtes_scraper/
 │   ├── cli/
-│   │   ├── __init__.py # CLI entry point and shared argparse instance
-│   │   ├── _common.py  # CLI shared utilities
-│   │   ├── parse.py    # CLI command for parsing local .txt files
-│   │   ├── publish.py  # CLI command for publishing to GitHub
-│   │   └── scrape.py   # CLI command for scraping the VEKN forum
+│   │   ├── __init__.py   # CLI entry point and shared argparse instance
+│   │   ├── _common.py    # CLI shared utilities
+│   │   ├── fix_dates.py  # CLI command for fixing date_start fields
+│   │   ├── parse.py      # CLI command for parsing local .txt files
+│   │   ├── publish.py    # CLI command for publishing to GitHub
+│   │   ├── rescrape.py   # CLI command for re-fetching errored decks
+│   │   ├── scrape.py     # CLI command for scraping the VEKN forum
+│   │   └── validate.py   # CLI command for validating scraped YAML files
 │   ├── output/
 │   │   ├── __init__.py
-│   │   ├── _common.py  # Output shared utilities
-│   │   ├── txt.py      # TXT serializer
-│   │   └── yaml.py     # YAML serializer
-│   ├── models.py       # Pydantic data models
-│   ├── parser.py       # TWD text format parser
-│   └── scraper.py      # Forum scraper (httpx + BeautifulSoup)
+│   │   ├── _common.py    # Output shared utilities
+│   │   ├── txt.py        # TXT serializer
+│   │   └── yaml.py       # YAML serializer
+│   ├── models.py         # Pydantic data models
+│   ├── parser.py         # TWD text format parser
+│   ├── publisher.py      # GitHub PR publisher
+│   ├── scraper.py        # Forum scraper (httpx + BeautifulSoup)
+│   └── validator.py      # YAML validation logic
 ├── tests/
-│   └── test_parser.py
+│   ├── test_cli.py
+│   ├── test_models.py
+│   ├── test_output.py
+│   ├── test_parser.py
+│   ├── test_parser_extras.py
+│   ├── test_publisher.py
+│   ├── test_scraper.py
+│   └── test_scraper_icons.py
+├── twds/                 # Scraped YAML files (YYYY/MM/<event_id>.yaml)
+├── publish/              # Markdown publish reports (YYYY/MM/<date>.md)
 ├── .github/
 │   └── workflows/
-│       ├── scrape.yml  # CRON scrape at 6:00 UTC every day
-│       └── publish.yml # CRON publish at 8:00 UTC every monday
+│       ├── scrape.yml         # CRON scrape at 06:00 UTC every day
+│       ├── publish.yml        # CRON publish at 08:00 UTC every Monday
+│       └── feature-review.yml # Automated feature-request review
 ├── pyproject.toml
 └── .env.example
 ```
@@ -155,5 +185,7 @@ vtes-twd-scraper/
 
 - The scraper respects a 1.5s delay between requests by default (`--delay`).
 - Use `--start-page` to resume an interrupted run or target a specific page range. Pages are 0-indexed (page 0 = `limitstart=0`, page 1 = `limitstart=20`, etc.).
+- Forum posts marked with the "merged" icon are written to `twds/changes_required/` instead of the normal date tree, so they can be reviewed before merging.
+- `validate --check-players` writes a `vekn_number` field to each file and caches resolved name mappings in `twds/coercions.json` to avoid repeated HTTP requests.
 - The `User-Agent` header identifies the bot to the server.
 - Always verify `robots.txt` and VEKN forum terms before large-scale scraping.
