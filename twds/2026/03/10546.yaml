@@ -1,0 +1,134 @@
+name: Battle at the Gasworks 1
+location: Albany, NY
+date_start: '2026-03-21'
+rounds_format: 2R+F
+players_count: 12
+winner: Christopher Malec, Winner
+event_url: https://www.vekn.net/event-calendar/event/10546
+event_id: '10546'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82908-twd-battle-at-the-gasworks-1-albany-ny-march-21-2026
+deck:
+  name: If Uballit, They Will Come
+  created_by: Christopher Malec, with advice and assistance from Karl Shaeffer
+  description: Uses multi-acting with bleeds and Shroud of decay to do big damage.  Votes are more for utility and 
+    bargaining, but some bloat and pool damage. One minion is capable of doing 13 damage under optimal conditions. Uses 
+    Lasombra princes and Archbishops to have a strong political presence in the game.
+  crypt_count: 12
+  crypt_min: 30
+  crypt_max: 40
+  crypt_avg: 8.67
+  crypt:
+  - count: 5
+    name: Ashur-uballit, Son of the Abyss
+    capacity: 10
+    disciplines: AUS DOM FOR OBL THA
+    title: cardinal
+    clan: Hecata
+    grouping: 6
+  - count: 2
+    name: Dafina Hanganu
+    capacity: 8
+    disciplines: DOM OBL POT for
+    title: prince
+    clan: Lasombra
+    grouping: 6
+  - count: 2
+    name: Damian
+    capacity: 8
+    disciplines: DOM OBL POT for pre
+    title: archbishop
+    clan: Lasombra
+    grouping: 6
+  - count: 2
+    name: Yewon Ong
+    capacity: 8
+    disciplines: DOM OBL POT for
+    title: prince
+    clan: Lasombra
+    grouping: 6
+  - count: 1
+    name: Kamaluddin
+    capacity: 6
+    disciplines: DOM OBL for pot
+    title: primogen
+    clan: Lasombra
+    grouping: 6
+  library_count: 88
+  library_sections:
+  - name: Master
+    count: 21
+    cards:
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: Power Structure
+    - count: 5
+      name: Villein
+    - count: 2
+      name: Wider View
+    - count: 5
+      name: Zillah's Valley
+  - name: Action
+    count: 17
+    cards:
+    - count: 10
+      name: Govern the Unaligned
+    - count: 7
+      name: Shroud of Decay
+  - name: Political Action
+    count: 10
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 2
+      name: Banishment
+    - count: 2
+      name: Cold War
+    - count: 1
+      name: Empires Fall
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+    - count: 2
+      name: War of Ages
+  - name: Action Modifier
+    count: 24
+    cards:
+    - count: 3
+      name: Conditioning
+    - count: 2
+      name: Foreshadowing Destruction
+    - count: 6
+      name: Freak Drive
+    - count: 3
+      name: Shadow Cast
+    - count: 3
+      name: Shadow Cloak
+    - count: 4
+      name: Stygian Shroud
+    - count: 3
+      name: Where the Veil Thins
+  - name: Reaction
+    count: 10
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 2
+      name: On the Qui Vive
+    - count: 2
+      name: Shadow Sentinel
+  - name: Combat
+    count: 6
+    cards:
+    - count: 6
+      name: Pass Through Shadow
