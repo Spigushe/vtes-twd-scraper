@@ -54,6 +54,16 @@ def register(sub: argparse._SubParsersAction) -> None:
         dest="include_pre_2020",
         help="Publish decks from before 2020 (skipped by default).",
     )
+    p.add_argument(
+        "--dry-run",
+        action="store_true",
+        dest="dry_run",
+        help=(
+            "Simulate the full publish flow (fork, branch, file commits) "
+            "without opening a PR. The branch is deleted after the run. "
+            "Report is saved under reports/dry-runs/."
+        ),
+    )
     p.add_argument("--verbose", "-v", action="store_true")
     p.set_defaults(func=run)
 
@@ -63,14 +73,34 @@ def _write_publish_report(
     publish_dir: Path,
     today: str,
     tournaments: list[Tournament],
+    timestamp: str | None = None,
 ) -> Path:
-    """Write a Markdown summary of a publish run to publish/YYYY/MM/{today}.md."""
-    year, month = today[:4], today[5:7]
-    report_dir = publish_dir / year / month
-    report_dir.mkdir(parents=True, exist_ok=True)
-    report_path = report_dir / f"{today}.md"
+    """Write a Markdown summary of a publish run.
 
-    lines = [f"# TWD Publish Report — {today}", ""]
+    Normal runs  → publish/YYYY/MM/{today}.md
+    Dry-run runs → reports/dry-runs/YYYY/MM/{today}-{HH-MM-SS}.md
+    """
+    year, month = today[:4], today[5:7]
+
+    if result.dry_run:
+        ts = timestamp or today
+        report_dir = Path("reports") / "dry-runs" / year / month
+        report_dir.mkdir(parents=True, exist_ok=True)
+        report_path = report_dir / f"{ts}.md"
+    else:
+        report_dir = publish_dir / year / month
+        report_dir.mkdir(parents=True, exist_ok=True)
+        report_path = report_dir / f"{today}.md"
+
+    title_suffix = " (DRY RUN)" if result.dry_run else ""
+    lines = [f"# TWD Publish Report — {today}{title_suffix}", ""]
+
+    if result.dry_run:
+        lines += [
+            "> **Dry-run mode** — branch was created and files committed to verify "
+            "behaviour, but the branch was deleted and no PR was opened.",
+            "",
+        ]
 
     if result.pr_url:
         lines += [f"**PR**: [{result.pr_url}]({result.pr_url})", ""]
@@ -165,17 +195,33 @@ def run(args: argparse.Namespace) -> int:
             return 0
 
     # ── Publish ────────────────────────────────────────────────────────────
-    today = datetime.now(UTC).strftime("%Y-%m-%d")
-    console.print(
-        f"Publishing [cyan]{len(tournaments)}[/cyan] tournament(s) as a single PR…"
+    now = datetime.now(UTC)
+    today = now.strftime("%Y-%m-%d")
+    timestamp = now.strftime("%Y-%m-%d-%H-%M-%S")
+
+    dry_run: bool = getattr(args, "dry_run", False)
+    if dry_run:
+        console.print(
+            f"[yellow]Dry-run:[/yellow] simulating publish of "
+            f"[cyan]{len(tournaments)}[/cyan] tournament(s) — no PR will be opened…"
+        )
+    else:
+        console.print(
+            f"Publishing [cyan]{len(tournaments)}[/cyan] tournament(s) as a single PR…"
+        )
+    logger.debug(
+        "Submitting %d tournament(s) to publisher (dry_run=%s).",
+        len(tournaments),
+        dry_run,
     )
-    logger.debug("Submitting %d tournament(s) to publisher.", len(tournaments))
-    result = publish_all_as_single_pr(tournaments, token=token, delay=args.delay)
+    result = publish_all_as_single_pr(
+        tournaments, token=token, delay=args.delay, dry_run=dry_run
+    )
 
     # ── Save Markdown report ───────────────────────────────────────────────
     try:
         report_path = _write_publish_report(
-            result, args.publish_dir, today, tournaments
+            result, args.publish_dir, today, tournaments, timestamp=timestamp
         )
         console.print(f"Report saved → [dim]{report_path}[/dim]")
         logger.debug("Publish report written to %s.", report_path)
@@ -196,7 +242,13 @@ def run(args: argparse.Namespace) -> int:
         console.print(f"[green]✓[/green] {event_id} committed to PR branch")
 
     console.rule()
-    if result.pr_url:
+    if dry_run:
+        console.print(
+            f"[yellow]Dry-run complete[/yellow] — "
+            f"[green]{len(result.published)}[/green] deck(s) committed and branch deleted, "
+            f"no PR opened."
+        )
+    elif result.pr_url:
         console.print(
             f"[green]PR opened[/green] with [green]{len(result.published)}[/green]"
             f" deck(s) → {result.pr_url}"

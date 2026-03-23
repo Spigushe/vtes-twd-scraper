@@ -70,6 +70,9 @@ class BatchPRResult:
     skipped_all: bool = False
     """True when every tournament was already in the target repo (no PR created)."""
 
+    dry_run: bool = False
+    """True when this result comes from a dry-run (branch deleted, no PR opened)."""
+
 
 # ---------------------------------------------------------------------------
 # Low-level GitHub API helpers
@@ -249,6 +252,23 @@ def _find_existing_pr(
     return None
 
 
+def _delete_branch(
+    client: httpx.Client,
+    branch: str,
+    token: str | None = None,
+    owner: str = _TARGET_OWNER,
+) -> None:
+    """Delete a git ref (branch) on *owner*'s fork (best-effort)."""
+    url = f"{_GITHUB_API}/repos/{owner}/{_TARGET_REPO}/git/refs/heads/{branch}"
+    resp = client.delete(url, headers=_headers(token))
+    if resp.status_code == 204:
+        logger.debug("Deleted branch %r on %s.", branch, owner)
+    else:
+        logger.warning(
+            "Could not delete branch %r on %s: HTTP %s", branch, owner, resp.status_code
+        )
+
+
 def _sanitize_branch_name(text: str) -> str:
     """Convert arbitrary text to a valid git branch name segment."""
     text = text.lower()
@@ -266,6 +286,7 @@ def publish_all_as_single_pr(
     token: str | None = None,
     branch_prefix: str = "twd/weekly-decks",
     delay: float = 1.0,
+    dry_run: bool = False,
 ) -> BatchPRResult:
     """
     Publish all new tournaments in a **single** Pull Request against
@@ -277,17 +298,20 @@ def publish_all_as_single_pr(
       3. Create one branch named ``{branch_prefix}-{YYYY-MM-DD}`` off master.
       4. Commit each new deck's TXT file to that branch.
       5. Open one PR with a summary table of all included decks.
+         (dry_run: skip PR creation and delete the branch instead)
 
     Args:
         tournaments: All Tournament objects scraped this run.
         token: GitHub PAT with *public_repo* (or *repo*) scope.
         branch_prefix: Prefix for the feature branch name.
         delay: Seconds to wait between consecutive GitHub API file commits.
+        dry_run: When True, create branch and commit files to verify behaviour,
+            then delete the branch instead of opening a PR.
 
     Returns:
         A BatchPRResult describing the outcome.
     """
-    result = BatchPRResult()
+    result = BatchPRResult(dry_run=dry_run)
 
     with httpx.Client(timeout=30) as client:
         # ── Step 0: ensure fork exists ───────────────────────────────────────
@@ -359,9 +383,16 @@ def publish_all_as_single_pr(
                 result.errors.append((event_id, str(exc)))
                 logger.error("Failed to commit deck %s: %s", event_id, exc)
 
-        # ── Step 5: open the PR from fork → upstream ─────────────────────────
+        # ── Step 5: open PR or (dry-run) delete the branch ───────────────────
         if not result.published:
-            # All commits failed — no point opening an empty PR
+            # All commits failed — no point opening an empty PR or keeping branch
+            if dry_run:
+                _delete_branch(client, branch, token, owner=fork_owner)
+            return result
+
+        if dry_run:
+            logger.info("Dry-run: deleting branch %r instead of opening a PR.", branch)
+            _delete_branch(client, branch, token, owner=fork_owner)
             return result
 
         pr_title = f"Add {len(result.published)} TWD deck(s) — {today}"
@@ -371,7 +402,7 @@ def publish_all_as_single_pr(
             f"tournament winning deck(s) scraped from [vekn.net](https://www.vekn.net/forum/event-reports-and-twd).",
             "",
             "| Event ID | Event Name | Location | Date | Winner |",
-            "|---|---|---|---|---|",
+            "| -------- | ---------- | -------- | ---- | ------ |",
         ]
         for t in new_tournaments:
             if (t.event_id or "unknown") in result.published:

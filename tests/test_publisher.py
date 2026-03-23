@@ -10,6 +10,7 @@ from vtes_scraper.models import CryptCard, Deck, LibraryCard, LibrarySection, To
 from vtes_scraper.publisher import (
     BatchPRResult,
     _create_branch,
+    _delete_branch,
     _file_exists_on_branch,
     _find_existing_pr,
     _get_authenticated_user,
@@ -315,6 +316,35 @@ class TestFindExistingPr:
 # ---------------------------------------------------------------------------
 
 
+class TestDeleteBranch:
+    def test_success_204(self):
+        mock_resp = MagicMock()
+        mock_resp.status_code = 204
+
+        mock_client = MagicMock()
+        mock_client.delete.return_value = mock_resp
+
+        # Should not raise
+        _delete_branch(mock_client, "my-branch", token="mytoken", owner="testuser")
+        mock_client.delete.assert_called_once()
+
+    def test_non_204_logs_warning(self, caplog):
+        import logging
+
+        mock_resp = MagicMock()
+        mock_resp.status_code = 404
+
+        mock_client = MagicMock()
+        mock_client.delete.return_value = mock_resp
+
+        with caplog.at_level(logging.WARNING, logger="vtes_scraper.publisher"):
+            _delete_branch(
+                mock_client, "missing-branch", token="mytoken", owner="testuser"
+            )
+
+        assert any("Could not delete branch" in r.message for r in caplog.records)
+
+
 class TestBatchPRResult:
     def test_defaults(self):
         result = BatchPRResult()
@@ -323,6 +353,11 @@ class TestBatchPRResult:
         assert result.skipped == []
         assert result.errors == []
         assert result.skipped_all is False
+        assert result.dry_run is False
+
+    def test_dry_run_flag(self):
+        result = BatchPRResult(dry_run=True)
+        assert result.dry_run is True
 
 
 # ---------------------------------------------------------------------------
@@ -521,6 +556,66 @@ class TestPublishAllAsSinglePr:
 
         assert "9001" in result.skipped
         assert "9002" in result.published
+
+    def test_dry_run_deletes_branch_and_no_pr(self):
+        t = _make_tournament()
+
+        with (
+            patch("vtes_scraper.publisher._ensure_fork", return_value="testuser"),
+            patch("vtes_scraper.publisher._file_exists_on_branch", return_value=False),
+            patch("vtes_scraper.publisher._get_branch_sha", return_value="abc123"),
+            patch("vtes_scraper.publisher._create_branch"),
+            patch("vtes_scraper.publisher._put_file"),
+            patch("vtes_scraper.publisher._open_pull_request") as mock_pr,
+            patch("vtes_scraper.publisher._delete_branch") as mock_del,
+        ):
+            result = publish_all_as_single_pr(
+                [t], token="mytoken", delay=0, dry_run=True
+            )
+
+        assert result.dry_run is True
+        assert result.pr_url is None
+        assert len(result.published) == 1
+        mock_pr.assert_not_called()
+        mock_del.assert_called_once()
+
+    def test_dry_run_all_skipped_no_branch_deleted(self):
+        t = _make_tournament()
+
+        with (
+            patch("vtes_scraper.publisher._ensure_fork", return_value="testuser"),
+            patch("vtes_scraper.publisher._file_exists_on_branch", return_value=True),
+            patch("vtes_scraper.publisher._delete_branch") as mock_del,
+        ):
+            result = publish_all_as_single_pr(
+                [t], token="mytoken", delay=0, dry_run=True
+            )
+
+        assert result.skipped_all is True
+        mock_del.assert_not_called()
+
+    def test_dry_run_all_commits_failed_deletes_branch(self):
+        t = _make_tournament()
+        mock_response = MagicMock()
+        mock_response.status_code = 500
+        mock_response.text = "Server Error"
+        err = httpx.HTTPStatusError("500", request=MagicMock(), response=mock_response)
+
+        with (
+            patch("vtes_scraper.publisher._ensure_fork", return_value="testuser"),
+            patch("vtes_scraper.publisher._file_exists_on_branch", return_value=False),
+            patch("vtes_scraper.publisher._get_branch_sha", return_value="abc123"),
+            patch("vtes_scraper.publisher._create_branch"),
+            patch("vtes_scraper.publisher._put_file", side_effect=err),
+            patch("vtes_scraper.publisher._delete_branch") as mock_del,
+        ):
+            result = publish_all_as_single_pr(
+                [t], token="mytoken", delay=0, dry_run=True
+            )
+
+        assert len(result.errors) == 1
+        assert result.pr_url is None
+        mock_del.assert_called_once()
 
     def test_with_errors_in_pr_body(self):
         """Test PR body generation when there are both published and errored decks."""
