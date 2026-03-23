@@ -1,0 +1,374 @@
+name: Mesekártya a Hatvani Uradalomban - HQS
+location: Hatvan, Hungary
+date_start: '2025-09-20'
+rounds_format: 3R+F
+players_count: 39
+winner: Ádám Horváth's Tournament Winning Deck with 1,5 VPs in the Finals
+event_url: https://www.vekn.net/event-calendar/event/12436
+event_id: '12436'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82587-twd-hungarian-qualifier-series-7
+deck:
+  name: Anim Baron toolbox 1.2
+  created_by: Gyula Erdős
+  description: ''
+  crypt_count: 12
+  crypt_min: 19
+  crypt_max: 30
+  crypt_avg: 6.25
+  crypt:
+  - count: 2
+    name: Adrino Manauara
+    capacity: 8
+    disciplines: ANI DOM PRO pot
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 2
+    name: Ángel Guerrero
+    capacity: 7
+    disciplines: ANI DOM PRO
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 2
+    name: Massimiliano
+    capacity: 7
+    disciplines: ANI FOR pro
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Branimira
+    capacity: 6
+    disciplines: ANI dom pre pro
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Gathii
+    capacity: 5
+    disciplines: ANI PRE obf
+    clan: Ravnos
+    grouping: 7
+  - count: 1
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Neserian
+    capacity: 6
+    disciplines: ANI DOM cel pro
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Trung Chau Pham
+    capacity: 3
+    disciplines: ANI
+    clan: Ravnos
+    grouping: 7
+  - count: 1
+    name: Whisper
+    capacity: 5
+    disciplines: ANI DOM pro
+    clan: Tzimisce
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 19
+    cards:
+    - count: 1
+      name: Carfax Abbey
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Ennoia's Theater
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 6
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 13
+    cards:
+    - count: 6
+      name: Deep Song
+    - count: 7
+      name: Govern the Unaligned
+  - name: Political Action
+    count: 1
+    cards:
+    - count: 1
+      name: Eat the Rich
+  - name: Retainer
+    count: 2
+    cards:
+    - count: 1
+      name: Mr. Winthrop
+    - count: 1
+      name: Raven Spy
+  - name: Action Modifier
+    count: 1
+    cards:
+    - count: 1
+      name: Conditioning
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Form of the Bat
+  - name: Reaction
+    count: 21
+    cards:
+    - count: 4
+      name: Bait and Switch
+    - count: 3
+      name: Deep Ecology
+    - count: 3
+      name: Deflection
+    - count: 2
+      name: Delaying Tactics
+    - count: 1
+      name: On the Qui Vive
+    - count: 8
+      name: Organized Resistance
+  - name: Combat
+    count: 29
+    cards:
+    - count: 11
+      name: Aid from Bats
+    - count: 9
+      name: Carrion Crows
+    - count: 1
+      name: Donnybrook
+    - count: 2
+      name: Groundfighting
+    - count: 2
+      name: Target Vitals
+    - count: 2
+      name: Taste of Vitae
+    - count: 2
+      name: Voracious Vermin
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 1
+      name: Catalina Vega                 8 for AUS CEL PRE          Toreador:6
+    - count: 1
+      name: Flavio Goncalves              7 aus for CEL PRE          Toreador:6
+    - count: 1
+      name: Mkhokheli                     6 aus cel for PRE          Toreador:6
+    - count: 1
+      name: Maila                         6 cel AUS PRE              Toreador:6
+    - count: 5
+      name: Diana Iadanza                 9 AUS CEL FOR PRE          Toreador:7
+    - count: 1
+      name: Francois Villon               10 ani obf pot AUS CEL PRE  Toreador:6
+    - count: 1
+      name: Marcos Belegrad               8 ani AUS CEL PRE          Toreador:7
+    - count: 1
+      name: Modius                        8 obf AUS CEL PRE          Toreador:7
+  - name: Master
+    count: 15
+    cards:
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: Secure Haven
+    - count: 1
+      name: Toreador Grand Ball
+    - count: 5
+      name: Villein
+    - count: 1
+      name: Camarilla Conclave
+    - count: 1
+      name: Creepshow Casino
+    - count: 1
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+  - name: Action
+    count: 6
+    cards:
+    - count: 4
+      name: Enchant Kindred
+    - count: 2
+      name: Entrancement
+  - name: Action Modifier
+    count: 23
+    cards:
+    - count: 4
+      name: Forced March
+    - count: 2
+      name: Freak Drive
+    - count: 4
+      name: Perfect Paragon
+    - count: 2
+      name: Bewitching Oration
+    - count: 5
+      name: Voter Captivation
+    - count: 4
+      name: Loup
+    - count: 2
+      name: Aire of Elation
+  - name: Action Modifier/Combat
+    count: 3
+    cards:
+    - count: 3
+      name: Resist Earth's Grasp
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Scalpel Tongue
+  - name: Political Action
+    count: 18
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 2
+      name: Kine Resources Contested
+    - count: 6
+      name: Parity Shift
+    - count: 1
+      name: Political Stranglehold
+    - count: 2
+      name: Banishment
+    - count: 4
+      name: Camarilla's Iron Fist
+  - name: Combat
+    count: 9
+    cards:
+    - count: 6
+      name: Majesty
+    - count: 3
+      name: Charismatic Aura
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Reaction
+    count: 13
+    cards:
+    - count: 2
+      name: Eyes of Argus
+    - count: 2
+      name: My Enemy's Enemy
+    - count: 4
+      name: 'Second Tradition: Domain'
+    - count: 5
+      name: Telepathic Misdirection
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 5
+      name: Anarch Convert           1                      Caitiff:ANY
+    - count: 2
+      name: Cornelius Ottavio        8 AUS OBF pre qui      Malkavian:2
+    - count: 1
+      name: Adonai                   7 AUS VAL for          Salubri antitribu:2
+    - count: 1
+      name: Ozmo                     6 AUS dom obf          Malkavian:1
+    - count: 1
+      name: Quira, The Bitch Queen   6 AUS OBF obt tha      Malkavian antitribu:2
+    - count: 1
+      name: Sheila Mezarin           6 AUS PRE cel for      Toreador antitribu:2
+    - count: 1
+      name: Victoria                 5 AUS cel obf          Malkavian:2
+  - name: Library
+    count: 90
+    cards: []
+  - name: Master
+    count: 21
+    cards:
+    - count: 1
+      name: Club Illusion
+    - count: 3
+      name: Hackerspace
+    - count: 1
+      name: Poacher's Hunting Ground
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Smiling Jack, The Anarch
+    - count: 6
+      name: Storage Annex
+    - count: 2
+      name: Vessel
+    - count: 5
+      name: Villein
+  - name: Equipment
+    count: 10
+    cards:
+    - count: 7
+      name: .44 Magnum
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Sport Bike
+  - name: Action Modifier
+    count: 3
+    cards:
+    - count: 3
+      name: Monkey Wrench
+  - name: Reaction
+    count: 34
+    cards:
+    - count: 5
+      name: Eagle's Sight
+    - count: 2
+      name: Enhanced Senses
+    - count: 12
+      name: Eyes of Argus
+    - count: 3
+      name: My Enemy's Enemy
+    - count: 2
+      name: On the Qui Vive
+    - count: 1
+      name: Precognition
+    - count: 1
+      name: Spirit's Touch
+    - count: 8
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 22
+    cards:
+    - count: 4
+      name: Aura Reading
+    - count: 7
+      name: Concealed Weapon
+    - count: 2
+      name: Groundfighting
+    - count: 5
+      name: Target Vitals
+    - count: 4
+      name: Taste of Vitae

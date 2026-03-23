@@ -1,0 +1,511 @@
+name: Főleg Barbara - Szeged - HQS
+location: Szeged, Hungary
+date_start: '2025-05-10'
+rounds_format: 3R+F
+players_count: 39
+winner: Máté Vaka's Tournament Winning Deck with 1,5 VPs in the Finals
+event_url: https://www.vekn.net/event-calendar/event/12052
+event_id: '12052'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82305-twd-hungarian-qualifier-series-4
+deck:
+  name: Anarch Anim Szeged
+  created_by: Erdős Gyula
+  description: ''
+  crypt_count: 12
+  crypt_min: 19
+  crypt_max: 30
+  crypt_avg: 6.25
+  crypt:
+  - count: 2
+    name: Adrino Manauara
+    capacity: 8
+    disciplines: ANI DOM PRO pot
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 2
+    name: Ángel Guerrero
+    capacity: 7
+    disciplines: ANI DOM PRO
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 2
+    name: Massimiliano
+    capacity: 7
+    disciplines: ANI FOR pro
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Branimira
+    capacity: 6
+    disciplines: ANI dom pre pro
+    title: baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Neserian
+    capacity: 6
+    disciplines: ANI DOM cel pro
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Gathii
+    capacity: 5
+    disciplines: ANI PRE obf
+    clan: Ravnos
+    grouping: 7
+  - count: 1
+    name: Whisper
+    capacity: 5
+    disciplines: ANI DOM pro
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Trung Chau Pham
+    capacity: 3
+    disciplines: ANI
+    clan: Ravnos
+    grouping: 7
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 19
+    cards:
+    - count: 1
+      name: Carfax Abbey
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Ennoia's Theater
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Vessel
+    - count: 5
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 13
+    cards:
+    - count: 1
+      name: Army of Rats
+    - count: 6
+      name: Deep Song
+    - count: 6
+      name: Govern the Unaligned
+  - name: Political Action
+    count: 1
+    cards:
+    - count: 1
+      name: Eat the Rich
+  - name: Retainer
+    count: 2
+    cards:
+    - count: 1
+      name: Mr. Winthrop
+    - count: 1
+      name: Raven Spy
+  - name: Action Modifier
+    count: 1
+    cards:
+    - count: 1
+      name: Conditioning
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Form of the Bat
+  - name: Reaction
+    count: 21
+    cards:
+    - count: 4
+      name: Bait and Switch
+    - count: 3
+      name: Deep Ecology
+    - count: 3
+      name: Deflection
+    - count: 2
+      name: Delaying Tactics
+    - count: 1
+      name: On the Qui Vive
+    - count: 8
+      name: Organized Resistance
+  - name: Combat
+    count: 29
+    cards:
+    - count: 10
+      name: Aid from Bats
+    - count: 10
+      name: Carrion Crows
+    - count: 1
+      name: Donnybrook
+    - count: 3
+      name: Groundfighting
+    - count: 1
+      name: Target Vitals
+    - count: 2
+      name: Taste of Vitae
+    - count: 2
+      name: Voracious Vermin
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 3
+      name: Erlik             10 AUS CEL FOR NEC THN      Harbinger of Skulls:3
+    - count: 3
+      name: Erebus             7 AUS FOR NEC dem          Harbinger of Skulls:3
+    - count: 2
+      name: Babalawo Alafin    7 AUS FOR NEC ani          Harbinger of Skulls:4
+    - count: 2
+      name: Nicomedes          5 aus for nec vic          Harbinger of Skulls:4
+    - count: 2
+      name: Solomon Batanea    5 AUS FOR nec              Harbinger of Skulls:4
+  - name: Library
+    count: 90
+    cards: []
+  - name: Master
+    count: 19
+    cards:
+    - count: 2
+      name: Direct Intervention
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 5
+      name: Liquidation
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 2
+      name: Vessel
+    - count: 4
+      name: Villein
+  - name: Ally
+    count: 15
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 14
+      name: Emerald Legionnaire
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 9
+    cards:
+    - count: 3
+      name: Acheron Vortex
+    - count: 3
+      name: Call of the Hungry Dead
+    - count: 3
+      name: Inevitability of the Void
+  - name: Action Modifier/Combat
+    count: 7
+    cards:
+    - count: 7
+      name: Breath of Thanatos
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Spectral Divination
+  - name: Reaction
+    count: 25
+    cards:
+    - count: 3
+      name: Delaying Tactics
+    - count: 2
+      name: Eagle's Sight
+    - count: 6
+      name: Eyes of Argus
+    - count: 2
+      name: My Enemy's Enemy
+    - count: 5
+      name: On the Qui Vive
+    - count: 7
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 7
+    cards:
+    - count: 2
+      name: Rolling with the Punches
+    - count: 5
+      name: Spiritual Intervention
+  - name: Event
+    count: 4
+    cards:
+    - count: 1
+      name: Scourge of the Enochians
+    - count: 3
+      name: Unmasking, The
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 4
+      name: Sascha Vykos, The Angel of Caine (ADV)   8 AUS THA VIC ani dom   archbishop   Tzimisce:2
+    - count: 1
+      name: Caliban                                  6 ANI AUS VIC                        Tzimisce:2
+    - count: 1
+      name: Corine Marcón                            6 AUS VIC ani                        Tzimisce:2
+    - count: 1
+      name: Ana Rita Montaña                         5 VIC aus dom obf                    Tzimisce:3
+    - count: 1
+      name: Devin Bisley                             5 ANI AUS vic                        Tzimisce:2
+    - count: 1
+      name: Elizabeth Westcott                       5 AUS ani cel vic                    Tzimisce:3
+    - count: 1
+      name: Lolita Houston                           4 VIC aus                            Tzimisce:2
+    - count: 1
+      name: Horatio                                  2 vic                                Tzimisce:2
+    - count: 1
+      name: Piotr Andreikov                          2 aus                                Tzimisce:3
+  - name: Library
+    count: 90
+    cards: []
+  - name: Master
+    count: 32
+    cards:
+    - count: 9
+      name: Ashur Tablets
+    - count: 4
+      name: British Museum, London, The
+    - count: 1
+      name: Direct Intervention
+    - count: 3
+      name: Grooming the Protégé
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: Library Hunting Ground
+    - count: 1
+      name: Papillon
+    - count: 4
+      name: Parthenon, The
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Rötschreck
+    - count: 1
+      name: Smiling Jack, The Anarch
+    - count: 3
+      name: Vessel
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 6
+    cards:
+    - count: 1
+      name: Abbot
+    - count: 1
+      name: Aranthebes, The Immortal
+    - count: 1
+      name: Army of Rats
+    - count: 3
+      name: Magic of the Smith
+  - name: Equipment
+    count: 16
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 2
+      name: Cooler
+    - count: 1
+      name: Gran Madre di Dio, Italy
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Ivory Bow
+    - count: 2
+      name: Kevlar Vest
+    - count: 6
+      name: Living Manse
+    - count: 1
+      name: Palatial Estate
+    - count: 1
+      name: Sniper Rifle
+  - name: Action Modifier
+    count: 4
+    cards:
+    - count: 4
+      name: Changeling
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Plasmic Form
+  - name: Reaction
+    count: 24
+    cards:
+    - count: 2
+      name: Eagle's Sight
+    - count: 1
+      name: Enhanced Senses
+    - count: 7
+      name: Eyes of Argus
+    - count: 3
+      name: My Enemy's Enemy
+    - count: 2
+      name: On the Qui Vive
+    - count: 1
+      name: Precognition
+    - count: 1
+      name: Spirit's Touch
+    - count: 7
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 5
+    cards:
+    - count: 2
+      name: Breath of the Dragon
+    - count: 3
+      name: Chiropteran Marauder
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: NRA PAC
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 1
+      name: Massimiliano       7 ANI FOR pro       baron   Gangrel:6
+    - count: 2
+      name: Casey Snyder       6 PRO ani cel for   baron   Gangrel:6
+    - count: 2
+      name: Kuyén              6 ANI PRO           baron   Gangrel:6
+    - count: 1
+      name: Kamile Paukstys    5 PRO ani for               Gangrel:6
+    - count: 1
+      name: Hanna Nokelainen   4 ani for pro               Gangrel:6
+    - count: 1
+      name: Nathan Turner      4 PRO ani                   Gangrel:6
+    - count: 1
+      name: Indira             3 PRO                       Gangrel:6
+    - count: 1
+      name: Joaquín de Cádiz   3 for pro                   Gangrel:6
+    - count: 1
+      name: Malcolm            2 ani                       Gangrel:5
+    - count: 1
+      name: Ruslan Fedorenko   2 pro                       Gangrel:6
+  - name: Library
+    count: 72
+    cards: []
+  - name: Master
+    count: 24
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 6
+      name: Ashur Tablets
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 2
+      name: Direct Intervention
+    - count: 1
+      name: Ecoterrorists
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Fortschritt Library
+    - count: 1
+      name: Left for Dead
+    - count: 1
+      name: Parthenon, The
+    - count: 3
+      name: Piper
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 4
+      name: Villein
+  - name: Action
+    count: 5
+    cards:
+    - count: 1
+      name: Rewilding
+    - count: 4
+      name: Thing
+  - name: Ally
+    count: 10
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 1
+      name: Double Deuce
+    - count: 1
+      name: Ossian
+    - count: 7
+      name: Renegade Garou
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Form of the Bat
+  - name: Reaction
+    count: 17
+    cards:
+    - count: 5
+      name: Bait and Switch
+    - count: 3
+      name: Deep Ecology
+    - count: 3
+      name: Eyes of the Wild
+    - count: 1
+      name: On the Qui Vive
+    - count: 5
+      name: Organized Resistance
+  - name: Combat
+    count: 9
+    cards:
+    - count: 1
+      name: Botched Move
+    - count: 1
+      name: Dodge
+    - count: 5
+      name: Glancing Blow
+    - count: 2
+      name: Pulled Fangs
+  - name: Event
+    count: 5
+    cards:
+    - count: 1
+      name: Blood Weakens
+    - count: 1
+      name: Dragonbound
+    - count: 1
+      name: FBI Special Affairs Division
+    - count: 1
+      name: Slow Withering, The
+    - count: 1
+      name: Unmasking, The
