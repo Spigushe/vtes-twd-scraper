@@ -1,6 +1,6 @@
 name: 'Fee Stake: Jyväskylä 4'
 location: Jyväskylä, Finland
-date_start: 2024-03-02
+date_start: '2024-03-02'
 rounds_format: 2R+F
 players_count: 10
 winner: Pasi Karjalainen
