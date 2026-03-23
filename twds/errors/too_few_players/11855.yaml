@@ -351,20 +351,17 @@ deck:
     count: 12
     cards:
     - count: 5
-      name: Stanislava       11 ANI CEL DOM FOR PRO           inner circle   
+      name: Stanislava       11 ANI CEL DOM FOR PRO           inner circle 
         Gangrel:2
     - count: 2
-      name: Hartmut Stover   10 CEL OBF PRO dom for           archbishop     
-        Gangrel antitribu:3
+      name: Hartmut Stover   10 CEL OBF PRO dom for           archbishop Gangrel
+        antitribu:3
     - count: 2
-      name: Xaviar (ADV)     10 ABO ANI FOR PRO aus cel pot   justicar       
-        Gangrel:3
+      name: Xaviar (ADV)     10 ABO ANI FOR PRO aus cel pot   justicar Gangrel:3
     - count: 2
-      name: Ingrid Rossler    9 ANI FOR PRO dom               prince         
-        Gangrel:2
+      name: Ingrid Rossler    9 ANI FOR PRO dom               prince Gangrel:2
     - count: 1
-      name: Mark Decker       8 CEL PRO ani for obf pot       prince         
-        Gangrel:3
+      name: Mark Decker       8 CEL PRO ani for obf pot       prince Gangrel:3
   - name: Library
     count: 90
     cards: []

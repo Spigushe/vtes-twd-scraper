@@ -457,20 +457,18 @@ deck:
     count: 12
     cards:
     - count: 5
-      name: Lutz von Hohenzollern   11 AUS DEM OBF PRE pot   inner circle   
+      name: Lutz von Hohenzollern   11 AUS DEM OBF PRE pot   inner circle 
         Malkavian:4
     - count: 2
-      name: Alicia Barrows           9 AUS DEM OBF POT PRE   archbishop     
+      name: Alicia Barrows           9 AUS DEM OBF POT PRE   archbishop 
         Malkavian antitribu:4
     - count: 2
-      name: Quentin King III         7 AUS DEM obf pre       prince         
-        Malkavian:3
+      name: Quentin King III         7 AUS DEM obf pre       prince Malkavian:3
     - count: 2
-      name: Stavros                  7 AUS OBF PRE dem       priscus        
-        Malkavian antitribu:4
+      name: Stavros                  7 AUS OBF PRE dem       priscus Malkavian 
+        antitribu:4
     - count: 1
-      name: Sean Rycek               4 aus dem                              
-        Malkavian:4
+      name: Sean Rycek               4 aus dem Malkavian:4
   - name: Library
     count: 90
     cards: []

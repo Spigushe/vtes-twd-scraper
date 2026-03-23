@@ -1,6 +1,6 @@
 name: Path of Death and the Soul Los Angeles
 location: Los Angeles (CA), USA
-date_start: '2026-02-14'
+date_start: 2026-02-14
 rounds_format: 2R+F
 players_count: 14
 winner: Karl Schaefer
@@ -8,7 +8,8 @@ vekn_number: 1003455
 event_url: https://www.vekn.net/event-calendar/event/12826
 event_id: '12826'
 vp_comment: 1GW4.5 + 4vp in final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82858-twd-path-of-death-and-the-soul-los-angeles
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82858-twd-path-of-death-and-the-soul-los-angeles
 deck:
   name: Diana's Demise
   description: ''

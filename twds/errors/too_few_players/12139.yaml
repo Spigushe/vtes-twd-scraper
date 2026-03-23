@@ -265,23 +265,23 @@ deck:
     count: 12
     cards:
     - count: 4
-      name: Lazverinus, Thrall of Lambach         10 AUS DOM FOR POT pro   
+      name: Lazverinus, Thrall of Lambach         10 AUS DOM FOR POT pro 
         archbishop   Ventrue antitribu:2
     - count: 1
-      name: Kyle Strathcona, Cardinal of Canada    9 AUS DOM POT PRE for   
+      name: Kyle Strathcona, Cardinal of Canada    9 AUS DOM POT PRE for 
         cardinal     Ventrue antitribu:2
     - count: 3
-      name: Owain Evans, The Wanderer              8 AUS DOM FOR cel pre                
-        Ventrue antitribu:3
+      name: Owain Evans, The Wanderer              8 AUS DOM FOR cel pre Ventrue
+        antitribu:3
     - count: 2
-      name: Jesse Menks                            8 AUS DOM FOR ani       
-        archbishop   Ventrue antitribu:3
-    - count: 1
-      name: Blackhorse Tanner                      7 AUS DOM FOR                        
+      name: Jesse Menks                            8 AUS DOM FOR ani archbishop   
         Ventrue antitribu:3
     - count: 1
-      name: Charice Fontaigne                      6 AUS DOM for pot                    
-        Ventrue antitribu:3
+      name: Blackhorse Tanner                      7 AUS DOM FOR Ventrue 
+        antitribu:3
+    - count: 1
+      name: Charice Fontaigne                      6 AUS DOM for pot Ventrue 
+        antitribu:3
   - name: Library
     count: 90
     cards: []

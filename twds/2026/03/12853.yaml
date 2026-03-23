@@ -1,13 +1,14 @@
 name: Side Event - Trento the day after...
 location: Caldonazzo (Tn) Italy
-date_start: '2026-03-01'
+date_start: 2026-03-01
 rounds_format: 2R+F
 players_count: 34
 winner: Thomas Marchiori
 vekn_number: 9650010
 event_url: https://www.vekn.net/event-calendar/event/12853
 event_id: '12853'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82861-twd-side-event-trento-the-day-after-01-03-2026
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82861-twd-side-event-trento-the-day-after-01-03-2026
 deck:
   name: Baroni, figli e tigelle [by Giulio De Cicco]
   description: ''

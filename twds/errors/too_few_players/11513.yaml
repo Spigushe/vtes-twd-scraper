@@ -11,8 +11,9 @@ forum_post_url:
   https://www.vekn.net/forum/event-reports-and-twd/81631-twd-fee-stake-jyvaeskylae-5-jyvaeskylae-finland-13-jul-2024
 deck:
   name: Mambou Jambou
-  description: Multirush deck with lots of prevent and damage. This has been ongoing project of mine, Aapo Järvelin and 
-    Antti Penttilä. So thanks for the contribution goes to them!
+  description: Multirush deck with lots of prevent and damage. This has been 
+    ongoing project of mine, Aapo Järvelin and Antti Penttilä. So thanks for the
+    contribution goes to them!
   crypt_count: 12
   crypt_min: 24
   crypt_max: 36

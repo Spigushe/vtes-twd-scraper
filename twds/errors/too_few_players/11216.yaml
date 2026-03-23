@@ -11,10 +11,12 @@ forum_post_url:
   https://www.vekn.net/forum/event-reports-and-twd/81189-twd-january-s-jocular-jawbreaking-jamboree-ph-11-players-27-jan-2024
 deck:
   name: Guardian LSFM
-  description: A Matasuntha Wall deck that is inspired by Le Sserafim's The Gaurdian. It aims to block key actions and 
-    send key vampires to torpor in order to bloat, relieve pressure, and clear away blockers. Once it gets it's rhythm 
-    going, it can run through the deck pretty fast which necessitates the inclusion of Ashur Tablets and Parthenon. The 
-    Baron package helps to get an early oust via bounce.
+  description: A Matasuntha Wall deck that is inspired by Le Sserafim's The 
+    Gaurdian. It aims to block key actions and send key vampires to torpor in 
+    order to bloat, relieve pressure, and clear away blockers. Once it gets it's
+    rhythm going, it can run through the deck pretty fast which necessitates the
+    inclusion of Ashur Tablets and Parthenon. The Baron package helps to get an 
+    early oust via bounce.
   crypt_count: 12
   crypt_min: 4
   crypt_max: 40

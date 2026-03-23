@@ -1,12 +1,13 @@
 name: Italian Tour 2024 - Verona
 location: San Giovanni Lupatoto, Verona, Italy
-date_start: '2024-02-17'
+date_start: 2024-02-17
 rounds_format: 2R+F
 players_count: 34
 winner: Henry Hinde's Tournament Winning Deck with 4 VPs in the Finals
 event_url: https://www.vekn.net/event-calendar/event/11237
 event_id: '11237'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81254-twd-italian-tour-2024-verona
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81254-twd-italian-tour-2024-verona
 deck:
   name: Nefertiti
   created_by: Heinrik

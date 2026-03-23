@@ -360,26 +360,22 @@ deck:
     count: 12
     cards:
     - count: 4
-      name: Montano                  11 ANI DOM FOR OBT POT       2 votes      
+      name: Montano                  11 ANI DOM FOR OBT POT       2 votes 
         Lasombra:3
     - count: 1
-      name: Nahir                    10 ANI DOM OBT POT tha                    
-        Lasombra:3
+      name: Nahir                    10 ANI DOM OBT POT tha Lasombra:3
     - count: 1
-      name: Servius Marius Pustula   10 ANI CHI DOM OBT POT obf                
-        Nosferatu antitribu:4
+      name: Servius Marius Pustula   10 ANI CHI DOM OBT POT obf Nosferatu 
+        antitribu:4
     - count: 1
-      name: Antón de Concepción       9 ANI DOM OBT POT aus       archbishop   
+      name: Antón de Concepción       9 ANI DOM OBT POT aus       archbishop 
         Lasombra:4
     - count: 1
-      name: Conrad Adoula             8 DOM OBT POT ani cel                    
-        Lasombra:4
+      name: Conrad Adoula             8 DOM OBT POT ani cel Lasombra:4
     - count: 1
-      name: Otieno                    6 OBT POT ani dom                        
-        Lasombra:4
+      name: Otieno                    6 OBT POT ani dom Lasombra:4
     - count: 3
-      name: Anarch Convert            1                                        
-        Caitiff:ANY
+      name: Anarch Convert            1 Caitiff:ANY
   - name: Library
     count: 90
     cards: []
@@ -445,31 +441,31 @@ deck:
     count: 12
     cards:
     - count: 1
-      name: Alexandra                 11 ANI AUS CEL PRE dom       inner circle   
+      name: Alexandra                 11 ANI AUS CEL PRE dom       inner circle 
         Toreador:2
     - count: 1
-      name: Arika                     11 DOM FOR OBF PRE aus cel   inner circle   
+      name: Arika                     11 DOM FOR OBF PRE aus cel   inner circle 
         Ventrue:2
     - count: 1
-      name: Leandro                   11 AUS OBF PRE cel dom       inner circle   
+      name: Leandro                   11 AUS OBF PRE cel dom       inner circle 
         Malkavian:2
     - count: 1
-      name: Anneke                    10 AUS CEL PRE dom           justicar       
+      name: Anneke                    10 AUS CEL PRE dom           justicar 
         Toreador:1
     - count: 1
-      name: Democritus                10 DOM PRE aus cel for       justicar       
+      name: Democritus                10 DOM PRE aus cel for       justicar 
         Ventrue:1
     - count: 1
-      name: Don Cruez, The Idealist   10 CEL POT PRE ani dom pro   justicar       
+      name: Don Cruez, The Idealist   10 CEL POT PRE ani dom pro   justicar 
         Brujah:1
     - count: 1
-      name: Queen Anne                10 DOM FOR PRE aus obf       prince         
+      name: Queen Anne                10 DOM FOR PRE aus obf       prince 
         Ventrue:2
     - count: 4
-      name: Anson                      8 CEL PRE aus dom           prince         
+      name: Anson                      8 CEL PRE aus dom           prince 
         Toreador:1
     - count: 1
-      name: Emerson Bridges            8 DOM FOR PRE pot           prince         
+      name: Emerson Bridges            8 DOM FOR PRE pot           prince 
         Ventrue:1
   - name: Library
     count: 90

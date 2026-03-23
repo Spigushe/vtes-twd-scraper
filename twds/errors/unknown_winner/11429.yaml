@@ -358,8 +358,7 @@ deck:
       name: Lectora                    3 aus tha                        Tremere 
         antitribu:4
     - count: 1
-      name: Martin Franckel            3 AUS tha                        
-        Tremere:3
+      name: Martin Franckel            3 AUS tha Tremere:3
   - name: Library
     count: 90
     cards: []

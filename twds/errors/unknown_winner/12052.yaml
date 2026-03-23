@@ -271,32 +271,26 @@ deck:
     count: 12
     cards:
     - count: 4
-      name: Sascha Vykos, The Angel of Caine (ADV)   8 AUS THA VIC ani dom   
+      name: Sascha Vykos, The Angel of Caine (ADV)   8 AUS THA VIC ani dom 
         archbishop   Tzimisce:2
     - count: 1
-      name: Caliban                                  6 ANI AUS VIC                        
-        Tzimisce:2
+      name: Caliban                                  6 ANI AUS VIC Tzimisce:2
     - count: 1
-      name: Corine Marcón                            6 AUS VIC ani                        
-        Tzimisce:2
+      name: Corine Marcón                            6 AUS VIC ani Tzimisce:2
     - count: 1
-      name: Ana Rita Montaña                         5 VIC aus dom obf                    
+      name: Ana Rita Montaña                         5 VIC aus dom obf 
         Tzimisce:3
     - count: 1
-      name: Devin Bisley                             5 ANI AUS vic                        
-        Tzimisce:2
+      name: Devin Bisley                             5 ANI AUS vic Tzimisce:2
     - count: 1
-      name: Elizabeth Westcott                       5 AUS ani cel vic                    
+      name: Elizabeth Westcott                       5 AUS ani cel vic 
         Tzimisce:3
     - count: 1
-      name: Lolita Houston                           4 VIC aus                            
-        Tzimisce:2
+      name: Lolita Houston                           4 VIC aus Tzimisce:2
     - count: 1
-      name: Horatio                                  2 vic                                
-        Tzimisce:2
+      name: Horatio                                  2 vic Tzimisce:2
     - count: 1
-      name: Piotr Andreikov                          2 aus                                
-        Tzimisce:3
+      name: Piotr Andreikov                          2 aus Tzimisce:3
   - name: Library
     count: 90
     cards: []

@@ -166,19 +166,19 @@ deck:
     count: 12
     cards:
     - count: 4
-      name: Lutz von Hohenzollern  11  AUS OBF DEM PRE pot      inner circle  
+      name: Lutz von Hohenzollern  11  AUS OBF DEM PRE pot      inner circle 
         Malkavian:4
     - count: 3
-      name: Rafael de Corazon      11  CEL AUS DOM OBF PRE      inner circle  
+      name: Rafael de Corazon      11  CEL AUS DOM OBF PRE      inner circle 
         Toreador:4
     - count: 2
-      name: Adana de Sforza        11  CEL PRO OBF PRE POT aus  inner circle  
+      name: Adana de Sforza        11  CEL PRO OBF PRE POT aus  inner circle 
         Brujah:4
     - count: 2
-      name: Dmitra Ilyanova         9  CEL PRE POT FOR obf      justicar      
+      name: Dmitra Ilyanova         9  CEL PRE POT FOR obf      justicar 
         Brujah:5
     - count: 1
-      name: Stavros                 7  AUS OBF PRE dem          priscus       
+      name: Stavros                 7  AUS OBF PRE dem          priscus 
         Malkavian antitribu:4
   - name: Library
     count: 90

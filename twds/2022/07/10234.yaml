@@ -215,41 +215,33 @@ deck:
     count: 12
     cards:
     - count: 1
-      name: Bryan Van Duesen            7 aus pre DOM THA                    
-        Tremere antitribu:2
+      name: Bryan Van Duesen            7 aus pre DOM THA Tremere antitribu:2
     - count: 1
-      name: Carna, The Princess Witch   7 AUS DOM THA           primogen     
+      name: Carna, The Princess Witch   7 AUS DOM THA           primogen 
         Tremere:3
     - count: 1
-      name: Ladislas Toth, The Torch    7 for AUS DOM THA       archbishop   
+      name: Ladislas Toth, The Torch    7 for AUS DOM THA       archbishop 
         Tremere antitribu:3
     - count: 1
-      name: Marlene, The Infernalist    6 dem for tha AUS DOM                
-        Ventrue antitribu:2
+      name: Marlene, The Infernalist    6 dem for tha AUS DOM Ventrue 
+        antitribu:2
     - count: 1
-      name: Reverend Blackwood          6 obf DOM THA           bishop       
-        Tremere antitribu:2
+      name: Reverend Blackwood          6 obf DOM THA           bishop Tremere 
+        antitribu:2
     - count: 1
-      name: Selena                      6 AUS DOM THA                        
-        Tremere antitribu:3
+      name: Selena                      6 AUS DOM THA Tremere antitribu:3
     - count: 1
-      name: Aisling Sturbridge          5 dom AUS THA                        
-        Tremere:2
+      name: Aisling Sturbridge          5 dom AUS THA Tremere:2
     - count: 1
-      name: Kurt Strauss                5 aus tha DOM                        
-        Tremere antitribu:2
+      name: Kurt Strauss                5 aus tha DOM Tremere antitribu:2
     - count: 1
-      name: Gloria Giovanni             4 nec DOM                            
-        Giovanni:2
+      name: Gloria Giovanni             4 nec DOM Giovanni:2
     - count: 1
-      name: Ingrid Russo                4 for DOM                            
-        Ventrue antitribu:2
+      name: Ingrid Russo                4 for DOM Ventrue antitribu:2
     - count: 1
-      name: Brooke                      3 dom tha                            
-        Tremere antitribu:2
+      name: Brooke                      3 dom tha Tremere antitribu:2
     - count: 1
-      name: Ehrich Weiss                3 dom tha                            
-        Tremere:3
+      name: Ehrich Weiss                3 dom tha Tremere:3
   - name: Library
     count: 79
     cards: []

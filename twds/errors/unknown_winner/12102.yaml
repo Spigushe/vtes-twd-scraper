@@ -357,35 +357,25 @@ deck:
     count: 12
     cards:
     - count: 3
-      name: Abraham Mellon         8 AUS DOM OBF for tha              
-        Malkavian:6
+      name: Abraham Mellon         8 AUS DOM OBF for tha Malkavian:6
     - count: 1
-      name: Gilbert Duane          7 AUS DOM OBF           baron      
-        Malkavian:6
+      name: Gilbert Duane          7 AUS DOM OBF           baron Malkavian:6
     - count: 1
-      name: Jason "Son" Newberry   7 AUS DOM OBF pre       primogen   
-        Malkavian:6
+      name: Jason "Son" Newberry   7 AUS DOM OBF pre       primogen Malkavian:6
     - count: 1
-      name: Andi Liu               6 DOM aus obf pre       prince     
-        Malkavian:6
+      name: Andi Liu               6 DOM aus obf pre       prince Malkavian:6
     - count: 1
-      name: Darius Shirazi         6 AUS DOM obf                      
-        Malkavian:5
+      name: Darius Shirazi         6 AUS DOM obf Malkavian:5
     - count: 1
-      name: Gelasia Fotiou         6 AUS DOM obf pre                  
-        Malkavian:6
+      name: Gelasia Fotiou         6 AUS DOM obf pre Malkavian:6
     - count: 1
-      name: Colette                5 AUS OBF dom                      
-        Malkavian:6
+      name: Colette                5 AUS OBF dom Malkavian:6
     - count: 1
-      name: Evan Klein             5 OBF aus dom pre                  
-        Malkavian:6
+      name: Evan Klein             5 OBF aus dom pre Malkavian:6
     - count: 1
-      name: Sully                  4 aus dom obf                      
-        Malkavian:6
+      name: Sully                  4 aus dom obf Malkavian:6
     - count: 1
-      name: Ashley                 3 dom obf                          
-        Malkavian:6
+      name: Ashley                 3 dom obf Malkavian:6
   - name: Library
     count: 81
     cards: []

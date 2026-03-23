@@ -519,16 +519,14 @@ deck:
     count: 12
     cards:
     - count: 5
-      name: Cybele                    10 ANI DAI OBF PRE SER THA             
-        Baali:4
+      name: Cybele                    10 ANI DAI OBF PRE SER THA Baali:4
     - count: 3
-      name: Annazir                    9 DAI OBF POT PRE           2 votes   
+      name: Annazir                    9 DAI OBF POT PRE           2 votes 
         Baali:5
     - count: 1
-      name: Azaneal                    7 DAI OBF OBT pre tha                 
-        Baali:4
+      name: Azaneal                    7 DAI OBF OBT pre tha Baali:4
     - count: 3
-      name: Maureen, Dark Priestess    6 DAI PRE dom obf           1 vote    
+      name: Maureen, Dark Priestess    6 DAI PRE dom obf           1 vote 
         Baali:4
   - name: Library
     count: 73
