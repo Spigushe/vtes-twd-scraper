@@ -115,4 +115,5 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: scrape VTES TWD $(date -u +%Y-%m-%d)"
+          git pull --rebase origin main
           git push
