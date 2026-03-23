@@ -48,6 +48,5 @@ def setup_logging(verbose: bool) -> None:
         format="%(message)s",
         handlers=[handler],
     )
-    logging.getLogger("vtes_scraper").setLevel(
-        logging.DEBUG if verbose else logging.INFO
-    )
+    if verbose:
+        logging.getLogger("vtes_scraper").setLevel(logging.DEBUG)
