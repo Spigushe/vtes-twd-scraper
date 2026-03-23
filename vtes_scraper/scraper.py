@@ -530,7 +530,21 @@ def fetch_player(
                 results.append((player_name, int(player_number_str)))
 
         if len(results) == 1:
-            return results[0]
+            # Even for a single result, verify it actually matches the queried name.
+            # VEKN's search uses substring matching, so a garbage query containing a
+            # real player's name as a prefix (e.g. "Luca Turicchi' s Deck: No, Tu, NO!")
+            # will return that player as the sole result — we must not accept it blindly.
+            score = _name_similarity(name, results[0][0])
+            if score >= _NAME_SIMILARITY_THRESHOLD:
+                return results[0]
+            logger.debug(
+                "Single result %r for query %r rejected (similarity %.2f < %.2f)",
+                results[0][0],
+                name,
+                score,
+                _NAME_SIMILARITY_THRESHOLD,
+            )
+            return None
 
         # Multiple results — try exact case-insensitive name match.
         name_lower = name.lower()

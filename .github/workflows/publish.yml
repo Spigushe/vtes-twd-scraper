@@ -36,7 +36,7 @@ jobs:
 
       - name: Run validation and confirming players identity
         continue-on-error: true
-        run: vtes-scraper validate --check-players
+        run: vtes-scraper validate --check-players --check-unknowns
 
       - name: Commit updated TWDs after validation
         run: |

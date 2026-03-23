@@ -1,0 +1,135 @@
+name: Week of Nightmares Event 3
+location: Columbus, Ohio
+date_start: 2024-06-17
+rounds_format: 2R+F
+players_count: 35
+winner: Sérgio Louçã Martins
+vekn_number: 3120101
+event_url: https://www.vekn.net/event-calendar/event/11229
+event_id: '11229'
+vp_comment: 2 GW 8 VP (3 VP in final)
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81547-twd-week-of-nightmares-event-3-17-june-2024
+deck:
+  name: Hesha's trinket emporium
+  created_by: Sérgio Martins
+  description: ''
+  crypt_count: 12
+  crypt_min: 12
+  crypt_max: 28
+  crypt_avg: 5.0
+  crypt:
+  - count: 6
+    name: Angel Chavarria
+    capacity: 3
+    disciplines: THN
+    clan: Samedi
+    grouping: 6
+  - count: 6
+    name: Hesha Ruhadze
+    capacity: 7
+    disciplines: PRE PRO ani aus obf
+    clan: Ministry
+    grouping: 6
+  library_count: 75
+  library_sections:
+  - name: Master
+    count: 3
+    cards:
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Heidelberg Castle, Germany
+    - count: 1
+      name: Nod
+  - name: Action
+    count: 2
+    cards:
+    - count: 1
+      name: Precision
+    - count: 1
+      name: Revelations
+  - name: Equipment
+    count: 34
+    cards:
+    - count: 1
+      name: Amulet of Temporal Perception
+    - count: 1
+      name: Argent Baton
+    - count: 1
+      name: Blood Tears of Kephran
+    - count: 1
+      name: Body Bag
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Changeling Skin Mask
+    - count: 1
+      name: Cloak of the Abalone
+    - count: 1
+      name: Codex of the Edenic Groundskeepers
+    - count: 1
+      name: Concoction of Vitality
+    - count: 1
+      name: Drum of Xipe Totec
+    - count: 1
+      name: Flaming Candle
+    - count: 1
+      name: Gran Madre di Dio, Italy
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Joumlon's Axe
+    - count: 1
+      name: Kaymakli Fragment
+    - count: 6
+      name: Learjet
+    - count: 1
+      name: Martinelli's Ring
+    - count: 1
+      name: Monocle of Clarity
+    - count: 1
+      name: Mummy's Tongue
+    - count: 1
+      name: Orb of Ulain
+    - count: 1
+      name: Ritual Goblet
+    - count: 1
+      name: Sargon Fragment, The
+    - count: 1
+      name: Seal of Veddartha
+    - count: 1
+      name: Signet of King Saul, The
+    - count: 1
+      name: Sire's Index Finger
+    - count: 1
+      name: Soul Gem of Etrius
+    - count: 1
+      name: Textbook Damnation, The
+    - count: 1
+      name: Veneficorum Artum Sanguis
+    - count: 1
+      name: Vial of Elder Vitae
+  - name: Action Modifier
+    count: 34
+    cards:
+    - count: 1
+      name: Approximation of Loyalty
+    - count: 28
+      name: Hag's Wrinkles
+    - count: 1
+      name: Horrific Countenance
+    - count: 1
+      name: I am Legion
+    - count: 1
+      name: Perfect Clarity
+    - count: 1
+      name: Red Question, The
+    - count: 1
+      name: Under My Skin
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 1
+      name: Force of Personality
+    - count: 1
+      name: Hide the Mind

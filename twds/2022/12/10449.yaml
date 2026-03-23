@@ -1,0 +1,134 @@
+name: Austrian Open
+location: Wien, Austria
+date_start: 2022-12-11
+rounds_format: 3R+F
+players_count: 42
+winner: Lukáš Simandl
+vekn_number: 5200005
+event_url: https://www.vekn.net/event-calendar/event/10449
+event_id: '10449'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80407-twd-austrian-open-11-dec-2022
+deck:
+  name: Unspecified Platinum Snakes
+  created_by: Lukas Simandl
+  description: This is the third iteration of this pack and by far the most successful and also my favorite. In the 
+    first iteration, I dropped cards requiring Unnamed. It's generally a problem to have things in there that only 
+    Unnamed can play and not untap after, there's no room for any extra multi actions and it's better to hold untap card
+    for next turn. The cards that left were replaced with Platinum Protocols and I increased the number of Revelation of
+    the Serpent, a card that allowed me to reduce the number of stealth.
+  crypt_count: 12
+  crypt_min: 13
+  crypt_max: 24
+  crypt_avg: 6.42
+  crypt:
+  - count: 5
+    name: unnamed, The
+    capacity: 10
+    disciplines: CEL DAI OBF PRE PRO
+    clan: Baali
+    grouping: 6
+  - count: 1
+    name: Nonu Dis
+    capacity: 8
+    disciplines: OBF PRE PRO for
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Crystal Lynn
+    capacity: 6
+    disciplines: OBF PRE PRO
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Elisha Tucker
+    capacity: 6
+    disciplines: PRE cel obf pro
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 1
+    name: Marcel
+    capacity: 4
+    disciplines: obf pre pro
+    clan: Ministry
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 16
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 2
+      name: Archon Investigation
+    - count: 3
+      name: Dabbler
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: 'Powerbase: Los Angeles'
+    - count: 1
+      name: Secure Haven
+    - count: 2
+      name: Vessel
+    - count: 3
+      name: Villein
+    - count: 1
+      name: Wash
+  - name: Action
+    count: 18
+    cards:
+    - count: 1
+      name: Entrancement
+    - count: 14
+      name: Platinum Protocol, The
+    - count: 3
+      name: Unleash Hell's Fury
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+  - name: Retainer
+    count: 2
+    cards:
+    - count: 2
+      name: Homunculus
+  - name: Action Modifier
+    count: 35
+    cards:
+    - count: 6
+      name: CrimethInc.
+    - count: 6
+      name: Enchanting Gaze
+    - count: 4
+      name: Enkil Cog
+    - count: 4
+      name: Faceless Night
+    - count: 2
+      name: I am Legion
+    - count: 3
+      name: Instantaneous Transformation
+    - count: 2
+      name: Lost in Crowds
+    - count: 8
+      name: Revelation of the Serpent
+  - name: Action Modifier/Reaction
+    count: 1
+    cards:
+    - count: 1
+      name: Sense the Sin
+  - name: Reaction
+    count: 7
+    cards:
+    - count: 7
+      name: Party Out Of Bounds
+  - name: Combat
+    count: 10
+    cards:
+    - count: 1
+      name: Donnybrook
+    - count: 5
+      name: Earth Meld
+    - count: 4
+      name: Form of Mist

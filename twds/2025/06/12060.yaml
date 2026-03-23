@@ -1,0 +1,194 @@
+name: Week of Nightmares - Event 6
+location: Columbus, Ohio, USA
+date_start: 2025-06-18
+rounds_format: 2R+F
+players_count: 34
+winner: Bill Troxel
+vekn_number: 2150015
+event_url: https://www.vekn.net/event-calendar/event/12060
+event_id: '12060'
+vp_comment: 1GW5, 3VP in final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82450-twd-week-of-nightmares-event-6-2025
+deck:
+  name: Don't Try This At Home, a.k.a. Enema Gathering
+  description: This toolboxy Creeping Sabotage deck was made from two other decks smashed together, with some crypt 
+    changes afterward. One deck was an Anima Gathering + Organized Resistance + Earth Meld wall. The other was a Barons 
+    + Creeping Sabotage deck. The result is pretty weird. It features vamps with very different jobs, but somehow 
+    managed not to jam too badly and snuck in some GWs.
+  crypt_count: 12
+  crypt_min: 15
+  crypt_max: 25
+  crypt_avg: 5.25
+  crypt:
+  - count: 1
+    name: Vivian VI
+    capacity: 7
+    disciplines: PRE PRO obf tha
+    title: baron
+    clan: Ministry
+    grouping: 6
+  - count: 3
+    name: Benedito, a Lanterna
+    capacity: 6
+    disciplines: POT ani aus obf
+    title: baron
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Casey Snyder
+    capacity: 6
+    disciplines: PRO ani cel for
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Jacques Rouge
+    capacity: 6
+    disciplines: OBF ani pot pre
+    title: baron
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Clara Hjortshøj
+    capacity: 5
+    disciplines: PRO ani aus dom
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Daria
+    capacity: 5
+    disciplines: AUS OBF ani
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Slag
+    capacity: 4
+    disciplines: ani obf pot
+    clan: Nosferatu
+    grouping: 5
+  - count: 1
+    name: Joseph Fischer
+    capacity: 3
+    disciplines: PRO
+    clan: Gangrel antitribu
+    grouping: 5
+  - count: 1
+    name: Veejay Vinod
+    capacity: 3
+    disciplines: AUS
+    clan: Nagaraja
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 21
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Creepshow Casino
+    - count: 2
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Labyrinth, The
+    - count: 1
+      name: Protected Resources
+    - count: 1
+      name: Rack, The
+    - count: 2
+      name: Smiling Jack, The Anarch
+    - count: 2
+      name: Vessel
+    - count: 4
+      name: Villein
+    - count: 2
+      name: Warsaw Station
+    - count: 2
+      name: Wider View
+  - name: Action
+    count: 15
+    cards:
+    - count: 6
+      name: Anima Gathering
+    - count: 2
+      name: Army of Rats
+    - count: 7
+      name: Creeping Sabotage
+  - name: Political Action
+    count: 2
+    cards:
+    - count: 1
+      name: Confiscation
+    - count: 1
+      name: Eat the Rich
+  - name: Equipment
+    count: 6
+    cards:
+    - count: 2
+      name: .44 Magnum
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Ivory Bow
+    - count: 2
+      name: Sniper Rifle
+  - name: Action Modifier
+    count: 5
+    cards:
+    - count: 1
+      name: Cloak the Gathering
+    - count: 1
+      name: Earth Control
+    - count: 1
+      name: Forgotten Labyrinth
+    - count: 1
+      name: Memory Rift
+    - count: 1
+      name: Smoke and Mirrors
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 1
+      name: Rapid Change
+    - count: 1
+      name: Swallowed by the Night
+  - name: Action Modifier/Reaction
+    count: 1
+    cards:
+    - count: 1
+      name: Form of the Bat
+  - name: Reaction
+    count: 26
+    cards:
+    - count: 6
+      name: Bait and Switch
+    - count: 2
+      name: Deep Ecology
+    - count: 2
+      name: Delaying Tactics
+    - count: 1
+      name: On the Qui Vive
+    - count: 15
+      name: Organized Resistance
+  - name: Combat
+    count: 12
+    cards:
+    - count: 1
+      name: Disguised Weapon
+    - count: 6
+      name: Earth Meld
+    - count: 1
+      name: Form of Mist
+    - count: 4
+      name: Groundfighting

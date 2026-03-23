@@ -165,7 +165,7 @@ def run(args: argparse.Namespace) -> int:
     )
     if overwrite_skipped:
         console.print(
-            f"[yellow]![/yellow] {overwrite_skipped} deck(s) already existed and were not overwritten "
-            f"(use --overwrite to replace them)."
+            f"[yellow]![/yellow] {overwrite_skipped} deck(s) already existed "
+            f"and were not overwritten (use --overwrite to replace them)."
         )
     return 1 if failed else 0

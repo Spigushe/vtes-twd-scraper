@@ -143,6 +143,12 @@ def _check_player(
 
     winner = raw_winner
 
+    # Pre-normalization: strip "Winner:" label prefix if present.
+    # The parser sometimes captures "Winner: Name" instead of just "Name".
+    clean_winner_prefix = re.sub(r"^Winner\s*:\s*", "", winner, flags=re.IGNORECASE)
+    if clean_winner_prefix and clean_winner_prefix != winner:
+        winner = clean_winner_prefix
+
     def _coercions_get(candidate: str) -> tuple[str, int] | None:
         """Return ``(found_name, vekn_number)`` from cache if *candidate* is present."""
         if coercions is not None and candidate in coercions:
@@ -299,6 +305,17 @@ def register(sub: argparse._SubParsersAction) -> None:
         ),
     )
     p.add_argument(
+        "--check-unknowns",
+        action="store_true",
+        dest="check_unknowns",
+        help=(
+            "Retry files previously quarantined in errors/unknown_winner/. "
+            "When a file passes it is moved back to its canonical YYYY/MM/ location. "
+            "Implies --check-players. "
+            "Requires network access."
+        ),
+    )
+    p.add_argument(
         "--delay",
         type=float,
         default=DEFAULT_DELAY_SECONDS,
@@ -318,7 +335,8 @@ def run(args: argparse.Namespace) -> int:
 
     output_dir: Path = args.output_dir
     check_dates: bool = getattr(args, "check_dates", False)
-    check_players: bool = getattr(args, "check_players", False)
+    check_unknowns: bool = getattr(args, "check_unknowns", False)
+    check_players: bool = getattr(args, "check_players", False) or check_unknowns
     delay: float = getattr(args, "delay", DEFAULT_DELAY_SECONDS)
 
     if not output_dir.exists():
@@ -330,6 +348,13 @@ def run(args: argparse.Namespace) -> int:
     yaml_files = [
         p for p in output_dir.rglob("*.yaml") if not p.is_relative_to(errors_dir)
     ]
+    unknown_winners_errors_dir = errors_dir / "unknown_winner"
+    if check_unknowns:
+        yaml_files.extend(
+            unknown_winners_errors_dir.rglob("*.yaml")
+            if unknown_winners_errors_dir.exists()
+            else []
+        )
 
     if not yaml_files:
         console.print(f"[yellow]No YAML files found in {output_dir}[/yellow]")
@@ -391,6 +416,24 @@ def run(args: argparse.Namespace) -> int:
                     moved += 1
                     continue
 
+            # If the file was previously quarantined in errors/unknown_winner/,
+            # move it back to its canonical output_dir/YYYY/MM/ location now that
+            # it has passed all checks.
+            if path.is_relative_to(unknown_winners_errors_dir):
+                date_start = data.get("date_start")
+                if isinstance(date_start, date):
+                    subdir = (
+                        output_dir
+                        / f"{date_start.year:04d}"
+                        / f"{date_start.month:02d}"
+                    )
+                    subdir.mkdir(parents=True, exist_ok=True)
+                    dest = subdir / path.name
+                    shutil.move(str(path), dest)
+                    console.print(
+                        f"[green]↩[/green] {path.name}  recovered"
+                        f" → {dest.relative_to(output_dir)}"
+                    )
             logger.debug("OK  %s", path.name)
             valid += 1
 

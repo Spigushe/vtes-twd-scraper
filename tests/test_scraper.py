@@ -532,6 +532,26 @@ class TestFetchPlayer:
             result = fetch_player(mock_client, "Aleksander Idziak", delay=0)
         assert result == ("Aleksander Idziak", 3940009)
 
+    def test_single_result_rejected_when_dissimilar_to_query(self):
+        """A single VEKN result whose name is not similar to the query is rejected.
+
+        VEKN's search does substring matching, so a garbage query like
+        "Luca Turicchi' s Deck: No, Tu, NO!" will return "Luca Turicchi" as the
+        only result.  fetch_player must NOT accept it blindly.
+        """
+        soup = BeautifulSoup(
+            PLAYER_SEARCH_ONE_RESULT, "lxml"
+        )  # returns "Aleksander Idziak"
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            # Query contains the player name as a prefix but is clearly garbage
+            result = fetch_player(
+                mock_client,
+                "Aleksander Idziak' s Deck: No, Tu, NO!",
+                delay=0,
+            )
+        assert result is None
+
     def test_no_result_returns_none(self):
         soup = BeautifulSoup(PLAYER_SEARCH_NO_RESULT, "lxml")
         mock_client = MagicMock()

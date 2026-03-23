@@ -1,0 +1,142 @@
+name: German Nationals 2025
+location: Darmstadt-Eberstadt, Germany
+date_start: 2025-11-08
+rounds_format: 3R+F
+players_count: 24
+winner: Joscha Düll
+vekn_number: 1000565
+event_url: https://www.vekn.net/event-calendar/event/12548
+event_id: '12548'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82662-twd-german-nationals-2025-darmstadt-eberstadt-8-nov-2025
+deck:
+  name: Lasombra Path of Power v2
+  created_by: Joscha "Yosha" Düll
+  description: ''
+  crypt_count: 12
+  crypt_min: 33
+  crypt_max: 40
+  crypt_avg: 9.08
+  crypt:
+  - count: 4
+    name: Ambrosio Luis Monçada, Plenipotentiary
+    capacity: 10
+    disciplines: DOM OBT POT PRE aus for
+    title: cardinal
+    clan: Lasombra
+    grouping: 2
+  - count: 3
+    name: Antonio Delgado
+    capacity: 9
+    disciplines: DOM OBT POT tha
+    title: archbishop
+    clan: Lasombra
+    grouping: 2
+  - count: 1
+    name: Alvaro, The Scion of Angelica
+    capacity: 9
+    disciplines: OBT POT dom pre
+    title: archbishop
+    clan: Lasombra
+    grouping: 2
+  - count: 1
+    name: Francisco Domingo de Polonia
+    capacity: 9
+    disciplines: DOM OBT POT PRE pro
+    title: archbishop
+    clan: Lasombra
+    grouping: 2
+  - count: 3
+    name: Gratiano
+    capacity: 8
+    disciplines: DOM OBT obf pot
+    title: priscus
+    clan: Lasombra
+    grouping: 2
+  library_count: 78
+  library_sections:
+  - name: Master
+    count: 22
+    cards:
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Elysian Fields
+    - count: 1
+      name: Fear of Mekhet
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Gurchon Hall
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Power Structure
+    - count: 1
+      name: 'Powerbase: Madrid'
+    - count: 1
+      name: Privileged Position
+    - count: 1
+      name: Regent
+    - count: 6
+      name: Unholy Sacrament
+    - count: 6
+      name: Villein
+  - name: Action
+    count: 6
+    cards:
+    - count: 6
+      name: Govern the Unaligned
+  - name: Political Action
+    count: 18
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 1
+      name: Banishment
+    - count: 4
+      name: Cold War
+    - count: 4
+      name: Empires Fall
+    - count: 5
+      name: Kine Resources Contested
+    - count: 1
+      name: Neonate Breach
+    - count: 1
+      name: War of Ages
+  - name: Action Modifier
+    count: 19
+    cards:
+    - count: 1
+      name: Blanket of Night
+    - count: 2
+      name: Dominant Personality
+    - count: 4
+      name: Magnetic Authority
+    - count: 6
+      name: Shadow Play
+    - count: 4
+      name: Shroud of Absence
+    - count: 1
+      name: Shroud of Night
+    - count: 1
+      name: Unthinkable Humiliation
+  - name: Action Modifier/Reaction
+    count: 1
+    cards:
+    - count: 1
+      name: Ominous Chorus
+  - name: Reaction
+    count: 8
+    cards:
+    - count: 8
+      name: Deflection
+  - name: Combat
+    count: 4
+    cards:
+    - count: 1
+      name: Oubliette
+    - count: 3
+      name: Shadow Body

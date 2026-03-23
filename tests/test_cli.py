@@ -899,6 +899,31 @@ class TestValidateCommand:
             assert updated["vekn_number"] == 3940009
             assert updated["winner"] == "Jane Doe"
 
+    def test_check_player_found_after_winner_prefix_strip(self):
+        """When winner field starts with 'Winner:' label, the prefix is stripped first."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yaml_file = Path(tmpdir) / "test.yaml"
+            prefixed_yaml = VALID_YAML.replace(
+                "winner: Jane Doe", "winner: 'Winner: Jane Doe'"
+            )
+            yaml_file.write_text(prefixed_yaml, encoding="utf-8")
+            data = validate_cmd._load_yaml(yaml_file)
+            mock_client = MagicMock()
+            with patch(
+                "vtes_scraper.cli.validate.fetch_player",
+                return_value=("Jane Doe", 3940009),
+            ) as mock_fetch:
+                found, moved = validate_cmd._check_player(
+                    mock_client, yaml_file, data, Path(tmpdir), 0, logging.getLogger()
+                )
+            assert found is True
+            assert moved is False
+            # fetch_player must have been called with the clean name, not the prefixed one
+            mock_fetch.assert_called_once_with(mock_client, "Jane Doe", delay=0)
+            updated = validate_cmd._load_yaml(yaml_file)
+            assert updated["vekn_number"] == 3940009
+            assert updated["winner"] == "Jane Doe"
+
     def test_check_player_found_after_accent_strip(self):
         """When original and digit-stripped searches fail, accent-stripped name succeeds."""
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -1053,6 +1078,55 @@ class TestValidateCommand:
             assert ret == 0
             updated = validate_cmd._load_yaml(yaml_file)
             assert updated["vekn_number"] == 3940009
+
+    def test_run_check_unknowns_recovers_unknown_winner_file(self):
+        """--check-unknowns retries errors/unknown_winner/ files and moves them back."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            error_dir = Path(tmpdir) / "errors" / "unknown_winner"
+            error_dir.mkdir(parents=True)
+            yaml_file = error_dir / "test.yaml"
+            yaml_file.write_text(VALID_YAML, encoding="utf-8")
+            args = argparse.Namespace(
+                output_dir=Path(tmpdir),
+                check_dates=False,
+                check_players=False,
+                check_unknowns=True,
+                delay=0,
+                verbose=False,
+            )
+            with patch(
+                "vtes_scraper.cli.validate.fetch_player",
+                return_value=("Jane Doe", 3940009),
+            ):
+                ret = validate_cmd.run(args)
+            assert ret == 0
+            # File should have been moved back to its canonical YYYY/MM/ location.
+            # VALID_YAML has date_start: 2023-03-25
+            recovered = Path(tmpdir) / "2023" / "03" / "test.yaml"
+            assert (
+                recovered.exists()
+            ), "file was not moved back from errors/unknown_winner/"
+            assert not yaml_file.exists(), "original error file should be gone"
+
+    def test_run_check_players_does_not_include_unknown_winner_files(self):
+        """--check-players alone does not pick up files from errors/unknown_winner/."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            error_dir = Path(tmpdir) / "errors" / "unknown_winner"
+            error_dir.mkdir(parents=True)
+            yaml_file = error_dir / "test.yaml"
+            yaml_file.write_text(VALID_YAML, encoding="utf-8")
+            args = argparse.Namespace(
+                output_dir=Path(tmpdir),
+                check_dates=False,
+                check_players=True,
+                check_unknowns=False,
+                delay=0,
+                verbose=False,
+            )
+            with patch("vtes_scraper.cli.validate.fetch_player") as mock_fp:
+                ret = validate_cmd.run(args)
+            mock_fp.assert_not_called()
+            assert yaml_file.exists(), "error file should not have been touched"
 
     def test_run_check_players_not_found_moves_file(self):
         """run() with --check-players moves unknown winners to errors/unknown_winner."""

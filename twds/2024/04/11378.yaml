@@ -1,0 +1,131 @@
+name: Liga Chilanga 2024 Jornada 1 (MX)
+location: Mexico City, Mexico
+date_start: 2024-04-07
+rounds_format: 3R+F
+players_count: 14
+winner: Carlos Escobar Muciño
+vekn_number: 5230002
+event_url: https://www.vekn.net/event-calendar/event/11378
+event_id: '11378'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81359-liga-chilanga-2024-jornada-1
+deck:
+  name: Victor Gerard and his Girls
+  created_by: Carlos Escobar
+  description: mazo de bloqueo que busca el desgaste de la mesa, apoyandose de constant revolucion y smaling jack,con un
+    agran ayuda de armas en combate
+  crypt_count: 13
+  crypt_min: 4
+  crypt_max: 26
+  crypt_avg: 3.62
+  crypt:
+  - count: 2
+    name: Victor Gerard
+    capacity: 7
+    disciplines: AUS PRE cel dom for obf
+    clan: Toreador
+    grouping: 2
+  - count: 2
+    name: Sheila Mezarin
+    capacity: 6
+    disciplines: AUS PRE cel for
+    clan: Toreador antitribu
+    grouping: 2
+  - count: 1
+    name: Victoria
+    capacity: 5
+    disciplines: AUS cel obf
+    clan: Malkavian
+    grouping: 2
+  - count: 1
+    name: Maldavis
+    capacity: 4
+    disciplines: AUS for pre
+    clan: Caitiff
+    grouping: 3
+  - count: 1
+    name: Maldavis (ADV)
+    capacity: 4
+    disciplines: AUS for pre
+    clan: Caitiff
+    grouping: 3
+  - count: 1
+    name: Zöe
+    capacity: 3
+    disciplines: AUS cel obf
+    clan: Malkavian
+    grouping: 2
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Direct Intervention
+    - count: 3
+      name: Hackerspace
+    - count: 1
+      name: Heidelberg Castle, Germany
+    - count: 2
+      name: 'Powerbase: Los Angeles'
+    - count: 1
+      name: Rack, The
+    - count: 2
+      name: Smiling Jack, The Anarch
+    - count: 3
+      name: Vessel
+  - name: Action
+    count: 2
+    cards:
+    - count: 2
+      name: Constant Revolution
+  - name: Equipment
+    count: 11
+    cards:
+    - count: 4
+      name: .44 Magnum
+    - count: 2
+      name: Assault Rifle
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Ivory Bow
+    - count: 1
+      name: Sire's Index Finger
+    - count: 2
+      name: Sniper Rifle
+  - name: Reaction
+    count: 33
+    cards:
+    - count: 4
+      name: Eagle's Sight
+    - count: 3
+      name: Enhanced Senses
+    - count: 6
+      name: Eyes of Argus
+    - count: 2
+      name: Fillip
+    - count: 7
+      name: Guardian Vigil
+    - count: 2
+      name: On the Qui Vive
+    - count: 3
+      name: Spirit's Touch
+    - count: 6
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 29
+    cards:
+    - count: 5
+      name: Bollix
+    - count: 6
+      name: Concealed Weapon
+    - count: 3
+      name: Disguised Weapon
+    - count: 10
+      name: Diversion
+    - count: 5
+      name: Taste of Vitae
