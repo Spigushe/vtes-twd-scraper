@@ -1,6 +1,6 @@
 name: Battle at the Gasworks 1
 location: Albany, NY
-date_start: 2026-03-21
+date_start: '2026-03-21'
 rounds_format: 2R+F
 players_count: 12
 winner: Christopher Malec, Winner
@@ -10,12 +10,10 @@ forum_post_url:
   https://www.vekn.net/forum/event-reports-and-twd/82908-twd-battle-at-the-gasworks-1-albany-ny-march-21-2026
 deck:
   name: If Uballit, They Will Come
-  created_by: Christopher Malec, with advice and assistance from Karl Shaeffer
-  description: Uses multi-acting with bleeds and Shroud of decay to do big 
-    damage.  Votes are more for utility and bargaining, but some bloat and pool 
-    damage. One minion is capable of doing 13 damage under optimal conditions. 
-    Uses Lasombra princes and Archbishops to have a strong political presence in
-    the game.
+  created_by: Christopher Malec, with advice and assistance from Karl Schaefer
+  description: Uses multi-acting with bleeds and Shroud of decay to do big damage.  Votes are more for utility and 
+    bargaining, but some bloat and pool damage. One minion is capable of doing 13 damage under optimal conditions. Uses 
+    Lasombra princes and Archbishops to have a strong political presence in the game.
   crypt_count: 12
   crypt_min: 30
   crypt_max: 40

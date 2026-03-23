@@ -1,0 +1,153 @@
+name: Political Struggle
+location: Belgrade.Serbia
+date_start: '2026-03-21'
+rounds_format: 3R+F
+players_count: 16
+winner: Visnja Ilic
+vekn_number: 5940015
+event_url: https://www.vekn.net/event-calendar/event/13102
+event_id: '13102'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82910-political-struggle
+deck:
+  name: Toreador G7
+  created_by: Visnja Ilic
+  description: Za turnir BG, 21.03.2026.
+  crypt_count: 12
+  crypt_min: 15
+  crypt_max: 35
+  crypt_avg: 6.83
+  crypt:
+  - count: 3
+    name: Diana Iadanza
+    capacity: 9
+    disciplines: AUS CEL FOR PRE
+    title: justicar
+    clan: Toreador
+    grouping: 7
+  - count: 3
+    name: Modius
+    capacity: 8
+    disciplines: AUS CEL PRE obf
+    title: prince
+    clan: Toreador
+    grouping: 7
+  - count: 2
+    name: Marcos Belegrad
+    capacity: 8
+    disciplines: AUS CEL PRE ani
+    title: prince
+    clan: Toreador
+    grouping: 7
+  - count: 1
+    name: Catalina Vega
+    capacity: 8
+    disciplines: AUS CEL PRE for
+    title: prince
+    clan: Toreador
+    grouping: 6
+  - count: 1
+    name: Kazuki Hanabira
+    capacity: 2
+    disciplines: aus
+    clan: Toreador
+    grouping: 7
+  - count: 1
+    name: Mateo García
+    capacity: 2
+    disciplines: pre
+    clan: Toreador
+    grouping: 6
+  - count: 1
+    name: Valentina Osako
+    capacity: 3
+    disciplines: PRE
+    clan: Toreador
+    grouping: 7
+  library_count: 89
+  library_sections:
+  - name: Master
+    count: 24
+    cards:
+    - count: 1
+      name: Aching Beauty
+    - count: 1
+      name: Archon Investigation
+    - count: 1
+      name: Art Museum
+    - count: 1
+      name: Camarilla Conclave
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: 'Elysium: The Palace of Versailles'
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Protected Resources
+    - count: 4
+      name: Toreador Grand Ball
+    - count: 5
+      name: Villein
+    - count: 1
+      name: Wash
+    - count: 1
+      name: Wider View
+    - count: 4
+      name: Zillah's Valley
+  - name: Action
+    count: 1
+    cards:
+    - count: 1
+      name: 'Judgment: Camarilla Segregation'
+  - name: Political Action
+    count: 19
+    cards:
+    - count: 2
+      name: Banishment
+    - count: 5
+      name: Camarilla's Iron Fist
+    - count: 2
+      name: Consanguineous Boon
+    - count: 7
+      name: Kine Resources Contested
+    - count: 1
+      name: Neonate Breach
+    - count: 1
+      name: Parity Shift
+    - count: 1
+      name: Political Stranglehold
+  - name: Action Modifier
+    count: 23
+    cards:
+    - count: 3
+      name: Aire of Elation
+    - count: 2
+      name: Bewitching Oration
+    - count: 1
+      name: Business Pressure
+    - count: 6
+      name: Loup
+    - count: 2
+      name: Scorn of Adonis
+    - count: 3
+      name: Telepathic Vote Counting
+    - count: 6
+      name: Voter Captivation
+  - name: Reaction
+    count: 14
+    cards:
+    - count: 2
+      name: My Enemy's Enemy
+    - count: 6
+      name: On the Qui Vive
+    - count: 6
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 8
+    cards:
+    - count: 2
+      name: Charismatic Aura
+    - count: 6
+      name: Majesty
