@@ -8,8 +8,20 @@ on:
   # Allow manual trigger from the Actions tab
   workflow_dispatch:
     inputs:
-      max_pages:
-        description: "Max forum pages to scrape (leave empty for all)"
+      check_mode:
+        description: "Check mode"
+        required: true
+        type: choice
+        options:
+          - fast-check
+          - slow-check
+        default: fast-check
+      start_page:
+        description: "First forum index page to scrape, 0-indexed (default: 0)"
+        required: false
+        default: ""
+      last_page:
+        description: "Last forum index page to scrape, 0-indexed inclusive (leave empty for all)"
         required: false
         default: ""
       overwrite:
@@ -56,8 +68,20 @@ jobs:
       - name: Build scrape command
         id: build_cmd
         run: |
-          MAX_PAGES="${{ github.event.inputs.max_pages }}"
-          CMD="vtes-scraper scrape --max-pages ${MAX_PAGES:-2}"
+          # Determine check mode: default to --fast-check on scheduled/push runs
+          CHECK_MODE="${{ github.event.inputs.check_mode }}"
+          CMD="vtes-scraper scrape --${CHECK_MODE:-fast-check}"
+
+          START_PAGE="${{ github.event.inputs.start_page }}"
+          if [ -n "$START_PAGE" ]; then
+            CMD="$CMD --start-page $START_PAGE"
+          fi
+
+          LAST_PAGE="${{ github.event.inputs.last_page }}"
+          if [ -n "$LAST_PAGE" ]; then
+            CMD="$CMD --last-page $LAST_PAGE"
+          fi
+
           if [ "${{ github.event.inputs.overwrite }}" = "true" ]; then
             CMD="$CMD --overwrite"
           fi
