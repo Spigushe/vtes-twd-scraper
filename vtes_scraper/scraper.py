@@ -297,7 +297,7 @@ def _extract_twd_fast(
     delay: float,
 ) -> Tournament | None:
     """Check only the first post on the first page."""
-    logger.info("Scraping thread (fast): %s", thread_url)
+    logger.debug("Scraping thread (fast): %s", thread_url)
     soup = _get(client, thread_url, delay)
 
     posts = soup.select("div.kmsg")
@@ -331,7 +331,7 @@ def _extract_twd_slow(
     while True:
         limitstart = page * POSTS_PER_THREAD_PAGE
         url = thread_url if limitstart == 0 else f"{thread_url}?limitstart={limitstart}"
-        logger.info("Scraping thread (slow) page %d: %s", page + 1, url)
+        logger.debug("Scraping thread (slow) page %d: %s", page + 1, url)
         soup = _get(client, url, delay)
 
         posts = soup.select("div.kmsg")
@@ -368,7 +368,7 @@ def _extract_twd_slow(
                 )
 
         if not found_new:
-            logger.info(
+            logger.debug(
                 "No new posts on page %d of %s, stopping.", page + 1, thread_url
             )
             break
@@ -616,14 +616,14 @@ def scrape_forum(
             client, max_pages=max_pages, start_page=start_page, delay=delay
         ):
             if icon == ICON_IDEA:
-                logger.info("Skipped (idea/info icon): %s", thread_url)
+                logger.debug("Skipped (idea/info icon): %s", thread_url)
                 continue
 
             tournament = extract_twd_from_thread(
                 client, thread_url, delay=delay, fast_check=fast_check
             )
             if tournament:
-                logger.info(
+                logger.debug(
                     "Scraped%s: [%s] %s — %s",
                     " (fix required)" if icon == ICON_MERGED else "",
                     tournament.event_id,

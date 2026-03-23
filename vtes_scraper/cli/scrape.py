@@ -99,7 +99,7 @@ def run(args: argparse.Namespace) -> int:
 
     changes_required_dir = args.output_dir / "changes_required"
 
-    written = skipped = failed = 0
+    written = skipped = failed = overwrite_skipped = 0
 
     for tournament, icon in scrape_forum(
         max_pages=max_pages,
@@ -149,8 +149,9 @@ def run(args: argparse.Namespace) -> int:
                         f"[dim]  removed stale changes_required/{stale.name}[/dim]"
                     )
             except FileExistsError as exc:
-                console.print(f"[yellow]─[/yellow] {exc}")
+                logger.debug("%s", exc)
                 skipped += 1
+                overwrite_skipped += 1
             except Exception as exc:
                 console.print(f"[red]✗[/red] {tournament.event_id}: {exc}")
                 logger.debug("Stack trace:", exc_info=True)
@@ -162,4 +163,9 @@ def run(args: argparse.Namespace) -> int:
         f"[yellow]{skipped} skipped[/yellow], "
         f"[red]{failed} failed[/red]"
     )
+    if overwrite_skipped:
+        console.print(
+            f"[yellow]![/yellow] {overwrite_skipped} deck(s) already existed and were not overwritten "
+            f"(use --overwrite to replace them)."
+        )
     return 1 if failed else 0
