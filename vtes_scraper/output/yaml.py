@@ -41,6 +41,13 @@ def tournament_to_yaml_str(tournament: Tournament) -> str:
     return buf.getvalue()
 
 
+def _find_existing_yaml(output_dir: Path, filename: str) -> Path | None:
+    """Search for *filename* anywhere under *output_dir* and return the first match."""
+    for match in output_dir.rglob(filename):
+        return match
+    return None
+
+
 def write_tournament_yaml(
     tournament: Tournament,
     output_dir: Path,
@@ -49,17 +56,30 @@ def write_tournament_yaml(
     """
     Write a Tournament to {output_dir}/YYYY/MM/{event_id}.yaml
 
+    Before writing, the whole output_dir tree (including error sub-folders) is
+    searched for an existing file with the same event_id:
+
+    * Same content  → skip silently (raise FileExistsError).
+    * Different content → unlink the old file (wherever it lives) and write the
+      new one at the canonical YYYY/MM location.
+    * No prior file  → write normally.
+
     Raises:
-        FileExistsError: if file exists and overwrite=False
+        FileExistsError: if an identical file already exists and overwrite=False
     """
+    new_content = tournament_to_yaml_str(tournament)
+
+    existing = _find_existing_yaml(output_dir, tournament.yaml_filename)
+    if existing is not None:
+        if existing.read_text(encoding="utf-8") == new_content and not overwrite:
+            raise FileExistsError(
+                f"Output file already exists with identical content: {existing}. "
+                "Use --overwrite to replace."
+            )
+        existing.unlink()
+
     dest = output_dir / _date_subdir(tournament)
     dest.mkdir(parents=True, exist_ok=True)
     path = dest / tournament.yaml_filename
-
-    if path.exists() and not overwrite:
-        raise FileExistsError(
-            f"Output file already exists: {path}. Use --overwrite to replace."
-        )
-
-    path.write_text(tournament_to_yaml_str(tournament), encoding="utf-8")
+    path.write_text(new_content, encoding="utf-8")
     return path
