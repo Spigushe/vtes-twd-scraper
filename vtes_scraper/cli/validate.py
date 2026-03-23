@@ -51,7 +51,7 @@ JSON file that permanently records every raw-winner → canonical-winner mapping
 discovered during --check-players runs.  Stored as::
 
     {
-        "<raw name from YAML>": {"winner": "<canonical name>", "vekn_number": "<id>"},
+        "<raw name from YAML>": {"winner": "<canonical name>", "vekn_number": <id>},
         ...
     }
 
@@ -60,18 +60,27 @@ needed for already-resolved names.
 """
 
 
-def _load_coercions(output_dir: Path) -> dict[str, dict[str, str]]:
+def _load_coercions(output_dir: Path) -> dict[str, dict[str, int | str]]:
     """Load the coercions cache from *output_dir*/coercions.json (empty dict if absent)."""
     path = output_dir / _COERCIONS_FILENAME
     if not path.exists():
         return {}
     try:
-        return json.loads(path.read_text(encoding="utf-8"))
+        raw: dict[str, dict[str, int | str]] = json.loads(
+            path.read_text(encoding="utf-8")
+        )
+        # Migrate any legacy string vekn_number values to int.
+        for entry in raw.values():
+            if isinstance(entry.get("vekn_number"), str):
+                entry["vekn_number"] = int(entry["vekn_number"])
+        return raw
     except Exception:
         return {}
 
 
-def _save_coercions(output_dir: Path, coercions: dict[str, dict[str, str]]) -> None:
+def _save_coercions(
+    output_dir: Path, coercions: dict[str, dict[str, int | str]]
+) -> None:
     """Persist *coercions* to *output_dir*/coercions.json (sorted keys, pretty-printed)."""
     path = output_dir / _COERCIONS_FILENAME
     path.write_text(
@@ -112,7 +121,7 @@ def _check_player(
     output_dir: Path,
     delay: float,
     logger: logging.Logger,
-    coercions: dict[str, dict[str, str]] | None = None,
+    coercions: dict[str, dict[str, int | str]] | None = None,
 ) -> tuple[bool, bool]:
     """
     Verify that the winner listed in *data* is a registered VEKN member.
@@ -134,7 +143,7 @@ def _check_player(
 
     winner = raw_winner
 
-    def _coercions_get(candidate: str) -> tuple[str, str] | None:
+    def _coercions_get(candidate: str) -> tuple[str, int] | None:
         """Return ``(found_name, vekn_number)`` from cache if *candidate* is present."""
         if coercions is not None and candidate in coercions:
             entry = coercions[candidate]
@@ -145,15 +154,18 @@ def _check_player(
                 entry["winner"],
                 entry["vekn_number"],
             )
-            return entry["winner"], entry["vekn_number"]
+            return str(entry["winner"]), int(entry["vekn_number"])
         return None
 
     def _apply_resolution(
-        found_name: str, vekn_number: str, *, from_cache: bool = False
+        found_name: str, vekn_number: int, *, from_cache: bool = False
     ) -> tuple[bool, bool]:
         """Write *found_name* / *vekn_number* into *data*, update coercions, save file."""
         if coercions is not None:
-            entry = {"winner": found_name, "vekn_number": vekn_number}
+            entry: dict[str, int | str] = {
+                "winner": found_name,
+                "vekn_number": vekn_number,
+            }
             # Store both the raw name and the canonical name so that either can be
             # looked up at step 0 on a future run without any HTTP requests.
             coercions[raw_winner] = entry
@@ -179,7 +191,7 @@ def _check_player(
         return _apply_resolution(*hit, from_cache=True)
 
     # Step 1: search with the original winner name.
-    result: tuple[str, str] | None = None
+    result: tuple[str, int] | None = None
     try:
         result = fetch_player(client, winner, delay=delay)
     except Exception as exc:
@@ -327,7 +339,7 @@ def run(args: argparse.Namespace) -> int:
 
     # Load the persistent coercions cache once; it will be updated and saved
     # incrementally as new player lookups are resolved.
-    coercions: dict[str, dict[str, str]] | None = None
+    coercions: dict[str, dict[str, int | str]] | None = None
     if check_players:
         coercions = _load_coercions(output_dir)
 

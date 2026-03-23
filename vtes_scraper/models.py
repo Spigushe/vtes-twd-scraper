@@ -77,7 +77,7 @@ class Tournament(BaseModel):
     rounds_format: str  # "2R+F" or "3R+F"
     players_count: int
     winner: str
-    vekn_number: str | None = None  # VEKN member number, e.g. '3940009'
+    vekn_number: int | None = None  # VEKN member number, e.g. 3940009
     event_url: str  # https://www.vekn.net/event-calendar/event/XXXX
 
     # --- Derived ---
@@ -104,6 +104,16 @@ class Tournament(BaseModel):
             raise ValueError(
                 f"rounds_format must match 'NR+F' (e.g. '3R+F'), got: '{v}'"
             )
+        return v
+
+    @field_validator("vekn_number", mode="before")
+    @classmethod
+    def coerce_vekn_number(cls, v):
+        """Accept '3940009' or 3940009."""
+        if isinstance(v, str):
+            v = v.strip()
+            if v.isdigit():
+                return int(v)
         return v
 
     @field_validator("players_count", mode="before")

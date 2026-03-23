@@ -112,7 +112,7 @@ date_start: October 1st 2016
 rounds_format: 2R+F
 players_count: 12
 winner: Ravel Zorzal
-vekn_number: '3200001'
+vekn_number: 3200001
 event_url: https://www.vekn.net/event-calendar/event/8470
 event_id: '8470'
 vp_comment: 5VP in final

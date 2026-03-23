@@ -32,9 +32,9 @@ import logging
 import re
 import time
 import unicodedata
-from difflib import SequenceMatcher
 from collections.abc import Iterator
 from datetime import date
+from difflib import SequenceMatcher
 from typing import cast
 from urllib.parse import quote, urljoin
 
@@ -480,7 +480,7 @@ def fetch_player(
     client: httpx.Client,
     name: str,
     delay: float = DEFAULT_DELAY_SECONDS,
-) -> tuple[str, str] | None:
+) -> tuple[str, int] | None:
     """
     Look up a player by name in the VEKN member database.
 
@@ -519,15 +519,15 @@ def fetch_player(
             continue
 
         # Collect data rows
-        results: list[tuple[str, str]] = []
+        results: list[tuple[str, int]] = []
         for row in rows[1:]:
             cells = row.find_all(["td", "th"])
             if len(cells) <= max(name_col, number_col):
                 continue
             player_name = cells[name_col].get_text(strip=True)
-            player_number = cells[number_col].get_text(strip=True)
-            if player_name and player_number:
-                results.append((player_name, player_number))
+            player_number_str = cells[number_col].get_text(strip=True)
+            if player_name and player_number_str and player_number_str.isdigit():
+                results.append((player_name, int(player_number_str)))
 
         if len(results) == 1:
             return results[0]

@@ -860,7 +860,7 @@ class TestValidateCommand:
             mock_client = MagicMock()
             with patch(
                 "vtes_scraper.cli.validate.fetch_player",
-                return_value=("Jane Doe", "3940009"),
+                return_value=("Jane Doe", 3940009),
             ):
                 found, moved = validate_cmd._check_player(
                     mock_client, yaml_file, data, Path(tmpdir), 0, logging.getLogger()
@@ -868,7 +868,7 @@ class TestValidateCommand:
             assert found is True
             assert moved is False
             updated = validate_cmd._load_yaml(yaml_file)
-            assert updated["vekn_number"] == "3940009"
+            assert updated["vekn_number"] == 3940009
             assert updated["winner"] == "Jane Doe"
 
     def test_check_player_found_after_digit_strip(self):
@@ -884,7 +884,7 @@ class TestValidateCommand:
             def fake_fetch_player(client, name, delay=0):
                 if "3940009" in name:
                     return None
-                return ("Jane Doe", "3940009")
+                return ("Jane Doe", 3940009)
 
             mock_client = MagicMock()
             with patch(
@@ -896,7 +896,7 @@ class TestValidateCommand:
             assert found is True
             assert moved is False
             updated = validate_cmd._load_yaml(yaml_file)
-            assert updated["vekn_number"] == "3940009"
+            assert updated["vekn_number"] == 3940009
             assert updated["winner"] == "Jane Doe"
 
     def test_check_player_found_after_accent_strip(self):
@@ -910,7 +910,7 @@ class TestValidateCommand:
             def fake_fetch_player(client, name, delay=0):
                 # Only the plain ASCII form matches
                 if name == "Jane Doe":
-                    return ("Jane Doe", "3940009")
+                    return ("Jane Doe", 3940009)
                 return None
 
             mock_client = MagicMock()
@@ -923,7 +923,7 @@ class TestValidateCommand:
             assert found is True
             assert moved is False
             updated = validate_cmd._load_yaml(yaml_file)
-            assert updated["vekn_number"] == "3940009"
+            assert updated["vekn_number"] == 3940009
             assert updated["winner"] == "Jane Doe"
 
     def test_check_player_found_after_bracket_and_accent_strip(self):
@@ -945,7 +945,7 @@ class TestValidateCommand:
             def fake_fetch_player(client, name, delay=0):
                 # Only the plain ASCII form (no bracket, no accents) matches.
                 if name == "David Valles Gomez":
-                    return ("David Valles Gomez", "1234567")
+                    return ("David Valles Gomez", 1234567)
                 return None
 
             mock_client = MagicMock()
@@ -959,7 +959,7 @@ class TestValidateCommand:
             assert moved is False
             updated = validate_cmd._load_yaml(yaml_file)
             assert updated["winner"] == "David Valles Gomez"
-            assert updated["vekn_number"] == "1234567"
+            assert updated["vekn_number"] == 1234567
 
     def test_check_player_not_found_moves_to_unknown_winner(self):
         """When fetch_player returns None for both attempts, file is moved."""
@@ -1019,7 +1019,7 @@ class TestValidateCommand:
         """Files that already have a vekn_number are not re-checked."""
         with tempfile.TemporaryDirectory() as tmpdir:
             yaml_file = Path(tmpdir) / "test.yaml"
-            yaml_with_vekn = VALID_YAML + "vekn_number: '1234567'\n"
+            yaml_with_vekn = VALID_YAML + "vekn_number: 1234567\n"
             yaml_file.write_text(yaml_with_vekn, encoding="utf-8")
             args = argparse.Namespace(
                 output_dir=Path(tmpdir),
@@ -1047,12 +1047,12 @@ class TestValidateCommand:
             )
             with patch(
                 "vtes_scraper.cli.validate.fetch_player",
-                return_value=("Jane Doe", "3940009"),
+                return_value=("Jane Doe", 3940009),
             ):
                 ret = validate_cmd.run(args)
             assert ret == 0
             updated = validate_cmd._load_yaml(yaml_file)
-            assert updated["vekn_number"] == "3940009"
+            assert updated["vekn_number"] == 3940009
 
     def test_run_check_players_not_found_moves_file(self):
         """run() with --check-players moves unknown winners to errors/unknown_winner."""
@@ -1103,7 +1103,7 @@ class TestValidateCommand:
             coercions: dict = {}
             with patch(
                 "vtes_scraper.cli.validate.fetch_player",
-                return_value=("Jane Doe", "3940009"),
+                return_value=("Jane Doe", 3940009),
             ):
                 validate_cmd._check_player(
                     mock_client,
@@ -1116,7 +1116,7 @@ class TestValidateCommand:
                 )
             assert "Jane Doe" in coercions
             assert coercions["Jane Doe"]["winner"] == "Jane Doe"
-            assert coercions["Jane Doe"]["vekn_number"] == "3940009"
+            assert coercions["Jane Doe"]["vekn_number"] == 3940009
 
     def test_check_player_uses_coercions_cache_skips_http(self):
         """When the winner is in the coercions cache no HTTP request is made."""
@@ -1125,7 +1125,7 @@ class TestValidateCommand:
             yaml_file.write_text(VALID_YAML, encoding="utf-8")
             data = validate_cmd._load_yaml(yaml_file)
             mock_client = MagicMock()
-            coercions = {"Jane Doe": {"winner": "Jane Doe", "vekn_number": "3940009"}}
+            coercions = {"Jane Doe": {"winner": "Jane Doe", "vekn_number": 3940009}}
             with patch("vtes_scraper.cli.validate.fetch_player") as mock_fp:
                 found, moved = validate_cmd._check_player(
                     mock_client,
@@ -1140,7 +1140,7 @@ class TestValidateCommand:
             assert found is True
             assert moved is False
             updated = validate_cmd._load_yaml(yaml_file)
-            assert updated["vekn_number"] == "3940009"
+            assert updated["vekn_number"] == 3940009
 
     def test_check_player_coercions_corrects_winner_name(self):
         """A cached coercion with a different canonical name updates the YAML winner field."""
@@ -1153,7 +1153,7 @@ class TestValidateCommand:
             yaml_file.write_text(yaml_with_bracket, encoding="utf-8")
             data = validate_cmd._load_yaml(yaml_file)
             mock_client = MagicMock()
-            coercions = {raw_name: {"winner": "Jane Doe", "vekn_number": "3940009"}}
+            coercions = {raw_name: {"winner": "Jane Doe", "vekn_number": 3940009}}
             with patch("vtes_scraper.cli.validate.fetch_player") as mock_fp:
                 found, moved = validate_cmd._check_player(
                     mock_client,
@@ -1168,7 +1168,7 @@ class TestValidateCommand:
             assert found is True
             updated = validate_cmd._load_yaml(yaml_file)
             assert updated["winner"] == "Jane Doe"
-            assert updated["vekn_number"] == "3940009"
+            assert updated["vekn_number"] == 3940009
 
     def test_check_player_coercions_hit_at_bracket_strip_step_skips_http(self):
         """Cache hit on the bracket-stripped variant skips the bracket-step HTTP call.
@@ -1186,7 +1186,7 @@ class TestValidateCommand:
             data = validate_cmd._load_yaml(yaml_file)
             mock_client = MagicMock()
             # "Jane Doe" (bracket-stripped form) is already in the cache.
-            coercions = {"Jane Doe": {"winner": "Jane Doe", "vekn_number": "3940009"}}
+            coercions = {"Jane Doe": {"winner": "Jane Doe", "vekn_number": 3940009}}
             with patch(
                 "vtes_scraper.cli.validate.fetch_player", return_value=None
             ) as mock_fp:
@@ -1204,7 +1204,7 @@ class TestValidateCommand:
             assert found is True
             updated = validate_cmd._load_yaml(yaml_file)
             assert updated["winner"] == "Jane Doe"
-            assert updated["vekn_number"] == "3940009"
+            assert updated["vekn_number"] == 3940009
             # Both the raw name and the canonical name are stored.
             assert raw_name in coercions
             assert "Jane Doe" in coercions
@@ -1221,7 +1221,7 @@ class TestValidateCommand:
             data = validate_cmd._load_yaml(yaml_file)
             mock_client = MagicMock()
             # Step 1 (exact match) returns None; "Jane Doe" (digit-stripped) is in cache.
-            coercions = {"Jane Doe": {"winner": "Jane Doe", "vekn_number": "3940009"}}
+            coercions = {"Jane Doe": {"winner": "Jane Doe", "vekn_number": 3940009}}
             with patch(
                 "vtes_scraper.cli.validate.fetch_player", return_value=None
             ) as mock_fp:
@@ -1238,7 +1238,7 @@ class TestValidateCommand:
             mock_fp.assert_called_once()
             assert found is True
             updated = validate_cmd._load_yaml(yaml_file)
-            assert updated["vekn_number"] == "3940009"
+            assert updated["vekn_number"] == 3940009
             assert raw_name in coercions
             assert "Jane Doe" in coercions
 
@@ -1257,7 +1257,7 @@ class TestValidateCommand:
             data = validate_cmd._load_yaml(yaml_file)
             mock_client = MagicMock()
             # "Jane Doe" (accent-stripped form) is already in the cache.
-            coercions = {"Jane Doe": {"winner": "Jane Doe", "vekn_number": "3940009"}}
+            coercions = {"Jane Doe": {"winner": "Jane Doe", "vekn_number": 3940009}}
             with patch(
                 "vtes_scraper.cli.validate.fetch_player", return_value=None
             ) as mock_fp:
@@ -1274,7 +1274,7 @@ class TestValidateCommand:
             mock_fp.assert_called_once()
             assert found is True
             updated = validate_cmd._load_yaml(yaml_file)
-            assert updated["vekn_number"] == "3940009"
+            assert updated["vekn_number"] == 3940009
             assert raw_name in coercions
             assert "Jane Doe" in coercions
 
@@ -1292,7 +1292,7 @@ class TestValidateCommand:
             )
             with patch(
                 "vtes_scraper.cli.validate.fetch_player",
-                return_value=("Jane Doe", "3940009"),
+                return_value=("Jane Doe", 3940009),
             ):
                 validate_cmd.run(args)
             coercions_path = Path(tmpdir) / "coercions.json"
@@ -1301,7 +1301,7 @@ class TestValidateCommand:
 
             data = json.loads(coercions_path.read_text())
             assert "Jane Doe" in data
-            assert data["Jane Doe"]["vekn_number"] == "3940009"
+            assert data["Jane Doe"]["vekn_number"] == 3940009
 
     def test_run_reuses_coercions_file_skips_http(self):
         """run() loads an existing coercions.json and skips HTTP for known winners."""
@@ -1312,7 +1312,7 @@ class TestValidateCommand:
             coercions_path = Path(tmpdir) / "coercions.json"
             coercions_path.write_text(
                 json.dumps(
-                    {"Jane Doe": {"winner": "Jane Doe", "vekn_number": "3940009"}}
+                    {"Jane Doe": {"winner": "Jane Doe", "vekn_number": 3940009}}
                 ),
                 encoding="utf-8",
             )
@@ -1330,7 +1330,7 @@ class TestValidateCommand:
             mock_fp.assert_not_called()
             assert ret == 0
             updated = validate_cmd._load_yaml(yaml_file)
-            assert updated["vekn_number"] == "3940009"
+            assert updated["vekn_number"] == 3940009
 
 
 # ---------------------------------------------------------------------------

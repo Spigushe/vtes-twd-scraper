@@ -530,7 +530,7 @@ class TestFetchPlayer:
         mock_client = MagicMock()
         with patch("vtes_scraper.scraper._get", return_value=soup):
             result = fetch_player(mock_client, "Aleksander Idziak", delay=0)
-        assert result == ("Aleksander Idziak", "3940009")
+        assert result == ("Aleksander Idziak", 3940009)
 
     def test_no_result_returns_none(self):
         soup = BeautifulSoup(PLAYER_SEARCH_NO_RESULT, "lxml")
@@ -551,7 +551,7 @@ class TestFetchPlayer:
         mock_client = MagicMock()
         with patch("vtes_scraper.scraper._get", return_value=soup):
             result = fetch_player(mock_client, "Jane Doe", delay=0)
-        assert result == ("Jane Doe", "2000001")
+        assert result == ("Jane Doe", 2000001)
 
     def test_nfc_vs_nfd_name_match_among_multiple(self):
         """NFC query matches an NFD-encoded name in the VEKN table (multiple results)."""
@@ -561,7 +561,7 @@ class TestFetchPlayer:
             result = fetch_player(mock_client, "David Vallès Gómez", delay=0)
         assert result is not None
         # The returned name is whatever VEKN stores (NFD form here); vekn_number is key.
-        assert result[1] == "1234567"
+        assert result[1] == 1234567
 
     def test_accent_stripped_name_match_among_multiple(self):
         """Accented query matches an ASCII-only stored name (regression: event 10032).
@@ -574,7 +574,7 @@ class TestFetchPlayer:
         mock_client = MagicMock()
         with patch("vtes_scraper.scraper._get", return_value=soup):
             result = fetch_player(mock_client, "David Vallès Gómez", delay=0)
-        assert result == ("David Valles Gomez", "1234567")
+        assert result == ("David Valles Gomez", 1234567)
 
     def test_similarity_match_unique(self):
         """Query "Rafael Barbosa" matches "Rafael Barbosa Santos" when it is the only
@@ -583,7 +583,7 @@ class TestFetchPlayer:
         mock_client = MagicMock()
         with patch("vtes_scraper.scraper._get", return_value=soup):
             result = fetch_player(mock_client, "Rafael Barbosa", delay=0)
-        assert result == ("Rafael Barbosa Santos", "5000001")
+        assert result == ("Rafael Barbosa Santos", 5000001)
 
     def test_similarity_match_ambiguous_returns_none(self):
         """Two results with equally high similarity scores are not resolved."""
