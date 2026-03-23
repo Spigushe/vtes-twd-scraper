@@ -4,10 +4,10 @@ date_start: 2025-11-13
 rounds_format: 2R+F
 players_count: 10
 winner: Lu Semprebon
+vekn_number: 6100015
 event_url: https://www.vekn.net/player-registry/event/12810
 event_id: '12810'
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82722-twd-vaulderie-de-novembro-online-13-11-2025
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82722-twd-vaulderie-de-novembro-online-13-11-2025
 deck:
   name: Anarch Auspex
   created_by: Lu Semprebon

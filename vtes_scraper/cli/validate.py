@@ -122,6 +122,7 @@ def _check_player(
     delay: float,
     logger: logging.Logger,
     coercions: dict[str, dict[str, int | str]] | None = None,
+    already_moved: bool = False,
 ) -> tuple[bool, bool]:
     """
     Verify that the winner listed in *data* is a registered VEKN member.
@@ -259,12 +260,14 @@ def _check_player(
                 result = None
 
     if result is None:
-        # Winner not found in VEKN database — move to errors/unknown_winner.
-        dest = _move_to_error(path, output_dir, "unknown_winner")
-        console.print(
-            f"[red]✗[/red] {path.name}  [unknown_winner]  → {dest.relative_to(output_dir)}"
-        )
-        return False, True
+        if not already_moved:
+            # Winner not found in VEKN database — move to errors/unknown_winner.
+            dest = _move_to_error(path, output_dir, "unknown_winner")
+            console.print(
+                f"[red]✗[/red] {path.name}  [unknown_winner]  → {dest.relative_to(output_dir)}"
+            )
+            return False, True
+        return False, False
 
     return _apply_resolution(*result)
 
@@ -348,13 +351,8 @@ def run(args: argparse.Namespace) -> int:
     yaml_files = [
         p for p in output_dir.rglob("*.yaml") if not p.is_relative_to(errors_dir)
     ]
-    unknown_winners_errors_dir = errors_dir / "unknown_winner"
     if check_unknowns:
-        yaml_files.extend(
-            unknown_winners_errors_dir.rglob("*.yaml")
-            if unknown_winners_errors_dir.exists()
-            else []
-        )
+        yaml_files.extend(errors_dir.rglob("*.yaml") if errors_dir.exists() else [])
 
     if not yaml_files:
         console.print(f"[yellow]No YAML files found in {output_dir}[/yellow]")
@@ -390,9 +388,9 @@ def run(args: argparse.Namespace) -> int:
                             "Could not fetch calendar date for %s: %s", path.name, exc
                         )
 
+            has_error = False
             errs = error_types(data, calendar_date=calendar_date)
             if errs:
-                # Use the first (most critical) error as the directory name; move once.
                 first_error = errs[0]
                 dest = _move_to_error(path, output_dir, first_error)
                 label = ", ".join(errs)
@@ -400,26 +398,36 @@ def run(args: argparse.Namespace) -> int:
                     f"[red]✗[/red] {path.name}  [{label}]  → {dest.relative_to(output_dir)}"
                 )
                 moved += 1
-                continue
+                has_error = True
 
             # Optionally verify the winner against the VEKN member database.
             # Only check files that don't already have a vekn_number.
             if check_players and data.get("vekn_number") is None:
                 prev_coercions_len = len(coercions) if coercions is not None else 0
-                _found, file_moved = _check_player(
-                    client, path, data, output_dir, delay, logger, coercions=coercions
+                _, file_moved = _check_player(
+                    client,
+                    path,
+                    data,
+                    output_dir,
+                    delay,
+                    logger,
+                    coercions=coercions,
+                    already_moved=has_error,
                 )
                 # Persist the coercions file immediately after each new resolution.
                 if coercions is not None and len(coercions) != prev_coercions_len:
                     _save_coercions(output_dir, coercions)
                 if file_moved:
                     moved += 1
-                    continue
+                    has_error = True
 
-            # If the file was previously quarantined in errors/unknown_winner/,
+            if has_error:
+                continue
+
+            # If the file was previously quarantined in errors/,
             # move it back to its canonical output_dir/YYYY/MM/ location now that
             # it has passed all checks.
-            if path.is_relative_to(unknown_winners_errors_dir):
+            if path.is_relative_to(errors_dir):
                 date_start = data.get("date_start")
                 if isinstance(date_start, date):
                     subdir = (

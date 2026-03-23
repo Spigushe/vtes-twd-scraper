@@ -4,11 +4,11 @@ date_start: 2022-10-02
 rounds_format: 3R+F
 players_count: 10
 winner: Thomas Gibson
+vekn_number: 3200215
 event_url: https://www.vekn.net/event-calendar/event/10352
 event_id: '10352'
 vp_comment: 2gw9,5 + 4vp in final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80099-twd-rise-of-the-fallen-nantes-france
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80099-twd-rise-of-the-fallen-nantes-france
 deck:
   name: Emerald Legionnaires
   created_by: Thomas Gibson

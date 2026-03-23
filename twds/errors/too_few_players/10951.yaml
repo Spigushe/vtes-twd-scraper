@@ -4,15 +4,15 @@ date_start: 2023-08-26
 rounds_format: 3R+F
 players_count: 10
 winner: Paul Jones
+vekn_number: 8230000
 event_url: https://www.vekn.net/player-registry/event/10951
 event_id: '10951'
 forum_post_url: 
   https://www.vekn.net/forum/event-reports-and-twd/80800-twd-leeds-blleebs-leeds-united-kingdom-26-august-2023
 deck:
   name: Gangrel Grinder? I hardly know her!
-  description: Not really much I can say here, it's nothing you've not seen 
-    before. I put an Ivory Bow in to a starter deck. Efficient vampires doing 
-    efficient things.
+  description: Not really much I can say here, it's nothing you've not seen before. I put an Ivory Bow in to a starter 
+    deck. Efficient vampires doing efficient things.
   crypt_count: 12
   crypt_min: 12
   crypt_max: 26

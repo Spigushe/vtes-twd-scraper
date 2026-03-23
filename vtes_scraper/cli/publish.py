@@ -114,7 +114,7 @@ def _write_publish_report(
         published_set = set(result.published)
         lines += [
             "| Event ID | Event Name | Location | Date | Winner |",
-            "|---|---|---|---|---|",
+            "| -------- | ---------- | -------- | ---- | ------ |",
         ]
         for t in tournaments:
             if (t.event_id or "unknown") in published_set:
