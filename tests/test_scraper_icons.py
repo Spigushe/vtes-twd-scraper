@@ -148,8 +148,10 @@ class TestScrapeCliRouting:
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            max_pages=None,
+            fast_check=True,
+            slow_check=False,
             start_page=0,
+            last_page=None,
             delay=0,
             overwrite=False,
             verbose=False,
@@ -168,8 +170,10 @@ class TestScrapeCliRouting:
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            max_pages=None,
+            fast_check=True,
+            slow_check=False,
             start_page=0,
+            last_page=None,
             delay=0,
             overwrite=False,
             verbose=False,
@@ -193,8 +197,10 @@ class TestScrapeCliRouting:
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            max_pages=None,
+            fast_check=True,
+            slow_check=False,
             start_page=0,
+            last_page=None,
             delay=0,
             overwrite=False,
             verbose=False,
@@ -222,8 +228,10 @@ class TestScrapeCliRouting:
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            max_pages=None,
+            fast_check=True,
+            slow_check=False,
             start_page=0,
+            last_page=None,
             delay=0,
             overwrite=False,
             verbose=False,
@@ -252,8 +260,10 @@ class TestScrapeCliRouting:
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            max_pages=None,
+            fast_check=True,
+            slow_check=False,
             start_page=0,
+            last_page=None,
             delay=0,
             overwrite=False,
             verbose=False,
@@ -287,8 +297,10 @@ class TestScrapeCliRouting:
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            max_pages=None,
+            fast_check=True,
+            slow_check=False,
             start_page=0,
+            last_page=None,
             delay=0,
             overwrite=False,
             verbose=False,
@@ -315,8 +327,10 @@ class TestScrapeCliRouting:
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            max_pages=None,
+            fast_check=True,
+            slow_check=False,
             start_page=0,
+            last_page=None,
             delay=0,
             overwrite=False,
             verbose=False,
@@ -340,8 +354,10 @@ class TestScrapeCliRouting:
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            max_pages=None,
+            fast_check=True,
+            slow_check=False,
             start_page=0,
+            last_page=None,
             delay=0,
             overwrite=False,
             verbose=False,
@@ -363,8 +379,10 @@ class TestScrapeCliRouting:
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            max_pages=None,
+            fast_check=True,
+            slow_check=False,
             start_page=0,
+            last_page=None,
             delay=0,
             overwrite=False,
             verbose=False,
@@ -385,8 +403,10 @@ class TestScrapeCliRouting:
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            max_pages=None,
+            fast_check=True,
+            slow_check=False,
             start_page=0,
+            last_page=None,
             delay=0,
             overwrite=False,
             verbose=False,
