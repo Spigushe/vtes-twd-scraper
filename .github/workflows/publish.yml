@@ -38,6 +38,18 @@ jobs:
         continue-on-error: true
         run: vtes-scraper validate --check-players
 
+      - name: Commit updated TWDs after validation
+        run: |
+          git add twds/
+          if git diff --staged --quiet; then
+            echo "No TWD changes to commit."
+          else
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: update TWDs after validation $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
       - name: Publish deck PRs to GiottoVerducci/TWD
         env:
           # A PAT with 'public_repo' scope stored as TWD_GITHUB_TOKEN.
