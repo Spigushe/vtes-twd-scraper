@@ -99,7 +99,7 @@ class TestBuildParser:
 
     def test_scrape_subcommand(self):
         parser = _build_parser()
-        args = parser.parse_args(["scrape"])
+        args = parser.parse_args(["scrape", "--fast-check"])
         assert args.command == "scrape"
 
     def test_validate_subcommand(self):
@@ -111,7 +111,7 @@ class TestBuildParser:
 class TestMain:
     def test_main_dispatches_and_exits(self):
         with (
-            patch("sys.argv", ["vtes-scraper", "scrape"]),
+            patch("sys.argv", ["vtes-scraper", "scrape", "--fast-check"]),
             patch("vtes_scraper.cli._reconfigure_windows_stdio"),
             patch("vtes_scraper.cli.scrape.run", return_value=0) as mock_run,
         ):
@@ -269,24 +269,89 @@ class TestParseCommand:
 # ---------------------------------------------------------------------------
 
 
+def _scrape_namespace(**kwargs) -> argparse.Namespace:
+    """Build a scrape Namespace with sensible defaults for tests."""
+    defaults = dict(
+        output_dir=Path("twds"),
+        fast_check=True,
+        slow_check=False,
+        start_page=0,
+        last_page=None,
+        delay=0,
+        overwrite=False,
+        verbose=False,
+    )
+    defaults.update(kwargs)
+    return argparse.Namespace(**defaults)
+
+
 class TestScrapeCommand:
     def test_register(self):
         parser = argparse.ArgumentParser()
         sub = parser.add_subparsers(dest="command")
         scrape_cmd.register(sub)
-        args = parser.parse_args(["scrape"])
+        args = parser.parse_args(["scrape", "--fast-check"])
         assert args.command == "scrape"
+
+    def test_register_requires_check_flag(self):
+        """Omitting both --fast-check and --slow-check must be an error."""
+        parser = argparse.ArgumentParser()
+        sub = parser.add_subparsers(dest="command")
+        scrape_cmd.register(sub)
+        with pytest.raises(SystemExit):
+            parser.parse_args(["scrape"])
+
+    def test_register_mutual_exclusion(self):
+        """Using both --fast-check and --slow-check must be an error."""
+        parser = argparse.ArgumentParser()
+        sub = parser.add_subparsers(dest="command")
+        scrape_cmd.register(sub)
+        with pytest.raises(SystemExit):
+            parser.parse_args(["scrape", "--fast-check", "--slow-check"])
+
+    def test_register_fast_check_sets_flag(self):
+        parser = argparse.ArgumentParser()
+        sub = parser.add_subparsers(dest="command")
+        scrape_cmd.register(sub)
+        args = parser.parse_args(["scrape", "--fast-check"])
+        assert args.fast_check is True
+        assert args.slow_check is False
+
+    def test_register_slow_check_sets_flag(self):
+        parser = argparse.ArgumentParser()
+        sub = parser.add_subparsers(dest="command")
+        scrape_cmd.register(sub)
+        args = parser.parse_args(["scrape", "--slow-check"])
+        assert args.slow_check is True
+        assert args.fast_check is False
+
+    def test_register_last_page_default(self):
+        parser = argparse.ArgumentParser()
+        sub = parser.add_subparsers(dest="command")
+        scrape_cmd.register(sub)
+        args = parser.parse_args(["scrape", "--fast-check"])
+        assert args.last_page is None
+
+    def test_register_last_page_set(self):
+        parser = argparse.ArgumentParser()
+        sub = parser.add_subparsers(dest="command")
+        scrape_cmd.register(sub)
+        args = parser.parse_args(["scrape", "--fast-check", "--last-page", "5"])
+        assert args.last_page == 5
+
+    def test_register_start_and_last_page(self):
+        parser = argparse.ArgumentParser()
+        sub = parser.add_subparsers(dest="command")
+        scrape_cmd.register(sub)
+        args = parser.parse_args(
+            ["scrape", "--fast-check", "--start-page", "2", "--last-page", "7"]
+        )
+        assert args.start_page == 2
+        assert args.last_page == 7
 
     def test_run_no_tournaments(self):
         with tempfile.TemporaryDirectory() as tmpdir:
-            args = argparse.Namespace(
-                output_dir=Path(tmpdir),
-                max_pages=1,
-                start_page=0,
-                delay=0,
-                overwrite=False,
-                verbose=False,
-            )
+            args = _scrape_namespace(output_dir=Path(tmpdir))
             with patch("vtes_scraper.cli.scrape.scrape_forum", return_value=iter([])):
                 ret = scrape_cmd.run(args)
             assert ret == 0
@@ -294,14 +359,7 @@ class TestScrapeCommand:
     def test_run_with_tournament_written(self):
         t = _make_tournament()
         with tempfile.TemporaryDirectory() as tmpdir:
-            args = argparse.Namespace(
-                output_dir=Path(tmpdir),
-                max_pages=1,
-                start_page=0,
-                delay=0,
-                overwrite=False,
-                verbose=False,
-            )
+            args = _scrape_namespace(output_dir=Path(tmpdir))
             with patch(
                 "vtes_scraper.cli.scrape.scrape_forum", return_value=iter([(t, None)])
             ):
@@ -311,14 +369,7 @@ class TestScrapeCommand:
     def test_run_with_file_exists_skipped(self):
         t = _make_tournament()
         with tempfile.TemporaryDirectory() as tmpdir:
-            args = argparse.Namespace(
-                output_dir=Path(tmpdir),
-                max_pages=1,
-                start_page=0,
-                delay=0,
-                overwrite=False,
-                verbose=False,
-            )
+            args = _scrape_namespace(output_dir=Path(tmpdir))
             with (
                 patch(
                     "vtes_scraper.cli.scrape.scrape_forum",
@@ -335,14 +386,7 @@ class TestScrapeCommand:
     def test_run_with_general_error(self):
         t = _make_tournament()
         with tempfile.TemporaryDirectory() as tmpdir:
-            args = argparse.Namespace(
-                output_dir=Path(tmpdir),
-                max_pages=1,
-                start_page=0,
-                delay=0,
-                overwrite=False,
-                verbose=False,
-            )
+            args = _scrape_namespace(output_dir=Path(tmpdir))
             with (
                 patch(
                     "vtes_scraper.cli.scrape.scrape_forum",
@@ -355,6 +399,51 @@ class TestScrapeCommand:
             ):
                 ret = scrape_cmd.run(args)
             assert ret == 1
+
+    def test_run_fast_check_passes_true_to_scrape_forum(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = _scrape_namespace(
+                output_dir=Path(tmpdir), fast_check=True, slow_check=False
+            )
+            with patch(
+                "vtes_scraper.cli.scrape.scrape_forum", return_value=iter([])
+            ) as mock_sf:
+                scrape_cmd.run(args)
+            _, kwargs = mock_sf.call_args
+            assert kwargs["fast_check"] is True
+
+    def test_run_slow_check_passes_false_to_scrape_forum(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = _scrape_namespace(
+                output_dir=Path(tmpdir), fast_check=False, slow_check=True
+            )
+            with patch(
+                "vtes_scraper.cli.scrape.scrape_forum", return_value=iter([])
+            ) as mock_sf:
+                scrape_cmd.run(args)
+            _, kwargs = mock_sf.call_args
+            assert kwargs["fast_check"] is False
+
+    def test_run_last_page_computes_max_pages(self):
+        """last_page=4, start_page=2 → max_pages=3."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = _scrape_namespace(output_dir=Path(tmpdir), start_page=2, last_page=4)
+            with patch(
+                "vtes_scraper.cli.scrape.scrape_forum", return_value=iter([])
+            ) as mock_sf:
+                scrape_cmd.run(args)
+            _, kwargs = mock_sf.call_args
+            assert kwargs["max_pages"] == 3
+
+    def test_run_no_last_page_passes_none_max_pages(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = _scrape_namespace(output_dir=Path(tmpdir), last_page=None)
+            with patch(
+                "vtes_scraper.cli.scrape.scrape_forum", return_value=iter([])
+            ) as mock_sf:
+                scrape_cmd.run(args)
+            _, kwargs = mock_sf.call_args
+            assert kwargs["max_pages"] is None
 
 
 # ---------------------------------------------------------------------------

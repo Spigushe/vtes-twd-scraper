@@ -177,6 +177,14 @@ THREAD_HTML_NO_KMSG = "<html><body><p>Just some text</p></body></html>"
 THREAD_HTML_EMPTY_KMSG = "<html><body><div class='kmsg'>   </div></body></html>"
 THREAD_HTML_INVALID_TWD = "<html><body><div class='kmsg'>This is not a valid TWD post at all.</div></body></html>"
 
+# First post is invalid, second post has a valid TWD — scraper should NOT fall back
+THREAD_HTML_VALID_SECOND_POST = """
+<html><body>
+<div class="kmsg">This is not a valid TWD post at all.</div>
+<div class="kmsg">Conservative Agitation<br>Vila Velha, Brazil<br>October 1st 2016<br>2R+F<br>12 players<br>Ravel Zorzal<br>https://www.vekn.net/event-calendar/event/8470<br><br>Crypt (2 cards, min=4, max=4, avg=4)<br>-------------------------------------<br>2x Nathan Turner      4 PRO ani                 Gangrel:6<br><br>Library (1 cards)<br>Master (1)<br>1x Blood Doll</div>
+</body></html>
+"""
+
 
 class TestExtractTwdFromThread:
     def test_valid_thread_returns_tournament(self):
@@ -213,6 +221,78 @@ class TestExtractTwdFromThread:
         with patch("vtes_scraper.scraper._get", return_value=soup):
             result = extract_twd_from_thread(
                 mock_client, "https://example.com", delay=0
+            )
+        assert result is None
+
+    def test_only_first_post_is_checked(self):
+        """fast_check=True: a valid TWD in a later post is ignored."""
+        soup = BeautifulSoup(THREAD_HTML_VALID_SECOND_POST, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = extract_twd_from_thread(
+                mock_client, "https://example.com", delay=0, fast_check=True
+            )
+        assert result is None
+
+    def test_only_one_http_request_made(self):
+        """fast_check=True: exactly one HTTP request is made per thread."""
+        soup = BeautifulSoup(THREAD_HTML_VALID, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup) as mock_get:
+            extract_twd_from_thread(
+                mock_client, "https://example.com", delay=0, fast_check=True
+            )
+        assert mock_get.call_count == 1
+
+
+# ---------------------------------------------------------------------------
+# extract_twd_from_thread — slow-check mode
+# ---------------------------------------------------------------------------
+
+
+class TestExtractTwdFromThreadSlowCheck:
+    def test_valid_first_post_returns_tournament(self):
+        """slow_check finds the TWD in the first post."""
+        soup = BeautifulSoup(THREAD_HTML_VALID, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = extract_twd_from_thread(
+                mock_client, "https://example.com", delay=0, fast_check=False
+            )
+        assert result is not None
+        assert result.name == "Conservative Agitation"
+
+    def test_falls_back_to_second_post(self):
+        """slow_check continues past an invalid first post to find the TWD."""
+        # Page 1 has an invalid first post and a valid second post.
+        # Page 2 (simulated by returning no posts) stops iteration.
+        soup_p1 = BeautifulSoup(THREAD_HTML_VALID_SECOND_POST, "lxml")
+        soup_p2 = BeautifulSoup(THREAD_HTML_NO_KMSG, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", side_effect=[soup_p1, soup_p2]):
+            result = extract_twd_from_thread(
+                mock_client, "https://example.com", delay=0, fast_check=False
+            )
+        assert result is not None
+        assert result.name == "Conservative Agitation"
+
+    def test_no_kmsg_returns_none(self):
+        soup = BeautifulSoup(THREAD_HTML_NO_KMSG, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = extract_twd_from_thread(
+                mock_client, "https://example.com", delay=0, fast_check=False
+            )
+        assert result is None
+
+    def test_invalid_only_returns_none(self):
+        """slow_check exhausts all posts without finding a valid TWD."""
+        soup_p1 = BeautifulSoup(THREAD_HTML_INVALID_TWD, "lxml")
+        soup_p2 = BeautifulSoup(THREAD_HTML_NO_KMSG, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", side_effect=[soup_p1, soup_p2]):
+            result = extract_twd_from_thread(
+                mock_client, "https://example.com", delay=0, fast_check=False
             )
         assert result is None
 

@@ -19,8 +19,8 @@ Key HTML structure (Kunena crypsis template):
 Strategy:
   1. Paginate the forum index to collect thread URLs + their topic icon.
   2. Skip topics with idea icon (info only).
-  3. For each remaining thread, paginate through thread pages (limitstart=0, 20, 40, ...)
-     and check each post (div.kmsg) until one parses successfully as a TWD.
+  3. For each remaining thread, fetch the first page and parse only the first post
+     (div.kmsg), which is where the TWD content is always posted.
   4. Pass the raw text to parser.parse_twd_text().
   5. Merged topics are flagged so the caller can write them to changes_required/.
 """
@@ -268,23 +268,70 @@ def extract_twd_from_thread(
     client: httpx.Client,
     thread_url: str,
     delay: float = DEFAULT_DELAY_SECONDS,
+    fast_check: bool = True,
 ) -> Tournament | None:
     """
-    Fetch a thread, paginating page by page and checking post by post,
-    and extract the TWD block from the first parseable post.
+    Fetch a thread and extract the TWD block from its posts.
 
-    Kunena thread pagination: ?limitstart=0, ?limitstart=20, ?limitstart=40, ...
-    Post content lives in <div class="kmsg"> elements.
+    Two modes are available:
+
+    * **fast_check=True** (default): fetch only the first page and parse only
+      the first ``<div class="kmsg">``.  TWD content is almost always in the
+      opening post, so this is sufficient for the vast majority of threads.
+
+    * **fast_check=False**: paginate through all thread pages and try every
+      post in order, returning the first one that parses successfully.  Use
+      this as a fallback when the opening post is not the TWD (e.g. the
+      original post was edited and the deck moved to a reply).
 
     Returns a Tournament or None if no parseable TWD block is found.
     """
+    if fast_check:
+        return _extract_twd_fast(client, thread_url, delay)
+    return _extract_twd_slow(client, thread_url, delay)
+
+
+def _extract_twd_fast(
+    client: httpx.Client,
+    thread_url: str,
+    delay: float,
+) -> Tournament | None:
+    """Check only the first post on the first page."""
+    logger.info("Scraping thread (fast): %s", thread_url)
+    soup = _get(client, thread_url, delay)
+
+    posts = soup.select("div.kmsg")
+    if not posts:
+        logger.warning("No div.kmsg found in %s", thread_url)
+        return None
+
+    kmsg = posts[0]
+    raw_text = _kunena_div_to_text(kmsg)
+    if not raw_text.strip():
+        logger.debug("First post is empty in %s", thread_url)
+        return None
+
+    logger.debug("Raw text preview:\n%s", raw_text[:300])
+    try:
+        return parse_twd_text(raw_text, forum_post_url=thread_url)
+    except (ValueError, Exception) as exc:
+        logger.warning("First post not parseable in %s: %s", thread_url, exc)
+        return None
+
+
+def _extract_twd_slow(
+    client: httpx.Client,
+    thread_url: str,
+    delay: float,
+) -> Tournament | None:
+    """Paginate through all thread pages and check every post."""
     page = 0
     seen_posts: set[str] = set()
 
     while True:
         limitstart = page * POSTS_PER_THREAD_PAGE
         url = thread_url if limitstart == 0 else f"{thread_url}?limitstart={limitstart}"
-        logger.info("Scraping thread page %d: %s", page + 1, url)
+        logger.info("Scraping thread (slow) page %d: %s", page + 1, url)
         soup = _get(client, url, delay)
 
         posts = soup.select("div.kmsg")
@@ -294,7 +341,6 @@ def extract_twd_from_thread(
 
         found_new = False
         for post_idx, kmsg in enumerate(posts, start=1):
-            # Use raw HTML as a fingerprint to detect duplicate posts across pages
             post_key = str(kmsg)
             if post_key in seen_posts:
                 continue
@@ -544,9 +590,10 @@ def scrape_forum(
     max_pages: int | None = None,
     start_page: int = 0,
     delay: float = DEFAULT_DELAY_SECONDS,
+    fast_check: bool = True,
 ) -> Iterator[tuple[Tournament, str | None]]:
     """
-    Full scrape pipeline: index pages → threads (paginated) → posts → parsed Tournament objects.
+    Full scrape pipeline: index pages → threads → posts → parsed Tournament objects.
 
     Topics with an idea icon (:data:`ICON_IDEA`) are skipped entirely —
     they contain informational content, not TWD reports.
@@ -555,6 +602,8 @@ def scrape_forum(
         max_pages: limit forum index pages scraped (None = all)
         start_page: forum index page to start from (0-indexed, default: 0)
         delay: polite crawl delay in seconds between requests
+        fast_check: when True (default) only the first post of each thread is
+            parsed; when False every post on every page is tried in order.
 
     Yields:
         ``(Tournament, icon_type)`` pairs for each successfully parsed TWD post.
@@ -570,7 +619,9 @@ def scrape_forum(
                 logger.info("Skipped (idea/info icon): %s", thread_url)
                 continue
 
-            tournament = extract_twd_from_thread(client, thread_url, delay=delay)
+            tournament = extract_twd_from_thread(
+                client, thread_url, delay=delay, fast_check=fast_check
+            )
             if tournament:
                 logger.info(
                     "Scraped%s: [%s] %s — %s",

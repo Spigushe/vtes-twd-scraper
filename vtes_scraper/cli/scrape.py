@@ -22,19 +22,47 @@ def register(sub: argparse._SubParsersAction) -> None:
         dest="output_dir",
         help="Root directory; files are written to <dir>/YYYY/MM/<event_id>.yaml. (default: twds)",
     )
-    p.add_argument(
-        "--max-pages",
-        type=int,
-        default=None,
-        dest="max_pages",
-        help="Limit the number of forum index pages to scrape (default: all).",
+
+    # Mutually exclusive, mandatory: exactly one of --fast-check / --slow-check
+    check_group = p.add_mutually_exclusive_group(required=True)
+    check_group.add_argument(
+        "--fast-check",
+        action="store_true",
+        default=False,
+        dest="fast_check",
+        help=(
+            "Parse only the first post of each thread (fast). "
+            "TWD content is almost always in the opening post."
+        ),
     )
+    check_group.add_argument(
+        "--slow-check",
+        action="store_true",
+        default=False,
+        dest="slow_check",
+        help=(
+            "Paginate through every post in every thread and return the first "
+            "one that parses as a TWD (slow). Use when the deck may not be in "
+            "the opening post."
+        ),
+    )
+
     p.add_argument(
         "--start-page",
         type=int,
         default=0,
         dest="start_page",
         help="Forum index page to start scraping from, 0-indexed (default: 0).",
+    )
+    p.add_argument(
+        "--last-page",
+        type=int,
+        default=None,
+        dest="last_page",
+        help=(
+            "Last forum index page to scrape, 0-indexed inclusive "
+            "(default: scrape all pages)."
+        ),
     )
     p.add_argument(
         "--delay",
@@ -62,12 +90,22 @@ def run(args: argparse.Namespace) -> int:
     setup_logging(args.verbose)
     logger = logging.getLogger(__name__)
 
+    fast_check: bool = args.fast_check
+
+    # Compute max_pages from last_page and start_page when last_page is given.
+    max_pages: int | None = None
+    if args.last_page is not None:
+        max_pages = args.last_page - args.start_page + 1
+
     changes_required_dir = args.output_dir / "changes_required"
 
     written = skipped = failed = 0
 
     for tournament, icon in scrape_forum(
-        max_pages=args.max_pages, start_page=args.start_page, delay=args.delay
+        max_pages=max_pages,
+        start_page=args.start_page,
+        delay=args.delay,
+        fast_check=fast_check,
     ):
         if not tournament.event_id:
             console.print(
