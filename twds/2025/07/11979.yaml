@@ -1,13 +1,14 @@
 name: Rangel
 location: Fortaleza - Ceará - Brazil
-date_start: '2025-07-27'
+date_start: 2025-07-27
 rounds_format: 2R+F
 players_count: 18
 winner: Bruno Hobbit
-vekn_number: '6050017'
+vekn_number: 6050017
 event_url: https://www.vekn.net/event-calendar/event/11979
 event_id: '11979'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82483-twd-rangel
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82483-twd-rangel
 deck:
   name: True Salubri
   created_by: Bhobbit

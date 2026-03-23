@@ -1,13 +1,14 @@
 name: 'Resurrection: Pittsburgh'
 location: Pittsburgh (PA), USA
-date_start: '2024-03-30'
+date_start: 2024-03-30
 rounds_format: 2R+F
 players_count: 10
 winner: Karl Schaefer
 event_url: https://www.vekn.net/event-calendar/event/11312
 event_id: '11312'
 vp_comment: 2 VPs + 1.5s VP in the final, won on seeding
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81327-twd-resurrection-pittsburgh
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81327-twd-resurrection-pittsburgh
 deck:
   name: If You Live Long Enough...
   description: ''

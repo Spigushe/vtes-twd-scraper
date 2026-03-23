@@ -1,13 +1,14 @@
 name: PACC IT UP
 location: Mandaluyong, Philippines
-date_start: '2025-09-07'
+date_start: 2025-09-07
 rounds_format: 2R+F
 players_count: 19
 winner: Joscar Malacaman
 event_url: https://www.vekn.net/player-registry/event/12637
 event_id: '12637'
 vp_comment: 1GW 5.5VP with 1.5 VP in the Finals
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82807-twd-pacc-it-up-mandaluyong-philippines-sep-07-25
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82807-twd-pacc-it-up-mandaluyong-philippines-sep-07-25
 deck:
   name: Disarming Majesty
   created_by: Joscar Malacaman

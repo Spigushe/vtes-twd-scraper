@@ -1,12 +1,13 @@
 name: Hurry up!
 location: Vác, Hungary
-date_start: '2024-11-10'
+date_start: 2024-11-10
 rounds_format: 2R+F
 players_count: 10
 winner: Dávid Kmotricza' Tournament Winning Deck with 3 VPs in the Finals
 event_url: https://www.vekn.net/event-calendar/event/11855
 event_id: '11855'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81918-twd-hurry-up
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81918-twd-hurry-up
 deck:
   name: Tremere big bleed
   created_by: Péter Talmácsi
@@ -350,15 +351,20 @@ deck:
     count: 12
     cards:
     - count: 5
-      name: Stanislava       11 ANI CEL DOM FOR PRO           inner circle   Gangrel:2
+      name: Stanislava       11 ANI CEL DOM FOR PRO           inner circle   
+        Gangrel:2
     - count: 2
-      name: Hartmut Stover   10 CEL OBF PRO dom for           archbishop     Gangrel antitribu:3
+      name: Hartmut Stover   10 CEL OBF PRO dom for           archbishop     
+        Gangrel antitribu:3
     - count: 2
-      name: Xaviar (ADV)     10 ABO ANI FOR PRO aus cel pot   justicar       Gangrel:3
+      name: Xaviar (ADV)     10 ABO ANI FOR PRO aus cel pot   justicar       
+        Gangrel:3
     - count: 2
-      name: Ingrid Rossler    9 ANI FOR PRO dom               prince         Gangrel:2
+      name: Ingrid Rossler    9 ANI FOR PRO dom               prince         
+        Gangrel:2
     - count: 1
-      name: Mark Decker       8 CEL PRO ani for obf pot       prince         Gangrel:3
+      name: Mark Decker       8 CEL PRO ani for obf pot       prince         
+        Gangrel:3
   - name: Library
     count: 90
     cards: []
@@ -465,19 +471,26 @@ deck:
     count: 12
     cards:
     - count: 2
-      name: Armin Brenner    10 CEL FOR POT PRE ani obf   archbishop   Brujah antitribu:4
+      name: Armin Brenner    10 CEL FOR POT PRE ani obf   archbishop   Brujah 
+        antitribu:4
     - count: 4
-      name: Hektor            9 CEL POT PRE QUI for       priscus      Brujah antitribu:4
+      name: Hektor            9 CEL POT PRE QUI for       priscus      Brujah 
+        antitribu:4
     - count: 2
-      name: Dark Selina       9 CEL POT PRE dom for       cardinal     Brujah antitribu:5
+      name: Dark Selina       9 CEL POT PRE dom for       cardinal     Brujah 
+        antitribu:5
     - count: 1
-      name: Jacques Molay     9 CEL POT PRE obf val                    Brujah antitribu:4
+      name: Jacques Molay     9 CEL POT PRE obf val                    Brujah 
+        antitribu:4
     - count: 1
-      name: DeSalle           7 CEL POT PRE                            Brujah antitribu:4
+      name: DeSalle           7 CEL POT PRE                            Brujah 
+        antitribu:4
     - count: 1
-      name: Gold Pan Dan      6 POT PRE cel                            Brujah antitribu:5
+      name: Gold Pan Dan      6 POT PRE cel                            Brujah 
+        antitribu:5
     - count: 1
-      name: Shawnda Dorrit    6 CEL obt pot pre           priscus      Brujah antitribu:4
+      name: Shawnda Dorrit    6 CEL obt pot pre           priscus      Brujah 
+        antitribu:4
   - name: Library
     count: 90
     cards: []

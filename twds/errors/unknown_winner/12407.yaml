@@ -1,15 +1,17 @@
 name: Complearum - 20 years of Alearum
 location: Spilamberto - Modena - Italy
-date_start: '2025-07-13'
+date_start: 2025-07-13
 rounds_format: 2R+F
 players_count: 25
 winner: 'Winner: Stefano Chiodi'
 event_url: https://www.vekn.net/event-calendar/event/12407
 event_id: '12407'
-vp_comment: To celebrate 20 years of activity of our recreational association, 25 metuselahs meet togethere and faced 
-  into the eternal struggle. At the end, Stefano came up with his first tournament win after a balanced final that 
+vp_comment: To celebrate 20 years of activity of our recreational association, 
+  25 metuselahs meet togethere and faced into the eternal struggle. At the end, 
+  Stefano came up with his first tournament win after a balanced final that 
   reached time limit. Opponents weren't able to oust him in time.
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82456-twd-complearum-20-years-of-alearum
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82456-twd-complearum-20-years-of-alearum
 deck:
   name: Hecata Mill
   created_by: VTES Team

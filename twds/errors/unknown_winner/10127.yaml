@@ -1,13 +1,14 @@
 name: 'Powerbase : Badalona'
 location: Badalona Barcelona
-date_start: '2022-03-12'
+date_start: 2022-03-12
 rounds_format: 3R+F
 players_count: 33
 winner: Jose Luis Manuel Pasoot
 event_url: https://www.vekn.net/event-calendar/event/10127
 event_id: '10127'
 vp_comment: 'Description: 2GW 7VP + 2,5VP in the final'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79703-twd-powerbase-badalona
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/79703-twd-powerbase-badalona
 deck:
   name: Lucian stronghold
   created_by: Based in deck of Pere Joan Garcia

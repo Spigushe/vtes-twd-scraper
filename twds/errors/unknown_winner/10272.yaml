@@ -1,19 +1,23 @@
 name: Dawn Operation
 location: Benidorm, Spain
-date_start: '2022-10-23'
+date_start: 2022-10-23
 rounds_format: 2R+F
 players_count: 47
 winner: 'winner: Tero Aalto'
 event_url: https://www.vekn.net/event-calendar/event/10272
 event_id: '10272'
-vp_comment: In the second round, I sat between Brujah barons combat (predator) and something that was either Saulot or 
-  Shalmath, the specifics escape me at this point (it's been three months and I didn't take notes). The game seemed 
-  quite hopeless, as my predator played erratically and an Arika deck across the table seemed to be getting away with 
-  everything. I was protected by S. Haven, so I could concentrate on just gradually chipping at my prey's pool. My 
-  grandpredator, a Gangrel horde deck, somehow managed to survive until I finally got rid of Arika, and started playing 
-  at this point. He had simply too many minions and I didn't have enough time, so he ran over the hapless Brujah and 
-  myself. Six points in total was enough to reach the final.
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80273-twd-dawn-operation-2022-10-13
+vp_comment: In the second round, I sat between Brujah barons combat (predator) 
+  and something that was either Saulot or Shalmath, the specifics escape me at 
+  this point (it's been three months and I didn't take notes). The game seemed 
+  quite hopeless, as my predator played erratically and an Arika deck across the
+  table seemed to be getting away with everything. I was protected by S. Haven, 
+  so I could concentrate on just gradually chipping at my prey's pool. My 
+  grandpredator, a Gangrel horde deck, somehow managed to survive until I 
+  finally got rid of Arika, and started playing at this point. He had simply too
+  many minions and I didn't have enough time, so he ran over the hapless Brujah 
+  and myself. Six points in total was enough to reach the final.
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80273-twd-dawn-operation-2022-10-13
 deck:
   name: '(Sem título): unnamed and chill'
   created_by: Tero Aalto

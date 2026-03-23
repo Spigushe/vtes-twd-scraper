@@ -1,13 +1,14 @@
 name: Liga Powerbase JF 2025 Março
 location: Juiz de Fora, Brazil
-date_start: '2025-03-06'
+date_start: 2025-03-06
 rounds_format: 2R+F
 players_count: 17
 winner: Guilherme Machado
-vekn_number: '6130009'
+vekn_number: 6130009
 event_url: https://www.vekn.net/event-calendar/event/12099
 event_id: '12099'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82154-twd-liga-powerbase-jf-2025-marco
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82154-twd-liga-powerbase-jf-2025-marco
 deck:
   name: Ragnar e seus amigos
   description: ''

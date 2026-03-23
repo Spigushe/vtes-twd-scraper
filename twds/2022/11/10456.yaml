@@ -1,13 +1,14 @@
 name: 3rd Torneo de Liga Norte, Conferencia Noroeste (Asturiana)
 location: Gijón, España
-date_start: '2022-11-26'
+date_start: 2022-11-26
 rounds_format: 2R+F
 players_count: 32
 winner: Ernesto Díaz Villar
-vekn_number: '5910004'
+vekn_number: 5910004
 event_url: https://www.vekn.net/player-registry/event/10456
 event_id: '10456'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80730-twd-3rd-torneo-liga-norte-gijon-spain-26-nov-2022
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80730-twd-3rd-torneo-liga-norte-gijon-spain-26-nov-2022
 deck:
   name: Nefastos pa Gijon
   created_by: Teko

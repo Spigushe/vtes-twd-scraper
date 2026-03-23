@@ -1,12 +1,13 @@
 name: Rocky Road to the End
 location: Vác, Hungary
-date_start: '2023-01-28'
+date_start: 2023-01-28
 rounds_format: 3R+F
 players_count: 17
 winner: Miklós Szilveszter's Tournament Winning Deck with 2 VPs in the Finals.
 event_url: https://www.vekn.net/event-calendar/event/10538
 event_id: '10538'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80343-twd-rocky-road-to-the-end
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80343-twd-rocky-road-to-the-end
 deck:
   name: Obt Pot Dávid
   created_by: Wittmann Dávid

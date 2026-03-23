@@ -1,12 +1,13 @@
 name: Regeneration Stockholm 2024
 location: Stockholm, Sweden
-date_start: '2024-05-11'
+date_start: 2024-05-11
 rounds_format: 3R+F
 players_count: 23
 winner: Jonas Ståhle winner
 event_url: https://www.vekn.net/event-calendar/event/11407
 event_id: '11407'
-vp_comment: Congratulations Jonas, who won with 3 VPs in the final. Henrik got 2.
+vp_comment: Congratulations Jonas, who won with 3 VPs in the final. Henrik got 
+  2.
 forum_post_url: 
   https://www.vekn.net/forum/event-reports-and-twd/81447-twd-regeneration-stockholm-2024-stockholm-sweden-11-may-2024
 deck:

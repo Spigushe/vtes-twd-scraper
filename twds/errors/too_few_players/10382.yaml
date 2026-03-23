@@ -1,12 +1,13 @@
 name: Chá do Joel
 location: Eusébio, Ceará, Brazil
-date_start: '2022-10-09'
+date_start: 2022-10-09
 rounds_format: 2R+F
 players_count: 10
 winner: 'Winner: Nilceu Galvão ('
 event_url: https://www.vekn.net/event-calendar/event/10382
 event_id: '10382'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80069-twd-cha-do-joel
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80069-twd-cha-do-joel
 deck:
   name: Baali Ministry
   created_by: Nilceu

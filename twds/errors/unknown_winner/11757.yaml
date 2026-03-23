@@ -1,12 +1,13 @@
 name: Vampiric Disease
 location: Hatvan, Hungary
-date_start: '2024-10-20'
+date_start: 2024-10-20
 rounds_format: 3R+F
 players_count: 19
 winner: Tamás Glied's Tournament Winning Deck with 1,5 VPs in the Finals
 event_url: https://www.vekn.net/event-calendar/event/11757
 event_id: '11757'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81845-twd-vampiric-disease
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81845-twd-vampiric-disease
 deck:
   name: Tzimish Baron Hatvan
   created_by: Erdős Gyula
@@ -518,13 +519,17 @@ deck:
     count: 12
     cards:
     - count: 5
-      name: Cybele                    10 ANI DAI OBF PRE SER THA             Baali:4
+      name: Cybele                    10 ANI DAI OBF PRE SER THA             
+        Baali:4
     - count: 3
-      name: Annazir                    9 DAI OBF POT PRE           2 votes   Baali:5
+      name: Annazir                    9 DAI OBF POT PRE           2 votes   
+        Baali:5
     - count: 1
-      name: Azaneal                    7 DAI OBF OBT pre tha                 Baali:4
+      name: Azaneal                    7 DAI OBF OBT pre tha                 
+        Baali:4
     - count: 3
-      name: Maureen, Dark Priestess    6 DAI PRE dom obf           1 vote    Baali:4
+      name: Maureen, Dark Priestess    6 DAI PRE dom obf           1 vote    
+        Baali:4
   - name: Library
     count: 73
     cards: []

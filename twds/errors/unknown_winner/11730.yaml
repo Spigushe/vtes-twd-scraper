@@ -1,12 +1,13 @@
 name: First 30Th
 location: Vác, Hungary
-date_start: '2024-09-22'
+date_start: 2024-09-22
 rounds_format: 3R+F
 players_count: 17
 winner: Márk Virsinger's Tournament Winning Deck with 1,5 VPs in the Finals
 event_url: https://www.vekn.net/event-calendar/event/11730
 event_id: '11730'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81876-twd-first-30th
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81876-twd-first-30th
 deck:
   name: nosfi anarch block
   created_by: Ádám Horváth
@@ -134,11 +135,14 @@ deck:
     count: 12
     cards:
     - count: 1
-      name: Kite                          7 obf pre AUS DEM          Malkavian antitribu:2
+      name: Kite                          7 obf pre AUS DEM          Malkavian 
+        antitribu:2
     - count: 2
-      name: Korah                         7 ani AUS DEM OBF          Malkavian antitribu:2
+      name: Korah                         7 ani AUS DEM OBF          Malkavian 
+        antitribu:2
     - count: 2
-      name: Artemis                       6 aus cel for DEM OBF      Malkavian antitribu:2
+      name: Artemis                       6 aus cel for DEM OBF      Malkavian 
+        antitribu:2
     - count: 1
       name: Quentin King III              7 obf pre AUS DEM          Malkavian:3
     - count: 1
@@ -146,9 +150,11 @@ deck:
     - count: 1
       name: Tony                          6 dom obf AUS DEM          Malkavian:3
     - count: 2
-      name: Virgil                        8 cel AUS DEM OBF          Malkavian antitribu:2
+      name: Virgil                        8 cel AUS DEM OBF          Malkavian 
+        antitribu:2
     - count: 2
-      name: Dolphin Black                 6 AUS DEM OBF              Malkavian antitribu:2
+      name: Dolphin Black                 6 AUS DEM OBF              Malkavian 
+        antitribu:2
   - name: Master
     count: 15
     cards:
@@ -458,7 +464,8 @@ deck:
     - count: 3
       name: Lord Tremere                  11 obe ANI AUS DOM THA VIC  Tremere:5
     - count: 5
-      name: Malgorzata                    9 pre AUS DOM THA VIC      Tremere antitribu:4
+      name: Malgorzata                    9 pre AUS DOM THA VIC      Tremere 
+        antitribu:4
     - count: 2
       name: Mistress Fanchon              11 AUS CEL DOM OBF THA VIC  Tremere:4
     - count: 2

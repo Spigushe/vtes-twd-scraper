@@ -1,12 +1,13 @@
 name: Till Dawn de Encerramento
 location: Sao Joao de Meriti / Rio de Janeiro / Brasil
-date_start: '2024-11-01'
+date_start: 2024-11-01
 rounds_format: 3R+F
 players_count: 10
 winner: Alanmut Bastos
 event_url: https://www.vekn.net/event-calendar/event/11840
 event_id: '11840'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81882-twd-till-dawn-sao-joao-de-meriti-nov-2024
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81882-twd-till-dawn-sao-joao-de-meriti-nov-2024
 deck:
   name: The khabar do mercúrio
   created_by: Alanmut

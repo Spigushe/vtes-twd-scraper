@@ -1,10 +1,10 @@
 name: V Jornada de Liga Levante Norte
 location: Valencia, Spain
-date_start: '2025-05-11'
+date_start: 2025-05-11
 rounds_format: 3R+F
 players_count: 24
 winner: Javier Centella
-vekn_number: '8280016'
+vekn_number: 8280016
 event_url: https://www.vekn.net/event-calendar/event/12200
 event_id: '12200'
 forum_post_url: 

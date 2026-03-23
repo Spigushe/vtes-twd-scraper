@@ -1,12 +1,13 @@
 name: QUICKNESS
 location: PARIS (FRANCE)
-date_start: '2024-04-21'
+date_start: 2024-04-21
 rounds_format: 3R+F
 players_count: 33
 winner: Guilhem MARRANES
 event_url: https://www.vekn.net/event-calendar/event/11309
 event_id: '11309'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81451-twd-quickness-paris-21-04-2024
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81451-twd-quickness-paris-21-04-2024
 deck:
   name: Red wine of Vignes
   created_by: guilhem

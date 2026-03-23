@@ -1,12 +1,13 @@
 name: Concilio di Pergine - All'ombra del Castello
 location: Pergine Valsugana (TN) Italy
-date_start: '2025-06-21'
+date_start: 2025-06-21
 rounds_format: 2R+F
 players_count: 39
 winner: 'Winner: Ivan Candioli'
 event_url: https://www.vekn.net/event-calendar/event/12307
 event_id: '12307'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82427-twd-concilio-di-pergine-all-ombra-del-castello
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82427-twd-concilio-di-pergine-all-ombra-del-castello
 deck:
   created_by: Wotan75
   description: ''

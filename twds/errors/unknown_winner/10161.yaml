@@ -1,13 +1,14 @@
 name: Norwegian National Championship 2022
 location: Moss, Østfold, Norway
-date_start: '2022-08-06'
+date_start: 2022-08-06
 rounds_format: 3R+F
 players_count: 22
 winner: Håvard Skjevling's Tournament Winning Deck with 3 VPs in the Finals
 event_url: https://www.vekn.net/index.php/event-calendar/event/10161
 event_id: '10161'
 vp_comment: 1 vp, 3 vp, 1,5 vp, 3 vp in the final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79948-twd-norwegian-nc-2022-moss-norway-6-aug-2022
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/79948-twd-norwegian-nc-2022-moss-norway-6-aug-2022
 deck:
   name: Homunculi Network
   created_by: Håvard Skjevling

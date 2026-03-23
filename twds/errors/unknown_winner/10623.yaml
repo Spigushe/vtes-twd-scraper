@@ -1,12 +1,13 @@
 name: Décimo Nono Dia
 location: Fortaleza - Ceará - Brazil
-date_start: '2023-12-03'
+date_start: 2023-12-03
 rounds_format: 2R+F
 players_count: 16
 winner: Standard Constructed
 event_url: https://www.vekn.net/event-calendar/event/10623
 event_id: '10623'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81016-twd-decimo-nono-dia
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81016-twd-decimo-nono-dia
 deck:
   name: Quase da caixa
   description: ''

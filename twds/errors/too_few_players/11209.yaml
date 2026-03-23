@@ -1,12 +1,13 @@
 name: Primeirão - Itaocara 2024
 location: Itaocara, Rio de Janeiro, Brazil
-date_start: '2024-01-21'
+date_start: 2024-01-21
 rounds_format: 2R+F
 players_count: 10
 winner: Matheus Duarte Faria
 event_url: https://www.vekn.net/event-calendar/event/11209
 event_id: '11209'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81172-twd-primeirao-itaocara-2024-brazil
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81172-twd-primeirao-itaocara-2024-brazil
 deck:
   name: Malk Dom
   created_by: Matheus

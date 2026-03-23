@@ -1,10 +1,10 @@
 name: Gulf Coast Roast Grand Prix 2024 - New Orleans - Leg 4
 location: New Orleans, Louisiana, USA
-date_start: '2024-10-12'
+date_start: 2024-10-12
 rounds_format: 3R+F
 players_count: 18
 winner: Kelly Lyons
-vekn_number: '1004352'
+vekn_number: 1004352
 event_url: https://www.vekn.net/event-calendar/event/11672
 event_id: '11672'
 vp_comment: 1GW+2.5VP + 4 VP in final
@@ -13,9 +13,9 @@ forum_post_url:
 deck:
   name: Water Dog - Flower Power
   created_by: Kelly Lyons and Randal Rudstam
-  description: 'This is the same deck I ran in Mississippi and got to the Final Table. I did make a few modifications from
-    that deck to suit the current meta I was seeing. You can see the original deck on my YouTube Channel, READING BETWEEN
-    THE LYONS:'
+  description: 'This is the same deck I ran in Mississippi and got to the Final Table.
+    I did make a few modifications from that deck to suit the current meta I was seeing.
+    You can see the original deck on my YouTube Channel, READING BETWEEN THE LYONS:'
   crypt_count: 12
   crypt_min: 16
   crypt_max: 34

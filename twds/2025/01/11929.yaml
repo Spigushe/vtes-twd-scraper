@@ -1,14 +1,15 @@
 name: Puppet Master - Lafayette, LA
 location: Lafayette, Louisiana, USA
-date_start: '2025-01-25'
+date_start: 2025-01-25
 rounds_format: 3R+F
 players_count: 18
 winner: Sidney Conklin
-vekn_number: '2360010'
+vekn_number: 2360010
 event_url: https://www.vekn.net/player-registry/event/11929
 event_id: '11929'
 vp_comment: 2GW+9.5VP + 4VP in final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82150-twd-puppet-master-lafayette-la
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82150-twd-puppet-master-lafayette-la
 deck:
   name: I Am Atomic
   created_by: Sidney Conklin

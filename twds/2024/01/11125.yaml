@@ -1,10 +1,10 @@
 name: Batalha do Voivodatos
 location: Petrópolis, Rio de Janeiro, Brazil
-date_start: '2024-01-28'
+date_start: 2024-01-28
 rounds_format: 2R+F
 players_count: 19
 winner: Gabriel d'Agosto
-vekn_number: '6130073'
+vekn_number: 6130073
 event_url: https://www.vekn.net/player-registry/event/11125
 event_id: '11125'
 vp_comment: 1GW4 + 2,5vp in the final

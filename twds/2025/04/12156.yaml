@@ -1,13 +1,14 @@
 name: VII Jornada Liga Norte
 location: Bilbao, Spain
-date_start: '2025-04-26'
+date_start: 2025-04-26
 rounds_format: 2R+F
 players_count: 21
 winner: Iñaki Jiménez
-vekn_number: '8110027'
+vekn_number: 8110027
 event_url: https://www.vekn.net/event-calendar/event/12156
 event_id: '12156'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82263-twd-vii-jornada-liga-norte-spain-26-april-2025
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82263-twd-vii-jornada-liga-norte-spain-26-april-2025
 deck:
   name: Carna gets fit
   created_by: Iñaki Jimenez

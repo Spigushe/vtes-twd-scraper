@@ -1,14 +1,15 @@
 name: Voice of Madness
 location: Paris, France
-date_start: '2024-07-20'
+date_start: 2024-07-20
 rounds_format: 3R+F
 players_count: 19
 winner: Édouard Menneson
-vekn_number: '3200360'
+vekn_number: 3200360
 event_url: https://www.vekn.net/player-registry/event/11880
 event_id: '11880'
 vp_comment: 1GW, 7VP, 1GW, 4VP final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82030-twd-voice-of-madness-paris
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82030-twd-voice-of-madness-paris
 deck:
   name: Caitiff Nosfe Bruise and Bleed
   created_by: Rhazoo

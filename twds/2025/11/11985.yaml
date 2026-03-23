@@ -1,13 +1,14 @@
 name: Osny Moreira
 location: Fortaleza - Ceará - Brasil
-date_start: '2025-11-02'
+date_start: 2025-11-02
 rounds_format: 2R+F
 players_count: 20
 winner: Thiago Rafael
-vekn_number: '7300058'
+vekn_number: 7300058
 event_url: https://www.vekn.net/event-calendar/event/11985
 event_id: '11985'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82655-twd-osny-moreira
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82655-twd-osny-moreira
 deck:
   name: Marlene e Tremeres G1 e G2
   description: ''

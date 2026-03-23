@@ -1,12 +1,13 @@
 name: White Turtle
 location: Vác, Hungary
-date_start: '2024-01-27'
+date_start: 2024-01-27
 rounds_format: 2R+F
 players_count: 20
 winner: Márk Virsinger's Tournament Winning Deck with 3 VPs in the Finals
 event_url: https://www.vekn.net/event-calendar/event/11192
 event_id: '11192'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81206-twd-white-turtle
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81206-twd-white-turtle
 deck:
   description: ''
   crypt_count: 12

@@ -1,12 +1,13 @@
 name: 'Crusade: Kecskemét - HQS'
 location: Kecskemét, Hungary
-date_start: '2025-06-14'
+date_start: 2025-06-14
 rounds_format: 3R+F
 players_count: 39
 winner: Máté Vaka's Tournament Winning Deck with 1,5 VPs in the Finals
 event_url: https://www.vekn.net/event-calendar/event/12053
 event_id: '12053'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82400-twd-hungarian-qualifier-series-5
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82400-twd-hungarian-qualifier-series-5
 deck:
   name: Dom Prot anarchs
   created_by: David Wittmann
@@ -165,15 +166,20 @@ deck:
     count: 12
     cards:
     - count: 4
-      name: Lutz von Hohenzollern  11  AUS OBF DEM PRE pot      inner circle  Malkavian:4
+      name: Lutz von Hohenzollern  11  AUS OBF DEM PRE pot      inner circle  
+        Malkavian:4
     - count: 3
-      name: Rafael de Corazon      11  CEL AUS DOM OBF PRE      inner circle  Toreador:4
+      name: Rafael de Corazon      11  CEL AUS DOM OBF PRE      inner circle  
+        Toreador:4
     - count: 2
-      name: Adana de Sforza        11  CEL PRO OBF PRE POT aus  inner circle  Brujah:4
+      name: Adana de Sforza        11  CEL PRO OBF PRE POT aus  inner circle  
+        Brujah:4
     - count: 2
-      name: Dmitra Ilyanova         9  CEL PRE POT FOR obf      justicar      Brujah:5
+      name: Dmitra Ilyanova         9  CEL PRE POT FOR obf      justicar      
+        Brujah:5
     - count: 1
-      name: Stavros                 7  AUS OBF PRE dem          priscus       Malkavian antitribu:4
+      name: Stavros                 7  AUS OBF PRE dem          priscus       
+        Malkavian antitribu:4
   - name: Library
     count: 90
     cards: []

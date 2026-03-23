@@ -1,12 +1,13 @@
 name: Festivo dello Estinto - HQS
 location: Kecskemét, Hungary
-date_start: '2025-08-30'
+date_start: 2025-08-30
 rounds_format: 3R+F
 players_count: 45
 winner: Bence Kósa's Tournament Winning Deck with 3 VPs in the Finals
 event_url: https://www.vekn.net/event-calendar/event/12054
 event_id: '12054'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82562-twd-hungarian-qualifier-series-6
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82562-twd-hungarian-qualifier-series-6
 deck:
   name: Rákosgeci
   created_by: László Róbert
@@ -266,7 +267,8 @@ deck:
     - count: 1
       name: Kamile Paukstys      5 PRO ani for                   Gangrel:6
     - count: 1
-      name: Joseph Fischer       3 PRO                           Gangrel antitribu:5
+      name: Joseph Fischer       3 PRO                           Gangrel 
+        antitribu:5
   - name: Library
     count: 90
     cards: []
@@ -367,19 +369,26 @@ deck:
     count: 12
     cards:
     - count: 1
-      name: Marcel                        4 obf pre pro              Follower of Set:6
+      name: Marcel                        4 obf pre pro              Follower of
+        Set:6
     - count: 1
-      name: Jenny Silver                  5 obf PRE PRO              Follower of Set:6
+      name: Jenny Silver                  5 obf PRE PRO              Follower of
+        Set:6
     - count: 1
-      name: Crystal Lynn                  6 OBF PRE PRO              Follower of Set:6
+      name: Crystal Lynn                  6 OBF PRE PRO              Follower of
+        Set:6
     - count: 2
-      name: Elisha Tucker                 6 cel obf pro PRE          Follower of Set:6
+      name: Elisha Tucker                 6 cel obf pro PRE          Follower of
+        Set:6
     - count: 3
-      name: Vivian VI                     7 obf tha PRE PRO          Follower of Set:6
+      name: Vivian VI                     7 obf tha PRE PRO          Follower of
+        Set:6
     - count: 2
-      name: Nonu Dis                      8 for OBF PRE PRO          Follower of Set:6
+      name: Nonu Dis                      8 for OBF PRE PRO          Follower of
+        Set:6
     - count: 2
-      name: Sergio Bueno                  8 aus pot OBF PRE PRO      Follower of Set:6
+      name: Sergio Bueno                  8 aus pot OBF PRE PRO      Follower of
+        Set:6
   - name: Master
     count: 17
     cards:
@@ -448,15 +457,20 @@ deck:
     count: 12
     cards:
     - count: 5
-      name: Lutz von Hohenzollern   11 AUS DEM OBF PRE pot   inner circle   Malkavian:4
+      name: Lutz von Hohenzollern   11 AUS DEM OBF PRE pot   inner circle   
+        Malkavian:4
     - count: 2
-      name: Alicia Barrows           9 AUS DEM OBF POT PRE   archbishop     Malkavian antitribu:4
+      name: Alicia Barrows           9 AUS DEM OBF POT PRE   archbishop     
+        Malkavian antitribu:4
     - count: 2
-      name: Quentin King III         7 AUS DEM obf pre       prince         Malkavian:3
+      name: Quentin King III         7 AUS DEM obf pre       prince         
+        Malkavian:3
     - count: 2
-      name: Stavros                  7 AUS OBF PRE dem       priscus        Malkavian antitribu:4
+      name: Stavros                  7 AUS OBF PRE dem       priscus        
+        Malkavian antitribu:4
     - count: 1
-      name: Sean Rycek               4 aus dem                              Malkavian:4
+      name: Sean Rycek               4 aus dem                              
+        Malkavian:4
   - name: Library
     count: 90
     cards: []

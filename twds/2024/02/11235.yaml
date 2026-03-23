@@ -1,18 +1,21 @@
 name: Dogs of War
 location: Nancy, France
-date_start: '2024-02-24'
+date_start: 2024-02-24
 rounds_format: 3R+F
 players_count: 14
 winner: Gwénael Forêt
-vekn_number: '4690005'
+vekn_number: 4690005
 event_url: https://www.vekn.net/event-calendar/event/11235
 event_id: '11235'
-vp_comment: For the final, it was largely the initial placement that allowed me to win.
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81260-twd-dogs-of-war-nancy-france-feb-24-2024
+vp_comment: For the final, it was largely the initial placement that allowed me 
+  to win.
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81260-twd-dogs-of-war-nancy-france-feb-24-2024
 deck:
   name: Knowledge is power
-  description: Here's my list... be careful, it's far from a tier 1 deck ^^ I clearly benefit from tables with decks 
-    that have enough impact to pick up the crumbs at the end of the game.
+  description: Here's my list... be careful, it's far from a tier 1 deck ^^ I 
+    clearly benefit from tables with decks that have enough impact to pick up 
+    the crumbs at the end of the game.
   crypt_count: 12
   crypt_min: 25
   crypt_max: 44

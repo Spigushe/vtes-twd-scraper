@@ -1,14 +1,15 @@
 name: Italian Tour 2026 - Greed - Modena
 location: Modena (MO) Italy
-date_start: '2026-02-15'
+date_start: 2026-02-15
 rounds_format: 2R+F
 players_count: 35
 winner: Alessandro Donati
-vekn_number: '4740000'
+vekn_number: 4740000
 event_url: https://www.vekn.net/event-calendar/event/13001
 event_id: '13001'
 vp_comment: 2GW7.5
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82833-twd-italian-tour-2026-greed-modena
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82833-twd-italian-tour-2026-greed-modena
 deck:
   name: Cardinal Cougars Rules The Court
   created_by: Nekrós

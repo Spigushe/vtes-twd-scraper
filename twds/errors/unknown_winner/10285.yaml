@@ -1,12 +1,13 @@
 name: Nose of the hound
 location: Online
-date_start: '2022-07-25'
+date_start: 2022-07-25
 rounds_format: 2R+F
 players_count: 14
 winner: Rafael Barbosa
 event_url: https://www.vekn.net/player-registry/event/10285
 event_id: '10285'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79953-twda-nose-of-the-hound
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/79953-twda-nose-of-the-hound
 deck:
   name: ravnos snow
   description: ''

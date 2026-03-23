@@ -1,14 +1,15 @@
 name: Torneio Estadual do Rio de Janeiro - 2025
 location: Rio de Janeiro, Brasil
-date_start: '2025-08-03'
+date_start: 2025-08-03
 rounds_format: 2R+F
 players_count: 38
 winner: Ricardo Nelson
-vekn_number: '7060086'
+vekn_number: 7060086
 event_url: https://www.vekn.net/event-calendar/event/12698
 event_id: '12698'
 vp_comment: 3VP in the final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82501-twd-torneio-estadual-do-rio-de-janeiro-2025
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82501-twd-torneio-estadual-do-rio-de-janeiro-2025
 deck:
   name: Helena
   created_by: Thiago Sousa

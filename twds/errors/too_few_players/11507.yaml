@@ -1,13 +1,14 @@
 name: Summer Con Gran Canaria
 location: Las Palmas de Gran Canaria
-date_start: '2024-07-21'
+date_start: 2024-07-21
 rounds_format: 2R+F
 players_count: 10
 winner: Ivan Arenas
 event_url: https://www.vekn.net/event-calendar/event/11507
 event_id: '11507'
 vp_comment: 0GW1,5VP + 4VP in final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81696-twd-gran-canaria-summer-con
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81696-twd-gran-canaria-summer-con
 deck:
   name: Defy the Edict of Worms
   description: ''

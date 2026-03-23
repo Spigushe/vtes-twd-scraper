@@ -1,6 +1,6 @@
 name: Inside Dirt Stockholm 2023
 location: Stockholm, Sweden
-date_start: '2023-09-23'
+date_start: 2023-09-23
 rounds_format: 3R+F
 players_count: 13
 winner: 'Winner: Jonas Ståhle'
@@ -11,7 +11,8 @@ forum_post_url:
 deck:
   name: Girls Will Get Personal
   created_by: Louhi
-  description: Mostly based on deck by Jorge Delgado, with some tweaks to personal playstyle.
+  description: Mostly based on deck by Jorge Delgado, with some tweaks to 
+    personal playstyle.
   crypt_count: 12
   crypt_min: 36
   crypt_max: 44

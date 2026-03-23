@@ -1,14 +1,15 @@
 name: WoN Neonates first night
 location: Newark (OH), USA
-date_start: '2025-06-14'
+date_start: 2025-06-14
 rounds_format: 2R+F
 players_count: 16
 winner: Karl Schaefer
-vekn_number: '1003455'
+vekn_number: 1003455
 event_url: https://www.vekn.net/event-calendar/event/12356
 event_id: '12356'
 vp_comment: 1gw5 + 4 vps in finals
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82398-twd-won-neonates-first-night
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82398-twd-won-neonates-first-night
 deck:
   name: (Very) Pretty Hate Machine
   description: ''

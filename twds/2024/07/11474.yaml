@@ -1,17 +1,19 @@
 name: Liga Portuguesa - Burning Wrath
 location: Lisbon, Portugal
-date_start: '2024-07-13'
+date_start: 2024-07-13
 rounds_format: 3R+F
 players_count: 18
 winner: Diogo Pratas
-vekn_number: '4300002'
+vekn_number: 4300002
 event_url: https://www.vekn.net/event-calendar/event/11474
 event_id: '11474'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81810-twd-burning-wrath-13-07-2024
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81810-twd-burning-wrath-13-07-2024
 deck:
   name: Nameless and Shiny
   created_by: Diogo Pratas
-  description: If you don't want to think...a multi-action deck is your best strategy.
+  description: If you don't want to think...a multi-action deck is your best 
+    strategy.
   crypt_count: 12
   crypt_min: 4
   crypt_max: 40

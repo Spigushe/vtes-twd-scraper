@@ -1,13 +1,14 @@
 name: Open War
 location: online
-date_start: '2022-07-11'
+date_start: 2022-07-11
 rounds_format: 2R+F
 players_count: 14
 winner: Ricardo Molina Sobreira
-vekn_number: '6950000'
+vekn_number: 6950000
 event_url: https://www.vekn.net/player-registry/event/10273
 event_id: '10273'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79946-twda-open-war
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/79946-twda-open-war
 deck:
   name: nao mult
   description: ''

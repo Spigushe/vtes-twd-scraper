@@ -1,12 +1,13 @@
 name: Blood League part II.
 location: Kecskemét, Hungary
-date_start: '2024-03-30'
+date_start: 2024-03-30
 rounds_format: 2R+F
 players_count: 25
 winner: Olivér Tóth's Tournament Winning Deck with 0,5 VPs in the Finals
 event_url: https://www.vekn.net/event-calendar/event/11369
 event_id: '11369'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81365-twd-blood-league-ii
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81365-twd-blood-league-ii
 deck:
   name: Tzimi museum
   created_by: Balázs Sebestyén
@@ -171,7 +172,8 @@ deck:
     - count: 4
       name: Matthias                     7 AUS FOR OBE nec      Salubri:2
     - count: 1
-      name: Omaya                        7 ANI AUS FOR pro      Gangrel antitribu:2
+      name: Omaya                        7 ANI AUS FOR pro      Gangrel 
+        antitribu:2
     - count: 1
       name: Victoria                     5 AUS cel obf          Malkavian:2
     - count: 1

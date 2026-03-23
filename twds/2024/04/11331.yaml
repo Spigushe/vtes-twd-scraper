@@ -1,14 +1,15 @@
 name: Shell Break 2024
 location: Espoo, Finland
-date_start: '2024-04-01'
+date_start: 2024-04-01
 rounds_format: 2R+F
 players_count: 18
 winner: Tero Aalto
-vekn_number: '8460002'
+vekn_number: 8460002
 event_url: https://www.vekn.net/event-calendar/event/11331
 event_id: '11331'
 vp_comment: 0 GW 3,5 + 2,5 in the final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81336-twd-shell-break-2024-2024-04-01
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81336-twd-shell-break-2024-2024-04-01
 deck:
   name: Lavatanssit
   created_by: Tero Aalto

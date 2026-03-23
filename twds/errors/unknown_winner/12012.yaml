@@ -1,12 +1,13 @@
 name: 'Fee Stake: Florence'
 location: Florence, Italy
-date_start: '2025-02-01'
+date_start: 2025-02-01
 rounds_format: 2R+F
 players_count: 38
 winner: "Luca Turicchi' s Deck: No, Tu, NO!"
 event_url: https://www.vekn.net/event-calendar/event/12012
 event_id: '12012'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82070-twd-fee-stake-florence-florence-italy
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82070-twd-fee-stake-florence-florence-italy
 deck:
   name: No, Tu No!
   created_by: NekrÃ³s

@@ -1,19 +1,22 @@
 name: 5th Elder Library
 location: Espoo, Finland
-date_start: '2024-06-02'
+date_start: 2024-06-02
 rounds_format: 2R+F
 players_count: 10
 winner: Otso Saariluoma
 event_url: https://www.vekn.net/event-calendar/event/11450
 event_id: '11450'
-vp_comment: Managed 1,5 vps in the prelims, got in the finals with a die roll, and won with 1,5 vps, so the performance 
-  of the deck wasn’t anything to write home about.
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81511-twd-5th-elder-library-espoo-finland-2-jun-2024
+vp_comment: Managed 1,5 vps in the prelims, got in the finals with a die roll, 
+  and won with 1,5 vps, so the performance of the deck wasn’t anything to write 
+  home about.
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81511-twd-5th-elder-library-espoo-finland-2-jun-2024
 deck:
   name: Guillaume Beatdown
   created_by: Otso Saariluoma
-  description: A combat-oriented Guillaume deck with an Increased Strength package for funsies. Hopefully you get to 
-    build up to have a few powerful turns before inevitably running out of steam.
+  description: A combat-oriented Guillaume deck with an Increased Strength 
+    package for funsies. Hopefully you get to build up to have a few powerful 
+    turns before inevitably running out of steam.
   crypt_count: 12
   crypt_min: 20
   crypt_max: 36

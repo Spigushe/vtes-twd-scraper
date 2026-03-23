@@ -1,13 +1,14 @@
 name: 4th Road to Pulled Fangs
 location: Lichnov, Czech Republic
-date_start: '2024-03-24'
+date_start: 2024-03-24
 rounds_format: 3R+F
 players_count: 17
 winner: Daniel Gargulák
-vekn_number: '8430007'
+vekn_number: 8430007
 event_url: https://www.vekn.net/event-calendar/event/11332
 event_id: '11332'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81340-twd-4th-road-to-pulled-fangs-13
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81340-twd-4th-road-to-pulled-fangs-13
 deck:
   name: Piper warghouls
   description: ''

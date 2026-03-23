@@ -1,12 +1,13 @@
 name: Falha Bestial
 location: São Paulo, Brasil
-date_start: '2025-12-21'
+date_start: 2025-12-21
 rounds_format: 2R+F
 players_count: 28
 winner: 'Winner: Francisco Mantovanini Carvalho'
 event_url: https://www.vekn.net/event-calendar/event/12866
 event_id: '12866'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82744-twd-falha-bestial-sao-paulo-brasil-21-dec-2025
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82744-twd-falha-bestial-sao-paulo-brasil-21-dec-2025
 deck:
   name: Banu bleed
   created_by: Francisco Mantovanini Carvalho

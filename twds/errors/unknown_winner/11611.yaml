@@ -1,12 +1,13 @@
 name: 'FirenzeGioca: NEW Blood'
 location: Firenze, Italy
-date_start: '2024-08-03'
+date_start: 2024-08-03
 rounds_format: 2R+F
 players_count: 12
 winner: Davide Bonini's Tournament Winning Deck
 event_url: https://www.vekn.net/player-registry/event/11611
 event_id: '11611'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82107-twd-firenzegioca-new-blood
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82107-twd-firenzegioca-new-blood
 deck:
   name: This is what the Serpent revealed to me
   created_by: Davide Bonini

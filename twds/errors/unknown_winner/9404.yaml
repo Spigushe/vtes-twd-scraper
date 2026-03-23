@@ -1,6 +1,6 @@
 name: '[VEG] Italian Gran Prix 2019/20'
 location: Bologna, Italy
-date_start: '2019-11-23'
+date_start: 2019-11-23
 rounds_format: 3R+F
 players_count: 50
 winner: Alessandro Donati's Tournament Winning Deck
@@ -11,7 +11,8 @@ forum_post_url:
 deck:
   name: Hells Bells
   created_by: Alessandro Donati, Prince of Barga
-  description: "Pure Baali Political Deck that exploits Arishat's ability and the Condamnation: Mute to gain the vote lock."
+  description: "Pure Baali Political Deck that exploits Arishat's ability and the
+    Condamnation: Mute to gain the vote lock."
   crypt_count: 12
   crypt_min: 15
   crypt_max: 34

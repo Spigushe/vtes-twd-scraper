@@ -1,12 +1,13 @@
 name: Batalha pela Jureia
 location: Peruibe , SÃO PAULO, BRASIL
-date_start: '2025-12-06'
+date_start: 2025-12-06
 rounds_format: 2R+F
 players_count: 10
 winner: Gabriel  Rodrigues de Marqui
 event_url: https://www.vekn.net/event-calendar/event/12816
 event_id: '12816'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82721-twd-batalha-pela-jureia-brasil-06-12-2025
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82721-twd-batalha-pela-jureia-brasil-06-12-2025
 deck:
   name: voto 3, desvira, bleed 7
   created_by: razi

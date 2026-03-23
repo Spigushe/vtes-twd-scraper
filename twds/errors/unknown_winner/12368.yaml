@@ -1,13 +1,14 @@
 name: IT 25 Milano
 location: Milano, Italy
-date_start: '2025-11-16'
+date_start: 2025-11-16
 rounds_format: 2R+F
 players_count: 25
 winner: 'Winner: Nicola Lonardi'
 event_url: https://www.vekn.net/event-calendar/event/12368
 event_id: '12368'
 vp_comment: 1,5VP in final, winner for Best Seating
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82672-twd-it-25-milan-italy-16-nov-2025
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82672-twd-it-25-milan-italy-16-nov-2025
 deck:
   name: New family 1.1
   created_by: Dominik

@@ -1,12 +1,13 @@
 name: From Bologna to Varsavia
 location: Bologna, Italy
-date_start: '2024-09-14'
+date_start: 2024-09-14
 rounds_format: 3R+F
 players_count: 25
 winner: Riccardo Fabiani's Tournament Winning Deck
 event_url: https://www.vekn.net/player-registry/event/11591
 event_id: '11591'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81785-twd-from-bologna-to-varsavia
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81785-twd-from-bologna-to-varsavia
 deck:
   name: Tzimisce al ragù
   created_by: Riccardo Fabiani

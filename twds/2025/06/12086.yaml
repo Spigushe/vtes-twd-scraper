@@ -1,14 +1,15 @@
 name: Origins Thursday 1 (2025)
 location: Columbus (OH), USA
-date_start: '2025-06-19'
+date_start: 2025-06-19
 rounds_format: 2R+F
 players_count: 43
 winner: Kelly Schultz
-vekn_number: '5040009'
+vekn_number: 5040009
 event_url: https://www.vekn.net/event-calendar/event/12086
 event_id: '12086'
 vp_comment: 2 GW 7 VP in prelims, 1.5 VP in finals
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82428-twd-origins-thursday-1
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82428-twd-origins-thursday-1
 deck:
   name: Inner City Bypass
   created_by: skychan (Kelly Schultz)

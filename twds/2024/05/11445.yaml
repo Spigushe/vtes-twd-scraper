@@ -1,13 +1,14 @@
 name: Rumo ao SAC 03
 location: Online
-date_start: '2024-05-13'
+date_start: 2024-05-13
 rounds_format: 2R+F
 players_count: 13
 winner: Peitsa Suominen
-vekn_number: '1004319'
+vekn_number: 1004319
 event_url: https://www.vekn.net/event-calendar/event/11445
 event_id: '11445'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81976-twd-rumo-ao-sac-03-online-may-13-2024
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81976-twd-rumo-ao-sac-03-online-may-13-2024
 deck:
   name: British manse for brazil!
   description: My take on british museum of london and living manses deck

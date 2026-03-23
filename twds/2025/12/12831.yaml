@@ -1,14 +1,15 @@
 name: Almada's Bloody Xmas! Again!
 location: Almada, Portugal
-date_start: '2025-12-20'
+date_start: 2025-12-20
 rounds_format: 2R+F
 players_count: 17
 winner: Jorge Ramos
-vekn_number: '3260057'
+vekn_number: 3260057
 event_url: https://www.vekn.net/player-registry/event/12831
 event_id: '12831'
 vp_comment: 1GW3.5VP + 3VP in the final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82847-twd-almada-s-bloody-xmas-again
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82847-twd-almada-s-bloody-xmas-again
 deck:
   name: Contrato precário
   created_by: Jorge Ramos

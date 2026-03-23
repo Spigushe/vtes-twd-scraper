@@ -1,14 +1,15 @@
 name: 'Second Tradition: Domain'
 location: Online
-date_start: '2025-09-21'
+date_start: 2025-09-21
 rounds_format: 2R+F
 players_count: 20
 winner: Jorge "São Jorge" Garcia
-vekn_number: '4522501'
+vekn_number: 4522501
 event_url: https://www.vekn.net/event-calendar/event/12640
 event_id: '12640'
 vp_comment: 1Gw3 + 4 vp in final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82629-twd-second-tradition-domain
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82629-twd-second-tradition-domain
 deck:
   name: Board of Shadows
   description: ''

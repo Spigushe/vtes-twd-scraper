@@ -1,12 +1,13 @@
 name: Blood League part III.
 location: Kecskemét, Hungary
-date_start: '2024-04-27'
+date_start: 2024-04-27
 rounds_format: 2R+F
 players_count: 16
 winner: Ferenc Kósa's Tournament Winning Deck with 1,5 VPs in the Finals
 event_url: https://www.vekn.net/event-calendar/event/11423
 event_id: '11423'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81420-twd-blood-league-iii
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81420-twd-blood-league-iii
 deck:
   name: Malkavian
   created_by: Csaba Teplán
@@ -164,15 +165,20 @@ deck:
     count: 12
     cards:
     - count: 4
-      name: Stanislava       11 ANI CEL DOM FOR PRO           inner circle   Gangrel:2
+      name: Stanislava       11 ANI CEL DOM FOR PRO           inner circle   
+        Gangrel:2
     - count: 2
-      name: Hartmut Stover   10 CEL OBF PRO dom for           archbishop     Gangrel antitribu:3
+      name: Hartmut Stover   10 CEL OBF PRO dom for           archbishop     
+        Gangrel antitribu:3
     - count: 2
-      name: Xaviar (ADV)     10 ABO ANI FOR PRO aus cel pot   justicar       Gangrel:3
+      name: Xaviar (ADV)     10 ABO ANI FOR PRO aus cel pot   justicar       
+        Gangrel:3
     - count: 2
-      name: Ingrid Rossler    9 ANI FOR PRO dom               prince         Gangrel:2
+      name: Ingrid Rossler    9 ANI FOR PRO dom               prince         
+        Gangrel:2
     - count: 2
-      name: Mark Decker       8 CEL PRO ani for obf pot       prince         Gangrel:3
+      name: Mark Decker       8 CEL PRO ani for obf pot       prince         
+        Gangrel:3
   - name: Library
     count: 90
     cards: []
@@ -388,21 +394,29 @@ deck:
     count: 12
     cards:
     - count: 3
-      name: Mistress Fanchon        11 AUS CEL DOM OBF THA VIC   inner circle   Tremere:4
+      name: Mistress Fanchon        11 AUS CEL DOM OBF THA VIC   inner circle   
+        Tremere:4
     - count: 2
-      name: Gabrielle di Righetti   10 ANI AUS DOM THA obf pot   justicar       Tremere:5
+      name: Gabrielle di Righetti   10 ANI AUS DOM THA obf pot   justicar       
+        Tremere:5
     - count: 2
-      name: Orlando Oriundus         9 AUS DOM THA obf           bishop         Tremere antitribu:4
+      name: Orlando Oriundus         9 AUS DOM THA obf           bishop         
+        Tremere antitribu:4
     - count: 1
-      name: Dr. John Dee             9 ANI AUS DOM THA chi       prince         Tremere:4
+      name: Dr. John Dee             9 ANI AUS DOM THA chi       prince         
+        Tremere:4
     - count: 1
-      name: Gerald Windham           9 AUS DOM FOR THA                          Tremere:5
+      name: Gerald Windham           9 AUS DOM FOR THA                          
+        Tremere:5
     - count: 1
-      name: Troius                   8 AUS DOM THA cel           prince         Tremere:4
+      name: Troius                   8 AUS DOM THA cel           prince         
+        Tremere:4
     - count: 1
-      name: Graham Gottesman         7 DOM FOR obf pre tha       prince         Ventrue:5
+      name: Graham Gottesman         7 DOM FOR obf pre tha       prince         
+        Ventrue:5
     - count: 1
-      name: Johannes Worringen       6 AUS THA dom               archbishop     Tremere antitribu:5
+      name: Johannes Worringen       6 AUS THA dom               archbishop     
+        Tremere antitribu:5
   - name: Library
     count: 79
     cards: []
@@ -500,13 +514,17 @@ deck:
     count: 12
     cards:
     - count: 3
-      name: Julio Martinez                9 nec ANI DOM OBF POT      Nosferatu antitribu:3
+      name: Julio Martinez                9 nec ANI DOM OBF POT      Nosferatu 
+        antitribu:3
     - count: 3
-      name: Beast, The Leatherface of Detroit7 ani cel OBF POT          Nosferatu antitribu:2
+      name: Beast, The Leatherface of Detroit7 ani cel OBF POT          
+        Nosferatu antitribu:2
     - count: 3
-      name: Len Konopka                   8 dom ser ANI OBF POT      Nosferatu antitribu:3
+      name: Len Konopka                   8 dom ser ANI OBF POT      Nosferatu 
+        antitribu:3
     - count: 3
-      name: Cailean                       10 dom ANI OBF POT PRE      Nosferatu antitribu:2
+      name: Cailean                       10 dom ANI OBF POT PRE      Nosferatu 
+        antitribu:2
   - name: Master
     count: 20
     cards:

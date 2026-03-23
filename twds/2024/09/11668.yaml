@@ -1,18 +1,18 @@
 name: VtES European Championship 2024 - Day 1
 location: Warsaw, Poland
-date_start: '2024-09-28'
+date_start: 2024-09-28
 rounds_format: 3R+F
 players_count: 168
 winner: Simone Parmeggiani
-vekn_number: '3020010'
+vekn_number: 3020010
 event_url: https://www.vekn.net/event-calendar/event/11668
 event_id: '11668'
 forum_post_url: 
   https://www.vekn.net/forum/event-reports-and-twd/81835-twd-vtes-european-championship-2024-day-1-warsaw-poland-28-sep-2024
 deck:
   name: The queen of æmilia
-  description: the name of the deck comes from the traveler's queen buried in my hometown (Spilamberto), also home of 
-    our game community.
+  description: the name of the deck comes from the traveler's queen buried in my
+    hometown (Spilamberto), also home of our game community.
   crypt_count: 12
   crypt_min: 16
   crypt_max: 28

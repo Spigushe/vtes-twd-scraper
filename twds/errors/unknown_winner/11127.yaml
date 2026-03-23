@@ -1,6 +1,6 @@
 name: Fantasy World
 location: Leksands-Gråda
-date_start: '2024-01-20'
+date_start: 2024-01-20
 rounds_format: 3R+F
 players_count: 14
 winner: Standard Constructed
@@ -11,12 +11,14 @@ forum_post_url:
 deck:
   name: Gangrel Things
   created_by: Noora Hirvonen
-  description: Thank you Aapo Järvelin (Khormag) for handing me the predecessor of this deck in the after-games of a 
-    tournament he organized in Joensuu a couple of years back, the deck is super fun to play. I played versions of it 
-    quite a lot in 2022, and last months I have had a feeling it could do well in the grindy Stockholm meta with its 
-    fast and plentiful actions and reactions. This iteration though I feel like I made slightly worse by adding some 
-    random cards outside of the core mechanic of Computer hacking, Thing and Earth meld, but it did hold itself together
-    this time.
+  description: Thank you Aapo Järvelin (Khormag) for handing me the predecessor 
+    of this deck in the after-games of a tournament he organized in Joensuu a 
+    couple of years back, the deck is super fun to play. I played versions of it
+    quite a lot in 2022, and last months I have had a feeling it could do well 
+    in the grindy Stockholm meta with its fast and plentiful actions and 
+    reactions. This iteration though I feel like I made slightly worse by adding
+    some random cards outside of the core mechanic of Computer hacking, Thing 
+    and Earth meld, but it did hold itself together this time.
   crypt_count: 13
   crypt_min: 11
   crypt_max: 23

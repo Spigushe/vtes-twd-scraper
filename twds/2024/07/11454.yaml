@@ -1,13 +1,14 @@
 name: VtES Last Stand
 location: Helsinki Finland
-date_start: '2024-07-19'
+date_start: 2024-07-19
 rounds_format: 2R+F
 players_count: 41
 winner: Tommi Hakomaa
-vekn_number: '3530067'
+vekn_number: 3530067
 event_url: https://www.vekn.net/event-calendar/event/11454
 event_id: '11454'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81649-twd-vtes-last-stand-helsinki-finland-19-jul-2024
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81649-twd-vtes-last-stand-helsinki-finland-19-jul-2024
 deck:
   name: Baron Revolution
   created_by: Teemu Sainomaa

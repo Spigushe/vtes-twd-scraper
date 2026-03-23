@@ -1,18 +1,21 @@
 name: Shell Break Espoo
 location: Espoo, Finland
-date_start: '2022-04-17'
+date_start: 2022-04-17
 rounds_format: 2R+F
 players_count: 14
 winner: 'winner: Tero Aalto'
 event_url: https://www.vekn.net/player-registry/event/10139
 event_id: '10139'
-vp_comment: We got two new players, my first personal neonates, in fact, one of whom even made it to the final. A 
-  retired Hall of Fame player had donated several boxes of useful cards to share at the event, most of which naturally 
+vp_comment: We got two new players, my first personal neonates, in fact, one of 
+  whom even made it to the final. A retired Hall of Fame player had donated 
+  several boxes of useful cards to share at the event, most of which naturally 
   went to the new players and their friends.
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79738-twd-shell-break-espoo-2022-04-17
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/79738-twd-shell-break-espoo-2022-04-17
 deck:
   name: '(Sem título): Maximum Security'
-  description: A variation of the original "(Sem título)" tuned for a combat-heavy meta.
+  description: A variation of the original "(Sem título)" tuned for a 
+    combat-heavy meta.
   crypt_count: 12
   crypt_min: 10
   crypt_max: 40

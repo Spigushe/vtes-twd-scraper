@@ -1,14 +1,15 @@
 name: Festim de Sangue (Blood Fest)
 location: Mogi das Cruzes, Brasil
-date_start: '2024-09-15'
+date_start: 2024-09-15
 rounds_format: 2R+F
 players_count: 15
 winner: Alyson Sanches Paulini
-vekn_number: '4590029'
+vekn_number: 4590029
 event_url: https://www.vekn.net/player-registry/event/11682
 event_id: '11682'
 vp_comment: 0GW, 3.5VP, 3VP final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82007-twd-festim-de-sangue-mogi-das-cruzes-sp
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82007-twd-festim-de-sangue-mogi-das-cruzes-sp
 deck:
   name: Socialização dos Meios de Produção
   created_by: Alyson Sanches Paulini

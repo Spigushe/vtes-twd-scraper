@@ -1,19 +1,21 @@
 name: French NC 2024
 location: Lyon, France
-date_start: '2024-10-19'
+date_start: 2024-10-19
 rounds_format: 3R+F
 players_count: 50
 winner: Vincent Ripoll
-vekn_number: '3200188'
+vekn_number: 3200188
 event_url: https://www.vekn.net/event-calendar/event/11754
 event_id: '11754'
 vp_comment: 2GW8 + 1.5vp in final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81851-twd-french-nc-2024-lyon-france
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81851-twd-french-nc-2024-lyon-france
 deck:
   name: Baron Protean
   created_by: Ankha
-  description: "This deck is heavily inspired by Simo Tiippana's \"Garou Rim: Foreshadowing Destruction\" deck (TWD 11456)
-    but I tweaked it a lot, removing the \"bad\" 8-cap barons to include smaller PRO vampire and reworking the master module."
+  description: "This deck is heavily inspired by Simo Tiippana's \"Garou Rim: Foreshadowing
+    Destruction\" deck (TWD 11456) but I tweaked it a lot, removing the \"bad\" 8-cap
+    barons to include smaller PRO vampire and reworking the master module."
   crypt_count: 12
   crypt_min: 17
   crypt_max: 29
@@ -109,7 +111,8 @@ deck:
       name: Anarch Free Press, The
     - count: 1
       name: Anarch Troublemaker
-      comment: to burn any annoying weapon (Sniper, Ivory Bow) or to deliver the final blow
+      comment: to burn any annoying weapon (Sniper, Ivory Bow) or to deliver the
+        final blow
     - count: 2
       name: Carfax Abbey
       comment: '"The blood is the life!"'
@@ -121,7 +124,8 @@ deck:
       comment: a great defensive card
     - count: 1
       name: Erciyes Fragments, The
-      comment: a last-minute addition, allowed me to oust to preys with their own bleed cards
+      comment: a last-minute addition, allowed me to oust to preys with their 
+        own bleed cards
     - count: 2
       name: Garibaldi-Meucci Museum
       comment: as usual, gets back the bounce or intercept, or the killing votes
@@ -136,8 +140,8 @@ deck:
       comment: required to cycle more
     - count: 6
       name: Protean
-      comment: we don't need 8 of them for the 8 Childe, as we never play them all. Can be used on some barons to give 
-        them PRO
+      comment: we don't need 8 of them for the 8 Childe, as we never play them 
+        all. Can be used on some barons to give them PRO
     - count: 1
       name: Rötschreck
       comment: nice ot have, but not crucial at all
@@ -146,8 +150,8 @@ deck:
       comment: never drawn at the right time
     - count: 6
       name: Villein
-      comment: probably better than Vessel / Blood Doll, allows to get more vampires out, and I rely on the HG to regain
-        blood
+      comment: probably better than Vessel / Blood Doll, allows to get more 
+        vampires out, and I rely on the HG to regain blood
   - name: Action
     count: 10
     cards:
@@ -159,8 +163,8 @@ deck:
       comment: bleed or Revolutionary fodder
     - count: 1
       name: Constant Revolution
-      comment: I removed it, then put it back because it's a great end-game card (before, it's just fun, no need to 
-        defend it)
+      comment: I removed it, then put it back because it's a great end-game card
+        (before, it's just fun, no need to defend it)
   - name: Political Action
     count: 2
     cards:
@@ -169,7 +173,8 @@ deck:
       comment: easy to call, recursive with Garibaldi
     - count: 1
       name: Revolutionary Council
-      comment: endgame oust and/or threat removal (Ivory Bow or strong locations)
+      comment: endgame oust and/or threat removal (Ivory Bow or strong 
+        locations)
   - name: Equipment
     count: 2
     cards:

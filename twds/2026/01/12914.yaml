@@ -1,10 +1,10 @@
 name: 3a Jornada Liga Levante Norte
 location: Valencia, Spain
-date_start: '2026-01-11'
+date_start: 2026-01-11
 rounds_format: 3R+F
 players_count: 30
 winner: Luis Castillejo Capilla
-vekn_number: '6250008'
+vekn_number: 6250008
 event_url: https://www.vekn.net/event-calendar/event/12914
 event_id: '12914'
 vp_comment: 1GW6VP + 1GW1.5VP in the final (2GW7.5VP)

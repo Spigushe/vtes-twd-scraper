@@ -1,13 +1,14 @@
 name: King's Rising
 location: Paris, France
-date_start: '2024-01-20'
+date_start: 2024-01-20
 rounds_format: 3R+F
 players_count: 19
 winner: Christophe Baltazar
-vekn_number: '3200114'
+vekn_number: 3200114
 event_url: https://www.vekn.net/event-calendar/event/11245
 event_id: '11245'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81226-twd-king-s-rising-paris-france-2024-01-20
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81226-twd-king-s-rising-paris-france-2024-01-20
 deck:
   name: 197_Weenie DBR
   created_by: berlin_tremere
@@ -96,7 +97,8 @@ deck:
       name: 'Powerbase: Montreal'
     - count: 3
       name: Storage Annex
-      comment: when all the  Dreams of The Sphinx are in other decks and you don't want to move them around
+      comment: when all the  Dreams of The Sphinx are in other decks and you 
+        don't want to move them around
   - name: Action
     count: 19
     cards:

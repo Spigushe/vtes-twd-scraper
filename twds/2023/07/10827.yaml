@@ -1,14 +1,15 @@
 name: Burst of Sunlight
 location: Zagreb, Croatia
-date_start: '2023-07-15'
+date_start: 2023-07-15
 rounds_format: 3R+F
 players_count: 14
 winner: Branimir Milanković
-vekn_number: '3770059'
+vekn_number: 3770059
 event_url: https://www.vekn.net/event-calendar/event/10827
 event_id: '10827'
 vp_comment: 3vp in final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81107-twd-burst-of-sunlight-zagreb-croatia-15-july-2023
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81107-twd-burst-of-sunlight-zagreb-croatia-15-july-2023
 deck:
   name: Owain and Co.
   description: ''

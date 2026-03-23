@@ -1,14 +1,15 @@
 name: '2° MONSTER VTES ITALIAN TOURNAMENT:'
 location: Parma, Italy
-date_start: '2024-07-14'
+date_start: 2024-07-14
 rounds_format: 2R+F
 players_count: 23
 winner: Federico Neri
-vekn_number: '1000329'
+vekn_number: 1000329
 event_url: https://www.vekn.net/event-calendar/event/11494
 event_id: '11494'
 vp_comment: 1.5 vps in the final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81613-2-monster-vtes-italian-tournament
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81613-2-monster-vtes-italian-tournament
 deck:
   description: ''
   crypt_count: 12

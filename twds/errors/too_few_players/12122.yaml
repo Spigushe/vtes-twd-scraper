@@ -1,17 +1,18 @@
 name: Shell Break 2025
 location: Espoo, Finland
-date_start: '2025-04-21'
+date_start: 2025-04-21
 rounds_format: 2R+F
 players_count: 10
 winner: Tero Aalto
 event_url: https://www.vekn.net/event-calendar/event/12122
 event_id: '12122'
 vp_comment: 0 GW 2 + 1 GW 3 in the final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82247-twd-shell-break-2025
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82247-twd-shell-break-2025
 deck:
   name: 'Radical Leftist: Nothing Really Mattress'
-  description: A mono-Tzimisce variation of the Radical Leftist concept. They no longer eat the rich, though. Guard 
-    Dogses are great.
+  description: A mono-Tzimisce variation of the Radical Leftist concept. They no
+    longer eat the rich, though. Guard Dogses are great.
   crypt_count: 12
   crypt_min: 21
   crypt_max: 31

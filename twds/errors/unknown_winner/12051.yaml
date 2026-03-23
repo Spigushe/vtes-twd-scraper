@@ -1,12 +1,13 @@
 name: 'Third Tradition: Regroup - HQS'
 location: Vác, Hungary
-date_start: '2025-04-26'
+date_start: 2025-04-26
 rounds_format: 3R+F
 players_count: 40
 winner: Zoltán Panyik's Tournament Winning Deck with 1,5 VPs in the Finals
 event_url: https://www.vekn.net/event-calendar/event/12051
 event_id: '12051'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82281-twd-hungarian-qualifier-series-3
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82281-twd-hungarian-qualifier-series-3
 deck:
   name: Museum rush v9
   created_by: Dávid Wittmann
@@ -159,17 +160,23 @@ deck:
     count: 13
     cards:
     - count: 4
-      name: Nergal                    10 AUS DAI FOR OBF PRE THA              Baali:5
+      name: Nergal                    10 AUS DAI FOR OBF PRE THA              
+        Baali:5
     - count: 1
-      name: Nergal (ADV)              10 AUS DAI FOR OBF PRE THA              Baali:5
+      name: Nergal (ADV)              10 AUS DAI FOR OBF PRE THA              
+        Baali:5
     - count: 3
-      name: Annazir                    9 DAI OBF POT PRE           2 votes    Baali:5
+      name: Annazir                    9 DAI OBF POT PRE           2 votes    
+        Baali:5
     - count: 1
-      name: Bloody Mary                8 AUS DEM OBF pre           primogen   Malkavian:5
+      name: Bloody Mary                8 AUS DEM OBF pre           primogen   
+        Malkavian:5
     - count: 3
-      name: Xeper, Sultan of Lepers    7 OBF PRE ani dai pro                  Baali:6
+      name: Xeper, Sultan of Lepers    7 OBF PRE ani dai pro                  
+        Baali:6
     - count: 1
-      name: Horde, The                 3 dai obf pre                          Baali:6
+      name: Horde, The                 3 dai obf pre                          
+        Baali:6
   - name: Library
     count: 90
     cards: []
@@ -406,23 +413,32 @@ deck:
     count: 12
     cards:
     - count: 4
-      name: Sascha Vykos, The Angel of Caine (ADV)   8 AUS THA VIC ani dom   archbishop   Tzimisce:2
+      name: Sascha Vykos, The Angel of Caine (ADV)   8 AUS THA VIC ani dom   
+        archbishop   Tzimisce:2
     - count: 1
-      name: Caliban                                  6 ANI AUS VIC                        Tzimisce:2
+      name: Caliban                                  6 ANI AUS VIC                        
+        Tzimisce:2
     - count: 1
-      name: Corine Marcón                            6 AUS VIC ani                        Tzimisce:2
+      name: Corine Marcón                            6 AUS VIC ani                        
+        Tzimisce:2
     - count: 1
-      name: Devin Bisley                             5 ANI AUS vic                        Tzimisce:2
+      name: Devin Bisley                             5 ANI AUS vic                        
+        Tzimisce:2
     - count: 1
-      name: Elizabeth Westcott                       5 AUS ani cel vic                    Tzimisce:3
+      name: Elizabeth Westcott                       5 AUS ani cel vic                    
+        Tzimisce:3
     - count: 1
-      name: Lolita Houston                           4 VIC aus                            Tzimisce:2
+      name: Lolita Houston                           4 VIC aus                            
+        Tzimisce:2
     - count: 1
-      name: Horatio                                  2 vic                                Tzimisce:2
+      name: Horatio                                  2 vic                                
+        Tzimisce:2
     - count: 1
-      name: Piotr Andreikov                          2 aus                                Tzimisce:3
+      name: Piotr Andreikov                          2 aus                                
+        Tzimisce:3
     - count: 1
-      name: Feo Ramos                                1 aus                                Pander:3
+      name: Feo Ramos                                1 aus                                
+        Pander:3
   - name: Library
     count: 90
     cards: []
@@ -530,23 +546,32 @@ deck:
     count: 12
     cards:
     - count: 2
-      name: Gnaeus Aemilius Augustinus   9 DOM OBL POT PRO tha   prince     Lasombra:6
+      name: Gnaeus Aemilius Augustinus   9 DOM OBL POT PRO tha   prince     
+        Lasombra:6
     - count: 1
-      name: Yewon Ong                    8 DOM OBL POT for       prince     Lasombra:6
+      name: Yewon Ong                    8 DOM OBL POT for       prince     
+        Lasombra:6
     - count: 2
-      name: María del Toro               7 DOM OBL POT           prince     Lasombra:6
+      name: María del Toro               7 DOM OBL POT           prince     
+        Lasombra:6
     - count: 1
-      name: Rinaldo Albizzi              7 DOM OBL POT pre       primogen   Lasombra:6
+      name: Rinaldo Albizzi              7 DOM OBL POT pre       primogen   
+        Lasombra:6
     - count: 1
-      name: Aintzane Arriaga             6 DOM OBL POT                      Lasombra:6
+      name: Aintzane Arriaga             6 DOM OBL POT                      
+        Lasombra:6
     - count: 1
-      name: Kamaluddin                   6 DOM OBL for pot       primogen   Lasombra:6
+      name: Kamaluddin                   6 DOM OBL for pot       primogen   
+        Lasombra:6
     - count: 1
-      name: Azucena                      5 DOM OBL pot                      Lasombra:6
+      name: Azucena                      5 DOM OBL pot                      
+        Lasombra:6
     - count: 2
-      name: Alek König                   3 OBL                              Hecata:6
+      name: Alek König                   3 OBL                              
+        Hecata:6
     - count: 1
-      name: Araceli "Celia" Rivera       3 dom obl                          Lasombra:6
+      name: Araceli "Celia" Rivera       3 dom obl                          
+        Lasombra:6
   - name: Library
     count: 90
     cards: []

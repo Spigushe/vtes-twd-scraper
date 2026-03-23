@@ -1,21 +1,25 @@
-name: I was waiting for Vincent to post my winning deck (and the report I wrote some times ago) but since he posted his 
-  own but not mine, here I am
+name: I was waiting for Vincent to post my winning deck (and the report I wrote 
+  some times ago) but since he posted his own but not mine, here I am
 location: Standard homologué
-date_start: '2021-09-04'
+date_start: 2021-09-04
 rounds_format: 3R+F
 players_count: 19
 winner: Paris, France
 event_url: https://www.vekn.net/event-calendar/event/9874
 event_id: '9874'
 vp_comment: 2GW6 + 1.5VP in final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79430-twd-standard-homologue
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/79430-twd-standard-homologue
 deck:
   created_by: Tim
-  description: 'The deck is a very solid defensive deck which abuses 2 of the most strong defensive cards in VtES : second
-    tradition and Earth Meld. The ousting power is based on a strong combo of permanent : Homunculus, +1 Bleed on Rachel and
-    Madness Network. For the full package there is also perfectionist and Enkil Cog for the possibility to bleed for 3 during
-    the turn of every player without cards nor cost. Actually having only part of the full combo can already be strong and
-    Madness Network should not be defended at all cost Enkil Cog being already very strong.'
+  description: 'The deck is a very solid defensive deck which abuses 2 of the most
+    strong defensive cards in VtES : second tradition and Earth Meld. The ousting
+    power is based on a strong combo of permanent : Homunculus, +1 Bleed on Rachel
+    and Madness Network. For the full package there is also perfectionist and Enkil
+    Cog for the possibility to bleed for 3 during the turn of every player without
+    cards nor cost. Actually having only part of the full combo can already be strong
+    and Madness Network should not be defended at all cost Enkil Cog being already
+    very strong.'
   crypt_count: 12
   crypt_min: 14
   crypt_max: 40
@@ -53,13 +57,15 @@ deck:
     cards:
     - count: 1
       name: Barrens, The
-      comment: can be used during the discard phase and you can shuffle back the discarded card with Rachel Special
+      comment: can be used during the discard phase and you can shuffle back the
+        discarded card with Rachel Special
     - count: 1
       name: Coven, The
     - count: 2
       name: Direct Intervention
-      comment: important in a wallish deck, priceless in a Madness Network deck and one of the reasons the deck doesn't 
-        straight die against Immortal Grapple
+      comment: important in a wallish deck, priceless in a Madness Network deck 
+        and one of the reasons the deck doesn't straight die against Immortal 
+        Grapple
     - count: 1
       name: Fragment of the Book of Nod
       comment: a better Barrens in a defensive deck
@@ -127,8 +133,9 @@ deck:
     cards:
     - count: 1
       name: Claws of the Dead
-      comment: having 1 in your deck make your opponent tread more carefully when coming your way because you can 
-        discard it and then shuffle it back and it double up as an other anti-grapple card
+      comment: having 1 in your deck make your opponent tread more carefully 
+        when coming your way because you can discard it and then shuffle it back
+        and it double up as an other anti-grapple card
     - count: 10
       name: Earth Meld
     - count: 4

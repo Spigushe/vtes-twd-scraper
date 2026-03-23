@@ -1,12 +1,13 @@
 name: 'Fee Stake: Valencia'
 location: Valencia, Spain
-date_start: '2024-01-28'
+date_start: 2024-01-28
 rounds_format: 3R+F
 players_count: 14
 winner: Jose Vicente Coll
 event_url: https://www.vekn.net/event-calendar/event/11173
 event_id: '11173'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81192-twd-fee-stake-valencia-valencia-spain-28-jan-2024
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81192-twd-fee-stake-valencia-valencia-spain-28-jan-2024
 deck:
   name: Malgorzator  v.2.
   created_by: Jose Vte "Millicent" Coll

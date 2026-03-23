@@ -1,14 +1,15 @@
 name: Empowering the Puppet King
 location: Paris, France
-date_start: '2019-01-26'
+date_start: 2019-01-26
 rounds_format: 3R+F
 players_count: 17
 winner: Jorge Delgado
-vekn_number: '9290014'
+vekn_number: 9290014
 event_url: https://www.vekn.net/player-registry/event/9115
 event_id: '9115'
 vp_comment: 1,5 VPs in the finals
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80025-twd-empowering-the-puppet-king
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80025-twd-empowering-the-puppet-king
 deck:
   name: Nana ANI tablets
   created_by: Jorge Delgado

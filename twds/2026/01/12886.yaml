@@ -1,13 +1,14 @@
 name: Information Highway.
 location: Fortaleza - Ceará - Brazil
-date_start: '2026-01-11'
+date_start: 2026-01-11
 rounds_format: 2R+F
 players_count: 23
 winner: Mauro César
-vekn_number: '7307142'
+vekn_number: 7307142
 event_url: https://www.vekn.net/event-calendar/event/12886
 event_id: '12886'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82777-twd-information-highway
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82777-twd-information-highway
 deck:
   name: MiniTziGrel Barão Vermelho
   created_by: Mauro César

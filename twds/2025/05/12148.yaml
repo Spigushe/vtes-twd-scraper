@@ -1,14 +1,15 @@
 name: Midwest Mayhem - Madison - North American Cup
 location: Madison (WI), USA
-date_start: '2025-05-17'
+date_start: 2025-05-17
 rounds_format: 2R+F
 players_count: 14
 winner: Karl Schaefer
-vekn_number: '1003455'
+vekn_number: 1003455
 event_url: https://www.vekn.net/event-calendar/event/12148
 event_id: '12148'
 vp_comment: 1GW5 + 5 VPs in final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82311-twd-midwest-mayhem-madison-north-american-cup
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82311-twd-midwest-mayhem-madison-north-american-cup
 deck:
   name: My Version
   created_by: Darby Keeney and Karl Schaefer
@@ -80,7 +81,8 @@ deck:
       name: Dabbler
     - count: 1
       name: Dreams of the Sphinx
-      comment: just enough extra card cycle to get out of jams; not so many you get in trouble for having it
+      comment: just enough extra card cycle to get out of jams; not so many you 
+        get in trouble for having it
     - count: 1
       name: Giant's Blood
     - count: 1
@@ -99,7 +101,8 @@ deck:
       name: Break the Bonds
     - count: 3
       name: Field Training
-      comment: usually ani first, but vamps and hand may say otherwise; must always cycle it
+      comment: usually ani first, but vamps and hand may say otherwise; must 
+        always cycle it
   - name: Action Modifier
     count: 36
     cards:
@@ -123,6 +126,7 @@ deck:
     cards:
     - count: 2
       name: Hide the Mind
-      comment: useful in one round; probable meta add, but reduce to 1x in generic metas
+      comment: useful in one round; probable meta add, but reduce to 1x in 
+        generic metas
     - count: 2
       name: Swallowed by the Night

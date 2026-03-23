@@ -1,10 +1,10 @@
 name: 'Danse Macabre: First Danse'
 location: Vidor, Texas USA
-date_start: '2023-12-01'
+date_start: 2023-12-01
 rounds_format: 2R+F
 players_count: 25
 winner: Darby Keeney
-vekn_number: '1001132'
+vekn_number: 1001132
 event_url: https://www.vekn.net/event-calendar/event/10832
 event_id: '10832'
 vp_comment: Tournament Summary --
@@ -138,7 +138,8 @@ deck:
     cards:
     - count: 1
       name: Camera Phone
-      comment: would still love to duplicate this, but went with a Heart instead.
+      comment: would still love to duplicate this, but went with a Heart 
+        instead.
     - count: 1
       name: Heart of Nizchetus
     - count: 1

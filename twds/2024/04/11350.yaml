@@ -1,23 +1,26 @@
 name: Gulf Coast Roast – Dallas Grand Prix
 location: Dallas, Texas, USA
-date_start: '2024-04-27'
+date_start: 2024-04-27
 rounds_format: 3R+F
 players_count: 24
 winner: Darby Keeney
-vekn_number: '1001132'
+vekn_number: 1001132
 event_url: https://www.vekn.net/event-calendar/event/11350
 event_id: '11350'
-vp_comment: "Description: This is an evolution of a previous Museum-Manse design, now with more Dominate! The library is currently
-  formatted for the Gulf Coast's untimed finals format. A more tuned version with a thinner library is already being tested.\
-  \  The deck should also get better as the crypt rounds out."
+vp_comment: "Description: This is an evolution of a previous Museum-Manse design,
+  now with more Dominate! The library is currently formatted for the Gulf Coast's
+  untimed finals format. A more tuned version with a thinner library is already being
+  tested.  The deck should also get better as the crypt rounds out."
 forum_post_url: 
   https://www.vekn.net/forum/event-reports-and-twd/81413-twd-gulf-coast-roast-dallas-grand-prix-dallas-tx-usa-27-april-2024
 deck:
   name: Defy the Edict of Worms
   created_by: Darby Keeney
-  description: This is an evolution of a previous Museum-Manse design, now with more Dominate! The library is currently 
-    formatted for the Gulf Coast's untimed finals format. A more tuned version with a thinner library is already being 
-    tested.  The deck should also get better as the crypt rounds out.
+  description: This is an evolution of a previous Museum-Manse design, now with 
+    more Dominate! The library is currently formatted for the Gulf Coast's 
+    untimed finals format. A more tuned version with a thinner library is 
+    already being tested.  The deck should also get better as the crypt rounds 
+    out.
   crypt_count: 12
   crypt_min: 19
   crypt_max: 31

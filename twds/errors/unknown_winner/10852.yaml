@@ -1,12 +1,13 @@
 name: Invitacional de la Liga Catalana 2023
 location: Riudoms, Spain
-date_start: '2023-08-12'
+date_start: 2023-08-12
 rounds_format: 2R+F
 players_count: 37
 winner: Tomàs López Jiménez's Tournament Winning Deck with 1.5 VPs in the Finals
 event_url: https://www.vekn.net/event-calendar/event/10852
 event_id: '10852'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80767-twd-invitacional-de-la-liga-catalana-2023
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80767-twd-invitacional-de-la-liga-catalana-2023
 deck:
   name: Salubri 06 Legionarios
   created_by: Tomàs López Jiménez

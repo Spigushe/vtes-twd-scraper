@@ -1,13 +1,14 @@
 name: Vitae en barrica
 location: Logroño, Spain
-date_start: '2024-03-02'
+date_start: 2024-03-02
 rounds_format: 2R+F
 players_count: 22
 winner: Jesús Iturbe Pereira
-vekn_number: '8730003'
+vekn_number: 8730003
 event_url: https://www.vekn.net/event-calendar/event/11221
 event_id: '11221'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81268-twd-vitae-en-barrica-logrono-spain-2-mar-2024
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81268-twd-vitae-en-barrica-logrono-spain-2-mar-2024
 deck:
   name: Turbo Taca-Taca Rebirth
   created_by: Jesús Iturbe Pereira

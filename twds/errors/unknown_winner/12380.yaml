@@ -1,16 +1,18 @@
 name: Summer Party
 location: Helsinki, Finland
-date_start: '2025-06-15'
+date_start: 2025-06-15
 rounds_format: 2R+F
 players_count: 17
 winner: Niko Vanhatalo -- 1GW5vp + 1,5vp in final
 event_url: https://www.vekn.net/event-calendar/event/12380
 event_id: '12380'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82486-twd-summer-party-1-helsinki-finland-15-june-2025
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82486-twd-summer-party-1-helsinki-finland-15-june-2025
 deck:
   name: Kun täti menee bleedille, on näky komea
   created_by: Tero Aalto
-  description: Loaned this deck from Tero for the tournament, so some of the glory belongs to him
+  description: Loaned this deck from Tero for the tournament, so some of the 
+    glory belongs to him
   crypt_count: 12
   crypt_min: 31
   crypt_max: 40

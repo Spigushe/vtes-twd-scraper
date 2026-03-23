@@ -1,12 +1,13 @@
 name: Liga Chilanga "Jornada 1" (MX)
 location: Mexico City, Mexico
-date_start: '2023-04-16'
+date_start: 2023-04-16
 rounds_format: 3R+F
 players_count: 13
 winner: Winner:Edgar David Caudillo Garrido
 event_url: https://www.vekn.net/event-calendar/event/10698
 event_id: '10698'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80476-liga-chilanga-jornada-1
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80476-liga-chilanga-jornada-1
 deck:
   name: better call Arishat
   created_by: Edgar David Caudillo Garrido

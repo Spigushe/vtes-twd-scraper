@@ -1,14 +1,15 @@
 name: Shell Break 2023
 location: Espoo, Finland
-date_start: '2023-04-10'
+date_start: 2023-04-10
 rounds_format: 2R+F
 players_count: 17
 winner: Tero Aalto
-vekn_number: '8460002'
+vekn_number: 8460002
 event_url: https://www.vekn.net/event-calendar/event/10683
 event_id: '10683'
 vp_comment: 2 GW 5 + 1,5 in the final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80442-twd-shell-break-2023-2023-04-10
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80442-twd-shell-break-2023-2023-04-10
 deck:
   name: 'The Fanchon Show: Endless Games Most Beautiful'
   created_by: Tero Aalto

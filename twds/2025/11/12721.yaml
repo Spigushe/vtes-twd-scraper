@@ -1,13 +1,14 @@
 name: 'Garou Rim: Dawn of Darkness'
 location: Joensuu, Finland
-date_start: '2025-11-29'
+date_start: 2025-11-29
 rounds_format: 2R+F
 players_count: 13
 winner: Pasi Karjalainen
-vekn_number: '1001675'
+vekn_number: 1001675
 event_url: https://www.vekn.net/event-calendar/event/12721
 event_id: '12721'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82705-twd-garou-rim-dawn-of-darkness
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82705-twd-garou-rim-dawn-of-darkness
 deck:
   name: Death by a 1000 cuts II
   description: ''

@@ -1,12 +1,13 @@
 name: Standard Preconstructed
 location: Geneva, Switzerland
-date_start: '2024-08-05'
+date_start: 2024-08-05
 rounds_format: 2R+F
 players_count: 10
 winner: Ruben Feldman's Tournament Winning Deck with 3 VPs in the Finals
 event_url: https://www.vekn.net/event-calendar/event/11546
 event_id: '11546'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81923-twd-geneva-garden-party
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81923-twd-geneva-garden-party
 deck:
   name: Bleeding the Vignes
   created_by: Ruben Feldman

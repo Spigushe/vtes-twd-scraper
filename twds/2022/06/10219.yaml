@@ -1,14 +1,15 @@
 name: 'Praxis Seizure: Miami'
 location: Massa, Italy
-date_start: '2022-06-26'
+date_start: 2022-06-26
 rounds_format: 2R+F
 players_count: 18
 winner: Davide Antoni
-vekn_number: '7910002'
+vekn_number: 7910002
 event_url: https://www.vekn.net/event-calendar/event/10219
 event_id: '10219'
 vp_comment: 2gw7 + 5vp in final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79877-twd-praxis-seizure-miami-massa-italy-26-jun-2022
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/79877-twd-praxis-seizure-miami-massa-italy-26-jun-2022
 deck:
   name: Banu Haquinator
   description: ''

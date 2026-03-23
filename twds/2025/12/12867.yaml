@@ -1,14 +1,16 @@
 name: Cariocão de VtES 2025!
 location: Rio de Janeiro, Rio de Janeiro, BRASIL
-date_start: '2025-12-28'
+date_start: 2025-12-28
 rounds_format: 2R+F
 players_count: 26
 winner: Gabriel Mattos
-vekn_number: '6034959'
+vekn_number: 6034959
 event_url: https://www.vekn.net/event-calendar/event/12867
 event_id: '12867'
-vp_comment: 'Final Table: Gangrel V5 Toolbox > Malkshat > Tzim Living Manse > !Ventrue Blackhorse > Toreador Grand Ball'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82766-twd-cariocao-de-vtes-2025-brasil-28-12-2025
+vp_comment: 'Final Table: Gangrel V5 Toolbox > Malkshat > Tzim Living Manse > !Ventrue
+  Blackhorse > Toreador Grand Ball'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82766-twd-cariocao-de-vtes-2025-brasil-28-12-2025
 deck:
   name: Gangrel Anarch Toolbox
   description: ''

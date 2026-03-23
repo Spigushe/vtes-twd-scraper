@@ -1,12 +1,13 @@
 name: Liga Chilanga 2024 Jornada 5 (MX)
 location: Mexico City, Mexico
-date_start: '2024-06-30'
+date_start: 2024-06-30
 rounds_format: 3R+F
 players_count: 10
 winner: Edgar David Caudillo Garrido (
 event_url: https://www.vekn.net/event-calendar/event/11532
 event_id: '11532'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81596-liga-chilanga-2024-jornada-5-mx
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81596-liga-chilanga-2024-jornada-5-mx
 deck:
   name: FIN DE SEMANA DE PESADILLA
   created_by: DAVID CAUDILLO GARRIDO

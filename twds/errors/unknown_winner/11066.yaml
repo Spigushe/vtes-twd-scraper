@@ -1,12 +1,13 @@
 name: Campeónato Nacional Mexicano 2023 (MX)
 location: Mexico City, Mexico
-date_start: '2023-11-26'
+date_start: 2023-11-26
 rounds_format: 3R+F
 players_count: 20
 winner: 'Winner: Eduardo García ('
 event_url: https://www.vekn.net/event-calendar/event/11066
 event_id: '11066'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81009-campeonato-nacional-mexicano-2023
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81009-campeonato-nacional-mexicano-2023
 deck:
   name: Nocturnos new age.
   created_by: Lalo Vtes

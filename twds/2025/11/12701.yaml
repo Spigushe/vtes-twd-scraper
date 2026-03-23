@@ -1,18 +1,20 @@
 name: Italian tour 2025 - Bologna
 location: Bologna, Italy
-date_start: '2025-11-29'
+date_start: 2025-11-29
 rounds_format: 2R+F
 players_count: 36
 winner: Alessandro Donati
-vekn_number: '4740000'
+vekn_number: 4740000
 event_url: https://www.vekn.net/event-calendar/event/12701
 event_id: '12701'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82706-twd-italian-tour-2025-bologna-29-11-2025
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82706-twd-italian-tour-2025-bologna-29-11-2025
 deck:
   name: Velvet Tongue
   created_by: Alessandro "Nekrós" Donati
-  description: Always the same old story, but trying to do it as quickly as possible semplifying the list and using 
-    accelerators likes Grooming the Protégé and Mesu Bedshet.
+  description: Always the same old story, but trying to do it as quickly as 
+    possible semplifying the list and using accelerators likes Grooming the 
+    Protégé and Mesu Bedshet.
   crypt_count: 12
   crypt_min: 19
   crypt_max: 32

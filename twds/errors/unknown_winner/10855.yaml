@@ -1,12 +1,13 @@
 name: Italian Tour 2023 - Barga
 location: Barga, Italy
-date_start: '2023-09-03'
+date_start: 2023-09-03
 rounds_format: 2R+F
 players_count: 29
 winner: Giulio De Cicco's Tournament Winning Deck
 event_url: https://www.vekn.net/event-calendar/event/10855
 event_id: '10855'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80980-twd-italian-tour-2023-barga
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80980-twd-italian-tour-2023-barga
 deck:
   name: perfetto, khurshid wall
   created_by: Giulio De Cicco

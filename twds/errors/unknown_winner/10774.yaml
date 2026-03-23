@@ -1,12 +1,13 @@
 name: Australian / New Zealand 2023 Continental Championship
 location: Brisbane, Australia
-date_start: '2023-09-30'
+date_start: 2023-09-30
 rounds_format: 3R+F
 players_count: 28
 winner: 'winner:  Keith Lim'
 event_url: https://www.vekn.net/event-calendar/event/10774
 event_id: '10774'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80866-twd-aus-nz-2023-continental-championship
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80866-twd-aus-nz-2023-continental-championship
 deck:
   name: Ministry Mish Mash
   created_by: Keith Lim

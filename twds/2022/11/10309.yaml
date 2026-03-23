@@ -1,13 +1,14 @@
 name: SAC 2022 - Day 1
 location: São Paulo - Brazil
-date_start: '2022-11-12'
+date_start: 2022-11-12
 rounds_format: 3R+F
 players_count: 16
 winner: Leonardo Villela
-vekn_number: '6130006'
+vekn_number: 6130006
 event_url: https://www.vekn.net/event-calendar/event/10309
 event_id: '10309'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80158-twd-southamerica-championchip-day-01
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80158-twd-southamerica-championchip-day-01
 deck:
   name: Calma e bleed
   description: ''

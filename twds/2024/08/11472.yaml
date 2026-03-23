@@ -1,14 +1,15 @@
 name: War Party
 location: Gulfport MS, USA
-date_start: '2024-08-25'
+date_start: 2024-08-25
 rounds_format: 2R+F
 players_count: 21
 winner: Darby Keeney
-vekn_number: '1001132'
+vekn_number: 1001132
 event_url: https://www.vekn.net/event-calendar/event/11472
 event_id: '11472'
 vp_comment: 2GW+7VP, 4VP in final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81719-twd-war-party-gulfport-ms-usa-august-25-2024
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81719-twd-war-party-gulfport-ms-usa-august-25-2024
 deck:
   name: Flakes
   created_by: Darby Keeney
@@ -114,7 +115,8 @@ deck:
     cards:
     - count: 4
       name: Mirror Walk
-      comment: I didn't used to play these, but the no-combat clause opens options.
+      comment: I didn't used to play these, but the no-combat clause opens 
+        options.
   - name: Reaction
     count: 14
     cards:
@@ -131,7 +133,8 @@ deck:
     cards:
     - count: 8
       name: Target Vitals
-      comment: Trap isn't V5 meta, this is the combat pump. Doesn't feel excessive.
+      comment: Trap isn't V5 meta, this is the combat pump. Doesn't feel 
+        excessive.
   - name: Event
     count: 3
     cards:

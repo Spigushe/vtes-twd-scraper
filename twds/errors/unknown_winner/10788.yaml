@@ -1,12 +1,13 @@
 name: Italian Tour 2023 - Massa
 location: Massa, Italy
-date_start: '2023-06-25'
+date_start: 2023-06-25
 rounds_format: 2R+F
 players_count: 20
 winner: 'Winner: Alessandro Donati'
 event_url: https://www.vekn.net/event-calendar/event/10788
 event_id: '10788'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80694-twd-italian-tour-2023-massa-italy-25-june-2023
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80694-twd-italian-tour-2023-massa-italy-25-june-2023
 deck:
   name: Snake Charmers
   created_by: Alessandro Donati

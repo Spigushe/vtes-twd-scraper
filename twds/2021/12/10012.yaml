@@ -1,14 +1,15 @@
 name: Sede de Vitae Part 27
 location: Online
-date_start: '2021-12-20'
+date_start: 2021-12-20
 rounds_format: 2R+F
 players_count: 14
 winner: Guilherme Machado
-vekn_number: '6130009'
+vekn_number: 6130009
 event_url: https://www.vekn.net/event-calendar/event/10012
 event_id: '10012'
 vp_comment: 'Description: 1,5 VP na grande e turbulenta mesa final'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79697-twd-sede-de-vitae-parte-27
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/79697-twd-sede-de-vitae-parte-27
 deck:
   name: Malk Madness (SDV 27)
   created_by: Krieg

@@ -1,12 +1,13 @@
 name: Sede de Vitae Part 30
 location: online
-date_start: '2022-02-14'
+date_start: 2022-02-14
 rounds_format: 2R+F
 players_count: 27
 winner: Rafael Barbosa (
 event_url: https://www.vekn.net/event-calendar/event/10077
 event_id: '10077'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79700-twd-sede-de-vitae-part-30
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/79700-twd-sede-de-vitae-part-30
 deck:
   name: toreador antitribu
   created_by: Rafael Barbosa

@@ -1,13 +1,14 @@
 name: Rumo ao GP 7
 location: Online
-date_start: '2025-05-12'
+date_start: 2025-05-12
 rounds_format: 2R+F
 players_count: 12
 winner: Rodinei Teixeira de Camargo
-vekn_number: '6010106'
+vekn_number: 6010106
 event_url: https://www.vekn.net/event-calendar/event/12339
 event_id: '12339'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82494-twd-rumo-ao-gp-7
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82494-twd-rumo-ao-gp-7
 deck:
   name: Viva La Revolución
   created_by: Rodinei Teixeira de Camargo

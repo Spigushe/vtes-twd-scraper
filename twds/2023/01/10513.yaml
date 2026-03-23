@@ -1,13 +1,14 @@
 name: 2nd Road to Pulled Fang
 location: Ostrava, Czech Republic
-date_start: '2023-01-14'
+date_start: 2023-01-14
 rounds_format: 3R+F
 players_count: 28
 winner: Jan Kočí
-vekn_number: '1003764'
+vekn_number: 1003764
 event_url: https://www.vekn.net/event-calendar/event/10513
 event_id: '10513'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80263-twd-2nd-road-to-pulled-fang-12
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80263-twd-2nd-road-to-pulled-fang-12
 deck:
   name: gangrel anarchs
   created_by: Lott

@@ -1,13 +1,14 @@
 name: Danse Macabre Last Danse II
 location: Vidor, Texas USA
-date_start: '2024-12-08'
+date_start: 2024-12-08
 rounds_format: 2R+F
 players_count: 25
 winner: Standard Constructed
 event_url: https://www.vekn.net/event-calendar/event/11292
 event_id: '11292'
 vp_comment: 2GW 7vp, and 2 vp in the final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81948-twd-danse-macabre-last-danse-ii-12-10-24
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81948-twd-danse-macabre-last-danse-ii-12-10-24
 deck:
   name: The Gold(man) Standard
   description: ''

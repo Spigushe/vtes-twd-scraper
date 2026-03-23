@@ -1,10 +1,10 @@
 name: Dallas Revolutionary Council
 location: Dallas, Texas, USA
-date_start: '2024-04-28'
+date_start: 2024-04-28
 rounds_format: 3R+F
 players_count: 19
 winner: Darby Keeney
-vekn_number: '1001132'
+vekn_number: 1001132
 event_url: https://www.vekn.net/event-calendar/event/11353
 event_id: '11353'
 forum_post_url: 
@@ -132,7 +132,8 @@ deck:
     count: 5
     cards:
     - count: 1
-      name: Camera Phone – still the iffy, but I want reliable pre-Illusion offense.
+      name: Camera Phone – still the iffy, but I want reliable pre-Illusion 
+        offense.
     - count: 1
       name: Heart of Nizchetus
     - count: 1

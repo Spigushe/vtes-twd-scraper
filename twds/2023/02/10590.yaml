@@ -1,13 +1,14 @@
 name: V Torneo Liga Norte
 location: Gijón, Spain
-date_start: '2023-02-19'
+date_start: 2023-02-19
 rounds_format: 2R+F
 players_count: 27
 winner: José Ramón Rodríguez Álvarez-Solís
-vekn_number: '9510025'
+vekn_number: 9510025
 event_url: https://www.vekn.net/event-calendar/event/10590
 event_id: '10590'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80732-twd-v-torneo-liga-norte-gijon-spain-19-feb-2023
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80732-twd-v-torneo-liga-norte-gijon-spain-19-feb-2023
 deck:
   name: Tremere Multiacción Camarilla Segregation
   created_by: Rollshausen

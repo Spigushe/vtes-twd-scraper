@@ -1,14 +1,15 @@
 name: Liga GL/PT 25/26 - Mercadia Sul
 location: Almada, Portugal
-date_start: '2026-01-31'
+date_start: 2026-01-31
 rounds_format: 3R+F
 players_count: 22
 winner: Eduardo Carona
-vekn_number: '3120011'
+vekn_number: 3120011
 event_url: https://www.vekn.net/player-registry/event/12922
 event_id: '12922'
 vp_comment: 1GW6VP + 1.5VP in the final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82848-twd-liga-gl-pt-25-26-mercadia-sul
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82848-twd-liga-gl-pt-25-26-mercadia-sul
 deck:
   name: Black Hand Rush
   created_by: Eduardo Carona

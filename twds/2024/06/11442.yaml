@@ -1,18 +1,19 @@
 name: Origins - Friday 2
 location: Columbus OH, USA
-date_start: '2024-06-21'
+date_start: 2024-06-21
 rounds_format: 2R+F
 players_count: 44
 winner: Darby Keeney
-vekn_number: '1001132'
+vekn_number: 1001132
 event_url: https://www.vekn.net/event-calendar/event/11442
 event_id: '11442'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81585-twd-origins-friday-2-columbus-oh-usa-21-june-2024
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81585-twd-origins-friday-2-columbus-oh-usa-21-june-2024
 deck:
   name: Six Demon Bag
   created_by: Darby Keeney
-  description: Vintage deck slightly modified for V5 meta. I wasn't sure this would be fast enough for 2024 but with 
-    some careful play it still works.
+  description: Vintage deck slightly modified for V5 meta. I wasn't sure this 
+    would be fast enough for 2024 but with some careful play it still works.
   crypt_count: 12
   crypt_min: 15
   crypt_max: 40
@@ -128,7 +129,8 @@ deck:
       name: Psychomachia
       comment: slightly better in V5 meta
     - count: 3
-      name: Revelation of the Serpent - shifting from Sense the Sin for additional stealth
+      name: Revelation of the Serpent - shifting from Sense the Sin for 
+        additional stealth
   - name: Action Modifier/Combat
     count: 5
     cards:
