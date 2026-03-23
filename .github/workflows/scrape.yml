@@ -21,7 +21,7 @@ on:
         required: false
         default: ""
       last_page:
-        description: "Last forum index page to scrape, 0-indexed inclusive (leave empty for all)"
+        description: "Last forum index page to scrape, 0-indexed inclusive (default: 1)"
         required: false
         default: ""
       overwrite:
