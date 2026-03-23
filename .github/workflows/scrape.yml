@@ -73,14 +73,16 @@ jobs:
           CMD="vtes-scraper scrape --${CHECK_MODE:-fast-check}"
 
           START_PAGE="${{ github.event.inputs.start_page }}"
-          if [ -n "$START_PAGE" ]; then
-            CMD="$CMD --start-page $START_PAGE"
+          if [ -z "$START_PAGE" ]; then
+            START_PAGE=0
           fi
+          CMD="$CMD --start-page $START_PAGE"
 
           LAST_PAGE="${{ github.event.inputs.last_page }}"
-          if [ -n "$LAST_PAGE" ]; then
-            CMD="$CMD --last-page $LAST_PAGE"
+          if [ -z "$LAST_PAGE" ]; then
+            LAST_PAGE=$((START_PAGE+1))
           fi
+          CMD="$CMD --last-page $LAST_PAGE"
 
           if [ "${{ github.event.inputs.overwrite }}" = "true" ]; then
             CMD="$CMD --overwrite"
