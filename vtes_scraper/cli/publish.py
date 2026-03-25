@@ -61,7 +61,8 @@ def register(sub: argparse._SubParsersAction) -> None:
         help=(
             "Simulate the full publish flow (fork, branch, file commits) "
             "without opening a PR. The branch is deleted after the run. "
-            "Report is saved under reports/dry-runs/."
+            "Report is saved alongside normal reports under publish/YYYY/MM/, "
+            "named dry-run-{date}-{HH-MM-SS}.md."
         ),
     )
     p.add_argument("--verbose", "-v", action="store_true")
@@ -78,18 +79,17 @@ def _write_publish_report(
     """Write a Markdown summary of a publish run.
 
     Normal runs  → publish/YYYY/MM/{today}.md
-    Dry-run runs → reports/dry-runs/YYYY/MM/{today}-{HH-MM-SS}.md
+    Dry-run runs → publish/YYYY/MM/dry-run-{today}-{HH-MM-SS}.md
     """
     year, month = today[:4], today[5:7]
+    report_dir = publish_dir / year / month
+    report_dir.mkdir(parents=True, exist_ok=True)
 
     if result.dry_run:
-        ts = timestamp or today
-        report_dir = Path("reports") / "dry-runs" / year / month
-        report_dir.mkdir(parents=True, exist_ok=True)
-        report_path = report_dir / f"{ts}.md"
+        # timestamp is YYYY-MM-DD-HH-MM-SS; extract the time portion
+        time_suffix = f"-{timestamp[11:]}" if timestamp and len(timestamp) > 10 else ""
+        report_path = report_dir / f"dry-run-{today}{time_suffix}.md"
     else:
-        report_dir = publish_dir / year / month
-        report_dir.mkdir(parents=True, exist_ok=True)
         report_path = report_dir / f"{today}.md"
 
     title_suffix = " (DRY RUN)" if result.dry_run else ""
