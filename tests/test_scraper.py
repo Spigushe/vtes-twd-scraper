@@ -13,6 +13,7 @@ from vtes_scraper.scraper import (
     _kunena_div_to_text,
     extract_twd_from_thread,
     fetch_event_date,
+    fetch_event_winner,
     fetch_player,
     iter_thread_urls,
     scrape_forum,
@@ -693,3 +694,88 @@ class TestExtractTwdWinnerValidation:
             )
         assert result is not None
         assert result.winner == "Ravel Zorzal"
+
+
+# ---------------------------------------------------------------------------
+# fetch_event_winner
+# ---------------------------------------------------------------------------
+
+EVENT_WITH_STANDINGS_HTML = """
+<html><body>
+<table>
+  <tr><th>Pos.</th><th>Player</th><th>VPs</th></tr>
+  <tr><td>1</td><td>Alice Champion</td><td>5</td></tr>
+  <tr><td>2</td><td>Bob Runner</td><td>3</td></tr>
+  <tr><td>3</td><td>Charlie Third</td><td>2</td></tr>
+</table>
+</body></html>
+"""
+
+EVENT_WITH_RANK_COLUMN_HTML = """
+<html><body>
+<table>
+  <tr><th>Rank</th><th>Player Name</th><th>Score</th></tr>
+  <tr><td>1</td><td>Diana Winner</td><td>10</td></tr>
+  <tr><td>2</td><td>Eve Second</td><td>8</td></tr>
+</table>
+</body></html>
+"""
+
+EVENT_NO_STANDINGS_HTML = """
+<html><body>
+<table>
+  <tr><th>Date</th><th>Location</th></tr>
+  <tr><td>2025-01-01</td><td>Paris</td></tr>
+</table>
+</body></html>
+"""
+
+EVENT_NO_TABLE_HTML = "<html><body><p>No tables here.</p></body></html>"
+
+EVENT_STANDINGS_NO_POS1_HTML = """
+<html><body>
+<table>
+  <tr><th>Pos.</th><th>Player</th></tr>
+  <tr><td>2</td><td>Runner Up</td></tr>
+</table>
+</body></html>
+"""
+
+
+class TestFetchEventWinner:
+    def test_returns_winner_from_pos_column(self):
+        soup = BeautifulSoup(EVENT_WITH_STANDINGS_HTML, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = fetch_event_winner(
+                mock_client, "https://www.vekn.net/event-calendar/event/99", delay=0
+            )
+        assert result == "Alice Champion"
+
+    def test_accepts_rank_column_header(self):
+        soup = BeautifulSoup(EVENT_WITH_RANK_COLUMN_HTML, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = fetch_event_winner(mock_client, "https://example.com", delay=0)
+        assert result == "Diana Winner"
+
+    def test_no_standings_table_returns_none(self):
+        soup = BeautifulSoup(EVENT_NO_STANDINGS_HTML, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = fetch_event_winner(mock_client, "https://example.com", delay=0)
+        assert result is None
+
+    def test_no_table_returns_none(self):
+        soup = BeautifulSoup(EVENT_NO_TABLE_HTML, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = fetch_event_winner(mock_client, "https://example.com", delay=0)
+        assert result is None
+
+    def test_table_without_pos1_row_returns_none(self):
+        soup = BeautifulSoup(EVENT_STANDINGS_NO_POS1_HTML, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = fetch_event_winner(mock_client, "https://example.com", delay=0)
+        assert result is None

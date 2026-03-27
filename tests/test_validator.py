@@ -1,10 +1,11 @@
 """Tests for vtes_scraper.validator."""
 
 from datetime import date
+from unittest.mock import patch
 
 import pytest
 
-from vtes_scraper.validator import error_types, parse_date_field
+from vtes_scraper.validator import error_types, fix_card_sections, parse_date_field
 
 
 def _deck(**kwargs) -> dict:
@@ -278,3 +279,155 @@ class TestParseDateField:
 
     def test_invalid_string_returns_none(self):
         assert parse_date_field("not-a-date") is None
+
+
+# ---------------------------------------------------------------------------
+# fix_card_sections
+# ---------------------------------------------------------------------------
+
+
+def _make_deck_with_sections(sections):
+    """Build a minimal deck dict with given library_sections."""
+    total = sum(s["count"] for s in sections)
+    return {
+        "library_count": total,
+        "library_sections": sections,
+    }
+
+
+def _section(name, cards):
+    count = sum(c["count"] for c in cards)
+    return {"name": name, "count": count, "cards": cards}
+
+
+def _card(name, count=1):
+    return {"name": name, "count": count}
+
+
+# Mapping used in tests: card name → krcg section name
+_FAKE_KRCG = {
+    "Villein": "Master",
+    "Govern the Unaligned": "Action",
+    "Deflection": "Reaction",
+    "Mirror Walk": "Action Modifier",
+    "Plasmic Form": "Action Modifier/Combat",
+}
+
+
+def _fake_krcg_section(card_name: str):
+    return _FAKE_KRCG.get(card_name)
+
+
+class TestFixCardSections:
+    def _patch_krcg(self, available=True):
+        """Return a context-manager stack that fakes krcg availability."""
+        import contextlib
+
+        @contextlib.contextmanager
+        def _ctx():
+            with patch("vtes_scraper.validator._KRCG_LOADED", available), patch(
+                "vtes_scraper.validator._try_load_krcg", return_value=available
+            ), patch(
+                "vtes_scraper.validator._krcg_section", side_effect=_fake_krcg_section
+            ):
+                yield
+
+        return _ctx()
+
+    def test_no_changes_when_sections_correct(self):
+        deck = _make_deck_with_sections(
+            [
+                _section("Master", [_card("Villein", 3)]),
+                _section("Action", [_card("Govern the Unaligned", 2)]),
+            ]
+        )
+        with self._patch_krcg():
+            fixes = fix_card_sections(deck)
+        assert fixes == []
+        assert deck["library_sections"][0]["name"] == "Master"
+        assert deck["library_sections"][1]["name"] == "Action"
+
+    def test_moves_card_to_correct_section(self):
+        # Govern the Unaligned is in Master — should move to Action
+        deck = _make_deck_with_sections(
+            [
+                _section(
+                    "Master",
+                    [_card("Villein", 2), _card("Govern the Unaligned", 1)],
+                ),
+            ]
+        )
+        with self._patch_krcg():
+            fixes = fix_card_sections(deck)
+
+        assert len(fixes) == 1
+        assert "'Govern the Unaligned'" in fixes[0]
+        assert "'Master'" in fixes[0]
+        assert "'Action'" in fixes[0]
+
+        section_names = [s["name"] for s in deck["library_sections"]]
+        assert "Master" in section_names
+        assert "Action" in section_names
+        master = next(s for s in deck["library_sections"] if s["name"] == "Master")
+        assert master["count"] == 2
+        action = next(s for s in deck["library_sections"] if s["name"] == "Action")
+        assert action["count"] == 1
+
+    def test_library_count_updated(self):
+        deck = _make_deck_with_sections(
+            [
+                _section(
+                    "Master", [_card("Villein", 2), _card("Govern the Unaligned", 1)]
+                ),
+            ]
+        )
+        with self._patch_krcg():
+            fix_card_sections(deck)
+        assert deck["library_count"] == 3  # unchanged total
+
+    def test_unknown_card_stays_in_current_section(self):
+        deck = _make_deck_with_sections(
+            [_section("Master", [_card("Some Unknown Card", 1)])]
+        )
+        with self._patch_krcg():
+            fixes = fix_card_sections(deck)
+        assert fixes == []
+        assert deck["library_sections"][0]["name"] == "Master"
+
+    def test_krcg_unavailable_returns_empty(self):
+        deck = _make_deck_with_sections(
+            [_section("Master", [_card("Govern the Unaligned", 1)])]
+        )
+        with self._patch_krcg(available=False):
+            fixes = fix_card_sections(deck)
+        assert fixes == []
+
+    def test_empty_library_sections_returns_empty(self):
+        deck = {"library_sections": []}
+        with self._patch_krcg():
+            fixes = fix_card_sections(deck)
+        assert fixes == []
+
+    def test_sections_rebuilt_in_type_order(self):
+        """After fixing, sections must follow krcg TYPE_ORDER."""
+        # Put Reaction before Master deliberately
+        deck = _make_deck_with_sections(
+            [
+                _section("Reaction", [_card("Deflection", 2)]),
+                _section("Master", [_card("Villein", 3)]),
+            ]
+        )
+        # Both are already correct, so we force a move to trigger rebuild.
+        # Put Mirror Walk (Action Modifier) in the Master section.
+        deck["library_sections"][1]["cards"].append(_card("Mirror Walk", 1))
+        deck["library_sections"][1]["count"] += 1
+        deck["library_count"] += 1
+
+        with self._patch_krcg():
+            fixes = fix_card_sections(deck)
+
+        assert fixes  # something was moved
+        names = [s["name"] for s in deck["library_sections"]]
+        # Master should come before Action Modifier, which should come before Reaction
+        assert names.index("Master") < names.index("Action Modifier")
+        assert names.index("Action Modifier") < names.index("Reaction")

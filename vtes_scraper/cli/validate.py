@@ -24,7 +24,7 @@ from vtes_scraper.scraper import (
     fetch_event_date,
     resolve_winner,
 )
-from vtes_scraper.validator import error_types
+from vtes_scraper.validator import error_types, fix_card_sections
 
 
 def _load_yaml(path: Path) -> CommentedMap:
@@ -263,6 +263,19 @@ def run(args: argparse.Namespace) -> int:
                 logger.debug("Stack trace:", exc_info=True)
                 load_errors += 1
                 continue
+
+            # Fix library card sections using krcg card type data (always attempted;
+            # silently skipped when krcg is unavailable due to a network issue or the
+            # package not being installed).
+            deck_data = data.get("deck")
+            if deck_data:
+                section_fixes = fix_card_sections(deck_data)
+                if section_fixes:
+                    _save_yaml(path, data)
+                    console.print(
+                        f"[cyan]⚙[/cyan] {path.name}  card sections fixed:\n"
+                        + "\n".join(section_fixes)
+                    )
 
             # Optionally fetch the official date from the VEKN event calendar.
             calendar_date: date | None = None

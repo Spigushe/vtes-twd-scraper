@@ -11,8 +11,9 @@ requires-python = ">=3.14"
 license = { text = "MIT" }
 
 dependencies = [
-    "httpx>=0.27",           # HTTP client (async-ready for future extension)
     "beautifulsoup4>=4.12",  # HTML parsing
+    "httpx>=0.27",           # HTTP client (async-ready for future extension)
+    "krcg>=4.0",             # VTES card database (section validation)
     "lxml>=5.0",             # Fast HTML parser backend for bs4
     "pydantic>=2.11",        # Data validation and models
     "python-dotenv>=1.2",    # Access to .env

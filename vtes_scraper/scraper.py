@@ -490,6 +490,54 @@ def fetch_event_date(
     return None
 
 
+def fetch_event_winner(
+    client: httpx.Client,
+    event_url: str,
+    delay: float = DEFAULT_DELAY_SECONDS,
+) -> str | None:
+    """
+    Fetch the winner from a VEKN event calendar page.
+
+    Looks for a standings/results table whose header contains a position column
+    (``Pos.``, ``Pos``, ``Rank``, ``#``) and a player column (``Player``).
+    Returns the player name at position ``1``, or ``None`` if not found.
+    """
+    soup = _get(client, event_url, delay)
+
+    for table in soup.find_all("table"):
+        rows = table.find_all("tr")
+        if len(rows) < 2:
+            continue
+
+        header_cells = rows[0].find_all(["th", "td"])
+        header_texts = [cell.get_text(strip=True).lower() for cell in header_cells]
+
+        pos_col: int | None = None
+        player_col: int | None = None
+        for idx, text in enumerate(header_texts):
+            if pos_col is None and text in ("pos.", "pos", "rank", "#", "position"):
+                pos_col = idx
+            if player_col is None and "player" in text:
+                player_col = idx
+
+        if pos_col is None or player_col is None:
+            continue
+
+        for row in rows[1:]:
+            cells = row.find_all(["td", "th"])
+            if len(cells) <= max(pos_col, player_col):
+                continue
+            pos_text = cells[pos_col].get_text(strip=True)
+            if pos_text == "1":
+                player = cells[player_col].get_text(strip=True)
+                if player:
+                    logger.debug("Calendar winner found: %r at %s", player, event_url)
+                    return player
+
+    logger.debug("No winner table found in event page: %s", event_url)
+    return None
+
+
 def _name_without_digits(name: str) -> str:
     """Return *name* with digit sequences stripped and whitespace collapsed."""
     return re.sub(r"\s+", " ", re.sub(r"\d+", "", name)).strip()
@@ -790,6 +838,31 @@ def scrape_forum(
                 client, thread_url, delay=delay, fast_check=fast_check
             )
             if tournament:
+                # Prioritise the winner from the official VEKN calendar page when
+                # available — the standing table (Pos. 1 → Player column) is more
+                # reliable than the free-text winner field in forum posts.
+                if tournament.event_url:
+                    try:
+                        calendar_winner = fetch_event_winner(
+                            client, tournament.event_url, delay=delay
+                        )
+                        if calendar_winner and calendar_winner != tournament.winner:
+                            logger.debug(
+                                "Calendar winner override: %r → %r  (%s)",
+                                tournament.winner,
+                                calendar_winner,
+                                tournament.event_url,
+                            )
+                            tournament = tournament.model_copy(
+                                update={"winner": calendar_winner}
+                            )
+                    except Exception as exc:
+                        logger.warning(
+                            "Could not fetch calendar winner for %s: %s",
+                            tournament.event_url,
+                            exc,
+                        )
+
                 logger.debug(
                     "Scraped%s: [%s] %s — %s",
                     " (fix required)" if icon == ICON_MERGED else "",

@@ -41,7 +41,126 @@ determines the error directory used by the CLI validate command.
 
 from __future__ import annotations
 
+import logging
 from datetime import date
+
+_logger = logging.getLogger(__name__)
+
+# ---------------------------------------------------------------------------
+# krcg card-section validation helpers
+# ---------------------------------------------------------------------------
+
+_KRCG_LOADED: bool | None = None  # None = not yet attempted
+
+
+def _try_load_krcg() -> bool:
+    """
+    Attempt to load krcg VTES card data from the network.  Returns ``True`` if
+    the data is available.
+
+    The result is cached so the network round-trip only happens once per process.
+    Failures are logged at DEBUG level — callers should silently skip the check
+    when this returns ``False``.
+    """
+    global _KRCG_LOADED
+    if _KRCG_LOADED is not None:
+        return _KRCG_LOADED
+    try:
+        from krcg import vtes as _kv  # noqa: PLC0415
+
+        _kv.VTES.load()
+        _KRCG_LOADED = True
+    except Exception as exc:  # network error, package not installed, …
+        _logger.debug("krcg unavailable — card-section check skipped: %s", exc)
+        _KRCG_LOADED = False
+    return _KRCG_LOADED
+
+
+def _krcg_section(card_name: str) -> str | None:
+    """
+    Return the canonical section name for a library card according to krcg, or
+    ``None`` if the card is not in the database.
+
+    The section name is the card's types joined by ``"/"`` in alphabetical order,
+    matching krcg's ``TYPE_ORDER`` convention (e.g. ``"Action/Combat"``).
+    """
+    try:
+        from krcg import vtes as _kv  # noqa: PLC0415
+
+        card = _kv.VTES[card_name]
+        return "/".join(sorted(card.types))
+    except Exception:
+        return None
+
+
+def fix_card_sections(deck: dict) -> list[str]:
+    """
+    Validate and fix library card sections using krcg card type data.
+
+    For each library card, look it up in krcg and check whether it is in the
+    correct section (section name == ``"/".join(sorted(card.types))``).
+    Misassigned cards are moved to the correct section; cards that krcg cannot
+    identify are left in their current section.
+
+    Mutates *deck* in-place — ``library_sections`` is replaced with a rebuilt
+    list when corrections are needed, and ``library_count`` is kept consistent.
+
+    Returns a list of human-readable fix descriptions (empty when no changes
+    were made or when krcg is unavailable).
+    """
+    if not _try_load_krcg():
+        return []
+
+    from krcg import config as krcg_config  # noqa: PLC0415
+
+    library_sections = deck.get("library_sections") or []
+    if not library_sections:
+        return []
+
+    # --- Pass 1: detect misassigned cards ---
+    all_cards: list[tuple[str, dict]] = []  # (expected_section, card_dict)
+    fixes: list[str] = []
+    any_moved = False
+
+    for section in library_sections:
+        section_name = str(section.get("name") or "")
+        for card in list(section.get("cards") or []):
+            card_name = str(card.get("name") or "")
+            expected = _krcg_section(card_name)
+            if expected is None or expected == section_name:
+                all_cards.append((section_name, card))
+            else:
+                fixes.append(f"  {card_name!r}: {section_name!r} → {expected!r}")
+                all_cards.append((expected, card))
+                any_moved = True
+
+    if not any_moved:
+        return []
+
+    # --- Pass 2: rebuild sections in TYPE_ORDER ---
+    type_order: list[str] = krcg_config.TYPE_ORDER
+
+    def _order(name: str) -> int:
+        try:
+            return type_order.index(name)
+        except ValueError:
+            return len(type_order)
+
+    sections_map: dict[str, list[dict]] = {}
+    for section_name, card in all_cards:
+        sections_map.setdefault(section_name, []).append(card)
+
+    new_sections = []
+    for section_name in sorted(sections_map, key=_order):
+        cards = sections_map[section_name]
+        count = sum(int(c.get("count", 0)) for c in cards)
+        new_sections.append({"name": section_name, "count": count, "cards": cards})
+
+    deck["library_sections"] = new_sections
+    if "library_count" in deck:
+        deck["library_count"] = sum(s["count"] for s in new_sections)
+
+    return fixes
 
 
 def parse_date_field(raw) -> date | None:
