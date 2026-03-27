@@ -11,9 +11,11 @@ forum_post_url:
 deck:
   name: If Uballit, They Will Come
   created_by: Christopher Malec, with advice and assistance from Karl Schaefer
-  description: Uses multi-acting with bleeds and Shroud of decay to do big damage.  Votes are more for utility and 
-    bargaining, but some bloat and pool damage. One minion is capable of doing 13 damage under optimal conditions. Uses 
-    Lasombra princes and Archbishops to have a strong political presence in the game.
+  description: Uses multi-acting with bleeds and Shroud of decay to do big 
+    damage.  Votes are more for utility and bargaining, but some bloat and pool 
+    damage. One minion is capable of doing 13 damage under optimal conditions. 
+    Uses Lasombra princes and Archbishops to have a strong political presence in
+    the game.
   crypt_count: 12
   crypt_min: 30
   crypt_max: 40

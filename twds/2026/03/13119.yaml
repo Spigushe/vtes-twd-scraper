@@ -1,13 +1,14 @@
 name: Liga Powerbase JF 2026 Março
 location: Juiz de Fora, Brasil
-date_start: '2026-03-12'
+date_start: 2026-03-12
 rounds_format: 2R+F
 players_count: 15
 winner: Guilherme Machado
 vekn_number: 6130009
 event_url: https://www.vekn.net/event-calendar/event/13119
-event_id: '13119'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82902-twd-liga-powerbase-jf-2026-marco
+event_id: 13119
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82902-twd-liga-powerbase-jf-2026-marco
 deck:
   name: Salubri Rush
   description: ''
