@@ -7,8 +7,7 @@ winner: Rodinei Camargo
 event_url: https://www.vekn.net/event-calendar/event/11963
 event_id: 11963
 vp_comment: '5 different countries were represented at the final table:'
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82145-twd-true-love-s-face-mechelen-belgium-15-02-2025
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82145-twd-true-love-s-face-mechelen-belgium-15-02-2025
 deck:
   name: The Revenge of Ceoris
   created_by: Nei
@@ -100,6 +99,9 @@ deck:
       name: Bowl of Convergence
     - count: 1
       name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 8
+    cards:
     - count: 1
       name: Conditioning
     - count: 7

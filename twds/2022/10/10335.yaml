@@ -7,10 +7,9 @@ winner: Otso Saariluoma
 vekn_number: 3530054
 event_url: https://www.vekn.net/event-calendar/event/10335
 event_id: 10335
-vp_comment: 'Finals seating: Joona (unamed) -> Otso (Luts + friends) -> Teemu (Gangrel
-  barons wall) -> Otto (Ministry bleed + votes) -> Marko (Mambo rush)'
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80088-twd-12th-hiekkaharju-nighmares
+vp_comment: 'Finals seating: Joona (unamed) -> Otso (Luts + friends) -> Teemu (Gangrel barons wall) -> Otto (Ministry bleed
+  + votes) -> Marko (Mambo rush)'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80088-twd-12th-hiekkaharju-nighmares
 deck:
   name: Unmada’s Friends
   created_by: Otso
@@ -142,6 +141,9 @@ deck:
     cards:
     - count: 2
       name: Swallowed by the Night
+  - name: Reaction
+    count: 8
+    cards:
     - count: 2
       name: Eyes of Argus
     - count: 1

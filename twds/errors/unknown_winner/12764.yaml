@@ -6,8 +6,7 @@ players_count: 42
 winner: Povilas "Gildor" Zinkevičius
 event_url: https://www.vekn.net/player-registry/event/12764
 event_id: 12764
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82916-lithuanian-national-championship-2026
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82916-lithuanian-national-championship-2026
 deck:
   name: IT’S A F***ING TOOLBOX
   created_by: Gildor
@@ -128,6 +127,9 @@ deck:
       name: Palatial Estate
     - count: 1
       name: Ruins of Villers Abbey, Belgium
+  - name: Reaction
+    count: 8
+    cards:
     - count: 6
       name: Deflection
     - count: 1

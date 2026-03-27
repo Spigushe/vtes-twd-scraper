@@ -44,10 +44,10 @@ deck:
     disciplines: vic aus ani
     clan: Tzimisce
     grouping: 2
-  library_count: 90
+  library_count: 48
   library_sections:
   - name: Master
-    count: 21
+    count: 7
     cards:
     - count: 1
       name: Fame
@@ -63,17 +63,20 @@ deck:
       name: 'Powerbase: Montreal'
     - count: 1
       name: Rack, The
+  - name: Action
+    count: 1
+    cards:
+    - count: 1
+      name: Under Siege
   - name: Equipment
-    count: 3
+    count: 2
     cards:
     - count: 1
       name: Palatial Estate
     - count: 1
-      name: Under Siege
-    - count: 1
       name: bowl of comvergence
   - name: Reaction
-    count: 34
+    count: 19
     cards:
     - count: 4
       name: Cats' Guidance
@@ -84,7 +87,7 @@ deck:
     - count: 6
       name: Telepathic Misdirection
   - name: Combat
-    count: 32
+    count: 18
     cards:
     - count: 6
       name: Breath of the Dragon

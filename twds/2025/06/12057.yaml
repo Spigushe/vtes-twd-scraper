@@ -8,8 +8,7 @@ vekn_number: 2130082
 event_url: https://www.vekn.net/event-calendar/event/12057
 event_id: 12057
 vp_comment: 1GW5 + 3VP in Finals
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82472-twd-week-of-nightmares-event-3
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82472-twd-week-of-nightmares-event-3
 deck:
   name: Platinum Party
   created_by: Jeff Lake
@@ -76,7 +75,7 @@ deck:
   library_count: 90
   library_sections:
   - name: Master
-    count: 8
+    count: 20
     cards:
     - count: 1
       name: Anarch Railroad
@@ -111,7 +110,12 @@ deck:
       name: Entrancement
     - count: 20
       name: Platinum Protocol
-  - name: Action Modifiers
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Carlton Van Wick
+  - name: Action Modifier
     count: 21
     cards:
     - count: 2
@@ -128,21 +132,7 @@ deck:
       name: Revelation of the Serpent
     - count: 2
       name: Spying Mission
-  - name: Ally
-    count: 1
-    cards:
-    - count: 1
-      name: Carlton Van Wick
-  - name: Combat
-    count: 11
-    cards:
-    - count: 2
-      name: Donnybrook
-    - count: 5
-      name: Earth Meld
-    - count: 4
-      name: Form of Mist
-  - name: Combo
+  - name: Action Modifier/Combat
     count: 3
     cards:
     - count: 3
@@ -156,3 +146,12 @@ deck:
       name: On the Que Vive
     - count: 8
       name: Party Out of Bounds
+  - name: Combat
+    count: 11
+    cards:
+    - count: 2
+      name: Donnybrook
+    - count: 5
+      name: Earth Meld
+    - count: 4
+      name: Form of Mist
