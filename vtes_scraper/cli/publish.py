@@ -127,7 +127,9 @@ def _write_publish_report(
     lines.append("")
 
     lines += [f"## Skipped — already on master ({len(result.skipped)})", ""]
-    lines.append(", ".join(result.skipped) if result.skipped else "_None._")
+    lines.append(
+        ", ".join(str(e) for e in result.skipped) if result.skipped else "_None._"
+    )
     lines.append("")
 
     lines += [f"## Errors ({len(result.errors)})", ""]

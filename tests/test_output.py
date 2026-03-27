@@ -422,6 +422,21 @@ class TestTournamentToYamlStr:
         # Just verify it renders without error
         assert "description:" in result
 
+    def test_date_rendered_without_quotes(self):
+        """date_start must be a bare YAML date, not a quoted string."""
+        t = _make_tournament(date_start=date(2026, 3, 15))
+        result = tournament_to_yaml_str(t)
+        # YAML date: `date_start: 2026-03-15` (no surrounding quotes)
+        assert "date_start: 2026-03-15" in result
+        assert "date_start: '2026-03-15'" not in result
+
+    def test_event_id_rendered_as_int(self):
+        """event_id must be a bare integer, not a quoted string."""
+        t = _make_tournament(event_url="https://www.vekn.net/event-calendar/event/9999")
+        result = tournament_to_yaml_str(t)
+        assert "event_id: 9999" in result
+        assert "event_id: '9999'" not in result
+
 
 # ---------------------------------------------------------------------------
 # write_tournament_yaml

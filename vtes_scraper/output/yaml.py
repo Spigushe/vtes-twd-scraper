@@ -1,5 +1,4 @@
 import io
-import json
 from pathlib import Path
 
 from ruamel.yaml import YAML
@@ -10,8 +9,23 @@ from vtes_scraper.output._common import _date_subdir
 
 
 def _to_serializable(obj) -> dict:
-    """Convert a Pydantic model to a plain dict, recursively."""
-    return json.loads(obj.model_dump_json(exclude_none=True))
+    """Convert a Pydantic model to a plain dict, preserving Python native types.
+
+    Uses model_dump() (not JSON round-trip) so that date objects remain as
+    datetime.date instances — ruamel.yaml then renders them as bare YAML dates
+    (2026-03-15) rather than quoted strings ('2026-03-15').
+    """
+
+    def _filter_none(value: object) -> object:
+        if isinstance(value, dict):
+            return {k: _filter_none(v) for k, v in value.items() if v is not None}
+        if isinstance(value, list):
+            return [_filter_none(item) for item in value]
+        return value
+
+    result = _filter_none(obj.model_dump())
+    assert isinstance(result, dict)
+    return result
 
 
 def _prepare_yaml_dict(tournament: Tournament) -> dict:

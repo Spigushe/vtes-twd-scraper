@@ -81,7 +81,7 @@ class Tournament(BaseModel):
     event_url: str  # https://www.vekn.net/event-calendar/event/XXXX
 
     # --- Derived ---
-    event_id: str | None = None  # extracted from event_url
+    event_id: int | None = None  # extracted from event_url
 
     # --- Optional ---
     vp_comment: str | None = None
@@ -90,12 +90,20 @@ class Tournament(BaseModel):
 
     @model_validator(mode="after")
     def derive_event_id(self) -> Tournament:
-        """Extract numeric id from event_url, e.g. '.../event/8470' → '8470'."""
+        """Extract numeric id from event_url, e.g. '.../event/8470' → 8470."""
         if self.event_url:
             match = re.search(r"/event/(\d+)", self.event_url)
             if match:
-                self.event_id = match.group(1)
+                self.event_id = int(match.group(1))
         return self
+
+    @field_validator("event_id", mode="before")
+    @classmethod
+    def coerce_event_id(cls, v):
+        """Accept '13107' or 13107 for back-compatibility with existing YAML files."""
+        if isinstance(v, str) and v.strip().isdigit():
+            return int(v.strip())
+        return v
 
     @field_validator("rounds_format")
     @classmethod

@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 
 from vtes_scraper.scraper import (
     _get,
+    _is_valid_winner_name,
     _kunena_div_to_text,
     extract_twd_from_thread,
     fetch_event_date,
@@ -626,3 +627,69 @@ class TestFetchPlayer:
         with patch("vtes_scraper.scraper._get", return_value=soup):
             result = fetch_player(mock_client, "Alice", delay=0)
         assert result is None
+
+
+# ---------------------------------------------------------------------------
+# _is_valid_winner_name
+# ---------------------------------------------------------------------------
+
+
+class TestIsValidWinnerName:
+    def test_normal_name_valid(self):
+        assert _is_valid_winner_name("Jane Doe") is True
+
+    def test_name_with_accents_valid(self):
+        assert _is_valid_winner_name("Italo Girianelli Neto") is True
+
+    def test_empty_string_invalid(self):
+        assert _is_valid_winner_name("") is False
+
+    def test_whitespace_only_invalid(self):
+        assert _is_valid_winner_name("   ") is False
+
+    def test_trailing_open_paren_invalid(self):
+        # Parse artifact like "Jane Doe ("
+        assert _is_valid_winner_name("Jane Doe (") is False
+
+    def test_trailing_comma_invalid(self):
+        assert _is_valid_winner_name("Jane Doe,") is False
+
+    def test_trailing_semicolon_invalid(self):
+        assert _is_valid_winner_name("Jane Doe;") is False
+
+    def test_no_alphabetic_chars_invalid(self):
+        assert _is_valid_winner_name("12345") is False
+
+    def test_name_with_trailing_whitespace_stripped_valid(self):
+        assert _is_valid_winner_name("Jane Doe   ") is True
+
+
+# Thread with a garbled winner name (parse artifact)
+THREAD_HTML_GARBLED_WINNER = """
+<html><body>
+<div class="kmsg">Conservative Agitation<br>Vila Velha, Brazil<br>October 1st 2016<br>2R+F<br>12 players<br>Ravel Zorzal (<br>https://www.vekn.net/event-calendar/event/8470<br><br>Crypt (2 cards, min=4, max=4, avg=4)<br>-------------------------------------<br>2x Nathan Turner      4 PRO ani                 Gangrel:6<br><br>Library (1 cards)<br>Master (1)<br>1x Blood Doll</div>
+</body></html>
+"""
+
+
+class TestExtractTwdWinnerValidation:
+    def test_garbled_winner_returns_none(self):
+        """A tournament with a garbled winner name must be rejected."""
+        soup = BeautifulSoup(THREAD_HTML_GARBLED_WINNER, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = extract_twd_from_thread(
+                mock_client, "https://example.com", delay=0
+            )
+        assert result is None
+
+    def test_valid_winner_accepted(self):
+        """A tournament with a clean winner name is accepted normally."""
+        soup = BeautifulSoup(THREAD_HTML_VALID, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._get", return_value=soup):
+            result = extract_twd_from_thread(
+                mock_client, "https://example.com", delay=0
+            )
+        assert result is not None
+        assert result.winner == "Ravel Zorzal"

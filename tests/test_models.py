@@ -137,8 +137,18 @@ class TestEventId:
         t = _make_tournament(
             event_url="https://www.vekn.net/event-calendar/event/12345"
         )
-        assert t.event_id == "12345"
+        assert t.event_id == 12345
+        assert isinstance(t.event_id, int)
 
     def test_no_match_stays_none(self):
         t = _make_tournament(event_url="https://www.vekn.net/other/page")
         assert t.event_id is None
+
+    def test_string_event_id_coerced_to_int(self):
+        """Back-compat: existing YAML files may have event_id as a quoted string."""
+        t = _make_tournament(
+            event_url="https://www.vekn.net/event-calendar/event/9999",
+            event_id="9999",
+        )
+        assert t.event_id == 9999
+        assert isinstance(t.event_id, int)

@@ -122,7 +122,7 @@ class TestMandatoryFields:
 
     def test_event_id_derived_from_url(self):
         t = parse_twd_text(EXAMPLE_SIMPLE)
-        assert t.event_id == "8470"
+        assert t.event_id == 8470
 
     def test_output_filename(self):
         t = parse_twd_text(EXAMPLE_SIMPLE)
@@ -167,7 +167,7 @@ class TestHashComments:
         t = parse_twd_text(EXAMPLE_WITH_HASH_COMMENTS)
         assert t.name == "6th Great Symposium"
         assert t.location == "Mikkeli, Finland"
-        assert t.event_id == "10546"
+        assert t.event_id == 10546
 
 
 # ---------------------------------------------------------------------------

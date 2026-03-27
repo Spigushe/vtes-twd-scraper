@@ -58,13 +58,13 @@ class BatchPRResult:
     pr_url: str | None = None
     """URL of the opened (or already-open) PR, None if nothing was published."""
 
-    published: list[str] = field(default_factory=list)
+    published: list[int | str] = field(default_factory=list)
     """event_ids successfully committed to the PR branch."""
 
-    skipped: list[str] = field(default_factory=list)
+    skipped: list[int | str] = field(default_factory=list)
     """event_ids already present on master — not included in the PR."""
 
-    errors: list[tuple[str, str]] = field(default_factory=list)
+    errors: list[tuple[int | str, str]] = field(default_factory=list)
     """(event_id, error_message) pairs for decks that could not be committed."""
 
     skipped_all: bool = False

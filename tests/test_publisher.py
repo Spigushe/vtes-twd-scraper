@@ -554,8 +554,8 @@ class TestPublishAllAsSinglePr:
         ):
             result = publish_all_as_single_pr([t1, t2], token="mytoken", delay=0)
 
-        assert "9001" in result.skipped
-        assert "9002" in result.published
+        assert 9001 in result.skipped
+        assert 9002 in result.published
 
     def test_dry_run_deletes_branch_and_no_pr(self):
         t = _make_tournament()

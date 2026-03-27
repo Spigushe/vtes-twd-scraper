@@ -21,6 +21,11 @@ Mandatory deck fields
                    (cards with grouping==ANY are ignored in this check)
   empty_library  : deck.library_sections list is empty (no library cards found)
 
+Deck count consistency
+  crypt_count_mismatch          : deck.crypt_count != sum of each crypt card count
+  library_section_count_mismatch: a library section count != sum of its card counts
+  library_count_mismatch        : deck.library_count != sum of all section counts
+
 Player count
   too_few_players : players_count is present but below the minimum of 12
 
@@ -91,6 +96,40 @@ def error_types(data: dict, calendar_date: date | None = None) -> list[str]:
             errors.append("illegal_crypt")
     if not deck.get("library_sections"):
         errors.append("empty_library")
+
+    # --- Deck count consistency ---
+    if deck:
+        crypt = deck.get("crypt") or []
+        if crypt and deck.get("crypt_count") is not None:
+            expected_crypt = sum(
+                card.get("count", 0) for card in crypt if isinstance(card, dict)
+            )
+            if deck["crypt_count"] != expected_crypt:
+                errors.append("crypt_count_mismatch")
+
+        library_sections = deck.get("library_sections") or []
+        for section in library_sections:
+            if not isinstance(section, dict):
+                continue
+            section_cards = section.get("cards") or []
+            if section.get("count") is not None and section_cards:
+                expected_section = sum(
+                    card.get("count", 0)
+                    for card in section_cards
+                    if isinstance(card, dict)
+                )
+                if section["count"] != expected_section:
+                    errors.append("library_section_count_mismatch")
+                    break  # one occurrence is enough
+
+        if library_sections and deck.get("library_count") is not None:
+            expected_library = sum(
+                section.get("count", 0)
+                for section in library_sections
+                if isinstance(section, dict)
+            )
+            if deck["library_count"] != expected_library:
+                errors.append("library_count_mismatch")
 
     # --- Player count floor ---
     players_count = data.get("players_count") or 0

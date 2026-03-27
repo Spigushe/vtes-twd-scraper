@@ -291,6 +291,28 @@ def extract_twd_from_thread(
     return _extract_twd_slow(client, thread_url, delay)
 
 
+_WINNER_TRAILING_GARBAGE_RE = re.compile(r"[\s(,;:]+$")
+"""Trailing characters that indicate a garbled winner name from a parse error."""
+
+
+def _is_valid_winner_name(name: str) -> bool:
+    """Return True if *name* looks like a real player name.
+
+    Rejects names that are clearly parse artifacts:
+    - empty or whitespace-only
+    - end with dangling punctuation/brackets (e.g. "Jane Doe (")
+    - contain no alphabetic characters at all
+    """
+    stripped = name.strip()
+    if not stripped:
+        return False
+    if _WINNER_TRAILING_GARBAGE_RE.search(stripped):
+        return False
+    if not any(c.isalpha() for c in stripped):
+        return False
+    return True
+
+
 def _extract_twd_fast(
     client: httpx.Client,
     thread_url: str,
@@ -313,10 +335,18 @@ def _extract_twd_fast(
 
     logger.debug("Raw text preview:\n%s", raw_text[:300])
     try:
-        return parse_twd_text(raw_text, forum_post_url=thread_url)
+        tournament = parse_twd_text(raw_text, forum_post_url=thread_url)
     except (ValueError, Exception) as exc:
         logger.warning("First post not parseable in %s: %s", thread_url, exc)
         return None
+
+    if not _is_valid_winner_name(tournament.winner):
+        logger.warning(
+            "Garbled winner name %r in %s — skipping", tournament.winner, thread_url
+        )
+        return None
+
+    return tournament
 
 
 def _extract_twd_slow(
@@ -361,11 +391,23 @@ def _extract_twd_slow(
             logger.debug("Raw text preview:\n%s", raw_text[:300])
             try:
                 tournament = parse_twd_text(raw_text, forum_post_url=thread_url)
-                return tournament
             except (ValueError, Exception) as exc:
                 logger.debug(
                     "Post %d on page %d not parseable: %s", post_idx, page + 1, exc
                 )
+                continue
+
+            if not _is_valid_winner_name(tournament.winner):
+                logger.warning(
+                    "Garbled winner name %r in post %d on page %d of %s — skipping",
+                    tournament.winner,
+                    post_idx,
+                    page + 1,
+                    thread_url,
+                )
+                continue
+
+            return tournament
 
         if not found_new:
             logger.info(
@@ -446,6 +488,19 @@ def fetch_event_date(
 
     logger.warning("Could not extract date from event page: %s", event_url)
     return None
+
+
+def _name_without_digits(name: str) -> str:
+    """Return *name* with digit sequences stripped and whitespace collapsed."""
+    return re.sub(r"\s+", " ", re.sub(r"\d+", "", name)).strip()
+
+
+def _name_without_accents(name: str) -> str:
+    """Return *name* with diacritics and non-word/non-space characters stripped."""
+    ascii_name = (
+        unicodedata.normalize("NFD", name).encode("ascii", "ignore").decode("ascii")
+    )
+    return re.sub(r"\s+", " ", re.sub(r"[^\w\s]", "", ascii_name)).strip()
 
 
 _NAME_SIMILARITY_THRESHOLD = 0.80
@@ -597,6 +652,104 @@ def fetch_player(
             )
 
     logger.debug("No player found for %r", name)
+    return None
+
+
+def resolve_winner(
+    client: httpx.Client,
+    winner: str,
+    coercions: dict[str, dict[str, int | str]] | None = None,
+    delay: float = DEFAULT_DELAY_SECONDS,
+) -> tuple[str, int] | None:
+    """
+    Resolve a winner name to ``(canonical_name, vekn_number)`` via the VEKN member DB.
+
+    Tries several normalisations in order until one succeeds:
+
+    1. Coercions cache with the raw name (no HTTP request).
+    2. Direct lookup: ``fetch_player(winner)``.
+    3. Bracket-stripped: remove trailing ``(`` / ``[`` artifacts and retry.
+    4. Digit-stripped: remove embedded numbers (e.g. "Name 3200006") and retry.
+    5. Accent-stripped: remove diacritics and retry.
+
+    On success the raw-name → canonical-name mapping is added to *coercions*
+    (if provided) so future calls skip the network round-trip.
+
+    Returns ``(canonical_name, vekn_number)`` or ``None`` if unresolvable.
+    """
+    # Pre-normalise: strip "Winner:" label prefix sometimes left by the parser.
+    raw = winner
+    clean = re.sub(r"^Winner\s*:\s*", "", winner, flags=re.IGNORECASE).strip()
+
+    def _cache_hit(candidate: str) -> tuple[str, int] | None:
+        if coercions and candidate in coercions:
+            entry = coercions[candidate]
+            return str(entry["winner"]), int(entry["vekn_number"])
+        return None
+
+    def _store(canonical: str, vekn: int) -> tuple[str, int]:
+        if coercions is not None:
+            entry: dict[str, int | str] = {"winner": canonical, "vekn_number": vekn}
+            coercions[raw] = entry
+            coercions[canonical] = entry
+        return canonical, vekn
+
+    # Step 0: cache hit on the raw name — store it so future lookups are instant.
+    hit = _cache_hit(clean)
+    if hit:
+        return _store(*hit)
+
+    # Step 1: direct lookup — exceptions propagate so the caller can distinguish
+    # "network error" (should not move the file) from "not found" (None return).
+    result: tuple[str, int] | None = fetch_player(client, clean, delay=delay)
+    if result:
+        return _store(*result)
+
+    # Step 1b: strip trailing unclosed brackets (e.g. "Jane Doe (")
+    clean_bracket = re.sub(r"\s*[\(\[]+\s*$", "", clean)
+    if clean_bracket and clean_bracket != clean:
+        hit = _cache_hit(clean_bracket)
+        if hit:
+            return _store(*hit)
+        try:
+            result = fetch_player(client, clean_bracket, delay=delay)
+        except Exception as exc:
+            logger.warning(
+                "fetch_player (bracket-stripped) failed for %r: %s", clean_bracket, exc
+            )
+        if result:
+            return _store(*result)
+        clean = clean_bracket  # subsequent steps use the bracket-stripped form as base
+
+    # Step 2: strip embedded digits (e.g. "Frederic Pin 3200006")
+    no_digits = _name_without_digits(clean)
+    if no_digits and no_digits != clean:
+        hit = _cache_hit(no_digits)
+        if hit:
+            return _store(*hit)
+        try:
+            result = fetch_player(client, no_digits, delay=delay)
+        except Exception as exc:
+            logger.warning(
+                "fetch_player (digit-stripped) failed for %r: %s", no_digits, exc
+            )
+        if result:
+            return _store(*result)
+
+    # Step 3: strip accents and non-word characters
+    ascii_name = _name_without_accents(clean)
+    if ascii_name and ascii_name != clean:
+        hit = _cache_hit(ascii_name)
+        if hit:
+            return _store(*hit)
+        try:
+            result = fetch_player(client, ascii_name, delay=delay)
+        except Exception as exc:
+            logger.warning("fetch_player (ascii) failed for %r: %s", ascii_name, exc)
+        if result:
+            return _store(*result)
+
+    logger.debug("Could not resolve winner %r in VEKN database", winner)
     return None
 
 

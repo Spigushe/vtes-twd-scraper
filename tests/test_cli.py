@@ -9,6 +9,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
+import vtes_scraper.scraper as scraper_mod
 from vtes_scraper import validator
 from vtes_scraper.cli import _build_parser, _common
 from vtes_scraper.cli import fix_dates as fix_dates_cmd
@@ -360,8 +361,12 @@ class TestScrapeCommand:
         t = _make_tournament()
         with tempfile.TemporaryDirectory() as tmpdir:
             args = _scrape_namespace(output_dir=Path(tmpdir))
-            with patch(
-                "vtes_scraper.cli.scrape.scrape_forum", return_value=iter([(t, None)])
+            with (
+                patch(
+                    "vtes_scraper.cli.scrape.scrape_forum",
+                    return_value=iter([(t, None)]),
+                ),
+                patch("vtes_scraper.scraper.fetch_player", return_value=None),
             ):
                 ret = scrape_cmd.run(args)
             assert ret == 0
@@ -375,6 +380,7 @@ class TestScrapeCommand:
                     "vtes_scraper.cli.scrape.scrape_forum",
                     return_value=iter([(t, None)]),
                 ),
+                patch("vtes_scraper.scraper.fetch_player", return_value=None),
                 patch(
                     "vtes_scraper.cli.scrape.write_tournament_yaml",
                     side_effect=FileExistsError("exists"),
@@ -392,6 +398,7 @@ class TestScrapeCommand:
                     "vtes_scraper.cli.scrape.scrape_forum",
                     return_value=iter([(t, None)]),
                 ),
+                patch("vtes_scraper.scraper.fetch_player", return_value=None),
                 patch(
                     "vtes_scraper.cli.scrape.write_tournament_yaml",
                     side_effect=Exception("error"),
@@ -444,6 +451,203 @@ class TestScrapeCommand:
                 scrape_cmd.run(args)
             _, kwargs = mock_sf.call_args
             assert kwargs["max_pages"] is None
+
+    def test_run_enriches_winner_with_vekn_number(self):
+        """Player lookup always runs; resolved name and vekn_number end up in the file."""
+        t = _make_tournament()
+        assert t.vekn_number is None
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = _scrape_namespace(output_dir=Path(tmpdir))
+            with (
+                patch(
+                    "vtes_scraper.cli.scrape.scrape_forum",
+                    return_value=iter([(t, None)]),
+                ),
+                patch(
+                    "vtes_scraper.scraper.fetch_player",
+                    return_value=("Jane Doe", 3940009),
+                ),
+            ):
+                ret = scrape_cmd.run(args)
+            assert ret == 0
+            written = list(Path(tmpdir).rglob("*.yaml"))
+            assert len(written) == 1
+            content = written[0].read_text(encoding="utf-8")
+            assert "vekn_number: 3940009" in content
+
+    def test_run_unknown_winner_still_written(self):
+        """Unresolvable winners are written without vekn_number (not blocked)."""
+        t = _make_tournament()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = _scrape_namespace(output_dir=Path(tmpdir))
+            with (
+                patch(
+                    "vtes_scraper.cli.scrape.scrape_forum",
+                    return_value=iter([(t, None)]),
+                ),
+                patch("vtes_scraper.scraper.fetch_player", return_value=None),
+            ):
+                ret = scrape_cmd.run(args)
+            assert ret == 0
+            written = list(Path(tmpdir).rglob("*.yaml"))
+            assert len(written) == 1
+
+    def test_run_coercions_saved_on_new_resolution(self):
+        """coercions.json is created/updated when a new player name is resolved."""
+        import json
+
+        t = _make_tournament()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = _scrape_namespace(output_dir=Path(tmpdir))
+            with (
+                patch(
+                    "vtes_scraper.cli.scrape.scrape_forum",
+                    return_value=iter([(t, None)]),
+                ),
+                patch(
+                    "vtes_scraper.scraper.fetch_player",
+                    return_value=("Jane Doe", 3940009),
+                ),
+            ):
+                scrape_cmd.run(args)
+            coercions_path = Path(tmpdir) / "coercions.json"
+            assert coercions_path.exists()
+            data = json.loads(coercions_path.read_text())
+            assert "Jane Doe" in data
+
+    def test_run_skips_lookup_when_vekn_number_present(self):
+        """Tournaments that already carry a vekn_number are not re-looked-up."""
+        t = _make_tournament()
+        t = t.model_copy(update={"vekn_number": 3940009})
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = _scrape_namespace(output_dir=Path(tmpdir))
+            with (
+                patch(
+                    "vtes_scraper.cli.scrape.scrape_forum",
+                    return_value=iter([(t, None)]),
+                ),
+                patch("vtes_scraper.scraper.fetch_player") as mock_fp,
+            ):
+                scrape_cmd.run(args)
+            mock_fp.assert_not_called()
+
+    def test_run_uses_coercions_cache(self):
+        """Pre-populated coercions.json is used without an HTTP request."""
+        import json
+
+        t = _make_tournament()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            coercions_path = Path(tmpdir) / "coercions.json"
+            coercions_path.write_text(
+                json.dumps(
+                    {"Jane Doe": {"winner": "Jane Doe", "vekn_number": 3940009}}
+                ),
+                encoding="utf-8",
+            )
+            args = _scrape_namespace(output_dir=Path(tmpdir))
+            with (
+                patch(
+                    "vtes_scraper.cli.scrape.scrape_forum",
+                    return_value=iter([(t, None)]),
+                ),
+                patch("vtes_scraper.scraper.fetch_player") as mock_fp,
+            ):
+                scrape_cmd.run(args)
+            mock_fp.assert_not_called()
+            written = list(Path(tmpdir).rglob("*.yaml"))
+            assert len(written) == 1
+            content = written[0].read_text(encoding="utf-8")
+            assert "vekn_number: 3940009" in content
+
+
+# ---------------------------------------------------------------------------
+# resolve_winner
+# ---------------------------------------------------------------------------
+
+
+class TestResolveWinner:
+    def test_direct_lookup_success(self):
+        mock_client = MagicMock()
+        with patch(
+            "vtes_scraper.scraper.fetch_player", return_value=("Jane Doe", 3940009)
+        ):
+            result = scraper_mod.resolve_winner(mock_client, "Jane Doe", delay=0)
+        assert result == ("Jane Doe", 3940009)
+
+    def test_returns_none_when_all_steps_fail(self):
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper.fetch_player", return_value=None):
+            result = scraper_mod.resolve_winner(mock_client, "Jane Doe", delay=0)
+        assert result is None
+
+    def test_bracket_stripped_fallback(self):
+        def fake_fp(client, name, delay=0):
+            return ("Jane Doe", 1234) if name == "Jane Doe" else None
+
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper.fetch_player", side_effect=fake_fp):
+            result = scraper_mod.resolve_winner(mock_client, "Jane Doe (", delay=0)
+        assert result == ("Jane Doe", 1234)
+
+    def test_digit_stripped_fallback(self):
+        def fake_fp(client, name, delay=0):
+            return ("Jane Doe", 1234) if name == "Jane Doe" else None
+
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper.fetch_player", side_effect=fake_fp):
+            result = scraper_mod.resolve_winner(
+                mock_client, "Jane Doe 3200006", delay=0
+            )
+        assert result == ("Jane Doe", 1234)
+
+    def test_accent_stripped_fallback(self):
+        def fake_fp(client, name, delay=0):
+            return ("Jane Doe", 1234) if name == "Jane Doe" else None
+
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper.fetch_player", side_effect=fake_fp):
+            result = scraper_mod.resolve_winner(mock_client, "Jàne Döe", delay=0)
+        assert result == ("Jane Doe", 1234)
+
+    def test_winner_prefix_stripped(self):
+        mock_client = MagicMock()
+        with patch(
+            "vtes_scraper.scraper.fetch_player", return_value=("Jane Doe", 1234)
+        ) as mock_fp:
+            scraper_mod.resolve_winner(mock_client, "Winner: Jane Doe", delay=0)
+        mock_fp.assert_called_once_with(mock_client, "Jane Doe", delay=0)
+
+    def test_coercions_cache_hit_skips_http(self):
+        mock_client = MagicMock()
+        coercions = {"Jane Doe": {"winner": "Jane Doe", "vekn_number": 3940009}}
+        with patch("vtes_scraper.scraper.fetch_player") as mock_fp:
+            result = scraper_mod.resolve_winner(
+                mock_client, "Jane Doe", coercions=coercions, delay=0
+            )
+        mock_fp.assert_not_called()
+        assert result == ("Jane Doe", 3940009)
+
+    def test_coercions_stores_new_resolution(self):
+        mock_client = MagicMock()
+        coercions: dict = {}
+        with patch(
+            "vtes_scraper.scraper.fetch_player", return_value=("Jane Doe", 3940009)
+        ):
+            scraper_mod.resolve_winner(
+                mock_client, "Jane Doe", coercions=coercions, delay=0
+            )
+        assert "Jane Doe" in coercions
+        assert coercions["Jane Doe"]["vekn_number"] == 3940009
+
+    def test_step1_exception_propagates(self):
+        """Network errors on step 1 propagate so the caller can choose not to move files."""
+        mock_client = MagicMock()
+        with patch(
+            "vtes_scraper.scraper.fetch_player", side_effect=Exception("network down")
+        ):
+            with pytest.raises(Exception, match="network down"):
+                scraper_mod.resolve_winner(mock_client, "Jane Doe", delay=0)
 
 
 # ---------------------------------------------------------------------------
@@ -800,34 +1004,34 @@ class TestValidateCommand:
     # ------------------------------------------------------------------
 
     def test_name_without_digits_plain_name(self):
-        assert validate_cmd._name_without_digits("Jane Doe") == "Jane Doe"
+        assert scraper_mod._name_without_digits("Jane Doe") == "Jane Doe"
 
     def test_name_without_digits_name_with_number(self):
         assert (
-            validate_cmd._name_without_digits("Frederic Pin 3200006") == "Frederic Pin"
+            scraper_mod._name_without_digits("Frederic Pin 3200006") == "Frederic Pin"
         )
 
     def test_name_without_digits_only_digits(self):
-        assert validate_cmd._name_without_digits("12345") == ""
+        assert scraper_mod._name_without_digits("12345") == ""
 
     def test_name_without_digits_mixed(self):
-        assert validate_cmd._name_without_digits("John 42 Smith") == "John Smith"
+        assert scraper_mod._name_without_digits("John 42 Smith") == "John Smith"
 
     # ------------------------------------------------------------------
     # _name_without_accents helper
     # ------------------------------------------------------------------
 
     def test_name_without_accents_plain(self):
-        assert validate_cmd._name_without_accents("Jane Doe") == "Jane Doe"
+        assert scraper_mod._name_without_accents("Jane Doe") == "Jane Doe"
 
     def test_name_without_accents_with_diacritics(self):
-        assert validate_cmd._name_without_accents("Frédéric Pïn") == "Frederic Pin"
+        assert scraper_mod._name_without_accents("Frédéric Pïn") == "Frederic Pin"
 
     def test_name_without_accents_with_non_word_chars(self):
-        assert validate_cmd._name_without_accents("O'Brien") == "OBrien"
+        assert scraper_mod._name_without_accents("O'Brien") == "OBrien"
 
     def test_name_without_accents_already_ascii(self):
-        assert validate_cmd._name_without_accents("John Smith") == "John Smith"
+        assert scraper_mod._name_without_accents("John Smith") == "John Smith"
 
     # ------------------------------------------------------------------
     # --check-players argument registered
@@ -859,7 +1063,7 @@ class TestValidateCommand:
             data = validate_cmd._load_yaml(yaml_file)
             mock_client = MagicMock()
             with patch(
-                "vtes_scraper.cli.validate.fetch_player",
+                "vtes_scraper.scraper.fetch_player",
                 return_value=("Jane Doe", 3940009),
             ):
                 found, moved = validate_cmd._check_player(
@@ -888,7 +1092,7 @@ class TestValidateCommand:
 
             mock_client = MagicMock()
             with patch(
-                "vtes_scraper.cli.validate.fetch_player", side_effect=fake_fetch_player
+                "vtes_scraper.scraper.fetch_player", side_effect=fake_fetch_player
             ):
                 found, moved = validate_cmd._check_player(
                     mock_client, yaml_file, data, Path(tmpdir), 0, logging.getLogger()
@@ -910,7 +1114,7 @@ class TestValidateCommand:
             data = validate_cmd._load_yaml(yaml_file)
             mock_client = MagicMock()
             with patch(
-                "vtes_scraper.cli.validate.fetch_player",
+                "vtes_scraper.scraper.fetch_player",
                 return_value=("Jane Doe", 3940009),
             ) as mock_fetch:
                 found, moved = validate_cmd._check_player(
@@ -940,7 +1144,7 @@ class TestValidateCommand:
 
             mock_client = MagicMock()
             with patch(
-                "vtes_scraper.cli.validate.fetch_player", side_effect=fake_fetch_player
+                "vtes_scraper.scraper.fetch_player", side_effect=fake_fetch_player
             ):
                 found, moved = validate_cmd._check_player(
                     mock_client, yaml_file, data, Path(tmpdir), 0, logging.getLogger()
@@ -975,7 +1179,7 @@ class TestValidateCommand:
 
             mock_client = MagicMock()
             with patch(
-                "vtes_scraper.cli.validate.fetch_player", side_effect=fake_fetch_player
+                "vtes_scraper.scraper.fetch_player", side_effect=fake_fetch_player
             ):
                 found, moved = validate_cmd._check_player(
                     mock_client, yaml_file, data, Path(tmpdir), 0, logging.getLogger()
@@ -993,7 +1197,7 @@ class TestValidateCommand:
             yaml_file.write_text(VALID_YAML, encoding="utf-8")
             data = validate_cmd._load_yaml(yaml_file)
             mock_client = MagicMock()
-            with patch("vtes_scraper.cli.validate.fetch_player", return_value=None):
+            with patch("vtes_scraper.scraper.fetch_player", return_value=None):
                 found, moved = validate_cmd._check_player(
                     mock_client, yaml_file, data, Path(tmpdir), 0, logging.getLogger()
                 )
@@ -1010,7 +1214,7 @@ class TestValidateCommand:
             data = validate_cmd._load_yaml(yaml_file)
             data["winner"] = ""
             mock_client = MagicMock()
-            with patch("vtes_scraper.cli.validate.fetch_player") as mock_fp:
+            with patch("vtes_scraper.scraper.fetch_player") as mock_fp:
                 found, moved = validate_cmd._check_player(
                     mock_client, yaml_file, data, Path(tmpdir), 0, logging.getLogger()
                 )
@@ -1026,7 +1230,7 @@ class TestValidateCommand:
             data = validate_cmd._load_yaml(yaml_file)
             mock_client = MagicMock()
             with patch(
-                "vtes_scraper.cli.validate.fetch_player",
+                "vtes_scraper.scraper.fetch_player",
                 side_effect=Exception("network error"),
             ):
                 found, moved = validate_cmd._check_player(
@@ -1053,7 +1257,7 @@ class TestValidateCommand:
                 delay=0,
                 verbose=False,
             )
-            with patch("vtes_scraper.cli.validate.fetch_player") as mock_fp:
+            with patch("vtes_scraper.scraper.fetch_player") as mock_fp:
                 ret = validate_cmd.run(args)
             mock_fp.assert_not_called()
             assert ret == 0
@@ -1071,7 +1275,7 @@ class TestValidateCommand:
                 verbose=False,
             )
             with patch(
-                "vtes_scraper.cli.validate.fetch_player",
+                "vtes_scraper.scraper.fetch_player",
                 return_value=("Jane Doe", 3940009),
             ):
                 ret = validate_cmd.run(args)
@@ -1095,7 +1299,7 @@ class TestValidateCommand:
                 verbose=False,
             )
             with patch(
-                "vtes_scraper.cli.validate.fetch_player",
+                "vtes_scraper.scraper.fetch_player",
                 return_value=("Jane Doe", 3940009),
             ):
                 ret = validate_cmd.run(args)
@@ -1123,7 +1327,7 @@ class TestValidateCommand:
                 delay=0,
                 verbose=False,
             )
-            with patch("vtes_scraper.cli.validate.fetch_player") as mock_fp:
+            with patch("vtes_scraper.scraper.fetch_player") as mock_fp:
                 ret = validate_cmd.run(args)
             mock_fp.assert_not_called()
             assert yaml_file.exists(), "error file should not have been touched"
@@ -1140,7 +1344,7 @@ class TestValidateCommand:
                 delay=0,
                 verbose=False,
             )
-            with patch("vtes_scraper.cli.validate.fetch_player", return_value=None):
+            with patch("vtes_scraper.scraper.fetch_player", return_value=None):
                 ret = validate_cmd.run(args)
             assert ret == 1
             assert not yaml_file.exists()
@@ -1158,7 +1362,7 @@ class TestValidateCommand:
                 delay=0,
                 verbose=False,
             )
-            with patch("vtes_scraper.cli.validate.fetch_player") as mock_fp:
+            with patch("vtes_scraper.scraper.fetch_player") as mock_fp:
                 ret = validate_cmd.run(args)
             mock_fp.assert_not_called()
             assert ret == 1
@@ -1176,7 +1380,7 @@ class TestValidateCommand:
             mock_client = MagicMock()
             coercions: dict = {}
             with patch(
-                "vtes_scraper.cli.validate.fetch_player",
+                "vtes_scraper.scraper.fetch_player",
                 return_value=("Jane Doe", 3940009),
             ):
                 validate_cmd._check_player(
@@ -1200,7 +1404,7 @@ class TestValidateCommand:
             data = validate_cmd._load_yaml(yaml_file)
             mock_client = MagicMock()
             coercions = {"Jane Doe": {"winner": "Jane Doe", "vekn_number": 3940009}}
-            with patch("vtes_scraper.cli.validate.fetch_player") as mock_fp:
+            with patch("vtes_scraper.scraper.fetch_player") as mock_fp:
                 found, moved = validate_cmd._check_player(
                     mock_client,
                     yaml_file,
@@ -1228,7 +1432,7 @@ class TestValidateCommand:
             data = validate_cmd._load_yaml(yaml_file)
             mock_client = MagicMock()
             coercions = {raw_name: {"winner": "Jane Doe", "vekn_number": 3940009}}
-            with patch("vtes_scraper.cli.validate.fetch_player") as mock_fp:
+            with patch("vtes_scraper.scraper.fetch_player") as mock_fp:
                 found, moved = validate_cmd._check_player(
                     mock_client,
                     yaml_file,
@@ -1262,7 +1466,7 @@ class TestValidateCommand:
             # "Jane Doe" (bracket-stripped form) is already in the cache.
             coercions = {"Jane Doe": {"winner": "Jane Doe", "vekn_number": 3940009}}
             with patch(
-                "vtes_scraper.cli.validate.fetch_player", return_value=None
+                "vtes_scraper.scraper.fetch_player", return_value=None
             ) as mock_fp:
                 found, moved = validate_cmd._check_player(
                     mock_client,
@@ -1297,7 +1501,7 @@ class TestValidateCommand:
             # Step 1 (exact match) returns None; "Jane Doe" (digit-stripped) is in cache.
             coercions = {"Jane Doe": {"winner": "Jane Doe", "vekn_number": 3940009}}
             with patch(
-                "vtes_scraper.cli.validate.fetch_player", return_value=None
+                "vtes_scraper.scraper.fetch_player", return_value=None
             ) as mock_fp:
                 found, moved = validate_cmd._check_player(
                     mock_client,
@@ -1333,7 +1537,7 @@ class TestValidateCommand:
             # "Jane Doe" (accent-stripped form) is already in the cache.
             coercions = {"Jane Doe": {"winner": "Jane Doe", "vekn_number": 3940009}}
             with patch(
-                "vtes_scraper.cli.validate.fetch_player", return_value=None
+                "vtes_scraper.scraper.fetch_player", return_value=None
             ) as mock_fp:
                 found, moved = validate_cmd._check_player(
                     mock_client,
@@ -1365,7 +1569,7 @@ class TestValidateCommand:
                 verbose=False,
             )
             with patch(
-                "vtes_scraper.cli.validate.fetch_player",
+                "vtes_scraper.scraper.fetch_player",
                 return_value=("Jane Doe", 3940009),
             ):
                 validate_cmd.run(args)
@@ -1399,7 +1603,7 @@ class TestValidateCommand:
                 delay=0,
                 verbose=False,
             )
-            with patch("vtes_scraper.cli.validate.fetch_player") as mock_fp:
+            with patch("vtes_scraper.scraper.fetch_player") as mock_fp:
                 ret = validate_cmd.run(args)
             mock_fp.assert_not_called()
             assert ret == 0
