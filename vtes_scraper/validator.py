@@ -76,11 +76,15 @@ def _try_load_krcg() -> bool:
     return _KRCG_LOADED
 
 
-def _krcg_crypt_data(card_name: str) -> dict | None:
+def _krcg_all_crypt_data(card_name: str) -> list[dict]:
     """
-    Return krcg data for a crypt card by name, or ``None`` if not found.
+    Return krcg data for all grouping versions of a crypt card by name.
 
-    The returned dict contains:
+    When a vampire exists in multiple groupings (e.g. G5 and G6), each version
+    is returned as a separate dict.  Returns an empty list if the card is not
+    found in krcg.
+
+    Each returned dict contains:
     - ``capacity``    - blood capacity (int)
     - ``disciplines`` - space-separated discipline string, e.g. ``"PRO ani cel"``
     - ``title``       - title string or ``None``
@@ -92,28 +96,77 @@ def _krcg_crypt_data(card_name: str) -> dict | None:
 
         card = _kv.VTES[card_name]
         if not card or not card.crypt:
-            return None
-        disciplines = " ".join(card.disciplines) if card.disciplines else ""
-        clan = card.clans[0] if card.clans else ""
-        raw_group = card.group
-        if not raw_group:
-            return None
-        if raw_group == "ANY":
-            grouping: int | str = "ANY"
-        else:
+            return []
+
+        # Gather all variant IDs: the card itself plus all related grouping variants
+        all_ids: set[int] = {card.id}
+        all_ids.update(card.variants.values())
+
+        result: list[dict] = []
+        for cid in all_ids:
             try:
-                grouping = int(raw_group)
-            except TypeError, ValueError:
-                return None
-        return {
-            "capacity": card.capacity,
-            "disciplines": disciplines,
-            "title": card.title or None,
-            "clan": clan,
-            "grouping": grouping,
-        }
+                c = _kv.VTES[cid]
+            except KeyError:
+                continue
+            if not c.crypt:
+                continue
+            disciplines = " ".join(c.disciplines) if c.disciplines else ""
+            clan = c.clans[0] if c.clans else ""
+            raw_group = c.group
+            if not raw_group:
+                continue
+            if raw_group == "ANY":
+                grouping: int | str = "ANY"
+            else:
+                try:
+                    grouping = int(raw_group)
+                except (TypeError, ValueError):
+                    continue
+            result.append(
+                {
+                    "capacity": c.capacity,
+                    "disciplines": disciplines,
+                    "title": c.title or None,
+                    "clan": clan,
+                    "grouping": grouping,
+                }
+            )
+
+        return result
     except Exception:
-        return None
+        return []
+
+
+def _pick_best_crypt_version(versions: list[dict], reference_groups: set[int]) -> dict:
+    """
+    Pick the grouping version that best fits the established group range.
+
+    Grouping rule: all non-ANY groups must form a set of at most 2 consecutive integers.
+    Priority:
+      1. Version whose group is already present in *reference_groups* (exact match).
+      2. Version whose group extends *reference_groups* to at most 2 consecutive ints.
+      3. First integer-grouped version found (fallback).
+    """
+    int_versions = [v for v in versions if isinstance(v["grouping"], int)]
+    if not int_versions:
+        return versions[0]
+
+    if reference_groups:
+        # Priority 1: group already in the established range
+        for v in int_versions:
+            if v["grouping"] in reference_groups:
+                return v
+
+        # Priority 2: group extends the range by exactly one consecutive integer
+        for v in int_versions:
+            g = v["grouping"]
+            candidate = reference_groups | {g}
+            c_sorted = sorted(candidate)
+            if len(c_sorted) <= 2 and c_sorted[-1] - c_sorted[0] <= 1:
+                return v
+
+    # Fallback: first integer-grouped version
+    return int_versions[0]
 
 
 def enrich_crypt_cards(deck: dict) -> list[str]:
@@ -124,6 +177,11 @@ def enrich_crypt_cards(deck: dict) -> list[str]:
     ``disciplines``, ``title``, ``clan``, and ``grouping`` from the database.
     ``count`` and ``name`` are always preserved from the scraped data.
     Cards not found in krcg are left unchanged.
+
+    When a vampire exists in multiple groupings, the version whose group fits
+    the grouping rules of the rest of the crypt is used (two consecutive
+    integers at most, e.g. G5-G6).  If no version fits, the first one found
+    is used.
 
     Mutates *deck* in-place.  Returns a list of human-readable descriptions
     of the changes made (empty when no changes were needed or krcg is
@@ -136,22 +194,43 @@ def enrich_crypt_cards(deck: dict) -> list[str]:
     if not crypt:
         return []
 
-    fixes: list[str] = []
+    # Step 1: resolve all krcg versions for each card
+    all_versions: list[list[dict]] = []
     for card in crypt:
         if not isinstance(card, dict):
+            all_versions.append([])
             continue
         card_name = str(card.get("name") or "")
-        krcg_data = _krcg_crypt_data(card_name)
-        if krcg_data is None:
+        all_versions.append(_krcg_all_crypt_data(card_name))
+
+    # Step 2: establish the group range from cards with exactly one version
+    fixed_groups: set[int] = set()
+    for versions in all_versions:
+        if len(versions) == 1:
+            g = versions[0]["grouping"]
+            if isinstance(g, int):
+                fixed_groups.add(g)
+
+    # Step 3: enrich each card using the best matching version
+    fixes: list[str] = []
+    for card, versions in zip(crypt, all_versions):
+        if not isinstance(card, dict) or not versions:
             continue
+
+        best = (
+            _pick_best_crypt_version(versions, fixed_groups)
+            if len(versions) > 1
+            else versions[0]
+        )
+
         changed: list[str] = []
-        for field, new_value in krcg_data.items():
+        for field, new_value in best.items():
             old_value = card.get(field)
             if old_value != new_value:
                 card[field] = new_value
                 changed.append(f"{field}: {old_value!r} → {new_value!r}")
         if changed:
-            fixes.append(f"  {card_name!r}: " + ", ".join(changed))
+            fixes.append(f"  {card.get('name', '')!r}: " + ", ".join(changed))
 
     return fixes
 

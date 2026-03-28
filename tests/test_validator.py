@@ -6,6 +6,7 @@ from unittest.mock import patch
 import pytest
 
 from vtes_scraper.validator import (
+    _pick_best_crypt_version,
     enrich_crypt_cards,
     error_types,
     fix_card_sections,
@@ -471,8 +472,14 @@ _FAKE_CRYPT_KRCG: dict[str, dict] = {
 }
 
 
-def _fake_krcg_crypt_data(card_name: str) -> dict | None:
-    return _FAKE_CRYPT_KRCG.get(card_name)
+def _fake_krcg_all_crypt_data(card_name: str) -> list[dict]:
+    data = _FAKE_CRYPT_KRCG.get(card_name)
+    if data is None:
+        return []
+    # Support multi-version entries stored as a list
+    if isinstance(data, list):
+        return data
+    return [data]
 
 
 def _crypt_card(name: str, count: int = 2, **overrides) -> dict:
@@ -499,8 +506,8 @@ class TestEnrichCryptCards:
                 patch("vtes_scraper.validator._KRCG_LOADED", available),
                 patch("vtes_scraper.validator._try_load_krcg", return_value=available),
                 patch(
-                    "vtes_scraper.validator._krcg_crypt_data",
-                    side_effect=_fake_krcg_crypt_data,
+                    "vtes_scraper.validator._krcg_all_crypt_data",
+                    side_effect=_fake_krcg_all_crypt_data,
                 ),
             ):
                 yield
@@ -576,3 +583,168 @@ class TestEnrichCryptCards:
         with self._patch_krcg():
             fixes = enrich_crypt_cards(deck)
         assert fixes == []
+
+    def test_multi_version_picks_matching_group(self):
+        """When a vampire has two grouping versions, pick the one that fits."""
+        # Nathan Turner exists in G5 and G6; another card is already in G6
+        _FAKE_CRYPT_KRCG["Nathan Turner"] = [
+            {
+                "capacity": 4,
+                "disciplines": "PRO ani",
+                "title": None,
+                "clan": "Gangrel",
+                "grouping": 5,
+            },
+            {
+                "capacity": 4,
+                "disciplines": "PRO ani",
+                "title": None,
+                "clan": "Gangrel",
+                "grouping": 6,
+            },
+        ]
+        try:
+            single_card = _crypt_card(
+                "Antón de Concepción", grouping=6
+            )  # fixed group 6
+            multi_card = _crypt_card("Nathan Turner", grouping=0)
+            deck = {"crypt": [single_card, multi_card]}
+            with self._patch_krcg():
+                enrich_crypt_cards(deck)
+            assert multi_card["grouping"] == 6
+        finally:
+            _FAKE_CRYPT_KRCG["Nathan Turner"] = {
+                "capacity": 4,
+                "disciplines": "PRO ani",
+                "title": None,
+                "clan": "Gangrel",
+                "grouping": 6,
+            }
+
+    def test_multi_version_fallback_to_first_when_no_match(self):
+        """When no version fits the range, use the first version found."""
+        # Nathan Turner G3/G6; reference card is in G10 — no version fits consecutively
+        _FAKE_CRYPT_KRCG["Nathan Turner"] = [
+            {
+                "capacity": 4,
+                "disciplines": "PRO ani",
+                "title": None,
+                "clan": "Gangrel",
+                "grouping": 3,
+            },
+            {
+                "capacity": 4,
+                "disciplines": "PRO ani",
+                "title": None,
+                "clan": "Gangrel",
+                "grouping": 6,
+            },
+        ]
+        _FAKE_CRYPT_KRCG["_RefCard_G10"] = {
+            "capacity": 5,
+            "disciplines": "",
+            "title": None,
+            "clan": "Gangrel",
+            "grouping": 10,
+        }
+        try:
+            single_card = _crypt_card("_RefCard_G10")  # krcg group = 10
+            multi_card = _crypt_card("Nathan Turner", grouping=0)
+            deck = {"crypt": [single_card, multi_card]}
+            with self._patch_krcg():
+                enrich_crypt_cards(deck)
+            # G3 → {3,10} not consecutive; G6 → {6,10} not consecutive → fallback to first (G3)
+            assert multi_card["grouping"] == 3
+        finally:
+            _FAKE_CRYPT_KRCG["Nathan Turner"] = {
+                "capacity": 4,
+                "disciplines": "PRO ani",
+                "title": None,
+                "clan": "Gangrel",
+                "grouping": 6,
+            }
+            del _FAKE_CRYPT_KRCG["_RefCard_G10"]
+
+    def test_multi_version_no_reference_uses_first(self):
+        """When all crypt cards are multi-version, fall back to first version."""
+        _FAKE_CRYPT_KRCG["Nathan Turner"] = [
+            {
+                "capacity": 4,
+                "disciplines": "PRO ani",
+                "title": None,
+                "clan": "Gangrel",
+                "grouping": 5,
+            },
+            {
+                "capacity": 4,
+                "disciplines": "PRO ani",
+                "title": None,
+                "clan": "Gangrel",
+                "grouping": 6,
+            },
+        ]
+        try:
+            multi_card = _crypt_card("Nathan Turner", grouping=0)
+            deck = {"crypt": [multi_card]}
+            with self._patch_krcg():
+                enrich_crypt_cards(deck)
+            # No fixed reference → falls back to first version (G5)
+            assert multi_card["grouping"] == 5
+        finally:
+            _FAKE_CRYPT_KRCG["Nathan Turner"] = {
+                "capacity": 4,
+                "disciplines": "PRO ani",
+                "title": None,
+                "clan": "Gangrel",
+                "grouping": 6,
+            }
+
+
+# ---------------------------------------------------------------------------
+# _pick_best_crypt_version
+# ---------------------------------------------------------------------------
+
+
+class TestPickBestCryptVersion:
+    def _v(self, grouping) -> dict:
+        return {
+            "capacity": 5,
+            "disciplines": "",
+            "title": None,
+            "clan": "Gangrel",
+            "grouping": grouping,
+        }
+
+    def test_exact_match_preferred(self):
+        versions = [self._v(5), self._v(6)]
+        best = _pick_best_crypt_version(versions, {6})
+        assert best["grouping"] == 6
+
+    def test_consecutive_extension_chosen(self):
+        versions = [self._v(4), self._v(5)]
+        best = _pick_best_crypt_version(versions, {6})
+        # G5 extends {6} to {5,6} which is consecutive; G4 would give {4,6} which is not
+        assert best["grouping"] == 5
+
+    def test_no_reference_returns_first(self):
+        versions = [self._v(3), self._v(7)]
+        best = _pick_best_crypt_version(versions, set())
+        assert best["grouping"] == 3
+
+    def test_no_fit_returns_first(self):
+        versions = [self._v(3), self._v(7)]
+        best = _pick_best_crypt_version(versions, {1})
+        assert best["grouping"] == 3
+
+    def test_any_grouping_only_falls_back(self):
+        versions = [
+            {
+                "capacity": 1,
+                "disciplines": "",
+                "title": None,
+                "clan": "Caitiff",
+                "grouping": "ANY",
+            }
+        ]
+        best = _pick_best_crypt_version(versions, {5})
+        assert best["grouping"] == "ANY"
