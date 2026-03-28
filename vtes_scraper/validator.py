@@ -78,11 +78,16 @@ def _try_load_krcg() -> bool:
 
 def _krcg_all_crypt_data(card_name: str) -> list[dict]:
     """
-    Return krcg data for all grouping versions of a crypt card by name.
+    Return krcg data for all relevant grouping versions of a crypt card by name.
 
-    When a vampire exists in multiple groupings (e.g. G5 and G6), each version
-    is returned as a separate dict.  Returns an empty list if the card is not
-    found in krcg.
+    When a vampire exists in multiple groupings (e.g. G5 and G6), each non-ADV
+    version is returned as a separate dict (for a non-ADV lookup), or each ADV
+    version (for an ADV lookup).  ADV and non-ADV are never mixed:
+
+    - ``"Xaviar"``       → only base (non-ADV) Xaviar versions
+    - ``"Xaviar (ADV)"`` → only ADV Xaviar versions
+
+    Returns an empty list if the card is not found in krcg.
 
     Each returned dict contains:
     - ``capacity``    - blood capacity (int)
@@ -98,6 +103,9 @@ def _krcg_all_crypt_data(card_name: str) -> list[dict]:
         if not card or not card.crypt:
             return []
 
+        # Determine whether the scraped name is an ADV card.  This is a heuristic but should be reliable since the presence of "(ADV)" in the name is a strong signal of the card's identity and krcg's data is consistent in this regard.
+        want_adv: bool = "(ADV)" in card_name
+
         # Gather all variant IDs: the card itself plus all related grouping variants
         all_ids: set[int] = {card.id}
         all_ids.update(card.variants.values())
@@ -109,6 +117,9 @@ def _krcg_all_crypt_data(card_name: str) -> list[dict]:
             except KeyError:
                 continue
             if not c.crypt:
+                continue
+            # Skip variants that don't match the ADV/non-ADV kind of the lookup
+            if bool(c.adv) != want_adv:
                 continue
             disciplines = " ".join(c.disciplines) if c.disciplines else ""
             clan = c.clans[0] if c.clans else ""
@@ -183,6 +194,9 @@ def enrich_crypt_cards(deck: dict) -> list[str]:
     integers at most, e.g. G5-G6).  If no version fits, the first one found
     is used.
 
+    ADV and non-ADV versions are never mixed: a scraped ``"Xaviar"`` will
+    never be enriched with ``"Xaviar (ADV)"`` data, and vice versa.
+
     Mutates *deck* in-place.  Returns a list of human-readable descriptions
     of the changes made (empty when no changes were needed or krcg is
     unavailable).
@@ -231,6 +245,24 @@ def enrich_crypt_cards(deck: dict) -> list[str]:
                 changed.append(f"{field}: {old_value!r} → {new_value!r}")
         if changed:
             fixes.append(f"  {card.get('name', '')!r}: " + ", ".join(changed))
+
+    return fixes
+    fixes: list[str] = []
+    for card in crypt:
+        if not isinstance(card, dict):
+            continue
+        card_name = str(card.get("name") or "")
+        krcg_data = _krcg_crypt_data(card_name)
+        if krcg_data is None:
+            continue
+        changed: list[str] = []
+        for field, new_value in krcg_data.items():
+            old_value = card.get(field)
+            if old_value != new_value:
+                card[field] = new_value
+                changed.append(f"{field}: {old_value!r} → {new_value!r}")
+        if changed:
+            fixes.append(f"  {card_name!r}: " + ", ".join(changed))
 
     return fixes
 

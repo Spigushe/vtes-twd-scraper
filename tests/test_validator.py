@@ -446,8 +446,8 @@ class TestFixCardSections:
 # enrich_crypt_cards
 # ---------------------------------------------------------------------------
 
-# Fake krcg data used in tests: card name → dict of crypt fields
-_FAKE_CRYPT_KRCG: dict[str, dict] = {
+# Fake krcg data used in tests: card name → single dict or list of dicts (multi-version)
+_FAKE_CRYPT_KRCG: dict[str, dict | list] = {
     "Nathan Turner": {
         "capacity": 4,
         "disciplines": "PRO ani",
@@ -468,6 +468,21 @@ _FAKE_CRYPT_KRCG: dict[str, dict] = {
         "title": None,
         "clan": "Caitiff",
         "grouping": "ANY",
+    },
+    # Xaviar: base and ADV are separate entries (different names in the lookup)
+    "Xaviar": {
+        "capacity": 11,
+        "disciplines": "ANI CEL FOR PRO",
+        "title": "Justicar",
+        "clan": "Gangrel",
+        "grouping": 3,
+    },
+    "Xaviar (ADV)": {
+        "capacity": 10,
+        "disciplines": "aus cel pot ABO ANI FOR PRO",
+        "title": "Justicar",
+        "clan": "Gangrel",
+        "grouping": 3,
     },
 }
 
@@ -584,9 +599,30 @@ class TestEnrichCryptCards:
             fixes = enrich_crypt_cards(deck)
         assert fixes == []
 
+    def test_base_vampire_not_replaced_by_adv(self):
+        """Scraped 'Xaviar' must never be enriched with 'Xaviar (ADV)' data."""
+        card = _crypt_card("Xaviar", capacity=0)
+        deck = {"crypt": [card]}
+        with self._patch_krcg():
+            enrich_crypt_cards(deck)
+        # Must use base Xaviar data (capacity=11), not ADV data (capacity=10)
+        assert card["capacity"] == 11
+        assert card["disciplines"] == "ANI CEL FOR PRO"
+        # Name must not be changed to include "(ADV)"
+        assert card["name"] == "Xaviar"
+
+    def test_adv_vampire_uses_adv_data(self):
+        """Scraped 'Xaviar (ADV)' must be enriched with ADV data, not base data."""
+        card = _crypt_card("Xaviar (ADV)", capacity=0)
+        deck = {"crypt": [card]}
+        with self._patch_krcg():
+            enrich_crypt_cards(deck)
+        assert card["capacity"] == 10
+        assert card["disciplines"] == "aus cel pot ABO ANI FOR PRO"
+        assert card["name"] == "Xaviar (ADV)"
+
     def test_multi_version_picks_matching_group(self):
         """When a vampire has two grouping versions, pick the one that fits."""
-        # Nathan Turner exists in G5 and G6; another card is already in G6
         _FAKE_CRYPT_KRCG["Nathan Turner"] = [
             {
                 "capacity": 4,
@@ -604,9 +640,7 @@ class TestEnrichCryptCards:
             },
         ]
         try:
-            single_card = _crypt_card(
-                "Antón de Concepción", grouping=6
-            )  # fixed group 6
+            single_card = _crypt_card("Antón de Concepción", grouping=6)  # krcg group=6
             multi_card = _crypt_card("Nathan Turner", grouping=0)
             deck = {"crypt": [single_card, multi_card]}
             with self._patch_krcg():
@@ -623,7 +657,6 @@ class TestEnrichCryptCards:
 
     def test_multi_version_fallback_to_first_when_no_match(self):
         """When no version fits the range, use the first version found."""
-        # Nathan Turner G3/G6; reference card is in G10 — no version fits consecutively
         _FAKE_CRYPT_KRCG["Nathan Turner"] = [
             {
                 "capacity": 4,
@@ -648,12 +681,12 @@ class TestEnrichCryptCards:
             "grouping": 10,
         }
         try:
-            single_card = _crypt_card("_RefCard_G10")  # krcg group = 10
+            single_card = _crypt_card("_RefCard_G10")  # krcg group=10
             multi_card = _crypt_card("Nathan Turner", grouping=0)
             deck = {"crypt": [single_card, multi_card]}
             with self._patch_krcg():
                 enrich_crypt_cards(deck)
-            # G3 → {3,10} not consecutive; G6 → {6,10} not consecutive → fallback to first (G3)
+            # G3→{3,10} not consecutive; G6→{6,10} not consecutive → fallback to first (G3)
             assert multi_card["grouping"] == 3
         finally:
             _FAKE_CRYPT_KRCG["Nathan Turner"] = {
@@ -688,7 +721,7 @@ class TestEnrichCryptCards:
             deck = {"crypt": [multi_card]}
             with self._patch_krcg():
                 enrich_crypt_cards(deck)
-            # No fixed reference → falls back to first version (G5)
+            # No fixed reference → fallback to first version (G5)
             assert multi_card["grouping"] == 5
         finally:
             _FAKE_CRYPT_KRCG["Nathan Turner"] = {
