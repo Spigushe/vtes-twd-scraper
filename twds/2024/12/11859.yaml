@@ -8,8 +8,7 @@ vekn_number: 1003983
 event_url: https://www.vekn.net/event-calendar/event/11859
 event_id: 11859
 vp_comment: 0VP + 4VP+ 3VP in the final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81957-twd-marato-tv3-barcelona-spain
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81957-twd-marato-tv3-barcelona-spain
 deck:
   name: Barones votan
   created_by: glinlos
@@ -22,29 +21,29 @@ deck:
   - count: 1
     name: Scout Youngwood
     capacity: 8
-    disciplines: MEL OBF PRE for qui
+    disciplines: for qui MEL OBF PRE
     title: 2 votes
     clan: Daughter of Cacophony
     grouping: 6
   - count: 1
     name: Sergio Bueno
     capacity: 8
-    disciplines: OBF PRE PRO aus pot
-    title: baron
+    disciplines: aus pot OBF PRE PRO
+    title: Baron
     clan: Ministry
     grouping: 6
   - count: 1
     name: Alice Chen
     capacity: 7
-    disciplines: FOR PRE dom obf
-    title: prince
+    disciplines: dom obf FOR PRE
+    title: Prince
     clan: Ventrue
     grouping: 6
   - count: 1
     name: Vivian VI
     capacity: 7
-    disciplines: PRE PRO obf tha
-    title: baron
+    disciplines: obf tha PRE PRO
+    title: Baron
     clan: Ministry
     grouping: 6
   - count: 2
@@ -57,29 +56,29 @@ deck:
   - count: 1
     name: Andi Liu
     capacity: 6
-    disciplines: DOM aus obf pre
-    title: prince
+    disciplines: aus obf pre DOM
+    title: Prince
     clan: Malkavian
     grouping: 6
   - count: 1
     name: Atiena
     capacity: 6
-    disciplines: CEL obf pot pre
-    title: baron
+    disciplines: obf pot pre CEL
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 1
     name: Elisha Tucker
     capacity: 6
-    disciplines: PRE cel obf pro
-    title: baron
+    disciplines: cel obf pro PRE
+    title: Baron
     clan: Ministry
     grouping: 6
   - count: 1
     name: Jacques Rouge
     capacity: 6
-    disciplines: OBF ani pot pre
-    title: baron
+    disciplines: ani pot pre OBF
+    title: Baron
     clan: Nosferatu
     grouping: 6
   - count: 2

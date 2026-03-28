@@ -7,8 +7,7 @@ winner: Kelly Schultz
 vekn_number: 5040009
 event_url: https://www.vekn.net/event-calendar/event/10731
 event_id: 10731
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80667-twd-origins-thursday-2
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80667-twd-origins-thursday-2
 deck:
   name: Adona de Bleedzooka
   description: ''
@@ -20,8 +19,8 @@ deck:
   - count: 5
     name: Adana de Sforza
     capacity: 11
-    disciplines: CEL OBF POT PRE PRO aus
-    title: inner circle
+    disciplines: aus CEL OBF POT PRE PRO
+    title: Inner Circle
     clan: Brujah
     grouping: 4
   - count: 2
@@ -33,33 +32,33 @@ deck:
   - count: 1
     name: Alex Camille
     capacity: 5
-    disciplines: PRO cel for obf
+    disciplines: cel for obf PRO
     clan: Gangrel antitribu
     grouping: 5
   - count: 1
     name: Axel Von Anders
     capacity: 5
-    disciplines: PRE cel obf pot
+    disciplines: cel obf pot PRE
     clan: Brujah antitribu
     grouping: 4
   - count: 1
     name: Loonar
     capacity: 4
-    disciplines: PRE cel
+    disciplines: cel PRE
     clan: Toreador antitribu
     grouping: 4
   - count: 1
     name: Reginald Moore
     capacity: 4
     disciplines: PRE
-    title: primogen
+    title: Primogen
     clan: Brujah
     grouping: 4
   - count: 1
     name: Xendil Charmer
     capacity: 7
-    disciplines: CEL PRO SER obf
-    title: priscus
+    disciplines: obf CEL PRO SER
+    title: Priscus
     clan: Gangrel antitribu
     grouping: 4
   library_count: 69

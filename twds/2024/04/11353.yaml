@@ -21,15 +21,15 @@ deck:
   - count: 2
     name: Casey Snyder
     capacity: 6
-    disciplines: PRO ani cel for
-    title: baron
+    disciplines: ani cel for PRO
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 2
     name: Kuyén
     capacity: 6
     disciplines: ANI PRO
-    title: baron
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1
@@ -53,20 +53,20 @@ deck:
   - count: 1
     name: Kamile Paukstys
     capacity: 5
-    disciplines: PRO ani for
+    disciplines: ani for PRO
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Martina Srnankova
     capacity: 6
-    disciplines: FOR PRO ani
+    disciplines: ani FOR PRO
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Massimiliano
     capacity: 7
-    disciplines: ANI FOR pro
-    title: baron
+    disciplines: pro ANI FOR
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1
@@ -78,7 +78,7 @@ deck:
   - count: 1
     name: Nathan Turner
     capacity: 4
-    disciplines: PRO ani
+    disciplines: ani PRO
     clan: Gangrel
     grouping: 6
   library_count: 90
@@ -132,8 +132,7 @@ deck:
     count: 5
     cards:
     - count: 1
-      name: Camera Phone – still the iffy, but I want reliable pre-Illusion 
-        offense.
+      name: Camera Phone – still the iffy, but I want reliable pre-Illusion offense.
     - count: 1
       name: Heart of Nizchetus
     - count: 1

@@ -8,8 +8,7 @@ vekn_number: 1003796
 event_url: https://www.vekn.net/event-calendar/event/12003
 event_id: 12003
 vp_comment: 'Finalists and decks:'
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82040-twd-praxis-seizure-haemeenlinna-third-tradition
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82040-twd-praxis-seizure-haemeenlinna-third-tradition
 deck:
   name: Weird Green Moonlight
   description: ''
@@ -22,25 +21,25 @@ deck:
     name: Kuyén
     capacity: 6
     disciplines: ANI PRO
-    title: baron
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 3
     name: Luciano Carvalho
     capacity: 6
-    disciplines: ANI OBF pre
+    disciplines: pre ANI OBF
     clan: Ravnos
     grouping: 7
   - count: 1
     name: Doc Martina
     capacity: 6
-    disciplines: ANI OBF for pre
+    disciplines: for pre ANI OBF
     clan: Ravnos
     grouping: 7
   - count: 1
     name: Gathii
     capacity: 5
-    disciplines: ANI PRE obf
+    disciplines: obf ANI PRE
     clan: Ravnos
     grouping: 7
   - count: 1

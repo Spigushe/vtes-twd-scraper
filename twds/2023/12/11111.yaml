@@ -8,8 +8,7 @@ vekn_number: 3200292
 event_url: https://www.vekn.net/event-calendar/event/11111
 event_id: 11111
 vp_comment: 3vp in final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81059-twd-union-a-la-terre-paris-france-dec-16-2023
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81059-twd-union-a-la-terre-paris-france-dec-16-2023
 deck:
   name: Weenie AUS
   description: wins the final with a SJ at 7 counters.
@@ -21,49 +20,49 @@ deck:
   - count: 1
     name: Aisling Sturbridge
     capacity: 5
-    disciplines: AUS THA dom
+    disciplines: dom AUS THA
     clan: Tremere
     grouping: 2
   - count: 1
     name: Hannigan
     capacity: 5
-    disciplines: AUS THA dom
+    disciplines: dom AUS THA
     clan: Tremere antitribu
     grouping: 2
   - count: 1
     name: Victoria
     capacity: 5
-    disciplines: AUS cel obf
+    disciplines: cel obf AUS
     clan: Malkavian
     grouping: 2
   - count: 1
     name: Idalia, Prophet of Guadalajara
     capacity: 4
-    disciplines: AUS dem
+    disciplines: dem AUS
     clan: Malkavian antitribu
     grouping: 2
   - count: 1
     name: Maldavis (ADV)
     capacity: 4
-    disciplines: AUS for pre
+    disciplines: for pre AUS
     clan: Caitiff
     grouping: 3
   - count: 1
     name: Remilliard, Devout Crusader
     capacity: 4
-    disciplines: AUS pre
+    disciplines: pre AUS
     clan: Toreador antitribu
     grouping: 2
   - count: 1
     name: Richard Tauber, Ayelea's Puppet
     capacity: 4
-    disciplines: AUS tha
+    disciplines: tha AUS
     clan: Tremere antitribu
     grouping: 2
   - count: 1
     name: Blythe Candeleria
     capacity: 3
-    disciplines: THA aus
+    disciplines: aus THA
     clan: Tremere
     grouping: 2
   - count: 1
@@ -75,13 +74,13 @@ deck:
   - count: 1
     name: Martin Franckel
     capacity: 3
-    disciplines: AUS tha
+    disciplines: tha AUS
     clan: Tremere
     grouping: 3
   - count: 1
     name: Zöe
     capacity: 3
-    disciplines: AUS cel obf
+    disciplines: cel obf AUS
     clan: Malkavian
     grouping: 2
   - count: 1

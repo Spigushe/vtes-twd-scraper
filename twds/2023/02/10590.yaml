@@ -7,8 +7,7 @@ winner: José Ramón Rodríguez Álvarez-Solís
 vekn_number: 9510025
 event_url: https://www.vekn.net/event-calendar/event/10590
 event_id: 10590
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80732-twd-v-torneo-liga-norte-gijon-spain-19-feb-2023
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80732-twd-v-torneo-liga-norte-gijon-spain-19-feb-2023
 deck:
   name: Tremere Multiacción Camarilla Segregation
   created_by: Rollshausen
@@ -41,28 +40,28 @@ deck:
     name: Ayelech
     capacity: 7
     disciplines: AUS DOM THA
-    title: prince
+    title: Prince
     clan: Tremere
     grouping: 6
   - count: 1
     name: Graham Gottesman
     capacity: 7
-    disciplines: DOM FOR obf pre tha
-    title: prince
+    disciplines: obf pre tha DOM FOR
+    title: Prince
     clan: Ventrue
     grouping: 5
   - count: 1
     name: Sybren van Oosten
     capacity: 7
-    disciplines: FOR PRE dom tha
-    title: prince
+    disciplines: dom tha FOR PRE
+    title: Prince
     clan: Ventrue
     grouping: 6
   - count: 1
     name: Inês Tristão
     capacity: 6
-    disciplines: THA aus dom pre
-    title: prince
+    disciplines: aus dom pre THA
+    title: Prince
     clan: Tremere
     grouping: 6
   - count: 1

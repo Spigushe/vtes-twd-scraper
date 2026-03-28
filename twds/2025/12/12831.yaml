@@ -8,8 +8,7 @@ vekn_number: 3260057
 event_url: https://www.vekn.net/player-registry/event/12831
 event_id: 12831
 vp_comment: 1GW3.5VP + 3VP in the final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82847-twd-almada-s-bloody-xmas-again
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82847-twd-almada-s-bloody-xmas-again
 deck:
   name: Contrato precário
   created_by: Jorge Ramos
@@ -22,25 +21,25 @@ deck:
   - count: 5
     name: Karif al Numair
     capacity: 10
-    disciplines: AUS CEL OBF QUI for
+    disciplines: for AUS CEL OBF QUI
     clan: Banu Haqim
     grouping: 5
   - count: 3
     name: Joe "Boot" Hill
     capacity: 7
-    disciplines: CEL QUI for obf
+    disciplines: for obf CEL QUI
     clan: Banu Haqim
     grouping: 4
   - count: 2
     name: Djuhah, The Bronze Bow
     capacity: 7
-    disciplines: OBF QUI aus cel pre
+    disciplines: aus cel pre OBF QUI
     clan: Banu Haqim
     grouping: 5
   - count: 2
     name: Reza Fatir, The Dark Angel
     capacity: 6
-    disciplines: CEL QUI obf pro
+    disciplines: obf pro CEL QUI
     clan: Banu Haqim
     grouping: 4
   library_count: 90

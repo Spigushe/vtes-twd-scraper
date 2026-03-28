@@ -8,11 +8,9 @@ vekn_number: 3200188
 event_url: https://www.vekn.net/event-calendar/event/10122
 event_id: 10122
 vp_comment: GW4 + 1,5 in the final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/79709-twd-coupe-de-paris-france-19-mar-2022
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79709-twd-coupe-de-paris-france-19-mar-2022
 deck:
-  description: A new iteration of my Royal with Cheese deck (see 
-    www.vekn.fr/decks/twd.htm
+  description: A new iteration of my Royal with Cheese deck (see www.vekn.fr/decks/twd.htm
   crypt_count: 12
   crypt_min: 33
   crypt_max: 44
@@ -22,28 +20,28 @@ deck:
     name: Adana de Sforza
     capacity: 11
     disciplines: aus CEL OBF POT PRE PRO
-    title: inner circle
+    title: Inner Circle
     clan: Brujah
     grouping: 4
   - count: 3
     name: Hardestadt
     capacity: 11
     disciplines: cel pro DOM FOR POT PRE
-    title: inner circle
+    title: Inner Circle
     clan: Ventrue
     grouping: 4
   - count: 3
     name: Lodin (Olaf Holte)
     capacity: 8
     disciplines: aus pro DOM FOR PRE
-    title: prince
+    title: Prince
     clan: Ventrue
     grouping: 5
   - count: 1
     name: Malabranca
     capacity: 9
     disciplines: obf AUS CEL PRE PRO
-    title: archbishop
+    title: Archbishop
     clan: Toreador antitribu
     grouping: 4
   library_count: 90
@@ -73,8 +71,7 @@ deck:
     cards:
     - count: 1
       name: Entrancement
-      comment: I tried to steal a Shambling Horde during the final, but it 
-        didn't work. Still useful I guess.
+      comment: I tried to steal a Shambling Horde during the final, but it didn't work. Still useful I guess.
   - name: Equipment
     count: 1
     cards:
@@ -92,8 +89,7 @@ deck:
       name: Ancilla Empowerment
     - count: 6
       name: Banishment
-      comment: very strong to set the tempo of the game, slowing down players 
-        when needed
+      comment: very strong to set the tempo of the game, slowing down players when needed
     - count: 1
       name: Conservative Agitation
     - count: 1
@@ -107,8 +103,7 @@ deck:
     cards:
     - count: 2
       name: Homunculus
-      comment: I added those in place of wakes. Was useful, but should probably 
-        go first on the vampires with Dominate.
+      comment: I added those in place of wakes. Was useful, but should probably go first on the vampires with Dominate.
   - name: Action Modifier
     count: 24
     cards:
@@ -121,8 +116,7 @@ deck:
       name: Enkil Cog
     - count: 1
       name: Horrific Countenance
-      comment: the game changing card! there were 4 in the previous iteration 
-        which was a bit too many
+      comment: the game changing card! there were 4 in the previous iteration which was a bit too many
     - count: 6
       name: Instantaneous Transformation
     - count: 4
@@ -140,8 +134,7 @@ deck:
     cards:
     - count: 2
       name: Form of the Bat
-      comment: works great with the other stealth sources, and can give a little
-        surprise intercept
+      comment: works great with the other stealth sources, and can give a little surprise intercept
     - count: 3
       name: Scalpel Tongue
       comment: 6 were too many, 3 is a bit too short, slots are scarce

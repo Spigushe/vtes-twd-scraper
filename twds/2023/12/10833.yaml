@@ -20,52 +20,52 @@ deck:
   - count: 1
     name: Keegan
     capacity: 8
-    disciplines: ANI FOR PRO aus cel
+    disciplines: aus cel ANI FOR PRO
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Massimiliano
     capacity: 7
-    disciplines: ANI FOR pro
-    title: baron
+    disciplines: pro ANI FOR
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Casey Snyder
     capacity: 6
-    disciplines: PRO ani cel for
-    title: baron
+    disciplines: ani cel for PRO
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Kuyén
     capacity: 6
     disciplines: ANI PRO
-    title: baron
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Martina Srnankova
     capacity: 6
-    disciplines: FOR PRO ani
+    disciplines: ani FOR PRO
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Crow
     capacity: 5
-    disciplines: ANI for pro tha
+    disciplines: for pro tha ANI
     clan: Gangrel
     grouping: 5
   - count: 1
     name: Dario Ziggler
     capacity: 5
-    disciplines: FOR ani pro tha
+    disciplines: ani pro tha FOR
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Kamile Paukstys
     capacity: 5
-    disciplines: PRO ani for
+    disciplines: ani for PRO
     clan: Gangrel
     grouping: 6
   - count: 1
@@ -83,7 +83,7 @@ deck:
   - count: 1
     name: Nathan Turner
     capacity: 4
-    disciplines: PRO ani
+    disciplines: ani PRO
     clan: Gangrel
     grouping: 6
   - count: 2

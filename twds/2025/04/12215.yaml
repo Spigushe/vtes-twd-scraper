@@ -22,22 +22,22 @@ deck:
   - count: 1
     name: Yewon Ong
     capacity: 8
-    disciplines: DOM OBL POT for
-    title: prince
+    disciplines: for DOM OBL POT
+    title: Prince
     clan: Lasombra
     grouping: 6
   - count: 2
     name: Rinaldo Albizzi
     capacity: 7
-    disciplines: DOM OBL POT pre
-    title: primogen
+    disciplines: pre DOM OBL POT
+    title: Primogen
     clan: Lasombra
     grouping: 6
   - count: 1
     name: María del Toro
     capacity: 7
     disciplines: DOM OBL POT
-    title: prince
+    title: Prince
     clan: Lasombra
     grouping: 6
   - count: 2
@@ -49,14 +49,14 @@ deck:
   - count: 2
     name: Kamaluddin
     capacity: 6
-    disciplines: DOM OBL for pot
-    title: primogen
+    disciplines: for pot DOM OBL
+    title: Primogen
     clan: Lasombra
     grouping: 6
   - count: 2
     name: Azucena
     capacity: 5
-    disciplines: DOM OBL pot
+    disciplines: pot DOM OBL
     clan: Lasombra
     grouping: 6
   - count: 1

@@ -22,36 +22,36 @@ deck:
   - count: 2
     name: Farah Sarroub
     capacity: 7
-    disciplines: CEL THA aus obf
-    title: prince
+    disciplines: aus obf CEL THA
+    title: Prince
     clan: Banu Haqim
     grouping: 6
   - count: 2
     name: Kasim Bayar
     capacity: 9
-    disciplines: CEL OBF THA aus pot
-    title: justicar
+    disciplines: aus pot CEL OBF THA
+    title: Justicar
     clan: Banu Haqim
     grouping: 6
   - count: 2
     name: Kassandra Tassaki
     capacity: 6
-    disciplines: CEL THA obf
-    title: prince
+    disciplines: obf CEL THA
+    title: Prince
     clan: Banu Haqim
     grouping: 6
   - count: 2
     name: Oluwafunmilayo
     capacity: 8
     disciplines: AUS CEL OBF THA
-    title: prince
+    title: Prince
     clan: Banu Haqim
     grouping: 6
   - count: 2
     name: Warmaksan
     capacity: 5
-    disciplines: THA cel obf
-    title: prince
+    disciplines: cel obf THA
+    title: Prince
     clan: Banu Haqim
     grouping: 6
   - count: 1
@@ -64,7 +64,7 @@ deck:
     name: Khadija Al-Kindi
     capacity: 6
     disciplines: CEL OBF THA
-    title: primogen
+    title: Primogen
     clan: Banu Haqim
     grouping: 6
   library_count: 90
@@ -147,8 +147,7 @@ deck:
       name: Pursuit
     - count: 3
       name: Quickness
-      comment: I sometimes wonder about this card's errata and a deck might 
-        result
+      comment: I sometimes wonder about this card's errata and a deck might result
     - count: 3
       name: Rego Motum
     - count: 2

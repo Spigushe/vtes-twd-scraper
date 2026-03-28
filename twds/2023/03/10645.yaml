@@ -21,8 +21,8 @@ deck:
   - count: 2
     name: Vivian VI
     capacity: 7
-    disciplines: PRE PRO obf tha
-    title: baron
+    disciplines: obf tha PRE PRO
+    title: Baron
     clan: Ministry
     grouping: 6
   - count: 4
@@ -35,15 +35,15 @@ deck:
   - count: 4
     name: Elisha Tucker
     capacity: 6
-    disciplines: PRE cel obf pro
-    title: baron
+    disciplines: cel obf pro PRE
+    title: Baron
     clan: Ministry
     grouping: 6
   - count: 2
     name: Jacques Rouge
     capacity: 6
-    disciplines: OBF ani pot pre
-    title: baron
+    disciplines: ani pot pre OBF
+    title: Baron
     clan: Nosferatu
     grouping: 6
   library_count: 90

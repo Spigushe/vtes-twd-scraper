@@ -8,16 +8,13 @@ vekn_number: 2150015
 event_url: https://www.vekn.net/event-calendar/event/12060
 event_id: 12060
 vp_comment: 1GW5, 3VP in final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82450-twd-week-of-nightmares-event-6-2025
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82450-twd-week-of-nightmares-event-6-2025
 deck:
   name: Don't Try This At Home, a.k.a. Enema Gathering
-  description: This toolboxy Creeping Sabotage deck was made from two other 
-    decks smashed together, with some crypt changes afterward. One deck was an 
-    Anima Gathering + Organized Resistance + Earth Meld wall. The other was a 
-    Barons + Creeping Sabotage deck. The result is pretty weird. It features 
-    vamps with very different jobs, but somehow managed not to jam too badly and
-    snuck in some GWs.
+  description: This toolboxy Creeping Sabotage deck was made from two other decks smashed together, with some crypt 
+    changes afterward. One deck was an Anima Gathering + Organized Resistance + Earth Meld wall. The other was a Barons 
+    + Creeping Sabotage deck. The result is pretty weird. It features vamps with very different jobs, but somehow 
+    managed not to jam too badly and snuck in some GWs.
   crypt_count: 12
   crypt_min: 15
   crypt_max: 25
@@ -26,48 +23,48 @@ deck:
   - count: 1
     name: Vivian VI
     capacity: 7
-    disciplines: PRE PRO obf tha
-    title: baron
+    disciplines: obf tha PRE PRO
+    title: Baron
     clan: Ministry
     grouping: 6
   - count: 3
     name: Benedito, a Lanterna
     capacity: 6
-    disciplines: POT ani aus obf
-    title: baron
+    disciplines: ani aus obf POT
+    title: Baron
     clan: Nosferatu
     grouping: 6
   - count: 1
     name: Casey Snyder
     capacity: 6
-    disciplines: PRO ani cel for
-    title: baron
+    disciplines: ani cel for PRO
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Jacques Rouge
     capacity: 6
-    disciplines: OBF ani pot pre
-    title: baron
+    disciplines: ani pot pre OBF
+    title: Baron
     clan: Nosferatu
     grouping: 6
   - count: 1
     name: Kuyén
     capacity: 6
     disciplines: ANI PRO
-    title: baron
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Clara Hjortshøj
     capacity: 5
-    disciplines: PRO ani aus dom
+    disciplines: ani aus dom PRO
     clan: Tzimisce
     grouping: 6
   - count: 1
     name: Daria
     capacity: 5
-    disciplines: AUS OBF ani
+    disciplines: ani AUS OBF
     clan: Nosferatu
     grouping: 6
   - count: 1

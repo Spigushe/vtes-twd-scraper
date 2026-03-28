@@ -21,21 +21,21 @@ deck:
   - count: 3
     name: Nonu Dis
     capacity: 8
-    disciplines: OBF PRE PRO for
+    disciplines: for OBF PRE PRO
     clan: Ministry
     grouping: 6
   - count: 1
     name: Sergio Bueno
     capacity: 8
-    disciplines: OBF PRE PRO aus pot
-    title: baron
+    disciplines: aus pot OBF PRE PRO
+    title: Baron
     clan: Ministry
     grouping: 6
   - count: 2
     name: Vivian VI
     capacity: 7
-    disciplines: PRE PRO obf tha
-    title: baron
+    disciplines: obf tha PRE PRO
+    title: Baron
     clan: Ministry
     grouping: 6
   - count: 1
@@ -47,26 +47,26 @@ deck:
   - count: 1
     name: Elisha Tucker
     capacity: 6
-    disciplines: PRE cel obf pro
-    title: baron
+    disciplines: cel obf pro PRE
+    title: Baron
     clan: Ministry
     grouping: 6
   - count: 1
     name: Aluc Romas de Leon
     capacity: 5
-    disciplines: PRE aus obf pro
+    disciplines: aus obf pro PRE
     clan: Ministry
     grouping: 6
   - count: 1
     name: Doctor Morocco
     capacity: 5
-    disciplines: PRO cel obf pre
+    disciplines: cel obf pre PRO
     clan: Ministry
     grouping: 6
   - count: 1
     name: Jenny Silver
     capacity: 5
-    disciplines: PRE PRO obf
+    disciplines: obf PRE PRO
     clan: Ministry
     grouping: 6
   - count: 1

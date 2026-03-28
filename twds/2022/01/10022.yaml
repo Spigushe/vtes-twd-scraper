@@ -7,8 +7,7 @@ winner: Gianluca Bianco
 vekn_number: 1004619
 event_url: https://www.vekn.net/event-calendar/event/10022
 event_id: 10022
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/79594-twd-campionato-nazionale-italiano-2021
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79594-twd-campionato-nazionale-italiano-2021
 deck:
   name: TWD Campionato Nazionale 2021 [
   created_by: Gianluca Bianco
@@ -22,14 +21,14 @@ deck:
     name: Massimiliano
     capacity: 7
     disciplines: pro ANI FOR
-    title: baron
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 3
     name: Casey Snyder
     capacity: 6
-    disciplines: ani for cel PRO
-    title: baron
+    disciplines: ani cel for PRO
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1

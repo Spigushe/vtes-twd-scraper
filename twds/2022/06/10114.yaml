@@ -21,7 +21,7 @@ deck:
     name: Gilbert Duane
     capacity: 7
     disciplines: AUS DOM OBF
-    title: prince
+    title: Prince
     clan: Malkavian
     grouping: 1
   - count: 2
@@ -34,7 +34,7 @@ deck:
     name: Greger Anderssen
     capacity: 7
     disciplines: dom pro AUS OBF
-    title: prince
+    title: Prince
     clan: Malkavian
     grouping: 2
   - count: 2
@@ -47,7 +47,7 @@ deck:
     name: Reverend Blackwood
     capacity: 6
     disciplines: obf DOM THA
-    title: bishop
+    title: Bishop
     clan: Tremere antitribu
     grouping: 2
   - count: 1

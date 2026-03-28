@@ -8,8 +8,7 @@ vekn_number: 2360010
 event_url: https://www.vekn.net/player-registry/event/11929
 event_id: 11929
 vp_comment: 2GW+9.5VP + 4VP in final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82150-twd-puppet-master-lafayette-la
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82150-twd-puppet-master-lafayette-la
 deck:
   name: I Am Atomic
   created_by: Sidney Conklin
@@ -22,36 +21,36 @@ deck:
   - count: 1
     name: Gnaeus Aemilius Augustinus
     capacity: 9
-    disciplines: DOM OBL POT PRO tha
-    title: prince
+    disciplines: tha DOM OBL POT PRO
+    title: Prince
     clan: Lasombra
     grouping: 6
   - count: 3
     name: Yewon Ong
     capacity: 8
-    disciplines: DOM OBL POT for
-    title: prince
+    disciplines: for DOM OBL POT
+    title: Prince
     clan: Lasombra
     grouping: 6
   - count: 2
     name: María del Toro
     capacity: 7
     disciplines: DOM OBL POT
-    title: prince
+    title: Prince
     clan: Lasombra
     grouping: 6
   - count: 1
     name: Rinaldo Albizzi
     capacity: 7
-    disciplines: DOM OBL POT pre
-    title: primogen
+    disciplines: pre DOM OBL POT
+    title: Primogen
     clan: Lasombra
     grouping: 6
   - count: 2
     name: Kamaluddin
     capacity: 6
-    disciplines: DOM OBL for pot
-    title: primogen
+    disciplines: for pot DOM OBL
+    title: Primogen
     clan: Lasombra
     grouping: 6
   - count: 1

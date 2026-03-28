@@ -7,8 +7,7 @@ winner: Selim Ammouche
 vekn_number: 3200322
 event_url: https://www.vekn.net/event-calendar/event/10295
 event_id: 10295
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80105-twd-day-operation-paris-france-jul-23-2022
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80105-twd-day-operation-paris-france-jul-23-2022
 deck:
   name: Brujah Anarch Cel Gun
   description: ''
@@ -21,21 +20,21 @@ deck:
     name: Aline Gädeke
     capacity: 7
     disciplines: cel POT PRE
-    title: baron
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 3
     name: Atiena
     capacity: 6
-    disciplines: pot pre obf CEL
-    title: baron
+    disciplines: obf pot pre CEL
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 1
     name: Leumeah
     capacity: 6
     disciplines: cel for pot PRE
-    title: baron
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 2

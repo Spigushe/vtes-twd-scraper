@@ -7,8 +7,7 @@ winner: Daniel Fernández Rivero
 vekn_number: 1001677
 event_url: https://www.vekn.net/player-registry/event/10796
 event_id: 10796
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80856-twd-bloody-summer-july-1st-2023-sevilla
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80856-twd-bloody-summer-july-1st-2023-sevilla
 deck:
   name: MONTADO 1.1 - HERALDOS - LEGIONARIOS BLOKER
   created_by: Daniel Fernández Rivero
@@ -33,7 +32,7 @@ deck:
   - count: 1
     name: Alcoan
     capacity: 7
-    disciplines: AUS CEL NEC for
+    disciplines: for AUS CEL NEC
     clan: Harbinger of Skulls
     grouping: 6
   - count: 3
@@ -45,7 +44,7 @@ deck:
   - count: 1
     name: La Viuda Blanca
     capacity: 6
-    disciplines: AUS NEC for obf
+    disciplines: for obf AUS NEC
     clan: Harbinger of Skulls
     grouping: 6
   library_count: 90

@@ -8,8 +8,7 @@ vekn_number: 7910002
 event_url: https://www.vekn.net/event-calendar/event/10219
 event_id: 10219
 vp_comment: 2gw7 + 5vp in final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/79877-twd-praxis-seizure-miami-massa-italy-26-jun-2022
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79877-twd-praxis-seizure-miami-massa-italy-26-jun-2022
 deck:
   name: Banu Haquinator
   description: ''
@@ -22,7 +21,7 @@ deck:
     name: Rebekah
     capacity: 9
     disciplines: AUS CEL DOM OBF QUI
-    title: prince
+    title: Prince
     clan: Banu Haqim
     grouping: 3
   - count: 4

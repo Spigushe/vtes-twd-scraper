@@ -11,8 +11,8 @@ forum_post_url:
   https://www.vekn.net/forum/event-reports-and-twd/81835-twd-vtes-european-championship-2024-day-1-warsaw-poland-28-sep-2024
 deck:
   name: The queen of æmilia
-  description: the name of the deck comes from the traveler's queen buried in my
-    hometown (Spilamberto), also home of our game community.
+  description: the name of the deck comes from the traveler's queen buried in my hometown (Spilamberto), also home of 
+    our game community.
   crypt_count: 12
   crypt_min: 16
   crypt_max: 28
@@ -21,7 +21,7 @@ deck:
   - count: 2
     name: Gathii
     capacity: 5
-    disciplines: ANI PRE obf
+    disciplines: obf ANI PRE
     clan: Ravnos
     grouping: 7
   - count: 2
@@ -39,7 +39,7 @@ deck:
   - count: 1
     name: Doc Martina
     capacity: 6
-    disciplines: ANI OBF for pre
+    disciplines: for pre ANI OBF
     clan: Ravnos
     grouping: 7
   - count: 1
@@ -51,7 +51,7 @@ deck:
   - count: 1
     name: Luciano Carvalho
     capacity: 6
-    disciplines: ANI OBF pre
+    disciplines: pre ANI OBF
     clan: Ravnos
     grouping: 7
   - count: 1
@@ -63,13 +63,13 @@ deck:
   - count: 1
     name: Phaibun
     capacity: 5
-    disciplines: OBF PRE ani
+    disciplines: ani OBF PRE
     clan: Ravnos
     grouping: 7
   - count: 1
     name: Zafira
     capacity: 4
-    disciplines: PRE obf
+    disciplines: obf PRE
     clan: Ravnos
     grouping: 7
   library_count: 90

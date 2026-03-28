@@ -7,8 +7,7 @@ winner: Enrique Montaño Torres
 vekn_number: 1000545
 event_url: https://www.vekn.net/event-calendar/event/11436
 event_id: 11436
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81505-liga-chilanga-2024-jornada-3
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81505-liga-chilanga-2024-jornada-3
 deck:
   name: Deep Camp of bats
   created_by: Geek Doctor
@@ -21,13 +20,13 @@ deck:
   - count: 2
     name: Beetleman
     capacity: 4
-    disciplines: ANI obf
+    disciplines: obf ANI
     clan: Nosferatu
     grouping: 4
   - count: 2
     name: Bobby Lemon
     capacity: 4
-    disciplines: ANI pro
+    disciplines: pro ANI
     clan: Gangrel
     grouping: 3
   - count: 2

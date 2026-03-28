@@ -7,15 +7,12 @@ winner: Gwénael Forêt
 vekn_number: 4690005
 event_url: https://www.vekn.net/event-calendar/event/11235
 event_id: 11235
-vp_comment: For the final, it was largely the initial placement that allowed me 
-  to win.
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81260-twd-dogs-of-war-nancy-france-feb-24-2024
+vp_comment: For the final, it was largely the initial placement that allowed me to win.
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81260-twd-dogs-of-war-nancy-france-feb-24-2024
 deck:
   name: Knowledge is power
-  description: Here's my list... be careful, it's far from a tier 1 deck ^^ I 
-    clearly benefit from tables with decks that have enough impact to pick up 
-    the crumbs at the end of the game.
+  description: Here's my list... be careful, it's far from a tier 1 deck ^^ I clearly benefit from tables with decks 
+    that have enough impact to pick up the crumbs at the end of the game.
   crypt_count: 12
   crypt_min: 25
   crypt_max: 44
@@ -30,25 +27,25 @@ deck:
   - count: 3
     name: Troglodytia
     capacity: 10
-    disciplines: AUS FOR NEC THN obf pot
+    disciplines: obf pot AUS FOR NEC THN
     clan: Samedi
     grouping: 4
   - count: 1
     name: Morlock
     capacity: 8
-    disciplines: FOR NEC THN obf
+    disciplines: obf FOR NEC THN
     clan: Samedi
     grouping: 4
   - count: 1
     name: Baroque
     capacity: 7
-    disciplines: NEC THN aus for obf
+    disciplines: aus for obf NEC THN
     clan: Samedi
     grouping: 5
   - count: 1
     name: Macoute
     capacity: 6
-    disciplines: FOR NEC obf thn
+    disciplines: obf thn FOR NEC
     clan: Samedi
     grouping: 4
   - count: 1

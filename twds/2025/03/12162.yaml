@@ -22,8 +22,8 @@ deck:
   - count: 5
     name: Gnaeus Aemilius Augustinus
     capacity: 9
-    disciplines: DOM OBL POT PRO tha
-    title: prince
+    disciplines: tha DOM OBL POT PRO
+    title: Prince
     clan: Lasombra
     grouping: 6
   - count: 3
@@ -36,13 +36,13 @@ deck:
     name: Ángel Guerrero
     capacity: 7
     disciplines: ANI DOM PRO
-    title: baron
+    title: Baron
     clan: Tzimisce
     grouping: 6
   - count: 2
     name: Marialena
     capacity: 5
-    disciplines: DOM PRO ani
+    disciplines: ani DOM PRO
     clan: Tzimisce
     grouping: 6
   library_count: 87

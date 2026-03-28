@@ -7,8 +7,7 @@ winner: Pedro Luis
 vekn_number: 3121005
 event_url: https://www.vekn.net/event-calendar/event/11695
 event_id: 11695
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81812-twd-first-tradition-14-09-2024
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81812-twd-first-tradition-14-09-2024
 deck:
   name: Apps are slaving you. Break the bonds!
   description: ''
@@ -32,25 +31,25 @@ deck:
   - count: 1
     name: Doc Martina
     capacity: 6
-    disciplines: ANI OBF for pre
+    disciplines: for pre ANI OBF
     clan: Ravnos
     grouping: 7
   - count: 1
     name: Luciano Carvalho
     capacity: 6
-    disciplines: ANI OBF pre
+    disciplines: pre ANI OBF
     clan: Ravnos
     grouping: 7
   - count: 2
     name: Gathii
     capacity: 5
-    disciplines: ANI PRE obf
+    disciplines: obf ANI PRE
     clan: Ravnos
     grouping: 7
   - count: 2
     name: Phaibun
     capacity: 5
-    disciplines: OBF PRE ani
+    disciplines: ani OBF PRE
     clan: Ravnos
     grouping: 7
   - count: 1
@@ -62,7 +61,7 @@ deck:
   - count: 1
     name: Zafira
     capacity: 4
-    disciplines: PRE obf
+    disciplines: obf PRE
     clan: Ravnos
     grouping: 7
   - count: 1

@@ -7,8 +7,7 @@ winner: Henrique Cone
 vekn_number: 7060053
 event_url: https://www.vekn.net/player-registry/event/10209
 event_id: 10209
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/79834-twda-taunt-the-caged-beast
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79834-twda-taunt-the-caged-beast
 deck:
   name: night
   description: ''
@@ -20,7 +19,7 @@ deck:
   - count: 4
     name: Arcadian, The
     capacity: 8
-    disciplines: DOM MYT OBT chi for
+    disciplines: chi for DOM MYT OBT
     clan: Kiasyd
     grouping: 5
   - count: 3
@@ -32,27 +31,27 @@ deck:
   - count: 2
     name: Omme Enberbenight
     capacity: 7
-    disciplines: MYT OBT cel dom
-    title: priscus
+    disciplines: cel dom MYT OBT
+    title: Priscus
     clan: Kiasyd
     grouping: 4
   - count: 1
     name: Pherydima
     capacity: 8
-    disciplines: DOM MYT NEC obt pot
-    title: bishop
+    disciplines: obt pot DOM MYT NEC
+    title: Bishop
     clan: Kiasyd
     grouping: 4
   - count: 1
     name: Roderick Phillips March
     capacity: 7
-    disciplines: DOM MYT cel obt tha
+    disciplines: cel obt tha DOM MYT
     clan: Kiasyd
     grouping: 4
   - count: 1
     name: Dame Hollerton
     capacity: 5
-    disciplines: DOM OBT myt
+    disciplines: myt DOM OBT
     clan: Kiasyd
     grouping: 4
   library_count: 90

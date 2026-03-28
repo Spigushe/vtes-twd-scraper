@@ -21,7 +21,7 @@ deck:
   - count: 1
     name: Mora, the Death Seer
     capacity: 7
-    disciplines: AUS FOR OBL ani
+    disciplines: ani AUS FOR OBL
     clan: Hecata
     grouping: 6
   - count: 1
@@ -33,7 +33,7 @@ deck:
   - count: 1
     name: Lenelle, Mambo of Birmingham
     capacity: 6
-    disciplines: FOR OBL aus
+    disciplines: aus FOR OBL
     clan: Hecata
     grouping: 6
   - count: 1
@@ -45,13 +45,13 @@ deck:
   - count: 2
     name: Gebeyehu Abdu
     capacity: 5
-    disciplines: AUS OBL for
+    disciplines: for AUS OBL
     clan: Hecata
     grouping: 6
   - count: 1
     name: Holliday "Burgundy" Hall
     capacity: 5
-    disciplines: FOR OBL aus
+    disciplines: aus FOR OBL
     clan: Hecata
     grouping: 6
   - count: 1

@@ -12,12 +12,10 @@ forum_post_url:
   https://www.vekn.net/forum/event-reports-and-twd/81832-twd-week-of-nightmares-2024-day-3-warsaw-poland-26-sep-2024
 deck:
   name: Radical Leftist
-  description: Considering that this team of small incompetent Stanislavas is my
-    freshest new TWD entry since the first unnamed win back in 2019, it was 
-    beyond high time to turn a new page. The deck is atypical to me in several 
-    ways, including not having a star vampire, nor any 10/11-caps. Then again, 
-    there are familiar traits, too, such as great combat defense and lunge 
-    potential. 5/5 would play again.
+  description: Considering that this team of small incompetent Stanislavas is my freshest new TWD entry since the first 
+    unnamed win back in 2019, it was beyond high time to turn a new page. The deck is atypical to me in several ways, 
+    including not having a star vampire, nor any 10/11-caps. Then again, there are familiar traits, too, such as great 
+    combat defense and lunge potential. 5/5 would play again.
   crypt_count: 12
   crypt_min: 20
   crypt_max: 31
@@ -26,47 +24,47 @@ deck:
   - count: 3
     name: Adrino Manauara
     capacity: 8
-    disciplines: ANI DOM PRO pot
-    title: baron
+    disciplines: pot ANI DOM PRO
+    title: Baron
     clan: Tzimisce
     grouping: 6
   - count: 3
     name: Ángel Guerrero
     capacity: 7
     disciplines: ANI DOM PRO
-    title: baron
+    title: Baron
     clan: Tzimisce
     grouping: 6
   - count: 2
     name: Kamile Paukstys
     capacity: 5
-    disciplines: PRO ani for
+    disciplines: ani for PRO
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Branimira
     capacity: 6
-    disciplines: ANI dom pre pro
-    title: baron
+    disciplines: dom pre pro ANI
+    title: Baron
     clan: Tzimisce
     grouping: 6
   - count: 1
     name: Clara Hjortshøj
     capacity: 5
-    disciplines: PRO ani aus dom
+    disciplines: ani aus dom PRO
     clan: Tzimisce
     grouping: 6
   - count: 1
     name: Kuyén
     capacity: 6
     disciplines: ANI PRO
-    title: baron
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Marialena
     capacity: 5
-    disciplines: DOM PRO ani
+    disciplines: ani DOM PRO
     clan: Tzimisce
     grouping: 6
   library_count: 77

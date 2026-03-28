@@ -21,25 +21,25 @@ deck:
   - count: 2
     name: Djeneba
     capacity: 9
-    disciplines: ANI AUS DOM FOR obf
+    disciplines: obf ANI AUS DOM FOR
     clan: Salubri
     grouping: 7
   - count: 2
     name: Abaddon
     capacity: 8
-    disciplines: AUS DOM FOR cel pot
+    disciplines: cel pot AUS DOM FOR
     clan: Salubri
     grouping: 7
   - count: 2
     name: Barachiel
     capacity: 7
-    disciplines: AUS DOM FOR ani
+    disciplines: ani AUS DOM FOR
     clan: Salubri
     grouping: 7
   - count: 1
     name: Ilonka
     capacity: 7
-    disciplines: AUS DOM FOR tha
+    disciplines: tha AUS DOM FOR
     clan: Salubri
     grouping: 7
   - count: 1
@@ -51,13 +51,13 @@ deck:
   - count: 1
     name: Sakhar
     capacity: 6
-    disciplines: AUS FOR dom
+    disciplines: dom AUS FOR
     clan: Salubri
     grouping: 7
   - count: 2
     name: Opikun
     capacity: 5
-    disciplines: FOR aus dom
+    disciplines: aus dom FOR
     clan: Salubri
     grouping: 7
   - count: 1

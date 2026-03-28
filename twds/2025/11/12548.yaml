@@ -21,36 +21,36 @@ deck:
   - count: 4
     name: Ambrosio Luis Monçada, Plenipotentiary
     capacity: 10
-    disciplines: DOM OBT POT PRE aus for
-    title: cardinal
+    disciplines: aus for DOM OBT POT PRE
+    title: Cardinal
     clan: Lasombra
     grouping: 2
   - count: 3
     name: Antonio Delgado
     capacity: 9
-    disciplines: DOM OBT POT tha
-    title: archbishop
+    disciplines: tha DOM OBT POT
+    title: Archbishop
     clan: Lasombra
     grouping: 2
   - count: 1
     name: Alvaro, The Scion of Angelica
     capacity: 9
-    disciplines: OBT POT dom pre
-    title: archbishop
+    disciplines: dom pre OBT POT
+    title: Archbishop
     clan: Lasombra
     grouping: 2
   - count: 1
     name: Francisco Domingo de Polonia
     capacity: 9
-    disciplines: DOM OBT POT PRE pro
-    title: archbishop
+    disciplines: pro DOM OBT POT PRE
+    title: Archbishop
     clan: Lasombra
     grouping: 2
   - count: 3
     name: Gratiano
     capacity: 8
-    disciplines: DOM OBT obf pot
-    title: priscus
+    disciplines: obf pot DOM OBT
+    title: Priscus
     clan: Lasombra
     grouping: 2
   library_count: 78

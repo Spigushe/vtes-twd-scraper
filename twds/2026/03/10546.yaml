@@ -24,35 +24,35 @@ deck:
     name: Ashur-uballit, Son of the Abyss
     capacity: 10
     disciplines: AUS DOM FOR OBL THA
-    title: cardinal
+    title: Cardinal
     clan: Hecata
     grouping: 6
   - count: 2
     name: Dafina Hanganu
     capacity: 8
-    disciplines: DOM OBL POT for
-    title: prince
+    disciplines: for DOM OBL POT
+    title: Prince
     clan: Lasombra
     grouping: 6
   - count: 2
     name: Damian
     capacity: 8
-    disciplines: DOM OBL POT for pre
-    title: archbishop
+    disciplines: for pre DOM OBL POT
+    title: Archbishop
     clan: Lasombra
     grouping: 6
   - count: 2
     name: Yewon Ong
     capacity: 8
-    disciplines: DOM OBL POT for
-    title: prince
+    disciplines: for DOM OBL POT
+    title: Prince
     clan: Lasombra
     grouping: 6
   - count: 1
     name: Kamaluddin
     capacity: 6
-    disciplines: DOM OBL for pot
-    title: primogen
+    disciplines: for pot DOM OBL
+    title: Primogen
     clan: Lasombra
     grouping: 6
   library_count: 88

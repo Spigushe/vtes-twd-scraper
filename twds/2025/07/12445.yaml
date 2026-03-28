@@ -7,13 +7,11 @@ winner: Michael Holmström
 vekn_number: 3382224
 event_url: https://www.vekn.net/event-calendar/event/12445
 event_id: 12445
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82484-twd-vtes-last-stand-helsinki-finland-27-jul-2025
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82484-twd-vtes-last-stand-helsinki-finland-27-jul-2025
 deck:
   name: Organize for deer life
   created_by: Mikkimon
-  description: Baron block with gehenna support and blood engine. Using jack, 
-    revolt and constant for forward motion.
+  description: Baron block with gehenna support and blood engine. Using jack, revolt and constant for forward motion.
   crypt_count: 12
   crypt_min: 24
   crypt_max: 27
@@ -22,85 +20,85 @@ deck:
   - count: 1
     name: Massimiliano
     capacity: 7
-    disciplines: ANI FOR pro
-    title: baron
+    disciplines: pro ANI FOR
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Valeriya Zinovieva
     capacity: 7
-    disciplines: POT cel pro pre
-    title: baron
+    disciplines: cel pre pro POT
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 1
     name: Ángel Guerrero
     capacity: 7
-    disciplines: DOM PRO ANI
-    title: baron
+    disciplines: ANI DOM PRO
+    title: Baron
     clan: Tzimisce
     grouping: 6
   - count: 1
     name: Casey Snyder
     capacity: 6
-    disciplines: PRO cel ani for
-    title: baron
+    disciplines: ani cel for PRO
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Jacques Rouge
     capacity: 6
-    disciplines: OBF pre ani pot
-    title: baron
+    disciplines: ani pot pre OBF
+    title: Baron
     clan: Nosferatu
     grouping: 6
   - count: 1
     name: Benedito, a Lanterna
     capacity: 6
-    disciplines: POT aus obf ani
-    title: baron
+    disciplines: ani aus obf POT
+    title: Baron
     clan: Nosferatu
     grouping: 6
   - count: 1
     name: Bituin
     capacity: 6
-    disciplines: THA cel dom ani
-    title: baron
+    disciplines: ani cel dom THA
+    title: Baron
     clan: Tremere
     grouping: 6
   - count: 1
     name: Leumeah
     capacity: 6
-    disciplines: PRE cel pot for
-    title: baron
+    disciplines: cel for pot PRE
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 1
     name: Kuyén
     capacity: 6
-    disciplines: PRO ANI
-    title: baron
+    disciplines: ANI PRO
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Atiena
     capacity: 6
-    disciplines: CEL obf pre pot
-    title: baron
+    disciplines: obf pot pre CEL
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 1
     name: Elisha Tucker
     capacity: 6
-    disciplines: PRE cel pro obf
-    title: baron
-    clan: Follower of Set
+    disciplines: cel obf pro PRE
+    title: Baron
+    clan: Ministry
     grouping: 6
   - count: 1
     name: Branimira
     capacity: 6
-    disciplines: ANI dom pro pre
-    title: baron
+    disciplines: dom pre pro ANI
+    title: Baron
     clan: Tzimisce
     grouping: 6
   library_count: 80

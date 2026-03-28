@@ -7,9 +7,8 @@ winner: Claudi Mailovich
 vekn_number: 5000052
 event_url: https://www.vekn.net/event-calendar/event/12360
 event_id: 12360
-vp_comment: "13 Players gathered, for warmth they say, on a Winter's Solstice Day
-  in the Southern Hemisphere. And there were some toasty decks! But Claudi's Ravnos
-  managed to collect the most GWs and VPs throughout and put her as 1st seed on the
+vp_comment: "13 Players gathered, for warmth they say, on a Winter's Solstice Day in the Southern Hemisphere. And there were
+  some toasty decks! But Claudi's Ravnos managed to collect the most GWs and VPs throughout and put her as 1st seed on the
   final table:"
 forum_post_url: 
   https://www.vekn.net/forum/event-reports-and-twd/82426-twda-low-stakes-cape-town-south-africa-22-june-2025
@@ -25,49 +24,49 @@ deck:
   - count: 2
     name: Sreelekha
     capacity: 8
-    disciplines: OBF PRE ANI FOR
+    disciplines: ANI FOR OBF PRE
     clan: Ravnos
     grouping: 7
   - count: 2
     name: Doc Martina
     capacity: 6
-    disciplines: OBF ANI pre for
+    disciplines: for pre ANI OBF
     clan: Ravnos
     grouping: 7
   - count: 2
     name: Roberto Rivamonte
     capacity: 6
-    disciplines: OBF PRE ANI
+    disciplines: ANI OBF PRE
     clan: Ravnos
     grouping: 7
   - count: 1
     name: Luciano Carvalho
     capacity: 6
-    disciplines: OBF ANI pre
+    disciplines: pre ANI OBF
     clan: Ravnos
     grouping: 7
   - count: 1
     name: Gathii
     capacity: 5
-    disciplines: PRE ANI obf
+    disciplines: obf ANI PRE
     clan: Ravnos
     grouping: 7
   - count: 1
     name: Phaibun
     capacity: 5
-    disciplines: OBF PRE ani
+    disciplines: ani OBF PRE
     clan: Ravnos
     grouping: 7
   - count: 1
     name: Jean-François
     capacity: 4
-    disciplines: obf pre ani
+    disciplines: ani obf pre
     clan: Ravnos
     grouping: 7
   - count: 1
     name: Zafira
     capacity: 4
-    disciplines: PRE obf
+    disciplines: obf PRE
     clan: Ravnos
     grouping: 7
   - count: 1

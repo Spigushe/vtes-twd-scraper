@@ -21,29 +21,29 @@ deck:
   - count: 5
     name: Lutz von Hohenzollern
     capacity: 11
-    disciplines: AUS DEM OBF PRE pot
-    title: inner circle
+    disciplines: pot AUS DEM OBF PRE
+    title: Inner Circle
     clan: Malkavian
     grouping: 4
   - count: 3
     name: Benjamin Rose
     capacity: 7
-    disciplines: AUS OBF ani pot
-    title: prince
+    disciplines: ani pot AUS OBF
+    title: Prince
     clan: Nosferatu
     grouping: 5
   - count: 2
     name: Drozodny
     capacity: 7
-    disciplines: AUS DEM OBF pre
-    title: bishop
+    disciplines: pre AUS DEM OBF
+    title: Bishop
     clan: Malkavian antitribu
     grouping: 5
   - count: 2
     name: Stavros
     capacity: 7
-    disciplines: AUS OBF PRE dem
-    title: priscus
+    disciplines: dem AUS OBF PRE
+    title: Priscus
     clan: Malkavian antitribu
     grouping: 4
   library_count: 90

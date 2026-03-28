@@ -21,14 +21,14 @@ deck:
   - count: 2
     name: Gwendolyn Fleming
     capacity: 6
-    disciplines: AUS PRE cel pro
+    disciplines: cel pro AUS PRE
     clan: Toreador
     grouping: 5
   - count: 2
     name: Maila
     capacity: 6
-    disciplines: AUS PRE cel
-    title: primogen
+    disciplines: cel AUS PRE
+    title: Primogen
     clan: Toreador
     grouping: 6
   - count: 1
@@ -46,19 +46,19 @@ deck:
   - count: 1
     name: Amber
     capacity: 5
-    disciplines: AUS PRE cel
+    disciplines: cel AUS PRE
     clan: Toreador antitribu
     grouping: 5
   - count: 1
     name: Anne-Marie Bourgeois, Inconnu Recruiter
     capacity: 5
-    disciplines: AUS cel pre
+    disciplines: cel pre AUS
     clan: Toreador
     grouping: 5
   - count: 1
     name: Bethany Ray
     capacity: 4
-    disciplines: PRE aus
+    disciplines: aus PRE
     clan: Toreador
     grouping: 5
   - count: 1
@@ -70,7 +70,7 @@ deck:
   - count: 1
     name: Tyler McGill
     capacity: 4
-    disciplines: AUS pre
+    disciplines: pre AUS
     clan: Toreador
     grouping: 5
   library_count: 84

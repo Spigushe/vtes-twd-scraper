@@ -33,32 +33,32 @@ deck:
   - count: 2
     name: Onaedo
     capacity: 6
-    disciplines: DOM OBT aus pot
+    disciplines: aus pot DOM OBT
     clan: Lasombra
     grouping: 4
   - count: 1
     name: Black Wallace
     capacity: 6
-    disciplines: DOM POT obt tha
+    disciplines: obt tha DOM POT
     clan: Lasombra
     grouping: 4
   - count: 1
     name: Virginie, Prodigy
     capacity: 6
-    disciplines: DOM POT obt
-    title: bishop
+    disciplines: obt DOM POT
+    title: Bishop
     clan: Lasombra
     grouping: 4
   - count: 2
     name: Dame Hollerton
     capacity: 5
-    disciplines: DOM OBT myt
+    disciplines: myt DOM OBT
     clan: Kiasyd
     grouping: 4
   - count: 1
     name: Ermenegildo, The Rake
     capacity: 5
-    disciplines: DOM OBT pot
+    disciplines: pot DOM OBT
     clan: Lasombra
     grouping: 4
   - count: 2

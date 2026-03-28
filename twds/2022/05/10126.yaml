@@ -28,14 +28,14 @@ deck:
     name: Vivian VI
     capacity: 7
     disciplines: obf tha PRE PRO
-    title: baron
+    title: Baron
     clan: Ministry
     grouping: 6
   - count: 2
     name: Elisha Tucker
     capacity: 6
     disciplines: cel obf pro PRE
-    title: baron
+    title: Baron
     clan: Ministry
     grouping: 6
   - count: 2

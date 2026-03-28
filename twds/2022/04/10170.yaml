@@ -7,8 +7,7 @@ winner: Diogo Pratas
 vekn_number: 4300002
 event_url: https://www.vekn.net/event-calendar/event/10170
 event_id: 10170
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/79800-twd-secure-haven-23-04-2022
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79800-twd-secure-haven-23-04-2022
 deck:
   name: Stanislava, the Black Cat
   description: ''
@@ -21,28 +20,28 @@ deck:
     name: Hartmut Stover
     capacity: 10
     disciplines: dom for CEL OBF PRO
-    title: archbishop
+    title: Archbishop
     clan: Gangrel antitribu
     grouping: 3
   - count: 3
     name: Ingrid Rossler
     capacity: 9
     disciplines: dom ANI FOR PRO
-    title: prince
+    title: Prince
     clan: Gangrel
     grouping: 2
   - count: 2
     name: Mark Decker
     capacity: 8
     disciplines: ani for obf pot CEL PRO
-    title: prince
+    title: Prince
     clan: Gangrel
     grouping: 3
   - count: 4
     name: Stanislava
     capacity: 11
     disciplines: ANI CEL DOM FOR PRO
-    title: inner circle
+    title: Inner Circle
     clan: Gangrel
     grouping: 2
   - count: 2
@@ -51,6 +50,7 @@ deck:
     disciplines: aus cel pot ABO ANI FOR PRO
     clan: Gangrel
     grouping: 3
+    title: Justicar
   library_count: 83
   library_sections:
   - name: Master

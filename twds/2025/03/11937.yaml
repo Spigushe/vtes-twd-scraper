@@ -7,8 +7,7 @@ winner: Laurent Ribeyre
 vekn_number: 8300053
 event_url: https://www.vekn.net/event-calendar/event/11937
 event_id: 11937
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82141-twd-redemption-tournament-modena
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82141-twd-redemption-tournament-modena
 deck:
   name: Dogs of War
   created_by: Marcin Szybkowski
@@ -21,7 +20,7 @@ deck:
   - count: 2
     name: Miguel Santo Domingo
     capacity: 7
-    disciplines: POT PRE cel for
+    disciplines: cel for POT PRE
     clan: Brujah antitribu
     grouping: 3
   - count: 1
@@ -33,7 +32,7 @@ deck:
   - count: 1
     name: Hugo
     capacity: 4
-    disciplines: POT pre vic
+    disciplines: pre vic POT
     clan: Brujah antitribu
     grouping: 2
   - count: 1
@@ -45,7 +44,7 @@ deck:
   - count: 1
     name: Victor Tolliver
     capacity: 4
-    disciplines: CEL pot
+    disciplines: pot CEL
     clan: Brujah antitribu
     grouping: 2
   - count: 2

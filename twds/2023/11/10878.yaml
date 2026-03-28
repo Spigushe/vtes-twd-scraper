@@ -21,8 +21,8 @@ deck:
   - count: 2
     name: Massimiliano
     capacity: 7
-    disciplines: ANI FOR pro
-    title: baron
+    disciplines: pro ANI FOR
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 2
@@ -34,27 +34,27 @@ deck:
   - count: 2
     name: Casey Snyder
     capacity: 6
-    disciplines: PRO ani cel for
-    title: baron
+    disciplines: ani cel for PRO
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 2
     name: Kuyén
     capacity: 6
     disciplines: ANI PRO
-    title: baron
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Kamile Paukstys
     capacity: 5
-    disciplines: PRO ani for
+    disciplines: ani for PRO
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Nathan Turner
     capacity: 4
-    disciplines: PRO ani
+    disciplines: ani PRO
     clan: Gangrel
     grouping: 6
   - count: 1

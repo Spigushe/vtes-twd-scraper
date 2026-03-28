@@ -7,8 +7,7 @@ winner: Tommi Hakomaa
 vekn_number: 3530067
 event_url: https://www.vekn.net/event-calendar/event/11454
 event_id: 11454
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81649-twd-vtes-last-stand-helsinki-finland-19-jul-2024
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81649-twd-vtes-last-stand-helsinki-finland-19-jul-2024
 deck:
   name: Baron Revolution
   created_by: Teemu Sainomaa
@@ -21,78 +20,78 @@ deck:
   - count: 1
     name: Adrino Manauara
     capacity: 8
-    disciplines: ANI DOM PRO pot
-    title: baron
+    disciplines: pot ANI DOM PRO
+    title: Baron
     clan: Tzimisce
     grouping: 6
   - count: 1
     name: Saku Pihlajamäki
     capacity: 8
-    disciplines: CEL POT PRE for pro
-    title: baron
+    disciplines: for pro CEL POT PRE
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 1
     name: Sergio Bueno
     capacity: 8
-    disciplines: OBF PRE PRO aus pot
-    title: baron
+    disciplines: aus pot OBF PRE PRO
+    title: Baron
     clan: Ministry
     grouping: 6
   - count: 1
     name: Ángel Guerrero
     capacity: 7
     disciplines: ANI DOM PRO
-    title: baron
+    title: Baron
     clan: Tzimisce
     grouping: 6
   - count: 1
     name: Massimiliano
     capacity: 7
-    disciplines: ANI FOR pro
-    title: baron
+    disciplines: pro ANI FOR
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Valeriya Zinovieva
     capacity: 7
-    disciplines: POT cel pre pro
-    title: baron
+    disciplines: cel pre pro POT
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 1
     name: Vivian VI
     capacity: 7
-    disciplines: PRE PRO obf tha
-    title: baron
+    disciplines: obf tha PRE PRO
+    title: Baron
     clan: Ministry
     grouping: 6
   - count: 1
     name: Branimira
     capacity: 6
-    disciplines: ANI dom pre pro
-    title: baron
+    disciplines: dom pre pro ANI
+    title: Baron
     clan: Tzimisce
     grouping: 6
   - count: 1
     name: Casey Snyder
     capacity: 6
-    disciplines: PRO ani cel for
-    title: baron
+    disciplines: ani cel for PRO
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Elisha Tucker
     capacity: 6
-    disciplines: PRE cel obf pro
-    title: baron
+    disciplines: cel obf pro PRE
+    title: Baron
     clan: Ministry
     grouping: 6
   - count: 1
     name: Kuyén
     capacity: 6
     disciplines: ANI PRO
-    title: baron
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1

@@ -33,13 +33,13 @@ deck:
   - count: 2
     name: Midget
     capacity: 3
-    disciplines: DEM obf pre
+    disciplines: obf pre DEM
     clan: Malkavian antitribu
     grouping: 3
   - count: 1
     name: Apache Jones
     capacity: 5
-    disciplines: DEM aus for obf
+    disciplines: aus for obf DEM
     clan: Malkavian antitribu
     grouping: 4
   - count: 1
@@ -52,7 +52,7 @@ deck:
     name: Fabrizia Contreraz
     capacity: 4
     disciplines: dem pot
-    title: archbishop
+    title: Archbishop
     clan: Malkavian antitribu
     grouping: 4
   - count: 1
@@ -64,7 +64,7 @@ deck:
   - count: 1
     name: Persia, The Beautiful Statue
     capacity: 5
-    disciplines: DEM aus obf
+    disciplines: aus obf DEM
     clan: Malkavian
     grouping: 3
   library_count: 74

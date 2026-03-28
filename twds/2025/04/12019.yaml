@@ -26,20 +26,20 @@ deck:
   - count: 4
     name: Owain Evans, The Wanderer
     capacity: 8
-    disciplines: AUS DOM FOR cel pre
+    disciplines: cel pre AUS DOM FOR
     clan: Ventrue antitribu
     grouping: 3
   - count: 2
     name: Jefferson Foster
     capacity: 6
-    disciplines: AUS DOM for tha
-    title: bishop
+    disciplines: for tha AUS DOM
+    title: Bishop
     clan: Ventrue antitribu
     grouping: 4
   - count: 2
     name: Neighbor John
     capacity: 5
-    disciplines: AUS dom for
+    disciplines: dom for AUS
     clan: Ventrue antitribu
     grouping: 4
   library_count: 90

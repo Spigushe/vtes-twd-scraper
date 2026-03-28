@@ -20,29 +20,29 @@ deck:
   - count: 3
     name: Lutz von Hohenzollern
     capacity: 11
-    disciplines: AUS DEM OBF PRE pot
-    title: inner circle
+    disciplines: pot AUS DEM OBF PRE
+    title: Inner Circle
     clan: Malkavian
     grouping: 4
   - count: 2
     name: Josef von Bauren
     capacity: 11
-    disciplines: ANI DEM OBF POT cel
-    title: inner circle
+    disciplines: cel ANI DEM OBF POT
+    title: Inner Circle
     clan: Nosferatu
     grouping: 4
   - count: 5
     name: Unmada
     capacity: 10
-    disciplines: AUS DEM OBF VIC cel for
-    title: justicar
+    disciplines: cel for AUS DEM OBF VIC
+    title: Justicar
     clan: Malkavian
     grouping: 5
   - count: 2
     name: Alonso Petrodon
     capacity: 10
-    disciplines: ANI DOM OBF POT for tha
-    title: justicar
+    disciplines: for tha ANI DOM OBF POT
+    title: Justicar
     clan: Nosferatu
     grouping: 5
   library_count: 88

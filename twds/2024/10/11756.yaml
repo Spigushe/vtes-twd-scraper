@@ -20,7 +20,7 @@ deck:
   - count: 5
     name: Grimgroth
     capacity: 10
-    disciplines: AUS DOM PRE THA for
+    disciplines: for AUS DOM PRE THA
     clan: Tremere
     grouping: 6
   - count: 2
@@ -38,26 +38,26 @@ deck:
   - count: 1
     name: Aidan Lyle
     capacity: 7
-    disciplines: AUS CHI THA dom
+    disciplines: dom AUS CHI THA
     clan: Tremere
     grouping: 5
   - count: 1
     name: Ayelech
     capacity: 7
     disciplines: AUS DOM THA
-    title: prince
+    title: Prince
     clan: Tremere
     grouping: 6
   - count: 1
     name: Lord Ephraim Wainwright
     capacity: 6
-    disciplines: AUS THA for pre
+    disciplines: for pre AUS THA
     clan: Tremere
     grouping: 5
   - count: 1
     name: MacAlister Marshall
     capacity: 6
-    disciplines: THA aus dom obf pre
+    disciplines: aus dom obf pre THA
     clan: Tremere
     grouping: 5
   - count: 1

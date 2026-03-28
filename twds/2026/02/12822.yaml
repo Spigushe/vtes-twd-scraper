@@ -8,8 +8,7 @@ vekn_number: 1004624
 event_url: https://www.vekn.net/event-calendar/event/12822
 event_id: 12822
 vp_comment: 1 GW 6 VP + 3 VP in the final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82816-twd-fee-stake-warsaw-25-7-feb-2026
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82816-twd-fee-stake-warsaw-25-7-feb-2026
 deck:
   name: Gangrel Council
   created_by: Tomasz Pietkiewicz
@@ -22,22 +21,22 @@ deck:
   - count: 2
     name: Massimiliano
     capacity: 7
-    disciplines: ANI FOR pro
-    title: baron
+    disciplines: pro ANI FOR
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 2
     name: Casey Snyder
     capacity: 6
-    disciplines: PRO ani cel for
-    title: baron
+    disciplines: ani cel for PRO
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 2
     name: Kuyén
     capacity: 6
     disciplines: ANI PRO
-    title: baron
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1
@@ -49,19 +48,19 @@ deck:
   - count: 1
     name: Martina Srnankova
     capacity: 6
-    disciplines: FOR PRO ani
+    disciplines: ani FOR PRO
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Kamile Paukstys
     capacity: 5
-    disciplines: PRO ani for
+    disciplines: ani for PRO
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Nathan Turner
     capacity: 4
-    disciplines: PRO ani
+    disciplines: ani PRO
     clan: Gangrel
     grouping: 6
   - count: 1

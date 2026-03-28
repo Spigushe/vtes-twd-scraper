@@ -7,8 +7,7 @@ winner: Kelly Schultz
 vekn_number: 5040009
 event_url: https://www.vekn.net/event-calendar/event/10735
 event_id: 10735
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80668-twd-north-american-championship
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80668-twd-north-american-championship
 deck:
   name: Platonic Vote
   description: ''
@@ -20,50 +19,50 @@ deck:
   - count: 3
     name: Lutz von Hohenzollern
     capacity: 11
-    disciplines: AUS DEM OBF PRE pot
-    title: inner circle
+    disciplines: pot AUS DEM OBF PRE
+    title: Inner Circle
     clan: Malkavian
     grouping: 4
   - count: 3
     name: Undele
     capacity: 9
-    disciplines: CEL FOR obf pre ser
-    title: magaji
+    disciplines: obf pre ser CEL FOR
+    title: Magaji
     clan: Ishtarri
     grouping: 5
   - count: 2
     name: Dmitra Ilyanova
     capacity: 9
-    disciplines: CEL FOR POT PRE obf
-    title: justicar
+    disciplines: obf CEL FOR POT PRE
+    title: Justicar
     clan: Brujah
     grouping: 5
   - count: 1
     name: Adana de Sforza
     capacity: 11
-    disciplines: CEL OBF POT PRE PRO aus
-    title: inner circle
+    disciplines: aus CEL OBF POT PRE PRO
+    title: Inner Circle
     clan: Brujah
     grouping: 4
   - count: 1
     name: Orlando Oriundus
     capacity: 9
-    disciplines: AUS DOM THA obf
-    title: bishop
+    disciplines: obf AUS DOM THA
+    title: Bishop
     clan: Tremere antitribu
     grouping: 4
   - count: 1
     name: Rafael de Corazon
     capacity: 11
     disciplines: AUS CEL DOM OBF PRE
-    title: inner circle
+    title: Inner Circle
     clan: Toreador
     grouping: 4
   - count: 1
     name: Stavros
     capacity: 7
-    disciplines: AUS OBF PRE dem
-    title: priscus
+    disciplines: dem AUS OBF PRE
+    title: Priscus
     clan: Malkavian antitribu
     grouping: 4
   library_count: 80

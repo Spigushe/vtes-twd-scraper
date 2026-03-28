@@ -7,8 +7,7 @@ winner: Edgar David Caudillo Garrido
 vekn_number: 7400011
 event_url: https://www.vekn.net/event-calendar/event/10698
 event_id: 10698
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80476-liga-chilanga-jornada-1
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80476-liga-chilanga-jornada-1
 deck:
   name: better call Arishat
   created_by: Edgar David Caudillo Garrido
@@ -21,8 +20,8 @@ deck:
   - count: 2
     name: Vivian VI
     capacity: 7
-    disciplines: PRE PRO obf tha
-    title: baron
+    disciplines: obf tha PRE PRO
+    title: Baron
     clan: Ministry
     grouping: 6
   - count: 4
@@ -35,22 +34,22 @@ deck:
   - count: 2
     name: Atiena
     capacity: 6
-    disciplines: CEL obf pot pre
-    title: baron
+    disciplines: obf pot pre CEL
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 2
     name: Elisha Tucker
     capacity: 6
-    disciplines: PRE cel obf pro
-    title: baron
+    disciplines: cel obf pro PRE
+    title: Baron
     clan: Ministry
     grouping: 6
   - count: 2
     name: Jacques Rouge
     capacity: 6
-    disciplines: OBF ani pot pre
-    title: baron
+    disciplines: ani pot pre OBF
+    title: Baron
     clan: Nosferatu
     grouping: 6
   library_count: 67

@@ -21,53 +21,53 @@ deck:
   - count: 3
     name: Ira Rivers
     capacity: 7
-    disciplines: AUS CEL ani pre
-    title: prince
+    disciplines: ani pre AUS CEL
+    title: Prince
     clan: Toreador
     grouping: 3
   - count: 2
     name: Lachlan, Noddist
     capacity: 8
-    disciplines: AUS CEL PRE dom
-    title: archbishop
+    disciplines: dom AUS CEL PRE
+    title: Archbishop
     clan: Toreador antitribu
     grouping: 2
   - count: 2
     name: Venere Carboni
     capacity: 8
-    disciplines: AUS CEL PRE ani
-    title: priscus
+    disciplines: ani AUS CEL PRE
+    title: Priscus
     clan: Toreador antitribu
     grouping: 3
   - count: 1
     name: Jessica
     capacity: 7
     disciplines: AUS CEL OBT PRE
-    title: bishop
+    title: Bishop
     clan: Toreador antitribu
     grouping: 2
   - count: 1
     name: Jost Werner
     capacity: 6
-    disciplines: AUS PRE ani
+    disciplines: ani AUS PRE
     clan: Toreador antitribu
     grouping: 2
   - count: 1
     name: Mercy, Knight Inquisitor
     capacity: 5
-    disciplines: AUS cel dom pre
+    disciplines: cel dom pre AUS
     clan: Toreador antitribu
     grouping: 2
   - count: 1
     name: Remilliard, Devout Crusader
     capacity: 4
-    disciplines: AUS pre
+    disciplines: pre AUS
     clan: Toreador antitribu
     grouping: 2
   - count: 1
     name: Sheila Mezarin
     capacity: 6
-    disciplines: AUS PRE cel for
+    disciplines: cel for AUS PRE
     clan: Toreador antitribu
     grouping: 2
   library_count: 484

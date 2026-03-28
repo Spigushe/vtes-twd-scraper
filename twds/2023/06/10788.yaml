@@ -7,8 +7,7 @@ winner: Alessandro Donati
 vekn_number: 4740000
 event_url: https://www.vekn.net/event-calendar/event/10788
 event_id: 10788
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80694-twd-italian-tour-2023-massa-italy-25-june-2023
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80694-twd-italian-tour-2023-massa-italy-25-june-2023
 deck:
   name: Snake Charmers
   created_by: Alessandro Donati
@@ -21,7 +20,7 @@ deck:
   - count: 4
     name: Nangila Were
     capacity: 9
-    disciplines: ANI POT PRE obf ser
+    disciplines: obf ser ANI POT PRE
     clan: Guruhi
     grouping: 4
   - count: 3
@@ -33,19 +32,19 @@ deck:
   - count: 2
     name: Bupe Kuila
     capacity: 7
-    disciplines: OBF POT SER pre
+    disciplines: pre OBF POT SER
     clan: Ministry
     grouping: 4
   - count: 1
     name: Maskini
     capacity: 7
-    disciplines: ANI POT PRE SER abo
+    disciplines: abo ANI POT PRE SER
     clan: Guruhi
     grouping: 4
   - count: 1
     name: Clea Auguste d'Holford
     capacity: 6
-    disciplines: OBF POT pre ser
+    disciplines: pre ser OBF POT
     clan: Ministry
     grouping: 5
   - count: 1

@@ -9,8 +9,7 @@ vekn_number: 3070069
 event_url: https://www.vekn.net/event-calendar/event/11184
 event_id: 11184
 vp_comment: 3GW9.5+3
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81296-twd-atlantic-cup-2024-march-3rd-2024
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81296-twd-atlantic-cup-2024-march-3rd-2024
 deck:
   name: Chameleon
   description: ''
@@ -22,15 +21,15 @@ deck:
   - count: 1
     name: Jacques Rouge
     capacity: 6
-    disciplines: OBF ani pot pre
-    title: baron
+    disciplines: ani pot pre OBF
+    title: Baron
     clan: Nosferatu
     grouping: 6
   - count: 1
     name: Elisha Tucker
     capacity: 6
-    disciplines: PRE cel obf pro
-    title: baron
+    disciplines: cel obf pro PRE
+    title: Baron
     clan: Ministry
     grouping: 6
   - count: 1
@@ -42,21 +41,21 @@ deck:
   - count: 1
     name: Melech
     capacity: 4
-    disciplines: OBF pro
+    disciplines: pro OBF
     clan: Ministry
     grouping: 6
   - count: 1
     name: Vivian VI
     capacity: 7
-    disciplines: PRE PRO obf tha
-    title: baron
+    disciplines: obf tha PRE PRO
+    title: Baron
     clan: Ministry
     grouping: 6
   - count: 1
     name: Gilbert Duane (G6)
     capacity: 7
     disciplines: AUS DOM OBF
-    title: baron
+    title: Baron
     clan: Malkavian
     grouping: 6
   - count: 1
@@ -68,8 +67,8 @@ deck:
   - count: 5
     name: Sergio Bueno
     capacity: 8
-    disciplines: OBF PRE PRO aus pot
-    title: baron
+    disciplines: aus pot OBF PRE PRO
+    title: Baron
     clan: Ministry
     grouping: 6
   library_count: 77

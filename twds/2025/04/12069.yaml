@@ -7,8 +7,7 @@ winner: Teemu Sainomaa
 vekn_number: 3070069
 event_url: https://www.vekn.net/event-calendar/event/12069
 event_id: 12069
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82292-twd-vtes-finnish-nationals-2025
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82292-twd-vtes-finnish-nationals-2025
 deck:
   name: Toreador wall
   description: ''
@@ -20,42 +19,42 @@ deck:
   - count: 4
     name: Anneke
     capacity: 10
-    disciplines: AUS CEL PRE dom
-    title: justicar
+    disciplines: dom AUS CEL PRE
+    title: Justicar
     clan: Toreador
     grouping: 1
   - count: 4
     name: Anson
     capacity: 8
-    disciplines: CEL PRE aus dom
-    title: prince
+    disciplines: aus dom CEL PRE
+    title: Prince
     clan: Toreador
     grouping: 1
   - count: 1
     name: Alexandra
     capacity: 11
-    disciplines: ANI AUS CEL PRE dom
-    title: inner circle
+    disciplines: dom ANI AUS CEL PRE
+    title: Inner Circle
     clan: Toreador
     grouping: 2
   - count: 1
     name: Marcellus
     capacity: 8
-    disciplines: AUS CEL pro
-    title: prince
+    disciplines: pro AUS CEL
+    title: Prince
     clan: Toreador
     grouping: 2
   - count: 1
     name: Tatiana Romanov
     capacity: 7
-    disciplines: AUS cel pre
-    title: prince
+    disciplines: cel pre AUS
+    title: Prince
     clan: Toreador
     grouping: 1
   - count: 1
     name: Zöe
     capacity: 3
-    disciplines: AUS cel obf
+    disciplines: cel obf AUS
     clan: Malkavian
     grouping: 2
   library_count: 89

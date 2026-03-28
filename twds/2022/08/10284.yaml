@@ -27,14 +27,14 @@ deck:
     name: Mistress Fanchon
     capacity: 11
     disciplines: AUS CEL DOM OBF THA VIC
-    title: inner circle
+    title: Inner Circle
     clan: Tremere
     grouping: 4
   - count: 4
     name: Rafael de Corazon
     capacity: 11
     disciplines: AUS CEL DOM OBF PRE
-    title: inner circle
+    title: Inner Circle
     clan: Toreador
     grouping: 4
   library_count: 73

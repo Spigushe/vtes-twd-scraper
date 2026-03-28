@@ -21,42 +21,42 @@ deck:
     name: Diana Iadanza
     capacity: 9
     disciplines: AUS CEL FOR PRE
-    title: justicar
+    title: Justicar
     clan: Toreador
     grouping: 7
   - count: 2
     name: Catalina Vega
     capacity: 8
-    disciplines: AUS CEL PRE for
-    title: prince
+    disciplines: for AUS CEL PRE
+    title: Prince
     clan: Toreador
     grouping: 6
   - count: 1
     name: Marcos Belegrad
     capacity: 8
-    disciplines: AUS CEL PRE ani
-    title: prince
+    disciplines: ani AUS CEL PRE
+    title: Prince
     clan: Toreador
     grouping: 7
   - count: 1
     name: Modius
     capacity: 8
-    disciplines: AUS CEL PRE obf
-    title: prince
+    disciplines: obf AUS CEL PRE
+    title: Prince
     clan: Toreador
     grouping: 7
   - count: 1
     name: Flávio Gonçalves
     capacity: 7
-    disciplines: CEL PRE aus for
-    title: prince
+    disciplines: aus for CEL PRE
+    title: Prince
     clan: Toreador
     grouping: 6
   - count: 1
     name: Mkhokheli
     capacity: 6
-    disciplines: PRE aus cel for
-    title: prince
+    disciplines: aus cel for PRE
+    title: Prince
     clan: Toreador
     grouping: 6
   - count: 1

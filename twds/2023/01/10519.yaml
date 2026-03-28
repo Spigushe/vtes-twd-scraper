@@ -7,8 +7,7 @@ winner: Axel Huet
 vekn_number: 3491011
 event_url: https://www.vekn.net/event-calendar/event/10519
 event_id: 10519
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80283-report-for-king-s-rising-paris-21-01-2023
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80283-report-for-king-s-rising-paris-21-01-2023
 deck:
   name: kyassid
   created_by: Axel aka Sevatar
@@ -21,27 +20,27 @@ deck:
   - count: 3
     name: Arcadian, The
     capacity: 8
-    disciplines: DOM MYT OBT chi for
+    disciplines: chi for DOM MYT OBT
     clan: Kiasyd
     grouping: 5
   - count: 1
     name: Pherydima
     capacity: 8
-    disciplines: DOM MYT NEC obt pot
-    title: bishop
+    disciplines: obt pot DOM MYT NEC
+    title: Bishop
     clan: Kiasyd
     grouping: 4
   - count: 2
     name: Omme Enberbenight
     capacity: 7
-    disciplines: MYT OBT cel dom
-    title: priscus
+    disciplines: cel dom MYT OBT
+    title: Priscus
     clan: Kiasyd
     grouping: 4
   - count: 2
     name: Roderick Phillips March
     capacity: 7
-    disciplines: DOM MYT cel obt tha
+    disciplines: cel obt tha DOM MYT
     clan: Kiasyd
     grouping: 4
   - count: 2
@@ -53,7 +52,7 @@ deck:
   - count: 2
     name: Dame Hollerton
     capacity: 5
-    disciplines: DOM OBT myt
+    disciplines: myt DOM OBT
     clan: Kiasyd
     grouping: 4
   library_count: 84

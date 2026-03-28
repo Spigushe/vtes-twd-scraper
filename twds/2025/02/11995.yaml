@@ -8,8 +8,7 @@ vekn_number: 3770000
 event_url: https://www.vekn.net/event-calendar/event/11995
 event_id: 11995
 vp_comment: 1GW7 + 5vp in final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82166-twd-true-love-s-face-brezice-slovenia-8-feb-2025
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82166-twd-true-love-s-face-brezice-slovenia-8-feb-2025
 deck:
   name: Newsombriny
   description: ''
@@ -21,29 +20,29 @@ deck:
   - count: 3
     name: Gnaeus Aemilius Augustinus
     capacity: 9
-    disciplines: DOM OBL POT PRO tha
-    title: prince
+    disciplines: tha DOM OBL POT PRO
+    title: Prince
     clan: Lasombra
     grouping: 6
   - count: 3
     name: María del Toro
     capacity: 7
     disciplines: DOM OBL POT
-    title: prince
+    title: Prince
     clan: Lasombra
     grouping: 6
   - count: 3
     name: Yewon Ong
     capacity: 8
-    disciplines: DOM OBL POT for
-    title: prince
+    disciplines: for DOM OBL POT
+    title: Prince
     clan: Lasombra
     grouping: 6
   - count: 2
     name: Kamaluddin
     capacity: 6
-    disciplines: DOM OBL for pot
-    title: primogen
+    disciplines: for pot DOM OBL
+    title: Primogen
     clan: Lasombra
     grouping: 6
   - count: 1

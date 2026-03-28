@@ -22,41 +22,42 @@ deck:
   - count: 4
     name: Victoria Ash
     capacity: 6
-    disciplines: PRE aus cel dom
+    disciplines: aus cel dom PRE
     clan: Toreador
-    grouping: 7
+    grouping: 2
+    title: Primogen
   - count: 1
     name: Kalinda
     capacity: 6
-    disciplines: CEL OBF tha
-    title: primogen
+    disciplines: tha CEL OBF
+    title:
     clan: Banu Haqim
-    grouping: 6
+    grouping: 2
   - count: 1
     name: Kassandra Tassaki
     capacity: 6
-    disciplines: CEL THA obf
-    title: prince
+    disciplines: obf CEL THA
+    title: Prince
     clan: Banu Haqim
     grouping: 6
   - count: 1
     name: Khadija Al-Kindi
     capacity: 6
     disciplines: CEL OBF THA
-    title: primogen
+    title: Primogen
     clan: Banu Haqim
     grouping: 6
   - count: 2
     name: Asmin Kobane
     capacity: 5
-    disciplines: CEL dom obf tha
+    disciplines: dom obf tha CEL
     clan: Banu Haqim
     grouping: 6
   - count: 1
     name: Warmaksan
     capacity: 5
-    disciplines: THA cel obf
-    title: prince
+    disciplines: cel obf THA
+    title: Prince
     clan: Banu Haqim
     grouping: 6
   - count: 1

@@ -21,13 +21,13 @@ deck:
   - count: 4
     name: Guillaume Giovanni
     capacity: 9
-    disciplines: CEL DOM NEC POT obt
+    disciplines: obt CEL DOM NEC POT
     clan: Giovanni
     grouping: 4
   - count: 2
     name: Baldesar Rossellini
     capacity: 8
-    disciplines: DOM POT aus for nec
+    disciplines: aus for nec DOM POT
     clan: Giovanni
     grouping: 4
   - count: 1
@@ -40,8 +40,8 @@ deck:
   - count: 1
     name: Virginie, Prodigy
     capacity: 6
-    disciplines: DOM POT obt
-    title: bishop
+    disciplines: obt DOM POT
+    title: Bishop
     clan: Lasombra
     grouping: 4
   - count: 1

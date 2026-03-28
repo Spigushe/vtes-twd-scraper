@@ -21,21 +21,21 @@ deck:
   - count: 4
     name: Lord Tremere
     capacity: 11
-    disciplines: ANI AUS DOM THA VIC obe
+    disciplines: obe ANI AUS DOM THA VIC
     clan: Tremere
     grouping: 5
   - count: 3
     name: Mistress Fanchon
     capacity: 11
     disciplines: AUS CEL DOM OBF THA VIC
-    title: inner circle
+    title: Inner Circle
     clan: Tremere
     grouping: 4
   - count: 5
     name: Malgorzata
     capacity: 9
-    disciplines: AUS DOM THA VIC pre
-    title: priscus
+    disciplines: pre AUS DOM THA VIC
+    title: Priscus
     clan: Tremere antitribu
     grouping: 4
   library_count: 90

@@ -8,14 +8,12 @@ vekn_number: 1004352
 event_url: https://www.vekn.net/player-registry/event/11285
 event_id: 11285
 vp_comment: 1GW+4VP + 5VP in final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81955-twd-danse-macabre-ii-first-dance-vidor-texas-usa
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81955-twd-danse-macabre-ii-first-dance-vidor-texas-usa
 deck:
   name: Water Dog - Illegal Tactics
   created_by: Kelly Lyons
-  description: My prince, Norm Brown, won a tournament in Vidor in 2022 with a 
-    Brujah Illegalism Deck. He relied on Reckless Agitation as a second action. 
-    Here is his deck list.
+  description: My prince, Norm Brown, won a tournament in Vidor in 2022 with a Brujah Illegalism Deck. He relied on 
+    Reckless Agitation as a second action. Here is his deck list.
   crypt_count: 12
   crypt_min: 16
   crypt_max: 29
@@ -24,36 +22,36 @@ deck:
   - count: 1
     name: Saku Pihlajamäki
     capacity: 8
-    disciplines: CEL POT PRE for pro
-    title: baron
+    disciplines: for pro CEL POT PRE
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 2
     name: Aline Gädeke
     capacity: 7
-    disciplines: POT PRE cel
-    title: baron
+    disciplines: cel POT PRE
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 1
     name: Valeriya Zinovieva
     capacity: 7
-    disciplines: POT cel pre pro
-    title: baron
+    disciplines: cel pre pro POT
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 1
     name: Atiena
     capacity: 6
-    disciplines: CEL obf pot pre
-    title: baron
+    disciplines: obf pot pre CEL
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 1
     name: Leumeah
     capacity: 6
-    disciplines: PRE cel for pot
-    title: baron
+    disciplines: cel for pot PRE
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 1
@@ -65,13 +63,13 @@ deck:
   - count: 2
     name: Brandon Grime
     capacity: 5
-    disciplines: CEL pot pre tha
+    disciplines: pot pre tha CEL
     clan: Brujah
     grouping: 6
   - count: 1
     name: Siarhei Levchenko
     capacity: 5
-    disciplines: CEL PRE pot
+    disciplines: pot CEL PRE
     clan: Brujah
     grouping: 6
   - count: 1

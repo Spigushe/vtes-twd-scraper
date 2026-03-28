@@ -12,8 +12,7 @@ forum_post_url:
 deck:
   name: Water Dog - Ben Pealing the Ghost of Adam Hulse
   created_by: Kelly Lyons, Ben Peal and Adam Hulse
-  description: 'I started with a deck list from Ben Peal. Here is the link to that
-    deck: vdb.im/decks/2018u2bma'
+  description: 'I started with a deck list from Ben Peal. Here is the link to that deck: vdb.im/decks/2018u2bma'
   crypt_count: 12
   crypt_min: 24
   crypt_max: 35
@@ -46,7 +45,7 @@ deck:
   - count: 1
     name: La Viuda Blanca
     capacity: 6
-    disciplines: AUS NEC for obf
+    disciplines: for obf AUS NEC
     clan: Harbinger of Skulls
     grouping: 6
   library_count: 90

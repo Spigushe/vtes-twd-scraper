@@ -22,8 +22,8 @@ deck:
   - count: 2
     name: Aline Gädeke
     capacity: 7
-    disciplines: POT PRE cel
-    title: baron
+    disciplines: cel POT PRE
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 2
@@ -35,28 +35,28 @@ deck:
   - count: 2
     name: Saku Pihlajamäki
     capacity: 8
-    disciplines: CEL POT PRE for pro
-    title: baron
+    disciplines: for pro CEL POT PRE
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 2
     name: Theo Bell
-    capacity: 8
-    disciplines: CEL POT PRE aus dom
+    capacity: 7
+    disciplines: cel dom pre POT
     clan: Brujah
-    grouping: 6
+    grouping: 2
   - count: 2
     name: Valeriya Zinovieva
     capacity: 7
-    disciplines: POT cel pre pro
-    title: baron
+    disciplines: cel pre pro POT
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 1
     name: Atiena
     capacity: 6
-    disciplines: CEL obf pot pre
-    title: baron
+    disciplines: obf pot pre CEL
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 1

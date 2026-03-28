@@ -7,8 +7,7 @@ winner: Ricardo Molina Sobreira
 vekn_number: 6950000
 event_url: https://www.vekn.net/player-registry/event/10273
 event_id: 10273
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/79946-twda-open-war
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79946-twda-open-war
 deck:
   name: nao mult
   description: ''
@@ -26,19 +25,19 @@ deck:
   - count: 3
     name: Cagliostro, The Grand Copht
     capacity: 8
-    disciplines: OBF PRE SER nec pot
+    disciplines: nec pot OBF PRE SER
     clan: Ministry
     grouping: 4
   - count: 3
     name: Pentweret
     capacity: 9
-    disciplines: OBF PRE SER aus for obe
+    disciplines: aus for obe OBF PRE SER
     clan: Ministry
     grouping: 5
   - count: 2
     name: Renenet
     capacity: 5
-    disciplines: OBF PRE ser
+    disciplines: ser OBF PRE
     clan: Ministry
     grouping: 4
   library_count: 90

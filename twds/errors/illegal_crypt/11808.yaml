@@ -8,14 +8,12 @@ vekn_number: 3770052
 event_url: https://www.vekn.net/event-calendar/event/11808
 event_id: 11808
 vp_comment: 2GW7 + 4VP final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81907-twd-blood-siege-zagreb-zagreb-croatia-9-nov-2024
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81907-twd-blood-siege-zagreb-zagreb-croatia-9-nov-2024
 deck:
   created_by: Roko
-  description: A "smart" but straightforward bleed deck. The main motivation for
-    choosing this deck was to depend as little as possible on other 
-    decks/players in the current meta. The MVPs were the allies, blocking rushes
-    and diablerie.
+  description: A "smart" but straightforward bleed deck. The main motivation for choosing this deck was to depend as 
+    little as possible on other decks/players in the current meta. The MVPs were the allies, blocking rushes and 
+    diablerie.
   crypt_count: 12
   crypt_min: 19
   crypt_max: 31
@@ -24,54 +22,54 @@ deck:
   - count: 3
     name: Abraham Mellon
     capacity: 8
-    disciplines: AUS DOM OBF for tha
+    disciplines: for tha AUS DOM OBF
     clan: Malkavian
     grouping: 6
   - count: 2
     name: Jason "Son" Newberry
     capacity: 7
-    disciplines: AUS DOM OBF pre
-    title: primogen
+    disciplines: pre AUS DOM OBF
+    title: Primogen
     clan: Malkavian
     grouping: 6
   - count: 1
     name: Gilbert Duane
     capacity: 7
     disciplines: AUS DOM OBF
-    title: baron
+    title: Prince
     clan: Malkavian
-    grouping: 6
+    grouping: 1
   - count: 1
     name: Andi Liu
     capacity: 6
-    disciplines: DOM aus obf pre
-    title: prince
+    disciplines: aus obf pre DOM
+    title: Prince
     clan: Malkavian
     grouping: 6
   - count: 1
     name: Darius Shirazi
     capacity: 6
-    disciplines: AUS DOM obf
+    disciplines: obf AUS DOM
     clan: Malkavian
     grouping: 5
   - count: 1
     name: Gelasia Fotiou
     capacity: 6
-    disciplines: AUS DOM obf pre
+    disciplines: obf pre AUS DOM
     clan: Malkavian
     grouping: 6
   - count: 1
     name: Colette
     capacity: 5
-    disciplines: AUS OBF dom
+    disciplines: dom AUS OBF
     clan: Malkavian
     grouping: 6
   - count: 1
     name: Evan Klein
     capacity: 5
-    disciplines: OBF aus dom pre
+    disciplines: aus dem pre OBF
     clan: Malkavian
-    grouping: 6
+    grouping: 3
   - count: 1
     name: Ashley
     capacity: 3

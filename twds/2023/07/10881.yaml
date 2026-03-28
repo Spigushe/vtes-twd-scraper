@@ -22,7 +22,7 @@ deck:
   - count: 2
     name: Nonu Dis
     capacity: 8
-    disciplines: OBF PRE PRO for
+    disciplines: for OBF PRE PRO
     clan: Ministry
     grouping: 6
   - count: 2
@@ -34,13 +34,13 @@ deck:
   - count: 2
     name: Aluc Romas de Leon
     capacity: 5
-    disciplines: PRE aus obf pro
+    disciplines: aus obf pro PRE
     clan: Ministry
     grouping: 6
   - count: 2
     name: Jenny Silver
     capacity: 5
-    disciplines: PRE PRO obf
+    disciplines: obf PRE PRO
     clan: Ministry
     grouping: 6
   - count: 2

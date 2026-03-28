@@ -21,8 +21,8 @@ deck:
   - count: 3
     name: Brunhilde (ADV)
     capacity: 8
-    disciplines: ANI FOR PRO pre
-    title: baron
+    disciplines: pre ANI FOR PRO
+    title: Baron
     clan: Gangrel
     grouping: 3
   - count: 16

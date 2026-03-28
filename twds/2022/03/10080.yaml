@@ -7,15 +7,12 @@ winner: Kalle Blomgren
 vekn_number: 3260012
 event_url: https://www.vekn.net/event-calendar/event/10080
 event_id: 10080
-vp_comment: Drew a pretty smallish crypt in the finals and got Brook burned 
-  early by Archon Investigation.
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/79708-twd-konditionering-stockholm-sweden-2022-03-19
+vp_comment: Drew a pretty smallish crypt in the finals and got Brook burned early by Archon Investigation.
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79708-twd-konditionering-stockholm-sweden-2022-03-19
 deck:
   name: I have a Dream [
   created_by: Kalle Blomgren, deck created by Randal Rudstam
-  description: THA powerbleed deck with 10 Dreams of the Sphinx for crypt 
-    acceleration and card selection.
+  description: THA powerbleed deck with 10 Dreams of the Sphinx for crypt acceleration and card selection.
   crypt_count: 12
   crypt_min: 14
   crypt_max: 27
@@ -31,14 +28,14 @@ deck:
     name: Carna, The Princess Witch
     capacity: 7
     disciplines: AUS DOM THA
-    title: primogen
+    title: Primogen
     clan: Tremere
     grouping: 3
   - count: 1
     name: Ladislas Toth, The Torch
     capacity: 7
     disciplines: for AUS DOM THA
-    title: archbishop
+    title: Archbishop
     clan: Tremere antitribu
     grouping: 3
   - count: 1
@@ -51,7 +48,7 @@ deck:
     name: Reverend Blackwood
     capacity: 6
     disciplines: obf DOM THA
-    title: bishop
+    title: Bishop
     clan: Tremere antitribu
     grouping: 2
   - count: 1

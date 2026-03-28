@@ -21,42 +21,42 @@ deck:
     name: Stanislava
     capacity: 11
     disciplines: ANI CEL DOM FOR PRO
-    title: inner circle
+    title: Inner Circle
     clan: Gangrel
     grouping: 2
   - count: 2
     name: Xaviar (ADV)
     capacity: 10
-    disciplines: ABO ANI FOR PRO aus cel pot
-    title: justicar
+    disciplines: aus cel pot ABO ANI FOR PRO
+    title: Justicar
     clan: Gangrel
     grouping: 3
   - count: 1
     name: Genevieve
     capacity: 10
-    disciplines: ANI FOR PRO aus dom
-    title: priscus
+    disciplines: aus dom ANI FOR PRO
+    title: Priscus
     clan: Gangrel antitribu
     grouping: 2
   - count: 1
     name: Hartmut Stover
     capacity: 10
-    disciplines: CEL OBF PRO dom for
-    title: archbishop
+    disciplines: dom for CEL OBF PRO
+    title: Archbishop
     clan: Gangrel antitribu
     grouping: 3
   - count: 2
     name: Ingrid Rossler
     capacity: 9
-    disciplines: ANI FOR PRO dom
-    title: prince
+    disciplines: dom ANI FOR PRO
+    title: Prince
     clan: Gangrel
     grouping: 2
   - count: 1
     name: Mark Decker
     capacity: 8
-    disciplines: CEL PRO ani for obf pot
-    title: prince
+    disciplines: ani for obf pot CEL PRO
+    title: Prince
     clan: Gangrel
     grouping: 3
   library_count: 80

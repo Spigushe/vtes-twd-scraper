@@ -21,14 +21,14 @@ deck:
   - count: 5
     name: Sascha Vykos, The Angel of Caine (ADV)
     capacity: 8
-    disciplines: AUS THA VIC ani dom
-    title: archbishop
+    disciplines: ani dom AUS THA VIC
+    title: Archbishop
     clan: Tzimisce
     grouping: 2
   - count: 1
     name: Kazimir Savostin
     capacity: 7
-    disciplines: AUS VIC ani pot
+    disciplines: ani pot AUS VIC
     clan: Tzimisce
     grouping: 3
   - count: 1
@@ -40,25 +40,25 @@ deck:
   - count: 1
     name: Corine Marcón
     capacity: 6
-    disciplines: AUS VIC ani
+    disciplines: ani AUS VIC
     clan: Tzimisce
     grouping: 2
   - count: 1
     name: Ana Rita Montaña
     capacity: 5
-    disciplines: VIC aus dom obf
+    disciplines: aus dom obf VIC
     clan: Tzimisce
     grouping: 3
   - count: 1
     name: Rose, The
     capacity: 5
-    disciplines: PRE VIC aus
+    disciplines: aus PRE VIC
     clan: Tzimisce
     grouping: 3
   - count: 1
     name: Lolita Houston
     capacity: 4
-    disciplines: VIC aus
+    disciplines: aus VIC
     clan: Tzimisce
     grouping: 2
   - count: 1

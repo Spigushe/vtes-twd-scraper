@@ -21,55 +21,57 @@ deck:
   - count: 2
     name: Nonu Dis
     capacity: 8
-    disciplines: PRO PRE OBF for
+    disciplines: for OBF PRE PRO
     clan: Ministry
     grouping: 6
   - count: 2
     name: Vivian VI
     capacity: 7
-    disciplines: PRO PRE THA obf
+    disciplines: obf tha PRE PRO
     clan: Ministry
     grouping: 6
+    title: Baron
   - count: 1
     name: Hesha Ruhadze
-    capacity: 7
-    disciplines: PRO PRE obf aus ani
+    capacity: 6
+    disciplines: ani obf pre SER
     clan: Ministry
-    grouping: 6
+    grouping: 2
   - count: 2
     name: Elisha Tucker
     capacity: 6
-    disciplines: PRE pro obf cel
+    disciplines: cel obf pro PRE
     clan: Ministry
     grouping: 6
+    title: Baron
   - count: 1
     name: Crystal Lynn
     capacity: 6
-    disciplines: PRO PRE OBF
+    disciplines: OBF PRE PRO
     clan: Ministry
     grouping: 6
   - count: 1
     name: Aluc Romas de Leon
     capacity: 5
-    disciplines: PRE pro obf aus
+    disciplines: aus obf pro PRE
     clan: Ministry
     grouping: 6
   - count: 1
     name: Jenny Silver
     capacity: 5
-    disciplines: PRO PRE obf
+    disciplines: obf PRE PRO
     clan: Ministry
     grouping: 6
   - count: 1
     name: Doctor Morocco
     capacity: 5
-    disciplines: PRO pre obf cel
+    disciplines: cel obf pre PRO
     clan: Ministry
     grouping: 6
   - count: 1
     name: Marcel
     capacity: 4
-    disciplines: pro pre obf
+    disciplines: obf pre pro
     clan: Ministry
     grouping: 6
   library_count: 90

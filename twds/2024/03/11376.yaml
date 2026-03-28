@@ -7,8 +7,7 @@ winner: Axel Huet
 vekn_number: 3491011
 event_url: https://www.vekn.net/event-calendar/event/11376
 event_id: 11376
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81450-twd-nra-pac-paris-on-23-03-2024
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81450-twd-nra-pac-paris-on-23-03-2024
 deck:
   name: Sethite, 9 pool is not that much
   created_by: Sevatar
@@ -27,45 +26,45 @@ deck:
   - count: 2
     name: Pentweret
     capacity: 9
-    disciplines: OBF PRE SER aus for obe
+    disciplines: aus for obe OBF PRE SER
     clan: Ministry
     grouping: 5
   - count: 2
     name: Porphyrion
     capacity: 9
-    disciplines: CHI OBF PRE SER for
+    disciplines: for CHI OBF PRE SER
     clan: Ministry
     grouping: 5
   - count: 1
     name: Neferu
     capacity: 9
-    disciplines: OBF PRE SER THA dom nec
+    disciplines: dom nec OBF PRE SER THA
     title: 2 votes
     clan: Ministry
     grouping: 4
   - count: 1
     name: Shemti
     capacity: 9
-    disciplines: OBF POT PRE SER vic
+    disciplines: vic OBF POT PRE SER
     title: 1 vote
     clan: Ministry
     grouping: 5
   - count: 1
     name: Arnulf Jormungandrsson
     capacity: 8
-    disciplines: OBF PRE SER aus cel
+    disciplines: aus cel OBF PRE SER
     clan: Ministry
     grouping: 5
   - count: 1
     name: Cagliostro, The Grand Copht
     capacity: 8
-    disciplines: OBF PRE SER nec pot
+    disciplines: nec pot OBF PRE SER
     clan: Ministry
     grouping: 4
   - count: 1
     name: Renenet
     capacity: 5
-    disciplines: OBF PRE ser
+    disciplines: ser OBF PRE
     clan: Ministry
     grouping: 4
   library_count: 75

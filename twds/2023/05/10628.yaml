@@ -8,8 +8,7 @@ vekn_number: 8460002
 event_url: https://www.vekn.net/event-calendar/event/10628
 event_id: 10628
 vp_comment: 1 GW 6 + 3 in the final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80544-twd-bobby-lemon-bedlam-2023-05-21
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80544-twd-bobby-lemon-bedlam-2023-05-21
 deck:
   name: 'The Fanchon Show: Floating Torso'
   created_by: Tero Aalto
@@ -22,21 +21,21 @@ deck:
   - count: 5
     name: Malgorzata
     capacity: 9
-    disciplines: AUS DOM THA VIC pre
-    title: priscus
+    disciplines: pre AUS DOM THA VIC
+    title: Priscus
     clan: Tremere antitribu
     grouping: 4
   - count: 4
     name: Lord Tremere
     capacity: 11
-    disciplines: ANI AUS DOM THA VIC obe
+    disciplines: obe ANI AUS DOM THA VIC
     clan: Tremere
     grouping: 5
   - count: 3
     name: Mistress Fanchon
     capacity: 11
     disciplines: AUS CEL DOM OBF THA VIC
-    title: inner circle
+    title: Inner Circle
     clan: Tremere
     grouping: 4
   library_count: 77

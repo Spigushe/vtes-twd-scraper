@@ -7,8 +7,7 @@ winner: Roy Opitz
 vekn_number: 8580065
 event_url: https://www.vekn.net/player-registry/event/11560
 event_id: 11560
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81937-twd-dutch-nationals-wijchen-november-24th-2024
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81937-twd-dutch-nationals-wijchen-november-24th-2024
 deck:
   name: Anarch Tzimisce haunting your graves
   description: ''
@@ -21,39 +20,39 @@ deck:
     name: Ángel Guerrero
     capacity: 7
     disciplines: ANI DOM PRO
-    title: baron
+    title: Baron
     clan: Tzimisce
     grouping: 6
   - count: 2
     name: Adrino Manauara
     capacity: 8
-    disciplines: ANI DOM PRO pot
-    title: baron
+    disciplines: pot ANI DOM PRO
+    title: Baron
     clan: Tzimisce
     grouping: 6
   - count: 2
     name: Branimira
     capacity: 6
-    disciplines: ANI dom pre pro
-    title: baron
+    disciplines: dom pre pro ANI
+    title: Baron
     clan: Tzimisce
     grouping: 6
   - count: 1
     name: Clara Hjortshøj
     capacity: 5
-    disciplines: PRO ani aus dom
+    disciplines: ani aus dom PRO
     clan: Tzimisce
     grouping: 6
   - count: 1
     name: Marialena
     capacity: 5
-    disciplines: DOM PRO ani
+    disciplines: ani DOM PRO
     clan: Tzimisce
     grouping: 6
   - count: 1
     name: Neserian
     capacity: 6
-    disciplines: ANI DOM cel pro
+    disciplines: cel pro ANI DOM
     clan: Tzimisce
     grouping: 6
   - count: 1
@@ -65,7 +64,7 @@ deck:
   - count: 1
     name: Whisper
     capacity: 5
-    disciplines: ANI DOM pro
+    disciplines: pro ANI DOM
     clan: Tzimisce
     grouping: 6
   library_count: 90

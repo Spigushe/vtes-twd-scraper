@@ -22,8 +22,8 @@ deck:
   - count: 5
     name: Sascha Vykos, The Angel of Caine (ADV)
     capacity: 8
-    disciplines: AUS THA VIC ani dom
-    title: archbishop
+    disciplines: ani dom AUS THA VIC
+    title: Archbishop
     clan: Tzimisce
     grouping: 2
   - count: 1
@@ -35,42 +35,42 @@ deck:
   - count: 1
     name: Corine Marcón
     capacity: 6
-    disciplines: AUS VIC ani
+    disciplines: ani AUS VIC
     clan: Tzimisce
     grouping: 2
   - count: 1
     name: John Paleologus
     capacity: 9
-    disciplines: ANI AUS CEL VIC pot
-    title: archbishop
+    disciplines: pot ANI AUS CEL VIC
+    title: Archbishop
     clan: Tzimisce
     grouping: 3
   - count: 1
     name: Lambach
     capacity: 10
-    disciplines: ANI AUS DOM VIC pre
-    title: cardinal
+    disciplines: pre ANI AUS DOM VIC
+    title: Cardinal
     clan: Tzimisce
     grouping: 2
   - count: 1
     name: Meshenka
     capacity: 8
     disciplines: ANI AUS VIC
-    title: priscus
+    title: Priscus
     clan: Tzimisce
     grouping: 2
   - count: 1
     name: Stravinsky
     capacity: 9
-    disciplines: ANI AUS VIC pot
-    title: archbishop
+    disciplines: pot ANI AUS VIC
+    title: Archbishop
     clan: Tzimisce
     grouping: 2
   - count: 1
     name: Velya, The Flayer
     capacity: 9
-    disciplines: ANI AUS PRE VIC for
-    title: cardinal
+    disciplines: for ANI AUS PRE VIC
+    title: Cardinal
     clan: Tzimisce
     grouping: 3
   library_count: 90

@@ -21,28 +21,28 @@ deck:
   - count: 3
     name: Anneke
     capacity: 10
-    disciplines: AUS CEL PRE dom
-    title: justicar
+    disciplines: dom AUS CEL PRE
+    title: Justicar
     clan: Toreador
     grouping: 1
   - count: 4
     name: Anson
     capacity: 8
-    disciplines: CEL PRE aus dom
-    title: prince
+    disciplines: aus dom CEL PRE
+    title: Prince
     clan: Toreador
     grouping: 1
   - count: 3
     name: Tatiana Romanov
     capacity: 7
-    disciplines: AUS cel pre
-    title: prince
+    disciplines: cel pre AUS
+    title: Prince
     clan: Toreador
     grouping: 1
   - count: 1
     name: Dorian Strack
     capacity: 4
-    disciplines: AUS cel
+    disciplines: cel AUS
     clan: Toreador
     grouping: 1
   - count: 1

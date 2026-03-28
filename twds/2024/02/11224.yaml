@@ -7,8 +7,7 @@ winner: Daniel Motta
 vekn_number: 6130008
 event_url: https://www.vekn.net/event-calendar/event/11224
 event_id: 11224
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81253-twd-liga-juiz-de-forana-fev-24
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81253-twd-liga-juiz-de-forana-fev-24
 deck:
   name: Lasombra Vote/Bleed
   created_by: Daniel Motta
@@ -27,51 +26,51 @@ deck:
   - count: 2
     name: Carolina Vález
     capacity: 9
-    disciplines: DOM OBT POT PRE aus
-    title: archbishop
+    disciplines: aus DOM OBT POT PRE
+    title: Archbishop
     clan: Lasombra
     grouping: 5
   - count: 2
     name: Charles Delmare
     capacity: 8
-    disciplines: DOM OBT POT cel
-    title: cardinal
+    disciplines: cel DOM OBT POT
+    title: Cardinal
     clan: Lasombra
     grouping: 5
   - count: 2
     name: Lord Leopold Valdemar
     capacity: 8
-    disciplines: OBT POT cel dom obf
-    title: priscus
+    disciplines: cel dom obf OBT POT
+    title: Priscus
     clan: Lasombra
     grouping: 5
   - count: 2
     name: Percival
     capacity: 8
-    disciplines: FOR OBT POT aus dom
-    title: archbishop
+    disciplines: aus dom FOR OBT POT
+    title: Archbishop
     clan: Lasombra
     grouping: 5
   - count: 1
     name: Antón de Concepción
     capacity: 9
-    disciplines: ANI DOM OBT POT aus
-    title: archbishop
+    disciplines: aus ANI DOM OBT POT
+    title: Archbishop
     clan: Lasombra
     grouping: 4
   - count: 1
     name: Luca Italicus
     capacity: 10
-    disciplines: DOM FOR NEC OBT POT tha
-    title: archbishop
+    disciplines: tha DOM FOR NEC OBT POT
+    title: Archbishop
     clan: Lasombra
     grouping: 4
   - count: 1
     name: Bruce de Guy
     capacity: 10
-    disciplines: AUS DOM FIR OBT
-    title: archbishop
-    clan: Ventrue Antitribu
+    disciplines: AUS DOM FOR OBT
+    title: Cardinal
+    clan: Ventrue antitribu
     grouping: 4
   library_count: 84
   library_sections:

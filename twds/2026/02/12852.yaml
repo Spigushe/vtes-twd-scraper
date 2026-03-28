@@ -20,7 +20,7 @@ deck:
   - count: 2
     name: Owain Evans, The Wanderer
     capacity: 8
-    disciplines: AUS DOM FOR cel pre
+    disciplines: cel pre AUS DOM FOR
     clan: Ventrue antitribu
     grouping: 3
   - count: 2
@@ -32,32 +32,32 @@ deck:
   - count: 1
     name: Edward Neally
     capacity: 7
-    disciplines: DOM FOR aus pre
+    disciplines: aus pre DOM FOR
     clan: Ventrue antitribu
     grouping: 3
   - count: 1
     name: Jefferson Foster
     capacity: 6
-    disciplines: AUS DOM for tha
-    title: bishop
+    disciplines: for tha AUS DOM
+    title: Bishop
     clan: Ventrue antitribu
     grouping: 4
   - count: 1
     name: Mariel St. John
     capacity: 6
-    disciplines: AUS FOR dom pro
+    disciplines: dom pro AUS FOR
     clan: Ventrue antitribu
     grouping: 4
   - count: 2
     name: Neighbor John
     capacity: 5
-    disciplines: AUS dom for
+    disciplines: dom for AUS
     clan: Ventrue antitribu
     grouping: 4
   - count: 1
     name: Jephta Hester
     capacity: 5
-    disciplines: DOM FOR aus
+    disciplines: aus DOM FOR
     clan: Ventrue antitribu
     grouping: 4
   - count: 1

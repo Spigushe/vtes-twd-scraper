@@ -22,34 +22,34 @@ deck:
     name: Mistress Fanchon
     capacity: 11
     disciplines: AUS CEL DOM OBF THA VIC
-    title: inner circle
+    title: Inner Circle
     clan: Tremere
     grouping: 4
   - count: 1
     name: Lord Tremere
     capacity: 11
-    disciplines: ANI AUS DOM THA VIC obe
+    disciplines: obe ANI AUS DOM THA VIC
     clan: Tremere
     grouping: 5
   - count: 2
     name: Gabrielle di Righetti
     capacity: 10
-    disciplines: ANI AUS DOM THA obf pot
-    title: justicar
+    disciplines: obf pot ANI AUS DOM THA
+    title: Justicar
     clan: Tremere
     grouping: 5
   - count: 5
     name: Malgorzata
     capacity: 9
-    disciplines: AUS DOM THA VIC pre
-    title: priscus
+    disciplines: pre AUS DOM THA VIC
+    title: Priscus
     clan: Tremere antitribu
     grouping: 4
   - count: 2
     name: Orlando Oriundus
     capacity: 9
-    disciplines: AUS DOM THA obf
-    title: bishop
+    disciplines: obf AUS DOM THA
+    title: Bishop
     clan: Tremere antitribu
     grouping: 4
   - count: 1

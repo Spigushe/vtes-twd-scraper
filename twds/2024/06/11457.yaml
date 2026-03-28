@@ -22,14 +22,14 @@ deck:
   - count: 1
     name: Ladislas Toth, The Torch
     capacity: 7
-    disciplines: AUS DOM THA for
-    title: archbishop
+    disciplines: for AUS DOM THA
+    title: Archbishop
     clan: Tremere antitribu
     grouping: 3
   - count: 1
     name: Elena Mendoza Vasquez
     capacity: 6
-    disciplines: AUS THA dom obt
+    disciplines: dom obt AUS THA
     clan: Tremere antitribu
     grouping: 3
   - count: 1
@@ -41,13 +41,13 @@ deck:
   - count: 1
     name: Yasmin the Black
     capacity: 6
-    disciplines: AUS THA dom pre
+    disciplines: dom pre AUS THA
     clan: Tremere antitribu
     grouping: 3
   - count: 5
     name: Antonio d'Erlette
     capacity: 5
-    disciplines: THA dom for pot
+    disciplines: dom for pot THA
     clan: Tremere antitribu
     grouping: 4
   - count: 1
@@ -65,7 +65,7 @@ deck:
   - count: 1
     name: Martin Franckel
     capacity: 3
-    disciplines: AUS tha
+    disciplines: tha AUS
     clan: Tremere
     grouping: 3
   library_count: 90

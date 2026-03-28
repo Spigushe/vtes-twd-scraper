@@ -11,8 +11,7 @@ forum_post_url:
   https://www.vekn.net/forum/event-reports-and-twd/81035-twd-danse-macabre-last-dance-vidor-tx-usa-december-3-2023
 deck:
   name: Win, Lutz, or Draw
-  description: Mild tweaks to my first version, but reliable all the same. We 
-    tap, we cap.
+  description: Mild tweaks to my first version, but reliable all the same. We tap, we cap.
   crypt_count: 12
   crypt_min: 34
   crypt_max: 44
@@ -21,43 +20,43 @@ deck:
   - count: 4
     name: Lutz von Hohenzollern
     capacity: 11
-    disciplines: AUS DEM OBF PRE pot
-    title: inner circle
+    disciplines: pot AUS DEM OBF PRE
+    title: Inner Circle
     clan: Malkavian
     grouping: 4
   - count: 2
     name: Adana de Sforza
     capacity: 11
-    disciplines: CEL OBF POT PRE PRO aus
-    title: inner circle
+    disciplines: aus CEL OBF POT PRE PRO
+    title: Inner Circle
     clan: Brujah
     grouping: 4
   - count: 2
     name: Dmitra Ilyanova
     capacity: 9
-    disciplines: CEL FOR POT PRE obf
-    title: justicar
+    disciplines: obf CEL FOR POT PRE
+    title: Justicar
     clan: Brujah
     grouping: 5
   - count: 2
     name: Undele
     capacity: 9
-    disciplines: CEL FOR obf pre ser
-    title: magaji
+    disciplines: obf pre ser CEL FOR
+    title: Magaji
     clan: Ishtarri
     grouping: 5
   - count: 1
     name: Rafael de Corazon
     capacity: 11
     disciplines: AUS CEL DOM OBF PRE
-    title: inner circle
+    title: Inner Circle
     clan: Toreador
     grouping: 4
   - count: 1
     name: Stavros
     capacity: 7
-    disciplines: AUS OBF PRE dem
-    title: priscus
+    disciplines: dem AUS OBF PRE
+    title: Priscus
     clan: Malkavian antitribu
     grouping: 4
   library_count: 90

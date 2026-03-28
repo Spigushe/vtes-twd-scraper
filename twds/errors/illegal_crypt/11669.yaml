@@ -21,24 +21,24 @@ deck:
   - count: 4
     name: Juliet Parr
     capacity: 9
-    disciplines: AUS DOM OBF cel pot
-    title: justicar
+    disciplines: cel pot AUS DOM OBF
+    title: Justicar
     clan: Malkavian
     grouping: 7
   - count: 2
     name: Alexander Silverson
     capacity: 8
-    disciplines: AUS DOM OBF pre
-    title: prince
+    disciplines: pre AUS DOM OBF
+    title: Prince
     clan: Malkavian
     grouping: 6
   - count: 1
     name: Gilbert Duane
     capacity: 7
     disciplines: AUS DOM OBF
-    title: baron
+    title: Prince
     clan: Malkavian
-    grouping: 6
+    grouping: 1
   - count: 4
     name: Arishat
     capacity: 6
@@ -49,8 +49,8 @@ deck:
   - count: 1
     name: Andi Liu
     capacity: 6
-    disciplines: DOM aus obf pre
-    title: prince
+    disciplines: aus obf pre DOM
+    title: Prince
     clan: Malkavian
     grouping: 6
   library_count: 78

@@ -21,7 +21,7 @@ deck:
   - count: 2
     name: Conrad Adoula
     capacity: 8
-    disciplines: DOM OBT POT ani cel
+    disciplines: ani cel DOM OBT POT
     clan: Lasombra
     grouping: 4
   - count: 3
@@ -39,27 +39,27 @@ deck:
   - count: 1
     name: Otieno
     capacity: 6
-    disciplines: OBT POT ani dom
+    disciplines: ani dom OBT POT
     clan: Lasombra
     grouping: 4
   - count: 1
     name: Virginie, Prodigy
     capacity: 6
-    disciplines: DOM POT obt
-    title: bishop
+    disciplines: obt DOM POT
+    title: Bishop
     clan: Lasombra
     grouping: 4
   - count: 2
     name: Ermenegildo, The Rake
     capacity: 5
-    disciplines: DOM OBT pot
+    disciplines: pot DOM OBT
     clan: Lasombra
     grouping: 4
   - count: 1
     name: Andrew Emory
     capacity: 5
-    disciplines: OBT aus dom pot
-    title: bishop
+    disciplines: aus dom pot OBT
+    title: Bishop
     clan: Lasombra
     grouping: 4
   library_count: 83

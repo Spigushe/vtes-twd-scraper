@@ -12,9 +12,8 @@ forum_post_url:
 deck:
   name: OCC 2025 - Girl walks into PoG
   created_by: Ben Szymkow
-  description: Diana with tap/bleed module using Scalpel and Under the Skin. 
-    Predicted a wide-board meta so ran extra Anarchist Uprising and a Neonate 
-    Breach instead of KRC.
+  description: Diana with tap/bleed module using Scalpel and Under the Skin. Predicted a wide-board meta so ran extra 
+    Anarchist Uprising and a Neonate Breach instead of KRC.
   crypt_count: 12
   crypt_min: 25
   crypt_max: 36
@@ -24,35 +23,35 @@ deck:
     name: Diana Iadanza
     capacity: 9
     disciplines: AUS CEL FOR PRE
-    title: justicar
+    title: Justicar
     clan: Toreador
     grouping: 7
   - count: 3
     name: Catalina Vega
     capacity: 8
-    disciplines: AUS CEL PRE for
-    title: prince
+    disciplines: for AUS CEL PRE
+    title: Prince
     clan: Toreador
     grouping: 6
   - count: 2
     name: Flávio Gonçalves
     capacity: 7
-    disciplines: CEL PRE aus for
-    title: prince
+    disciplines: aus for CEL PRE
+    title: Prince
     clan: Toreador
     grouping: 6
   - count: 2
     name: Mkhokheli
     capacity: 6
-    disciplines: PRE aus cel for
-    title: prince
+    disciplines: aus cel for PRE
+    title: Prince
     clan: Toreador
     grouping: 6
   - count: 1
     name: Maila
     capacity: 6
-    disciplines: AUS PRE cel
-    title: primogen
+    disciplines: cel AUS PRE
+    title: Primogen
     clan: Toreador
     grouping: 6
   library_count: 90

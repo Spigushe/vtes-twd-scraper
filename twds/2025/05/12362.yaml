@@ -21,19 +21,19 @@ deck:
   - count: 4
     name: Jimmy Dunn
     capacity: 4
-    disciplines: CEL POT for
+    disciplines: for CEL POT
     clan: Pander
     grouping: 2
   - count: 4
     name: Richter, The Templar of Du Mont
     capacity: 7
-    disciplines: CEL POT for pre
+    disciplines: for pre CEL POT
     clan: Brujah antitribu
     grouping: 2
   - count: 2
     name: Miguel Santo Domingo
     capacity: 7
-    disciplines: POT PRE cel for
+    disciplines: cel for POT PRE
     clan: Brujah antitribu
     grouping: 3
   - count: 1
@@ -45,8 +45,8 @@ deck:
   - count: 1
     name: Pug Jackson
     capacity: 6
-    disciplines: CEL POT for pre
-    title: primogen
+    disciplines: for pre CEL POT
+    title: Primogen
     clan: Brujah
     grouping: 3
   library_count: 90

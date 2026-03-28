@@ -21,36 +21,36 @@ deck:
   - count: 2
     name: Suhailah
     capacity: 9
-    disciplines: FOR OBF pot ser
-    title: prince
+    disciplines: pot ser FOR OBF
+    title: Prince
     clan: Ventrue
     grouping: 2
   - count: 3
     name: Selma the Repugnant
     capacity: 8
-    disciplines: OBF POT ani for
-    title: prince
+    disciplines: ani for OBF POT
+    title: Prince
     clan: Nosferatu
     grouping: 1
   - count: 2
     name: Nikolaus Vermeulen
     capacity: 7
-    disciplines: POT ani for obf
-    title: prince
+    disciplines: ani for obf POT
+    title: Prince
     clan: Nosferatu
     grouping: 2
   - count: 1
     name: Gilbert Duane
     capacity: 7
     disciplines: AUS DOM OBF
-    title: prince
+    title: Prince
     clan: Malkavian
     grouping: 1
   - count: 1
     name: Murat
     capacity: 7
-    disciplines: OBF POT ser
-    title: prince
+    disciplines: ser OBF POT
+    title: Prince
     clan: Nosferatu
     grouping: 2
   - count: 1

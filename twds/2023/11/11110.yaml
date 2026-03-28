@@ -8,15 +8,12 @@ vekn_number: 3200188
 event_url: https://www.vekn.net/event-calendar/event/11110
 event_id: 11110
 vp_comment: 1.5vp in final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81058-twd-computer-hacking-paris-france-nov-25-2023
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81058-twd-computer-hacking-paris-france-nov-25-2023
 deck:
   name: Royal with Cheese
-  description: This is a new version of the deck. The deck was pretty slow so 
-    I've added a lot of Zillah's Valley and Aksinya Daclau (who happens to have 
-    all the right disciplines but no title, hence the Regent). The conclusion is
-    that even when you pack 11 Zillah's, you won't draw more than one in the 
-    early game! But it's probably bad luck.
+  description: This is a new version of the deck. The deck was pretty slow so I've added a lot of Zillah's Valley and 
+    Aksinya Daclau (who happens to have all the right disciplines but no title, hence the Regent). The conclusion is 
+    that even when you pack 11 Zillah's, you won't draw more than one in the early game! But it's probably bad luck.
   crypt_count: 13
   crypt_min: 35
   crypt_max: 44
@@ -25,28 +22,28 @@ deck:
   - count: 5
     name: Adana de Sforza
     capacity: 11
-    disciplines: CEL OBF POT PRE PRO aus
-    title: inner circle
+    disciplines: aus CEL OBF POT PRE PRO
+    title: Inner Circle
     clan: Brujah
     grouping: 4
   - count: 3
     name: Hardestadt
     capacity: 11
-    disciplines: DOM FOR POT PRE cel pro
-    title: inner circle
+    disciplines: cel pro DOM FOR POT PRE
+    title: Inner Circle
     clan: Ventrue
     grouping: 4
   - count: 4
     name: Aksinya Daclau
     capacity: 9
-    disciplines: ANI FOR PRE PRO cel tha
+    disciplines: cel tha ANI FOR PRE PRO
     clan: Gangrel antitribu
     grouping: 4
   - count: 1
     name: Lodin (Olaf Holte)
     capacity: 8
-    disciplines: DOM FOR PRE aus pro
-    title: prince
+    disciplines: aus pro DOM FOR PRE
+    title: Prince
     clan: Ventrue
     grouping: 5
   library_count: 90

@@ -8,8 +8,7 @@ vekn_number: 1001132
 event_url: https://www.vekn.net/event-calendar/event/10660
 event_id: 10660
 vp_comment: 1GW+4, 2VP in finals, win on seeding
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80654-twd-dortmunder-columbus-oh-on-20-june-2023
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80654-twd-dortmunder-columbus-oh-on-20-june-2023
 deck:
   name: The Shape of Things to Come (MesoAmerican Wing Build)
   created_by: Darby Keeney
@@ -23,13 +22,13 @@ deck:
     name: Xipe Totec
     capacity: 9
     disciplines: ANI AUS PRO VIC
-    title: archbishop
+    title: Archbishop
     clan: Tzimisce
     grouping: 5
   - count: 2
     name: Darvag, The Butcher of Rus
     capacity: 8
-    disciplines: ANI VIC aus pot pro
+    disciplines: aus pot pro ANI VIC
     clan: Tzimisce
     grouping: 4
   - count: 2
@@ -41,20 +40,20 @@ deck:
   - count: 1
     name: Dr. Morrow, The Skindoctor
     capacity: 5
-    disciplines: AUS VIC for
+    disciplines: for AUS VIC
     clan: Tzimisce
     grouping: 5
   - count: 1
     name: Duality
     capacity: 6
-    disciplines: AUS VIC ani
+    disciplines: ani AUS VIC
     clan: Tzimisce
     grouping: 4
   - count: 1
     name: Ludmijla Rakoczy
     capacity: 7
     disciplines: ANI AUS VIC
-    title: bishop
+    title: Bishop
     clan: Tzimisce
     grouping: 5
   library_count: 78
@@ -94,14 +93,12 @@ deck:
       name: Abbot
     - count: 2
       name: Deep Song
-      comment: could be Fiendish if the Femur gets removed, but the lock effect 
-        is good.
+      comment: could be Fiendish if the Femur gets removed, but the lock effect is good.
     - count: 3
       name: Fiendish Tongue
     - count: 2
       name: Under Siege
-      comment: a little harder to pull off in this build, but still worth 
-        duplication.
+      comment: a little harder to pull off in this build, but still worth duplication.
   - name: Ally
     count: 1
     cards:

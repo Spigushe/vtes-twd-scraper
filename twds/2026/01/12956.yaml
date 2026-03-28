@@ -7,8 +7,7 @@ winner: Markus Määttänen
 vekn_number: 9350051
 event_url: https://www.vekn.net/event-calendar/event/12956
 event_id: 12956
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82811-twd-garou-rim-cold-front
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82811-twd-garou-rim-cold-front
 deck:
   name: Selina Vote
   created_by: Phelddagrif
@@ -22,49 +21,49 @@ deck:
     name: Aaradhya, The Callous Tyrant
     capacity: 10
     disciplines: ANI DOM FOR POT PRE
-    title: cardinal
+    title: Cardinal
     clan: Ventrue
     grouping: 6
   - count: 4
     name: Dark Selina
     capacity: 9
-    disciplines: CEL POT PRE dom for
-    title: cardinal
+    disciplines: dom for CEL POT PRE
+    title: Cardinal
     clan: Brujah antitribu
     grouping: 5
   - count: 2
     name: Věnceslava, The Implacable
     capacity: 9
-    disciplines: DOM FOR POT PRE cel
-    title: archbishop
+    disciplines: cel DOM FOR POT PRE
+    title: Archbishop
     clan: Brujah
     grouping: 6
   - count: 1
     name: De Sade
     capacity: 9
     disciplines: AUS DOM FOR PRE
-    title: archbishop
+    title: Archbishop
     clan: Ventrue antitribu
     grouping: 5
   - count: 1
     name: Rexton "Savage" Abernathy
     capacity: 8
-    disciplines: DOM POT PRE cel
-    title: archbishop
+    disciplines: cel DOM POT PRE
+    title: Archbishop
     clan: Brujah
     grouping: 6
   - count: 1
     name: Üresség
     capacity: 8
-    disciplines: CEL POT PRE dom for
-    title: archbishop
+    disciplines: dom for CEL POT PRE
+    title: Archbishop
     clan: Brujah
     grouping: 6
   - count: 1
     name: Khin Aye
     capacity: 7
-    disciplines: POT PRE dom for
-    title: priscus
+    disciplines: dom for POT PRE
+    title: Priscus
     clan: Ventrue
     grouping: 6
   library_count: 83

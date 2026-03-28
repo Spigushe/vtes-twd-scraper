@@ -21,14 +21,14 @@ deck:
   - count: 5
     name: Lord Tremere
     capacity: 11
-    disciplines: obe ANI AUS DOM VIC THA
+    disciplines: obe ANI AUS DOM THA VIC
     clan: Tremere
     grouping: 5
   - count: 3
     name: Gabrielle di Righetti
     capacity: 10
     disciplines: obf pot ANI AUS DOM THA
-    title: justicar
+    title: Justicar
     clan: Tremere
     grouping: 5
   - count: 2
@@ -41,14 +41,14 @@ deck:
     name: Ayelech
     capacity: 7
     disciplines: AUS DOM THA
-    title: prince
+    title: Prince
     clan: Tremere
     grouping: 6
   - count: 1
     name: Zane
     capacity: 5
     disciplines: aus dom THA
-    title: primogen
+    title: Primogen
     clan: Tremere
     grouping: 5
   library_count: 90

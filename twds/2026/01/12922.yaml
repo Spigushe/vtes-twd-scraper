@@ -8,8 +8,7 @@ vekn_number: 3120011
 event_url: https://www.vekn.net/player-registry/event/12922
 event_id: 12922
 vp_comment: 1GW6VP + 1.5VP in the final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82848-twd-liga-gl-pt-25-26-mercadia-sul
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82848-twd-liga-gl-pt-25-26-mercadia-sul
 deck:
   name: Black Hand Rush
   created_by: Eduardo Carona
@@ -22,37 +21,37 @@ deck:
   - count: 4
     name: Karif al Numair
     capacity: 10
-    disciplines: AUS CEL OBF QUI for
+    disciplines: for AUS CEL OBF QUI
     clan: Banu Haqim
     grouping: 5
   - count: 2
     name: Izhim abd Azrael
     capacity: 9
-    disciplines: CEL OBF QUI THA pot
+    disciplines: pot CEL OBF QUI THA
     clan: Banu Haqim
     grouping: 5
   - count: 2
     name: Nizzam al-Latif
     capacity: 9
-    disciplines: ANI CEL OBF QUI dem
+    disciplines: dem ANI CEL OBF QUI
     clan: Banu Haqim
     grouping: 5
   - count: 2
     name: Joe "Boot" Hill
     capacity: 7
-    disciplines: CEL QUI for obf
+    disciplines: for obf CEL QUI
     clan: Banu Haqim
     grouping: 4
   - count: 1
     name: Djuhah, The Bronze Bow
     capacity: 7
-    disciplines: OBF QUI aus cel pre
+    disciplines: aus cel pre OBF QUI
     clan: Banu Haqim
     grouping: 5
   - count: 1
     name: Reza Fatir, The Dark Angel
     capacity: 6
-    disciplines: CEL QUI obf pro
+    disciplines: obf pro CEL QUI
     clan: Banu Haqim
     grouping: 4
   library_count: 90

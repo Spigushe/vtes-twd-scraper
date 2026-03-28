@@ -22,19 +22,19 @@ deck:
     name: Meshenka
     capacity: 8
     disciplines: ANI AUS VIC
-    title: priscus
+    title: Priscus
     clan: Tzimisce
     grouping: 2
   - count: 1
     name: Little Tailor of Prague
     capacity: 8
-    disciplines: ANI AUS VIC dem
+    disciplines: dem ANI AUS VIC
     clan: Tzimisce
     grouping: 2
   - count: 2
     name: Corine Marcón
     capacity: 6
-    disciplines: AUS VIC ani
+    disciplines: ani AUS VIC
     clan: Tzimisce
     grouping: 2
   - count: 1
@@ -46,13 +46,13 @@ deck:
   - count: 1
     name: Devin Bisley
     capacity: 5
-    disciplines: ANI AUS vic
+    disciplines: vic ANI AUS
     clan: Tzimisce
     grouping: 2
   - count: 1
     name: Lolita Houston
     capacity: 4
-    disciplines: VIC aus
+    disciplines: aus VIC
     clan: Tzimisce
     grouping: 2
   - count: 1

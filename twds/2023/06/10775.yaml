@@ -7,8 +7,7 @@ winner: José Ramón Rodríguez Álvarez-Solís
 vekn_number: 9510025
 event_url: https://www.vekn.net/player-registry/event/10775
 event_id: 10775
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80737-twd-liga-noroeste-final-aviles-spain-25-jun-2023
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80737-twd-liga-noroeste-final-aviles-spain-25-jun-2023
 deck:
   name: Carna&Oli
   created_by: Rollshausen
@@ -21,20 +20,20 @@ deck:
   - count: 3
     name: Oliver Thrace
     capacity: 9
-    disciplines: AUS DOM THA nec obf pot
+    disciplines: nec obf pot AUS DOM THA
     clan: Tremere
     grouping: 3
   - count: 3
     name: Carna, The Princess Witch
     capacity: 7
     disciplines: AUS DOM THA
-    title: primogen
+    title: Primogen
     clan: Tremere
     grouping: 3
   - count: 1
     name: Eugenio Estevez
     capacity: 6
-    disciplines: AUS THA dom for
+    disciplines: dom for AUS THA
     clan: Tremere
     grouping: 3
   - count: 1
@@ -46,13 +45,13 @@ deck:
   - count: 1
     name: Aisling Sturbridge
     capacity: 5
-    disciplines: AUS THA dom
+    disciplines: dom AUS THA
     clan: Tremere
     grouping: 2
   - count: 1
     name: Hannigan
     capacity: 5
-    disciplines: AUS THA dom
+    disciplines: dom AUS THA
     clan: Tremere antitribu
     grouping: 2
   - count: 1

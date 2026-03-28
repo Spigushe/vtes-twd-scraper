@@ -20,44 +20,44 @@ deck:
   - count: 5
     name: Anson
     capacity: 8
-    disciplines: CEL PRE aus dom
-    title: prince
+    disciplines: aus dom CEL PRE
+    title: Prince
     clan: Toreador
     grouping: 1
   - count: 3
     name: Alexandra
     capacity: 11
-    disciplines: ANI AUS CEL PRE dom
-    title: inner circle
+    disciplines: dom ANI AUS CEL PRE
+    title: Inner Circle
     clan: Toreador
     grouping: 2
   - count: 2
     name: Anneke
     capacity: 10
-    disciplines: AUS CEL PRE dom
-    title: justicar
+    disciplines: dom AUS CEL PRE
+    title: Justicar
     clan: Toreador
     grouping: 1
   - count: 1
     name: François Villon
     capacity: 10
-    disciplines: AUS CEL PRE chi obf pot
-    title: prince
+    disciplines: chi obf pot AUS CEL PRE
+    title: Prince
     clan: Toreador
     grouping: 2
   - count: 1
     name: Marcellus
     capacity: 8
-    disciplines: AUS CEL pro
-    title: prince
+    disciplines: pro AUS CEL
+    title: Prince
     clan: Toreador
     grouping: 2
     comment: you don't want this guy early, vamp 3
   - count: 1
     name: Victoria Ash
     capacity: 6
-    disciplines: PRE aus cel dom
-    title: primogen
+    disciplines: aus cel dom PRE
+    title: Primogen
     clan: Toreador
     grouping: 2
     comment: cheap titled bouncer that can Fist and Cap at superior

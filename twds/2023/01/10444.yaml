@@ -12,8 +12,7 @@ forum_post_url:
 deck:
   name: "Haqim's Law: Anathema"
   created_by: Emiliano Imeroni
-  description: 'Relatively obvious Banu Haqim deck with Anathema, Judgment: Camarilla
-    Segregation and an Ashur angle'
+  description: 'Relatively obvious Banu Haqim deck with Anathema, Judgment: Camarilla Segregation and an Ashur angle'
   crypt_count: 12
   crypt_min: 17
   crypt_max: 32
@@ -22,42 +21,42 @@ deck:
   - count: 2
     name: Kasim Bayar
     capacity: 9
-    disciplines: CEL OBF THA aus pot
-    title: justicar
+    disciplines: aus pot CEL OBF THA
+    title: Justicar
     clan: Banu Haqim
     grouping: 6
   - count: 2
     name: Farah Sarroub
     capacity: 7
-    disciplines: CEL THA aus obf
-    title: prince
+    disciplines: aus obf CEL THA
+    title: Prince
     clan: Banu Haqim
     grouping: 6
   - count: 3
     name: Kassandra Tassaki
     capacity: 6
-    disciplines: CEL THA obf
-    title: prince
+    disciplines: obf CEL THA
+    title: Prince
     clan: Banu Haqim
     grouping: 6
   - count: 1
     name: Khadija Al-Kindi
     capacity: 6
     disciplines: CEL OBF THA
-    title: primogen
+    title: Primogen
     clan: Banu Haqim
     grouping: 6
   - count: 2
     name: Warmaksan
     capacity: 5
-    disciplines: THA cel obf
-    title: prince
+    disciplines: cel obf THA
+    title: Prince
     clan: Banu Haqim
     grouping: 6
   - count: 1
     name: Nayarana
     capacity: 4
-    disciplines: THA cel
+    disciplines: cel THA
     clan: Banu Haqim
     grouping: 6
   - count: 1

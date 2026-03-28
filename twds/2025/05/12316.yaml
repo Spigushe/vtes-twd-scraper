@@ -7,8 +7,7 @@ winner: Federico Ferrarini
 vekn_number: 3020081
 event_url: https://www.vekn.net/event-calendar/event/12316
 event_id: 12316
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82387-twd-it25-massa-italian-tour-italy
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82387-twd-it25-massa-italian-tour-italy
 deck:
   name: shpalman
   created_by: Federico Ferrarini
@@ -27,7 +26,7 @@ deck:
   - count: 1
     name: Zafira
     capacity: 4
-    disciplines: PRE obf
+    disciplines: obf PRE
     clan: Ravnos
     grouping: 7
   - count: 2
