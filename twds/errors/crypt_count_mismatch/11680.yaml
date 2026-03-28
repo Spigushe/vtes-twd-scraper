@@ -7,25 +7,19 @@ winner: Antonio Cobo Cuenca
 vekn_number: 3810007
 event_url: https://www.vekn.net/event-calendar/event/11680
 event_id: 11680
-vp_comment: 'Description: Thanks to Jorge Delgado and Iñaki Jimenez for being always
-  there when we discussed about decks. Lots of iterations of this deck and the version
-  with wennie dom vampires around Montano was the chosen one for the day. Only change
-  I’d do is to add 2 more Freak Drive and go to 65 cards, but really the decks works
-  very well as it is. Just let the predator of your predator to get their VP and aim
-  for GW3 or GW4, never for the sweep as you need a player to be happy getting 1vp
-  and not ousting you cross table in order to win.'
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81857-twd-praxis-seizure-london-26th-october-2024
+vp_comment: 'Description: Thanks to Jorge Delgado and Iñaki Jimenez for being always there when we discussed about decks.
+  Lots of iterations of this deck and the version with wennie dom vampires around Montano was the chosen one for the day.
+  Only change I’d do is to add 2 more Freak Drive and go to 65 cards, but really the decks works very well as it is. Just
+  let the predator of your predator to get their VP and aim for GW3 or GW4, never for the sweep as you need a player to be
+  happy getting 1vp and not ousting you cross table in order to win.'
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81857-twd-praxis-seizure-london-26th-october-2024
 deck:
   name: Fine Purge v3
-  description: Thanks to Jorge Delgado and Iñaki Jimenez for being always there 
-    when we discussed about decks. Lots of iterations of this deck and the 
-    version with wennie dom vampires around Montano was the chosen one for the 
-    day. Only change I’d do is to add 2 more Freak Drive and go to 65 cards, but
-    really the decks works very well as it is. Just let the predator of your 
-    predator to get their VP and aim for GW3 or GW4, never for the sweep as you 
-    need a player to be happy getting 1vp and not ousting you cross table in 
-    order to win.
+  description: Thanks to Jorge Delgado and Iñaki Jimenez for being always there when we discussed about decks. Lots of 
+    iterations of this deck and the version with wennie dom vampires around Montano was the chosen one for the day. Only
+    change I’d do is to add 2 more Freak Drive and go to 65 cards, but really the decks works very well as it is. Just 
+    let the predator of your predator to get their VP and aim for GW3 or GW4, never for the sweep as you need a player 
+    to be happy getting 1vp and not ousting you cross table in order to win.
   crypt_count: 12
   crypt_min: 7
   crypt_max: 44
@@ -41,7 +35,7 @@ deck:
   - count: 1
     name: Banjoko
     capacity: 5
-    disciplines: DOM obt pot
+    disciplines: obt pot DOM
     clan: Lasombra
     grouping: 3
   - count: 1

@@ -7,20 +7,17 @@ winner: Joscar Gamaliel Malacaman
 vekn_number: 9430007
 event_url: https://www.vekn.net/event-calendar/event/11420
 event_id: 11420
-vp_comment: Justine (Lawfirm) 1VP -> Johann (Mono-Dementation) 1VP -> Mira (Banu
-  Haqim Princes) -> Joscar (Matasuntha) 2VP -> Faust (Malgorzata) 1VP
+vp_comment: Justine (Lawfirm) 1VP -> Johann (Mono-Dementation) 1VP -> Mira (Banu Haqim Princes) -> Joscar (Matasuntha) 
+  2VP -> Faust (Malgorzata) 1VP
 forum_post_url: 
   https://www.vekn.net/forum/event-reports-and-twd/81499-twd-kagatanfest-24-philippine-nc-25-players-may-25-2024
 deck:
   name: Matasuntha Makes it Look Easy
-  description: The third iteration of Matasuntha deck was geared towards having 
-    the ability to rush and torpor multiple vampires in the same turn while 
-    keeping the same defensive energy that has won me a couple of tournaments 
-    this competitive season. I was expecting a lot of weenie or stealth bleed 
-    decks together with the usual combat heavy meta in the Philippines and so I 
-    wanted to take a more proactive approach in taking control of the table. The
-    decision to add more rush cards and diversify them was made specifically to 
-    handle both.
+  description: The third iteration of Matasuntha deck was geared towards having the ability to rush and torpor multiple 
+    vampires in the same turn while keeping the same defensive energy that has won me a couple of tournaments this 
+    competitive season. I was expecting a lot of weenie or stealth bleed decks together with the usual combat heavy meta
+    in the Philippines and so I wanted to take a more proactive approach in taking control of the table. The decision to
+    add more rush cards and diversify them was made specifically to handle both.
   crypt_count: 13
   crypt_min: 4
   crypt_max: 40
@@ -35,15 +32,15 @@ deck:
   - count: 2
     name: Casey Snyder
     capacity: 6
-    disciplines: PRO ani cel for
-    title: baron
+    disciplines: ani cel for PRO
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Massimiliano
     capacity: 7
-    disciplines: ANI FOR pro
-    title: baron
+    disciplines: pro ANI FOR
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1

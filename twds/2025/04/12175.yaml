@@ -1,0 +1,151 @@
+name: Silesia Rumble - Night of Hecate
+location: Katowice, Poland
+date_start: 2025-04-05
+rounds_format: 3R+F
+players_count: 23
+winner: Emily Tang
+vekn_number: 3340157
+event_url: https://www.vekn.net/event-calendar/event/12175
+event_id: 12175
+vp_comment: 1GW 4,5vp + 4vp in the final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82249-twd-silesia-rumble-night-of-hecate-katowice-poland-april-5th-2025
+deck:
+  name: Castrated Tories
+  created_by: Aris
+  description: ''
+  crypt_count: 12
+  crypt_min: 29
+  crypt_max: 36
+  crypt_avg: 8.25
+  crypt:
+  - count: 4
+    name: Diana Iadanza
+    capacity: 9
+    disciplines: AUS CEL FOR PRE
+    title: Justicar
+    clan: Toreador
+    grouping: 7
+  - count: 2
+    name: Annabelle Triabell
+    capacity: 9
+    disciplines: dom for AUS CEL PRE
+    title: Primogen
+    clan: Toreador
+    grouping: 6
+  - count: 2
+    name: Catalina Vega
+    capacity: 8
+    disciplines: for AUS CEL PRE
+    title: Prince
+    clan: Toreador
+    grouping: 6
+  - count: 2
+    name: Marcos Belegrad
+    capacity: 8
+    disciplines: ani AUS CEL PRE
+    title: Prince
+    clan: Toreador
+    grouping: 7
+  - count: 1
+    name: Flávio Gonçalves
+    capacity: 7
+    disciplines: aus for CEL PRE
+    title: Prince
+    clan: Toreador
+    grouping: 6
+  - count: 1
+    name: Maila
+    capacity: 6
+    disciplines: cel AUS PRE
+    title: Primogen
+    clan: Toreador
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 17
+    cards:
+    - count: 1
+      name: Art Museum
+    - count: 2
+      name: Camarilla Conclave
+    - count: 1
+      name: Creepshow Casino
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: 'Elysium: The Palace of Versailles'
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Society Hunting Ground
+    - count: 6
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 6
+    cards:
+    - count: 4
+      name: Enchant Kindred
+    - count: 2
+      name: Entrancement
+  - name: Political Action
+    count: 17
+    cards:
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 3
+      name: Camarilla's Iron Fist
+    - count: 8
+      name: Kine Resources Contested
+    - count: 5
+      name: Parity Shift
+  - name: Action Modifier
+    count: 19
+    cards:
+    - count: 2
+      name: Aire of Elation
+    - count: 3
+      name: Forced March
+    - count: 2
+      name: Freak Drive
+    - count: 5
+      name: Loup
+    - count: 2
+      name: Perfect Paragon
+    - count: 5
+      name: Voter Captivation
+  - name: Action Modifier/Combat
+    count: 3
+    cards:
+    - count: 3
+      name: Resist Earth's Grasp
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Scalpel Tongue
+  - name: Reaction
+    count: 16
+    cards:
+    - count: 2
+      name: Eyes of Argus
+    - count: 2
+      name: My Enemy's Enemy
+    - count: 2
+      name: On the Qui Vive
+    - count: 4
+      name: 'Second Tradition: Domain'
+    - count: 6
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 10
+    cards:
+    - count: 2
+      name: Charismatic Aura
+    - count: 8
+      name: Majesty

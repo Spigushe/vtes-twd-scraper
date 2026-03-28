@@ -3,11 +3,11 @@ location: Hatvan, Hungary
 date_start: 2025-09-20
 rounds_format: 3R+F
 players_count: 39
-winner: Ádám Horváth's Tournament Winning Deck with 1,5 VPs in the Finals
+winner: Adam Horvath
+vekn_number: 3540175
 event_url: https://www.vekn.net/event-calendar/event/12436
 event_id: 12436
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82587-twd-hungarian-qualifier-series-7
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82587-twd-hungarian-qualifier-series-7
 deck:
   name: Anim Baron toolbox 1.2
   created_by: Gyula Erdős
@@ -20,48 +20,48 @@ deck:
   - count: 2
     name: Adrino Manauara
     capacity: 8
-    disciplines: ANI DOM PRO pot
-    title: baron
+    disciplines: pot ANI DOM PRO
+    title: Baron
     clan: Tzimisce
     grouping: 6
   - count: 2
     name: Ángel Guerrero
     capacity: 7
     disciplines: ANI DOM PRO
-    title: baron
+    title: Baron
     clan: Tzimisce
     grouping: 6
   - count: 2
     name: Massimiliano
     capacity: 7
-    disciplines: ANI FOR pro
-    title: baron
+    disciplines: pro ANI FOR
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Branimira
     capacity: 6
-    disciplines: ANI dom pre pro
-    title: baron
+    disciplines: dom pre pro ANI
+    title: Baron
     clan: Tzimisce
     grouping: 6
   - count: 1
     name: Gathii
     capacity: 5
-    disciplines: ANI PRE obf
+    disciplines: obf ANI PRE
     clan: Ravnos
     grouping: 7
   - count: 1
     name: Kuyén
     capacity: 6
     disciplines: ANI PRO
-    title: baron
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Neserian
     capacity: 6
-    disciplines: ANI DOM cel pro
+    disciplines: cel pro ANI DOM
     clan: Tzimisce
     grouping: 6
   - count: 1
@@ -73,7 +73,7 @@ deck:
   - count: 1
     name: Whisper
     capacity: 5
-    disciplines: ANI DOM pro
+    disciplines: pro ANI DOM
     clan: Tzimisce
     grouping: 6
   library_count: 90
@@ -296,8 +296,7 @@ deck:
     - count: 1
       name: Ozmo                     6 AUS dom obf          Malkavian:1
     - count: 1
-      name: Quira, The Bitch Queen   6 AUS OBF obt tha      Malkavian 
-        antitribu:2
+      name: Quira, The Bitch Queen   6 AUS OBF obt tha      Malkavian antitribu:2
     - count: 1
       name: Sheila Mezarin           6 AUS PRE cel for      Toreador antitribu:2
     - count: 1

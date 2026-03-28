@@ -1,0 +1,164 @@
+name: Grand Prix Germany (2025)
+location: Herne, Germany
+date_start: 2025-08-16
+rounds_format: 3R+F
+players_count: 49
+winner: Martin Weinmayer
+vekn_number: 3340035
+event_url: https://www.vekn.net/event-calendar/event/12110
+event_id: 12110
+vp_comment: 2GW6VP + 2.5VP in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82573-twd-grand-prix-germany-herne-germany-16-august-2025
+deck:
+  name: The Endless Dance
+  created_by: Martin Weinmayer
+  description: ''
+  crypt_count: 12
+  crypt_min: 27
+  crypt_max: 37
+  crypt_avg: 8.17
+  crypt:
+  - count: 1
+    name: François Villon
+    capacity: 10
+    disciplines: ani obf pot AUS CEL PRE
+    title: Prince
+    clan: Toreador
+    grouping: 6
+  - count: 5
+    name: Diana Iadanza
+    capacity: 9
+    disciplines: AUS CEL FOR PRE
+    title: Justicar
+    clan: Toreador
+    grouping: 7
+  - count: 1
+    name: Catalina Vega
+    capacity: 8
+    disciplines: for AUS CEL PRE
+    title: Prince
+    clan: Toreador
+    grouping: 6
+  - count: 1
+    name: Marcos Belegrad
+    capacity: 8
+    disciplines: ani AUS CEL PRE
+    title: Prince
+    clan: Toreador
+    grouping: 7
+  - count: 1
+    name: Modius
+    capacity: 8
+    disciplines: obf AUS CEL PRE
+    title: Prince
+    clan: Toreador
+    grouping: 7
+  - count: 1
+    name: Flávio Gonçalves
+    capacity: 7
+    disciplines: aus for CEL PRE
+    title: Prince
+    clan: Toreador
+    grouping: 6
+  - count: 1
+    name: Maila
+    capacity: 6
+    disciplines: cel AUS PRE
+    title: Primogen
+    clan: Toreador
+    grouping: 6
+  - count: 1
+    name: Mkhokheli
+    capacity: 6
+    disciplines: aus cel for PRE
+    title: Prince
+    clan: Toreador
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 22
+    cards:
+    - count: 1
+      name: British Museum, London, The
+    - count: 1
+      name: Camarilla Conclave
+    - count: 1
+      name: Creepshow Casino
+    - count: 2
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Elder Library
+    - count: 1
+      name: 'Elysium: The Palace of Versailles'
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Monastery of Shadows
+    - count: 2
+      name: Papillon
+    - count: 2
+      name: Toreador Grand Ball
+    - count: 6
+      name: Villein
+  - name: Political Action
+    count: 14
+    cards:
+    - count: 2
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 3
+      name: Camarilla's Iron Fist
+    - count: 7
+      name: Parity Shift
+    - count: 1
+      name: Political Stranglehold
+  - name: Equipment
+    count: 6
+    cards:
+    - count: 2
+      name: Bowl of Convergence
+    - count: 2
+      name: Heart of Nizchetus
+    - count: 1
+      name: Palatial Estate
+    - count: 1
+      name: Sargon Fragment, The
+  - name: Action Modifier
+    count: 16
+    cards:
+    - count: 1
+      name: Aire of Elation
+    - count: 5
+      name: Forced March
+    - count: 4
+      name: Loup
+    - count: 2
+      name: Perfect Paragon
+    - count: 4
+      name: Voter Captivation
+  - name: Action Modifier/Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: Scalpel Tongue
+  - name: Reaction
+    count: 14
+    cards:
+    - count: 4
+      name: Eyes of Argus
+    - count: 4
+      name: 'Second Tradition: Domain'
+    - count: 6
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 16
+    cards:
+    - count: 7
+      name: Charismatic Aura
+    - count: 9
+      name: Majesty

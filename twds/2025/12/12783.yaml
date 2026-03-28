@@ -1,0 +1,166 @@
+name: Tommaso Sforza's Birthday
+location: Newark, Ohio
+date_start: 2025-12-14
+rounds_format: 2R+F
+players_count: 16
+winner: Alex Romano
+event_url: https://www.vekn.net/event-calendar/event/12783
+event_id: 12783
+vp_comment: 5VP+1GW and 3VP in final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82736-twd-tommaso-sforza-s-birthday
+deck:
+  name: No Good
+  description: This is a deck in homage to "He has to run out sometime" by John Bell, as he terrorized me with it when I
+    first came back to Vtes. Same idea but a bit heavier master mix and some updated cards that didn't exist when he was
+    playing his version. The Faerie Wards tend to be much fewer than most people realize but they truly feel infinite 
+    when utilized with constant Ashur recursion. It's very weak to heavy vote meta and may need to be adjusted to deal 
+    with that more now that votes are coming back in vogue so heavily, but luckily I didn't see much vote at this 
+    tournament.
+  crypt_count: 13
+  crypt_min: 28
+  crypt_max: 36
+  crypt_avg: 8.15
+  crypt:
+  - count: 5
+    name: Marconius
+    capacity: 9
+    disciplines: pot DOM MYT OBT
+    title: Archbishop
+    clan: Kiasyd
+    grouping: 2
+  - count: 3
+    name: Gratiano
+    capacity: 8
+    disciplines: obf pot DOM OBT
+    title: Priscus
+    clan: Lasombra
+    grouping: 2
+  - count: 2
+    name: Julia Prima
+    capacity: 7
+    disciplines: aus myt DOM OBT
+    clan: Kiasyd
+    grouping: 2
+  - count: 1
+    name: Bartholomew
+    capacity: 8
+    disciplines: dom obt AUS MYT NEC
+    clan: Kiasyd
+    grouping: 2
+  - count: 1
+    name: Kassiym Malikhair
+    capacity: 6
+    disciplines: dom for MYT OBT
+    clan: Kiasyd
+    grouping: 2
+  - count: 1
+    name: Quentin
+    capacity: 9
+    disciplines: cel obt AUS DOM FOR
+    title: Bishop
+    clan: Ventrue antitribu
+    grouping: 2
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 36
+    cards:
+    - count: 9
+      name: Ashur Tablets
+    - count: 1
+      name: Auspex
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 2
+      name: Fortitude
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Great Symposium
+    - count: 1
+      name: Hungry Coyote, The
+    - count: 1
+      name: Metro Underground
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Papillon
+    - count: 3
+      name: Parthenon, The
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: Perfectionist
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Ravager
+    - count: 2
+      name: Smiling Jack, The Anarch
+    - count: 3
+      name: Vessel
+    - count: 2
+      name: Villein
+    - count: 2
+      name: Wider View
+  - name: Action
+    count: 10
+    cards:
+    - count: 3
+      name: Eternal Vigilance
+    - count: 1
+      name: Goblinism
+    - count: 4
+      name: Govern the Unaligned
+    - count: 2
+      name: Under Siege
+  - name: Political Action
+    count: 2
+    cards:
+    - count: 2
+      name: Banishment
+  - name: Ally
+    count: 2
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+    - count: 1
+      name: Mylan Horseed
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 13
+    cards:
+    - count: 1
+      name: Blanket of Night
+    - count: 2
+      name: Bonding
+    - count: 2
+      name: Foreshadowing Destruction
+    - count: 2
+      name: Shadow Play
+    - count: 3
+      name: Shroud of Absence
+    - count: 3
+      name: Stone Travel
+  - name: Action Modifier/Reaction
+    count: 1
+    cards:
+    - count: 1
+      name: Aura Absorption
+  - name: Reaction
+    count: 25
+    cards:
+    - count: 4
+      name: Deflection
+    - count: 2
+      name: Eluding the Arms of Morpheus
+    - count: 11
+      name: Faerie Wards
+    - count: 6
+      name: Obedience
+    - count: 2
+      name: On the Qui Vive

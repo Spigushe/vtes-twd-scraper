@@ -8,8 +8,7 @@ vekn_number: 1003455
 event_url: https://www.vekn.net/event-calendar/event/10733
 event_id: 10733
 vp_comment: 2GW7 + 2 vps in the final, won on seeding
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80634-origins-friday-2
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80634-origins-friday-2
 deck:
   name: Death Star (Setite Version)
   description: Another of my Death Star variants based on Matt Morgan's design.
@@ -21,43 +20,43 @@ deck:
   - count: 1
     name: Qufur am-Heru
     capacity: 7
-    disciplines: OBF PRE SER cel tha
+    disciplines: cel tha OBF PRE SER
     clan: Ministry
     grouping: 2
   - count: 1
     name: Ezekiel, Lord of Montreal
     capacity: 6
-    disciplines: PRE SER obf pot
+    disciplines: obf pot PRE SER
     clan: Ministry
     grouping: 3
   - count: 1
     name: Hesha Ruhadze
     capacity: 6
-    disciplines: SER ani obf pre
+    disciplines: ani obf pre SER
     clan: Ministry
     grouping: 2
   - count: 1
     name: Samat Ramal-Ra, Archon
     capacity: 6
-    disciplines: OBF pre ser tha
+    disciplines: pre ser tha OBF
     clan: Ministry
     grouping: 2
   - count: 1
     name: Count Ormonde
     capacity: 5
-    disciplines: OBF dom pre ser
+    disciplines: dom pre ser OBF
     clan: Ministry
     grouping: 2
   - count: 1
     name: Sir Marriot D'Urban
     capacity: 5
-    disciplines: PRE aus obf ser
+    disciplines: aus obf ser PRE
     clan: Ministry
     grouping: 2
   - count: 1
     name: Elizabeth Dimitros
     capacity: 4
-    disciplines: SER obf
+    disciplines: obf SER
     clan: Ministry
     grouping: 3
   library_count: 78

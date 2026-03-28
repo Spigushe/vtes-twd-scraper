@@ -7,8 +7,7 @@ winner: Luis Ángel Jiménez Barrios
 vekn_number: 7400007
 event_url: https://www.vekn.net/event-calendar/event/10357
 event_id: 10357
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80065-revolutionary-council-2022
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80065-revolutionary-council-2022
 deck:
   name: 1. Lutz commands the Sabbat
   description: ''
@@ -20,21 +19,21 @@ deck:
   - count: 4
     name: Lutz von Hohenzollern
     capacity: 11
-    disciplines: AUS DEM OBF PRE pot
-    title: inner circle
+    disciplines: pot AUS DEM OBF PRE
+    title: Inner Circle
     clan: Malkavian
     grouping: 4
   - count: 2
     name: Stavros
     capacity: 7
-    disciplines: AUS OBF PRE dem
-    title: priscus
+    disciplines: dem AUS OBF PRE
+    title: Priscus
     clan: Malkavian antitribu
     grouping: 4
   - count: 1
     name: Skulk
     capacity: 4
-    disciplines: OBF ani
+    disciplines: ani OBF
     clan: Nosferatu antitribu
     grouping: 5
   - count: 1

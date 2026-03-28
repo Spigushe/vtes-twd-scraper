@@ -3,11 +3,11 @@ location: Kecskemét, Hungary
 date_start: 2025-02-23
 rounds_format: 2R+F
 players_count: 10
-winner: Márk Virsinger's Tournament Winning Deck with 4 VPs in the Finals
+winner: Mark Virsinger
+vekn_number: 3540231
 event_url: https://www.vekn.net/event-calendar/event/12139
 event_id: 12139
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82135-twd-hurry-up-vol-3
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82135-twd-hurry-up-vol-3
 deck:
   name: DEM Thucimia
   created_by: László Róbert
@@ -20,26 +20,26 @@ deck:
   - count: 4
     name: Thucimia
     capacity: 10
-    disciplines: CEL DEM OBF QUI for pro
+    disciplines: for pro CEL DEM OBF QUI
     title: 1 vote
     clan: Banu Haqim
     grouping: 4
   - count: 1
     name: Joe "Boot" Hill
     capacity: 7
-    disciplines: CEL QUI for obf
+    disciplines: for obf CEL QUI
     clan: Banu Haqim
     grouping: 4
   - count: 1
     name: Reza Fatir, The Dark Angel
     capacity: 6
-    disciplines: CEL QUI obf pro
+    disciplines: obf pro CEL QUI
     clan: Banu Haqim
     grouping: 4
   - count: 1
     name: Vardar Vardarian
     capacity: 6
-    disciplines: OBF QUI cel pre
+    disciplines: cel pre OBF QUI
     clan: Banu Haqim
     grouping: 4
   - count: 1
@@ -51,7 +51,7 @@ deck:
   - count: 1
     name: Kamau Jafari
     capacity: 4
-    disciplines: QUI obf
+    disciplines: obf QUI
     clan: Banu Haqim
     grouping: 4
   - count: 1
@@ -265,23 +265,17 @@ deck:
     count: 12
     cards:
     - count: 4
-      name: Lazverinus, Thrall of Lambach         10 AUS DOM FOR POT pro 
-        archbishop   Ventrue antitribu:2
+      name: Lazverinus, Thrall of Lambach         10 AUS DOM FOR POT pro   archbishop   Ventrue antitribu:2
     - count: 1
-      name: Kyle Strathcona, Cardinal of Canada    9 AUS DOM POT PRE for 
-        cardinal     Ventrue antitribu:2
+      name: Kyle Strathcona, Cardinal of Canada    9 AUS DOM POT PRE for   cardinal     Ventrue antitribu:2
     - count: 3
-      name: Owain Evans, The Wanderer              8 AUS DOM FOR cel pre Ventrue
-        antitribu:3
+      name: Owain Evans, The Wanderer              8 AUS DOM FOR cel pre                Ventrue antitribu:3
     - count: 2
-      name: Jesse Menks                            8 AUS DOM FOR ani archbishop 
-        Ventrue antitribu:3
+      name: Jesse Menks                            8 AUS DOM FOR ani       archbishop   Ventrue antitribu:3
     - count: 1
-      name: Blackhorse Tanner                      7 AUS DOM FOR Ventrue 
-        antitribu:3
+      name: Blackhorse Tanner                      7 AUS DOM FOR                        Ventrue antitribu:3
     - count: 1
-      name: Charice Fontaigne                      6 AUS DOM for pot Ventrue 
-        antitribu:3
+      name: Charice Fontaigne                      6 AUS DOM for pot                    Ventrue antitribu:3
   - name: Library
     count: 90
     cards: []
@@ -374,8 +368,7 @@ deck:
     count: 13
     cards:
     - count: 1
-      name: '"Coach" Tyrone Soros          3 obf pre                  Follower of
-        Set:6'
+      name: '"Coach" Tyrone Soros          3 obf pre                  Follower of Set:6'
     - count: 1
       name: Doc Martina                   6 for pre ANI OBF          Ravnos:7
     - count: 1

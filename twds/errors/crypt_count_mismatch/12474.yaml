@@ -12,10 +12,9 @@ forum_post_url:
 deck:
   name: Bram's Matasuntha Multirush
   created_by: Gotcha
-  description: Once again, credit where credit is due. Bram, it's scary how well
-    your decklists usually fit my playstyle. I made some marginal changes to the
-    list I received from Bram. Some of them felt good (Beast Meld), while others
-    were such that I would cut them if I were to play the deck again.
+  description: Once again, credit where credit is due. Bram, it's scary how well your decklists usually fit my 
+    playstyle. I made some marginal changes to the list I received from Bram. Some of them felt good (Beast Meld), while
+    others were such that I would cut them if I were to play the deck again.
   crypt_count: 13
   crypt_min: 5
   crypt_max: 40

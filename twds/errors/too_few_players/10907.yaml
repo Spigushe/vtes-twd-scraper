@@ -8,8 +8,7 @@ vekn_number: 2220009
 event_url: https://www.vekn.net/event-calendar/event/10907
 event_id: 10907
 vp_comment: Vadim Matveev - 2 GW 8 VP
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80810-twd-eccentric-billings-charlotte-nc-usa
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80810-twd-eccentric-billings-charlotte-nc-usa
 deck:
   description: ''
   crypt_count: 12
@@ -20,20 +19,20 @@ deck:
   - count: 5
     name: Thucimia
     capacity: 10
-    disciplines: CEL DEM OBF QUI for pro
+    disciplines: for pro CEL DEM OBF QUI
     title: 1 vote
     clan: Banu Haqim
     grouping: 4
   - count: 3
     name: Bakr
     capacity: 8
-    disciplines: CEL OBF QUI dem pro
+    disciplines: dem pro CEL OBF QUI
     clan: Banu Haqim
     grouping: 5
   - count: 2
     name: Reza Fatir, The Dark Angel
     capacity: 6
-    disciplines: CEL QUI obf pro
+    disciplines: obf pro CEL QUI
     clan: Banu Haqim
     grouping: 4
   - count: 2

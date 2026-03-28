@@ -1,0 +1,114 @@
+name: Italian tour 2024 - Third Chapter - Pordenone
+location: Fumetteria Safarà, Via Piave 26 Pordenone
+date_start: 2024-04-07
+rounds_format: 2R+F
+players_count: 24
+winner: Diego Di Nicolantonio
+vekn_number: 3020124
+event_url: https://www.vekn.net/event-calendar/event/11364
+event_id: 11364
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81361-twda-italian-tour-third-chapter-pordenone
+deck:
+  name: Inverted Pyramid
+  created_by: Crow
+  description: ''
+  crypt_count: 12
+  crypt_min: 36
+  crypt_max: 44
+  crypt_avg: 10.17
+  crypt:
+  - count: 4
+    name: Lord Tremere
+    capacity: 11
+    disciplines: obe ANI AUS DOM THA VIC
+    clan: Tremere
+    grouping: 5
+  - count: 3
+    name: Mistress Fanchon
+    capacity: 11
+    disciplines: AUS CEL DOM OBF THA VIC
+    title: Inner Circle
+    clan: Tremere
+    grouping: 4
+  - count: 5
+    name: Malgorzata
+    capacity: 9
+    disciplines: pre AUS DOM THA VIC
+    title: Priscus
+    clan: Tremere antitribu
+    grouping: 4
+  library_count: 78
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 3
+      name: Information Highway
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Perfectionist
+    - count: 1
+      name: University Hunting Ground
+    - count: 5
+      name: Villein
+  - name: Action
+    count: 3
+    cards:
+    - count: 3
+      name: Magic of the Smith
+  - name: Equipment
+    count: 4
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 2
+      name: Heart of Nizchetus
+    - count: 1
+      name: Sargon Fragment, The
+  - name: Political Action
+    count: 7
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 2
+      name: Ancilla Empowerment
+    - count: 3
+      name: Banishment
+    - count: 1
+      name: Reins of Power
+  - name: Action Modifier
+    count: 20
+    cards:
+    - count: 6
+      name: Changeling
+    - count: 4
+      name: Conditioning
+    - count: 1
+      name: Foreshadowing Destruction
+    - count: 6
+      name: Mirror Walk
+    - count: 3
+      name: Seduction
+  - name: Action Modifier/Combat
+    count: 5
+    cards:
+    - count: 5
+      name: Plasmic Form
+  - name: Reaction
+    count: 24
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 7
+      name: Eyes of Argus
+    - count: 7
+      name: Obedience
+    - count: 2
+      name: On the Qui Vive
+    - count: 2
+      name: Telepathic Misdirection

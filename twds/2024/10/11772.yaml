@@ -1,0 +1,128 @@
+name: Marked Territory
+location: Castelnuovo di Garfagnana, Italy
+date_start: 2024-10-13
+rounds_format: 2R+F
+players_count: 13
+winner: Alessandro Donati
+vekn_number: 4740000
+event_url: https://www.vekn.net/event-calendar/event/11772
+event_id: 11772
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81820-twd-marked-territory-castelnuovo-di-garfagnana
+deck:
+  name: Nosferatu New Royalty
+  created_by: Nekrós
+  description: Pure Camarilla OBF vote deck
+  crypt_count: 12
+  crypt_min: 22
+  crypt_max: 40
+  crypt_avg: 7.5
+  crypt:
+  - count: 4
+    name: Alonso Petrodon
+    capacity: 10
+    disciplines: for tha ANI DOM OBF POT
+    title: Justicar
+    clan: Nosferatu
+    grouping: 5
+  - count: 2
+    name: Benjamin Rose
+    capacity: 7
+    disciplines: ani pot AUS OBF
+    title: Prince
+    clan: Nosferatu
+    grouping: 5
+  - count: 2
+    name: Nikolaus Vermeulen
+    capacity: 7
+    disciplines: for obf ANI POT
+    title: Prince
+    clan: Nosferatu
+    grouping: 6
+  - count: 2
+    name: Belinde
+    capacity: 6
+    disciplines: ani aus pot OBF
+    title: Prince
+    clan: Nosferatu
+    grouping: 6
+  - count: 2
+    name: Warmaksan
+    capacity: 5
+    disciplines: cel obf THA
+    title: Prince
+    clan: Banu Haqim
+    grouping: 6
+  library_count: 65
+  library_sections:
+  - name: Master
+    count: 18
+    cards:
+    - count: 1
+      name: Camarilla Conclave
+    - count: 1
+      name: Creepshow Casino
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: 'Elysium: The Palace of Versailles'
+    - count: 6
+      name: Grooming the Protégé
+    - count: 1
+      name: Labyrinth, The
+    - count: 3
+      name: Protected Resources
+    - count: 3
+      name: Warsaw Station
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 11
+    cards:
+    - count: 3
+      name: 'Fifth Tradition: Hospitality'
+    - count: 6
+      name: 'Fourth Tradition: The Accounting'
+    - count: 1
+      name: 'Judgment: Camarilla Segregation'
+    - count: 1
+      name: SchreckNET
+  - name: Political Action
+    count: 14
+    cards:
+    - count: 1
+      name: Banishment
+    - count: 3
+      name: Camarilla's Iron Fist
+    - count: 2
+      name: Kine Resources Contested
+    - count: 1
+      name: Neonate Breach
+    - count: 6
+      name: Parity Shift
+    - count: 1
+      name: Reinforcements
+  - name: Equipment
+    count: 3
+    cards:
+    - count: 3
+      name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 14
+    cards:
+    - count: 1
+      name: Closed Session
+    - count: 1
+      name: Cryptic Rider
+    - count: 2
+      name: Elder Impersonation
+    - count: 5
+      name: Forgotten Labyrinth
+    - count: 5
+      name: Lost in Crowds
+  - name: Combat
+    count: 5
+    cards:
+    - count: 1
+      name: Gemini's Mirror
+    - count: 4
+      name: No Trace

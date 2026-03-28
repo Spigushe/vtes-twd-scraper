@@ -7,8 +7,7 @@ winner: Ondřej Douda
 vekn_number: 3510036
 event_url: https://www.vekn.net/event-calendar/event/11085
 event_id: 11085
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81137-twd-christmass-bloodsucking-ii
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81137-twd-christmass-bloodsucking-ii
 deck:
   name: Anarch Assamite
   description: ''
@@ -20,7 +19,7 @@ deck:
   - count: 3
     name: Joe "Boot" Hill
     capacity: 7
-    disciplines: CEL QUI for obf
+    disciplines: for obf CEL QUI
     clan: Banu Haqim
     grouping: 4
   - count: 2
@@ -32,7 +31,7 @@ deck:
   - count: 1
     name: Michael diCarlo
     capacity: 5
-    disciplines: CEL obf qui
+    disciplines: obf qui CEL
     clan: Banu Haqim
     grouping: 4
   - count: 1

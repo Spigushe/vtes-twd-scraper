@@ -3,11 +3,11 @@ location: Kecskemét, Hungary
 date_start: 2024-03-30
 rounds_format: 2R+F
 players_count: 25
-winner: Olivér Tóth's Tournament Winning Deck with 0,5 VPs in the Finals
+winner: Oliver Toth
+vekn_number: 3540218
 event_url: https://www.vekn.net/event-calendar/event/11369
 event_id: 11369
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81365-twd-blood-league-ii
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81365-twd-blood-league-ii
 deck:
   name: Tzimi museum
   created_by: Balázs Sebestyén
@@ -21,13 +21,13 @@ deck:
     name: Meshenka
     capacity: 8
     disciplines: ANI AUS VIC
-    title: priscus
+    title: Priscus
     clan: Tzimisce
     grouping: 2
   - count: 1
     name: Kazimir Savostin
     capacity: 7
-    disciplines: AUS VIC ani pot
+    disciplines: ani pot AUS VIC
     clan: Tzimisce
     grouping: 3
   - count: 1
@@ -39,31 +39,31 @@ deck:
   - count: 1
     name: Corine Marcón
     capacity: 6
-    disciplines: AUS VIC ani
+    disciplines: ani AUS VIC
     clan: Tzimisce
     grouping: 2
   - count: 1
     name: Ana Rita Montaña
     capacity: 5
-    disciplines: VIC aus dom obf
+    disciplines: aus dom obf VIC
     clan: Tzimisce
     grouping: 3
   - count: 1
     name: Devin Bisley
     capacity: 5
-    disciplines: ANI AUS vic
+    disciplines: vic ANI AUS
     clan: Tzimisce
     grouping: 2
   - count: 1
     name: Elizabeth Westcott
     capacity: 5
-    disciplines: AUS ani cel vic
+    disciplines: ani cel vic AUS
     clan: Tzimisce
     grouping: 3
   - count: 1
     name: Lolita Houston
     capacity: 4
-    disciplines: VIC aus
+    disciplines: aus VIC
     clan: Tzimisce
     grouping: 2
   - count: 1
@@ -172,8 +172,7 @@ deck:
     - count: 4
       name: Matthias                     7 AUS FOR OBE nec      Salubri:2
     - count: 1
-      name: Omaya                        7 ANI AUS FOR pro      Gangrel 
-        antitribu:2
+      name: Omaya                        7 ANI AUS FOR pro      Gangrel antitribu:2
     - count: 1
       name: Victoria                     5 AUS cel obf          Malkavian:2
     - count: 1

@@ -1,0 +1,176 @@
+name: Sem choro nem vela! Liga Brasil - Teresina 3
+location: Teresina, PI - Brasil
+date_start: 2025-10-19
+rounds_format: 2R+F
+players_count: 15
+winner: Cláudio Torcato
+vekn_number: 1930003
+event_url: https://www.vekn.net/event-calendar/event/12712
+event_id: 12712
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82623-twd-sem-choro-nem-vela-liga-brasil-teresina-3-19-10-2025
+deck:
+  name: Lobo de Terehell
+  description: ''
+  crypt_count: 12
+  crypt_min: 12
+  crypt_max: 26
+  crypt_avg: 4.83
+  crypt:
+  - count: 1
+    name: André the Manipulator
+    capacity: 6
+    disciplines: FOR PRO
+    clan: Gangrel
+    grouping: 5
+  - count: 1
+    name: Ángel Guerrero
+    capacity: 7
+    disciplines: ANI DOM PRO
+    title: Baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Casey Snyder
+    capacity: 6
+    disciplines: ani cel for PRO
+    title: Baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Hanna Nokelainen
+    capacity: 4
+    disciplines: ani for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Indira
+    capacity: 3
+    disciplines: PRO
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Joaquín de Cádiz
+    capacity: 3
+    disciplines: for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Kamile Paukstys
+    capacity: 5
+    disciplines: ani for PRO
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: Baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Massimiliano
+    capacity: 7
+    disciplines: pro ANI FOR
+    title: Baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Mickey Wheeler
+    capacity: 5
+    disciplines: ani cel for pro
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Nathan Turner
+    capacity: 4
+    disciplines: ani PRO
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Ruslan Fedorenko
+    capacity: 2
+    disciplines: pro
+    clan: Gangrel
+    grouping: 6
+  library_count: 88
+  library_sections:
+  - name: Master
+    count: 22
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Backways
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Ecoterrorists
+    - count: 4
+      name: Effective Management
+    - count: 1
+      name: Ennoia's Theater
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Information Highway
+    - count: 2
+      name: Parthenon, The
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 6
+      name: Villein
+  - name: Action
+    count: 14
+    cards:
+    - count: 2
+      name: Rewilding
+    - count: 12
+      name: Thing
+  - name: Political Action
+    count: 4
+    cards:
+    - count: 2
+      name: Consanguineous Boon
+    - count: 2
+      name: Revolutionary Council
+  - name: Action Modifier
+    count: 12
+    cards:
+    - count: 1
+      name: Daring the Dawn
+    - count: 4
+      name: Earth Control
+    - count: 2
+      name: Monkey Wrench
+    - count: 5
+      name: Propaganda of the Deed
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Form of the Bat
+  - name: Reaction
+    count: 18
+    cards:
+    - count: 7
+      name: Bait and Switch
+    - count: 2
+      name: Deep Ecology
+    - count: 7
+      name: Organized Resistance
+    - count: 2
+      name: Poison Pill
+  - name: Combat
+    count: 14
+    cards:
+    - count: 2
+      name: Claws of the Dead
+    - count: 8
+      name: Earth Meld
+    - count: 4
+      name: Form of Mist

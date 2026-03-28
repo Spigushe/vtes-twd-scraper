@@ -1,0 +1,150 @@
+name: Standard Constructed
+location: Budapest, Hungary
+date_start: 2023-09-17
+rounds_format: 3R+F
+players_count: 19
+winner: Sebestyen Balazs
+vekn_number: 2020046
+event_url: https://www.vekn.net/event-calendar/event/10975
+event_id: 10975
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80848-twd-the-next-station-hatvan
+deck:
+  name: aktív blokker Baron
+  created_by: SBmester
+  description: ''
+  crypt_count: 12
+  crypt_min: 15
+  crypt_max: 36
+  crypt_avg: 6.92
+  crypt:
+  - count: 4
+    name: Baron Dieudonne
+    capacity: 9
+    disciplines: ANI OBF POT PRO
+    title: Prince
+    clan: Nosferatu
+    grouping: 4
+  - count: 4
+    name: Mark Decker
+    capacity: 8
+    disciplines: ani for obf pot CEL PRO
+    title: Prince
+    clan: Gangrel
+    grouping: 3
+  - count: 1
+    name: Shahid
+    capacity: 7
+    disciplines: ani for pro OBF POT
+    clan: Nosferatu
+    grouping: 4
+  - count: 1
+    name: Clarissa Steinburgen
+    capacity: 3
+    disciplines: ani obf
+    clan: Nosferatu
+    grouping: 3
+  - count: 1
+    name: Foureyes
+    capacity: 3
+    disciplines: obf pot
+    clan: Nosferatu
+    grouping: 4
+  - count: 1
+    name: Krid
+    capacity: 2
+    disciplines: obf
+    clan: Nosferatu
+    grouping: 3
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 19
+    cards:
+    - count: 1
+      name: Archon Investigation
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Labyrinth, The
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 2
+      name: Perfectionist
+    - count: 1
+      name: Slum Hunting Ground
+    - count: 2
+      name: Vessel
+    - count: 4
+      name: Villein
+    - count: 4
+      name: Warsaw Station
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 8
+    cards:
+    - count: 1
+      name: Aranthebes, The Immortal
+    - count: 1
+      name: Army of Rats
+    - count: 3
+      name: Creeping Sabotage
+    - count: 3
+      name: 'Judgment: Camarilla Segregation'
+  - name: Equipment
+    count: 5
+    cards:
+    - count: 2
+      name: Camera Phone
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Ivory Bow
+    - count: 1
+      name: Sniper Rifle
+  - name: Retainer
+    count: 6
+    cards:
+    - count: 1
+      name: J. S. Simmons, Esq.
+    - count: 1
+      name: Mr. Winthrop
+    - count: 3
+      name: Raven Spy
+    - count: 1
+      name: Tasha Morgan
+  - name: Action Modifier
+    count: 4
+    cards:
+    - count: 4
+      name: Lost in Crowds
+  - name: Action Modifier/Combat
+    count: 5
+    cards:
+    - count: 2
+      name: Rapid Change
+    - count: 3
+      name: Swallowed by the Night
+  - name: Action Modifier/Reaction
+    count: 5
+    cards:
+    - count: 5
+      name: Form of the Bat
+  - name: Reaction
+    count: 22
+    cards:
+    - count: 5
+      name: Cats' Guidance
+    - count: 12
+      name: 'Second Tradition: Domain'
+    - count: 5
+      name: Sense the Savage Way
+  - name: Combat
+    count: 16
+    cards:
+    - count: 10
+      name: Earth Meld
+    - count: 6
+      name: Form of Mist

@@ -1,0 +1,152 @@
+name: Vambeer, the eternal Stout
+location: Wild Rover pub, Via G. d'Annunzio, 40, 41013 Manzolino MO
+date_start: 2023-10-01
+rounds_format: 2R+F
+players_count: 30
+winner: Damiano Ghiaroni
+vekn_number: 8190005
+event_url: https://www.vekn.net/event-calendar/event/10888
+event_id: 10888
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81094-twd-vambeer-the-eternal-stout-1-10-2023-manzolino-modena-italy
+deck:
+  description: ''
+  crypt_count: 12
+  crypt_min: 37
+  crypt_max: 44
+  crypt_avg: 10.17
+  crypt:
+  - count: 5
+    name: Stanislava
+    capacity: 11
+    disciplines: ANI CEL DOM FOR PRO
+    title: Inner Circle
+    clan: Gangrel
+    grouping: 2
+  - count: 2
+    name: Hartmut Stover
+    capacity: 10
+    disciplines: dom for CEL OBF PRO
+    title: Archbishop
+    clan: Gangrel antitribu
+    grouping: 3
+  - count: 1
+    name: Genevieve
+    capacity: 10
+    disciplines: aus dom ANI FOR PRO
+    title: Priscus
+    clan: Gangrel antitribu
+    grouping: 2
+  - count: 1
+    name: Xaviar (ADV)
+    capacity: 10
+    disciplines: aus cel pot ABO ANI FOR PRO
+    title: Justicar
+    clan: Gangrel
+    grouping: 3
+  - count: 3
+    name: Ingrid Rossler
+    capacity: 9
+    disciplines: dom ANI FOR PRO
+    title: Prince
+    clan: Gangrel
+    grouping: 2
+  library_count: 81
+  library_sections:
+  - name: Master
+    count: 24
+    cards:
+    - count: 1
+      name: Archon Investigation
+    - count: 1
+      name: Backways
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Ennoia's Theater
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Metro Underground
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 6
+      name: Villein
+    - count: 1
+      name: Wash
+    - count: 1
+      name: Wider View
+    - count: 4
+      name: Zillah's Valley
+  - name: Action
+    count: 6
+    cards:
+    - count: 6
+      name: Govern the Unaligned
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Seal of Veddartha
+  - name: Political Action
+    count: 12
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 2
+      name: Banishment
+    - count: 2
+      name: Kine Resources Contested
+    - count: 3
+      name: Parity Shift
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+  - name: Action Modifier
+    count: 17
+    cards:
+    - count: 1
+      name: Beast Meld
+    - count: 2
+      name: Conditioning
+    - count: 4
+      name: Earth Control
+    - count: 1
+      name: Enkil Cog
+    - count: 3
+      name: Forced March
+    - count: 3
+      name: Freak Drive
+    - count: 3
+      name: Instantaneous Transformation
+  - name: Reaction
+    count: 11
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 3
+      name: On the Qui Vive
+    - count: 2
+      name: Sense the Savage Way
+  - name: Combat
+    count: 9
+    cards:
+    - count: 5
+      name: Earth Meld
+    - count: 4
+      name: Form of Mist

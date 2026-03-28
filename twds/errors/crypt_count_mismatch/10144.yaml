@@ -7,8 +7,7 @@ winner: Nikolaj Wendt
 vekn_number: 1002045
 event_url: https://www.vekn.net/event-calendar/event/10144
 event_id: 10144
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81468-twd-danish-national-championship-2022
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81468-twd-danish-national-championship-2022
 deck:
   name: Aksinya v3 - Danish Nationals 2022
   description: Aksinya forever!
@@ -20,7 +19,7 @@ deck:
   - count: 3
     name: Aksinya Daclau
     capacity: 9
-    disciplines: ANI FOR PRE PRO cel tha
+    disciplines: cel tha ANI FOR PRE PRO
     clan: Gangrel antitribu
     grouping: 4
   - count: 1
@@ -32,26 +31,26 @@ deck:
   - count: 1
     name: Loonar
     capacity: 4
-    disciplines: PRE cel
+    disciplines: cel PRE
     clan: Toreador antitribu
     grouping: 4
   - count: 1
     name: Lumumba
     capacity: 4
-    disciplines: PRE ani
+    disciplines: ani PRE
     clan: Guruhi
     grouping: 4
   - count: 1
     name: Marla Kenyon
     capacity: 4
-    disciplines: PRE ser
+    disciplines: ser PRE
     clan: Ministry
     grouping: 4
   - count: 1
     name: Reginald Moore
     capacity: 4
     disciplines: PRE
-    title: primogen
+    title: Primogen
     clan: Brujah
     grouping: 4
   library_count: 68

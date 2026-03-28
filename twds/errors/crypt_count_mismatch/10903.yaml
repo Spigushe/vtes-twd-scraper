@@ -7,8 +7,7 @@ winner: Norm Brown
 vekn_number: 2810001
 event_url: https://www.vekn.net/event-calendar/event/10903
 event_id: 10903
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80905-twd-nefertiti-rises-lafayette-la-usa-2023-09-23
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80905-twd-nefertiti-rises-lafayette-la-usa-2023-09-23
 deck:
   name: Reginald Moore supports the Anarch Troublemakers
   description: ''
@@ -20,21 +19,21 @@ deck:
   - count: 2
     name: Jenna Cross
     capacity: 4
-    disciplines: CEL pot pre
+    disciplines: pot pre CEL
     clan: Caitiff
     grouping: 4
   - count: 2
     name: Reginald Moore
     capacity: 4
     disciplines: PRE
-    title: primogen
+    title: Primogen
     clan: Brujah
     grouping: 4
   - count: 2
     name: Thomas De Lutrius
     capacity: 4
     disciplines: aus cel pre
-    title: primogen
+    title: Primogen
     clan: Toreador
     grouping: 4
   - count: 2

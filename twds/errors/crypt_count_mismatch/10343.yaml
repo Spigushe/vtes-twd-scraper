@@ -7,8 +7,7 @@ winner: Karim Baloul
 vekn_number: 3200292
 event_url: https://www.vekn.net/event-calendar/event/10343
 event_id: 10343
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80104-twd-body-of-sun-paris-france-aug-20-2022
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80104-twd-body-of-sun-paris-france-aug-20-2022
 deck:
   name: Saulot Towerwall Classic
   description: ''
@@ -21,7 +20,7 @@ deck:
     name: Blackhorse Tanner
     capacity: 7
     disciplines: AUS DOM FOR
-    clan: '!Ventrue'
+    clan: Ventrue antitribu
     grouping: 3
   - count: 1
     name: Maldavis ADV
@@ -33,7 +32,7 @@ deck:
     name: Neighbor John
     capacity: 5
     disciplines: dom for AUS
-    clan: '!Ventrue'
+    clan: Ventrue antitribu
     grouping: 4
   - count: 4
     name: Saulot, The Wanderer

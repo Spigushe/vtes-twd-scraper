@@ -8,8 +8,7 @@ vekn_number: 1003455
 event_url: https://www.vekn.net/event-calendar/event/12148
 event_id: 12148
 vp_comment: 1GW5 + 5 VPs in final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82311-twd-midwest-mayhem-madison-north-american-cup
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82311-twd-midwest-mayhem-madison-north-american-cup
 deck:
   name: My Version
   created_by: Darby Keeney and Karl Schaefer
@@ -22,13 +21,13 @@ deck:
   - count: 2
     name: Gathii
     capacity: 5
-    disciplines: ANI PRE obf
+    disciplines: obf ANI PRE
     clan: Ravnos
     grouping: 7
   - count: 1
     name: Doc Martina
     capacity: 6
-    disciplines: ANI OBF for pre
+    disciplines: for pre ANI OBF
     clan: Ravnos
     grouping: 7
   - count: 1
@@ -41,7 +40,7 @@ deck:
   - count: 1
     name: Luciano Carvalho
     capacity: 6
-    disciplines: ANI OBF pre
+    disciplines: pre ANI OBF
     clan: Ravnos
     grouping: 7
   - count: 1
@@ -53,7 +52,7 @@ deck:
   - count: 1
     name: Phaibun
     capacity: 5
-    disciplines: OBF PRE ani
+    disciplines: ani OBF PRE
     clan: Ravnos
     grouping: 7
   - count: 1
@@ -65,7 +64,7 @@ deck:
   - count: 1
     name: Zafira
     capacity: 4
-    disciplines: PRE obf
+    disciplines: obf PRE
     clan: Ravnos
     grouping: 7
   library_count: 78
@@ -81,8 +80,7 @@ deck:
       name: Dabbler
     - count: 1
       name: Dreams of the Sphinx
-      comment: just enough extra card cycle to get out of jams; not so many you 
-        get in trouble for having it
+      comment: just enough extra card cycle to get out of jams; not so many you get in trouble for having it
     - count: 1
       name: Giant's Blood
     - count: 1
@@ -101,8 +99,7 @@ deck:
       name: Break the Bonds
     - count: 3
       name: Field Training
-      comment: usually ani first, but vamps and hand may say otherwise; must 
-        always cycle it
+      comment: usually ani first, but vamps and hand may say otherwise; must always cycle it
   - name: Action Modifier
     count: 36
     cards:
@@ -126,7 +123,6 @@ deck:
     cards:
     - count: 2
       name: Hide the Mind
-      comment: useful in one round; probable meta add, but reduce to 1x in 
-        generic metas
+      comment: useful in one round; probable meta add, but reduce to 1x in generic metas
     - count: 2
       name: Swallowed by the Night

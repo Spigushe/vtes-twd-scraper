@@ -6,8 +6,7 @@ players_count: 10
 winner: Gabriel Carnino's Tournament Winning Deck with 4 VPs in the Finals
 event_url: https://www.vekn.net/event-calendar/event/9844
 event_id: 9844
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81925-twd-geneva-wake-2021-belated-report
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81925-twd-geneva-wake-2021-belated-report
 deck:
   name: Tony Montano
   created_by: Gabriel Carnino
@@ -27,36 +26,36 @@ deck:
   - count: 3
     name: Ambrosio Luis Monçada, Plenipotentiary
     capacity: 10
-    disciplines: DOM OBT POT PRE aus for
-    title: cardinal
+    disciplines: aus for DOM OBT POT PRE
+    title: Cardinal
     clan: Lasombra
     grouping: 2
   - count: 2
     name: Marcus Vitel
     capacity: 10
     disciplines: DOM FOR OBF OBT PRE
-    title: prince
+    title: Prince
     clan: Ventrue
     grouping: 3
   - count: 2
     name: Francisco Domingo de Polonia
     capacity: 9
-    disciplines: DOM OBT POT PRE pro
-    title: archbishop
+    disciplines: pro DOM OBT POT PRE
+    title: Archbishop
     clan: Lasombra
     grouping: 2
   - count: 1
     name: Alvaro, The Scion of Angelica
     capacity: 9
-    disciplines: OBT POT dom pre
-    title: archbishop
+    disciplines: dom pre OBT POT
+    title: Archbishop
     clan: Lasombra
     grouping: 2
   - count: 1
     name: Gratiano
     capacity: 8
-    disciplines: DOM OBT obf pot
-    title: priscus
+    disciplines: obf pot DOM OBT
+    title: Priscus
     clan: Lasombra
     grouping: 2
   library_count: 70

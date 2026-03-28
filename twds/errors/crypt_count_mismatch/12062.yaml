@@ -8,8 +8,7 @@ vekn_number: 2810001
 event_url: https://www.vekn.net/event-calendar/event/12062
 event_id: 12062
 vp_comment: 1GW5 + 2.5 in final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82446-twda-week-of-nightmares-event-1
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82446-twda-week-of-nightmares-event-1
 deck:
   name: Ring that Bell v2.0
   description: ''
@@ -21,20 +20,20 @@ deck:
   - count: 3
     name: Dafina Hanganu
     capacity: 8
-    disciplines: DOM OBL POT for
-    title: prince
+    disciplines: for DOM OBL POT
+    title: Prince
     clan: Lasombra
     grouping: 6
   - count: 3
     name: Theo Bell
     capacity: 8
-    disciplines: CEL POT PRE aus dom
+    disciplines: aus dom CEL POT PRE
     clan: Brujah
     grouping: 6
   - count: 3
     name: Nathaniel Bordruff
     capacity: 7
-    disciplines: DOM OBF POT ani
+    disciplines: ani DOM OBF POT
     clan: Nosferatu
     grouping: 6
   - count: 1

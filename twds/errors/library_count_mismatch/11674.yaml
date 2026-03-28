@@ -3,11 +3,11 @@ location: Kecskemét, Hungary
 date_start: 2024-11-03
 rounds_format: 3R+F
 players_count: 40
-winner: Gyula Erdős' Tournament Winning Deck with 1,5 VPs in the Finals
+winner: Gyula Erdős
+vekn_number: 3540054
 event_url: https://www.vekn.net/event-calendar/event/11674
 event_id: 11674
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81887-twd-second-official-beauty-challenge-in-kecskemet
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81887-twd-second-official-beauty-challenge-in-kecskemet
 deck:
   name: baaaaaali li
   created_by: Alessandro Bellomini
@@ -33,7 +33,7 @@ deck:
   - count: 3
     name: Maureen, Dark Priestess
     capacity: 6
-    disciplines: DAI PRE dom obf
+    disciplines: dom obf DAI PRE
     title: 1 vote
     clan: Baali
     grouping: 4
@@ -134,28 +134,21 @@ deck:
     count: 12
     cards:
     - count: 1
-      name: Elena Mendoza Vasquez         6 dom obt AUS THA          Tremere 
-        antitribu:3
+      name: Elena Mendoza Vasquez         6 dom obt AUS THA          Tremere antitribu:3
     - count: 1
-      name: Frondator                     5 dom tha AUS              Tremere 
-        antitribu:4
+      name: Frondator                     5 dom tha AUS              Tremere antitribu:4
     - count: 5
-      name: Antonio d'Erlette             5 dom for pot THA          Tremere 
-        antitribu:4
+      name: Antonio d'Erlette             5 dom for pot THA          Tremere antitribu:4
     - count: 1
-      name: Lectora                       3 aus tha                  Tremere 
-        antitribu:4
+      name: Lectora                       3 aus tha                  Tremere antitribu:4
     - count: 1
       name: Martin Franckel               3 tha AUS                  Tremere:3
     - count: 1
-      name: Saiz                          3 aus dom                  Tremere 
-        antitribu:3
+      name: Saiz                          3 aus dom                  Tremere antitribu:3
     - count: 1
-      name: Selena                        6 AUS DOM THA              Tremere 
-        antitribu:3
+      name: Selena                        6 AUS DOM THA              Tremere antitribu:3
     - count: 1
-      name: Yasmin the Black              6 dom pre AUS THA          Tremere 
-        antitribu:3
+      name: Yasmin the Black              6 dom pre AUS THA          Tremere antitribu:3
   - name: Master
     count: 30
     cards:
@@ -237,29 +230,29 @@ deck:
     count: 12
     cards:
     - count: 1
-      name: Abraham Mellon         8 AUS DOM OBF for tha Malkavian:6
+      name: Abraham Mellon         8 AUS DOM OBF for tha              Malkavian:6
     - count: 1
-      name: Alexander Silverson    8 AUS DOM OBF pre       prince Malkavian:6
+      name: Alexander Silverson    8 AUS DOM OBF pre       prince     Malkavian:6
     - count: 1
-      name: Gilbert Duane          7 AUS DOM OBF           baron Malkavian:6
+      name: Gilbert Duane          7 AUS DOM OBF           baron      Malkavian:6
     - count: 1
-      name: Jason "Son" Newberry   7 AUS DOM OBF pre       primogen Malkavian:6
+      name: Jason "Son" Newberry   7 AUS DOM OBF pre       primogen   Malkavian:6
     - count: 1
-      name: Nathaniel Bordruff     7 DOM OBF POT ani Nosferatu:6
+      name: Nathaniel Bordruff     7 DOM OBF POT ani                  Nosferatu:6
     - count: 1
-      name: Andi Liu               6 DOM aus obf pre       prince Malkavian:6
+      name: Andi Liu               6 DOM aus obf pre       prince     Malkavian:6
     - count: 1
-      name: Darius Shirazi         6 AUS DOM obf Malkavian:5
+      name: Darius Shirazi         6 AUS DOM obf                      Malkavian:5
     - count: 1
-      name: Gelasia Fotiou         6 AUS DOM obf pre Malkavian:6
+      name: Gelasia Fotiou         6 AUS DOM obf pre                  Malkavian:6
     - count: 1
-      name: Colette                5 AUS OBF dom Malkavian:6
+      name: Colette                5 AUS OBF dom                      Malkavian:6
     - count: 1
-      name: Evan Klein             5 OBF aus dom pre Malkavian:6
+      name: Evan Klein             5 OBF aus dom pre                  Malkavian:6
     - count: 1
-      name: Sully                  4 aus dom obf Malkavian:6
+      name: Sully                  4 aus dom obf                      Malkavian:6
     - count: 1
-      name: Ashley                 3 dom obf Malkavian:6
+      name: Ashley                 3 dom obf                          Malkavian:6
   - name: Library
     count: 89
     cards: []

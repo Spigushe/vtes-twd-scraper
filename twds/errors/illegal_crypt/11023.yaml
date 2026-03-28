@@ -8,8 +8,7 @@ vekn_number: 3530057
 event_url: https://www.vekn.net/event-calendar/event/11023
 event_id: 11023
 vp_comment: 'The final table:'
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80971-twd-finnish-nationals-2023-2023-11-04
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80971-twd-finnish-nationals-2023-2023-11-04
 deck:
   description: ''
   crypt_count: 12
@@ -53,6 +52,7 @@ deck:
     disciplines: nec ANI DOM OBF POT
     clan: Nosferatu antitribu
     grouping: 3
+    title: Bishop
   - count: 1
     name: Laurent de Valois
     capacity: 4
@@ -87,35 +87,35 @@ deck:
     name: Stanislava
     capacity: 11
     disciplines: ANI CEL DOM FOR PRO
-    title: inner circle
+    title: Inner Circle
     clan: Gangrel
     grouping: 2
   - count: 1
     name: Hartmut Stover
     capacity: 10
-    disciplines: CEL OBF PRO dom for
-    title: archbishop
+    disciplines: dom for CEL OBF PRO
+    title: Archbishop
     clan: Gangrel antitribu
     grouping: 3
   - count: 1
     name: Xaviar (ADV)
     capacity: 10
-    disciplines: ABO ANI FOR PRO aus cel pot
-    title: justicar
+    disciplines: aus cel pot ABO ANI FOR PRO
+    title: Justicar
     clan: Gangrel
     grouping: 3
   - count: 4
     name: Ingrid Rossler
     capacity: 9
-    disciplines: ANI FOR PRO dom
-    title: prince
+    disciplines: dom ANI FOR PRO
+    title: Prince
     clan: Gangrel
     grouping: 2
   - count: 1
     name: Mark Decker
     capacity: 8
-    disciplines: CEL PRO ani for obf pot
-    title: prince
+    disciplines: ani for obf pot CEL PRO
+    title: Prince
     clan: Gangrel
     grouping: 3
   - count: 1
@@ -223,23 +223,19 @@ deck:
     - count: 3
       name: Montano 11 ANI DOM FOR OBT POT 2 votes Lasombra:3
     - count: 2
-      name: Ambrosio Luis Monçada, Plenipotentiary 10 DOM OBT POT PRE aus for 
-        cardinal Lasombra:2
+      name: Ambrosio Luis Monçada, Plenipotentiary 10 DOM OBT POT PRE aus for cardinal Lasombra:2
     - count: 1
       name: Angelica, The Canonicus 10 DOM OBT POT cel obf cardinal Lasombra:2
     - count: 1
-      name: Ayelea, The Manipulator 10 AUS DOM OBT THA pre cardinal Tremere 
-        antitribu:2
+      name: Ayelea, The Manipulator 10 AUS DOM OBT THA pre cardinal Tremere antitribu:2
     - count: 1
       name: Marcus Vitel 10 DOM FOR OBF OBT PRE prince Ventrue:3
     - count: 1
-      name: Alvaro, The Scion of Angelica 9 OBT POT dom pre archbishop 
-        Lasombra:2
+      name: Alvaro, The Scion of Angelica 9 OBT POT dom pre archbishop Lasombra:2
     - count: 1
       name: Antonio Delgado 9 DOM OBT POT tha archbishop Lasombra:2
     - count: 1
-      name: Francisco Domingo de Polonia 9 DOM OBT POT PRE pro archbishop 
-        Lasombra:2
+      name: Francisco Domingo de Polonia 9 DOM OBT POT PRE pro archbishop Lasombra:2
     - count: 1
       name: Gratiano 8 DOM OBT obf pot priscus Lasombra:2
   - name: Library

@@ -7,17 +7,14 @@ winner: Otso Saariluoma
 vekn_number: 3530054
 event_url: https://www.vekn.net/event-calendar/event/11450
 event_id: 11450
-vp_comment: Managed 1,5 vps in the prelims, got in the finals with a die roll, 
-  and won with 1,5 vps, so the performance of the deck wasn’t anything to write 
-  home about.
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81511-twd-5th-elder-library-espoo-finland-2-jun-2024
+vp_comment: Managed 1,5 vps in the prelims, got in the finals with a die roll, and won with 1,5 vps, so the performance 
+  of the deck wasn’t anything to write home about.
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81511-twd-5th-elder-library-espoo-finland-2-jun-2024
 deck:
   name: Guillaume Beatdown
   created_by: Otso Saariluoma
-  description: A combat-oriented Guillaume deck with an Increased Strength 
-    package for funsies. Hopefully you get to build up to have a few powerful 
-    turns before inevitably running out of steam.
+  description: A combat-oriented Guillaume deck with an Increased Strength package for funsies. Hopefully you get to 
+    build up to have a few powerful turns before inevitably running out of steam.
   crypt_count: 12
   crypt_min: 20
   crypt_max: 36
@@ -26,13 +23,13 @@ deck:
   - count: 5
     name: Guillaume Giovanni
     capacity: 9
-    disciplines: CEL DOM NEC POT obt
+    disciplines: obt CEL DOM NEC POT
     clan: Giovanni
     grouping: 4
   - count: 1
     name: Baldesar Rossellini
     capacity: 8
-    disciplines: DOM POT aus for nec
+    disciplines: aus for nec DOM POT
     clan: Giovanni
     grouping: 4
   - count: 1
@@ -51,19 +48,19 @@ deck:
   - count: 1
     name: Accorri Giovanni
     capacity: 6
-    disciplines: DOM POT ani nec
+    disciplines: ani nec DOM POT
     clan: Giovanni
     grouping: 5
   - count: 1
     name: Benedict Giovanni, Agent
     capacity: 6
-    disciplines: FOR POT cel dom nec
+    disciplines: cel dom nec FOR POT
     clan: Giovanni
     grouping: 4
   - count: 1
     name: Gianmaria Giovanni
     capacity: 5
-    disciplines: POT dom nec obt
+    disciplines: dom nec obt POT
     clan: Giovanni
     grouping: 5
   - count: 1

@@ -12,11 +12,9 @@ forum_post_url:
 deck:
   name: Usurper High Council
   created_by: Otso Saariluoma
-  description: Tremere fatties with a bit diversified crypt and an expanded 
-    master module. The game plan is to keep bloating and accelerating out new 
-    vampires while aiming for the vote lock and taking over in the mid to late 
-    game. The hand manipulation with Ashurs, Heart and Mistress is rather 
-    spectacular.
+  description: Tremere fatties with a bit diversified crypt and an expanded master module. The game plan is to keep 
+    bloating and accelerating out new vampires while aiming for the vote lock and taking over in the mid to late game. 
+    The hand manipulation with Ashurs, Heart and Mistress is rather spectacular.
   crypt_count: 12
   crypt_min: 30
   crypt_max: 43
@@ -26,28 +24,28 @@ deck:
     name: Mistress Fanchon
     capacity: 11
     disciplines: AUS CEL DOM OBF THA VIC
-    title: inner circle
+    title: Inner Circle
     clan: Tremere
     grouping: 4
   - count: 2
     name: Gabrielle di Righetti
     capacity: 10
-    disciplines: ANI AUS DOM THA obf pot
-    title: justicar
+    disciplines: obf pot ANI AUS DOM THA
+    title: Justicar
     clan: Tremere
     grouping: 5
   - count: 2
     name: Orlando Oriundus
     capacity: 9
-    disciplines: AUS DOM THA obf
-    title: bishop
+    disciplines: obf AUS DOM THA
+    title: Bishop
     clan: Tremere antitribu
     grouping: 4
   - count: 1
     name: Dr. John Dee
     capacity: 9
-    disciplines: ANI AUS DOM THA chi
-    title: prince
+    disciplines: chi ANI AUS DOM THA
+    title: Prince
     clan: Tremere
     grouping: 4
   - count: 1
@@ -59,22 +57,22 @@ deck:
   - count: 1
     name: Troius
     capacity: 8
-    disciplines: AUS DOM THA cel
-    title: prince
+    disciplines: cel AUS DOM THA
+    title: Prince
     clan: Tremere
     grouping: 4
   - count: 1
     name: Graham Gottesman
     capacity: 7
-    disciplines: DOM FOR obf pre tha
-    title: prince
+    disciplines: obf pre tha DOM FOR
+    title: Prince
     clan: Ventrue
     grouping: 5
   - count: 1
     name: Johannes Worringen
     capacity: 6
-    disciplines: AUS THA dom
-    title: archbishop
+    disciplines: dom AUS THA
+    title: Archbishop
     clan: Tremere antitribu
     grouping: 5
   library_count: 76

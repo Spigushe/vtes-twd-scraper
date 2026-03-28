@@ -1,0 +1,115 @@
+name: National Canada 2025
+location: Montreal, Canada
+date_start: 2025-11-22
+rounds_format: 3R+F
+players_count: 18
+winner: Christian Chénard
+vekn_number: 1000315
+event_url: https://www.vekn.net/event-calendar/event/12685
+event_id: 12685
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82753-twd-national-canada-2025-montreal-canada-22-nov-20250
+deck:
+  name: Ozempic Clown
+  created_by: Christian Chenard
+  description: The leanest and most straightforward version of the classic archetype
+  crypt_count: 12
+  crypt_min: 8
+  crypt_max: 15
+  crypt_avg: 2.75
+  crypt:
+  - count: 2
+    name: Sasha Miklos
+    capacity: 2
+    disciplines: chi
+    clan: Ravnos
+    grouping: 2
+  - count: 2
+    name: Spleen, Georgio Gutterpunk
+    capacity: 2
+    disciplines: ani chi
+    clan: Ravnos
+    grouping: 2
+  - count: 2
+    name: Zip
+    capacity: 2
+    disciplines: ani
+    clan: Ravnos
+    grouping: 3
+  - count: 1
+    name: Ashlesha
+    capacity: 3
+    disciplines: aus chi
+    clan: Ravnos
+    grouping: 2
+  - count: 1
+    name: Lázár Dobrescu
+    capacity: 3
+    disciplines: for
+    clan: Ravnos
+    grouping: 2
+  - count: 1
+    name: Vedel Esbreno
+    capacity: 3
+    disciplines: chi for
+    clan: Ravnos
+    grouping: 2
+  - count: 1
+    name: Anka, Priestess of Thorns
+    capacity: 4
+    disciplines: ani chi pro
+    clan: Ravnos
+    grouping: 2
+  - count: 1
+    name: Salbatore Bokkengro
+    capacity: 4
+    disciplines: for pro CHI
+    clan: Ravnos
+    grouping: 2
+  - count: 1
+    name: Sennuwy, The Promoter
+    capacity: 4
+    disciplines: ani chi for
+    clan: Ravnos
+    grouping: 2
+  library_count: 60
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 8
+      name: Ravnos Carnival
+    - count: 2
+      name: Week of Nightmares
+    - count: 1
+      name: Anarch Troublemaker
+    - count: 1
+      name: Gird Minions
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 1
+      name: Sunset Strip, Hollywood
+    - count: 1
+      name: Coven, The
+  - name: Action
+    count: 30
+    cards:
+    - count: 15
+      name: Embrace, The
+    - count: 15
+      name: Mozambique Allure
+  - name: Political Action
+    count: 7
+    cards:
+    - count: 7
+      name: Consanguineous Boon
+  - name: Action Modifier/Reaction
+    count: 7
+    cards:
+    - count: 7
+      name: Eldest Are Kholo, The
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus

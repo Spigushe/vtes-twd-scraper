@@ -7,12 +7,10 @@ winner: Kelly Lyons
 vekn_number: 1004352
 event_url: https://www.vekn.net/event-calendar/event/10659
 event_id: 10659
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80659-twd-won-event-3-trophy-library-columbus
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80659-twd-won-event-3-trophy-library-columbus
 deck:
   name: Water Dog - Tiny Dominate
-  description: This is an updated version of the same deck that I discussed on 
-    my youtube
+  description: This is an updated version of the same deck that I discussed on my youtube
   crypt_count: 14
   crypt_min: 7
   crypt_max: 12

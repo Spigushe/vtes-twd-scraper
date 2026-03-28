@@ -1,0 +1,162 @@
+name: Belgian National Championship 2021
+location: Brussels, Belgium
+date_start: 2021-11-06
+rounds_format: 3R+F
+players_count: 17
+winner: Emiliano Imeroni
+vekn_number: 3295001
+event_url: https://www.vekn.net/event-calendar/event/9913
+event_id: 9913
+vp_comment: 17 players assembled to fight in the first Belgian event since the start of the pandemic, quite a 
+  respectable turnout given the circumstances! The overall metagame seemed to favour focused/aggressive decks, with 
+  somewhat fewer walls and combat than is common at these latitudes. After three hard-fought rounds, Stéphane D thought 
+  he could not be in the finals with 1GW3 and left before all games finished... thus relinquishing his finalist spot to 
+  Bart.
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/79467-twd-belgian-national-championship-2021-brussels-6-11-2021
+deck:
+  name: Infernal Princes of Anarchy
+  description: ''
+  crypt_count: 12
+  crypt_min: 24
+  crypt_max: 28
+  crypt_avg: 6.33
+  crypt:
+  - count: 3
+    name: Arishat
+    capacity: 6
+    disciplines: DAI OBF PRE
+    title: 1 vote
+    clan: Baali
+    grouping: 6
+  - count: 1
+    name: Alice Chen
+    capacity: 7
+    disciplines: dom obf FOR PRE
+    title: Prince
+    clan: Ventrue
+    grouping: 6
+  - count: 1
+    name: Benjamin Rose
+    capacity: 7
+    disciplines: ani pot AUS OBF
+    title: Prince
+    clan: Nosferatu
+    grouping: 5
+  - count: 1
+    name: Graham Gottesman
+    capacity: 7
+    disciplines: obf pre tha DOM FOR
+    title: Prince
+    clan: Ventrue
+    grouping: 5
+  - count: 1
+    name: Karen Suadela
+    capacity: 7
+    disciplines: obf pre CEL POT
+    title: Prince
+    clan: Brujah
+    grouping: 5
+  - count: 1
+    name: Andi Liu
+    capacity: 6
+    disciplines: aus obf pre DOM
+    title: Prince
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Belinde
+    capacity: 6
+    disciplines: ani aus pot OBF
+    title: Prince
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Benedito, a Lanterna
+    capacity: 6
+    disciplines: ani aus obf POT
+    title: Baron
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Donny Kowalczyk
+    capacity: 6
+    disciplines: cel dom obf AUS
+    title: Prince
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Jacques Rouge
+    capacity: 6
+    disciplines: ani pot pre OBF
+    title: Baron
+    clan: Nosferatu
+    grouping: 6
+  library_count: 62
+  library_sections:
+  - name: Master
+    count: 23
+    cards:
+    - count: 9
+      name: Ashur Tablets
+    - count: 1
+      name: Coven, The
+    - count: 1
+      name: Creepshow Casino
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Giant's Blood
+    - count: 4
+      name: Information Highway
+    - count: 3
+      name: Parthenon, The
+    - count: 1
+      name: Protected Resources
+  - name: Action
+    count: 1
+    cards:
+    - count: 1
+      name: Unleash Hell's Fury
+  - name: Political Action
+    count: 18
+    cards:
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 3
+      name: Kine Resources Contested
+    - count: 1
+      name: Neonate Breach
+    - count: 8
+      name: Parity Shift
+    - count: 4
+      name: Reckless Agitation
+    - count: 1
+      name: Rumors of Gehenna
+  - name: Action Modifier
+    count: 13
+    cards:
+    - count: 1
+      name: Bewitching Oration
+    - count: 1
+      name: Faceless Night
+    - count: 5
+      name: Forgotten Labyrinth
+    - count: 2
+      name: Lost in Crowds
+    - count: 2
+      name: Perfect Paragon
+    - count: 2
+      name: Voter Captivation
+  - name: Reaction
+    count: 2
+    cards:
+    - count: 2
+      name: 'Second Tradition: Domain'
+  - name: Combat
+    count: 5
+    cards:
+    - count: 4
+      name: Majesty
+    - count: 1
+      name: Staredown

@@ -12,11 +12,9 @@ forum_post_url:
 deck:
   name: H AE VE N _ 13
   created_by: gotcha
-  description: All credit for the deck to my friend Bram, who is the mastermind 
-    behind this deck. It was a great pity that you didn't get to play in EC 
-    yourself. I didn't know how to describe the deck so I asked Bram for 
-    comments on this. His words of wisdom were "Bang Bang! Don´t try this at 
-    home."
+  description: All credit for the deck to my friend Bram, who is the mastermind behind this deck. It was a great pity 
+    that you didn't get to play in EC yourself. I didn't know how to describe the deck so I asked Bram for comments on 
+    this. His words of wisdom were "Bang Bang! Don´t try this at home."
   crypt_count: 12
   crypt_min: 14
   crypt_max: 24
@@ -25,40 +23,40 @@ deck:
   - count: 2
     name: Asguresh
     capacity: 6
-    disciplines: CEL NEC aus
+    disciplines: aus CEL NEC
     clan: Nagaraja
     grouping: 5
   - count: 1
     name: Kalinda
     capacity: 6
-    disciplines: CEL OBF tha
-    title: primogen
+    disciplines: tha CEL OBF
+    title: Primogen
     clan: Banu Haqim
     grouping: 6
   - count: 1
     name: Kassandra Tassaki
     capacity: 6
-    disciplines: CEL THA obf
-    title: prince
+    disciplines: obf CEL THA
+    title: Prince
     clan: Banu Haqim
     grouping: 6
   - count: 1
     name: Khadija Al-Kindi
     capacity: 6
     disciplines: CEL OBF THA
-    title: primogen
+    title: Primogen
     clan: Banu Haqim
     grouping: 6
   - count: 1
     name: Asmin Kobane
     capacity: 5
-    disciplines: CEL dom obf tha
+    disciplines: dom obf tha CEL
     clan: Banu Haqim
     grouping: 6
   - count: 1
     name: Omer
     capacity: 5
-    disciplines: CEL QUI obf
+    disciplines: obf CEL QUI
     clan: Banu Haqim
     grouping: 6
   - count: 1
@@ -76,13 +74,13 @@ deck:
   - count: 1
     name: Fairuza
     capacity: 4
-    disciplines: CEL pre
+    disciplines: pre CEL
     clan: Brujah antitribu
     grouping: 5
   - count: 1
     name: Mateusz Kazimirski, Biker of Blood
     capacity: 4
-    disciplines: CEL qui
+    disciplines: qui CEL
     clan: Banu Haqim
     grouping: 6
   library_count: 90

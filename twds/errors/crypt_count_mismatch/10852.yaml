@@ -3,11 +3,11 @@ location: Riudoms, Spain
 date_start: 2023-08-12
 rounds_format: 2R+F
 players_count: 37
-winner: Tomàs López Jiménez's Tournament Winning Deck with 1.5 VPs in the Finals
+winner: Tomàs López Jiménez
+vekn_number: 1003983
 event_url: https://www.vekn.net/event-calendar/event/10852
 event_id: 10852
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80767-twd-invitacional-de-la-liga-catalana-2023
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80767-twd-invitacional-de-la-liga-catalana-2023
 deck:
   name: Salubri 06 Legionarios
   created_by: Tomàs López Jiménez
@@ -20,7 +20,7 @@ deck:
   - count: 4
     name: Serenna the White
     capacity: 8
-    disciplines: AUS FOR OBE ani dem
+    disciplines: ani dem AUS FOR OBE
     clan: Salubri
     grouping: 6
   - count: 1
@@ -32,13 +32,13 @@ deck:
   - count: 1
     name: Alcoan
     capacity: 7
-    disciplines: AUS CEL NEC for
+    disciplines: for AUS CEL NEC
     clan: Harbinger of Skulls
     grouping: 6
   - count: 1
     name: Matthew
     capacity: 7
-    disciplines: AUS FOR OBE cel
+    disciplines: cel AUS FOR OBE
     clan: Salubri
     grouping: 6
   - count: 2
@@ -50,7 +50,7 @@ deck:
   - count: 2
     name: La Viuda Blanca
     capacity: 6
-    disciplines: AUS NEC for obf
+    disciplines: for obf AUS NEC
     clan: Harbinger of Skulls
     grouping: 6
   library_count: 90

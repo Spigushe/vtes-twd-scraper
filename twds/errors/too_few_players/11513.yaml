@@ -11,9 +11,8 @@ forum_post_url:
   https://www.vekn.net/forum/event-reports-and-twd/81631-twd-fee-stake-jyvaeskylae-5-jyvaeskylae-finland-13-jul-2024
 deck:
   name: Mambou Jambou
-  description: Multirush deck with lots of prevent and damage. This has been 
-    ongoing project of mine, Aapo Järvelin and Antti Penttilä. So thanks for the
-    contribution goes to them!
+  description: Multirush deck with lots of prevent and damage. This has been ongoing project of mine, Aapo Järvelin and 
+    Antti Penttilä. So thanks for the contribution goes to them!
   crypt_count: 12
   crypt_min: 24
   crypt_max: 36
@@ -28,31 +27,31 @@ deck:
   - count: 3
     name: Baroque
     capacity: 7
-    disciplines: NEC THN aus for obf
+    disciplines: aus for obf NEC THN
     clan: Samedi
     grouping: 5
   - count: 1
     name: Jean Lisle
     capacity: 8
-    disciplines: FOR OBF THN pot
+    disciplines: pot FOR OBF THN
     clan: Samedi
     grouping: 6
   - count: 1
     name: Josette
     capacity: 8
-    disciplines: FOR OBF THN pot pre
+    disciplines: pot pre FOR OBF THN
     clan: Samedi
     grouping: 6
   - count: 1
     name: Marie-Pierre
     capacity: 4
-    disciplines: THN for nec
+    disciplines: for nec THN
     clan: Samedi
     grouping: 6
   - count: 1
     name: Mister Schwartz
     capacity: 6
-    disciplines: NEC THN for obf
+    disciplines: for obf NEC THN
     clan: Samedi
     grouping: 6
   library_count: 80

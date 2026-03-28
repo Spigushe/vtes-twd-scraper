@@ -3,11 +3,11 @@ location: Online
 date_start: 2022-07-25
 rounds_format: 2R+F
 players_count: 14
-winner: Rafael Barbosa
-event_url: https://www.vekn.net/player-registry/event/10285
+winner: Rafael Barbosa da Silva
+vekn_number: 7060055
+event_url: https://www.vekn.net/event-calendar/event/10285
 event_id: 10285
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/79953-twda-nose-of-the-hound
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79953-twda-nose-of-the-hound
 deck:
   name: ravnos snow
   description: ''
@@ -25,7 +25,7 @@ deck:
   - count: 2
     name: Tatiana Stepanova, Alastor
     capacity: 7
-    disciplines: CHI PRE ani for obf
+    disciplines: ani for obf CHI PRE
     clan: Ravnos
     grouping: 4
   - count: 1
@@ -37,13 +37,13 @@ deck:
   - count: 1
     name: Jeremy MacNeil (ADV)
     capacity: 8
-    disciplines: AUS POT PRE cel chi
+    disciplines: cel chi AUS POT PRE
     clan: Brujah
     grouping: 3
   - count: 1
     name: Rain
     capacity: 7
-    disciplines: AUS cel chi dem pot pre
+    disciplines: cel chi dem pot pre AUS
     clan: Toreador antitribu
     grouping: 4
   library_count: 80

@@ -1,0 +1,155 @@
+name: Earth Meld With the Land
+location: Newark, Ohio
+date_start: 2025-08-31
+rounds_format: 2R+F
+players_count: 17
+winner: Alex Romano
+event_url: https://www.vekn.net/event-calendar/event/12575
+event_id: 12575
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82549-twd-earth-meld-with-the-land
+deck:
+  name: New Noise
+  description: This deck is inspired by something I saw David Litwin play on the last day of the Week of Nightmares in 
+    2024. While it is absolutely heinous and will not be making friends at most tables; in the current meta it is 
+    consistently hitting 3 players at a table, before factoring in the Puppet Master's. To play this deck you just have 
+    to accept collateral damage.
+  crypt_count: 12
+  crypt_min: 23
+  crypt_max: 35
+  crypt_avg: 7.17
+  crypt:
+  - count: 3
+    name: Juliet Parr
+    capacity: 9
+    disciplines: cel pot AUS DOM OBF
+    title: Justicar
+    clan: Malkavian
+    grouping: 7
+  - count: 2
+    name: Alexander Silverson
+    capacity: 8
+    disciplines: pre AUS DOM OBF
+    title: Prince
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Alice Chen
+    capacity: 7
+    disciplines: dom obf FOR PRE
+    title: Prince
+    clan: Ventrue
+    grouping: 6
+  - count: 1
+    name: Andi Liu
+    capacity: 6
+    disciplines: aus obf pre DOM
+    title: Prince
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Belinde
+    capacity: 6
+    disciplines: ani aus pot OBF
+    title: Prince
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Donny Kowalczyk
+    capacity: 6
+    disciplines: cel dom obf AUS
+    title: Prince
+    clan: Malkavian
+    grouping: 6
+  - count: 1
+    name: Kassandra Tassaki
+    capacity: 6
+    disciplines: obf CEL THA
+    title: Prince
+    clan: Banu Haqim
+    grouping: 6
+  - count: 1
+    name: Nikolaus Vermeulen
+    capacity: 7
+    disciplines: for obf ANI POT
+    title: Prince
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Warmaksan
+    capacity: 5
+    disciplines: cel obf THA
+    title: Prince
+    clan: Banu Haqim
+    grouping: 6
+  library_count: 60
+  library_sections:
+  - name: Master
+    count: 22
+    cards:
+    - count: 2
+      name: Antediluvian Awakening
+    - count: 9
+      name: Ashur Tablets
+    - count: 1
+      name: Camarilla Conclave
+    - count: 1
+      name: Creepshow Casino
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: Secure Haven
+    - count: 1
+      name: Tension in the Ranks
+    - count: 3
+      name: Vessel
+    - count: 2
+      name: Villein
+  - name: Action
+    count: 14
+    cards:
+    - count: 1
+      name: Anarch Secession
+    - count: 4
+      name: 'Fourth Tradition: The Accounting'
+    - count: 7
+      name: 'Judgment: Camarilla Segregation'
+    - count: 2
+      name: Puppet Master
+  - name: Political Action
+    count: 6
+    cards:
+    - count: 1
+      name: Disputed Territory
+    - count: 2
+      name: Kine Resources Contested
+    - count: 2
+      name: Parity Shift
+    - count: 1
+      name: Rumors of Gehenna
+  - name: Action Modifier
+    count: 10
+    cards:
+    - count: 2
+      name: Cloak the Gathering
+    - count: 2
+      name: Elder Impersonation
+    - count: 2
+      name: Faceless Night
+    - count: 2
+      name: Forgotten Labyrinth
+    - count: 2
+      name: Lost in Crowds
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Swallowed by the Night
+  - name: Reaction
+    count: 6
+    cards:
+    - count: 4
+      name: Deflection
+    - count: 2
+      name: On the Qui Vive

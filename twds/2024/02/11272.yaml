@@ -1,0 +1,142 @@
+name: Baron's Bloody Party
+location: Itaquaquecetuba, Brasil
+date_start: 2024-02-18
+rounds_format: 2R+F
+players_count: 12
+winner: Felipe Oliveira de Melo
+vekn_number: 6950010
+event_url: https://www.vekn.net/event-calendar/event/11272
+event_id: 11272
+vp_comment: 2 GW 7VP with 1,5VP in the Final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81255-twd-baron-s-bloody-party-itaquaquecetuba-brasil-february-18-2024
+deck:
+  name: Brujah 100 Debate
+  created_by: Felipe Oliveira de Melo
+  description: ''
+  crypt_count: 12
+  crypt_min: 20
+  crypt_max: 32
+  crypt_avg: 6.67
+  crypt:
+  - count: 2
+    name: Aline Gädeke
+    capacity: 7
+    disciplines: cel POT PRE
+    title: Baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Elen Kamjian
+    capacity: 4
+    disciplines: CEL POT
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Saku Pihlajamäki
+    capacity: 8
+    disciplines: for pro CEL POT PRE
+    title: Baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Theo Bell
+    capacity: 8
+    disciplines: aus dom CEL POT PRE
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Valeriya Zinovieva
+    capacity: 7
+    disciplines: cel pre pro POT
+    title: Baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Atiena
+    capacity: 6
+    disciplines: obf pot pre CEL
+    title: Baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Octane
+    capacity: 6
+    disciplines: CEL POT PRE
+    clan: Brujah
+    grouping: 6
+  library_count: 89
+  library_sections:
+  - name: Master
+    count: 16
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 2
+      name: Fame
+    - count: 1
+      name: Frontal Assault
+    - count: 2
+      name: Guardian Angel
+    - count: 1
+      name: New Carthage
+    - count: 2
+      name: Sudden Reversal
+    - count: 4
+      name: Villein
+    - count: 1
+      name: Warzone Hunting Ground
+  - name: Action
+    count: 12
+    cards:
+    - count: 12
+      name: Line Brawl
+  - name: Political Action
+    count: 1
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+  - name: Action Modifier
+    count: 2
+    cards:
+    - count: 2
+      name: Monkey Wrench
+  - name: Action Modifier/Combat
+    count: 4
+    cards:
+    - count: 4
+      name: Resist Earth's Grasp
+  - name: Reaction
+    count: 18
+    cards:
+    - count: 6
+      name: Bait and Switch
+    - count: 2
+      name: On the Qui Vive
+    - count: 6
+      name: Organized Resistance
+    - count: 4
+      name: Protection Racket
+  - name: Combat
+    count: 36
+    cards:
+    - count: 3
+      name: Bollix
+    - count: 2
+      name: Disarm
+    - count: 6
+      name: Dust Up
+    - count: 1
+      name: Fast Hands
+    - count: 7
+      name: Immortal Grapple
+    - count: 6
+      name: Quickness
+    - count: 4
+      name: Taste of Vitae
+    - count: 7
+      name: Torn Signpost

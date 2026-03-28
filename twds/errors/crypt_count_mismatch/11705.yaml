@@ -5,10 +5,9 @@ rounds_format: 3R+F
 players_count: 12
 winner: Djordje Sutic
 vekn_number: 5940003
-event_url: https://www.vekn.net/player-registry/event/11705
+event_url: https://www.vekn.net/event-calendar/event/11705
 event_id: 11705
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81818-twd-pulled-fangs-belgrade-12-10-2024
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81818-twd-pulled-fangs-belgrade-12-10-2024
 deck:
   name: Trujah toolbox
   created_by: Shootic / Djordje Sutic 5940003
@@ -21,13 +20,13 @@ deck:
   - count: 5
     name: Al-Muntathir, God's Witness
     capacity: 8
-    disciplines: AUS FOR PRE TEM obf qui
+    disciplines: obf qui AUS FOR PRE TEM
     clan: True Brujah
     grouping: 5
   - count: 2
     name: Sennadurek
     capacity: 6
-    disciplines: AUS NEC dom
+    disciplines: dom AUS NEC
     clan: Nagaraja
     grouping: 4
   - count: 1
@@ -39,13 +38,13 @@ deck:
   - count: 1
     name: Neighbor John
     capacity: 5
-    disciplines: AUS dom for
+    disciplines: dom for AUS
     clan: Ventrue antitribu
     grouping: 4
   - count: 1
     name: Tyler McGill
     capacity: 4
-    disciplines: AUS pre
+    disciplines: pre AUS
     clan: Toreador
     grouping: 5
   library_count: 90

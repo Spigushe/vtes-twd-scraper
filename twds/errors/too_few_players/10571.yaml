@@ -8,8 +8,7 @@ vekn_number: 3160020
 event_url: https://www.vekn.net/event-calendar/event/10571
 event_id: 10571
 vp_comment: 3vp in final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80330-twd-bum-s-rush-singapore-sg-19th-feb-2023
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80330-twd-bum-s-rush-singapore-sg-19th-feb-2023
 deck:
   name: Anson Guns
   description: Self-explanatory Celerity guns!
@@ -21,49 +20,49 @@ deck:
   - count: 4
     name: Anson
     capacity: 8
-    disciplines: CEL PRE aus dom
-    title: prince
+    disciplines: aus dom CEL PRE
+    title: Prince
     clan: Toreador
     grouping: 1
   - count: 2
     name: Volker, The Puppet Prince
     capacity: 5
-    disciplines: CEL pot
-    title: prince
+    disciplines: pot CEL
+    title: Prince
     clan: Brujah
     grouping: 2
   - count: 1
     name: Anneke
     capacity: 10
-    disciplines: AUS CEL PRE dom
-    title: justicar
+    disciplines: dom AUS CEL PRE
+    title: Justicar
     clan: Toreador
     grouping: 1
   - count: 1
     name: Black Cat
     capacity: 5
-    disciplines: CEL pot pre
+    disciplines: pot pre CEL
     clan: Brujah
     grouping: 1
   - count: 1
     name: Constanza Vinti
     capacity: 8
     disciplines: CEL DOM POT
-    title: prince
+    title: Prince
     clan: Brujah
     grouping: 2
   - count: 1
     name: Dónal O'Connor
     capacity: 8
     disciplines: CEL DOM POT
-    title: prince
+    title: Prince
     clan: Brujah
     grouping: 2
   - count: 1
     name: Marcellus
     capacity: 8
-    disciplines: AUS CEL pro
-    title: prince
+    disciplines: pro AUS CEL
+    title: Prince
     clan: Toreador
     grouping: 2
   - count: 1

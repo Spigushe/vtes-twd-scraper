@@ -23,25 +23,25 @@ deck:
     name: Meshenka
     capacity: 8
     disciplines: ANI AUS VIC
-    title: priscus
+    title: Priscus
     clan: Tzimisce
     grouping: 2
   - count: 3
     name: Dragos
     capacity: 7
-    disciplines: ANI AUS vic
+    disciplines: vic ANI AUS
     clan: Tzimisce
     grouping: 2
   - count: 1
     name: Lolita Houston
     capacity: 4
-    disciplines: VIC aus
+    disciplines: aus VIC
     clan: Tzimisce
     grouping: 2
   - count: 1
     name: Terrence
     capacity: 4
-    disciplines: vic aus ani
+    disciplines: ani aus vic
     clan: Tzimisce
     grouping: 2
   library_count: 48

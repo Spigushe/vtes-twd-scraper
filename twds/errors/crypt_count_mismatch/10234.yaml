@@ -7,8 +7,7 @@ winner: Antti Penttilä
 vekn_number: 3070129
 event_url: https://www.vekn.net/event-calendar/event/10234
 event_id: 10234
-vp_comment: Here is Antti's winning deck for day 1 of the EC (congrats!), along 
-  with the decks of the other finalists.
+vp_comment: Here is Antti's winning deck for day 1 of the EC (congrats!), along with the decks of the other finalists.
 forum_post_url: 
   https://www.vekn.net/forum/event-reports-and-twd/79938-twd-ec2022-day-1-helsinki-finland-30-july-2022-other-finalist-decks
 deck:
@@ -215,33 +214,29 @@ deck:
     count: 12
     cards:
     - count: 1
-      name: Bryan Van Duesen            7 aus pre DOM THA Tremere antitribu:2
+      name: Bryan Van Duesen            7 aus pre DOM THA                    Tremere antitribu:2
     - count: 1
-      name: Carna, The Princess Witch   7 AUS DOM THA           primogen 
-        Tremere:3
+      name: Carna, The Princess Witch   7 AUS DOM THA           primogen     Tremere:3
     - count: 1
-      name: Ladislas Toth, The Torch    7 for AUS DOM THA       archbishop 
-        Tremere antitribu:3
+      name: Ladislas Toth, The Torch    7 for AUS DOM THA       archbishop   Tremere antitribu:3
     - count: 1
-      name: Marlene, The Infernalist    6 dem for tha AUS DOM Ventrue 
-        antitribu:2
+      name: Marlene, The Infernalist    6 dem for tha AUS DOM                Ventrue antitribu:2
     - count: 1
-      name: Reverend Blackwood          6 obf DOM THA           bishop Tremere 
-        antitribu:2
+      name: Reverend Blackwood          6 obf DOM THA           bishop       Tremere antitribu:2
     - count: 1
-      name: Selena                      6 AUS DOM THA Tremere antitribu:3
+      name: Selena                      6 AUS DOM THA                        Tremere antitribu:3
     - count: 1
-      name: Aisling Sturbridge          5 dom AUS THA Tremere:2
+      name: Aisling Sturbridge          5 dom AUS THA                        Tremere:2
     - count: 1
-      name: Kurt Strauss                5 aus tha DOM Tremere antitribu:2
+      name: Kurt Strauss                5 aus tha DOM                        Tremere antitribu:2
     - count: 1
-      name: Gloria Giovanni             4 nec DOM Giovanni:2
+      name: Gloria Giovanni             4 nec DOM                            Giovanni:2
     - count: 1
-      name: Ingrid Russo                4 for DOM Ventrue antitribu:2
+      name: Ingrid Russo                4 for DOM                            Ventrue antitribu:2
     - count: 1
-      name: Brooke                      3 dom tha Tremere antitribu:2
+      name: Brooke                      3 dom tha                            Tremere antitribu:2
     - count: 1
-      name: Ehrich Weiss                3 dom tha Tremere:3
+      name: Ehrich Weiss                3 dom tha                            Tremere:3
   - name: Library
     count: 79
     cards: []
@@ -305,18 +300,15 @@ deck:
     - count: 3
       name: Massassi                      9 obf AUS CEL POT QUI      Osebo:4
     - count: 1
-      name: Neighbor John                 5 dom for AUS              Ventrue 
-        antitribu:4
+      name: Neighbor John                 5 dom for AUS              Ventrue antitribu:4
     - count: 2
       name: Bakr                          8 dem pro CEL OBF QUI      Assamite:5
     - count: 1
       name: Titi Camara                   5 pot AUS CEL              Osebo:5
     - count: 1
-      name: Guggenheim                    6 AUS CEL PRE              Toreador 
-        antitribu:5
+      name: Guggenheim                    6 AUS CEL PRE              Toreador antitribu:5
     - count: 1
-      name: Dominique Santo Paulo         6 pot pre AUS CEL          Toreador 
-        antitribu:4
+      name: Dominique Santo Paulo         6 pot pre AUS CEL          Toreador antitribu:4
   - name: Master
     count: 17
     cards:

@@ -7,8 +7,7 @@ winner: Miska Tanskanen
 vekn_number: 9350043
 event_url: https://www.vekn.net/event-calendar/event/11707
 event_id: 11707
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81859-twd-garou-rim-above-the-law
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81859-twd-garou-rim-above-the-law
 deck:
   name: Höylätään
   created_by: TheAcidWorm
@@ -21,19 +20,19 @@ deck:
   - count: 4
     name: Howler
     capacity: 8
-    disciplines: ANI PRE SPI obf
+    disciplines: obf ANI PRE SPI
     clan: Ahrimane
     grouping: 2
   - count: 3
     name: Siamese, The
     capacity: 7
-    disciplines: PRE SPI ani pro
+    disciplines: ani pro PRE SPI
     clan: Ahrimane
     grouping: 2
   - count: 3
     name: Cynthia Ingold
     capacity: 6
-    disciplines: SPI ani for pre
+    disciplines: ani for pre SPI
     clan: Ahrimane
     grouping: 2
   - count: 1

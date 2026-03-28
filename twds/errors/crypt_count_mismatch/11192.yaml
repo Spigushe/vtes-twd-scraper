@@ -3,11 +3,11 @@ location: Vác, Hungary
 date_start: 2024-01-27
 rounds_format: 2R+F
 players_count: 20
-winner: Márk Virsinger's Tournament Winning Deck with 3 VPs in the Finals
+winner: Mark Virsinger
+vekn_number: 3540231
 event_url: https://www.vekn.net/event-calendar/event/11192
 event_id: 11192
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81206-twd-white-turtle
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81206-twd-white-turtle
 deck:
   description: ''
   crypt_count: 12
@@ -25,32 +25,32 @@ deck:
   - count: 1
     name: Nahir
     capacity: 10
-    disciplines: ANI DOM OBT POT tha
+    disciplines: tha ANI DOM OBT POT
     clan: Lasombra
     grouping: 3
   - count: 1
     name: Servius Marius Pustula
     capacity: 10
-    disciplines: ANI CHI DOM OBT POT obf
+    disciplines: obf ANI CHI DOM OBT POT
     clan: Nosferatu antitribu
     grouping: 4
   - count: 1
     name: Antón de Concepción
     capacity: 9
-    disciplines: ANI DOM OBT POT aus
-    title: archbishop
+    disciplines: aus ANI DOM OBT POT
+    title: Archbishop
     clan: Lasombra
     grouping: 4
   - count: 1
     name: Conrad Adoula
     capacity: 8
-    disciplines: DOM OBT POT ani cel
+    disciplines: ani cel DOM OBT POT
     clan: Lasombra
     grouping: 4
   - count: 1
     name: Otieno
     capacity: 6
-    disciplines: OBT POT ani dom
+    disciplines: ani dom OBT POT
     clan: Lasombra
     grouping: 4
   library_count: 90

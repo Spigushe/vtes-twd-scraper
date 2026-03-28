@@ -6,8 +6,7 @@ players_count: 12
 winner: Martin Weinmayer's Tournament Winning Deck with 1,5 VPs in the Finals
 event_url: https://www.vekn.net/event-calendar/event/11429
 event_id: 11429
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81519-twd-blood-league-part-iv
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81519-twd-blood-league-part-iv
 deck:
   name: New Ventrue
   created_by: Lajos Vég
@@ -34,35 +33,35 @@ deck:
     name: De Sade
     capacity: 9
     disciplines: AUS DOM FOR PRE
-    title: archbishop
+    title: Archbishop
     clan: Ventrue antitribu
     grouping: 5
   - count: 2
     name: Alexa Draper
     capacity: 8
-    disciplines: DOM PRE for pot
-    title: prince
+    disciplines: for pot DOM PRE
+    title: Prince
     clan: Ventrue
     grouping: 6
   - count: 2
     name: Alice Chen
     capacity: 7
-    disciplines: FOR PRE dom obf
-    title: prince
+    disciplines: dom obf FOR PRE
+    title: Prince
     clan: Ventrue
     grouping: 6
   - count: 2
     name: Sybren van Oosten
     capacity: 7
-    disciplines: FOR PRE dom tha
-    title: prince
+    disciplines: dom tha FOR PRE
+    title: Prince
     clan: Ventrue
     grouping: 6
   - count: 2
     name: Horst von Brühl
     capacity: 6
-    disciplines: FOR aus dom pre
-    title: prince
+    disciplines: aus dom pre FOR
+    title: Prince
     clan: Ventrue
     grouping: 6
   library_count: 88
@@ -249,26 +248,19 @@ deck:
     count: 12
     cards:
     - count: 1
-      name: Marcel                        4 obf pre pro              Follower of
-        Set:6
+      name: Marcel                        4 obf pre pro              Follower of Set:6
     - count: 1
-      name: Jenny Silver                  5 obf PRE PRO              Follower of
-        Set:6
+      name: Jenny Silver                  5 obf PRE PRO              Follower of Set:6
     - count: 1
-      name: Crystal Lynn                  6 OBF PRE PRO              Follower of
-        Set:6
+      name: Crystal Lynn                  6 OBF PRE PRO              Follower of Set:6
     - count: 2
-      name: Elisha Tucker                 6 cel obf pro PRE          Follower of
-        Set:6
+      name: Elisha Tucker                 6 cel obf pro PRE          Follower of Set:6
     - count: 3
-      name: Vivian VI                     7 obf tha PRE PRO          Follower of
-        Set:6
+      name: Vivian VI                     7 obf tha PRE PRO          Follower of Set:6
     - count: 2
-      name: Nonu Dis                      8 for OBF PRE PRO          Follower of
-        Set:6
+      name: Nonu Dis                      8 for OBF PRE PRO          Follower of Set:6
     - count: 2
-      name: Sergio Bueno                  8 aus pot OBF PRE PRO      Follower of
-        Set:6
+      name: Sergio Bueno                  8 aus pot OBF PRE PRO      Follower of Set:6
   - name: Master
     count: 17
     cards:
@@ -337,28 +329,21 @@ deck:
     count: 12
     cards:
     - count: 1
-      name: Ladislas Toth, The Torch   7 AUS DOM THA for   archbishop   Tremere 
-        antitribu:3
+      name: Ladislas Toth, The Torch   7 AUS DOM THA for   archbishop   Tremere antitribu:3
     - count: 1
-      name: Elena Mendoza Vasquez      6 AUS THA dom obt                Tremere 
-        antitribu:3
+      name: Elena Mendoza Vasquez      6 AUS THA dom obt                Tremere antitribu:3
     - count: 1
-      name: Selena                     6 AUS DOM THA                    Tremere 
-        antitribu:3
+      name: Selena                     6 AUS DOM THA                    Tremere antitribu:3
     - count: 1
-      name: Yasmin the Black           6 AUS THA dom pre                Tremere 
-        antitribu:3
+      name: Yasmin the Black           6 AUS THA dom pre                Tremere antitribu:3
     - count: 5
-      name: Antonio d'Erlette          5 THA dom for pot                Tremere 
-        antitribu:4
+      name: Antonio d'Erlette          5 THA dom for pot                Tremere antitribu:4
     - count: 1
-      name: Ember Wright               3 aus dom                        Tremere 
-        antitribu:3
+      name: Ember Wright               3 aus dom                        Tremere antitribu:3
     - count: 1
-      name: Lectora                    3 aus tha                        Tremere 
-        antitribu:4
+      name: Lectora                    3 aus tha                        Tremere antitribu:4
     - count: 1
-      name: Martin Franckel            3 AUS tha Tremere:3
+      name: Martin Franckel            3 AUS tha                        Tremere:3
   - name: Library
     count: 90
     cards: []

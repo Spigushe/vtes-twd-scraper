@@ -8,8 +8,7 @@ vekn_number: 3200215
 event_url: https://www.vekn.net/event-calendar/event/10352
 event_id: 10352
 vp_comment: 2gw9,5 + 4vp in final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/80099-twd-rise-of-the-fallen-nantes-france
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80099-twd-rise-of-the-fallen-nantes-france
 deck:
   name: Emerald Legionnaires
   created_by: Thomas Gibson
@@ -28,13 +27,13 @@ deck:
   - count: 2
     name: Babalawo Alafin
     capacity: 7
-    disciplines: AUS FOR NEC ani
+    disciplines: ani AUS FOR NEC
     clan: Harbinger of Skulls
     grouping: 4
   - count: 2
     name: Erebus
     capacity: 7
-    disciplines: AUS FOR NEC dem
+    disciplines: dem AUS FOR NEC
     clan: Harbinger of Skulls
     grouping: 3
   - count: 2
@@ -46,7 +45,7 @@ deck:
   - count: 1
     name: Solomon Batanea
     capacity: 5
-    disciplines: AUS FOR nec
+    disciplines: nec AUS FOR
     clan: Harbinger of Skulls
     grouping: 4
   library_count: 90
