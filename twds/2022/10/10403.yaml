@@ -74,9 +74,9 @@ deck:
     grouping: 2
   - count: 1
     name: Sarrasine (ADV)
-    capacity: 7
-    disciplines: aus nec ser OBF PRE
-    title:
+    capacity: 8
+    disciplines: aus nec OBF PRE SER
+    title: Prince
     clan: Ministry
     grouping: 2
   library_count: 90
