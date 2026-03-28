@@ -90,11 +90,19 @@ class Tournament(BaseModel):
 
     @model_validator(mode="after")
     def derive_event_id(self) -> Tournament:
-        """Extract numeric id from event_url, e.g. '.../event/8470' → 8470."""
+        """Extract numeric id from event_url and normalise the URL.
+
+        Any vekn.net URL containing '/event/<id>' is accepted; the stored
+        ``event_url`` is always rewritten to the canonical form
+        ``https://www.vekn.net/event-calendar/event/<id>``.
+        """
         if self.event_url:
             match = re.search(r"/event/(\d+)", self.event_url)
             if match:
                 self.event_id = int(match.group(1))
+                self.event_url = (
+                    f"https://www.vekn.net/event-calendar/event/{self.event_id}"
+                )
         return self
 
     @field_validator("event_id", mode="before")

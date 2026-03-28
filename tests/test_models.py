@@ -144,6 +144,20 @@ class TestEventId:
         t = _make_tournament(event_url="https://www.vekn.net/other/page")
         assert t.event_id is None
 
+    def test_non_canonical_url_normalised(self):
+        """A non-canonical vekn URL containing '/event/<id>' is rewritten."""
+        t = _make_tournament(
+            event_url="https://www.vekn.net/player-registry/event/12345"
+        )
+        assert t.event_id == 12345
+        assert t.event_url == "https://www.vekn.net/event-calendar/event/12345"
+
+    def test_canonical_url_unchanged(self):
+        t = _make_tournament(
+            event_url="https://www.vekn.net/event-calendar/event/12345"
+        )
+        assert t.event_url == "https://www.vekn.net/event-calendar/event/12345"
+
     def test_string_event_id_coerced_to_int(self):
         """Back-compat: existing YAML files may have event_id as a quoted string."""
         t = _make_tournament(

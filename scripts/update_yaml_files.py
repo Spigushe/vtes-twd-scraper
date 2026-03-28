@@ -1,4 +1,5 @@
 import os
+import re
 import types
 import typing
 from ruamel.yaml import YAML
@@ -53,6 +54,27 @@ def _walk(data: dict, model_class: type[BaseModel]) -> None:
                 data[field_name] = coerced
 
 
+_EVENT_URL_RE = re.compile(r"/event/(\d+)")
+_CANONICAL_URL = "https://www.vekn.net/event-calendar/event/{}"
+
+
+def _normalise_event_url(data: dict) -> None:
+    """Rewrite event_url to the canonical form and keep event_id in sync."""
+    event_url = data.get("event_url")
+    if not isinstance(event_url, str):
+        return
+    m = _EVENT_URL_RE.search(event_url)
+    if not m:
+        return
+    event_id = int(m.group(1))
+    canonical = _CANONICAL_URL.format(event_id)
+    if event_url != canonical:
+        data["event_url"] = canonical
+    # Keep event_id consistent with the (possibly updated) URL.
+    if data.get("event_id") != event_id:
+        data["event_id"] = event_id
+
+
 def update_yaml_files(base_dir: str) -> None:
     for root, _, files in os.walk(base_dir):
         for file in files:
@@ -63,6 +85,7 @@ def update_yaml_files(base_dir: str) -> None:
                 with open(file_path, "r", encoding="utf-8") as f:
                     data = yaml.load(f)
                 _walk(data, Tournament)
+                _normalise_event_url(data)
                 with open(file_path, "w", encoding="utf-8") as f:
                     yaml.dump(data, f)
                 print(f"Updated: {file_path}")
