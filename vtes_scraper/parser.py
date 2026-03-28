@@ -50,9 +50,9 @@ SECTION_HEADER_RE = re.compile(r"^(?P<name>[A-Za-z /,()]+)\s*\((?P<count>\d+).*\
 
 # Known VTES titles that appear between disciplines and clan name in crypt lines
 _TITLE_RE = re.compile(
-    r"^(baron|prince|primogen|justicar|inner circle"
-    r"|archbishop|bishop|priscus|cardinal|regent"
-    r"|magaji|1 vote|2 votes)\s+",
+    r"^(Baron|Prince|Primogen|Justicar|Inner Circle"
+    r"|Archbishop|Bishop|Priscus|Cardinal|Regent"
+    r"|Magaji|1 vote|2 votes)\s+",
     re.IGNORECASE,
 )
 
