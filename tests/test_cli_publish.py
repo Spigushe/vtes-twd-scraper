@@ -203,6 +203,35 @@ class TestPublishCommand:
             # No valid tournaments loaded
             assert ret == 0
 
+    def test_run_skips_error_decks(self):
+        """Decks inside twds/errors/ must not be submitted to the publisher."""
+        t = _make_tournament()
+        result = BatchPRResult(pr_url="https://github.com/pr/1", published=["9999"])
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            from vtes_scraper.output.yaml import write_tournament_yaml
+
+            # Place a valid YAML in the errors subdirectory
+            errors_dir = Path(tmpdir) / "errors" / "unknown_winner"
+            errors_dir.mkdir(parents=True)
+            write_tournament_yaml(t, errors_dir, overwrite=True)
+
+            args = argparse.Namespace(
+                twds_dir=Path(tmpdir),
+                delay=0,
+                github_token="mytoken",
+                publish_dir=Path(tmpdir) / "publish",
+                include_pre_2020=False,
+                verbose=False,
+            )
+            with patch(
+                "vtes_scraper.cli.publish.publish_all_as_single_pr", return_value=result
+            ) as mock_publish:
+                ret = publish_cmd.run(args)
+            # No valid tournaments outside errors/ — nothing to publish
+            assert ret == 0
+            mock_publish.assert_not_called()
+
     def test_write_publish_report_with_pr_url(self):
         t = _make_tournament()
         result = BatchPRResult(pr_url="https://github.com/pr/1", published=["9999"])

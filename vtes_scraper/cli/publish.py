@@ -158,7 +158,10 @@ def run(args: argparse.Namespace) -> int:
     # ── Load local YAML files ──────────────────────────────────────────────
     yaml = YAML()
     twds_dir: Path = args.twds_dir
-    yaml_files = sorted(twds_dir.rglob("*.yaml"))
+    errors_dir = twds_dir / "errors"
+    yaml_files = sorted(
+        p for p in twds_dir.rglob("*.yaml") if not p.is_relative_to(errors_dir)
+    )
     logger.debug("Found %d YAML file(s) in %s.", len(yaml_files), twds_dir)
 
     if not yaml_files:
