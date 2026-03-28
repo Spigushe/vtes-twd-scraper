@@ -5,9 +5,9 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from vtes_scraper.cli._common import console, setup_logging
-from vtes_scraper.output import tournament_to_yaml_str, write_tournament_yaml
-from vtes_scraper.parser import parse_twd_text
+from vtes_scraper_v1.cli._common import console, setup_logging
+from vtes_scraper_v1.output import tournament_to_yaml_str, write_tournament_yaml
+from vtes_scraper_v1.parser import parse_twd_text
 
 
 def register(sub: argparse._SubParsersAction) -> None:

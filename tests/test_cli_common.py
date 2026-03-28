@@ -6,8 +6,8 @@ from unittest.mock import patch
 
 import pytest
 
-from vtes_scraper.cli import _build_parser, main
-from vtes_scraper.cli._common import _reconfigure_windows_stdio, setup_logging
+from vtes_scraper_v1.cli import _build_parser, main
+from vtes_scraper_v1.cli._common import _reconfigure_windows_stdio, setup_logging
 
 # ---------------------------------------------------------------------------
 # _build_parser / main

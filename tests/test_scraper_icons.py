@@ -12,8 +12,8 @@ from unittest.mock import MagicMock, patch
 import pytest
 from bs4 import BeautifulSoup
 
-import vtes_scraper.cli.scrape as _scrape_mod  # import directly, bypasses cli/__init__
-from vtes_scraper.scraper import (
+import vtes_scraper_v1.cli.scrape as _scrape_mod  # import directly, bypasses cli/__init__
+from vtes_scraper_v1.scraper import (
     ICON_DEFAULT,
     ICON_IDEA,
     ICON_MERGED,

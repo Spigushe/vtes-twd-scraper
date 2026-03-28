@@ -2,7 +2,7 @@
 
 import pytest
 
-from vtes_scraper.parser import (
+from vtes_scraper_v1.parser import (
     _extract_vekn_url,
     _normalize_rounds,
     _parse_crypt_line,

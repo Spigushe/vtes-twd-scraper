@@ -25,7 +25,13 @@ from __future__ import annotations
 
 import re
 
-from vtes_scraper.models import CryptCard, Deck, LibraryCard, LibrarySection, Tournament
+from vtes_scraper_v1.models import (
+    CryptCard,
+    Deck,
+    LibraryCard,
+    LibrarySection,
+    Tournament,
+)
 
 # ---------------------------------------------------------------------------
 # Regex constants

@@ -4,7 +4,7 @@ import types
 import typing
 from ruamel.yaml import YAML
 from pydantic import BaseModel, TypeAdapter, ValidationError
-from vtes_scraper.models import Tournament
+from vtes_scraper_v1.models import Tournament
 
 yaml = YAML()
 

@@ -9,8 +9,8 @@ from __future__ import annotations
 import argparse
 import sys
 
-from vtes_scraper.cli import fix_dates, parse, publish, rescrape, scrape, validate
-from vtes_scraper.cli._common import _reconfigure_windows_stdio
+from vtes_scraper_v1.cli import fix_dates, parse, publish, rescrape, scrape, validate
+from vtes_scraper_v1.cli._common import _reconfigure_windows_stdio
 
 
 def _build_parser() -> argparse.ArgumentParser:

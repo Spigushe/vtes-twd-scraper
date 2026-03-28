@@ -31,8 +31,8 @@ TXT format reference:
     ...
 """
 
-from vtes_scraper.output.txt import tournament_to_txt, write_tournament_txt
-from vtes_scraper.output.yaml import tournament_to_yaml_str, write_tournament_yaml
+from vtes_scraper_v1.output.txt import tournament_to_txt, write_tournament_txt
+from vtes_scraper_v1.output.yaml import tournament_to_yaml_str, write_tournament_yaml
 
 __all__ = [
     "tournament_to_yaml_str",

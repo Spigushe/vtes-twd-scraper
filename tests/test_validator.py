@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 import pytest
 
-from vtes_scraper.validator import (
+from vtes_scraper_v1.validator import (
     _pick_best_crypt_version,
     enrich_crypt_cards,
     error_types,

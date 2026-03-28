@@ -1,5 +1,5 @@
-from vtes_scraper.output import write_tournament_yaml
-from vtes_scraper.scraper import (
+from vtes_scraper_v1.output import write_tournament_yaml
+from vtes_scraper_v1.scraper import (
     ICON_DEFAULT,
     ICON_IDEA,
     ICON_MERGED,

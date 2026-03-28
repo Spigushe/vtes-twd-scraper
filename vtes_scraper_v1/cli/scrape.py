@@ -8,11 +8,11 @@ from pathlib import Path
 
 import httpx
 
-from vtes_scraper.cli._common import console, setup_logging
-from vtes_scraper.cli.validate import _load_coercions, _save_coercions
-from vtes_scraper.output import write_tournament_yaml
-from vtes_scraper.output.yaml import tournament_to_yaml_str
-from vtes_scraper.scraper import (
+from vtes_scraper_v1.cli._common import console, setup_logging
+from vtes_scraper_v1.cli.validate import _load_coercions, _save_coercions
+from vtes_scraper_v1.output import write_tournament_yaml
+from vtes_scraper_v1.output.yaml import tournament_to_yaml_str
+from vtes_scraper_v1.scraper import (
     DEFAULT_DELAY_SECONDS,
     HEADERS,
     ICON_MERGED,

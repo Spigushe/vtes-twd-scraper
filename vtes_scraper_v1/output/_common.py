@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from vtes_scraper.models import Tournament
+from vtes_scraper_v1.models import Tournament
 
 
 def _date_subdir(tournament: Tournament) -> Path:

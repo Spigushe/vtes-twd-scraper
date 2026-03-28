@@ -4,7 +4,13 @@ from datetime import date
 
 import pytest
 
-from vtes_scraper.models import CryptCard, Deck, LibraryCard, LibrarySection, Tournament
+from vtes_scraper_v1.models import (
+    CryptCard,
+    Deck,
+    LibraryCard,
+    LibrarySection,
+    Tournament,
+)
 
 
 def _make_tournament(**kwargs) -> Tournament:

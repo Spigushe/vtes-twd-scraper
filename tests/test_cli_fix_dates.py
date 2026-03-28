@@ -6,7 +6,7 @@ from datetime import date
 from pathlib import Path
 from unittest.mock import patch
 
-from vtes_scraper.cli import fix_dates as fix_dates_cmd
+from vtes_scraper_v1.cli import fix_dates as fix_dates_cmd
 
 # ---------------------------------------------------------------------------
 # fix_dates command

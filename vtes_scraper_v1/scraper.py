@@ -41,8 +41,8 @@ from urllib.parse import quote, urljoin
 import httpx
 from bs4 import BeautifulSoup, Tag
 
-from vtes_scraper.models import Tournament
-from vtes_scraper.parser import parse_twd_text
+from vtes_scraper_v1.models import Tournament
+from vtes_scraper_v1.parser import parse_twd_text
 
 # ---------------------------------------------------------------------------
 # Topic icon types

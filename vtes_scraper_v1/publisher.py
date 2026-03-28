@@ -32,8 +32,8 @@ from datetime import UTC, datetime
 import httpx
 from dotenv import load_dotenv
 
-from vtes_scraper.models import Tournament
-from vtes_scraper.output import tournament_to_txt
+from vtes_scraper_v1.models import Tournament
+from vtes_scraper_v1.output import tournament_to_txt
 
 load_dotenv()
 

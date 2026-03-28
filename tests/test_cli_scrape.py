@@ -8,9 +8,15 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-import vtes_scraper.scraper as scraper_mod
-from vtes_scraper.cli import scrape as scrape_cmd
-from vtes_scraper.models import CryptCard, Deck, LibraryCard, LibrarySection, Tournament
+import vtes_scraper_v1.scraper as scraper_mod
+from vtes_scraper_v1.cli import scrape as scrape_cmd
+from vtes_scraper_v1.models import (
+    CryptCard,
+    Deck,
+    LibraryCard,
+    LibrarySection,
+    Tournament,
+)
 
 # ---------------------------------------------------------------------------
 # Shared fixtures

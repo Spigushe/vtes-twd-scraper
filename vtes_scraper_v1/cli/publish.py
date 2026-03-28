@@ -10,9 +10,9 @@ from pathlib import Path
 
 from ruamel.yaml import YAML
 
-from vtes_scraper.cli._common import console, setup_logging
-from vtes_scraper.models import Tournament
-from vtes_scraper.publisher import BatchPRResult, publish_all_as_single_pr
+from vtes_scraper_v1.cli._common import console, setup_logging
+from vtes_scraper_v1.models import Tournament
+from vtes_scraper_v1.publisher import BatchPRResult, publish_all_as_single_pr
 
 logger = logging.getLogger(__name__)
 

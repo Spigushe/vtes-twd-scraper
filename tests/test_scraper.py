@@ -7,7 +7,7 @@ import httpx
 import pytest
 from bs4 import BeautifulSoup
 
-from vtes_scraper.scraper import (
+from vtes_scraper_v1.scraper import (
     _get,
     _is_valid_winner_name,
     _kunena_div_to_text,

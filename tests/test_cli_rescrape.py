@@ -6,8 +6,14 @@ from datetime import date
 from pathlib import Path
 from unittest.mock import patch
 
-from vtes_scraper.cli import rescrape as rescrape_cmd
-from vtes_scraper.models import CryptCard, Deck, LibraryCard, LibrarySection, Tournament
+from vtes_scraper_v1.cli import rescrape as rescrape_cmd
+from vtes_scraper_v1.models import (
+    CryptCard,
+    Deck,
+    LibraryCard,
+    LibrarySection,
+    Tournament,
+)
 
 # ---------------------------------------------------------------------------
 # Shared fixtures

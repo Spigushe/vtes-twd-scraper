@@ -4,8 +4,8 @@ from pathlib import Path
 from ruamel.yaml import YAML
 from ruamel.yaml.scalarstring import LiteralScalarString
 
-from vtes_scraper.models import Tournament
-from vtes_scraper.output._common import _date_subdir
+from vtes_scraper_v1.models import Tournament
+from vtes_scraper_v1.output._common import _date_subdir
 
 
 def _to_serializable(obj) -> dict:

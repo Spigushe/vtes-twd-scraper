@@ -7,9 +7,9 @@ from datetime import date
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-import vtes_scraper.scraper as scraper_mod
-from vtes_scraper import validator
-from vtes_scraper.cli import validate as validate_cmd
+import vtes_scraper_v1.scraper as scraper_mod
+from vtes_scraper_v1 import validator
+from vtes_scraper_v1.cli import validate as validate_cmd
 
 # ---------------------------------------------------------------------------
 # Shared fixtures

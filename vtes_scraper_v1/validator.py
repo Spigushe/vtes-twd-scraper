@@ -360,7 +360,7 @@ def parse_date_field(raw) -> date | None:
         return None
     if isinstance(raw, date):
         return raw
-    from vtes_scraper.models import Tournament
+    from vtes_scraper_v1.models import Tournament
 
     try:
         return Tournament.parse_date(str(raw))

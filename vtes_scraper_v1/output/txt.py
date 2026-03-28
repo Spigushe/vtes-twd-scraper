@@ -1,8 +1,8 @@
 from datetime import date
 from pathlib import Path
 
-from vtes_scraper.models import CryptCard, Deck, LibrarySection, Tournament
-from vtes_scraper.output._common import _date_subdir
+from vtes_scraper_v1.models import CryptCard, Deck, LibrarySection, Tournament
+from vtes_scraper_v1.output._common import _date_subdir
 
 _ORDINAL_SUFFIX = {1: "st", 2: "nd", 3: "rd"}
 
