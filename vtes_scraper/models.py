@@ -20,7 +20,9 @@ class CryptCard(BaseModel):
     disciplines: str  # raw string, e.g. "PRO ani cel for"
     title: str | None = None  # e.g. "Primogen" (not always present)
     clan: str
-    grouping: int
+    grouping: (
+        int | str
+    )  # int for normal groups (1–8); "ANY" for group-independent cards
     comment: str | None = None  # after ' -- '
 
 

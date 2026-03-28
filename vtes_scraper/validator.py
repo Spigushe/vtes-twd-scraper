@@ -76,6 +76,86 @@ def _try_load_krcg() -> bool:
     return _KRCG_LOADED
 
 
+def _krcg_crypt_data(card_name: str) -> dict | None:
+    """
+    Return krcg data for a crypt card by name, or ``None`` if not found.
+
+    The returned dict contains:
+    - ``capacity``    - blood capacity (int)
+    - ``disciplines`` - space-separated discipline string, e.g. ``"PRO ani cel"``
+    - ``title``       - title string or ``None``
+    - ``clan``        - primary clan name string
+    - ``grouping``    - group number (int) or ``"ANY"`` for group-independent cards
+    """
+    try:
+        from krcg import vtes as _kv  # noqa: PLC0415
+
+        card = _kv.VTES[card_name]
+        if not card or not card.crypt:
+            return None
+        disciplines = " ".join(card.disciplines) if card.disciplines else ""
+        clan = card.clans[0] if card.clans else ""
+        raw_group = card.group
+        if not raw_group:
+            return None
+        if raw_group == "ANY":
+            grouping: int | str = "ANY"
+        else:
+            try:
+                grouping = int(raw_group)
+            except TypeError, ValueError:
+                return None
+        return {
+            "capacity": card.capacity,
+            "disciplines": disciplines,
+            "title": card.title or None,
+            "clan": clan,
+            "grouping": grouping,
+        }
+    except Exception:
+        return None
+
+
+def enrich_crypt_cards(deck: dict) -> list[str]:
+    """
+    Enrich crypt card data using krcg card database.
+
+    For each crypt card, look it up in krcg by name and update ``capacity``,
+    ``disciplines``, ``title``, ``clan``, and ``grouping`` from the database.
+    ``count`` and ``name`` are always preserved from the scraped data.
+    Cards not found in krcg are left unchanged.
+
+    Mutates *deck* in-place.  Returns a list of human-readable descriptions
+    of the changes made (empty when no changes were needed or krcg is
+    unavailable).
+    """
+    if not _try_load_krcg():
+        return []
+
+    crypt = deck.get("crypt") or []
+    if not crypt:
+        return []
+
+    fixes: list[str] = []
+    for card in crypt:
+        if not isinstance(card, dict):
+            continue
+        card_name = str(card.get("name") or "")
+        krcg_data = _krcg_crypt_data(card_name)
+        if krcg_data is None:
+            continue
+        changed: list[str] = []
+        for field, new_value in krcg_data.items():
+            old_value = card.get(field)
+            if old_value != new_value:
+                card[field] = new_value
+                changed.append(f"{field}: {old_value!r} → {new_value!r}")
+        if changed:
+            fixes.append(f"  {card_name!r}: " + ", ".join(changed))
+
+    return fixes
+
+
 def _krcg_section(card_name: str) -> str | None:
     """
     Return the canonical section name for a library card according to krcg, or

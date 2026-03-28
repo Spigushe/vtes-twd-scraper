@@ -24,7 +24,7 @@ from vtes_scraper.scraper import (
     fetch_event_date,
     resolve_winner,
 )
-from vtes_scraper.validator import error_types, fix_card_sections
+from vtes_scraper.validator import enrich_crypt_cards, error_types, fix_card_sections
 
 
 def _load_yaml(path: Path) -> CommentedMap:
@@ -264,14 +264,21 @@ def run(args: argparse.Namespace) -> int:
                 load_errors += 1
                 continue
 
-            # Fix library card sections using krcg card type data (always attempted;
-            # silently skipped when krcg is unavailable due to a network issue or the
-            # package not being installed).
+            # Enrich/fix deck data using krcg (always attempted; silently skipped
+            # when krcg is unavailable due to a network issue or the package not
+            # being installed).
             deck_data = data.get("deck")
             if deck_data:
+                crypt_fixes = enrich_crypt_cards(deck_data)
                 section_fixes = fix_card_sections(deck_data)
-                if section_fixes:
+                if crypt_fixes or section_fixes:
                     _save_yaml(path, data)
+                if crypt_fixes:
+                    console.print(
+                        f"[cyan]⚙[/cyan] {path.name}  crypt cards enriched from krcg:\n"
+                        + "\n".join(crypt_fixes)
+                    )
+                if section_fixes:
                     console.print(
                         f"[cyan]⚙[/cyan] {path.name}  card sections fixed:\n"
                         + "\n".join(section_fixes)

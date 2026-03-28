@@ -5,7 +5,12 @@ from unittest.mock import patch
 
 import pytest
 
-from vtes_scraper.validator import error_types, fix_card_sections, parse_date_field
+from vtes_scraper.validator import (
+    enrich_crypt_cards,
+    error_types,
+    fix_card_sections,
+    parse_date_field,
+)
 
 
 def _deck(**kwargs) -> dict:
@@ -325,10 +330,13 @@ class TestFixCardSections:
 
         @contextlib.contextmanager
         def _ctx():
-            with patch("vtes_scraper.validator._KRCG_LOADED", available), patch(
-                "vtes_scraper.validator._try_load_krcg", return_value=available
-            ), patch(
-                "vtes_scraper.validator._krcg_section", side_effect=_fake_krcg_section
+            with (
+                patch("vtes_scraper.validator._KRCG_LOADED", available),
+                patch("vtes_scraper.validator._try_load_krcg", return_value=available),
+                patch(
+                    "vtes_scraper.validator._krcg_section",
+                    side_effect=_fake_krcg_section,
+                ),
             ):
                 yield
 
@@ -431,3 +439,140 @@ class TestFixCardSections:
         # Master should come before Action Modifier, which should come before Reaction
         assert names.index("Master") < names.index("Action Modifier")
         assert names.index("Action Modifier") < names.index("Reaction")
+
+
+# ---------------------------------------------------------------------------
+# enrich_crypt_cards
+# ---------------------------------------------------------------------------
+
+# Fake krcg data used in tests: card name → dict of crypt fields
+_FAKE_CRYPT_KRCG: dict[str, dict] = {
+    "Nathan Turner": {
+        "capacity": 4,
+        "disciplines": "PRO ani",
+        "title": None,
+        "clan": "Gangrel",
+        "grouping": 6,
+    },
+    "Antón de Concepción": {
+        "capacity": 8,
+        "disciplines": "AUS DOM OBF for",
+        "title": "Prince",
+        "clan": "Lasombra",
+        "grouping": 6,
+    },
+    "Anarch Convert": {
+        "capacity": 1,
+        "disciplines": "",
+        "title": None,
+        "clan": "Caitiff",
+        "grouping": "ANY",
+    },
+}
+
+
+def _fake_krcg_crypt_data(card_name: str) -> dict | None:
+    return _FAKE_CRYPT_KRCG.get(card_name)
+
+
+def _crypt_card(name: str, count: int = 2, **overrides) -> dict:
+    base = {
+        "count": count,
+        "name": name,
+        "capacity": 0,
+        "disciplines": "",
+        "title": None,
+        "clan": "Unknown",
+        "grouping": 0,
+    }
+    base.update(overrides)
+    return base
+
+
+class TestEnrichCryptCards:
+    def _patch_krcg(self, available: bool = True):
+        import contextlib
+
+        @contextlib.contextmanager
+        def _ctx():
+            with (
+                patch("vtes_scraper.validator._KRCG_LOADED", available),
+                patch("vtes_scraper.validator._try_load_krcg", return_value=available),
+                patch(
+                    "vtes_scraper.validator._krcg_crypt_data",
+                    side_effect=_fake_krcg_crypt_data,
+                ),
+            ):
+                yield
+
+        return _ctx()
+
+    def test_enriches_fields_from_krcg(self):
+        card = _crypt_card("Nathan Turner", capacity=0, clan="Unknown", grouping=0)
+        deck = {"crypt": [card]}
+        with self._patch_krcg():
+            fixes = enrich_crypt_cards(deck)
+        assert fixes
+        assert card["capacity"] == 4
+        assert card["disciplines"] == "PRO ani"
+        assert card["clan"] == "Gangrel"
+        assert card["grouping"] == 6
+        assert card["title"] is None
+
+    def test_count_and_name_preserved(self):
+        card = _crypt_card("Nathan Turner", count=3)
+        deck = {"crypt": [card]}
+        with self._patch_krcg():
+            enrich_crypt_cards(deck)
+        assert card["count"] == 3
+        assert card["name"] == "Nathan Turner"
+
+    def test_title_enriched(self):
+        card = _crypt_card("Antón de Concepción", title=None)
+        deck = {"crypt": [card]}
+        with self._patch_krcg():
+            enrich_crypt_cards(deck)
+        assert card["title"] == "Prince"
+
+    def test_any_grouping_stored_as_string(self):
+        card = _crypt_card("Anarch Convert", grouping=0)
+        deck = {"crypt": [card]}
+        with self._patch_krcg():
+            enrich_crypt_cards(deck)
+        assert card["grouping"] == "ANY"
+
+    def test_no_changes_when_already_correct(self):
+        card = _crypt_card(
+            "Nathan Turner",
+            capacity=4,
+            disciplines="PRO ani",
+            clan="Gangrel",
+            grouping=6,
+        )
+        deck = {"crypt": [card]}
+        with self._patch_krcg():
+            fixes = enrich_crypt_cards(deck)
+        assert fixes == []
+
+    def test_unknown_card_left_unchanged(self):
+        card = _crypt_card("Unknown Vampire", capacity=5, clan="Nosferatu", grouping=3)
+        deck = {"crypt": [card]}
+        with self._patch_krcg():
+            fixes = enrich_crypt_cards(deck)
+        assert fixes == []
+        assert card["capacity"] == 5
+        assert card["clan"] == "Nosferatu"
+
+    def test_krcg_unavailable_returns_empty(self):
+        card = _crypt_card("Nathan Turner", capacity=0, clan="Unknown")
+        deck = {"crypt": [card]}
+        with self._patch_krcg(available=False):
+            fixes = enrich_crypt_cards(deck)
+        assert fixes == []
+        assert card["capacity"] == 0  # unchanged
+
+    def test_empty_crypt_returns_empty(self):
+        deck = {"crypt": []}
+        with self._patch_krcg():
+            fixes = enrich_crypt_cards(deck)
+        assert fixes == []

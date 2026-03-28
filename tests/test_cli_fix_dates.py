@@ -8,7 +8,6 @@ from unittest.mock import patch
 
 from vtes_scraper.cli import fix_dates as fix_dates_cmd
 
-
 # ---------------------------------------------------------------------------
 # fix_dates command
 # ---------------------------------------------------------------------------
