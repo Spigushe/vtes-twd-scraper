@@ -81,6 +81,8 @@ def _save_coercions(
 ) -> None:
     """Persist *coercions* to *output_dir*/coercions.json (sorted keys, pretty-printed)."""
     path = output_dir / _COERCIONS_FILENAME
+    path.parent.mkdir(parents=True, exist_ok=True)
+
     path.write_text(
         json.dumps(coercions, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
