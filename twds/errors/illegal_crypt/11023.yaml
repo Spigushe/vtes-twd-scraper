@@ -50,9 +50,9 @@ deck:
     name: Julio Martinez
     capacity: 9
     disciplines: nec ANI DOM OBF POT
+    title: Bishop
     clan: Nosferatu antitribu
     grouping: 3
-    title: Bishop
   - count: 1
     name: Laurent de Valois
     capacity: 4

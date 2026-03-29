@@ -7,8 +7,7 @@ winner: Wolney André Sampaio Alves de Oliveira
 vekn_number: 9200004
 event_url: https://www.vekn.net/event-calendar/event/12806
 event_id: 12806
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82846-twd-vem-pra-ca-sabbat-dia-2025-11-08
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82846-twd-vem-pra-ca-sabbat-dia-2025-11-08
 deck:
   name: Dark Inner Voice [by Wolbrujah]
   created_by: Wolbrujah
@@ -22,42 +21,42 @@ deck:
     name: Aaradhya, The Callous Tyrant
     capacity: 10
     disciplines: ANI DOM FOR POT PRE
-    title: cardinal
+    title: Cardinal
     clan: Ventrue
     grouping: 6
   - count: 2
     name: Dark Selina
     capacity: 9
-    disciplines: CEL POT PRE dom for
-    title: cardinal
+    disciplines: dom for CEL POT PRE
+    title: Cardinal
     clan: Brujah antitribu
     grouping: 5
   - count: 2
     name: Věnceslava, The Implacable
     capacity: 9
-    disciplines: DOM FOR POT PRE cel
-    title: archbishop
+    disciplines: cel DOM FOR POT PRE
+    title: Archbishop
     clan: Brujah
     grouping: 6
   - count: 2
     name: Rexton "Savage" Abernathy
     capacity: 8
-    disciplines: DOM POT PRE cel
-    title: archbishop
+    disciplines: cel DOM POT PRE
+    title: Archbishop
     clan: Brujah
     grouping: 6
   - count: 2
     name: Üresség
     capacity: 8
-    disciplines: CEL POT PRE dom for
-    title: archbishop
+    disciplines: dom for CEL POT PRE
+    title: Archbishop
     clan: Brujah
     grouping: 6
   - count: 1
     name: Khin Aye
     capacity: 7
-    disciplines: POT PRE dom for
-    title: priscus
+    disciplines: dom for POT PRE
+    title: Priscus
     clan: Ventrue
     grouping: 6
   library_count: 90

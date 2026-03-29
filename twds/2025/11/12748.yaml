@@ -3,11 +3,11 @@ location: Mexico City, Mexico
 date_start: 2025-11-30
 rounds_format: 3R+F
 players_count: 24
-winner: Winner; Alberto Ramírez León (
+winner: Alberto Ramírez León
+vekn_number: 7400029
 event_url: https://www.vekn.net/event-calendar/event/12748
 event_id: 12748
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82734-campeonato-nacional-mexicano-2025-mx
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82734-campeonato-nacional-mexicano-2025-mx
 deck:
   name: La sal de la tierra
   created_by: mrleon
@@ -20,26 +20,26 @@ deck:
   - count: 2
     name: Elimelech the Twice-Damned
     capacity: 11
-    disciplines: AUS DEM DOM FOR OBF pro
+    disciplines: pro AUS DEM DOM FOR OBF
     clan: Ventrue antitribu
     grouping: 5
   - count: 4
     name: Aelswith, The Irresistible
     capacity: 9
-    disciplines: AUS DOM FOR OBF pot
-    title: cardinal
+    disciplines: pot AUS DOM FOR OBF
+    title: Cardinal
     clan: Malkavian
     grouping: 6
   - count: 2
     name: Abraham Mellon
     capacity: 8
-    disciplines: AUS DOM OBF for tha
+    disciplines: for tha AUS DOM OBF
     clan: Malkavian
     grouping: 6
   - count: 2
     name: Fotini Katsikaris
     capacity: 7
-    disciplines: AUS DOM OBF for pot
+    disciplines: for pot AUS DOM OBF
     clan: Malkavian
     grouping: 6
   - count: 1

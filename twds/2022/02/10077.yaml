@@ -3,11 +3,11 @@ location: online
 date_start: 2022-02-14
 rounds_format: 2R+F
 players_count: 27
-winner: Rafael Barbosa (
+winner: Rafael Barbosa da Silva
+vekn_number: 7060055
 event_url: https://www.vekn.net/event-calendar/event/10077
 event_id: 10077
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/79700-twd-sede-de-vitae-part-30
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79700-twd-sede-de-vitae-part-30
 deck:
   name: toreador antitribu
   created_by: Rafael Barbosa
@@ -20,74 +20,74 @@ deck:
   - count: 1
     name: Ian Wallingford
     capacity: 6
-    disciplines: CEL PRE aus
-    title: bishop
+    disciplines: aus CEL PRE
+    title: Bishop
     clan: Toreador antitribu
     grouping: 2
   - count: 1
     name: Jessica
     capacity: 7
     disciplines: AUS CEL OBT PRE
-    title: bishop
+    title: Bishop
     clan: Toreador antitribu
     grouping: 2
   - count: 1
     name: Jessica (ADV)
     capacity: 8
     disciplines: AUS CEL OBT PRE
-    title: bishop
+    title: Bishop
     clan: Toreador antitribu
     grouping: 2
   - count: 1
     name: Lachlan, Noddist
     capacity: 8
-    disciplines: AUS CEL PRE dom
-    title: archbishop
+    disciplines: dom AUS CEL PRE
+    title: Archbishop
     clan: Toreador antitribu
     grouping: 2
   - count: 1
     name: Matteus, Flesh Sculptor
     capacity: 10
     disciplines: AUS CEL PRE VIC
-    title: priscus
+    title: Priscus
     clan: Toreador antitribu
     grouping: 2
   - count: 2
     name: Melisande
     capacity: 9
-    disciplines: AUS CEL DOM PRE tha
+    disciplines: tha AUS CEL DOM PRE
     clan: Toreador antitribu
     grouping: 2
   - count: 1
     name: Mercy, Knight Inquisitor
     capacity: 5
-    disciplines: AUS cel dom pre
+    disciplines: cel dom pre AUS
     clan: Toreador antitribu
     grouping: 2
   - count: 1
     name: Miller Delmardigan, Teacher of Bahari
     capacity: 8
-    disciplines: CEL PRE aus pro
-    title: bishop
+    disciplines: aus pro CEL PRE
+    title: Bishop
     clan: Toreador antitribu
     grouping: 2
   - count: 1
     name: Sheila Mezarin
     capacity: 6
-    disciplines: AUS PRE cel for
+    disciplines: cel for AUS PRE
     clan: Toreador antitribu
     grouping: 2
   - count: 1
     name: Victor Revell, Loyalist
     capacity: 5
-    disciplines: CEL aus dem pre
+    disciplines: aus dem pre CEL
     clan: Toreador antitribu
     grouping: 2
   - count: 1
     name: Donatien
     capacity: 9
-    disciplines: AUS PRE cel pot
-    title: cardinal
+    disciplines: cel pot AUS PRE
+    title: Cardinal
     clan: Toreador antitribu
     grouping: 2
   library_count: 88

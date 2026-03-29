@@ -27,13 +27,13 @@ deck:
   - count: 3
     name: Babalawo Alafin
     capacity: 7
-    disciplines: AUS FOR NEC ani
+    disciplines: ani AUS FOR NEC
     clan: Harbinger of Skulls
     grouping: 4
   - count: 1
     name: Erebus
     capacity: 7
-    disciplines: AUS FOR NEC dem
+    disciplines: dem AUS FOR NEC
     clan: Harbinger of Skulls
     grouping: 3
   - count: 1
@@ -45,7 +45,7 @@ deck:
   - count: 1
     name: Solomon Batanea
     capacity: 5
-    disciplines: AUS FOR nec
+    disciplines: nec AUS FOR
     clan: Harbinger of Skulls
     grouping: 4
   library_count: 90

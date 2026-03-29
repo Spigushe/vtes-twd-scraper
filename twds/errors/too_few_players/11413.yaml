@@ -7,8 +7,7 @@ winner: Enrique Montaño Torres
 vekn_number: 1000545
 event_url: https://www.vekn.net/event-calendar/event/11413
 event_id: 11413
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81426-liga-chilanga-2024-jornada-2-mx
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81426-liga-chilanga-2024-jornada-2-mx
 deck:
   name: What we do in the shadows
   created_by: Geek Doctor
@@ -21,31 +20,31 @@ deck:
   - count: 1
     name: Ozmo
     capacity: 6
-    disciplines: AUS dom obf
+    disciplines: dom obf AUS
     clan: Malkavian
     grouping: 1
   - count: 2
     name: Badr al-Budur
     capacity: 5
-    disciplines: OBF cel dom qui
+    disciplines: cel dom qui OBF
     clan: Banu Haqim
     grouping: 2
   - count: 2
     name: Didi Meyers
     capacity: 5
-    disciplines: DOM aus cel obf
+    disciplines: aus cel obf DOM
     clan: Malkavian
     grouping: 1
   - count: 2
     name: Zebulon
     capacity: 5
-    disciplines: OBF aus dom pro
+    disciplines: aus dom pro OBF
     clan: Malkavian
     grouping: 1
   - count: 1
     name: Count Ormonde
     capacity: 5
-    disciplines: OBF dom pre ser
+    disciplines: dom pre ser OBF
     clan: Ministry
     grouping: 2
   - count: 2

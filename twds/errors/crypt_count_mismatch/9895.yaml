@@ -29,21 +29,21 @@ deck:
     name: Arika
     capacity: 11
     disciplines: aus cel DOM FOR OBF PRE
-    title: inner circle
+    title: Inner Circle
     clan: Ventrue
     grouping: 2
   - count: 2
     name: Leandro
     capacity: 11
     disciplines: cel dom AUS OBF PRE
-    title: inner circle
+    title: Inner Circle
     clan: Malkavian
     grouping: 2
   - count: 1
     name: Jaroslav Pascek
     capacity: 10
     disciplines: for obf CEL POT PRE
-    title: justicar
+    title: Justicar
     clan: Brujah
     grouping: 3
   library_count: 85

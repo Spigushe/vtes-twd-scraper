@@ -48,9 +48,9 @@ deck:
     name: Xaviar (ADV)
     capacity: 10
     disciplines: aus cel pot ABO ANI FOR PRO
+    title: Justicar
     clan: Gangrel
     grouping: 3
-    title: Justicar
   library_count: 83
   library_sections:
   - name: Master

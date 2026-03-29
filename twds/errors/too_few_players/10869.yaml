@@ -28,35 +28,35 @@ deck:
   - count: 3
     name: Ambrosio Luis Monçada, Plenipotentiary
     capacity: 10
-    disciplines: DOM OBT POT PRE aus for
-    title: cardinal
+    disciplines: aus for DOM OBT POT PRE
+    title: Cardinal
     clan: Lasombra
     grouping: 2
   - count: 1
     name: Francisco Domingo de Polonia
     capacity: 9
-    disciplines: DOM OBT POT PRE pro
-    title: archbishop
+    disciplines: pro DOM OBT POT PRE
+    title: Archbishop
     clan: Lasombra
     grouping: 2
   - count: 2
     name: Gratiano
     capacity: 8
-    disciplines: DOM OBT obf pot
-    title: priscus
+    disciplines: obf pot DOM OBT
+    title: Priscus
     clan: Lasombra
     grouping: 2
   - count: 1
     name: Banjoko
     capacity: 5
-    disciplines: DOM obt pot
+    disciplines: obt pot DOM
     clan: Lasombra
     grouping: 3
   - count: 1
     name: Dr. Julius Sutphen
     capacity: 5
-    disciplines: POT dom obt
-    title: bishop
+    disciplines: dom obt POT
+    title: Bishop
     clan: Lasombra
     grouping: 3
   library_count: 78

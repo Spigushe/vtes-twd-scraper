@@ -22,19 +22,19 @@ deck:
   - count: 4
     name: Dr. Oliver Genet
     capacity: 6
-    disciplines: DOM NEC pot
+    disciplines: pot DOM NEC
     clan: Giovanni
     grouping: 6
   - count: 3
     name: Anu Diptinatpa
     capacity: 7
-    disciplines: DOM NEC aus vic
+    disciplines: aus vic DOM NEC
     clan: Nagaraja
     grouping: 6
   - count: 2
     name: Lupo Giovanni
     capacity: 6
-    disciplines: NEC dom pot pre
+    disciplines: dom pot pre NEC
     clan: Giovanni
     grouping: 6
   library_count: 90

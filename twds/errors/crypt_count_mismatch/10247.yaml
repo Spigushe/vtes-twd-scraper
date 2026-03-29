@@ -22,21 +22,21 @@ deck:
     name: Anneke
     capacity: 10
     disciplines: dom AUS CEL PRE
-    title: justicar
+    title: Justicar
     clan: Toreador
     grouping: 1
   - count: 2
     name: François Villon
     capacity: 10
     disciplines: chi obf pot AUS CEL PRE
-    title: prince
+    title: Prince
     clan: Toreador
     grouping: 2
   - count: 3
     name: Anson
     capacity: 8
     disciplines: aus dom CEL PRE
-    title: prince
+    title: Prince
     clan: Toreador
     grouping: 1
   - count: 1
@@ -49,7 +49,7 @@ deck:
     name: Volker, The Puppet Prince
     capacity: 5
     disciplines: pot CEL
-    title: prince
+    title: Prince
     clan: Brujah
     grouping: 2
   - count: 1

@@ -27,15 +27,15 @@ deck:
   - count: 2
     name: Casey Snyder
     capacity: 6
-    disciplines: PRO ani cel for
-    title: baron
+    disciplines: ani cel for PRO
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1
     name: Massimiliano
     capacity: 7
-    disciplines: ANI FOR pro
-    title: baron
+    disciplines: pro ANI FOR
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 1

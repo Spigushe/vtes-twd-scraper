@@ -23,31 +23,31 @@ deck:
     name: Ludmijla Rakoczy
     capacity: 7
     disciplines: ANI AUS VIC
-    title: bishop
+    title: Bishop
     clan: Tzimisce
     grouping: 5
   - count: 1
     name: Rurik Rakoczy
     capacity: 6
-    disciplines: ANI VIC aus
+    disciplines: aus ANI VIC
     clan: Tzimisce
     grouping: 5
   - count: 1
     name: Adhiambo
     capacity: 6
-    disciplines: ANI VIC pot
+    disciplines: pot ANI VIC
     clan: Tzimisce
     grouping: 4
   - count: 1
     name: Beetleman
     capacity: 4
-    disciplines: ANI obf
+    disciplines: obf ANI
     clan: Nosferatu
     grouping: 4
   - count: 1
     name: Laika
     capacity: 7
-    disciplines: ANI AUS chi obf vic
+    disciplines: chi obf vic ANI AUS
     clan: Tzimisce
     grouping: 4
   - count: 1
@@ -60,14 +60,14 @@ deck:
     name: Xipe Totec
     capacity: 9
     disciplines: ANI AUS PRO VIC
-    title: archbishop
+    title: Archbishop
     clan: Tzimisce
     grouping: 5
   - count: 1
     name: Yuri Kerezenski
     capacity: 5
-    disciplines: ANI aus for vic
-    title: bishop
+    disciplines: aus for vic ANI
+    title: Bishop
     clan: Tzimisce
     grouping: 4
   library_count: 90

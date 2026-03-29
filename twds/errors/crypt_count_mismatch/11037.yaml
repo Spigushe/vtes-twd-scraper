@@ -21,13 +21,13 @@ deck:
     name: Carna, The Princess Witch
     capacity: 7
     disciplines: AUS DOM THA
-    title: primogen
+    title: Primogen
     clan: Tremere
     grouping: 3
   - count: 2
     name: Martin Franckel
     capacity: 3
-    disciplines: AUS tha
+    disciplines: tha AUS
     clan: Tremere
     grouping: 3
   - count: 1
@@ -39,25 +39,25 @@ deck:
   - count: 1
     name: Blythe Candeleria
     capacity: 3
-    disciplines: THA aus
+    disciplines: aus THA
     clan: Tremere
     grouping: 2
   - count: 1
     name: Eugenio Estevez
     capacity: 6
-    disciplines: AUS THA dom for
+    disciplines: dom for AUS THA
     clan: Tremere
     grouping: 3
   - count: 1
     name: Rebekka, Chantry Elder of Munich
     capacity: 8
-    disciplines: AUS PRE THA pot
+    disciplines: pot AUS PRE THA
     clan: Tremere
     grouping: 2
   - count: 1
     name: Valois Sang, The Watcher
     capacity: 6
-    disciplines: AUS DOM nec tha
+    disciplines: nec tha AUS DOM
     clan: Tremere
     grouping: 3
   library_count: 72

@@ -21,7 +21,7 @@ deck:
   - count: 4
     name: Theo Bell
     capacity: 8
-    disciplines: CEL POT PRE aus dom
+    disciplines: aus dom CEL POT PRE
     clan: Brujah
     grouping: 6
   - count: 3

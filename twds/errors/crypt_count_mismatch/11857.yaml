@@ -27,13 +27,13 @@ deck:
   - count: 1
     name: High Priest Angra Mainyu
     capacity: 8
-    disciplines: DAI OBF PRE dem ser
+    disciplines: dem ser DAI OBF PRE
     clan: Baali
     grouping: 2
   - count: 3
     name: Giotto Verducci
     capacity: 7
-    disciplines: DAI OBF for pot pre
+    disciplines: for pot pre DAI OBF
     clan: Baali
     grouping: 2
   library_count: 77

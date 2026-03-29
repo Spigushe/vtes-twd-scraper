@@ -22,36 +22,36 @@ deck:
   - count: 3
     name: Aline Gädeke
     capacity: 7
-    disciplines: POT PRE cel
-    title: baron
+    disciplines: cel POT PRE
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 1
     name: Valeriya Zinovieva
     capacity: 7
-    disciplines: POT cel pre pro
-    title: baron
+    disciplines: cel pre pro POT
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 2
     name: Atiena
     capacity: 6
-    disciplines: CEL obf pot pre
-    title: baron
+    disciplines: obf pot pre CEL
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 1
     name: Jacques Rouge
     capacity: 6
-    disciplines: OBF ani pot pre
-    title: baron
+    disciplines: ani pot pre OBF
+    title: Baron
     clan: Nosferatu
     grouping: 6
   - count: 1
     name: Leumeah
     capacity: 6
-    disciplines: PRE cel for pot
-    title: baron
+    disciplines: cel for pot PRE
+    title: Baron
     clan: Brujah
     grouping: 6
   - count: 1

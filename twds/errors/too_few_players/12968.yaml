@@ -22,13 +22,13 @@ deck:
   - count: 4
     name: Aksinya Daclau
     capacity: 9
-    disciplines: ANI FOR PRE PRO cel tha
+    disciplines: cel tha ANI FOR PRE PRO
     clan: Gangrel antitribu
     grouping: 4
   - count: 1
     name: Axel Von Anders
     capacity: 5
-    disciplines: PRE cel obf pot
+    disciplines: cel obf pot PRE
     clan: Brujah antitribu
     grouping: 4
   - count: 1
@@ -40,32 +40,32 @@ deck:
   - count: 1
     name: Father Juan Carlos
     capacity: 6
-    disciplines: PRE aus cel pot tha
+    disciplines: aus cel pot tha PRE
     clan: Brujah antitribu
     grouping: 4
   - count: 1
     name: Jeremiah Noble
     capacity: 6
-    disciplines: CEL POT obt pre
+    disciplines: obt pre CEL POT
     clan: Brujah antitribu
     grouping: 3
   - count: 1
     name: Miguel Santo Domingo
     capacity: 7
-    disciplines: POT PRE cel for
+    disciplines: cel for POT PRE
     clan: Brujah antitribu
     grouping: 3
   - count: 1
     name: Rodrigo
     capacity: 5
-    disciplines: CEL pot pre qui
+    disciplines: pot pre qui CEL
     clan: Brujah antitribu
     grouping: 4
   - count: 1
     name: Shawnda Dorrit
     capacity: 6
-    disciplines: CEL obt pot pre
-    title: priscus
+    disciplines: obt pot pre CEL
+    title: Priscus
     clan: Brujah antitribu
     grouping: 4
   - count: 1

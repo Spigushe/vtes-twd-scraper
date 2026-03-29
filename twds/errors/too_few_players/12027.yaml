@@ -21,54 +21,54 @@ deck:
     name: Diana Iadanza
     capacity: 9
     disciplines: AUS CEL FOR PRE
-    title: justicar
+    title: Justicar
     clan: Toreador
     grouping: 7
   - count: 1
     name: Annabelle Triabell
     capacity: 9
-    disciplines: AUS CEL PRE dom for
-    title: primogen
+    disciplines: dom for AUS CEL PRE
+    title: Primogen
     clan: Toreador
     grouping: 6
   - count: 1
     name: Carmelita Neillson
     capacity: 5
-    disciplines: AUS cel pre
+    disciplines: cel pre AUS
     clan: Toreador
     grouping: 7
   - count: 1
     name: Catalina Vega
     capacity: 8
-    disciplines: AUS CEL PRE for
-    title: prince
+    disciplines: for AUS CEL PRE
+    title: Prince
     clan: Toreador
     grouping: 6
   - count: 1
     name: Lady Scarlett Churchill
     capacity: 5
-    disciplines: PRE dom for
+    disciplines: dom for PRE
     clan: Ventrue
     grouping: 6
   - count: 1
     name: Maila
     capacity: 6
-    disciplines: AUS PRE cel
-    title: primogen
+    disciplines: cel AUS PRE
+    title: Primogen
     clan: Toreador
     grouping: 6
   - count: 1
     name: Marcos Belegrad
     capacity: 8
-    disciplines: AUS CEL PRE ani
-    title: prince
+    disciplines: ani AUS CEL PRE
+    title: Prince
     clan: Toreador
     grouping: 7
   - count: 1
     name: Modius
     capacity: 8
-    disciplines: AUS CEL PRE obf
-    title: prince
+    disciplines: obf AUS CEL PRE
+    title: Prince
     clan: Toreador
     grouping: 7
   - count: 1

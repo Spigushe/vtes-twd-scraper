@@ -21,21 +21,21 @@ deck:
     name: Kuyén
     capacity: 6
     disciplines: ANI PRO
-    title: baron
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 3
     name: Casey Snyder
     capacity: 6
-    disciplines: PRO ani cel for
-    title: baron
+    disciplines: ani cel for PRO
+    title: Baron
     clan: Gangrel
     grouping: 6
   - count: 2
     name: Elisha Tucker
     capacity: 6
-    disciplines: PRE cel obf pro
-    title: baron
+    disciplines: cel obf pro PRE
+    title: Baron
     clan: Ministry
     grouping: 6
   - count: 1
@@ -53,8 +53,8 @@ deck:
   - count: 1
     name: Vivian VI
     capacity: 7
-    disciplines: PRE PRO obf tha
-    title: baron
+    disciplines: obf tha PRE PRO
+    title: Baron
     clan: Ministry
     grouping: 6
   library_count: 90

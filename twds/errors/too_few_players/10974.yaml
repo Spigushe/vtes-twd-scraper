@@ -20,19 +20,19 @@ deck:
   - count: 1
     name: Gianmaria Giovanni
     capacity: 5
-    disciplines: POT dom nec obt
+    disciplines: dom nec obt POT
     clan: Giovanni
     grouping: 5
   - count: 1
     name: Salvatore Giovanni
     capacity: 5
-    disciplines: NEC POT dom
+    disciplines: dom NEC POT
     clan: Giovanni
     grouping: 6
   - count: 2
     name: Domenic Giovanni
     capacity: 4
-    disciplines: POT nec
+    disciplines: nec POT
     clan: Giovanni
     grouping: 6
   - count: 2
@@ -44,13 +44,13 @@ deck:
   - count: 1
     name: Aunt Linda
     capacity: 4
-    disciplines: POT obf
+    disciplines: obf POT
     clan: Nosferatu
     grouping: 6
   - count: 1
     name: Volo
     capacity: 4
-    disciplines: POT pro san
+    disciplines: pro san POT
     clan: Blood Brother
     grouping: 5
   - count: 2

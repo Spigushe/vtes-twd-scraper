@@ -7,8 +7,7 @@ winner: Edgar David Caudillo Garrido
 vekn_number: 7400011
 event_url: https://www.vekn.net/event-calendar/event/11532
 event_id: 11532
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/81596-liga-chilanga-2024-jornada-5-mx
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81596-liga-chilanga-2024-jornada-5-mx
 deck:
   name: FIN DE SEMANA DE PESADILLA
   created_by: DAVID CAUDILLO GARRIDO
@@ -27,7 +26,7 @@ deck:
   - count: 2
     name: Doc Martina
     capacity: 6
-    disciplines: ANI OBF for pre
+    disciplines: for pre ANI OBF
     clan: Ravnos
     grouping: 7
   - count: 2
@@ -39,13 +38,13 @@ deck:
   - count: 1
     name: Gathii
     capacity: 5
-    disciplines: ANI PRE obf
+    disciplines: obf ANI PRE
     clan: Ravnos
     grouping: 7
   - count: 1
     name: Phaibun
     capacity: 5
-    disciplines: OBF PRE ani
+    disciplines: ani OBF PRE
     clan: Ravnos
     grouping: 7
   - count: 1
@@ -57,7 +56,7 @@ deck:
   - count: 1
     name: Zafira
     capacity: 4
-    disciplines: PRE obf
+    disciplines: obf PRE
     clan: Ravnos
     grouping: 7
   - count: 1

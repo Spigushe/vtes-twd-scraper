@@ -22,31 +22,31 @@ deck:
   - count: 3
     name: Edward Vignes
     capacity: 6
-    disciplines: DOM PRE for
+    disciplines: for DOM PRE
     clan: Ventrue
     grouping: 3
   - count: 1
     name: Juniper
     capacity: 6
-    disciplines: FOR ani dom pre
+    disciplines: ani dom pre FOR
     clan: Ventrue
     grouping: 4
   - count: 1
     name: Catherine du Bois
     capacity: 5
-    disciplines: DOM for obf pre
+    disciplines: for obf pre DOM
     clan: Ventrue
     grouping: 3
   - count: 1
     name: Jephta Hester
     capacity: 5
-    disciplines: DOM FOR aus
+    disciplines: aus DOM FOR
     clan: Ventrue antitribu
     grouping: 4
   - count: 1
     name: João Bilé
     capacity: 5
-    disciplines: DOM FOR pre
+    disciplines: pre DOM FOR
     clan: Ventrue
     grouping: 4
   - count: 1

@@ -22,25 +22,25 @@ deck:
   - count: 1
     name: Jost Werner
     capacity: 6
-    disciplines: AUS PRE ani
+    disciplines: ani AUS PRE
     clan: Toreador antitribu
     grouping: 2
   - count: 1
     name: Sheila Mezarin
     capacity: 6
-    disciplines: AUS PRE cel for
+    disciplines: cel for AUS PRE
     clan: Toreador antitribu
     grouping: 2
   - count: 1
     name: Mercy, Knight Inquisitor
     capacity: 5
-    disciplines: AUS cel dom pre
+    disciplines: cel dom pre AUS
     clan: Toreador antitribu
     grouping: 2
   - count: 1
     name: Remilliard, Devout Crusader
     capacity: 4
-    disciplines: AUS pre
+    disciplines: pre AUS
     clan: Toreador antitribu
     grouping: 2
   - count: 1
@@ -58,7 +58,7 @@ deck:
   - count: 1
     name: Zöe
     capacity: 3
-    disciplines: AUS cel obf
+    disciplines: cel obf AUS
     clan: Malkavian
     grouping: 2
   - count: 1
