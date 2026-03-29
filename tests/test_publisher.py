@@ -6,7 +6,13 @@ from unittest.mock import MagicMock, patch
 import httpx
 import pytest
 
-from vtes_scraper.models import CryptCard, Deck, LibraryCard, LibrarySection, Tournament
+from vtes_scraper.models import (
+    CryptCard,
+    Deck,
+    LibraryCard,
+    LibrarySection,
+    Tournament,
+)
 from vtes_scraper.publisher import (
     BatchPRResult,
     _create_branch,

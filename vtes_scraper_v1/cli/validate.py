@@ -17,14 +17,14 @@ from pathlib import Path
 import httpx
 from ruamel.yaml import YAML, CommentedMap
 
-from vtes_scraper.cli._common import console, setup_logging
-from vtes_scraper.scraper import (
+from vtes_scraper_v1.cli._common import console, setup_logging
+from vtes_scraper_v1.scraper import (
     DEFAULT_DELAY_SECONDS,
     HEADERS,
     fetch_event_date,
     resolve_winner,
 )
-from vtes_scraper.validator import enrich_crypt_cards, error_types, fix_card_sections
+from vtes_scraper_v1.validator import enrich_crypt_cards, error_types, fix_card_sections
 
 
 def _load_yaml(path: Path) -> CommentedMap:

@@ -19,6 +19,8 @@ API surface used (GitHub REST v3):
   - POST /repos/{owner}/{repo}/pulls                   → open PR into upstream
 """
 
+from __future__ import annotations
+
 import base64
 import logging
 import os
@@ -30,8 +32,8 @@ from datetime import UTC, datetime
 import httpx
 from dotenv import load_dotenv
 
-from vtes_scraper.models import Tournament
-from vtes_scraper.output import tournament_to_txt
+from vtes_scraper_v1.models import Tournament
+from vtes_scraper_v1.output import tournament_to_txt
 
 load_dotenv()
 

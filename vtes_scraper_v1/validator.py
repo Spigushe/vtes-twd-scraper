@@ -39,6 +39,8 @@ When multiple errors are present the first one (in the order listed above)
 determines the error directory used by the CLI validate command.
 """
 
+from __future__ import annotations
+
 import logging
 from datetime import date
 
@@ -101,9 +103,7 @@ def _krcg_all_crypt_data(card_name: str) -> list[dict]:
         if not card or not card.crypt:
             return []
 
-        # Determine whether the scraped name is an ADV card. This is a heuristic but
-        # should be reliable since the presence of "(ADV)" in the name is a strong
-        # signal of the card's identity and krcg's data is consistent in this regard.
+        # Determine whether the scraped name is an ADV card.  This is a heuristic but should be reliable since the presence of "(ADV)" in the name is a strong signal of the card's identity and krcg's data is consistent in this regard.
         want_adv: bool = "(ADV)" in card_name
 
         # Gather all variant IDs: the card itself plus all related grouping variants
@@ -247,6 +247,24 @@ def enrich_crypt_cards(deck: dict) -> list[str]:
             fixes.append(f"  {card.get('name', '')!r}: " + ", ".join(changed))
 
     return fixes
+    fixes: list[str] = []
+    for card in crypt:
+        if not isinstance(card, dict):
+            continue
+        card_name = str(card.get("name") or "")
+        krcg_data = _krcg_crypt_data(card_name)
+        if krcg_data is None:
+            continue
+        changed: list[str] = []
+        for field, new_value in krcg_data.items():
+            old_value = card.get(field)
+            if old_value != new_value:
+                card[field] = new_value
+                changed.append(f"{field}: {old_value!r} → {new_value!r}")
+        if changed:
+            fixes.append(f"  {card_name!r}: " + ", ".join(changed))
+
+    return fixes
 
 
 def _krcg_section(card_name: str) -> str | None:
@@ -342,7 +360,7 @@ def parse_date_field(raw) -> date | None:
         return None
     if isinstance(raw, date):
         return raw
-    from vtes_scraper.models import Tournament
+    from vtes_scraper_v1.models import Tournament
 
     try:
         return Tournament.parse_date(str(raw))

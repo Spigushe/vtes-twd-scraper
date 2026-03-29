@@ -7,7 +7,13 @@ from pathlib import Path
 from unittest.mock import patch
 
 from vtes_scraper.cli import publish as publish_cmd
-from vtes_scraper.models import CryptCard, Deck, LibraryCard, LibrarySection, Tournament
+from vtes_scraper.models import (
+    CryptCard,
+    Deck,
+    LibraryCard,
+    LibrarySection,
+    Tournament,
+)
 from vtes_scraper.publisher import BatchPRResult
 
 # ---------------------------------------------------------------------------

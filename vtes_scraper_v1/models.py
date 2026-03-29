@@ -3,6 +3,8 @@ Data models for VTES Tournament Winning Decks.
 Based on: https://github.com/GiottoVerducci/TWD/blob/master/README.md
 """
 
+from __future__ import annotations
+
 import re
 from datetime import date, datetime
 
@@ -105,6 +107,14 @@ class Tournament(BaseModel):
                 )
         return self
 
+    @field_validator("event_id", mode="before")
+    @classmethod
+    def coerce_event_id(cls, v):
+        """Accept '13107' or 13107 for back-compatibility with existing YAML files."""
+        if isinstance(v, str) and v.strip().isdigit():
+            return int(v.strip())
+        return v
+
     @field_validator("rounds_format")
     @classmethod
     def validate_rounds_format(cls, v: str) -> str:
@@ -112,6 +122,16 @@ class Tournament(BaseModel):
             raise ValueError(
                 f"rounds_format must match 'NR+F' (e.g. '3R+F'), got: '{v}'"
             )
+        return v
+
+    @field_validator("vekn_number", mode="before")
+    @classmethod
+    def coerce_vekn_number(cls, v):
+        """Accept '3940009' or 3940009."""
+        if isinstance(v, str):
+            v = v.strip()
+            if v.isdigit():
+                return int(v)
         return v
 
     @field_validator("players_count", mode="before")

@@ -24,8 +24,8 @@ from pathlib import Path
 import httpx
 from ruamel.yaml import YAML
 
-from vtes_scraper.cli._common import console, setup_logging
-from vtes_scraper.scraper import DEFAULT_DELAY_SECONDS, HEADERS, fetch_event_date
+from vtes_scraper_v1.cli._common import console, setup_logging
+from vtes_scraper_v1.scraper import DEFAULT_DELAY_SECONDS, HEADERS, fetch_event_date
 
 
 def register(sub: argparse._SubParsersAction) -> None:
@@ -83,7 +83,7 @@ def _current_date_start(data: dict) -> date | None:
     """
     from datetime import date as _date
 
-    from vtes_scraper.models import Tournament
+    from vtes_scraper_v1.models import Tournament
 
     raw = data.get("date_start")
     if raw is None:

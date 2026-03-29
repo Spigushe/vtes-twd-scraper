@@ -6,7 +6,13 @@ from pathlib import Path
 
 import pytest
 
-from vtes_scraper.models import CryptCard, Deck, LibraryCard, LibrarySection, Tournament
+from vtes_scraper.models import (
+    CryptCard,
+    Deck,
+    LibraryCard,
+    LibrarySection,
+    Tournament,
+)
 from vtes_scraper.output._common import _date_subdir
 from vtes_scraper.output.txt import (
     _fmt_crypt_card,

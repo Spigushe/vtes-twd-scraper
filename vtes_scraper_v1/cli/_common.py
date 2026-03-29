@@ -1,5 +1,7 @@
 """Shared helpers for all CLI subcommands."""
 
+from __future__ import annotations
+
 import logging
 import sys
 

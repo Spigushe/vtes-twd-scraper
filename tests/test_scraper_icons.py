@@ -142,14 +142,39 @@ class TestScrapeCliRouting:
     appropriate; we use tmp_path for real-write assertions.
     """
 
+    @pytest.fixture(autouse=True)
+    def _patch_pipeline_helpers(self):
+        """Bypass calendar-winner, player-lookup, and krcg enrichment steps."""
+        with (
+            patch.object(
+                _scrape_mod,
+                "_check_calendar_winner",
+                side_effect=lambda _client, t, _delay: t,
+            ),
+            patch.object(
+                _scrape_mod,
+                "_lookup_player",
+                side_effect=lambda _client, t, _coercions, _delay: (t, False),
+            ),
+            patch.object(
+                _scrape_mod,
+                "_enrich_with_krcg",
+                side_effect=lambda t: t,
+            ),
+            patch.object(
+                _scrape_mod,
+                "_validate_content",
+                return_value=[],
+            ),
+        ):
+            yield
+
     def _run(self, tmp_path: Path, yields: list[tuple]) -> int:
         """Invoke cli.scrape.run() with mocked scrape_forum."""
         scrape_mod = _scrape_mod
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            fast_check=True,
-            slow_check=False,
             start_page=0,
             last_page=None,
             delay=0,
@@ -170,8 +195,6 @@ class TestScrapeCliRouting:
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            fast_check=True,
-            slow_check=False,
             start_page=0,
             last_page=None,
             delay=0,
@@ -197,8 +220,6 @@ class TestScrapeCliRouting:
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            fast_check=True,
-            slow_check=False,
             start_page=0,
             last_page=None,
             delay=0,
@@ -228,8 +249,6 @@ class TestScrapeCliRouting:
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            fast_check=True,
-            slow_check=False,
             start_page=0,
             last_page=None,
             delay=0,
@@ -260,8 +279,6 @@ class TestScrapeCliRouting:
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            fast_check=True,
-            slow_check=False,
             start_page=0,
             last_page=None,
             delay=0,
@@ -297,8 +314,6 @@ class TestScrapeCliRouting:
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            fast_check=True,
-            slow_check=False,
             start_page=0,
             last_page=None,
             delay=0,
@@ -327,8 +342,6 @@ class TestScrapeCliRouting:
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            fast_check=True,
-            slow_check=False,
             start_page=0,
             last_page=None,
             delay=0,
@@ -354,8 +367,6 @@ class TestScrapeCliRouting:
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            fast_check=True,
-            slow_check=False,
             start_page=0,
             last_page=None,
             delay=0,
@@ -379,8 +390,6 @@ class TestScrapeCliRouting:
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            fast_check=True,
-            slow_check=False,
             start_page=0,
             last_page=None,
             delay=0,
@@ -403,8 +412,6 @@ class TestScrapeCliRouting:
 
         args = argparse.Namespace(
             output_dir=tmp_path,
-            fast_check=True,
-            slow_check=False,
             start_page=0,
             last_page=None,
             delay=0,

@@ -8,9 +8,13 @@ from pathlib import Path
 
 import httpx
 
-from vtes_scraper.cli._common import console, setup_logging
-from vtes_scraper.output import write_tournament_yaml
-from vtes_scraper.scraper import DEFAULT_DELAY_SECONDS, HEADERS, extract_twd_from_thread
+from vtes_scraper_v1.cli._common import console, setup_logging
+from vtes_scraper_v1.output import write_tournament_yaml
+from vtes_scraper_v1.scraper import (
+    DEFAULT_DELAY_SECONDS,
+    HEADERS,
+    extract_twd_from_thread,
+)
 
 
 def register(sub: argparse._SubParsersAction) -> None:
