@@ -1,0 +1,139 @@
+name: Silesia Nightfall
+location: Katowice, Poland
+date_start: 2026-03-21
+rounds_format: 3R+F
+players_count: 30
+winner: 'Winning player: Lukáš Vrbický'
+event_url: https://www.vekn.net/event-calendar/event/13126
+event_id: 13126
+vp_comment: 2GW 9,5VP, final 1GW 3VP
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82918-twd-silesia-nightfall-katowice
+deck:
+  name: Capuchin the Rich
+  created_by: Lukáš Vrbický
+  description: Inspired by Richard Stefan Utner
+  crypt_count: 12
+  crypt_min: 34
+  crypt_max: 44
+  crypt_avg: 9.83
+  crypt:
+  - count: 5
+    name: Capuchin, The
+    capacity: 11
+    disciplines: AUS DOM FOR NEC THA THN
+    clan: Harbinger of Skulls
+    grouping: 5
+  - count: 1
+    name: Gabrielle di Righetti
+    capacity: 10
+    disciplines: obf pot ANI AUS DOM THA
+    title: Justicar
+    clan: Tremere
+    grouping: 5
+  - count: 1
+    name: Karl Schrekt
+    capacity: 10
+    disciplines: AUS DOM FOR PRE THA
+    title: 2 votes
+    clan: Tremere
+    grouping: 6
+  - count: 3
+    name: Gerald Windham
+    capacity: 9
+    disciplines: AUS DOM FOR THA
+    clan: Tremere
+    grouping: 5
+  - count: 2
+    name: Abraham Mellon
+    capacity: 8
+    disciplines: for tha AUS DOM OBF
+    clan: Malkavian
+    grouping: 6
+  library_count: 85
+  library_sections:
+  - name: Master
+    count: 17
+    cards:
+    - count: 1
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Elder Library
+    - count: 1
+      name: Erciyes Fragments, The
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: Maabara
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 5
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 10
+    cards:
+    - count: 10
+      name: Govern the Unaligned
+  - name: Ally
+    count: 1
+    cards:
+    - count: 1
+      name: Carlton Van Wyk
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Erebus Mask
+  - name: Action Modifier
+    count: 21
+    cards:
+    - count: 4
+      name: Bonding
+    - count: 2
+      name: Crocodile's Tongue
+    - count: 1
+      name: Enkil Cog
+    - count: 4
+      name: Freak Drive
+    - count: 4
+      name: Mirror Walk
+    - count: 1
+      name: Seduction
+    - count: 5
+      name: Under My Skin
+  - name: Action Modifier/Reaction
+    count: 3
+    cards:
+    - count: 3
+      name: Murmur of the False Will
+  - name: Reaction
+    count: 21
+    cards:
+    - count: 5
+      name: Deflection
+    - count: 9
+      name: Eyes of Argus
+    - count: 2
+      name: My Enemy's Enemy
+    - count: 2
+      name: On the Qui Vive
+    - count: 3
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 10
+    cards:
+    - count: 4
+      name: Theft of Vitae
+    - count: 6
+      name: Unflinching Persistence
