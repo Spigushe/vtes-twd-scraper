@@ -21,19 +21,19 @@ deck:
   - count: 5
     name: Enkidu, The Noah
     capacity: 11
-    disciplines: ANI CEL OBF POT PRO for
+    disciplines: for ANI CEL OBF POT PRO
     clan: Gangrel antitribu
     grouping: 4
   - count: 3
     name: Aksinya Daclau
     capacity: 9
-    disciplines: ANI FOR PRE PRO cel tha
+    disciplines: cel tha ANI FOR PRE PRO
     clan: Gangrel antitribu
     grouping: 4
   - count: 1
     name: Black Annis
     capacity: 9
-    disciplines: OBF POT ani pro
+    disciplines: ani pro OBF POT
     clan: Nosferatu antitribu
     grouping: 4
   - count: 1
