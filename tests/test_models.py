@@ -4,13 +4,7 @@ from datetime import date
 
 import pytest
 
-from vtes_scraper_v1.models import (
-    CryptCard,
-    Deck,
-    LibraryCard,
-    LibrarySection,
-    Tournament,
-)
+from vtes_scraper.models import CryptCard, Deck, LibraryCard, LibrarySection, Tournament
 
 
 def _make_tournament(**kwargs) -> Tournament:
@@ -163,12 +157,3 @@ class TestEventId:
             event_url="https://www.vekn.net/event-calendar/event/12345"
         )
         assert t.event_url == "https://www.vekn.net/event-calendar/event/12345"
-
-    def test_string_event_id_coerced_to_int(self):
-        """Back-compat: existing YAML files may have event_id as a quoted string."""
-        t = _make_tournament(
-            event_url="https://www.vekn.net/event-calendar/event/9999",
-            event_id="9999",
-        )
-        assert t.event_id == 9999
-        assert isinstance(t.event_id, int)

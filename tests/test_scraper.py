@@ -7,9 +7,8 @@ import httpx
 import pytest
 from bs4 import BeautifulSoup
 
-from vtes_scraper_v1.scraper import (
+from vtes_scraper.scraper import (
     _get,
-    _is_valid_winner_name,
     _kunena_div_to_text,
     extract_twd_from_thread,
     fetch_event_date,
@@ -70,7 +69,7 @@ class TestGet:
         mock_client = MagicMock()
         mock_client.get.return_value = mock_response
 
-        with patch("vtes_scraper.scraper.time.sleep"):
+        with patch("vtes_scraper.scraper._http.time.sleep"):
             soup = _get(mock_client, "https://example.com", delay=0)
 
         assert soup is not None
@@ -84,7 +83,7 @@ class TestGet:
         mock_client = MagicMock()
         mock_client.get.return_value = mock_response
 
-        with patch("vtes_scraper.scraper.time.sleep"):
+        with patch("vtes_scraper.scraper._http.time.sleep"):
             with pytest.raises(httpx.HTTPStatusError):
                 _get(mock_client, "https://example.com", delay=0)
 
@@ -111,7 +110,7 @@ class TestIterThreadUrls:
         page2 = BeautifulSoup(EMPTY_PAGE_HTML, "lxml")
 
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", side_effect=[page1, page2]):
+        with patch("vtes_scraper.scraper._forum._get", side_effect=[page1, page2]):
             results = list(iter_thread_urls(mock_client, delay=0))
 
         urls = [url for url, _ in results]
@@ -129,7 +128,7 @@ class TestIterThreadUrls:
         page2 = BeautifulSoup(EMPTY_PAGE_HTML, "lxml")
 
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", side_effect=[page1, page2]):
+        with patch("vtes_scraper.scraper._forum._get", side_effect=[page1, page2]):
             urls = list(iter_thread_urls(mock_client, delay=0))
 
         assert not any("2119-how-to-report-a-twd" in u for u in urls)
@@ -138,7 +137,7 @@ class TestIterThreadUrls:
         page = BeautifulSoup(FORUM_INDEX_HTML, "lxml")
 
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=page):
+        with patch("vtes_scraper.scraper._forum._get", return_value=page):
             urls = list(iter_thread_urls(mock_client, max_pages=1, delay=0))
 
         # Only page 0 was fetched
@@ -147,7 +146,7 @@ class TestIterThreadUrls:
     def test_stops_when_no_new_found(self):
         page = BeautifulSoup(EMPTY_PAGE_HTML, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=page):
+        with patch("vtes_scraper.scraper._forum._get", return_value=page):
             urls = list(iter_thread_urls(mock_client, delay=0))
         assert urls == []
 
@@ -158,7 +157,7 @@ class TestIterThreadUrls:
         page2 = BeautifulSoup(EMPTY_PAGE_HTML, "lxml")
 
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", side_effect=[page1, page2]):
+        with patch("vtes_scraper.scraper._forum._get", side_effect=[page1, page2]):
             urls = list(iter_thread_urls(mock_client, delay=0))
 
         # Should not duplicate
@@ -192,7 +191,7 @@ class TestExtractTwdFromThread:
     def test_valid_thread_returns_tournament(self):
         soup = BeautifulSoup(THREAD_HTML_VALID, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._forum._get", return_value=soup):
             result = extract_twd_from_thread(
                 mock_client, "https://example.com", delay=0
             )
@@ -202,7 +201,7 @@ class TestExtractTwdFromThread:
     def test_no_kmsg_returns_none(self):
         soup = BeautifulSoup(THREAD_HTML_NO_KMSG, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._forum._get", return_value=soup):
             result = extract_twd_from_thread(
                 mock_client, "https://example.com", delay=0
             )
@@ -211,7 +210,7 @@ class TestExtractTwdFromThread:
     def test_empty_kmsg_returns_none(self):
         soup = BeautifulSoup(THREAD_HTML_EMPTY_KMSG, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._forum._get", return_value=soup):
             result = extract_twd_from_thread(
                 mock_client, "https://example.com", delay=0
             )
@@ -220,83 +219,29 @@ class TestExtractTwdFromThread:
     def test_invalid_twd_returns_none(self):
         soup = BeautifulSoup(THREAD_HTML_INVALID_TWD, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._forum._get", return_value=soup):
             result = extract_twd_from_thread(
                 mock_client, "https://example.com", delay=0
             )
         assert result is None
 
     def test_only_first_post_is_checked(self):
-        """fast_check=True: a valid TWD in a later post is ignored."""
+        """A valid TWD in a later post is ignored (only first post checked)."""
         soup = BeautifulSoup(THREAD_HTML_VALID_SECOND_POST, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._forum._get", return_value=soup):
             result = extract_twd_from_thread(
-                mock_client, "https://example.com", delay=0, fast_check=True
+                mock_client, "https://example.com", delay=0
             )
         assert result is None
 
     def test_only_one_http_request_made(self):
-        """fast_check=True: exactly one HTTP request is made per thread."""
+        """Exactly one HTTP request is made per thread."""
         soup = BeautifulSoup(THREAD_HTML_VALID, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup) as mock_get:
-            extract_twd_from_thread(
-                mock_client, "https://example.com", delay=0, fast_check=True
-            )
+        with patch("vtes_scraper.scraper._forum._get", return_value=soup) as mock_get:
+            extract_twd_from_thread(mock_client, "https://example.com", delay=0)
         assert mock_get.call_count == 1
-
-
-# ---------------------------------------------------------------------------
-# extract_twd_from_thread — slow-check mode
-# ---------------------------------------------------------------------------
-
-
-class TestExtractTwdFromThreadSlowCheck:
-    def test_valid_first_post_returns_tournament(self):
-        """slow_check finds the TWD in the first post."""
-        soup = BeautifulSoup(THREAD_HTML_VALID, "lxml")
-        mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
-            result = extract_twd_from_thread(
-                mock_client, "https://example.com", delay=0, fast_check=False
-            )
-        assert result is not None
-        assert result.name == "Conservative Agitation"
-
-    def test_falls_back_to_second_post(self):
-        """slow_check continues past an invalid first post to find the TWD."""
-        # Page 1 has an invalid first post and a valid second post.
-        # Page 2 (simulated by returning no posts) stops iteration.
-        soup_p1 = BeautifulSoup(THREAD_HTML_VALID_SECOND_POST, "lxml")
-        soup_p2 = BeautifulSoup(THREAD_HTML_NO_KMSG, "lxml")
-        mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", side_effect=[soup_p1, soup_p2]):
-            result = extract_twd_from_thread(
-                mock_client, "https://example.com", delay=0, fast_check=False
-            )
-        assert result is not None
-        assert result.name == "Conservative Agitation"
-
-    def test_no_kmsg_returns_none(self):
-        soup = BeautifulSoup(THREAD_HTML_NO_KMSG, "lxml")
-        mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
-            result = extract_twd_from_thread(
-                mock_client, "https://example.com", delay=0, fast_check=False
-            )
-        assert result is None
-
-    def test_invalid_only_returns_none(self):
-        """slow_check exhausts all posts without finding a valid TWD."""
-        soup_p1 = BeautifulSoup(THREAD_HTML_INVALID_TWD, "lxml")
-        soup_p2 = BeautifulSoup(THREAD_HTML_NO_KMSG, "lxml")
-        mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", side_effect=[soup_p1, soup_p2]):
-            result = extract_twd_from_thread(
-                mock_client, "https://example.com", delay=0, fast_check=False
-            )
-        assert result is None
 
 
 # ---------------------------------------------------------------------------
@@ -346,35 +291,35 @@ class TestFetchEventDate:
     def test_json_ld_with_time(self):
         soup = BeautifulSoup(JSON_LD_HTML, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_event_date(mock_client, "https://example.com", delay=0)
         assert result == date(2023, 3, 25)
 
     def test_json_ld_list(self):
         soup = BeautifulSoup(JSON_LD_LIST_HTML, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_event_date(mock_client, "https://example.com", delay=0)
         assert result == date(2023, 3, 25)
 
     def test_time_tag_fallback(self):
         soup = BeautifulSoup(TIME_TAG_HTML, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_event_date(mock_client, "https://example.com", delay=0)
         assert result == date(2023, 3, 25)
 
     def test_text_scan_fallback(self):
         soup = BeautifulSoup(TEXT_SCAN_HTML, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_event_date(mock_client, "https://example.com", delay=0)
         assert result == date(2023, 3, 25)
 
     def test_no_date_returns_none(self):
         soup = BeautifulSoup(NO_DATE_HTML, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_event_date(mock_client, "https://example.com", delay=0)
         assert result is None
 
@@ -382,14 +327,14 @@ class TestFetchEventDate:
         # Invalid JSON in script tag — falls through to time tag / text scan
         soup = BeautifulSoup(JSON_LD_INVALID_HTML, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_event_date(mock_client, "https://example.com", delay=0)
         assert result is None
 
     def test_json_ld_without_start_date(self):
         soup = BeautifulSoup(JSON_LD_NO_START_HTML, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_event_date(mock_client, "https://example.com", delay=0)
         assert result is None
 
@@ -417,8 +362,9 @@ class TestScrapeForum:
             else:
                 return empty_soup
 
-        with patch("vtes_scraper.scraper._get", side_effect=get_side_effect):
-            results = list(scrape_forum(max_pages=1, delay=0))
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._forum._get", side_effect=get_side_effect):
+            results = list(scrape_forum(mock_client, max_pages=1, delay=0))
 
         assert len(results) > 0
 
@@ -481,29 +427,6 @@ PLAYER_SEARCH_NFD_ENCODED = f"""
 
 # Multiple results where VEKN stores the ASCII-only form "David Valles Gomez" but
 # the query uses accented characters "David Vallès Gómez".
-PLAYER_SEARCH_ASCII_STORED = """
-<html><body>
-<table>
-  <tr><th>Name</th><th>VEKN Number</th></tr>
-  <tr><td>David Valles Gomez</td><td>1234567</td></tr>
-  <tr><td>David Other</td><td>9999999</td></tr>
-</table>
-</body></html>
-"""
-
-# Multiple results where the query is a shorter form of one canonical VEKN name.
-# "Rafael Barbosa" should match "Rafael Barbosa Santos" by similarity.
-PLAYER_SEARCH_SIMILARITY_UNIQUE = """
-<html><body>
-<table>
-  <tr><th>Name</th><th>VEKN Number</th></tr>
-  <tr><td>Rafael Barbosa Santos</td><td>5000001</td></tr>
-  <tr><td>Ricardo Alves</td><td>5000002</td></tr>
-</table>
-</body></html>
-"""
-
-# Two results that both score highly — must remain ambiguous.
 PLAYER_SEARCH_SIMILARITY_AMBIGUOUS = """
 <html><body>
 <table>
@@ -530,48 +453,28 @@ class TestFetchPlayer:
     def test_single_result_returns_name_and_number(self):
         soup = BeautifulSoup(PLAYER_SEARCH_ONE_RESULT, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_player(mock_client, "Aleksander Idziak", delay=0)
         assert result == ("Aleksander Idziak", 3940009)
-
-    def test_single_result_rejected_when_dissimilar_to_query(self):
-        """A single VEKN result whose name is not similar to the query is rejected.
-
-        VEKN's search does substring matching, so a garbage query like
-        "Luca Turicchi' s Deck: No, Tu, NO!" will return "Luca Turicchi" as the
-        only result.  fetch_player must NOT accept it blindly.
-        """
-        soup = BeautifulSoup(
-            PLAYER_SEARCH_ONE_RESULT, "lxml"
-        )  # returns "Aleksander Idziak"
-        mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
-            # Query contains the player name as a prefix but is clearly garbage
-            result = fetch_player(
-                mock_client,
-                "Aleksander Idziak' s Deck: No, Tu, NO!",
-                delay=0,
-            )
-        assert result is None
 
     def test_no_result_returns_none(self):
         soup = BeautifulSoup(PLAYER_SEARCH_NO_RESULT, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_player(mock_client, "Unknown Player", delay=0)
         assert result is None
 
     def test_ambiguous_results_returns_none(self):
         soup = BeautifulSoup(PLAYER_SEARCH_MULTI_RESULT, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_player(mock_client, "John Smith", delay=0)
         assert result is None
 
     def test_exact_name_match_among_multiple(self):
         soup = BeautifulSoup(PLAYER_SEARCH_EXACT_MATCH, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_player(mock_client, "Jane Doe", delay=0)
         assert result == ("Jane Doe", 2000001)
 
@@ -579,121 +482,33 @@ class TestFetchPlayer:
         """NFC query matches an NFD-encoded name in the VEKN table (multiple results)."""
         soup = BeautifulSoup(PLAYER_SEARCH_NFD_ENCODED, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_player(mock_client, "David Vallès Gómez", delay=0)
         assert result is not None
         # The returned name is whatever VEKN stores (NFD form here); vekn_number is key.
         assert result[1] == 1234567
 
-    def test_accent_stripped_name_match_among_multiple(self):
-        """Accented query matches an ASCII-only stored name (regression: event 10032).
-
-        VEKN may store "David Valles Gomez" (no diacritics) while the forum post
-        lists the winner as "David Vallès Gómez".  The accent-stripped fallback in
-        fetch_player should resolve this when multiple results are returned.
-        """
-        soup = BeautifulSoup(PLAYER_SEARCH_ASCII_STORED, "lxml")
-        mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
-            result = fetch_player(mock_client, "David Vallès Gómez", delay=0)
-        assert result == ("David Valles Gomez", 1234567)
-
-    def test_similarity_match_unique(self):
-        """Query "Rafael Barbosa" matches "Rafael Barbosa Santos" when it is the only
-        high-similarity result (regression: event 10077)."""
-        soup = BeautifulSoup(PLAYER_SEARCH_SIMILARITY_UNIQUE, "lxml")
-        mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
-            result = fetch_player(mock_client, "Rafael Barbosa", delay=0)
-        assert result == ("Rafael Barbosa Santos", 5000001)
-
-    def test_similarity_match_ambiguous_returns_none(self):
-        """Two results with equally high similarity scores are not resolved."""
+    def test_ambiguous_multiple_results_returns_none(self):
+        """Multiple results with no exact match are not resolved."""
         soup = BeautifulSoup(PLAYER_SEARCH_SIMILARITY_AMBIGUOUS, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_player(mock_client, "Rafael Barbosa", delay=0)
         assert result is None
 
     def test_no_table_returns_none(self):
         soup = BeautifulSoup(PLAYER_SEARCH_NO_TABLE, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_player(mock_client, "Alice", delay=0)
         assert result is None
 
     def test_unrecognised_headers_returns_none(self):
         soup = BeautifulSoup(PLAYER_SEARCH_UNRECOGNISED_HEADERS, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_player(mock_client, "Alice", delay=0)
         assert result is None
-
-
-# ---------------------------------------------------------------------------
-# _is_valid_winner_name
-# ---------------------------------------------------------------------------
-
-
-class TestIsValidWinnerName:
-    def test_normal_name_valid(self):
-        assert _is_valid_winner_name("Jane Doe") is True
-
-    def test_name_with_accents_valid(self):
-        assert _is_valid_winner_name("Italo Girianelli Neto") is True
-
-    def test_empty_string_invalid(self):
-        assert _is_valid_winner_name("") is False
-
-    def test_whitespace_only_invalid(self):
-        assert _is_valid_winner_name("   ") is False
-
-    def test_trailing_open_paren_invalid(self):
-        # Parse artifact like "Jane Doe ("
-        assert _is_valid_winner_name("Jane Doe (") is False
-
-    def test_trailing_comma_invalid(self):
-        assert _is_valid_winner_name("Jane Doe,") is False
-
-    def test_trailing_semicolon_invalid(self):
-        assert _is_valid_winner_name("Jane Doe;") is False
-
-    def test_no_alphabetic_chars_invalid(self):
-        assert _is_valid_winner_name("12345") is False
-
-    def test_name_with_trailing_whitespace_stripped_valid(self):
-        assert _is_valid_winner_name("Jane Doe   ") is True
-
-
-# Thread with a garbled winner name (parse artifact)
-THREAD_HTML_GARBLED_WINNER = """
-<html><body>
-<div class="kmsg">Conservative Agitation<br>Vila Velha, Brazil<br>October 1st 2016<br>2R+F<br>12 players<br>Ravel Zorzal (<br>https://www.vekn.net/event-calendar/event/8470<br><br>Crypt (2 cards, min=4, max=4, avg=4)<br>-------------------------------------<br>2x Nathan Turner      4 PRO ani                 Gangrel:6<br><br>Library (1 cards)<br>Master (1)<br>1x Blood Doll</div>
-</body></html>
-"""
-
-
-class TestExtractTwdWinnerValidation:
-    def test_garbled_winner_returns_none(self):
-        """A tournament with a garbled winner name must be rejected."""
-        soup = BeautifulSoup(THREAD_HTML_GARBLED_WINNER, "lxml")
-        mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
-            result = extract_twd_from_thread(
-                mock_client, "https://example.com", delay=0
-            )
-        assert result is None
-
-    def test_valid_winner_accepted(self):
-        """A tournament with a clean winner name is accepted normally."""
-        soup = BeautifulSoup(THREAD_HTML_VALID, "lxml")
-        mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
-            result = extract_twd_from_thread(
-                mock_client, "https://example.com", delay=0
-            )
-        assert result is not None
-        assert result.winner == "Ravel Zorzal"
 
 
 # ---------------------------------------------------------------------------
@@ -746,7 +561,7 @@ class TestFetchEventWinner:
     def test_returns_winner_from_pos_column(self):
         soup = BeautifulSoup(EVENT_WITH_STANDINGS_HTML, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_event_winner(
                 mock_client, "https://www.vekn.net/event-calendar/event/99", delay=0
             )
@@ -755,27 +570,27 @@ class TestFetchEventWinner:
     def test_accepts_rank_column_header(self):
         soup = BeautifulSoup(EVENT_WITH_RANK_COLUMN_HTML, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_event_winner(mock_client, "https://example.com", delay=0)
         assert result == "Diana Winner"
 
     def test_no_standings_table_returns_none(self):
         soup = BeautifulSoup(EVENT_NO_STANDINGS_HTML, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_event_winner(mock_client, "https://example.com", delay=0)
         assert result is None
 
     def test_no_table_returns_none(self):
         soup = BeautifulSoup(EVENT_NO_TABLE_HTML, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_event_winner(mock_client, "https://example.com", delay=0)
         assert result is None
 
     def test_table_without_pos1_row_returns_none(self):
         soup = BeautifulSoup(EVENT_STANDINGS_NO_POS1_HTML, "lxml")
         mock_client = MagicMock()
-        with patch("vtes_scraper.scraper._get", return_value=soup):
+        with patch("vtes_scraper.scraper._vekn._get", return_value=soup):
             result = fetch_event_winner(mock_client, "https://example.com", delay=0)
         assert result is None

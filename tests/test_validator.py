@@ -3,7 +3,7 @@
 from datetime import date
 from unittest.mock import patch
 
-from vtes_scraper_v1.validator import (
+from vtes_scraper.validator import (
     _pick_best_crypt_version,
     enrich_crypt_cards,
     error_types,

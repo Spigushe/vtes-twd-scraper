@@ -8,14 +8,6 @@ on:
   # Allow manual trigger from the Actions tab
   workflow_dispatch:
     inputs:
-      check_mode:
-        description: "Check mode"
-        required: true
-        type: choice
-        options:
-          - fast-check
-          - slow-check
-        default: fast-check
       start_page:
         description: "First forum index page to scrape, 0-indexed (default: 0)"
         required: false
@@ -68,9 +60,7 @@ jobs:
       - name: Build scrape command
         id: build_cmd
         run: |
-          # Determine check mode: default to --fast-check on scheduled/push runs
-          CHECK_MODE="${{ github.event.inputs.check_mode }}"
-          CMD="vtes-scraper scrape --${CHECK_MODE:-fast-check}"
+          CMD="vtes-scraper scrape"
 
           START_PAGE="${{ github.event.inputs.start_page }}"
           if [ -z "$START_PAGE" ]; then
@@ -93,11 +83,6 @@ jobs:
       - name: Scrape forum
         continue-on-error: true
         run: ${{ steps.build_cmd.outputs.cmd }}
-
-      - name: Validate scraped decks
-        id: validate
-        continue-on-error: true
-        run: vtes-scraper validate --check-players
 
       - name: Check for new files
         id: git_status

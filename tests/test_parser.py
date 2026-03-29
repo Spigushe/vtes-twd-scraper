@@ -7,7 +7,7 @@ from datetime import datetime
 
 import pytest
 
-from vtes_scraper_v1.parser import parse_twd_text
+from vtes_scraper.parser import parse_twd_text
 
 # ---------------------------------------------------------------------------
 # Fixtures — real examples from the README

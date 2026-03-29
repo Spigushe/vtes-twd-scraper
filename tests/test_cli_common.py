@@ -6,8 +6,8 @@ from unittest.mock import patch
 
 import pytest
 
-from vtes_scraper_v1.cli import _build_parser, main
-from vtes_scraper_v1.cli._common import _reconfigure_windows_stdio, setup_logging
+from vtes_scraper.cli import _build_parser, main
+from vtes_scraper.cli._common import _reconfigure_windows_stdio, setup_logging
 
 # ---------------------------------------------------------------------------
 # _build_parser / main
@@ -27,19 +27,19 @@ class TestBuildParser:
 
     def test_scrape_subcommand(self):
         parser = _build_parser()
-        args = parser.parse_args(["scrape", "--fast-check"])
+        args = parser.parse_args(["scrape"])
         assert args.command == "scrape"
 
-    def test_validate_subcommand(self):
+    def test_publish_subcommand(self):
         parser = _build_parser()
-        args = parser.parse_args(["validate"])
-        assert args.command == "validate"
+        args = parser.parse_args(["publish"])
+        assert args.command == "publish"
 
 
 class TestMain:
     def test_main_dispatches_and_exits(self):
         with (
-            patch("sys.argv", ["vtes-scraper", "scrape", "--fast-check"]),
+            patch("sys.argv", ["vtes-scraper", "scrape"]),
             patch("vtes_scraper.cli._reconfigure_windows_stdio"),
             patch("vtes_scraper.cli.scrape.run", return_value=0) as mock_run,
         ):

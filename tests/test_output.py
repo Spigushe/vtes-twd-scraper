@@ -6,22 +6,22 @@ from pathlib import Path
 
 import pytest
 
-from vtes_scraper_v1.models import (
+from vtes_scraper.models import (
     CryptCard,
     Deck,
     LibraryCard,
     LibrarySection,
     Tournament,
 )
-from vtes_scraper_v1.output._common import _date_subdir
-from vtes_scraper_v1.output.txt import (
+from vtes_scraper.output._common import _date_subdir
+from vtes_scraper.output.txt import (
     _fmt_crypt_card,
     _fmt_date,
     _fmt_library_section,
     tournament_to_txt,
     write_tournament_txt,
 )
-from vtes_scraper_v1.output.yaml import tournament_to_yaml_str, write_tournament_yaml
+from vtes_scraper.output.yaml import tournament_to_yaml_str, write_tournament_yaml
 
 
 def _make_tournament(**kwargs) -> Tournament:

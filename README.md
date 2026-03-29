@@ -26,42 +26,23 @@ Requires Python ≥ 3.14.
 ### CLI
 
 ```bash
-# Scrape first 2 pages (pages 0–1), fast mode — checks only the first post of each thread
-vtes-scraper scrape --fast-check
-
-# Scrape using slow mode — tries every post in each thread until one parses
-vtes-scraper scrape --slow-check
+# Scrape first 2 pages (pages 0–1)
+vtes-scraper scrape
 
 # Scrape pages 0–4 only (--last-page is inclusive, 0-indexed)
-vtes-scraper scrape --fast-check --last-page 4
+vtes-scraper scrape --last-page 4
 
 # Start scraping from page 5 and stop at page 6
-vtes-scraper scrape --fast-check --start-page 5 --last-page 6
+vtes-scraper scrape --start-page 5 --last-page 6
 
 # Overwrite existing YAML files
-vtes-scraper scrape --fast-check --overwrite
+vtes-scraper scrape --overwrite
 
-# Parse a single local .txt file
+# Parse a single local .txt file to YAML
 vtes-scraper parse decks/8470.txt
 
-# Validate scraped decks and move invalid ones to twds/errors/
-vtes-scraper validate
-
-# Also cross-reference dates against the VEKN event calendar
-vtes-scraper validate --check-dates
-
-# Also verify winners against the VEKN member database (writes vekn_number to files)
-vtes-scraper validate --check-players
-
-# Retry files previously quarantined in errors/unknown_winner/ (implies --check-players)
-vtes-scraper validate --check-unknowns
-
-# Fix date_start in one or more YAML files to match the VEKN calendar
-vtes-scraper fix-date twds/2026/01/12957.yaml
-vtes-scraper fix-date twds/2026/01/*.yaml --dry-run
-
-# Re-fetch decks that ended up in twds/errors/ and rewrite them
-vtes-scraper rescrape
+# Convert a YAML file back to .txt
+vtes-scraper parse twds/2023/03/9999.yaml
 
 # Publish new decks as a single PR to GiottoVerducci/TWD
 GITHUB_TOKEN=ghp_xxx vtes-scraper publish
@@ -101,8 +82,8 @@ The workflow in `.github/workflows/scrape.yml`:
 
 - Runs daily at 06:00 UTC
 - Also triggered on push to `main` when source files change
-- Can be triggered manually with optional `check_mode` (`fast-check` / `slow-check`), `start_page`, `last_page`, and `overwrite` inputs
-- Runs tests, scrapes the forum, validates the results (including winner lookup), and commits new YAML files automatically
+- Can be triggered manually with optional `start_page`, `last_page`, and `overwrite` inputs
+- Runs tests, scrapes the forum, and commits new YAML files automatically
 
 The workflow in `.github/workflows/publish.yml`:
 
@@ -202,13 +183,10 @@ vtes-twd-scraper/
 ## Notes
 
 - The scraper respects a 1.5s delay between requests by default (`--delay`).
-- `scrape` requires exactly one of `--fast-check` (first post only, faster) or `--slow-check` (all posts, slower but more thorough).
 - Use `--start-page` / `--last-page` to target a specific page range. Both are 0-indexed; `--last-page` is inclusive (page 0 = `limitstart=0`, page 1 = `limitstart=20`, etc.).
-- Winner lookup against the VEKN member database is applied automatically during scraping. Names are coerced to their canonical form and `vekn_number` is written to the file. Unresolvable names are flagged but not blocked.
+- Winner lookup against the VEKN member database is applied automatically during scraping. `vekn_number` is written to the file. Unresolvable names are flagged but not blocked.
+- Content validation routes tournaments with errors to `twds/errors/<error_type>/` automatically.
 - Forum posts marked with the "merged" icon are written to `twds/changes_required/` instead of the normal date tree, so they can be reviewed before merging.
-- `validate --check-players` writes a `vekn_number` field to each file and caches resolved name mappings in `twds/coercions.json` to avoid repeated HTTP requests.
-- `validate --check-unknowns` retries files in `twds/errors/unknown_winner/`; files that now resolve are moved back to their canonical `YYYY/MM/` location.
 - `publish --dry-run` commits all files to a temporary branch to verify behaviour, then deletes the branch without opening a PR. A dry-run report is saved to `publish/YYYY/MM/dry-run-{date}-{HH-MM-SS}.md`.
-- `scripts/update_yaml_files.py` walks the `twds/` tree and coerces all YAML field values to match the current Pydantic model types (useful after model changes).
 - The `User-Agent` header identifies the bot to the server.
 - Always verify `robots.txt` and VEKN forum terms before large-scale scraping.

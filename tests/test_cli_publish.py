@@ -6,15 +6,15 @@ from datetime import date
 from pathlib import Path
 from unittest.mock import patch
 
-from vtes_scraper_v1.cli import publish as publish_cmd
-from vtes_scraper_v1.models import (
+from vtes_scraper.cli import publish as publish_cmd
+from vtes_scraper.models import (
     CryptCard,
     Deck,
     LibraryCard,
     LibrarySection,
     Tournament,
 )
-from vtes_scraper_v1.publisher import BatchPRResult
+from vtes_scraper.publisher import BatchPRResult
 
 # ---------------------------------------------------------------------------
 # Shared fixtures
@@ -101,7 +101,7 @@ class TestPublishCommand:
         result = BatchPRResult(pr_url="https://github.com/pr/1", published=["9999"])
 
         with tempfile.TemporaryDirectory() as tmpdir:
-            from vtes_scraper_v1.output.yaml import write_tournament_yaml
+            from vtes_scraper.output.yaml import write_tournament_yaml
 
             write_tournament_yaml(t, Path(tmpdir), overwrite=True)
 
@@ -124,7 +124,7 @@ class TestPublishCommand:
         result = BatchPRResult(skipped_all=True, skipped=["9999"])
 
         with tempfile.TemporaryDirectory() as tmpdir:
-            from vtes_scraper_v1.output.yaml import write_tournament_yaml
+            from vtes_scraper.output.yaml import write_tournament_yaml
 
             write_tournament_yaml(t, Path(tmpdir), overwrite=True)
 
@@ -151,7 +151,7 @@ class TestPublishCommand:
         )
 
         with tempfile.TemporaryDirectory() as tmpdir:
-            from vtes_scraper_v1.output.yaml import write_tournament_yaml
+            from vtes_scraper.output.yaml import write_tournament_yaml
 
             write_tournament_yaml(t, Path(tmpdir), overwrite=True)
 
@@ -174,7 +174,7 @@ class TestPublishCommand:
         result = BatchPRResult(published=["9999"])  # no pr_url
 
         with tempfile.TemporaryDirectory() as tmpdir:
-            from vtes_scraper_v1.output.yaml import write_tournament_yaml
+            from vtes_scraper.output.yaml import write_tournament_yaml
 
             write_tournament_yaml(t, Path(tmpdir), overwrite=True)
 
@@ -215,7 +215,7 @@ class TestPublishCommand:
         result = BatchPRResult(pr_url="https://github.com/pr/1", published=["9999"])
 
         with tempfile.TemporaryDirectory() as tmpdir:
-            from vtes_scraper_v1.output.yaml import write_tournament_yaml
+            from vtes_scraper.output.yaml import write_tournament_yaml
 
             # Place a valid YAML in the errors subdirectory
             errors_dir = Path(tmpdir) / "errors" / "unknown_winner"

@@ -4,7 +4,7 @@ import argparse
 import tempfile
 from pathlib import Path
 
-from vtes_scraper_v1.cli import parse as parse_cmd
+from vtes_scraper.cli import parse as parse_cmd
 
 # ---------------------------------------------------------------------------
 # Shared fixtures
