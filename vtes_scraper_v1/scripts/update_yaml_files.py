@@ -2,8 +2,10 @@ import os
 import re
 import types
 import typing
-from ruamel.yaml import YAML
+
 from pydantic import BaseModel, TypeAdapter, ValidationError
+from ruamel.yaml import YAML
+
 from vtes_scraper_v1.models import Tournament
 
 yaml = YAML()
@@ -82,7 +84,7 @@ def update_yaml_files(base_dir: str) -> None:
                 continue
             file_path = os.path.join(root, file)
             try:
-                with open(file_path, "r", encoding="utf-8") as f:
+                with open(file_path, encoding="utf-8") as f:
                     data = yaml.load(f)
                 _walk(data, Tournament)
                 _normalise_event_url(data)
