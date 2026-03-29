@@ -131,7 +131,7 @@ def _krcg_all_crypt_data(card_name: str) -> list[dict]:
             else:
                 try:
                     grouping = int(raw_group)
-                except (TypeError, ValueError):
+                except TypeError, ValueError:
                     continue
             result.append(
                 {
