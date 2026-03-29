@@ -22,26 +22,26 @@ deck:
   - count: 1
     name: Branimira
     capacity: 6
-    disciplines: ANI dom pre pro
-    title: baron
+    disciplines: dom pre pro ANI
+    title: Baron
     clan: Tzimisce
     grouping: 6
   - count: 2
     name: Whisper
     capacity: 5
-    disciplines: ANI DOM pro
+    disciplines: pro ANI DOM
     clan: Tzimisce
     grouping: 6
   - count: 1
     name: Clara Hjortshøj
     capacity: 5
-    disciplines: PRO ani aus dom
+    disciplines: ani aus dom PRO
     clan: Tzimisce
     grouping: 6
   - count: 1
     name: Marialena
     capacity: 5
-    disciplines: DOM PRO ani
+    disciplines: ani DOM PRO
     clan: Tzimisce
     grouping: 6
   - count: 2

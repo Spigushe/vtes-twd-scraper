@@ -7,8 +7,7 @@ winner: Valdemir Santos
 vekn_number: 7301303
 event_url: https://www.vekn.net/event-calendar/event/12960
 event_id: 12960
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82819-twd-1-fortaleza-v5
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82819-twd-1-fortaleza-v5
 deck:
   name: Shadow of Deth
   created_by: Valdemir
@@ -21,42 +20,42 @@ deck:
   - count: 4
     name: Gnaeus Aemilius Augustinus
     capacity: 9
-    disciplines: DOM OBL POT PRO tha
-    title: prince
+    disciplines: tha DOM OBL POT PRO
+    title: Prince
     clan: Lasombra
     grouping: 6
   - count: 2
     name: Yewon Ong
     capacity: 8
-    disciplines: DOM OBL POT for
-    title: prince
+    disciplines: for DOM OBL POT
+    title: Prince
     clan: Lasombra
     grouping: 6
   - count: 3
     name: María del Toro
     capacity: 7
     disciplines: DOM OBL POT
-    title: prince
+    title: Prince
     clan: Lasombra
     grouping: 6
   - count: 1
     name: Rinaldo Albizzi
     capacity: 7
-    disciplines: DOM OBL POT pre
-    title: primogen
+    disciplines: pre DOM OBL POT
+    title: Primogen
     clan: Lasombra
     grouping: 6
   - count: 1
     name: Kamaluddin
     capacity: 6
-    disciplines: DOM OBL for pot
-    title: primogen
+    disciplines: for pot DOM OBL
+    title: Primogen
     clan: Lasombra
     grouping: 6
   - count: 1
     name: Azucena
     capacity: 5
-    disciplines: DOM OBL pot
+    disciplines: pot DOM OBL
     clan: Lasombra
     grouping: 6
   library_count: 90
