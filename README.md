@@ -26,7 +26,7 @@ Requires Python ≥ 3.14.
 ### CLI
 
 ```bash
-# Scrape first 2 pages (pages 0–1)
+# Scrape all pages (starting from page 0)
 vtes-scraper scrape
 
 # Scrape pages 0–4 only (--last-page is inclusive, 0-indexed)
@@ -38,10 +38,16 @@ vtes-scraper scrape --start-page 5 --last-page 6
 # Overwrite existing YAML files
 vtes-scraper scrape --overwrite
 
-# Parse a single local .txt file to YAML
+# Write output to a custom directory
+vtes-scraper scrape --output-dir path/to/dir
+
+# Parse a single local .txt file to YAML (prints to stdout)
 vtes-scraper parse decks/8470.txt
 
-# Convert a YAML file back to .txt
+# Parse a .txt file and write YAML to a directory
+vtes-scraper parse decks/8470.txt --output-dir twds
+
+# Convert a YAML file back to .txt (prints to stdout)
 vtes-scraper parse twds/2023/03/9999.yaml
 
 # Publish new decks as a single PR to GiottoVerducci/TWD
@@ -57,12 +63,14 @@ GITHUB_TOKEN=ghp_xxx vtes-scraper publish --dry-run
 ### Python API
 
 ```python
+import httpx
 from vtes_scraper.scraper import scrape_forum
 from vtes_scraper.output import write_tournament_yaml
 from pathlib import Path
 
-for tournament, icon in scrape_forum(max_pages=2, start_page=5):
-    write_tournament_yaml(tournament, output_dir=Path("twds"))
+with httpx.Client() as client:
+    for tournament, icon in scrape_forum(client, max_pages=2, start_page=5):
+        write_tournament_yaml(tournament, output_dir=Path("twds"))
 ```
 
 ## Development
@@ -89,8 +97,7 @@ The workflow in `.github/workflows/publish.yml`:
 
 - Runs every Monday at 08:00 UTC
 - Can be triggered manually
-- Runs `validate --check-players` to enrich files with VEKN numbers before publishing
-- Creates a single PR to the GiottoVerducci/TWD repository with all new decks
+- Runs tests, then publishes all new decks to the GiottoVerducci/TWD repository as a single PR
 - Commits a Markdown publish report to `publish/YYYY/MM/`
 
 ## YAML output example
@@ -133,32 +140,36 @@ deck:
 vtes-twd-scraper/
 ├── vtes_scraper/
 │   ├── cli/
-│   │   ├── __init__.py        # CLI entry point and shared argparse instance
+│   │   ├── __init__.py        # CLI entry point (vtes-scraper) and argparse setup
 │   │   ├── _common.py         # CLI shared utilities
-│   │   ├── fix_dates.py       # CLI command for fixing date_start fields
-│   │   ├── parse.py           # CLI command for parsing local .txt files
-│   │   ├── publish.py         # CLI command for publishing to GitHub
-│   │   ├── rescrape.py        # CLI command for re-fetching errored decks
-│   │   ├── scrape.py          # CLI command for scraping the VEKN forum
-│   │   └── validate.py        # CLI command for validating scraped YAML files
+│   │   ├── parse.py           # CLI command: parse .txt ↔ .yaml
+│   │   ├── publish.py         # CLI command: publish decks to GitHub
+│   │   └── scrape.py          # CLI command: scrape the VEKN forum
 │   ├── output/
 │   │   ├── __init__.py
 │   │   ├── _common.py         # Output shared utilities
 │   │   ├── txt.py             # TXT serializer
 │   │   └── yaml.py            # YAML serializer
+│   ├── parser/
+│   │   ├── __init__.py
+│   │   ├── _deck.py           # Deck section parser
+│   │   ├── _header.py         # Tournament header parser
+│   │   ├── _helpers.py        # Parser utilities
+│   │   └── _twd.py            # Top-level TWD text format parser
+│   ├── scraper/
+│   │   ├── __init__.py
+│   │   ├── _forum.py          # Forum index traversal and TWD extraction
+│   │   ├── _http.py           # Low-level HTTP helpers and constants
+│   │   ├── _icons.py          # Topic icon detection
+│   │   └── _vekn.py           # VEKN event calendar and player registry lookups
 │   ├── models.py              # Pydantic data models
-│   ├── parser.py              # TWD text format parser
 │   ├── publisher.py           # GitHub PR publisher
-│   ├── scraper.py             # Forum scraper (httpx + BeautifulSoup)
 │   └── validator.py           # YAML validation logic
 ├── tests/
 │   ├── test_cli_common.py
-│   ├── test_cli_fix_dates.py
 │   ├── test_cli_parse.py
 │   ├── test_cli_publish.py
-│   ├── test_cli_rescrape.py
 │   ├── test_cli_scrape.py
-│   ├── test_cli_validate.py
 │   ├── test_models.py
 │   ├── test_output.py
 │   ├── test_parser.py
@@ -167,8 +178,6 @@ vtes-twd-scraper/
 │   ├── test_scraper.py
 │   ├── test_scraper_icons.py
 │   └── test_validator.py
-├── scripts/
-│   └── update_yaml_files.py   # Bulk-coerce existing YAML files to match model types
 ├── twds/                      # Scraped YAML files (YYYY/MM/<event_id>.yaml)
 ├── publish/                   # Markdown publish reports (YYYY/MM/<date>.md)
 ├── .github/
