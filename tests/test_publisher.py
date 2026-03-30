@@ -24,8 +24,8 @@ from vtes_scraper.publisher import (
     _headers,
     _open_pull_request,
     _put_file,
-    _sanitize_branch_name,
     publish_all_as_single_pr,
+    sanitize_branch_name,
 )
 
 
@@ -88,24 +88,24 @@ class TestHeaders:
 
 
 # ---------------------------------------------------------------------------
-# _sanitize_branch_name
+# sanitize_branch_name
 # ---------------------------------------------------------------------------
 
 
 class TestSanitizeBranchName:
     def test_lowercase(self):
-        assert _sanitize_branch_name("Hello World") == "hello-world"
+        assert sanitize_branch_name("Hello World") == "hello-world"
 
     def test_special_chars_replaced(self):
-        assert _sanitize_branch_name("test!@#$name") == "test-name"
+        assert sanitize_branch_name("test!@#$name") == "test-name"
 
     def test_truncated_at_50(self):
         long_name = "a" * 100
-        result = _sanitize_branch_name(long_name)
+        result = sanitize_branch_name(long_name)
         assert len(result) <= 50
 
     def test_strips_leading_trailing_dashes(self):
-        result = _sanitize_branch_name("--hello--")
+        result = sanitize_branch_name("--hello--")
         assert not result.startswith("-")
         assert not result.endswith("-")
 
@@ -173,9 +173,7 @@ class TestFileExistsOnBranch:
         mock_client = MagicMock()
         mock_client.get.return_value = mock_resp
 
-        result = _file_exists_on_branch(
-            mock_client, "decks/test.txt", "master", token="t"
-        )
+        result = _file_exists_on_branch(mock_client, "decks/test.txt", "master", token="t")
         assert result is True
 
     def test_returns_false_when_404(self):
@@ -185,9 +183,7 @@ class TestFileExistsOnBranch:
         mock_client = MagicMock()
         mock_client.get.return_value = mock_resp
 
-        result = _file_exists_on_branch(
-            mock_client, "decks/test.txt", "master", token="t"
-        )
+        result = _file_exists_on_branch(mock_client, "decks/test.txt", "master", token="t")
         assert result is False
 
 
@@ -230,9 +226,7 @@ class TestOpenPullRequest:
     def test_returns_pr_url(self):
         mock_resp = MagicMock()
         mock_resp.status_code = 201
-        mock_resp.json.return_value = {
-            "html_url": "https://github.com/owner/repo/pull/1"
-        }
+        mock_resp.json.return_value = {"html_url": "https://github.com/owner/repo/pull/1"}
         mock_resp.raise_for_status = MagicMock()
 
         mock_client = MagicMock()
@@ -252,9 +246,7 @@ class TestOpenPullRequest:
 
         mock_get_resp = MagicMock()
         mock_get_resp.status_code = 200
-        mock_get_resp.json.return_value = [
-            {"html_url": "https://github.com/owner/repo/pull/2"}
-        ]
+        mock_get_resp.json.return_value = [{"html_url": "https://github.com/owner/repo/pull/2"}]
 
         mock_client = MagicMock()
         mock_client.post.return_value = mock_post_resp
@@ -266,9 +258,7 @@ class TestOpenPullRequest:
     def test_other_422_raises(self):
         mock_resp = MagicMock()
         mock_resp.status_code = 422
-        mock_resp.json.return_value = {
-            "errors": [{"message": "Unrelated validation error"}]
-        }
+        mock_resp.json.return_value = {"errors": [{"message": "Unrelated validation error"}]}
         mock_resp.raise_for_status.side_effect = httpx.HTTPStatusError(
             "422", request=MagicMock(), response=MagicMock()
         )
@@ -284,9 +274,7 @@ class TestFindExistingPr:
     def test_returns_url_when_found(self):
         mock_resp = MagicMock()
         mock_resp.status_code = 200
-        mock_resp.json.return_value = [
-            {"html_url": "https://github.com/owner/repo/pull/5"}
-        ]
+        mock_resp.json.return_value = [{"html_url": "https://github.com/owner/repo/pull/5"}]
 
         mock_client = MagicMock()
         mock_client.get.return_value = mock_resp
@@ -344,9 +332,7 @@ class TestDeleteBranch:
         mock_client.delete.return_value = mock_resp
 
         with caplog.at_level(logging.WARNING, logger="vtes_scraper.publisher"):
-            _delete_branch(
-                mock_client, "missing-branch", token="mytoken", owner="testuser"
-            )
+            _delete_branch(mock_client, "missing-branch", token="mytoken", owner="testuser")
 
         assert any("Could not delete branch" in r.message for r in caplog.records)
 
@@ -416,9 +402,7 @@ class TestPublishAllAsSinglePr:
         # Open PR
         pr_resp = MagicMock()
         pr_resp.status_code = 201
-        pr_resp.json.return_value = {
-            "html_url": "https://github.com/GiottoVerducci/TWD/pull/99"
-        }
+        pr_resp.json.return_value = {"html_url": "https://github.com/GiottoVerducci/TWD/pull/99"}
         pr_resp.raise_for_status = MagicMock()
 
         return (
@@ -438,7 +422,10 @@ class TestPublishAllAsSinglePr:
 
         with (
             patch("vtes_scraper.publisher._ensure_fork", return_value="testuser"),
-            patch("vtes_scraper.publisher._file_exists_on_branch", return_value=True),
+            patch(
+                "vtes_scraper.publisher._file_exists_on_branch",
+                return_value=True,
+            ),
         ):
             result = publish_all_as_single_pr([t], token="mytoken", delay=0)
 
@@ -459,7 +446,10 @@ class TestPublishAllAsSinglePr:
 
         with (
             patch("vtes_scraper.publisher._ensure_fork", return_value="testuser"),
-            patch("vtes_scraper.publisher._file_exists_on_branch", return_value=False),
+            patch(
+                "vtes_scraper.publisher._file_exists_on_branch",
+                return_value=False,
+            ),
             patch("vtes_scraper.publisher._get_branch_sha", return_value="abc123"),
             patch("vtes_scraper.publisher._create_branch"),
             patch("vtes_scraper.publisher._put_file"),
@@ -479,7 +469,10 @@ class TestPublishAllAsSinglePr:
 
         with (
             patch("vtes_scraper.publisher._ensure_fork", return_value="testuser"),
-            patch("vtes_scraper.publisher._file_exists_on_branch", return_value=False),
+            patch(
+                "vtes_scraper.publisher._file_exists_on_branch",
+                return_value=False,
+            ),
             patch("vtes_scraper.publisher._get_branch_sha", side_effect=err),
         ):
             result = publish_all_as_single_pr([t], token="mytoken", delay=0)
@@ -496,7 +489,10 @@ class TestPublishAllAsSinglePr:
 
         with (
             patch("vtes_scraper.publisher._ensure_fork", return_value="testuser"),
-            patch("vtes_scraper.publisher._file_exists_on_branch", return_value=False),
+            patch(
+                "vtes_scraper.publisher._file_exists_on_branch",
+                return_value=False,
+            ),
             patch("vtes_scraper.publisher._get_branch_sha", return_value="abc123"),
             patch("vtes_scraper.publisher._create_branch"),
             patch("vtes_scraper.publisher._put_file", side_effect=err),
@@ -511,10 +507,16 @@ class TestPublishAllAsSinglePr:
 
         with (
             patch("vtes_scraper.publisher._ensure_fork", return_value="testuser"),
-            patch("vtes_scraper.publisher._file_exists_on_branch", return_value=False),
+            patch(
+                "vtes_scraper.publisher._file_exists_on_branch",
+                return_value=False,
+            ),
             patch("vtes_scraper.publisher._get_branch_sha", return_value="abc123"),
             patch("vtes_scraper.publisher._create_branch"),
-            patch("vtes_scraper.publisher._put_file", side_effect=RuntimeError("oops")),
+            patch(
+                "vtes_scraper.publisher._put_file",
+                side_effect=RuntimeError("oops"),
+            ),
         ):
             result = publish_all_as_single_pr([t], token="mytoken", delay=0)
 
@@ -526,7 +528,10 @@ class TestPublishAllAsSinglePr:
 
         with (
             patch("vtes_scraper.publisher._ensure_fork", return_value="testuser"),
-            patch("vtes_scraper.publisher._file_exists_on_branch", return_value=False),
+            patch(
+                "vtes_scraper.publisher._file_exists_on_branch",
+                return_value=False,
+            ),
             patch("vtes_scraper.publisher._get_branch_sha", return_value="abc123"),
             patch("vtes_scraper.publisher._create_branch"),
             patch("vtes_scraper.publisher._put_file"),
@@ -548,7 +553,8 @@ class TestPublishAllAsSinglePr:
         with (
             patch("vtes_scraper.publisher._ensure_fork", return_value="testuser"),
             patch(
-                "vtes_scraper.publisher._file_exists_on_branch", side_effect=file_exists
+                "vtes_scraper.publisher._file_exists_on_branch",
+                side_effect=file_exists,
             ),
             patch("vtes_scraper.publisher._get_branch_sha", return_value="abc123"),
             patch("vtes_scraper.publisher._create_branch"),
@@ -568,16 +574,17 @@ class TestPublishAllAsSinglePr:
 
         with (
             patch("vtes_scraper.publisher._ensure_fork", return_value="testuser"),
-            patch("vtes_scraper.publisher._file_exists_on_branch", return_value=False),
+            patch(
+                "vtes_scraper.publisher._file_exists_on_branch",
+                return_value=False,
+            ),
             patch("vtes_scraper.publisher._get_branch_sha", return_value="abc123"),
             patch("vtes_scraper.publisher._create_branch"),
             patch("vtes_scraper.publisher._put_file"),
             patch("vtes_scraper.publisher._open_pull_request") as mock_pr,
             patch("vtes_scraper.publisher._delete_branch") as mock_del,
         ):
-            result = publish_all_as_single_pr(
-                [t], token="mytoken", delay=0, dry_run=True
-            )
+            result = publish_all_as_single_pr([t], token="mytoken", delay=0, dry_run=True)
 
         assert result.dry_run is True
         assert result.pr_url is None
@@ -590,12 +597,13 @@ class TestPublishAllAsSinglePr:
 
         with (
             patch("vtes_scraper.publisher._ensure_fork", return_value="testuser"),
-            patch("vtes_scraper.publisher._file_exists_on_branch", return_value=True),
+            patch(
+                "vtes_scraper.publisher._file_exists_on_branch",
+                return_value=True,
+            ),
             patch("vtes_scraper.publisher._delete_branch") as mock_del,
         ):
-            result = publish_all_as_single_pr(
-                [t], token="mytoken", delay=0, dry_run=True
-            )
+            result = publish_all_as_single_pr([t], token="mytoken", delay=0, dry_run=True)
 
         assert result.skipped_all is True
         mock_del.assert_not_called()
@@ -609,15 +617,16 @@ class TestPublishAllAsSinglePr:
 
         with (
             patch("vtes_scraper.publisher._ensure_fork", return_value="testuser"),
-            patch("vtes_scraper.publisher._file_exists_on_branch", return_value=False),
+            patch(
+                "vtes_scraper.publisher._file_exists_on_branch",
+                return_value=False,
+            ),
             patch("vtes_scraper.publisher._get_branch_sha", return_value="abc123"),
             patch("vtes_scraper.publisher._create_branch"),
             patch("vtes_scraper.publisher._put_file", side_effect=err),
             patch("vtes_scraper.publisher._delete_branch") as mock_del,
         ):
-            result = publish_all_as_single_pr(
-                [t], token="mytoken", delay=0, dry_run=True
-            )
+            result = publish_all_as_single_pr([t], token="mytoken", delay=0, dry_run=True)
 
         assert len(result.errors) == 1
         assert result.pr_url is None
@@ -641,10 +650,16 @@ class TestPublishAllAsSinglePr:
 
         with (
             patch("vtes_scraper.publisher._ensure_fork", return_value="testuser"),
-            patch("vtes_scraper.publisher._file_exists_on_branch", return_value=False),
+            patch(
+                "vtes_scraper.publisher._file_exists_on_branch",
+                return_value=False,
+            ),
             patch("vtes_scraper.publisher._get_branch_sha", return_value="abc123"),
             patch("vtes_scraper.publisher._create_branch"),
-            patch("vtes_scraper.publisher._put_file", side_effect=put_file_side_effect),
+            patch(
+                "vtes_scraper.publisher._put_file",
+                side_effect=put_file_side_effect,
+            ),
             patch(
                 "vtes_scraper.publisher._open_pull_request",
                 return_value="https://github.com/pr/3",

@@ -103,7 +103,9 @@ def _krcg_all_crypt_data(card_name: str) -> list[dict]:
         if not card or not card.crypt:
             return []
 
-        # Determine whether the scraped name is an ADV card.  This is a heuristic but should be reliable since the presence of "(ADV)" in the name is a strong signal of the card's identity and krcg's data is consistent in this regard.
+        # Determine whether the scraped name is an ADV card. This is a heuristic but
+        # should be reliable since the presence of "(ADV)" in the name is a strong
+        # signal of the card's identity and krcg's data is consistent in this regard.
         want_adv: bool = "(ADV)" in card_name
 
         # Gather all variant IDs: the card itself plus all related grouping variants
@@ -232,9 +234,7 @@ def enrich_crypt_cards(deck: dict) -> list[str]:
             continue
 
         best = (
-            _pick_best_crypt_version(versions, fixed_groups)
-            if len(versions) > 1
-            else versions[0]
+            _pick_best_crypt_version(versions, fixed_groups) if len(versions) > 1 else versions[0]
         )
 
         changed: list[str] = []
@@ -245,24 +245,6 @@ def enrich_crypt_cards(deck: dict) -> list[str]:
                 changed.append(f"{field}: {old_value!r} → {new_value!r}")
         if changed:
             fixes.append(f"  {card.get('name', '')!r}: " + ", ".join(changed))
-
-    return fixes
-    fixes: list[str] = []
-    for card in crypt:
-        if not isinstance(card, dict):
-            continue
-        card_name = str(card.get("name") or "")
-        krcg_data = _krcg_crypt_data(card_name)
-        if krcg_data is None:
-            continue
-        changed: list[str] = []
-        for field, new_value in krcg_data.items():
-            old_value = card.get(field)
-            if old_value != new_value:
-                card[field] = new_value
-                changed.append(f"{field}: {old_value!r} → {new_value!r}")
-        if changed:
-            fixes.append(f"  {card_name!r}: " + ", ".join(changed))
 
     return fixes
 
@@ -400,9 +382,7 @@ def error_types(data: dict, calendar_date: date | None = None) -> list[str]:
             for card in deck["crypt"]
             if isinstance(card, dict) and card.get("grouping") not in (None, "ANY")
         }
-        if len(groupings) > 2 or (
-            len(groupings) == 2 and max(groupings) - min(groupings) != 1
-        ):
+        if len(groupings) > 2 or (len(groupings) == 2 and max(groupings) - min(groupings) != 1):
             errors.append("illegal_crypt")
     if not deck.get("library_sections"):
         errors.append("empty_library")
@@ -411,9 +391,7 @@ def error_types(data: dict, calendar_date: date | None = None) -> list[str]:
     if deck:
         crypt = deck.get("crypt") or []
         if crypt and deck.get("crypt_count") is not None:
-            expected_crypt = sum(
-                card.get("count", 0) for card in crypt if isinstance(card, dict)
-            )
+            expected_crypt = sum(card.get("count", 0) for card in crypt if isinstance(card, dict))
             if deck["crypt_count"] != expected_crypt:
                 errors.append("crypt_count_mismatch")
 
@@ -424,9 +402,7 @@ def error_types(data: dict, calendar_date: date | None = None) -> list[str]:
             section_cards = section.get("cards") or []
             if section.get("count") is not None and section_cards:
                 expected_section = sum(
-                    card.get("count", 0)
-                    for card in section_cards
-                    if isinstance(card, dict)
+                    card.get("count", 0) for card in section_cards if isinstance(card, dict)
                 )
                 if section["count"] != expected_section:
                     errors.append("library_section_count_mismatch")
@@ -434,9 +410,7 @@ def error_types(data: dict, calendar_date: date | None = None) -> list[str]:
 
         if library_sections and deck.get("library_count") is not None:
             expected_library = sum(
-                section.get("count", 0)
-                for section in library_sections
-                if isinstance(section, dict)
+                section.get("count", 0) for section in library_sections if isinstance(section, dict)
             )
             if deck["library_count"] != expected_library:
                 errors.append("library_count_mismatch")

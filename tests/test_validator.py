@@ -188,9 +188,7 @@ class TestLibrarySectionCountMismatch:
                 }
             ],
         )
-        assert "library_section_count_mismatch" not in error_types(
-            _tournament(deck=deck)
-        )
+        assert "library_section_count_mismatch" not in error_types(_tournament(deck=deck))
 
 
 class TestLibraryCountMismatch:
@@ -252,9 +250,7 @@ class TestTooFewPlayers:
 class TestDateCoherence:
     def test_matching_date_no_error(self):
         data = _tournament(date_start="2023-03-25")
-        assert "incoherent_date" not in error_types(
-            data, calendar_date=date(2023, 3, 25)
-        )
+        assert "incoherent_date" not in error_types(data, calendar_date=date(2023, 3, 25))
 
     def test_mismatched_date_flagged(self):
         data = _tournament(date_start="2023-03-25")
@@ -329,13 +325,10 @@ class TestFixCardSections:
 
         @contextlib.contextmanager
         def _ctx():
-            with (
-                patch("vtes_scraper.validator._KRCG_LOADED", available),
-                patch("vtes_scraper.validator._try_load_krcg", return_value=available),
-                patch(
-                    "vtes_scraper.validator._krcg_section",
-                    side_effect=_fake_krcg_section,
-                ),
+            krcg_fn = _fake_krcg_section if available else (lambda _: None)
+            with patch(
+                "vtes_scraper.validator.get_library_card_type",
+                side_effect=krcg_fn,
             ):
                 yield
 
@@ -383,9 +376,7 @@ class TestFixCardSections:
     def test_library_count_updated(self):
         deck = _make_deck_with_sections(
             [
-                _section(
-                    "Master", [_card("Villein", 2), _card("Govern the Unaligned", 1)]
-                ),
+                _section("Master", [_card("Villein", 2), _card("Govern the Unaligned", 1)]),
             ]
         )
         with self._patch_krcg():
@@ -393,18 +384,14 @@ class TestFixCardSections:
         assert deck["library_count"] == 3  # unchanged total
 
     def test_unknown_card_stays_in_current_section(self):
-        deck = _make_deck_with_sections(
-            [_section("Master", [_card("Some Unknown Card", 1)])]
-        )
+        deck = _make_deck_with_sections([_section("Master", [_card("Some Unknown Card", 1)])])
         with self._patch_krcg():
             fixes = fix_card_sections(deck)
         assert fixes == []
         assert deck["library_sections"][0]["name"] == "Master"
 
     def test_krcg_unavailable_returns_empty(self):
-        deck = _make_deck_with_sections(
-            [_section("Master", [_card("Govern the Unaligned", 1)])]
-        )
+        deck = _make_deck_with_sections([_section("Master", [_card("Govern the Unaligned", 1)])])
         with self._patch_krcg(available=False):
             fixes = fix_card_sections(deck)
         assert fixes == []
@@ -515,13 +502,10 @@ class TestEnrichCryptCards:
 
         @contextlib.contextmanager
         def _ctx():
-            with (
-                patch("vtes_scraper.validator._KRCG_LOADED", available),
-                patch("vtes_scraper.validator._try_load_krcg", return_value=available),
-                patch(
-                    "vtes_scraper.validator._krcg_all_crypt_data",
-                    side_effect=_fake_krcg_all_crypt_data,
-                ),
+            krcg_fn = _fake_krcg_all_crypt_data if available else (lambda _: [])
+            with patch(
+                "vtes_scraper.validator.get_all_vamp_variants",
+                side_effect=krcg_fn,
             ):
                 yield
 

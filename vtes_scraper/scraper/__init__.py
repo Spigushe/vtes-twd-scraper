@@ -8,7 +8,7 @@ Submodules:
   _vekn   — VEKN event calendar and player registry lookups
 """
 
-import time  # Ensure time module is available for patching in tests
+import time as time  # Ensure time module is available for patching in tests
 
 from vtes_scraper.scraper._forum import (
     extract_twd_from_thread,
@@ -18,7 +18,7 @@ from vtes_scraper.scraper._forum import (
 from vtes_scraper.scraper._http import (
     DEFAULT_DELAY_SECONDS,
     HEADERS,
-    _get,
+    get_soup,
     kunena_div_to_text,
 )
 from vtes_scraper.scraper._icons import (
@@ -35,6 +35,7 @@ from vtes_scraper.scraper._vekn import (
 )
 
 __all__ = [
+    "time",
     # Constants
     "DEFAULT_DELAY_SECONDS",
     "HEADERS",
@@ -43,7 +44,7 @@ __all__ = [
     "ICON_MERGED",
     "ICON_SOLVED",
     # HTTP helpers
-    "_get",
+    "get_soup",
     "kunena_div_to_text",
     # Icons
     "detect_topic_icon",
