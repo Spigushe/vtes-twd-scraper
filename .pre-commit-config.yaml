@@ -1,0 +1,51 @@
+repos:
+  # ---------------------------------------------------------------------------
+  # Ruff — lint and format
+  # ---------------------------------------------------------------------------
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.8
+    hooks:
+      - id: ruff
+        name: ruff lint
+        args: [--fix, --exit-non-zero-on-fix]
+      - id: ruff-format
+        name: ruff format
+
+  # ---------------------------------------------------------------------------
+  # Local hooks — mypy, pytest, CLI smoke tests
+  # Cross-platform: uses python -m for tools, wrapper script for CLI
+  # Requires: pip install -e ".[dev]"
+  # ---------------------------------------------------------------------------
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: python -m pytest
+        language: system
+        pass_filenames: false
+        always_run: true
+
+      # CLI smoke tests — verify each subcommand loads and parses args cleanly
+      - id: cli-smoke-scrape
+        name: "cli smoke: scrape --help"
+        entry: python -m vtes_scraper.cli
+        args: [scrape, --help]
+        language: system
+        pass_filenames: false
+        always_run: true
+
+      - id: cli-smoke-parse
+        name: "cli smoke: parse --help"
+        entry: python -m vtes_scraper.cli
+        args: [parse, --help]
+        language: system
+        pass_filenames: false
+        always_run: true
+
+      - id: cli-smoke-publish
+        name: "cli smoke: publish --help"
+        entry: python -m vtes_scraper.cli
+        args: [publish, --help]
+        language: system
+        pass_filenames: false
+        always_run: true

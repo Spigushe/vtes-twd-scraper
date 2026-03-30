@@ -25,8 +25,16 @@ dependencies = [
 dev = [
     "pytest>=9.0",           # 9.0+ required for Python 3.14 compatibility
     "pytest-cov>=5.0",
+    "pytest-html>=4.1",
     "ruff>=0.4",             # Linter + formatter
     "mypy>=1.10",
+    "pre-commit>=3.7",       # Git pre-commit hook manager
+    # Stubs
+    "lxml-stubs",
+    "types-PyYAML",
+    "types-Pygments",
+    "types-html5lib",
+    "types-requests",
 ]
 
 [project.scripts]
@@ -46,8 +54,85 @@ target-version = "py314"
 select = ["E", "F", "W", "I", "UP"]
 
 # ---------------------------------------------------------------------------
+# Mypy
+# ---------------------------------------------------------------------------
+[tool.mypy]
+python_version = "3.14"
+exclude = ["^tests/"]
+warn_unused_ignores = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+no_implicit_optional = true
+strict_optional = true
+show_error_codes = true
+pretty = true
+check_untyped_defs = true
+warn_return_any = true
+warn_redundant_casts = true
+html_report = "report/mypy"
+plugins = ["pydantic.mypy"]
+
+# ---------------------------------------------------------------------------
 # Pytest
 # ---------------------------------------------------------------------------
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "--tb=short"
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::PendingDeprecationWarning",
+]
+addopts = [
+    "-v",
+    "--strict-markers",
+    "--tb=short",
+    # Configuration coverage par défaut (optionnel)
+    "--cov=app",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+]
+markers = [
+    "integration: marks tests as integration tests (deselect with '-m \"not integration\"')",
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "api: marks tests as API tests",
+    "db: marks tests requiring database",
+    "performance: marks tests as performance benchmarks",
+]
+
+[tool.coverage.run]
+source = ["vtes_scraper"]
+branch = true
+parallel = true
+omit = [
+    "*/tests/*",
+    "*/test_*.py",
+    "*/__pycache__/*",
+]
+
+[tool.coverage.report]
+precision = 2
+# Afficher les lignes manquantes
+show_missing = true
+skip_empty = true
+skip_covered = false
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "def __str__",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "@abstractmethod",
+    "@abc.abstractmethod",
+    "except ImportError:",
+    "pass",
+    "\\.\\.\\.",  # Ignorer les ellipsis
+]
+
+[tool.coverage.html]
+directory = "reports/pytest"
