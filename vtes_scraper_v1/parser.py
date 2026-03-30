@@ -183,13 +183,9 @@ def parse_twd_text(raw: str, forum_post_url: str | None = None) -> Tournament:
         lines.pop()
 
     if len(lines) < 7:
-        raise ValueError(
-            f"TWD block has fewer than 7 mandatory lines (got {len(lines)})"
-        )
+        raise ValueError(f"TWD block has fewer than 7 mandatory lines (got {len(lines)})")
 
-    deck_start = next(
-        (i for i, line in enumerate(lines) if CRYPT_HEADER_RE.search(line)), None
-    )
+    deck_start = next((i for i, line in enumerate(lines) if CRYPT_HEADER_RE.search(line)), None)
     if deck_start is None:
         raise ValueError("Mandatory 'Crypt (N cards, ...)' block not found")
 
@@ -277,11 +273,7 @@ def _parse_header_lenient(lines: list[str]) -> dict:
             vp_comment = line.lstrip("- ").strip()
             continue
         # Stop at deck metadata
-        if (
-            DECK_NAME_RE.match(line)
-            or CREATED_BY_RE.match(line)
-            or DESCRIPTION_RE.match(line)
-        ):
+        if DECK_NAME_RE.match(line) or CREATED_BY_RE.match(line) or DESCRIPTION_RE.match(line):
             break
 
         unlabeled.append(line)
@@ -340,9 +332,7 @@ def _parse_deck_block(lines: list[str]) -> Deck:
     library_sections: list[LibrarySection] = []
 
     # Lines before the Crypt header = deck metadata (Deck Name, Author, Description)
-    crypt_header_idx = next(
-        (i for i, line in enumerate(lines) if CRYPT_HEADER_RE.search(line)), 0
-    )
+    crypt_header_idx = next((i for i, line in enumerate(lines) if CRYPT_HEADER_RE.search(line)), 0)
     _collecting_description = False
     for line in lines[:crypt_header_idx]:
         s = line.strip()

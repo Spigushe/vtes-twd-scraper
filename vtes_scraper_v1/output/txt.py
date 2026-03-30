@@ -108,9 +108,7 @@ def write_tournament_txt(
     path = dest / tournament.txt_filename
 
     if path.exists() and not overwrite:
-        raise FileExistsError(
-            f"Output file already exists: {path}. Use --overwrite to replace."
-        )
+        raise FileExistsError(f"Output file already exists: {path}. Use --overwrite to replace.")
 
     path.write_text(tournament_to_txt(tournament), encoding="utf-8")
     return path

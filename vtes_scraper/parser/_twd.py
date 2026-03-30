@@ -14,13 +14,9 @@ def parse_twd_text(raw: str, forum_post_url: str | None = None) -> Tournament:
         lines.pop()
 
     if len(lines) < 7:
-        raise ValueError(
-            f"TWD block has fewer than 7 mandatory lines (got {len(lines)})"
-        )
+        raise ValueError(f"TWD block has fewer than 7 mandatory lines (got {len(lines)})")
 
-    deck_start = next(
-        (i for i, line in enumerate(lines) if CRYPT_HEADER_RE.search(line)), None
-    )
+    deck_start = next((i for i, line in enumerate(lines) if CRYPT_HEADER_RE.search(line)), None)
     if deck_start is None:
         raise ValueError("Mandatory 'Crypt (N cards, ...)' block not found")
 

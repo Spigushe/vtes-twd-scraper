@@ -114,9 +114,7 @@ def _ensure_fork(client: httpx.Client, token: str | None = None) -> str:
         headers=_headers(token),
     )
     resp.raise_for_status()
-    logger.debug(
-        "Fork ensured for %s/%s under %s.", _TARGET_OWNER, _TARGET_REPO, fork_owner
-    )
+    logger.debug("Fork ensured for %s/%s under %s.", _TARGET_OWNER, _TARGET_REPO, fork_owner)
     fork_url = f"{_GITHUB_API}/repos/{fork_owner}/{_TARGET_REPO}"
     for _ in range(10):
         if client.get(fork_url, headers=_headers(token)).status_code == 200:
@@ -226,9 +224,7 @@ def _open_pull_request(
             if "pull request already exists" in str(err.get("message", "")).lower():
                 existing = _find_existing_pr(client, head_branch, token, fork_owner)
                 if existing:
-                    logger.debug(
-                        "PR already open for branch %r: %s", head_branch, existing
-                    )
+                    logger.debug("PR already open for branch %r: %s", head_branch, existing)
                     return existing
     resp.raise_for_status()
     return resp.json()["html_url"]
@@ -264,9 +260,7 @@ def _delete_branch(
     if resp.status_code == 204:
         logger.debug("Deleted branch %r on %s.", branch, owner)
     else:
-        logger.warning(
-            "Could not delete branch %r on %s: HTTP %s", branch, owner, resp.status_code
-        )
+        logger.warning("Could not delete branch %r on %s: HTTP %s", branch, owner, resp.status_code)
 
 
 def _sanitize_branch_name(text: str) -> str:
@@ -319,9 +313,7 @@ def publish_all_as_single_pr(
             fork_owner = _ensure_fork(client, token)
         except httpx.HTTPStatusError as exc:
             for t in tournaments:
-                result.errors.append(
-                    (t.event_id or "unknown", f"Fork creation failed: {exc}")
-                )
+                result.errors.append((t.event_id or "unknown", f"Fork creation failed: {exc}"))
             return result
 
         # ── Step 1: filter out already-published decks ──────────────────────
@@ -349,9 +341,7 @@ def publish_all_as_single_pr(
         except httpx.HTTPStatusError as exc:
             # Cannot even create the branch — abort everything
             for t in new_tournaments:
-                result.errors.append(
-                    (t.event_id or "unknown", f"Branch creation failed: {exc}")
-                )
+                result.errors.append((t.event_id or "unknown", f"Branch creation failed: {exc}"))
             return result
 
         # ── Step 4: commit each deck file to the fork ────────────────────────

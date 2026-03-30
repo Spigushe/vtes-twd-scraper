@@ -78,27 +78,19 @@ def run(args: argparse.Namespace) -> int:
                     break
 
             if not forum_post_url:
-                console.print(
-                    f"[yellow]─[/yellow] {yaml_path.name}  no forum_post_url, skipping"
-                )
+                console.print(f"[yellow]─[/yellow] {yaml_path.name}  no forum_post_url, skipping")
                 skipped += 1
                 continue
 
-            tournament = extract_twd_from_thread(
-                client, forum_post_url, delay=args.delay
-            )
+            tournament = extract_twd_from_thread(client, forum_post_url, delay=args.delay)
             if tournament is None:
-                console.print(
-                    f"[red]✗[/red] {yaml_path.name}  parse failed for {forum_post_url}"
-                )
+                console.print(f"[red]✗[/red] {yaml_path.name}  parse failed for {forum_post_url}")
                 logger.debug("No tournament returned for %s", forum_post_url)
                 failed += 1
                 continue
 
             try:
-                path = write_tournament_yaml(
-                    tournament, args.output_dir, overwrite=True
-                )
+                path = write_tournament_yaml(tournament, args.output_dir, overwrite=True)
                 console.print(f"[green]✓[/green] {path.name}  {tournament.name}")
                 written += 1
 

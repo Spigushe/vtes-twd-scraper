@@ -68,10 +68,7 @@ def register(sub: argparse._SubParsersAction) -> None:
         type=int,
         default=None,
         dest="last_page",
-        help=(
-            "Last forum index page to scrape, 0-indexed inclusive "
-            "(default: scrape all pages)."
-        ),
+        help=("Last forum index page to scrape, 0-indexed inclusive (default: scrape all pages)."),
     )
     p.add_argument(
         "--delay",
@@ -162,9 +159,7 @@ def run(args: argparse.Namespace) -> int:
                 changes_required_dir.mkdir(parents=True, exist_ok=True)
                 path = changes_required_dir / tournament.yaml_filename
                 try:
-                    path.write_text(
-                        tournament_to_yaml_str(tournament), encoding="utf-8"
-                    )
+                    path.write_text(tournament_to_yaml_str(tournament), encoding="utf-8")
                     console.print(
                         f"[yellow]⚠[/yellow] {path.name}  {tournament.name}"
                         "  [dim](changes required)[/dim]"
@@ -188,9 +183,7 @@ def run(args: argparse.Namespace) -> int:
                     stale = changes_required_dir / tournament.yaml_filename
                     if stale.exists():
                         stale.unlink()
-                        console.print(
-                            f"[dim]  removed stale changes_required/{stale.name}[/dim]"
-                        )
+                        console.print(f"[dim]  removed stale changes_required/{stale.name}[/dim]")
                 except FileExistsError as exc:
                     logger.debug("%s", exc)
                     skipped += 1

@@ -90,9 +90,7 @@ class TestSplitDate:
 
 class TestParseCryptLine:
     def test_valid_line(self):
-        card = _parse_crypt_line(
-            "2x Nathan Turner      4 PRO ani                 Gangrel:6"
-        )
+        card = _parse_crypt_line("2x Nathan Turner      4 PRO ani                 Gangrel:6")
         assert card is not None
         assert card.name == "Nathan Turner"
         assert card.count == 2
@@ -112,9 +110,7 @@ class TestParseCryptLine:
         assert card.comment == "some note"
 
     def test_with_title(self):
-        card = _parse_crypt_line(
-            "1x Tara              6 cel POT PRE prince       Brujah:5"
-        )
+        card = _parse_crypt_line("1x Tara              6 cel POT PRE prince       Brujah:5")
         assert card is not None
         assert card.title == "prince"
         assert card.clan == "Brujah"

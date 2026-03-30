@@ -83,11 +83,7 @@ def _parse_header_lenient(lines: list[str]) -> dict:
             vp_comment = line.lstrip("- ").strip()
             continue
         # Stop at deck metadata
-        if (
-            DECK_NAME_RE.match(line)
-            or CREATED_BY_RE.match(line)
-            or DESCRIPTION_RE.match(line)
-        ):
+        if DECK_NAME_RE.match(line) or CREATED_BY_RE.match(line) or DESCRIPTION_RE.match(line):
             break
 
         unlabeled.append(line)

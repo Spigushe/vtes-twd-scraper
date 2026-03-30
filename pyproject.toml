@@ -80,8 +80,6 @@ testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
-asyncio_mode = "auto"
-asyncio_default_fixture_loop_scope = "function"
 filterwarnings = [
     "ignore::DeprecationWarning",
     "ignore::PendingDeprecationWarning",
@@ -91,7 +89,7 @@ addopts = [
     "--strict-markers",
     "--tb=short",
     # Configuration coverage par défaut (optionnel)
-    "--cov=app",
+    "--cov=vtes_scraper",
     "--cov-report=term-missing",
     "--cov-report=html",
 ]

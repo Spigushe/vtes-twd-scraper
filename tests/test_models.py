@@ -134,9 +134,7 @@ class TestRoundsFormat:
 
 class TestEventId:
     def test_derived_from_url(self):
-        t = _make_tournament(
-            event_url="https://www.vekn.net/event-calendar/event/12345"
-        )
+        t = _make_tournament(event_url="https://www.vekn.net/event-calendar/event/12345")
         assert t.event_id == 12345
         assert isinstance(t.event_id, int)
 
@@ -146,14 +144,10 @@ class TestEventId:
 
     def test_non_canonical_url_normalised(self):
         """A non-canonical vekn URL containing '/event/<id>' is rewritten."""
-        t = _make_tournament(
-            event_url="https://www.vekn.net/player-registry/event/12345"
-        )
+        t = _make_tournament(event_url="https://www.vekn.net/player-registry/event/12345")
         assert t.event_id == 12345
         assert t.event_url == "https://www.vekn.net/event-calendar/event/12345"
 
     def test_canonical_url_unchanged(self):
-        t = _make_tournament(
-            event_url="https://www.vekn.net/event-calendar/event/12345"
-        )
+        t = _make_tournament(event_url="https://www.vekn.net/event-calendar/event/12345")
         assert t.event_url == "https://www.vekn.net/event-calendar/event/12345"

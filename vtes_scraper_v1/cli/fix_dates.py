@@ -130,9 +130,7 @@ def run(args: argparse.Namespace) -> int:
             try:
                 calendar_date = fetch_event_date(client, event_url, delay=args.delay)
             except Exception as exc:
-                console.print(
-                    f"[red]✗[/red] {path.name}: HTTP error fetching {event_url} — {exc}"
-                )
+                console.print(f"[red]✗[/red] {path.name}: HTTP error fetching {event_url} — {exc}")
                 logger.debug("Stack trace:", exc_info=True)
                 failed += 1
                 continue
@@ -145,9 +143,7 @@ def run(args: argparse.Namespace) -> int:
                 continue
 
             if current == calendar_date:
-                console.print(
-                    f"[dim]·[/dim] {path.name}: date already correct ({calendar_date})"
-                )
+                console.print(f"[dim]·[/dim] {path.name}: date already correct ({calendar_date})")
                 unchanged += 1
                 continue
 

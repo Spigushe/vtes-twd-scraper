@@ -64,9 +64,7 @@ def _load_coercions(output_dir: Path) -> dict[str, dict[str, int | str]]:
     if not path.exists():
         return {}
     try:
-        raw: dict[str, dict[str, int | str]] = json.loads(
-            path.read_text(encoding="utf-8")
-        )
+        raw: dict[str, dict[str, int | str]] = json.loads(path.read_text(encoding="utf-8"))
         # Migrate any legacy string vekn_number values to int.
         for entry in raw.values():
             if isinstance(entry.get("vekn_number"), str):
@@ -76,9 +74,7 @@ def _load_coercions(output_dir: Path) -> dict[str, dict[str, int | str]]:
         return {}
 
 
-def _save_coercions(
-    output_dir: Path, coercions: dict[str, dict[str, int | str]]
-) -> None:
+def _save_coercions(output_dir: Path, coercions: dict[str, dict[str, int | str]]) -> None:
     """Persist *coercions* to *output_dir*/coercions.json (sorted keys, pretty-printed)."""
     path = output_dir / _COERCIONS_FILENAME
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -238,9 +234,7 @@ def run(args: argparse.Namespace) -> int:
 
     # Collect all .yaml files, excluding the errors/ subtree
     errors_dir = output_dir / "errors"
-    yaml_files = [
-        p for p in output_dir.rglob("*.yaml") if not p.is_relative_to(errors_dir)
-    ]
+    yaml_files = [p for p in output_dir.rglob("*.yaml") if not p.is_relative_to(errors_dir)]
     if check_unknowns:
         yaml_files.extend(errors_dir.rglob("*.yaml") if errors_dir.exists() else [])
 
@@ -294,9 +288,7 @@ def run(args: argparse.Namespace) -> int:
                     try:
                         calendar_date = fetch_event_date(client, event_url, delay=delay)
                     except Exception as exc:
-                        logger.warning(
-                            "Could not fetch calendar date for %s: %s", path.name, exc
-                        )
+                        logger.warning("Could not fetch calendar date for %s: %s", path.name, exc)
 
             has_error = False
             errs = error_types(data, calendar_date=calendar_date)
@@ -340,17 +332,12 @@ def run(args: argparse.Namespace) -> int:
             if path.is_relative_to(errors_dir):
                 date_start = data.get("date_start")
                 if isinstance(date_start, date):
-                    subdir = (
-                        output_dir
-                        / f"{date_start.year:04d}"
-                        / f"{date_start.month:02d}"
-                    )
+                    subdir = output_dir / f"{date_start.year:04d}" / f"{date_start.month:02d}"
                     subdir.mkdir(parents=True, exist_ok=True)
                     dest = subdir / path.name
                     shutil.move(str(path), dest)
                     console.print(
-                        f"[green]↩[/green] {path.name}  recovered"
-                        f" → {dest.relative_to(output_dir)}"
+                        f"[green]↩[/green] {path.name}  recovered → {dest.relative_to(output_dir)}"
                     )
             logger.debug("OK  %s", path.name)
             valid += 1

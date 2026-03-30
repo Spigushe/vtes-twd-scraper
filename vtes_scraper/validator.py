@@ -138,9 +138,7 @@ def enrich_crypt_cards(deck: Deck_Dict) -> list[str]:
             continue
 
         best = (
-            _pick_best_crypt_version(versions, fixed_groups)
-            if len(versions) > 1
-            else versions[0]
+            _pick_best_crypt_version(versions, fixed_groups) if len(versions) > 1 else versions[0]
         )
 
         changed: list[str] = []
@@ -187,9 +185,7 @@ def fix_card_sections(deck: Deck_Dict) -> list[str]:
             if expected is None or expected == section_name:
                 all_cards.append((section_name, card))
             else:
-                fixes.append(
-                    f"  {card_name!r}: {section_name!r} → {expected!r}"
-                )
+                fixes.append(f"  {card_name!r}: {section_name!r} → {expected!r}")
                 all_cards.append((expected, card))
                 any_moved = True
 
@@ -213,9 +209,7 @@ def fix_card_sections(deck: Deck_Dict) -> list[str]:
     for section_name in sorted(sections_map, key=_order):
         cards = sections_map[section_name]
         count = sum(int(c.get("count", 0)) for c in cards)
-        new_sections.append(
-            {"name": section_name, "count": count, "cards": cards}
-        )
+        new_sections.append({"name": section_name, "count": count, "cards": cards})
 
     deck["library_sections"] = new_sections
     if "library_count" in deck:
@@ -268,12 +262,9 @@ def error_types(data: dict, calendar_date: date | None = None) -> list[str]:
         groupings = {
             card["grouping"]
             for card in deck["crypt"]
-            if isinstance(card, dict)
-            and card.get("grouping") not in (None, "ANY")
+            if isinstance(card, dict) and card.get("grouping") not in (None, "ANY")
         }
-        if len(groupings) > 2 or (
-            len(groupings) == 2 and max(groupings) - min(groupings) != 1
-        ):
+        if len(groupings) > 2 or (len(groupings) == 2 and max(groupings) - min(groupings) != 1):
             errors.append("illegal_crypt")
     if not deck.get("library_sections"):
         errors.append("empty_library")
@@ -282,9 +273,7 @@ def error_types(data: dict, calendar_date: date | None = None) -> list[str]:
     if deck:
         crypt = deck.get("crypt") or []
         if crypt and deck.get("crypt_count") is not None:
-            expected_crypt = sum(
-                card.get("count", 0) for card in crypt if isinstance(card, dict)
-            )
+            expected_crypt = sum(card.get("count", 0) for card in crypt if isinstance(card, dict))
             if deck["crypt_count"] != expected_crypt:
                 errors.append("crypt_count_mismatch")
 
@@ -295,9 +284,7 @@ def error_types(data: dict, calendar_date: date | None = None) -> list[str]:
             section_cards = section.get("cards") or []
             if section.get("count") is not None and section_cards:
                 expected_section = sum(
-                    card.get("count", 0)
-                    for card in section_cards
-                    if isinstance(card, dict)
+                    card.get("count", 0) for card in section_cards if isinstance(card, dict)
                 )
                 if section["count"] != expected_section:
                     errors.append("library_section_count_mismatch")
@@ -305,9 +292,7 @@ def error_types(data: dict, calendar_date: date | None = None) -> list[str]:
 
         if library_sections and deck.get("library_count") is not None:
             expected_library = sum(
-                section.get("count", 0)
-                for section in library_sections
-                if isinstance(section, dict)
+                section.get("count", 0) for section in library_sections if isinstance(section, dict)
             )
             if deck["library_count"] != expected_library:
                 errors.append("library_count_mismatch")

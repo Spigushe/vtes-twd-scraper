@@ -269,9 +269,7 @@ class TestScrapeRun:
         with tempfile.TemporaryDirectory() as tmpdir:
             coercions_path = Path(tmpdir) / "coercions.json"
             coercions_path.write_text(
-                json.dumps(
-                    {"Jane Doe": {"winner": "Jane Doe", "vekn_number": 3940009}}
-                ),
+                json.dumps({"Jane Doe": {"winner": "Jane Doe", "vekn_number": 3940009}}),
                 encoding="utf-8",
             )
             args = _scrape_namespace(output_dir=Path(tmpdir))

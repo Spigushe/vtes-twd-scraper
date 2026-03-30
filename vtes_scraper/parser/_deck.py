@@ -24,9 +24,7 @@ def _parse_deck_block(lines: list[str]) -> Deck:
     library_sections: list[LibrarySection] = []
 
     # Lines before the Crypt header = deck metadata (Deck Name, Author, Description)
-    crypt_header_idx = next(
-        (i for i, line in enumerate(lines) if CRYPT_HEADER_RE.search(line)), 0
-    )
+    crypt_header_idx = next((i for i, line in enumerate(lines) if CRYPT_HEADER_RE.search(line)), 0)
     _collecting_description = False
     for line in lines[:crypt_header_idx]:
         s = line.strip()

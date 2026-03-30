@@ -113,9 +113,7 @@ class TestPublishCommand:
                 include_pre_2020=False,
                 verbose=False,
             )
-            with patch(
-                "vtes_scraper.cli.publish.publish_all_as_single_pr", return_value=result
-            ):
+            with patch("vtes_scraper.cli.publish.publish_all_as_single_pr", return_value=result):
                 ret = publish_cmd.run(args)
             assert ret == 0
 
@@ -136,9 +134,7 @@ class TestPublishCommand:
                 include_pre_2020=False,
                 verbose=False,
             )
-            with patch(
-                "vtes_scraper.cli.publish.publish_all_as_single_pr", return_value=result
-            ):
+            with patch("vtes_scraper.cli.publish.publish_all_as_single_pr", return_value=result):
                 ret = publish_cmd.run(args)
             assert ret == 0
 
@@ -163,9 +159,7 @@ class TestPublishCommand:
                 include_pre_2020=False,
                 verbose=False,
             )
-            with patch(
-                "vtes_scraper.cli.publish.publish_all_as_single_pr", return_value=result
-            ):
+            with patch("vtes_scraper.cli.publish.publish_all_as_single_pr", return_value=result):
                 ret = publish_cmd.run(args)
             assert ret == 1
 
@@ -186,9 +180,7 @@ class TestPublishCommand:
                 include_pre_2020=False,
                 verbose=False,
             )
-            with patch(
-                "vtes_scraper.cli.publish.publish_all_as_single_pr", return_value=result
-            ):
+            with patch("vtes_scraper.cli.publish.publish_all_as_single_pr", return_value=result):
                 ret = publish_cmd.run(args)
             assert ret == 0
 
@@ -242,9 +234,7 @@ class TestPublishCommand:
         t = _make_tournament()
         result = BatchPRResult(pr_url="https://github.com/pr/1", published=["9999"])
         with tempfile.TemporaryDirectory() as tmpdir:
-            path = publish_cmd._write_publish_report(
-                result, Path(tmpdir), "2023-03-25", [t]
-            )
+            path = publish_cmd._write_publish_report(result, Path(tmpdir), "2023-03-25", [t])
             assert path.exists()
             content = path.read_text()
             assert "https://github.com/pr/1" in content
@@ -252,18 +242,14 @@ class TestPublishCommand:
     def test_write_publish_report_skipped_all(self):
         result = BatchPRResult(skipped_all=True)
         with tempfile.TemporaryDirectory() as tmpdir:
-            path = publish_cmd._write_publish_report(
-                result, Path(tmpdir), "2023-03-25", []
-            )
+            path = publish_cmd._write_publish_report(result, Path(tmpdir), "2023-03-25", [])
             content = path.read_text()
             assert "already present on master" in content
 
     def test_write_publish_report_no_pr(self):
         result = BatchPRResult()
         with tempfile.TemporaryDirectory() as tmpdir:
-            path = publish_cmd._write_publish_report(
-                result, Path(tmpdir), "2023-03-25", []
-            )
+            path = publish_cmd._write_publish_report(result, Path(tmpdir), "2023-03-25", [])
             content = path.read_text()
             assert "No PR opened" in content
 
@@ -274,17 +260,13 @@ class TestPublishCommand:
         )
         t = _make_tournament()
         with tempfile.TemporaryDirectory() as tmpdir:
-            path = publish_cmd._write_publish_report(
-                result, Path(tmpdir), "2023-03-25", [t]
-            )
+            path = publish_cmd._write_publish_report(result, Path(tmpdir), "2023-03-25", [t])
             content = path.read_text()
             assert "bad_id" in content
 
     def test_write_publish_report_with_skipped(self):
         result = BatchPRResult(skipped=["8888"])
         with tempfile.TemporaryDirectory() as tmpdir:
-            path = publish_cmd._write_publish_report(
-                result, Path(tmpdir), "2023-03-25", []
-            )
+            path = publish_cmd._write_publish_report(result, Path(tmpdir), "2023-03-25", [])
             content = path.read_text()
             assert "8888" in content

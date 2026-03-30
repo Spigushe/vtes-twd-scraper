@@ -20,9 +20,7 @@ class CryptCard(BaseModel):
     disciplines: str  # raw string, e.g. "PRO ani cel for"
     title: str | None = None  # e.g. "Primogen" (not always present)
     clan: str
-    grouping: (
-        int | str
-    )  # int for normal groups (1–8); "ANY" for group-independent cards
+    grouping: int | str  # int for normal groups (1–8); "ANY" for group-independent cards
     comment: str | None = None  # after ' -- '
 
 
@@ -102,9 +100,7 @@ class Tournament(BaseModel):
             match = re.search(r"/event/(\d+)", self.event_url)
             if match:
                 self.event_id = int(match.group(1))
-                self.event_url = (
-                    f"https://www.vekn.net/event-calendar/event/{self.event_id}"
-                )
+                self.event_url = f"https://www.vekn.net/event-calendar/event/{self.event_id}"
         return self
 
     @field_validator("event_id", mode="before")
@@ -119,9 +115,7 @@ class Tournament(BaseModel):
     @classmethod
     def validate_rounds_format(cls, v: str) -> str:
         if not re.fullmatch(r"\d+R\+F", v):
-            raise ValueError(
-                f"rounds_format must match 'NR+F' (e.g. '3R+F'), got: '{v}'"
-            )
+            raise ValueError(f"rounds_format must match 'NR+F' (e.g. '3R+F'), got: '{v}'")
         return v
 
     @field_validator("vekn_number", mode="before")

@@ -104,9 +104,7 @@ _SKIP_SLUGS = {
 # ---------------------------------------------------------------------------
 
 
-def _get(
-    client: httpx.Client, url: str, delay: float = DEFAULT_DELAY_SECONDS
-) -> BeautifulSoup:
+def _get(client: httpx.Client, url: str, delay: float = DEFAULT_DELAY_SECONDS) -> BeautifulSoup:
     """Fetch a URL and return parsed HTML. Raises on HTTP errors."""
     logger.debug("GET %s", url)
     response = client.get(url, follow_redirects=True)
@@ -222,12 +220,8 @@ def iter_thread_urls(
 
     while True:
         limitstart = page * TOPICS_PER_PAGE
-        url = (
-            FORUM_INDEX if limitstart == 0 else f"{FORUM_INDEX}?limitstart={limitstart}"
-        )
-        logger.info(
-            "Scraping forum index page %d (limitstart=%d).", page + 1, limitstart
-        )
+        url = FORUM_INDEX if limitstart == 0 else f"{FORUM_INDEX}?limitstart={limitstart}"
+        logger.info("Scraping forum index page %d (limitstart=%d).", page + 1, limitstart)
         soup = _get(client, url, delay)
 
         # Collect all <a> tags whose href matches a clean thread URL pattern
@@ -341,9 +335,7 @@ def _extract_twd_fast(
         return None
 
     if not _is_valid_winner_name(tournament.winner):
-        logger.warning(
-            "Garbled winner name %r in %s — skipping", tournament.winner, thread_url
-        )
+        logger.warning("Garbled winner name %r in %s — skipping", tournament.winner, thread_url)
         return None
 
     return tournament
@@ -392,9 +384,7 @@ def _extract_twd_slow(
             try:
                 tournament = parse_twd_text(raw_text, forum_post_url=thread_url)
             except (ValueError, Exception) as exc:
-                logger.debug(
-                    "Post %d on page %d not parseable: %s", post_idx, page + 1, exc
-                )
+                logger.debug("Post %d on page %d not parseable: %s", post_idx, page + 1, exc)
                 continue
 
             if not _is_valid_winner_name(tournament.winner):
@@ -410,9 +400,7 @@ def _extract_twd_slow(
             return tournament
 
         if not found_new:
-            logger.info(
-                "No new posts on page %d of %s, stopping.", page + 1, thread_url
-            )
+            logger.info("No new posts on page %d of %s, stopping.", page + 1, thread_url)
             break
 
         page += 1
@@ -545,9 +533,7 @@ def _name_without_digits(name: str) -> str:
 
 def _name_without_accents(name: str) -> str:
     """Return *name* with diacritics and non-word/non-space characters stripped."""
-    ascii_name = (
-        unicodedata.normalize("NFD", name).encode("ascii", "ignore").decode("ascii")
-    )
+    ascii_name = unicodedata.normalize("NFD", name).encode("ascii", "ignore").decode("ascii")
     return re.sub(r"\s+", " ", re.sub(r"[^\w\s]", "", ascii_name)).strip()
 
 
@@ -574,9 +560,7 @@ def _strip_accents_lower(s: str) -> str:
 
 def _name_similarity(a: str, b: str) -> float:
     """Return SequenceMatcher ratio between the accent-stripped lower-case forms of *a* and *b*."""
-    return SequenceMatcher(
-        None, _strip_accents_lower(a), _strip_accents_lower(b)
-    ).ratio()
+    return SequenceMatcher(None, _strip_accents_lower(a), _strip_accents_lower(b)).ratio()
 
 
 def fetch_player(
@@ -659,9 +643,7 @@ def fetch_player(
         # accents) while our query string is NFC, making the plain .lower() comparison
         # fail despite the names being canonically identical.
         name_nfc = unicodedata.normalize("NFC", name).lower()
-        nfc_match = [
-            r for r in results if unicodedata.normalize("NFC", r[0]).lower() == name_nfc
-        ]
+        nfc_match = [r for r in results if unicodedata.normalize("NFC", r[0]).lower() == name_nfc]
         if len(nfc_match) == 1:
             return nfc_match[0]
 
@@ -678,11 +660,7 @@ def fetch_player(
         # Only accepted when exactly one result scores at or above the threshold so that
         # genuinely ambiguous cases (two different "Rafael Barbosa X" members) are still
         # skipped.
-        similar = [
-            r
-            for r in results
-            if _name_similarity(name, r[0]) >= _NAME_SIMILARITY_THRESHOLD
-        ]
+        similar = [r for r in results if _name_similarity(name, r[0]) >= _NAME_SIMILARITY_THRESHOLD]
         if len(similar) == 1:
             logger.debug(
                 "Player %r matched by similarity to %r (%.2f)",
@@ -762,9 +740,7 @@ def resolve_winner(
         try:
             result = fetch_player(client, clean_bracket, delay=delay)
         except Exception as exc:
-            logger.warning(
-                "fetch_player (bracket-stripped) failed for %r: %s", clean_bracket, exc
-            )
+            logger.warning("fetch_player (bracket-stripped) failed for %r: %s", clean_bracket, exc)
         if result:
             return _store(*result)
         clean = clean_bracket  # subsequent steps use the bracket-stripped form as base
@@ -778,9 +754,7 @@ def resolve_winner(
         try:
             result = fetch_player(client, no_digits, delay=delay)
         except Exception as exc:
-            logger.warning(
-                "fetch_player (digit-stripped) failed for %r: %s", no_digits, exc
-            )
+            logger.warning("fetch_player (digit-stripped) failed for %r: %s", no_digits, exc)
         if result:
             return _store(*result)
 
@@ -853,9 +827,7 @@ def scrape_forum(
                                 calendar_winner,
                                 tournament.event_url,
                             )
-                            tournament = tournament.model_copy(
-                                update={"winner": calendar_winner}
-                            )
+                            tournament = tournament.model_copy(update={"winner": calendar_winner})
                     except Exception as exc:
                         logger.warning(
                             "Could not fetch calendar winner for %s: %s",
