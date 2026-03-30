@@ -6,10 +6,6 @@ players_count: 10
 winner: Tiago Honorato de Castro Ramos
 vekn_number: 6040022
 event_url: https://www.vekn.net/event-calendar/event/13135
-event_id: 13135
-vp_comment: 1GW4vp + 4vp in final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82868-twd-todo-carnaval-tem-seu-fim-vila-velha-brazil-07-03-26
 deck:
   name: The Unnamed's Little Beast
   created_by: Tiago Honorato de Castro Ramos (VEKN
@@ -115,3 +111,7 @@ deck:
     cards:
     - count: 3
       name: Form of Mist
+event_id: 13135
+vp_comment: 1GW4vp + 4vp in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82868-twd-todo-carnaval-tem-seu-fim-vila-velha-brazil-07-03-26

@@ -6,10 +6,6 @@ players_count: 24
 winner: Jorge Ramos
 vekn_number: 3260057
 event_url: https://www.vekn.net/event-calendar/event/12598
-event_id: 12598
-vp_comment: 1GW6.5VP + 2.5VP in the final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82865-twd-torneio-do-1-aniversario-da-comunidade-vtes-almada-friends
 deck:
   name: Split the Corpses
   created_by: Jorge Ramos
@@ -120,3 +116,7 @@ deck:
     cards:
     - count: 2
       name: Unmasking, The
+event_id: 12598
+vp_comment: 1GW6.5VP + 2.5VP in the final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82865-twd-torneio-do-1-aniversario-da-comunidade-vtes-almada-friends

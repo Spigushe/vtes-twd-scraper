@@ -6,9 +6,6 @@ players_count: 12
 winner: Otso Saariluoma
 vekn_number: 3530054
 event_url: https://www.vekn.net/event-calendar/event/10546
-event_id: 10546
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82908-twd-battle-at-the-gasworks-1-albany-ny-march-21-2026
 deck:
   name: If Uballit, They Will Come
   created_by: Christopher Malec, with advice and assistance from Karl Schaefer
@@ -133,3 +130,6 @@ deck:
     cards:
     - count: 6
       name: Pass Through Shadow
+event_id: 10546
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82908-twd-battle-at-the-gasworks-1-albany-ny-march-21-2026
