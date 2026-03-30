@@ -69,7 +69,7 @@ pretty = true
 check_untyped_defs = true
 warn_return_any = true
 warn_redundant_casts = true
-html_report = "report/mypy"
+html_report = "reports/mypy"
 plugins = ["pydantic.mypy"]
 
 # ---------------------------------------------------------------------------
