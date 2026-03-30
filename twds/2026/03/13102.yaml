@@ -6,8 +6,6 @@ players_count: 16
 winner: Visnja Ilic
 vekn_number: 5940015
 event_url: https://www.vekn.net/event-calendar/event/13102
-event_id: 13102
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82910-political-struggle
 deck:
   name: Toreador G7
   created_by: Visnja Ilic
@@ -151,3 +149,5 @@ deck:
       name: Charismatic Aura
     - count: 6
       name: Majesty
+event_id: 13102
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82910-political-struggle

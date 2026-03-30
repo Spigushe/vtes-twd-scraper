@@ -6,8 +6,6 @@ players_count: 10
 winner: Italo Girianelli Neto
 vekn_number: 6029999
 event_url: https://www.vekn.net/event-calendar/event/13107
-event_id: 13107
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82906-twd-ressaca-de-carnaval
 deck:
   name: Lutz Politics
   created_by: Italo Girianelli Neto
@@ -123,3 +121,5 @@ deck:
       name: Majesty
     - count: 3
       name: No Trace
+event_id: 13107
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82906-twd-ressaca-de-carnaval

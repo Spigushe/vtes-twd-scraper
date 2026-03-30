@@ -6,8 +6,6 @@ players_count: 20
 winner: Milos Krstic
 vekn_number: 5940007
 event_url: https://www.vekn.net/event-calendar/event/12986
-event_id: 12986
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82863-twd-bratislava-pile-of-corpses-sk-28-feb-2026
 deck:
   name: Homo homini lupus est
   created_by: Milos Krstic
@@ -166,3 +164,5 @@ deck:
       name: Form of Mist
     - count: 1
       name: Groundfighting
+event_id: 12986
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82863-twd-bratislava-pile-of-corpses-sk-28-feb-2026
