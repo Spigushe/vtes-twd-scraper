@@ -7,7 +7,7 @@ from unittest.mock import patch
 import pytest
 
 from vtes_scraper.cli import _build_parser, main
-from vtes_scraper.cli._common import _reconfigure_windows_stdio, setup_logging
+from vtes_scraper.cli._common import reconfigure_windows_stdio, setup_logging
 
 # ---------------------------------------------------------------------------
 # _build_parser / main
@@ -40,7 +40,7 @@ class TestMain:
     def test_main_dispatches_and_exits(self):
         with (
             patch("sys.argv", ["vtes-scraper", "scrape"]),
-            patch("vtes_scraper.cli._reconfigure_windows_stdio"),
+            patch("vtes_scraper.cli.reconfigure_windows_stdio"),
             patch("vtes_scraper.cli.scrape.run", return_value=0) as mock_run,
         ):
             with pytest.raises(SystemExit) as exc_info:
@@ -50,7 +50,7 @@ class TestMain:
 
 
 # ---------------------------------------------------------------------------
-# _reconfigure_windows_stdio
+# reconfigure_windows_stdio
 # ---------------------------------------------------------------------------
 
 
@@ -61,7 +61,7 @@ class TestReconfigureWindowsStdio:
         original_stdout = real_sys.stdout
         with patch("vtes_scraper.cli._common.sys") as mock_sys:
             mock_sys.platform = "linux"
-            _reconfigure_windows_stdio()
+            reconfigure_windows_stdio()
         # Real sys.stdout must be untouched
         assert real_sys.stdout is original_stdout
 
@@ -74,7 +74,7 @@ class TestReconfigureWindowsStdio:
             mock_sys.platform = "win32"
             mock_sys.stdout = fake_stdout
             mock_sys.stderr = fake_stderr
-            _reconfigure_windows_stdio()
+            reconfigure_windows_stdio()
             # After reconfiguration, mock_sys.stdout should be a new TextIOWrapper
             assert isinstance(mock_sys.stdout, io.TextIOWrapper)
             assert mock_sys.stdout is not fake_stdout
@@ -87,7 +87,7 @@ class TestReconfigureWindowsStdio:
             mock_sys.stdout = no_buffer_stdout
             mock_sys.stderr = no_buffer_stderr
             # Should not raise even without .buffer
-            _reconfigure_windows_stdio()
+            reconfigure_windows_stdio()
             assert isinstance(mock_sys.stdout, io.StringIO)
 
 

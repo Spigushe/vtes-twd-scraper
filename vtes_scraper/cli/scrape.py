@@ -13,11 +13,12 @@ import argparse
 import json
 import logging
 from pathlib import Path
+from typing import Any, cast
 
 import httpx
 
-from vtes_scraper.cli._common import console, setup_logging
-from vtes_scraper.models import Tournament
+from vtes_scraper.cli._common import SubParsersAction, console, setup_logging
+from vtes_scraper.models import Deck_Dict, Tournament, Tournament_Dict
 from vtes_scraper.output import write_tournament_yaml
 from vtes_scraper.output.yaml import tournament_to_yaml_str
 from vtes_scraper.scraper import (
@@ -29,37 +30,50 @@ from vtes_scraper.scraper import (
     fetch_player,
     scrape_forum,
 )
-from vtes_scraper.validator import enrich_crypt_cards, error_types, fix_card_sections
+from vtes_scraper.validator import (
+    enrich_crypt_cards,
+    error_types,
+    fix_card_sections,
+)
 
 logger = logging.getLogger(__name__)
 
 _COERCIONS_FILENAME = "coercions.json"
-
+_COERCIONS_TYPE = dict[str, dict[str, str | int]]
 
 # ---------------------------------------------------------------------------
 # Coercions cache
 # ---------------------------------------------------------------------------
 
 
-def _load_coercions(output_dir: Path) -> dict[str, dict[str, int | str]]:
+def _load_coercions(output_dir: Path) -> _COERCIONS_TYPE:
     """Load the coercions cache from *output_dir*/coercions.json."""
     path = output_dir / _COERCIONS_FILENAME
     if not path.exists():
         return {}
     try:
-        return json.loads(path.read_text(encoding="utf-8"))
+        return cast(
+            _COERCIONS_TYPE,
+            json.loads(  # pyright: ignore[reportUnknownMemberType]
+                path.read_text(encoding="utf-8")
+            ),
+        )
     except Exception:
         return {}
 
 
-def _save_coercions(
-    output_dir: Path, coercions: dict[str, dict[str, int | str]]
-) -> None:
+def _save_coercions(output_dir: Path, coercions: _COERCIONS_TYPE) -> None:
     """Persist *coercions* to *output_dir*/coercions.json."""
     path = output_dir / _COERCIONS_FILENAME
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
-        json.dumps(coercions, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        json.dumps(  # pyright: ignore[reportUnknownMemberType]
+            coercions,
+            ensure_ascii=False,
+            indent=2,
+            sort_keys=True,
+        )
+        + "\n",
         encoding="utf-8",
     )
 
@@ -69,19 +83,19 @@ def _save_coercions(
 # ---------------------------------------------------------------------------
 
 
-def _to_serializable(obj) -> dict:
+def _to_serializable(obj: Tournament) -> Tournament_Dict:
     """Convert a Pydantic model to a plain dict, filtering None values."""
 
-    def _filter_none(value: object) -> object:
+    def _filter_none(value: Any) -> Any:
         if isinstance(value, dict):
-            return {k: _filter_none(v) for k, v in value.items() if v is not None}
+            d = cast(dict[str, Any], value)
+            return {k: _filter_none(v) for k, v in d.items() if v is not None}
         if isinstance(value, list):
-            return [_filter_none(item) for item in value]
+            lst = cast(list[Any], value)
+            return [_filter_none(item) for item in lst]
         return value
 
-    result = _filter_none(obj.model_dump())
-    assert isinstance(result, dict)
-    return result
+    return cast(Tournament_Dict, _filter_none(obj.model_dump()))
 
 
 # ---------------------------------------------------------------------------
@@ -136,7 +150,10 @@ def _lookup_player(
         entry = coercions[winner]
         return (
             tournament.model_copy(
-                update={"winner": entry["winner"], "vekn_number": entry["vekn_number"]}
+                update={
+                    "winner": entry["winner"],
+                    "vekn_number": entry["vekn_number"],
+                }
             ),
             False,
         )
@@ -149,8 +166,7 @@ def _lookup_player(
 
     if result is None:
         console.print(
-            f"[yellow]?[/yellow] {tournament.yaml_filename}"
-            f"  winner not found in VEKN: {winner!r}"
+            f"[yellow]?[/yellow] {tournament.yaml_filename}  winner not found in VEKN: {winner!r}"
         )
         return tournament, False
 
@@ -162,11 +178,12 @@ def _lookup_player(
             f" → {canonical_name!r}  (VEKN {vekn_number})"
         )
     coercions[winner] = {"winner": canonical_name, "vekn_number": vekn_number}
-    coercions[canonical_name] = {"winner": canonical_name, "vekn_number": vekn_number}
+    coercions[canonical_name] = {
+        "winner": canonical_name,
+        "vekn_number": vekn_number,
+    }
     return (
-        tournament.model_copy(
-            update={"winner": canonical_name, "vekn_number": vekn_number}
-        ),
+        tournament.model_copy(update={"winner": canonical_name, "vekn_number": vekn_number}),
         True,
     )
 
@@ -174,7 +191,7 @@ def _lookup_player(
 def _enrich_with_krcg(tournament: Tournament) -> Tournament:
     """Step 5: validate and enrich crypt and library cards via krcg."""
     data = _to_serializable(tournament)
-    deck_data = data.get("deck")
+    deck_data = cast(Deck_Dict, data.get("deck"))
     if not deck_data:
         return tournament
 
@@ -183,8 +200,7 @@ def _enrich_with_krcg(tournament: Tournament) -> Tournament:
 
     if crypt_fixes:
         console.print(
-            f"[cyan]⚙[/cyan] {tournament.yaml_filename}  crypt enriched:\n"
-            + "\n".join(crypt_fixes)
+            f"[cyan]⚙[/cyan] {tournament.yaml_filename}  crypt enriched:\n" + "\n".join(crypt_fixes)
         )
     if section_fixes:
         console.print(
@@ -233,7 +249,7 @@ def _validate_content(
 # ---------------------------------------------------------------------------
 
 
-def register(sub: argparse._SubParsersAction) -> None:
+def register(sub: SubParsersAction) -> None:
     p = sub.add_parser("scrape", help="Scrape the VEKN forum and write YAML files.")
     p.add_argument(
         "--output-dir",
@@ -256,10 +272,7 @@ def register(sub: argparse._SubParsersAction) -> None:
         type=int,
         default=None,
         dest="last_page",
-        help=(
-            "Last forum index page to scrape, 0-indexed inclusive "
-            "(default: scrape all pages)."
-        ),
+        help=("Last forum index page to scrape, 0-indexed inclusive (default: scrape all pages)."),
     )
     p.add_argument(
         "--delay",
@@ -314,8 +327,7 @@ def run(args: argparse.Namespace) -> int:
         ):
             if not tournament.event_id:
                 console.print(
-                    f"[yellow]─[/yellow] {tournament.name!r}"
-                    "  [dim](no event_id — skipped)[/dim]"
+                    f"[yellow]─[/yellow] {tournament.name!r}  [dim](no event_id — skipped)[/dim]"
                 )
                 skipped += 1
                 continue
@@ -342,9 +354,7 @@ def run(args: argparse.Namespace) -> int:
                 error_dir.mkdir(parents=True, exist_ok=True)
                 path = error_dir / tournament.yaml_filename
                 try:
-                    path.write_text(
-                        tournament_to_yaml_str(tournament), encoding="utf-8"
-                    )
+                    path.write_text(tournament_to_yaml_str(tournament), encoding="utf-8")
                     console.print(
                         f"[red]⚠[/red] {path.name}  {tournament.name}"
                         f"  [dim](errors: {', '.join(errors)})[/dim]"
@@ -358,9 +368,7 @@ def run(args: argparse.Namespace) -> int:
                 changes_required_dir.mkdir(parents=True, exist_ok=True)
                 path = changes_required_dir / tournament.yaml_filename
                 try:
-                    path.write_text(
-                        tournament_to_yaml_str(tournament), encoding="utf-8"
-                    )
+                    path.write_text(tournament_to_yaml_str(tournament), encoding="utf-8")
                     console.print(
                         f"[yellow]⚠[/yellow] {path.name}  {tournament.name}"
                         "  [dim](changes required)[/dim]"
@@ -383,9 +391,7 @@ def run(args: argparse.Namespace) -> int:
                     stale = changes_required_dir / tournament.yaml_filename
                     if stale.exists():
                         stale.unlink()
-                        console.print(
-                            f"[dim]  removed stale changes_required/{stale.name}[/dim]"
-                        )
+                        console.print(f"[dim]  removed stale changes_required/{stale.name}[/dim]")
                 except FileExistsError as exc:
                     logger.debug("%s", exc)
                     skipped += 1

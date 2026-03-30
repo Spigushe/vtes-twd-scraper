@@ -8,6 +8,8 @@ Submodules:
   _vekn   — VEKN event calendar and player registry lookups
 """
 
+import time  # Ensure time module is available for patching in tests
+
 from vtes_scraper.scraper._forum import (
     extract_twd_from_thread,
     iter_thread_urls,
@@ -17,21 +19,20 @@ from vtes_scraper.scraper._http import (
     DEFAULT_DELAY_SECONDS,
     HEADERS,
     _get,
-    _kunena_div_to_text,
+    kunena_div_to_text,
 )
 from vtes_scraper.scraper._icons import (
     ICON_DEFAULT,
     ICON_IDEA,
     ICON_MERGED,
     ICON_SOLVED,
-    _detect_topic_icon,
+    detect_topic_icon,
 )
 from vtes_scraper.scraper._vekn import (
     fetch_event_date,
     fetch_event_winner,
     fetch_player,
 )
-import time  # Ensure time module is available for patching in tests
 
 __all__ = [
     # Constants
@@ -43,9 +44,9 @@ __all__ = [
     "ICON_SOLVED",
     # HTTP helpers
     "_get",
-    "_kunena_div_to_text",
+    "kunena_div_to_text",
     # Icons
-    "_detect_topic_icon",
+    "detect_topic_icon",
     # Forum
     "extract_twd_from_thread",
     "iter_thread_urls",

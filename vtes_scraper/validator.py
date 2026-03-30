@@ -41,6 +41,14 @@ determines the error directory used by the CLI validate command.
 
 import logging
 from datetime import date
+from typing import cast
+
+from vtes_scraper._krcg_helper import (
+    TYPE_ORDER,
+    get_all_vamp_variants,
+    get_library_card_type,
+)
+from vtes_scraper.models import Crypt_Card_Dict, Deck_Dict
 
 _logger = logging.getLogger(__name__)
 
@@ -48,107 +56,10 @@ _logger = logging.getLogger(__name__)
 # krcg card-section validation helpers
 # ---------------------------------------------------------------------------
 
-_KRCG_LOADED: bool | None = None  # None = not yet attempted
 
-
-def _try_load_krcg() -> bool:
-    """
-    Attempt to load krcg VTES card data from the network.  Returns ``True`` if
-    the data is available.
-
-    The result is cached so the network round-trip only happens once per process.
-    Failures are logged at DEBUG level — callers should silently skip the check
-    when this returns ``False``.
-    """
-    global _KRCG_LOADED
-    if _KRCG_LOADED is not None:
-        return _KRCG_LOADED
-    try:
-        from krcg import vtes as _kv  # noqa: PLC0415
-
-        _kv.VTES.load()
-        _KRCG_LOADED = True
-    except Exception as exc:  # network error, package not installed, …
-        _logger.debug("krcg unavailable — card-section check skipped: %s", exc)
-        _KRCG_LOADED = False
-    return _KRCG_LOADED
-
-
-def _krcg_all_crypt_data(card_name: str) -> list[dict]:
-    """
-    Return krcg data for all relevant grouping versions of a crypt card by name.
-
-    When a vampire exists in multiple groupings (e.g. G5 and G6), each non-ADV
-    version is returned as a separate dict (for a non-ADV lookup), or each ADV
-    version (for an ADV lookup).  ADV and non-ADV are never mixed:
-
-    - ``"Xaviar"``       → only base (non-ADV) Xaviar versions
-    - ``"Xaviar (ADV)"`` → only ADV Xaviar versions
-
-    Returns an empty list if the card is not found in krcg.
-
-    Each returned dict contains:
-    - ``capacity``    - blood capacity (int)
-    - ``disciplines`` - space-separated discipline string, e.g. ``"PRO ani cel"``
-    - ``title``       - title string or ``None``
-    - ``clan``        - primary clan name string
-    - ``grouping``    - group number (int) or ``"ANY"`` for group-independent cards
-    """
-    try:
-        from krcg import vtes as _kv  # noqa: PLC0415
-
-        card = _kv.VTES[card_name]
-        if not card or not card.crypt:
-            return []
-
-        # Determine whether the scraped name is an ADV card. This is a heuristic but
-        # should be reliable since the presence of "(ADV)" in the name is a strong
-        # signal of the card's identity and krcg's data is consistent in this regard.
-        want_adv: bool = "(ADV)" in card_name
-
-        # Gather all variant IDs: the card itself plus all related grouping variants
-        all_ids: set[int] = {card.id}
-        all_ids.update(card.variants.values())
-
-        result: list[dict] = []
-        for cid in all_ids:
-            try:
-                c = _kv.VTES[cid]
-            except KeyError:
-                continue
-            if not c.crypt:
-                continue
-            # Skip variants that don't match the ADV/non-ADV kind of the lookup
-            if bool(c.adv) != want_adv:
-                continue
-            disciplines = " ".join(c.disciplines) if c.disciplines else ""
-            clan = c.clans[0] if c.clans else ""
-            raw_group = c.group
-            if not raw_group:
-                continue
-            if raw_group == "ANY":
-                grouping: int | str = "ANY"
-            else:
-                try:
-                    grouping = int(raw_group)
-                except TypeError, ValueError:
-                    continue
-            result.append(
-                {
-                    "capacity": c.capacity,
-                    "disciplines": disciplines,
-                    "title": c.title or None,
-                    "clan": clan,
-                    "grouping": grouping,
-                }
-            )
-
-        return result
-    except Exception:
-        return []
-
-
-def _pick_best_crypt_version(versions: list[dict], reference_groups: set[int]) -> dict:
+def _pick_best_crypt_version(
+    versions: list[Crypt_Card_Dict], reference_groups: set[int]
+) -> Crypt_Card_Dict:
     """
     Pick the grouping version that best fits the established group range.
 
@@ -180,7 +91,7 @@ def _pick_best_crypt_version(versions: list[dict], reference_groups: set[int]) -
     return int_versions[0]
 
 
-def enrich_crypt_cards(deck: dict) -> list[str]:
+def enrich_crypt_cards(deck: Deck_Dict) -> list[str]:
     """
     Enrich crypt card data using krcg card database.
 
@@ -201,21 +112,16 @@ def enrich_crypt_cards(deck: dict) -> list[str]:
     of the changes made (empty when no changes were needed or krcg is
     unavailable).
     """
-    if not _try_load_krcg():
+    crypt_raw = deck.get("crypt")
+    if not isinstance(crypt_raw, list) or not crypt_raw:
         return []
-
-    crypt = deck.get("crypt") or []
-    if not crypt:
-        return []
+    crypt = cast(list[Crypt_Card_Dict], crypt_raw)
 
     # Step 1: resolve all krcg versions for each card
-    all_versions: list[list[dict]] = []
+    all_versions: list[list[Crypt_Card_Dict]] = []
     for card in crypt:
-        if not isinstance(card, dict):
-            all_versions.append([])
-            continue
         card_name = str(card.get("name") or "")
-        all_versions.append(_krcg_all_crypt_data(card_name))
+        all_versions.append(get_all_vamp_variants(card_name))
 
     # Step 2: establish the group range from cards with exactly one version
     fixed_groups: set[int] = set()
@@ -228,7 +134,7 @@ def enrich_crypt_cards(deck: dict) -> list[str]:
     # Step 3: enrich each card using the best matching version
     fixes: list[str] = []
     for card, versions in zip(crypt, all_versions):
-        if not isinstance(card, dict) or not versions:
+        if not versions:
             continue
 
         best = (
@@ -249,24 +155,7 @@ def enrich_crypt_cards(deck: dict) -> list[str]:
     return fixes
 
 
-def _krcg_section(card_name: str) -> str | None:
-    """
-    Return the canonical section name for a library card according to krcg, or
-    ``None`` if the card is not in the database.
-
-    The section name is the card's types joined by ``"/"`` in alphabetical order,
-    matching krcg's ``TYPE_ORDER`` convention (e.g. ``"Action/Combat"``).
-    """
-    try:
-        from krcg import vtes as _kv  # noqa: PLC0415
-
-        card = _kv.VTES[card_name]
-        return "/".join(sorted(card.types))
-    except Exception:
-        return None
-
-
-def fix_card_sections(deck: dict) -> list[str]:
+def fix_card_sections(deck: Deck_Dict) -> list[str]:
     """
     Validate and fix library card sections using krcg card type data.
 
@@ -281,11 +170,6 @@ def fix_card_sections(deck: dict) -> list[str]:
     Returns a list of human-readable fix descriptions (empty when no changes
     were made or when krcg is unavailable).
     """
-    if not _try_load_krcg():
-        return []
-
-    from krcg import config as krcg_config  # noqa: PLC0415
-
     library_sections = deck.get("library_sections") or []
     if not library_sections:
         return []
@@ -299,11 +183,13 @@ def fix_card_sections(deck: dict) -> list[str]:
         section_name = str(section.get("name") or "")
         for card in list(section.get("cards") or []):
             card_name = str(card.get("name") or "")
-            expected = _krcg_section(card_name)
+            expected = get_library_card_type(card_name)
             if expected is None or expected == section_name:
                 all_cards.append((section_name, card))
             else:
-                fixes.append(f"  {card_name!r}: {section_name!r} → {expected!r}")
+                fixes.append(
+                    f"  {card_name!r}: {section_name!r} → {expected!r}"
+                )
                 all_cards.append((expected, card))
                 any_moved = True
 
@@ -311,7 +197,7 @@ def fix_card_sections(deck: dict) -> list[str]:
         return []
 
     # --- Pass 2: rebuild sections in TYPE_ORDER ---
-    type_order: list[str] = krcg_config.TYPE_ORDER
+    type_order: list[str] = TYPE_ORDER
 
     def _order(name: str) -> int:
         try:
@@ -327,7 +213,9 @@ def fix_card_sections(deck: dict) -> list[str]:
     for section_name in sorted(sections_map, key=_order):
         cards = sections_map[section_name]
         count = sum(int(c.get("count", 0)) for c in cards)
-        new_sections.append({"name": section_name, "count": count, "cards": cards})
+        new_sections.append(
+            {"name": section_name, "count": count, "cards": cards}
+        )
 
     deck["library_sections"] = new_sections
     if "library_count" in deck:
@@ -336,7 +224,7 @@ def fix_card_sections(deck: dict) -> list[str]:
     return fixes
 
 
-def parse_date_field(raw) -> date | None:
+def parse_date_field(raw: date | None) -> date | None:
     """Coerce whatever ruamel.yaml hands back for date_start into a date."""
     if raw is None:
         return None
@@ -380,7 +268,8 @@ def error_types(data: dict, calendar_date: date | None = None) -> list[str]:
         groupings = {
             card["grouping"]
             for card in deck["crypt"]
-            if isinstance(card, dict) and card.get("grouping") not in (None, "ANY")
+            if isinstance(card, dict)
+            and card.get("grouping") not in (None, "ANY")
         }
         if len(groupings) > 2 or (
             len(groupings) == 2 and max(groupings) - min(groupings) != 1

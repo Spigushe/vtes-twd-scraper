@@ -1,0 +1,30 @@
+{
+    // Formatting — Black
+    "editor.formatOnSave": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    },
+    "black-formatter.args": [
+        "--line-length",
+        "80"
+    ],
+
+    // Type checking — Mypy
+    "python.analysis.typeCheckingMode": "standard",
+
+    // Search exclusions
+    "search.exclude": {
+        "**/vtes_scraper_v1/**": true
+    },
+    "files.exclude": {
+        "**/vtes_scraper_v1": false
+    },
+
+    // Testing — Pytest
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
+}

@@ -13,7 +13,7 @@ from vtes_scraper.models import (
     LibrarySection,
     Tournament,
 )
-from vtes_scraper.output._common import _date_subdir
+from vtes_scraper.output._common import date_subdir
 from vtes_scraper.output.txt import (
     _fmt_crypt_card,
     _fmt_date,
@@ -66,19 +66,19 @@ def _make_tournament(**kwargs) -> Tournament:
 
 
 # ---------------------------------------------------------------------------
-# _date_subdir
+# date_subdir
 # ---------------------------------------------------------------------------
 
 
 class TestDateSubdir:
     def test_returns_year_month_path(self):
         t = _make_tournament(date_start=date(2023, 3, 25))
-        result = _date_subdir(t)
+        result = date_subdir(t)
         assert result == Path("2023/03")
 
     def test_single_digit_month_padded(self):
         t = _make_tournament(date_start=date(2023, 1, 5))
-        result = _date_subdir(t)
+        result = date_subdir(t)
         assert result == Path("2023/01")
 
 
@@ -218,9 +218,7 @@ class TestFmtLibrarySection:
             name="Action",
             count=1,
             cards=[
-                LibraryCard(
-                    count=1, name="Anarch Free Press, The", comment="note here"
-                ),
+                LibraryCard(count=1, name="Anarch Free Press, The", comment="note here"),
             ],
         )
         text = _fmt_library_section(section)

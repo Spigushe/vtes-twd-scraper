@@ -1,5 +1,5 @@
 """
-Tests for topic icon detection (_detect_topic_icon) and the scrape CLI
+Tests for topic icon detection (detect_topic_icon) and the scrape CLI
 routing logic (idea=skip, merged→changes_required/, others→YYYY/MM/).
 """
 
@@ -18,7 +18,7 @@ from vtes_scraper.scraper import (
     ICON_IDEA,
     ICON_MERGED,
     ICON_SOLVED,
-    _detect_topic_icon,
+    detect_topic_icon,
 )
 
 # ---------------------------------------------------------------------------
@@ -61,30 +61,30 @@ def _make_soup(icon_stem: str | None, container: str = "div") -> BeautifulSoup:
 
 
 # ---------------------------------------------------------------------------
-# _detect_topic_icon
+# detect_topic_icon
 # ---------------------------------------------------------------------------
 
 
 class TestDetectTopicIcon:
     def test_idea_icon(self):
         soup = _make_soup("idea")
-        assert _detect_topic_icon(soup.find("a")) == ICON_IDEA
+        assert detect_topic_icon(soup.find("a")) == ICON_IDEA
 
     def test_merged_icon(self):
         soup = _make_soup("merged")
-        assert _detect_topic_icon(soup.find("a")) == ICON_MERGED
+        assert detect_topic_icon(soup.find("a")) == ICON_MERGED
 
     def test_solved_icon(self):
         soup = _make_soup("solved")
-        assert _detect_topic_icon(soup.find("a")) == ICON_SOLVED
+        assert detect_topic_icon(soup.find("a")) == ICON_SOLVED
 
     def test_default_icon(self):
         soup = _make_soup("default")
-        assert _detect_topic_icon(soup.find("a")) == ICON_DEFAULT
+        assert detect_topic_icon(soup.find("a")) == ICON_DEFAULT
 
     def test_no_icon_returns_none(self):
         soup = _make_soup(None)
-        assert _detect_topic_icon(soup.find("a")) is None
+        assert detect_topic_icon(soup.find("a")) is None
 
     def test_unrelated_image_returns_none(self):
         html = (
@@ -94,15 +94,15 @@ class TestDetectTopicIcon:
             "</div>"
         )
         soup = BeautifulSoup(html, "lxml")
-        assert _detect_topic_icon(soup.find("a")) is None
+        assert detect_topic_icon(soup.find("a")) is None
 
     def test_icon_in_tr_container(self):
         soup = _make_soup("merged", container="tr")
-        assert _detect_topic_icon(soup.find("a")) == ICON_MERGED
+        assert detect_topic_icon(soup.find("a")) == ICON_MERGED
 
     def test_icon_in_li_container(self):
         soup = _make_soup("idea", container="li")
-        assert _detect_topic_icon(soup.find("a")) == ICON_IDEA
+        assert detect_topic_icon(soup.find("a")) == ICON_IDEA
 
     def test_icon_outside_row_still_detected(self):
         """Falls back to link_tag.parent when no row container is found."""
@@ -113,7 +113,7 @@ class TestDetectTopicIcon:
             "</div>"
         )
         soup = BeautifulSoup(html, "lxml")
-        assert _detect_topic_icon(soup.find("a")) == ICON_SOLVED
+        assert detect_topic_icon(soup.find("a")) == ICON_SOLVED
 
 
 # ---------------------------------------------------------------------------
@@ -202,12 +202,8 @@ class TestScrapeCliRouting:
             verbose=False,
         )
         with (
-            patch.object(
-                scrape_mod, "scrape_forum", return_value=iter([(t, ICON_MERGED)])
-            ),
-            patch.object(
-                scrape_mod, "tournament_to_yaml_str", return_value="yaml: content\n"
-            ),
+            patch.object(scrape_mod, "scrape_forum", return_value=iter([(t, ICON_MERGED)])),
+            patch.object(scrape_mod, "tournament_to_yaml_str", return_value="yaml: content\n"),
         ):
             scrape_mod.run(args)
 
@@ -227,12 +223,8 @@ class TestScrapeCliRouting:
             verbose=False,
         )
         with (
-            patch.object(
-                scrape_mod, "scrape_forum", return_value=iter([(t, ICON_MERGED)])
-            ),
-            patch.object(
-                scrape_mod, "tournament_to_yaml_str", return_value="yaml: content\n"
-            ),
+            patch.object(scrape_mod, "scrape_forum", return_value=iter([(t, ICON_MERGED)])),
+            patch.object(scrape_mod, "tournament_to_yaml_str", return_value="yaml: content\n"),
             patch.object(scrape_mod, "write_tournament_yaml") as mock_write,
         ):
             scrape_mod.run(args)
@@ -256,12 +248,8 @@ class TestScrapeCliRouting:
             verbose=False,
         )
         with (
-            patch.object(
-                scrape_mod, "scrape_forum", return_value=iter([(t, ICON_MERGED)])
-            ),
-            patch.object(
-                scrape_mod, "tournament_to_yaml_str", return_value="new: content\n"
-            ),
+            patch.object(scrape_mod, "scrape_forum", return_value=iter([(t, ICON_MERGED)])),
+            patch.object(scrape_mod, "tournament_to_yaml_str", return_value="new: content\n"),
         ):
             scrape_mod.run(args)
 
@@ -330,9 +318,7 @@ class TestScrapeCliRouting:
         ):
             scrape_mod.run(args)
 
-        assert (
-            not stale.exists()
-        ), "stale changes_required file should have been deleted"
+        assert not stale.exists(), "stale changes_required file should have been deleted"
 
     @pytest.mark.parametrize("icon", [ICON_DEFAULT, ICON_SOLVED, None])
     def test_no_stale_file_is_fine(self, tmp_path, icon):
@@ -350,9 +336,7 @@ class TestScrapeCliRouting:
         )
         with (
             patch.object(scrape_mod, "scrape_forum", return_value=iter([(t, icon)])),
-            patch.object(
-                scrape_mod, "write_tournament_yaml", return_value=tmp_path / "x.yaml"
-            ),
+            patch.object(scrape_mod, "write_tournament_yaml", return_value=tmp_path / "x.yaml"),
         ):
             rc = scrape_mod.run(args)
 
@@ -419,12 +403,8 @@ class TestScrapeCliRouting:
             verbose=False,
         )
         with (
-            patch.object(
-                scrape_mod, "scrape_forum", return_value=iter([(t, ICON_DEFAULT)])
-            ),
-            patch.object(
-                scrape_mod, "write_tournament_yaml", side_effect=RuntimeError("boom")
-            ),
+            patch.object(scrape_mod, "scrape_forum", return_value=iter([(t, ICON_DEFAULT)])),
+            patch.object(scrape_mod, "write_tournament_yaml", side_effect=RuntimeError("boom")),
         ):
             rc = scrape_mod.run(args)
 

@@ -10,9 +10,10 @@ from urllib.parse import quote
 
 import httpx
 
-from vtes_scraper.scraper._http import DEFAULT_DELAY_SECONDS, VEKN_PLAYERS_URL, _get
+from vtes_scraper.scraper._http import DEFAULT_DELAY_SECONDS, VEKN_PLAYERS_URL, get_soup
 
 logger = logging.getLogger(__name__)
+JsonValue = str | int | float | bool | None | list["JsonValue"] | dict[str, "JsonValue"]
 
 
 def fetch_event_date(
@@ -32,18 +33,18 @@ def fetch_event_date(
     """
     from datetime import datetime
 
-    soup = _get(client, event_url, delay)
+    soup = get_soup(client, event_url, delay)
 
     # --- Strategy 1: JSON-LD ---
     for script in soup.find_all("script", type="application/ld+json"):
         try:
-            data = json.loads(script.string or "")
+            data: JsonValue = json.loads(script.string or "")
         except json.JSONDecodeError:
             continue
         except AttributeError:
             continue
         # data may be a single object or a list
-        items = data if isinstance(data, list) else [data]
+        items: list[JsonValue] = data if isinstance(data, list) else [data]
         for item in items:
             if not isinstance(item, dict):
                 continue
@@ -91,7 +92,7 @@ def fetch_event_winner(
     (``Pos.``, ``Pos``, ``Rank``, ``#``) and a player column (``Player``).
     Returns the player name at position ``1``, or ``None`` if not found.
     """
-    soup = _get(client, event_url, delay)
+    soup = get_soup(client, event_url, delay)
 
     for table in soup.find_all("table"):
         rows = table.find_all("tr")
@@ -142,7 +143,7 @@ def fetch_player(
         ``(player_name, vekn_number)`` if exactly one player is found, ``None`` otherwise.
     """
     url = f"{VEKN_PLAYERS_URL}?name={quote(name)}&sort=constructed"
-    soup = _get(client, url, delay)
+    soup = get_soup(client, url, delay)
 
     for table in soup.find_all("table"):
         rows = table.find_all("tr")
@@ -187,9 +188,7 @@ def fetch_player(
 
         # NFC-normalised match: the VEKN DB may return names in NFD form
         name_nfc = unicodedata.normalize("NFC", name).lower()
-        nfc_match = [
-            r for r in results if unicodedata.normalize("NFC", r[0]).lower() == name_nfc
-        ]
+        nfc_match = [r for r in results if unicodedata.normalize("NFC", r[0]).lower() == name_nfc]
         if len(nfc_match) == 1:
             return nfc_match[0]
 

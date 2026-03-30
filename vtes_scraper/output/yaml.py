@@ -5,10 +5,12 @@ from ruamel.yaml import YAML
 from ruamel.yaml.scalarstring import LiteralScalarString
 
 from vtes_scraper.models import Tournament
-from vtes_scraper.output._common import _date_subdir
+from vtes_scraper.output._common import date_subdir
+
+JsonValue = str | int | float | bool | None | list["JsonValue"] | dict[str, "JsonValue"]
 
 
-def _to_serializable(obj) -> dict:
+def _to_serializable(obj: Tournament) -> dict[str, JsonValue]:
     """Convert a Pydantic model to a plain dict, preserving Python native types.
 
     Uses model_dump() (not JSON round-trip) so that date objects remain as
@@ -16,7 +18,7 @@ def _to_serializable(obj) -> dict:
     (2026-03-15) rather than quoted strings ('2026-03-15').
     """
 
-    def _filter_none(value: object) -> object:
+    def _filter_none(value: JsonValue) -> JsonValue:
         if isinstance(value, dict):
             return {k: _filter_none(v) for k, v in value.items() if v is not None}
         if isinstance(value, list):
@@ -28,14 +30,20 @@ def _to_serializable(obj) -> dict:
     return result
 
 
-def _prepare_yaml_dict(tournament: Tournament) -> dict:
+def _prepare_yaml_dict(tournament: Tournament) -> dict[str, JsonValue]:
     """
     Build an ordered dict suitable for YAML output.
     Handles multiline description as a literal block scalar (|).
     """
     d = _to_serializable(tournament)
 
-    if "deck" in d and d["deck"] and "description" in d["deck"]:
+    if (
+        "deck" in d
+        and d["deck"]
+        and isinstance(d["deck"], dict)
+        and "description" in d["deck"]
+        and isinstance(d["deck"]["description"], str)
+    ):
         desc = d["deck"]["description"]
         if desc and "\n" in desc:
             d["deck"]["description"] = LiteralScalarString(desc)
@@ -51,7 +59,9 @@ def tournament_to_yaml_str(tournament: Tournament) -> str:
     yaml.width = 120
 
     buf = io.StringIO()
-    yaml.dump(_prepare_yaml_dict(tournament), buf)
+    yaml.dump(  # pyright: ignore[reportUnknownMemberType]
+        _prepare_yaml_dict(tournament), buf
+    )
     return buf.getvalue()
 
 
@@ -92,7 +102,7 @@ def write_tournament_yaml(
             )
         existing.unlink()
 
-    dest = output_dir / _date_subdir(tournament)
+    dest = output_dir / date_subdir(tournament)
     dest.mkdir(parents=True, exist_ok=True)
     path = dest / tournament.yaml_filename
     path.write_text(new_content, encoding="utf-8")

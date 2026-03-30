@@ -33,7 +33,7 @@ _ICON_SRC_MAP: tuple[tuple[str, str], ...] = (
 )
 
 
-def _detect_topic_icon(link_tag: Tag) -> str | None:
+def detect_topic_icon(link_tag: Tag) -> str | None:
     """
     Given a topic ``<a>`` tag from the forum index, detect its icon type.
 

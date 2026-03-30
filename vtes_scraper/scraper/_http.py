@@ -46,9 +46,7 @@ _SKIP_SLUGS = {
 # ---------------------------------------------------------------------------
 
 
-def _get(
-    client: httpx.Client, url: str, delay: float = DEFAULT_DELAY_SECONDS
-) -> BeautifulSoup:
+def get_soup(client: httpx.Client, url: str, delay: float = DEFAULT_DELAY_SECONDS) -> BeautifulSoup:
     """Fetch a URL and return parsed HTML. Raises on HTTP errors."""
     logger.debug("GET %s", url)
     response = client.get(url, follow_redirects=True)
@@ -57,7 +55,7 @@ def _get(
     return BeautifulSoup(response.text, "lxml")
 
 
-def _kunena_div_to_text(div: Tag) -> str:
+def kunena_div_to_text(div: Tag) -> str:
     """
     Convert a Kunena <div class="kmsg"> to plain text.
 

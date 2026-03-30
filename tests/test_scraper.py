@@ -8,18 +8,17 @@ import pytest
 from bs4 import BeautifulSoup
 
 from vtes_scraper.scraper import (
-    _get,
-    _kunena_div_to_text,
     extract_twd_from_thread,
     fetch_event_date,
     fetch_event_winner,
     fetch_player,
     iter_thread_urls,
+    kunena_div_to_text,
     scrape_forum,
 )
 
 # ---------------------------------------------------------------------------
-# _kunena_div_to_text
+# kunena_div_to_text
 # ---------------------------------------------------------------------------
 
 
@@ -28,30 +27,28 @@ class TestKuneaDivToText:
         html = "<div class='kmsg'>Line 1<br>Line 2</div>"
         soup = BeautifulSoup(html, "lxml")
         div = soup.find("div")
-        text = _kunena_div_to_text(div)
+        text = kunena_div_to_text(div)
         assert "Line 1\nLine 2" in text
 
     def test_replaces_hr_with_newline(self):
         html = "<div class='kmsg'>Before<hr>After</div>"
         soup = BeautifulSoup(html, "lxml")
         div = soup.find("div")
-        text = _kunena_div_to_text(div)
+        text = kunena_div_to_text(div)
         assert "Before\nAfter" in text
 
     def test_normalizes_bare_www_url(self):
         html = "<div class='kmsg'>See www.vekn.net/event-calendar/event/123</div>"
         soup = BeautifulSoup(html, "lxml")
         div = soup.find("div")
-        text = _kunena_div_to_text(div)
+        text = kunena_div_to_text(div)
         assert "https://www.vekn.net" in text
 
     def test_does_not_double_prefix_https_url(self):
-        html = (
-            "<div class='kmsg'>See https://www.vekn.net/event-calendar/event/123</div>"
-        )
+        html = "<div class='kmsg'>See https://www.vekn.net/event-calendar/event/123</div>"
         soup = BeautifulSoup(html, "lxml")
         div = soup.find("div")
-        text = _kunena_div_to_text(div)
+        text = kunena_div_to_text(div)
         assert "https://https://" not in text
 
 
@@ -70,7 +67,7 @@ class TestGet:
         mock_client.get.return_value = mock_response
 
         with patch("vtes_scraper.scraper._http.time.sleep"):
-            soup = _get(mock_client, "https://example.com", delay=0)
+            soup = get_soup(mock_client, "https://example.com", delay=0)
 
         assert soup is not None
         assert soup.find("body") is not None
@@ -85,7 +82,7 @@ class TestGet:
 
         with patch("vtes_scraper.scraper._http.time.sleep"):
             with pytest.raises(httpx.HTTPStatusError):
-                _get(mock_client, "https://example.com", delay=0)
+                get_soup(mock_client, "https://example.com", delay=0)
 
 
 # ---------------------------------------------------------------------------
@@ -114,14 +111,8 @@ class TestIterThreadUrls:
             results = list(iter_thread_urls(mock_client, delay=0))
 
         urls = [url for url, _ in results]
-        assert (
-            "https://www.vekn.net/forum/event-reports-and-twd/12345-test-tournament"
-            in urls
-        )
-        assert (
-            "https://www.vekn.net/forum/event-reports-and-twd/12346-another-event"
-            in urls
-        )
+        assert "https://www.vekn.net/forum/event-reports-and-twd/12345-test-tournament" in urls
+        assert "https://www.vekn.net/forum/event-reports-and-twd/12346-another-event" in urls
 
     def test_skips_meta_slugs(self):
         page1 = BeautifulSoup(FORUM_INDEX_HTML, "lxml")
@@ -176,7 +167,9 @@ THREAD_HTML_VALID = """
 
 THREAD_HTML_NO_KMSG = "<html><body><p>Just some text</p></body></html>"
 THREAD_HTML_EMPTY_KMSG = "<html><body><div class='kmsg'>   </div></body></html>"
-THREAD_HTML_INVALID_TWD = "<html><body><div class='kmsg'>This is not a valid TWD post at all.</div></body></html>"
+THREAD_HTML_INVALID_TWD = (
+    "<html><body><div class='kmsg'>This is not a valid TWD post at all.</div></body></html>"
+)
 
 # First post is invalid, second post has a valid TWD — scraper should NOT fall back
 THREAD_HTML_VALID_SECOND_POST = """
@@ -192,9 +185,7 @@ class TestExtractTwdFromThread:
         soup = BeautifulSoup(THREAD_HTML_VALID, "lxml")
         mock_client = MagicMock()
         with patch("vtes_scraper.scraper._forum._get", return_value=soup):
-            result = extract_twd_from_thread(
-                mock_client, "https://example.com", delay=0
-            )
+            result = extract_twd_from_thread(mock_client, "https://example.com", delay=0)
         assert result is not None
         assert result.name == "Conservative Agitation"
 
@@ -202,27 +193,21 @@ class TestExtractTwdFromThread:
         soup = BeautifulSoup(THREAD_HTML_NO_KMSG, "lxml")
         mock_client = MagicMock()
         with patch("vtes_scraper.scraper._forum._get", return_value=soup):
-            result = extract_twd_from_thread(
-                mock_client, "https://example.com", delay=0
-            )
+            result = extract_twd_from_thread(mock_client, "https://example.com", delay=0)
         assert result is None
 
     def test_empty_kmsg_returns_none(self):
         soup = BeautifulSoup(THREAD_HTML_EMPTY_KMSG, "lxml")
         mock_client = MagicMock()
         with patch("vtes_scraper.scraper._forum._get", return_value=soup):
-            result = extract_twd_from_thread(
-                mock_client, "https://example.com", delay=0
-            )
+            result = extract_twd_from_thread(mock_client, "https://example.com", delay=0)
         assert result is None
 
     def test_invalid_twd_returns_none(self):
         soup = BeautifulSoup(THREAD_HTML_INVALID_TWD, "lxml")
         mock_client = MagicMock()
         with patch("vtes_scraper.scraper._forum._get", return_value=soup):
-            result = extract_twd_from_thread(
-                mock_client, "https://example.com", delay=0
-            )
+            result = extract_twd_from_thread(mock_client, "https://example.com", delay=0)
         assert result is None
 
     def test_only_first_post_is_checked(self):
@@ -230,9 +215,7 @@ class TestExtractTwdFromThread:
         soup = BeautifulSoup(THREAD_HTML_VALID_SECOND_POST, "lxml")
         mock_client = MagicMock()
         with patch("vtes_scraper.scraper._forum._get", return_value=soup):
-            result = extract_twd_from_thread(
-                mock_client, "https://example.com", delay=0
-            )
+            result = extract_twd_from_thread(mock_client, "https://example.com", delay=0)
         assert result is None
 
     def test_only_one_http_request_made(self):

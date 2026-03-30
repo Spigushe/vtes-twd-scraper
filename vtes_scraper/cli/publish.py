@@ -8,14 +8,14 @@ from pathlib import Path
 
 from ruamel.yaml import YAML
 
-from vtes_scraper.cli._common import console, setup_logging
+from vtes_scraper.cli._common import SubParsersAction, console, setup_logging
 from vtes_scraper.models import Tournament
 from vtes_scraper.publisher import BatchPRResult, publish_all_as_single_pr
 
 logger = logging.getLogger(__name__)
 
 
-def register(sub: argparse._SubParsersAction) -> None:
+def register(sub: SubParsersAction) -> None:
     p = sub.add_parser(
         "publish",
         help="Open a single PR in GiottoVerducci/TWD with all new decks from local YAML files.",
@@ -125,9 +125,7 @@ def _write_publish_report(
     lines.append("")
 
     lines += [f"## Skipped — already on master ({len(result.skipped)})", ""]
-    lines.append(
-        ", ".join(str(e) for e in result.skipped) if result.skipped else "_None._"
-    )
+    lines.append(", ".join(str(e) for e in result.skipped) if result.skipped else "_None._")
     lines.append("")
 
     lines += [f"## Errors ({len(result.errors)})", ""]
@@ -157,9 +155,7 @@ def run(args: argparse.Namespace) -> int:
     yaml = YAML()
     twds_dir: Path = args.twds_dir
     errors_dir = twds_dir / "errors"
-    yaml_files = sorted(
-        p for p in twds_dir.rglob("*.yaml") if not p.is_relative_to(errors_dir)
-    )
+    yaml_files = sorted(p for p in twds_dir.rglob("*.yaml") if not p.is_relative_to(errors_dir))
     logger.debug("Found %d YAML file(s) in %s.", len(yaml_files), twds_dir)
 
     if not yaml_files:
@@ -169,16 +165,16 @@ def run(args: argparse.Namespace) -> int:
     tournaments: list[Tournament] = []
     for path in yaml_files:
         try:
-            data = yaml.load(path.read_text(encoding="utf-8"))
+            data = yaml.load(  # pyright: ignore[reportUnknownMemberType]
+                path.read_text(encoding="utf-8")
+            )
             t = Tournament.model_validate(data)
             tournaments.append(t)
             logger.debug("Loaded %s: %s (%s)", t.event_id, t.name, t.location)
         except Exception as exc:
             logger.warning("Skipping %s — could not load: %s", path, exc)
 
-    console.print(
-        f"Loaded [green]{len(tournaments)}[/green] tournament(s) from {twds_dir}."
-    )
+    console.print(f"Loaded [green]{len(tournaments)}[/green] tournament(s) from {twds_dir}.")
 
     if not tournaments:
         console.print("[yellow]Nothing to publish.[/yellow]")
@@ -209,17 +205,13 @@ def run(args: argparse.Namespace) -> int:
             f"[cyan]{len(tournaments)}[/cyan] tournament(s) — no PR will be opened…"
         )
     else:
-        console.print(
-            f"Publishing [cyan]{len(tournaments)}[/cyan] tournament(s) as a single PR…"
-        )
+        console.print(f"Publishing [cyan]{len(tournaments)}[/cyan] tournament(s) as a single PR…")
     logger.debug(
         "Submitting %d tournament(s) to publisher (dry_run=%s).",
         len(tournaments),
         dry_run,
     )
-    result = publish_all_as_single_pr(
-        tournaments, token=token, delay=args.delay, dry_run=dry_run
-    )
+    result = publish_all_as_single_pr(tournaments, token=token, delay=args.delay, dry_run=dry_run)
 
     # ── Save Markdown report ───────────────────────────────────────────────
     try:
@@ -262,7 +254,6 @@ def run(args: argparse.Namespace) -> int:
             f"(check logs for details)."
         )
     console.print(
-        f"[yellow]{len(result.skipped)} skipped[/yellow], "
-        f"[red]{len(result.errors)} failed[/red]"
+        f"[yellow]{len(result.skipped)} skipped[/yellow], [red]{len(result.errors)} failed[/red]"
     )
     return 1 if result.errors else 0

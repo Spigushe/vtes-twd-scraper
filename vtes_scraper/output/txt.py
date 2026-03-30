@@ -2,7 +2,7 @@ from datetime import date
 from pathlib import Path
 
 from vtes_scraper.models import CryptCard, Deck, LibrarySection, Tournament
-from vtes_scraper.output._common import _date_subdir
+from vtes_scraper.output._common import date_subdir
 
 _ORDINAL_SUFFIX = {1: "st", 2: "nd", 3: "rd"}
 
@@ -103,14 +103,12 @@ def write_tournament_txt(
         FileExistsError: if file exists and overwrite=False
         ValueError: if tournament has no event_id
     """
-    dest = output_dir / _date_subdir(tournament)
+    dest = output_dir / date_subdir(tournament)
     dest.mkdir(parents=True, exist_ok=True)
     path = dest / tournament.txt_filename
 
     if path.exists() and not overwrite:
-        raise FileExistsError(
-            f"Output file already exists: {path}. Use --overwrite to replace."
-        )
+        raise FileExistsError(f"Output file already exists: {path}. Use --overwrite to replace.")
 
     path.write_text(tournament_to_txt(tournament), encoding="utf-8")
     return path

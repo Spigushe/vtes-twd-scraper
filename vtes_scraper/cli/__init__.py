@@ -8,7 +8,7 @@ import argparse
 import sys
 
 from vtes_scraper.cli import parse, publish, scrape
-from vtes_scraper.cli._common import _reconfigure_windows_stdio
+from vtes_scraper.cli._common import SubParsersAction, reconfigure_windows_stdio
 
 
 def _build_parser() -> argparse.ArgumentParser:
@@ -16,7 +16,7 @@ def _build_parser() -> argparse.ArgumentParser:
         prog="vtes-scraper",
         description="Scrape VTES tournament winning decks from vekn.net and export to YAML.",
     )
-    sub = parser.add_subparsers(dest="command", required=True)
+    sub: SubParsersAction = parser.add_subparsers(dest="command", required=True)  # type: ignore[assignment]
     scrape.register(sub)
     parse.register(sub)
     publish.register(sub)
@@ -24,7 +24,7 @@ def _build_parser() -> argparse.ArgumentParser:
 
 
 def main() -> None:
-    _reconfigure_windows_stdio()
+    reconfigure_windows_stdio()
     parser = _build_parser()
     args = parser.parse_args()
     sys.exit(args.func(args))

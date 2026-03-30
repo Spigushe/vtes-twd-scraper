@@ -1,10 +1,18 @@
 """Shared helpers for all CLI subcommands."""
 
+import argparse
 import logging
 import sys
+from typing import Any, Protocol
 
 from rich.console import Console
 from rich.logging import RichHandler
+
+
+class SubParsersAction(Protocol):
+    """Public-facing protocol for argparse._SubParsersAction."""
+
+    def add_parser(self, name: str, **kwargs: Any) -> argparse.ArgumentParser: ...
 
 
 # On Windows, stdout/stderr default to cp1252 which cannot encode Rich's
@@ -15,7 +23,7 @@ from rich.logging import RichHandler
 # sys.stdout/stderr mid-capture closes the underlying tempfile that pytest owns,
 # which causes a "ValueError: I/O operation on closed file" crash on Python 3.14
 # (which now closes the underlying buffer when a TextIOWrapper is GC'd).
-def _reconfigure_windows_stdio() -> None:
+def reconfigure_windows_stdio() -> None:
     """Reconfigure stdout/stderr to UTF-8 on Windows. Call once from main()."""
     if sys.platform == "win32":
         import io
