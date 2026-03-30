@@ -6,6 +6,10 @@ players_count: 24
 winner: Denes Kocis
 vekn_number: 5791938
 event_url: https://www.vekn.net/event-calendar/event/13075
+event_id: 13075
+vp_comment: 2GW6 + 2VP in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82899-twd-kvarner-conclave-of-eternal-second-thoughts-rijeka-croatia-07-mar-2026
 deck:
   name: Piper warghouls v3.0
   created_by: Denes Kocis
@@ -144,7 +148,3 @@ deck:
       name: FBI Special Affairs Division
     - count: 2
       name: Unmasking, The
-event_id: 13075
-vp_comment: 2GW6 + 2VP in final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82899-twd-kvarner-conclave-of-eternal-second-thoughts-rijeka-croatia-07-mar-2026

@@ -93,7 +93,6 @@ class Tournament(BaseModel):
     winner: str
     vekn_number: int | None = None  # VEKN member number, e.g. 3940009
     event_url: str  # https://www.vekn.net/event-calendar/event/XXXX
-    deck: Deck
 
     # --- Derived ---
     event_id: int | None = None  # extracted from event_url
@@ -101,6 +100,9 @@ class Tournament(BaseModel):
     # --- Optional ---
     vp_comment: str | None = None
     forum_post_url: str | None = None  # source forum URL (for traceability)
+
+    # --- Last for file structure ---
+    deck: Deck
 
     @model_validator(mode="after")
     def derive_event_id(self) -> Tournament:
