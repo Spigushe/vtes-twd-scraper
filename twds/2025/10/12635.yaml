@@ -1,0 +1,153 @@
+name: Lapos Test Match
+location: Vac, Hungary
+date_start: 2025-10-04
+rounds_format: 3R+F
+players_count: 12
+winner: Martin Weinmayer
+vekn_number: 3340035
+event_url: https://www.vekn.net/event-calendar/event/12635
+event_id: 12635
+vp_comment: 3GW10VP + 3VP in final
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82925-twd-lapos-test-match-vac-hungary-04-october-2025
+deck:
+  name: The Return of the Queen
+  created_by: Martin Weinmayer
+  description: ''
+  crypt_count: 12
+  crypt_min: 36
+  crypt_max: 44
+  crypt_avg: 10.08
+  crypt:
+  - count: 5
+    name: Stanislava
+    capacity: 11
+    disciplines: ANI CEL DOM FOR PRO
+    title: Inner Circle
+    clan: Gangrel
+    grouping: 2
+  - count: 2
+    name: Hartmut Stover
+    capacity: 10
+    disciplines: dom for CEL OBF PRO
+    title: Archbishop
+    clan: Gangrel antitribu
+    grouping: 3
+  - count: 1
+    name: Genevieve
+    capacity: 10
+    disciplines: aus dom ANI FOR PRO
+    title: Priscus
+    clan: Gangrel antitribu
+    grouping: 2
+  - count: 1
+    name: Xaviar (ADV)
+    capacity: 10
+    disciplines: aus cel pot ABO ANI FOR PRO
+    title: Justicar
+    clan: Gangrel
+    grouping: 3
+  - count: 2
+    name: Ingrid Rossler
+    capacity: 9
+    disciplines: dom ANI FOR PRO
+    title: Prince
+    clan: Gangrel
+    grouping: 2
+  - count: 1
+    name: Mark Decker
+    capacity: 8
+    disciplines: ani for obf pot CEL PRO
+    title: Prince
+    clan: Gangrel
+    grouping: 3
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 22
+    cards:
+    - count: 2
+      name: Backways
+    - count: 1
+      name: Camarilla Conclave
+    - count: 3
+      name: Direct Intervention
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Elder Library
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Monastery of Shadows
+    - count: 2
+      name: Papillon
+    - count: 1
+      name: Secure Haven
+    - count: 6
+      name: Villein
+  - name: Action
+    count: 8
+    cards:
+    - count: 8
+      name: Govern the Unaligned
+  - name: Political Action
+    count: 10
+    cards:
+    - count: 1
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 1
+      name: Ancilla Empowerment
+    - count: 4
+      name: Banishment
+    - count: 1
+      name: Camarilla's Iron Fist
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+  - name: Equipment
+    count: 2
+    cards:
+    - count: 2
+      name: Heart of Nizchetus
+  - name: Action Modifier
+    count: 20
+    cards:
+    - count: 2
+      name: Conditioning
+    - count: 4
+      name: Earth Control
+    - count: 2
+      name: Enkil Cog
+    - count: 6
+      name: Forced March
+    - count: 6
+      name: Instantaneous Transformation
+  - name: Action Modifier/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Rapid Change
+  - name: Action Modifier/Reaction
+    count: 5
+    cards:
+    - count: 2
+      name: Form of the Bat
+    - count: 3
+      name: Murmur of the False Will
+  - name: Reaction
+    count: 9
+    cards:
+    - count: 7
+      name: Deflection
+    - count: 2
+      name: Sense the Savage Way
+  - name: Combat
+    count: 12
+    cards:
+    - count: 4
+      name: Earth Meld
+    - count: 8
+      name: Form of Mist
