@@ -185,7 +185,10 @@ class TestScrapeRun:
         t = _make_tournament()
         with tempfile.TemporaryDirectory() as tmpdir:
             args = _scrape_namespace(output_dir=Path(tmpdir))
-            with _patch_pipeline(scrape_forum=iter([(t, None)])):
+            with _patch_pipeline(
+                scrape_forum=iter([(t, None)]),
+                fetch_event_winner="Jane Doe",
+            ):
                 with patch(
                     "vtes_scraper.cli.scrape.write_tournament_yaml",
                     side_effect=Exception("error"),
@@ -238,6 +241,20 @@ class TestScrapeRun:
             assert ret == 0
             written = list(Path(tmpdir).rglob("*.yaml"))
             assert len(written) == 1
+
+    def test_run_no_calendar_results_routes_to_unknown_winner(self):
+        """When the event page has no results, the file is routed to errors/unknown_winner/."""
+        t = _make_tournament()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = _scrape_namespace(output_dir=Path(tmpdir))
+            with _patch_pipeline(
+                scrape_forum=iter([(t, None)]),
+                fetch_event_winner=None,
+            ):
+                ret = scrape_cmd.run(args)
+            assert ret == 0
+            error_file = Path(tmpdir) / "errors" / "unknown_winner" / "9999.yaml"
+            assert error_file.exists()
 
     def test_run_coercions_saved_on_new_resolution(self):
         """coercions.json is created when a new player name is resolved."""
