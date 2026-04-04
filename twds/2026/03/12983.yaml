@@ -1,0 +1,154 @@
+name: 'Elysium: LeiriaCon'
+location: Vieira de Leiria, Portugal
+date_start: 2026-03-29
+rounds_format: 2R+F
+players_count: 23
+winner: Hugo Coelho
+vekn_number: 3260056
+event_url: https://www.vekn.net/event-calendar/event/12983
+event_id: 12983
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82929-twd-elysium-leiriacon-vieira-de-leiria-portugal-29-mar-2026
+deck:
+  name: Power Punch Girls
+  created_by: Hugo Coelho
+  description: ''
+  crypt_count: 12
+  crypt_min: 11
+  crypt_max: 27
+  crypt_avg: 5.0
+  crypt:
+  - count: 2
+    name: Aline Gädeke
+    capacity: 7
+    disciplines: cel POT PRE
+    title: Baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Valeriya Zinovieva
+    capacity: 7
+    disciplines: cel pre pro POT
+    title: Baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Atiena
+    capacity: 6
+    disciplines: obf pot pre CEL
+    title: Baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Leumeah
+    capacity: 6
+    disciplines: cel for pot PRE
+    title: Baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Elen Kamjian
+    capacity: 4
+    disciplines: CEL POT
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Anita Wainwright
+    capacity: 3
+    disciplines: cel pre
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Ariane
+    capacity: 3
+    disciplines: cel pot pre
+    clan: Brujah
+    grouping: 5
+  - count: 1
+    name: Laura Goldman
+    capacity: 3
+    disciplines: cel pre
+    clan: Brujah
+    grouping: 5
+  - count: 1
+    name: Rayne
+    capacity: 2
+    disciplines: pot
+    clan: Brujah
+    grouping: 6
+  library_count: 80
+  library_sections:
+  - name: Master
+    count: 38
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Archon Investigation
+    - count: 9
+      name: Ashur Tablets
+    - count: 6
+      name: Brujah Debate
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Papillon
+    - count: 4
+      name: Parthenon, The
+    - count: 1
+      name: Poacher's Hunting Ground
+    - count: 1
+      name: 'Powerbase: Los Angeles'
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Smiling Jack, The Anarch
+    - count: 4
+      name: Vessel
+    - count: 2
+      name: Villein
+    - count: 1
+      name: Wash
+  - name: Action
+    count: 5
+    cards:
+    - count: 4
+      name: Line Brawl
+    - count: 1
+      name: Open War
+  - name: Action Modifier
+    count: 1
+    cards:
+    - count: 1
+      name: Monkey Wrench
+  - name: Reaction
+    count: 20
+    cards:
+    - count: 6
+      name: Bait and Switch
+    - count: 13
+      name: Organized Resistance
+    - count: 1
+      name: Protection Racket
+  - name: Combat
+    count: 15
+    cards:
+    - count: 3
+      name: Bollix
+    - count: 2
+      name: Disarm
+    - count: 10
+      name: Dust Up
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: NSA Trio
