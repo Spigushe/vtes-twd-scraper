@@ -1,0 +1,69 @@
+name: Validate VTES TWD
+
+on:
+  # Allow manual trigger from the Actions tab
+  workflow_dispatch:
+
+  # Run on every push to main (covers PR merges)
+  push:
+    branches: [main]
+    paths:
+      - "twds/**"
+      - "vtes_scraper/**"
+      - "pyproject.toml"
+      - ".github/workflows/validate.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to commit updated YAML files
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history for clean diffs
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          allow-prereleases: true   # required until 3.14 reaches final release
+          cache: "pip"
+
+      - name: Set UTF-8 encoding
+        run: echo "PYTHONUTF8=1" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: pip install -e ".[dev]"
+
+      - name: Run pre-commit checks
+        run: pre-commit run --all-files
+
+      - name: Run tests
+        run: pytest
+
+      - name: Validate Scraped tournaments
+        continue-on-error: true
+        run: vtes-scraper validate --verbose
+
+      - name: Check for changes
+        id: git_status
+        run: |
+          git add twds/
+          if git diff --staged --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git diff --staged --stat
+          fi
+
+      - name: Commit validation updates
+        if: steps.git_status.outputs.changed == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: validate VTES TWD $(date -u +%Y-%m-%d)"
+          git pull --rebase origin main
+          git push

@@ -1,17 +1,15 @@
-#!/usr/bin/env python3
-"""Validate that all published tournament YAML files have a vekn_number.
+"""CLI subcommand: validate.
+
+Validates that all published tournament YAML files have a vekn_number.
 
 Scans all YAML files under twds/<year>/<month>/ (i.e. files NOT in the
 ``errors/`` or ``changes_required/`` directories) and checks that each one
 contains a non-null ``vekn_number`` field.
 
-For files missing a vekn_number, the script first attempts to rescrape the
+For files missing a vekn_number, the command first attempts to rescrape the
 VEKN event calendar page (via event_url) to retrieve the winner and their
 VEKN number.  If the rescrape succeeds the file is updated in place.
 Only if the rescrape fails is the file moved to ``twds/errors/unconfirmed_winner/``.
-
-Usage:
-    python scripts/validate_vekn_numbers.py [--twds-dir twds] [--dry-run]
 """
 
 import argparse
@@ -19,12 +17,33 @@ import shutil
 from pathlib import Path
 
 import httpx
-from ruamel.yaml import YAML
 
+from vtes_scraper.cli._common import SubParsersAction, console
 from vtes_scraper.scraper._http import DEFAULT_DELAY_SECONDS, HEADERS
 from vtes_scraper.scraper._vekn import fetch_event_winner, fetch_player
 
 SKIP_DIRS = {"errors", "changes_required"}
+
+
+def register(sub: SubParsersAction) -> None:
+    p = sub.add_parser(
+        "validate",
+        help="Validate VEKN numbers for all published tournament YAML files.",
+        description=__doc__,
+    )
+    p.add_argument(
+        "--twds-dir",
+        type=Path,
+        default=Path("twds"),
+        help="Root twds directory (default: twds)",
+    )
+    p.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Only report; do not move or update files.",
+    )
+    p.add_argument("--verbose", "-v", action="store_true", help="Enable debug logging.")
+    p.set_defaults(func=run)
 
 
 def _iter_published_yaml(twds_dir: Path):
@@ -55,9 +74,12 @@ def _try_rescrape_vekn_number(
     return vekn_number
 
 
-def validate(twds_dir: Path, *, dry_run: bool = False) -> list[Path]:
-    """Return list of files that were (or would be) moved."""
+def run(args: argparse.Namespace) -> int:
+    from ruamel.yaml import YAML
+
     yaml = YAML()
+    twds_dir: Path = args.twds_dir
+    dry_run: bool = args.dry_run
     dest_dir = twds_dir / "errors" / "unconfirmed_winner"
 
     moved: list[Path] = []
@@ -72,63 +94,41 @@ def validate(twds_dir: Path, *, dry_run: bool = False) -> list[Path]:
             if data.get("vekn_number") is not None:
                 continue
 
-            # vekn_number is missing or None — try rescraping the calendar first
             event_id = data.get("event_id", path.stem)
             event_url = data.get("event_url", "")
 
             vekn_number: int | None = None
             if event_url and not dry_run:
-                print(f"rescraping calendar for event {event_id} ({event_url}) ...")
+                console.print(f"rescraping calendar for event {event_id} ({event_url}) ...")
                 try:
                     vekn_number = _try_rescrape_vekn_number(client, event_url)
                 except Exception as exc:
-                    print(f"  rescrape error: {exc}")
+                    console.print(f"  rescrape error: {exc}")
 
             if vekn_number is not None:
                 data["vekn_number"] = vekn_number
                 with open(path, "w", encoding="utf-8") as fh:
                     yaml.dump(data, fh)
-                print(f"updated {path} with vekn_number={vekn_number} (event {event_id})")
+                console.print(f"[green]✓[/green] updated {path} with vekn_number={vekn_number}")
                 continue
 
-            # Rescrape failed (or dry-run) — move the file
             if dry_run:
                 rescrape_note = " (rescrape would be attempted first)" if event_url else ""
-                print(
-                    f"[dry-run] would move {path} -> errors/unconfirmed_winner/{path.name}"
-                    f"{rescrape_note}"
+                console.print(
+                    f"[yellow]─[/yellow] [dry-run] would move {path} -> "
+                    f"errors/unconfirmed_winner/{path.name}{rescrape_note}"
                 )
             else:
                 dest_dir.mkdir(parents=True, exist_ok=True)
                 dest = dest_dir / path.name
                 shutil.move(str(path), str(dest))
-                print(f"moved {path} -> errors/unconfirmed_winner/{path.name} (event {event_id})")
+                console.print(f"[red]✗[/red] moved {path} -> errors/unconfirmed_winner/{path.name}")
             moved.append(path)
 
     if not moved:
-        print("All published files have a vekn_number. Nothing to move.")
+        console.print("[green]All published files have a vekn_number.[/green]")
     else:
-        print(f"\n{len(moved)} file(s) {'would be' if dry_run else ''} moved.")
+        label = "would be moved" if dry_run else "moved"
+        console.print(f"\n{len(moved)} file(s) {label}.")
 
-    return moved
-
-
-def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--twds-dir",
-        type=Path,
-        default=Path("twds"),
-        help="Root twds directory (default: twds)",
-    )
-    parser.add_argument(
-        "--dry-run",
-        action="store_true",
-        help="Only report; do not move files.",
-    )
-    args = parser.parse_args()
-    validate(args.twds_dir, dry_run=args.dry_run)
-
-
-if __name__ == "__main__":
-    main()
+    return 0

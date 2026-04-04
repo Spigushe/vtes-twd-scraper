@@ -345,7 +345,7 @@ class TestScrapeRun:
             args = _scrape_namespace(output_dir=Path(tmpdir))
             with _patch_pipeline(
                 scrape_forum=iter([(t, None)]),
-                error_types=["missing_name", "empty_crypt"],
+                error_types=["missing_name", "illegal_crypt"],
             ):
                 scrape_cmd.run(args)
             error_file = Path(tmpdir) / "errors" / "missing_name" / "9999.yaml"

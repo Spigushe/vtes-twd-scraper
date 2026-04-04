@@ -7,7 +7,7 @@ Usage examples in README file
 import argparse
 import sys
 
-from vtes_scraper.cli import parse, publish, scrape
+from vtes_scraper.cli import parse, publish, scrape, validate
 from vtes_scraper.cli._common import SubParsersAction, reconfigure_windows_stdio
 
 
@@ -20,6 +20,7 @@ def _build_parser() -> argparse.ArgumentParser:
     scrape.register(sub)
     parse.register(sub)
     publish.register(sub)
+    validate.register(sub)
     return parser
 
 

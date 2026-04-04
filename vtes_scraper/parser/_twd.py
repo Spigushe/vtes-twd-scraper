@@ -2,7 +2,10 @@
 
 from vtes_scraper.models import Tournament
 from vtes_scraper.parser._deck import _parse_deck_block
-from vtes_scraper.parser._header import _parse_header_lenient, _parse_header_strict
+from vtes_scraper.parser._header import (
+    _parse_header_lenient,
+    _parse_header_strict,
+)
 from vtes_scraper.parser._helpers import CRYPT_HEADER_RE, _strip_hash_comment
 
 
@@ -16,7 +19,10 @@ def parse_twd_text(raw: str, forum_post_url: str | None = None) -> Tournament:
     if len(lines) < 7:
         raise ValueError(f"TWD block has fewer than 7 mandatory lines (got {len(lines)})")
 
-    deck_start = next((i for i, line in enumerate(lines) if CRYPT_HEADER_RE.search(line)), None)
+    deck_start = next(
+        (i for i, line in enumerate(lines) if CRYPT_HEADER_RE.search(line)),
+        None,
+    )
     if deck_start is None:
         raise ValueError("Mandatory 'Crypt (N cards, ...)' block not found")
 
