@@ -36,6 +36,7 @@ from vtes_scraper.validator import enrich_crypt_cards, error_types, fix_card_sec
 # and can be removed; so we skip only tournaments flagged as "changes_required"
 # to avoid moving them back and forth.
 SKIP_DIRS = {"changes_required"}
+_FAST_VALIDATION_YAML_FILES_NUMBER_THRESHOLD = 100
 
 _TOURNAMENT_FIELD_ORDER = list(Tournament.model_fields.keys())
 
@@ -56,6 +57,12 @@ def register(sub: SubParsersAction) -> None:
         description=__doc__,
     )
     p.add_argument(
+        "--full-validation",
+        action="store_true",
+        default=False,
+        help="Perform a full validation of all tournaments (default: False).",
+    )
+    p.add_argument(
         "--twds-dir",
         type=Path,
         default=Path("twds"),
@@ -70,13 +77,23 @@ def register(sub: SubParsersAction) -> None:
     p.set_defaults(func=run)
 
 
-def _iter_published_yaml(twds_dir: Path):
+def _iter_published_yaml(twds_dir: Path, full_validation: bool):
     """Yield all YAML files that are NOT inside changes_required/."""
-    for yaml_file in sorted(twds_dir.rglob("*.yaml")):
+    for yaml_file in _filter_yaml_paths(twds_dir, full_validation):
         parts = yaml_file.relative_to(twds_dir).parts
         if parts and parts[0] in SKIP_DIRS:
             continue
         yield yaml_file
+
+
+def _filter_yaml_paths(twds_dir: Path, full_validation: bool) -> list[Path]:
+    yaml_files: list[Path] = sorted(list(twds_dir.rglob("*.yaml")), reverse=True)
+
+    if not full_validation:
+        yaml_files = [p for p in yaml_files if p.relative_to(twds_dir).parts[0] not in SKIP_DIRS]
+        yaml_files = yaml_files[:_FAST_VALIDATION_YAML_FILES_NUMBER_THRESHOLD]
+
+    return yaml_files
 
 
 def _check_and_update_winner(
@@ -121,6 +138,7 @@ def run(args: argparse.Namespace) -> int:
     from ruamel.yaml import YAML
 
     yaml = YAML()
+    full_validation: bool = args.full_validation
     twds_dir: Path = args.twds_dir
     dry_run: bool = args.dry_run
 
@@ -128,7 +146,7 @@ def run(args: argparse.Namespace) -> int:
     updated: list[Path] = []
 
     with httpx.Client(headers=HEADERS, follow_redirects=True, timeout=60.0) as client:
-        for path in _iter_published_yaml(twds_dir):
+        for path in _iter_published_yaml(twds_dir, full_validation):
             with open(path, encoding="utf-8") as fh:
                 data = cast(Tournament_Dict, yaml.load(fh))
 

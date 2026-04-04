@@ -3,6 +3,12 @@ name: Validate VTES TWD
 on:
   # Allow manual trigger from the Actions tab
   workflow_dispatch:
+    inputs:
+      full_validation:
+        description: "Validate (rescrape) all decks on archive"
+        required: false
+        type: boolean
+        default: false
 
   # Run after Scrape VTES TWD completes successfully
   workflow_run:
@@ -53,7 +59,12 @@ jobs:
 
       - name: Validate Scraped tournaments
         continue-on-error: true
-        run: vtes-scraper validate --verbose
+        run: |
+          FLAGS="--verbose"
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ github.event.inputs.full_validation }}" == "true" ]]; then
+            FLAGS="$FLAGS --full-validation"
+          fi
+          vtes-scraper validate $FLAGS
 
       - name: Check for changes
         id: git_status
