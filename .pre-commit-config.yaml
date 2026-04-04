@@ -3,11 +3,12 @@ repos:
   # Ruff — lint and format
   # ---------------------------------------------------------------------------
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.8
+    rev: v0.15.9
     hooks:
-      - id: ruff
+      - id: ruff-check
         name: ruff lint
-        args: [--fix, --exit-non-zero-on-fix]
+        types_or: [python, pyi, jupyter, pyproject]
+        args: [--fix]
       - id: ruff-format
         name: ruff format
 
