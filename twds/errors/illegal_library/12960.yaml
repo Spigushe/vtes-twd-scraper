@@ -1,0 +1,150 @@
+name: 1º Fortaleza V5
+location: Fortaleza - Ceará - Brazil
+date_start: 2026-02-08
+rounds_format: 2R+F
+players_count: 16
+winner: Valdemir Santos
+vekn_number: 7301303
+event_url: https://www.vekn.net/event-calendar/event/12960
+event_id: 12960
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82819-twd-1-fortaleza-v5
+deck:
+  name: Shadow of Deth
+  created_by: Valdemir
+  description: ''
+  crypt_count: 12
+  crypt_min: 25
+  crypt_max: 36
+  crypt_avg: 7.58
+  crypt:
+  - count: 4
+    name: Gnaeus Aemilius Augustinus
+    capacity: 9
+    disciplines: tha DOM OBL POT PRO
+    title: Prince
+    clan: Lasombra
+    grouping: 6
+  - count: 2
+    name: Yewon Ong
+    capacity: 8
+    disciplines: for DOM OBL POT
+    title: Prince
+    clan: Lasombra
+    grouping: 6
+  - count: 3
+    name: María del Toro
+    capacity: 7
+    disciplines: DOM OBL POT
+    title: Prince
+    clan: Lasombra
+    grouping: 6
+  - count: 1
+    name: Rinaldo Albizzi
+    capacity: 7
+    disciplines: pre DOM OBL POT
+    title: Primogen
+    clan: Lasombra
+    grouping: 6
+  - count: 1
+    name: Kamaluddin
+    capacity: 6
+    disciplines: for pot DOM OBL
+    title: Primogen
+    clan: Lasombra
+    grouping: 6
+  - count: 1
+    name: Azucena
+    capacity: 5
+    disciplines: pot DOM OBL
+    clan: Lasombra
+    grouping: 6
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 12
+    cards:
+    - count: 1
+      name: Creepshow Casino
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Elysian Fields
+    - count: 1
+      name: 'Elysium: The Palace of Versailles'
+    - count: 1
+      name: Political Hunting Ground
+    - count: 1
+      name: Power Structure
+    - count: 1
+      name: Sudden Reversal
+    - count: 3
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 8
+    cards:
+    - count: 7
+      name: Govern the Unaligned
+    - count: 1
+      name: Puppet Master
+  - name: Political Action
+    count: 15
+    cards:
+    - count: 2
+      name: Ancilla Empowerment
+    - count: 1
+      name: Banishment
+    - count: 3
+      name: Camarilla's Iron Fist
+    - count: 1
+      name: Expulsion
+    - count: 3
+      name: Kine Resources Contested
+    - count: 4
+      name: Parity Shift
+  - name: Ally
+    count: 3
+    cards:
+    - count: 3
+      name: Spectral Servitor
+  - name: Action Modifier
+    count: 28
+    cards:
+    - count: 4
+      name: Amici Noctis
+    - count: 2
+      name: Closed Session
+    - count: 3
+      name: Consign to Oblivion
+    - count: 3
+      name: Seduction
+    - count: 4
+      name: Shadow Cast
+    - count: 4
+      name: Shadow Cloak
+    - count: 4
+      name: Stygian Shroud
+    - count: 4
+      name: Where the Veil Thins
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Ominous Chorus
+  - name: Reaction
+    count: 12
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 3
+      name: On the Qui Vive
+    - count: 3
+      name: 'Second Tradition: Domain'
+  - name: Combat
+    count: 7
+    cards:
+    - count: 5
+      name: Pass Through Shadow
+    - count: 2
+      name: Touch of Oblivion
