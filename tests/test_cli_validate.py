@@ -5,8 +5,6 @@ Two groups of concerns:
   - Validator interaction: error_types routing, file moves, in-place updates.
 """
 
-from __future__ import annotations
-
 import argparse
 import contextlib
 from datetime import date
@@ -14,6 +12,7 @@ from pathlib import Path
 from typing import Any
 from unittest.mock import MagicMock, patch
 
+import pytest
 from ruamel.yaml import YAML
 
 import vtes_scraper.cli.validate as validate_mod
@@ -125,8 +124,17 @@ def _tournament_dict(**overrides) -> Tournament_Dict:
     return base
 
 
-def _validate_namespace(twds_dir: Path, dry_run: bool = False) -> argparse.Namespace:
-    return argparse.Namespace(twds_dir=twds_dir, dry_run=dry_run, verbose=False)
+def _validate_namespace(
+    twds_dir: Path,
+    dry_run: bool = False,
+    full_validation: bool = False,
+) -> argparse.Namespace:
+    return argparse.Namespace(
+        twds_dir=twds_dir,
+        dry_run=dry_run,
+        full_validation=full_validation,
+        verbose=False,
+    )
 
 
 @contextlib.contextmanager
@@ -160,35 +168,39 @@ def _patch_validate(**overrides):
 
 
 class TestIterPublishedYaml:
-    def test_yields_normal_files(self, tmp_path):
+    @pytest.fixture
+    def full_validation(self):
+        return True
+
+    def test_yields_normal_files(self, tmp_path, full_validation):
         f = tmp_path / "2023" / "03" / "9999.yaml"
         _write_yaml(f, {})
-        result = list(_iter_published_yaml(tmp_path))
+        result = list(_iter_published_yaml(tmp_path, full_validation))
         assert f in result
 
-    def test_skips_changes_required(self, tmp_path):
+    def test_skips_changes_required(self, tmp_path, full_validation):
         f = tmp_path / "changes_required" / "9999.yaml"
         _write_yaml(f, {})
-        result = list(_iter_published_yaml(tmp_path))
+        result = list(_iter_published_yaml(tmp_path, full_validation))
         assert f not in result
 
-    def test_includes_errors_subdir(self, tmp_path):
+    def test_includes_errors_subdir(self, tmp_path, full_validation):
         f = tmp_path / "errors" / "unconfirmed_winner" / "9999.yaml"
         _write_yaml(f, {})
-        result = list(_iter_published_yaml(tmp_path))
+        result = list(_iter_published_yaml(tmp_path, full_validation))
         assert f in result
 
-    def test_yields_multiple_years(self, tmp_path):
+    def test_yields_multiple_years(self, tmp_path, full_validation):
         f1 = tmp_path / "2022" / "01" / "1111.yaml"
         f2 = tmp_path / "2023" / "03" / "2222.yaml"
         _write_yaml(f1, {})
         _write_yaml(f2, {})
-        result = list(_iter_published_yaml(tmp_path))
+        result = list(_iter_published_yaml(tmp_path, full_validation))
         assert f1 in result
         assert f2 in result
 
-    def test_empty_dir_yields_nothing(self, tmp_path):
-        assert list(_iter_published_yaml(tmp_path)) == []
+    def test_empty_dir_yields_nothing(self, tmp_path, full_validation):
+        assert list(_iter_published_yaml(tmp_path, full_validation)) == []
 
 
 # ---------------------------------------------------------------------------
@@ -468,11 +480,11 @@ class TestValidateRunValidatorInteraction:
             validate_mod.run(_validate_namespace(tmp_path))
         mocks["error_types"].assert_not_called()
 
-    def test_errors_dir_files_are_revalidated(self, tmp_path):
+    def test_errors_dir_files_are_revalidated(self, tmp_path, full_validation=True):
         """Files already in errors/ are processed so they can be recovered."""
         _write_yaml(tmp_path / "errors" / "unconfirmed_winner" / "9999.yaml", _tournament_dict())
         with _patch_validate(error_types=[]) as mocks:
-            validate_mod.run(_validate_namespace(tmp_path))
+            validate_mod.run(_validate_namespace(tmp_path, full_validation=full_validation))
         mocks["error_types"].assert_called_once()
 
     def test_recovered_error_file_moved_to_clean_location(self, tmp_path):
