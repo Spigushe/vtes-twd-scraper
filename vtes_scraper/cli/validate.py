@@ -4,8 +4,8 @@ Re-applies the full scraping validation pipeline to all published tournament
 YAML files:
 
   1. Rescrape the forum post (forum_post_url) for fresh tournament data.
-  2. Enrich crypt cards and fix library card sections via krcg.
-  3. Attempt to recover a missing vekn_number from the VEKN event calendar.
+  2. Fetch the canonical winner name and VEKN number from the event calendar.
+  3. Enrich crypt cards and fix library card sections via krcg.
   4. Fetch the official event date from the VEKN calendar for date-coherence.
   5. Run the full error_types() check (illegal_header, unconfirmed_winner,
      limited_format, illegal_crypt, illegal_library, too_few_players,
@@ -26,7 +26,7 @@ from typing import cast
 import httpx
 
 from vtes_scraper.cli._common import SubParsersAction, console
-from vtes_scraper.models import Deck_Dict, Tournament_Dict
+from vtes_scraper.models import Deck_Dict, Tournament, Tournament_Dict
 from vtes_scraper.scraper._forum import extract_twd_from_thread
 from vtes_scraper.scraper._http import DEFAULT_DELAY_SECONDS, HEADERS
 from vtes_scraper.scraper._vekn import fetch_event_date, fetch_event_winner, fetch_player
@@ -36,6 +36,17 @@ from vtes_scraper.validator import enrich_crypt_cards, error_types, fix_card_sec
 # and can be removed; so we skip only tournaments flagged as "changes_required"
 # to avoid moving them back and forth.
 SKIP_DIRS = {"changes_required"}
+
+_TOURNAMENT_FIELD_ORDER = list(Tournament.model_fields.keys())
+
+
+def _reorder_tournament_dict(data: Tournament_Dict) -> dict:
+    """Return a new dict with keys ordered as per the Tournament model definition."""
+    ordered: dict = {k: data[k] for k in _TOURNAMENT_FIELD_ORDER if k in data}
+    for k in data:
+        if k not in ordered:
+            ordered[k] = data[k]
+    return ordered
 
 
 def register(sub: SubParsersAction) -> None:
@@ -68,20 +79,42 @@ def _iter_published_yaml(twds_dir: Path):
         yield yaml_file
 
 
-def _try_recover_vekn_number(
+def _check_and_update_winner(
     client: httpx.Client,
+    data: Tournament_Dict,
     event_url: str,
     delay: float = DEFAULT_DELAY_SECONDS,
-) -> int | None:
-    """Try to fetch the winner's VEKN number from the event calendar page."""
-    winner_name = fetch_event_winner(client, event_url, delay)
-    if not winner_name:
-        return None
-    result = fetch_player(client, winner_name, delay)
+) -> bool:
+    """Mirror scraping steps 3+4: update winner and vekn_number from the VEKN calendar.
+
+    Fetches the official winner from the event calendar page, then looks up
+    their canonical name and VEKN number in the player registry.
+    Mutates *data* in-place. Returns True if any field was changed.
+    """
+    dirty = False
+
+    calendar_winner = fetch_event_winner(client, event_url, delay)
+    if calendar_winner and calendar_winner != data.get("winner"):
+        data["winner"] = calendar_winner  # type: ignore[assignment]
+        dirty = True
+
+    winner: str = data.get("winner") or ""
+    if not winner:
+        return dirty
+
+    result = fetch_player(client, winner, delay)
     if result is None:
-        return None
-    _, vekn_number = result
-    return vekn_number
+        return dirty
+
+    canonical_name, vekn_number = result
+    if canonical_name != data.get("winner"):
+        data["winner"] = canonical_name  # type: ignore[assignment]
+        dirty = True
+    if vekn_number != data.get("vekn_number"):
+        data["vekn_number"] = vekn_number  # type: ignore[assignment]
+        dirty = True
+
+    return dirty
 
 
 def run(args: argparse.Namespace) -> int:
@@ -124,7 +157,16 @@ def run(args: argparse.Namespace) -> int:
                 except Exception as exc:
                     console.print(f"  forum rescrape error for {path.name}: {exc}")
 
-            # Step 2: enrich crypt cards and fix library sections via krcg
+            # Step 2: check event calendar for canonical winner name + VEKN number
+            event_url: str = data.get("event_url") or ""
+            if event_url and not dry_run:
+                try:
+                    if _check_and_update_winner(client, data, event_url):
+                        dirty = True
+                except Exception as exc:
+                    console.print(f"  calendar check error for {path.name}: {exc}")
+
+            # Step 3: enrich crypt cards and fix library sections via krcg
             deck = cast(Deck_Dict, data.get("deck") or {})
             if deck:
                 crypt_fixes = enrich_crypt_cards(deck)
@@ -142,23 +184,7 @@ def run(args: argparse.Namespace) -> int:
                 if dirty:
                     data["deck"] = deck  # type: ignore[assignment]
 
-            # Step 2: attempt to recover a missing vekn_number
-            event_url: str = data.get("event_url") or ""
-            if data.get("vekn_number") is None and event_url:
-                event_id = data.get("event_id", path.stem)
-                if not dry_run:
-                    console.print(f"rescraping calendar for event {event_id} ({event_url}) ...")
-                    try:
-                        vekn_number = _try_recover_vekn_number(client, event_url)
-                    except Exception as exc:
-                        console.print(f"  rescrape error: {exc}")
-                        vekn_number = None
-                    if vekn_number is not None:
-                        data["vekn_number"] = vekn_number  # type: ignore[assignment]
-                        console.print(f"[green]✓[/green] {path.name}  vekn_number={vekn_number}")
-                        dirty = True
-
-            # Step 3: fetch official event date for date-coherence check
+            # Step 4: fetch official event date for date-coherence check
             calendar_date = None
             if event_url and not dry_run:
                 try:
@@ -172,7 +198,7 @@ def run(args: argparse.Namespace) -> int:
             if not errors:
                 if dirty and not dry_run:
                     with open(path, "w", encoding="utf-8") as fh:
-                        yaml.dump(data, fh)
+                        yaml.dump(_reorder_tournament_dict(data), fh)
                     console.print(f"[green]✓[/green] updated {path.name}")
                     updated.append(path)
                 continue
