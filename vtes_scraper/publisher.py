@@ -96,7 +96,7 @@ def _get_authenticated_user(client: httpx.Client, token: str | None = None) -> s
     """Return the login of the token's owner via GET /user."""
     resp = client.get(f"{_GITHUB_API}/user", headers=_headers(token))
     resp.raise_for_status()
-    return resp.json()["login"]
+    return str(resp.json()["login"])
 
 
 def _ensure_fork(client: httpx.Client, token: str | None = None) -> str:
@@ -135,7 +135,7 @@ def _get_branch_sha(
     url = f"{_GITHUB_API}/repos/{_TARGET_OWNER}/{_TARGET_REPO}/git/refs/heads/{branch}"
     resp = client.get(url, headers=_headers(token))
     resp.raise_for_status()
-    return resp.json()["object"]["sha"]
+    return str(resp.json()["object"]["sha"])
 
 
 def _create_branch(
@@ -193,7 +193,7 @@ def _put_file(
     # If the file already exists on this branch we must supply its current SHA
     resp = client.get(url, headers=_headers(token), params={"ref": branch})
     if resp.status_code == 200:
-        body["sha"] = resp.json()["sha"]
+        body["sha"] = str(resp.json()["sha"])
 
     resp = client.put(url, headers=_headers(token), json=body)
     resp.raise_for_status()
@@ -234,7 +234,7 @@ def _open_pull_request(
                     )
                     return existing
     resp.raise_for_status()
-    return resp.json()["html_url"]
+    return str(resp.json()["html_url"])
 
 
 def _find_existing_pr(
@@ -251,7 +251,7 @@ def _find_existing_pr(
         params={"state": "open", "head": f"{fork_owner}:{head_branch}"},
     )
     if resp.status_code == 200 and resp.json():
-        return resp.json()[0]["html_url"]
+        return str(resp.json()[0]["html_url"])
     return None
 
 

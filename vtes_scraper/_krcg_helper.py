@@ -1,14 +1,21 @@
-import logging
-from typing import Literal
+from __future__ import annotations
 
-from krcg.cards import Card
-from krcg.config import TYPE_ORDER as TYPE_ORDER
+import logging
+from typing import Any
+
+from vtes_scraper.models import Crypt_Card_Dict
 
 _logger = logging.getLogger(__name__)
 
+
+try:
+    from krcg.config import TYPE_ORDER as TYPE_ORDER
+except ImportError:
+    TYPE_ORDER: list[str] = []  # type: ignore[no-redef]
+
 _krcg_loaded: bool | None = None
 _seen_cards: set[str | int] = set()
-_cards_loaded: dict[str | int, Card | None] = {}
+_cards_loaded: dict[str | int, Any] = {}
 
 
 def _is_krcg_loaded() -> bool:
@@ -28,8 +35,8 @@ def _is_krcg_loaded() -> bool:
     return _krcg_loaded
 
 
-def _krcg_card_search(card_name_or_id: str | int) -> Card | None:
-    """Search for a card by name in KRCG's VTES database. Returns the card ID if found."""
+def _krcg_card_search(card_name_or_id: str | int) -> Any:
+    """Search for a card by name in KRCG's VTES database. Returns the Card or None."""
     if not _is_krcg_loaded():
         return None
 
@@ -47,9 +54,7 @@ def _krcg_card_search(card_name_or_id: str | int) -> Card | None:
     return card
 
 
-def get_all_vamp_variants(
-    vamp_name: str,
-) -> list[dict[str, str | int | Literal["ANY"] | None]]:
+def get_all_vamp_variants(vamp_name: str) -> list[Crypt_Card_Dict]:
     """
     Return krcg data for all relevant grouping versions of a crypt card by name.
 
@@ -83,7 +88,7 @@ def get_all_vamp_variants(
     all_ids.update(card.variants.values())
 
     try:
-        result: list[dict[str, str | int | Literal["ANY"] | None]] = []
+        result: list[Crypt_Card_Dict] = []
         for card_id in all_ids:
             try:
                 card_from_id = _krcg_card_search(card_id)
@@ -97,26 +102,26 @@ def get_all_vamp_variants(
             if bool(card_from_id.adv) != want_adv:
                 continue
             disciplines = " ".join(card_from_id.disciplines) if card_from_id.disciplines else ""
-            clan = card_from_id.clans[0] if card_from_id.clans else ""
+            clan: str = card_from_id.clans[0] if card_from_id.clans else ""
             raw_group = card_from_id.group
             if not raw_group:
                 continue
+            grouping: int | str
             if raw_group == "ANY":
-                grouping: int | str = "ANY"
+                grouping = "ANY"
             else:
                 try:
                     grouping = int(raw_group)
                 except TypeError, ValueError:
                     continue
-            result.append(
-                {
-                    "capacity": card_from_id.capacity,
-                    "disciplines": disciplines,
-                    "title": card_from_id.title or None,
-                    "clan": clan,
-                    "grouping": grouping,
-                }
-            )
+            entry: Crypt_Card_Dict = {
+                "capacity": card_from_id.capacity,
+                "disciplines": disciplines,
+                "title": card_from_id.title or None,
+                "clan": clan,
+                "grouping": grouping,
+            }
+            result.append(entry)
 
         return result
     except Exception:

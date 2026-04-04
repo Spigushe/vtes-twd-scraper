@@ -3,8 +3,11 @@ Data models for VTES Tournament Winning Decks.
 Based on: https://github.com/GiottoVerducci/TWD/blob/master/README.md
 """
 
+from __future__ import annotations
+
 import re
 from datetime import date, datetime
+from typing import TypedDict
 
 from pydantic import BaseModel, field_validator, model_validator
 
@@ -17,14 +20,57 @@ DATE_FORMATS = (
     "%d/%m/%Y",
 )
 
-Library_Card_Dict = dict[str, int | str | None]
-Library_Section_Dict = dict[str, int | list["Library_Card_Dict"]]
-Crypt_Card_Dict = dict[str, int | str | None]
-Deck_Dict = dict[
-    str,
-    int | float | list["Crypt_Card_Dict"] | list["Library_Section_Dict"] | None,
-]
-Tournament_Dict = dict[str, str | int | "Deck_Dict" | date | None]
+
+class Library_Card_Dict(TypedDict, total=False):
+    count: int
+    name: str
+    comment: str | None
+
+
+class Library_Section_Dict(TypedDict, total=False):
+    name: str
+    count: int
+    cards: list[Library_Card_Dict]
+
+
+class Crypt_Card_Dict(TypedDict, total=False):
+    count: int
+    name: str
+    capacity: int
+    disciplines: str
+    title: str | None
+    clan: str
+    grouping: int | str
+    comment: str | None
+
+
+class Deck_Dict(TypedDict, total=False):
+    name: str | None
+    created_by: str | None
+    description: str
+    crypt_count: int
+    crypt_min: int
+    crypt_max: int
+    crypt_avg: float
+    crypt: list[Crypt_Card_Dict]
+    library_count: int
+    library_sections: list[Library_Section_Dict]
+
+
+class Tournament_Dict(TypedDict, total=False):
+    name: str
+    location: str
+    date_start: date
+    date_end: date | None
+    rounds_format: str
+    players_count: int
+    winner: str
+    vekn_number: int | None
+    event_url: str
+    event_id: int | None
+    vp_comment: str | None
+    forum_post_url: str | None
+    deck: Deck_Dict
 
 
 class CryptCard(BaseModel):
@@ -93,6 +139,7 @@ class Tournament(BaseModel):
     winner: str
     vekn_number: int | None = None  # VEKN member number, e.g. 3940009
     event_url: str  # https://www.vekn.net/event-calendar/event/XXXX
+    deck: Deck
 
     # --- Derived ---
     event_id: int | None = None  # extracted from event_url
@@ -100,9 +147,6 @@ class Tournament(BaseModel):
     # --- Optional ---
     vp_comment: str | None = None
     forum_post_url: str | None = None  # source forum URL (for traceability)
-
-    # --- Last for file structure ---
-    deck: Deck
 
     @model_validator(mode="after")
     def derive_event_id(self) -> Tournament:

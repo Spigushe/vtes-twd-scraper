@@ -16,7 +16,7 @@ def _build_parser() -> argparse.ArgumentParser:
         prog="vtes-scraper",
         description="Scrape VTES tournament winning decks from vekn.net and export to YAML.",
     )
-    sub: SubParsersAction = parser.add_subparsers(dest="command", required=True)  # type: ignore[assignment]
+    sub: SubParsersAction = parser.add_subparsers(dest="command", required=True)
     scrape.register(sub)
     parse.register(sub)
     publish.register(sub)

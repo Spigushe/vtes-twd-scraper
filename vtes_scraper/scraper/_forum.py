@@ -10,11 +10,11 @@ import httpx
 from vtes_scraper.models import Tournament
 from vtes_scraper.parser import parse_twd_text
 from vtes_scraper.scraper._http import (
-    _SKIP_SLUGS,
-    _THREAD_HREF_RE,
     DEFAULT_DELAY_SECONDS,
     FORUM_BASE,
     FORUM_INDEX,
+    SKIP_SLUGS,
+    THREAD_HREF_RE,
     TOPICS_PER_PAGE,
     get_soup,
     kunena_div_to_text,
@@ -59,11 +59,11 @@ def iter_thread_urls(
             href = cast(str, tag.get("href", ""))
             # Strip query params and anchors before matching
             clean_href = href.split("?")[0].split("#")[0]
-            if not _THREAD_HREF_RE.match(clean_href):
+            if not THREAD_HREF_RE.match(clean_href):
                 continue
             # Extract the slug (last path segment) and skip meta/admin threads
             slug = clean_href.rsplit("/", 1)[-1]
-            if slug in _SKIP_SLUGS:
+            if slug in SKIP_SLUGS:
                 continue
             full_url = urljoin(FORUM_BASE, clean_href)
             if full_url not in seen:

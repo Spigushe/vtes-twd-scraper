@@ -149,7 +149,7 @@ class TestScrapeCliRouting:
             patch.object(
                 _scrape_mod,
                 "_check_calendar_winner",
-                side_effect=lambda _client, t, _delay: t,
+                side_effect=lambda _client, t, _delay: (t, False),
             ),
             patch.object(
                 _scrape_mod,

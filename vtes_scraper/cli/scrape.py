@@ -91,8 +91,8 @@ def _to_serializable(obj: Tournament) -> Tournament_Dict:
             d = cast(dict[str, Any], value)
             return {k: _filter_none(v) for k, v in d.items() if v is not None}
         if isinstance(value, list):
-            lst = cast(list[Any], value)
-            return [_filter_none(item) for item in lst]
+            items = cast(list[Any], value)  # type: ignore[redundant-cast]
+            return [_filter_none(item) for item in items]
         return value
 
     return cast(Tournament_Dict, _filter_none(obj.model_dump()))
@@ -107,27 +107,35 @@ def _check_calendar_winner(
     client: httpx.Client,
     tournament: Tournament,
     delay: float,
-) -> Tournament:
-    """Step 3: override the winner with the official VEKN calendar standings."""
+) -> tuple[Tournament, bool]:
+    """Step 3: override the winner with the official VEKN calendar standings.
+
+    Returns ``(tournament, calendar_winner_missing)`` where
+    ``calendar_winner_missing`` is ``True`` when the event URL is set but the
+    calendar page has no results/standings data yet.
+    """
     if not tournament.event_url:
-        return tournament
+        return tournament, False
     try:
         calendar_winner = fetch_event_winner(client, tournament.event_url, delay=delay)
-        if calendar_winner and calendar_winner != tournament.winner:
+        if calendar_winner is None:
+            logger.debug("No results data on event page: %s", tournament.event_url)
+            return tournament, True
+        if calendar_winner != tournament.winner:
             logger.debug(
                 "Calendar winner override: %r → %r  (%s)",
                 tournament.winner,
                 calendar_winner,
                 tournament.event_url,
             )
-            return tournament.model_copy(update={"winner": calendar_winner})
+            return tournament.model_copy(update={"winner": calendar_winner}), False
     except Exception as exc:
         logger.warning(
             "Could not fetch calendar winner for %s: %s",
             tournament.event_url,
             exc,
         )
-    return tournament
+    return tournament, False
 
 
 def _lookup_player(
@@ -333,7 +341,9 @@ def run(args: argparse.Namespace) -> int:
                 continue
 
             # Step 3: check event calendar for the winner's name
-            tournament = _check_calendar_winner(client, tournament, args.delay)
+            tournament, calendar_winner_missing = _check_calendar_winner(
+                client, tournament, args.delay
+            )
 
             # Step 4: look up winner in VEKN player registry
             tournament, coercions_changed = _lookup_player(
@@ -347,6 +357,8 @@ def run(args: argparse.Namespace) -> int:
 
             # Step 6: validate content
             errors = _validate_content(client, tournament, args.delay)
+            if calendar_winner_missing:
+                errors.append("unknown_winner")
 
             # Route file to the appropriate destination
             if errors:
