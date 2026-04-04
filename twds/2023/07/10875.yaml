@@ -7,12 +7,14 @@ winner: Otso Saariluoma
 vekn_number: 3530054
 event_url: https://www.vekn.net/event-calendar/event/10875
 event_id: 10875
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80769-twd-ropecon-warm-up
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80769-twd-ropecon-warm-up
 deck:
   name: Retribution Time
   created_by: Otso Saariluoma
-  description: Emiliano Imeroni's deck with a light personal touch. Increased the number of Infernal Pursuits & added 
-    Parthenon to have more control over the deck flow. Narrow Minds seemed a good fit.
+  description: Emiliano Imeroni's deck with a light personal touch. Increased 
+    the number of Infernal Pursuits & added Parthenon to have more control over 
+    the deck flow. Narrow Minds seemed a good fit.
   crypt_count: 12
   crypt_min: 17
   crypt_max: 32

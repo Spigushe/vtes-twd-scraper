@@ -13,8 +13,10 @@ forum_post_url:
 deck:
   name: Scouse politics (New)
   created_by: Tr0tt3r
-  description: So, I started playing V:TES at the end of April. I played twice at Miles 2 Adventure learning the game 
-    and borrowing a few decks before heading back to the U.K., where after a few weeks I found a group in Liverpool.
+  description: So, I started playing V:TES at the end of April. I played twice 
+    at Miles 2 Adventure learning the game and borrowing a few decks before 
+    heading back to the U.K., where after a few weeks I found a group in 
+    Liverpool.
   crypt_count: 12
   crypt_min: 15
   crypt_max: 35

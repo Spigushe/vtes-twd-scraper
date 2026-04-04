@@ -8,7 +8,8 @@ vekn_number: 3340035
 event_url: https://www.vekn.net/event-calendar/event/12088
 event_id: 12088
 vp_comment: 2 GW 5.5 VP in prelims, 1 GW 2.5 VP in finals
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82430-twd-origins-friday-1
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82430-twd-origins-friday-1
 deck:
   name: Gangrel Death Star
   created_by: Martin Weinmayer

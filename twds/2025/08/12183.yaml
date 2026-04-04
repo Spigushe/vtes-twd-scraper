@@ -8,13 +8,15 @@ vekn_number: 1004352
 event_url: https://www.vekn.net/event-calendar/event/12183
 event_id: 12183
 vp_comment: 1GW+6VP + 2VP in final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82533-twd-revelation-of-wrath
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82533-twd-revelation-of-wrath
 deck:
   name: Water Dog - Dream a Little DIRTY Dream
   created_by: Kelly Lyons and Karl Schaefer
-  description: This deck started with a conversation with Karl Schaefer. I wasn’t going to be able to attend the NAC 
-    this year. I needed a way to live vicariously for the summer so, when Karl said he was seeking ideas for the Week of
-    Nightmares and Origins I jumped right in with suggestions.
+  description: This deck started with a conversation with Karl Schaefer. I 
+    wasn’t going to be able to attend the NAC this year. I needed a way to live 
+    vicariously for the summer so, when Karl said he was seeking ideas for the 
+    Week of Nightmares and Origins I jumped right in with suggestions.
   crypt_count: 12
   crypt_min: 12
   crypt_max: 34

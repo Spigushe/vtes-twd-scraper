@@ -7,7 +7,8 @@ winner: Jorge Delgado
 vekn_number: 9290014
 event_url: https://www.vekn.net/event-calendar/event/12138
 event_id: 12138
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82167-twd-cold-aura
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82167-twd-cold-aura
 deck:
   name: Cats & Dogs
   created_by: Jorge Delgado
@@ -79,13 +80,15 @@ deck:
     cards:
     - count: 6
       name: Graverobbing
-      comment: try to get the maximum value. the importance is to get the titled vamps (less threat, easier autarkis)
+      comment: try to get the maximum value. the importance is to get the titled
+        vamps (less threat, easier autarkis)
   - name: Political Action
     count: 6
     cards:
     - count: 6
       name: Autarkis Persecution
-      comment: if you play without the vote lock make sure that people are willing to vote for and if not punish them
+      comment: if you play without the vote lock make sure that people are 
+        willing to vote for and if not punish them
   - name: Ally
     count: 10
     cards:

@@ -147,7 +147,8 @@ deck:
       name: Pursuit
     - count: 3
       name: Quickness
-      comment: I sometimes wonder about this card's errata and a deck might result
+      comment: I sometimes wonder about this card's errata and a deck might 
+        result
     - count: 3
       name: Rego Motum
     - count: 2

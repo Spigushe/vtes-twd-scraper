@@ -7,13 +7,15 @@ winner: Jonas Ståhle
 vekn_number: 8090005
 event_url: https://www.vekn.net/event-calendar/event/11739
 event_id: 11739
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81968-twd-vtes-finnish-nationals-2024
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81968-twd-vtes-finnish-nationals-2024
 deck:
   name: Slasher Grinder
   created_by: Jonas Ståhle
-  description: Shoutout to people I've discussed the archetype and card choices with (Randy, Antti, Ádám)! Single 
-    biggest inspiration was from Erik Mossberg's Elimelech grinder. While quite different on the surface, some modules 
-    and card inclusions are directly drawn from his deck.
+  description: Shoutout to people I've discussed the archetype and card choices 
+    with (Randy, Antti, Ádám)! Single biggest inspiration was from Erik 
+    Mossberg's Elimelech grinder. While quite different on the surface, some 
+    modules and card inclusions are directly drawn from his deck.
   crypt_count: 12
   crypt_min: 17
   crypt_max: 31

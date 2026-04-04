@@ -7,11 +7,13 @@ winner: Carlos Escobar Muciño
 vekn_number: 5230002
 event_url: https://www.vekn.net/event-calendar/event/10639
 event_id: 10639
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80375-games-of-instinct-2023
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80375-games-of-instinct-2023
 deck:
   name: Vasiliy sabe donde vives
   created_by: Carlos Escobar
-  description: Es un mazo de bleed que su objetivo principal es hacer que redirigir y reducir bleed sea muy costoso
+  description: Es un mazo de bleed que su objetivo principal es hacer que 
+    redirigir y reducir bleed sea muy costoso
   crypt_count: 12
   crypt_min: 22
   crypt_max: 32

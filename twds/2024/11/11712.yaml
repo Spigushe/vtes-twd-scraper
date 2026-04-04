@@ -8,16 +8,20 @@ vekn_number: 6161019
 event_url: https://www.vekn.net/event-calendar/event/11712
 event_id: 11712
 vp_comment: 3GW 9VP + 1,5vp in finals (won in tiebreaker)
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81936-twd-nordestao-2024-maceio-brazil-16-nov-2024
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/81936-twd-nordestao-2024-maceio-brazil-16-nov-2024
 deck:
   name: Matasuntha - The Evil One wins again (O mau vence novamente)
-  description: The table featured Brujah explosive combat, Ministry, Tzimisce Den of Fiends wall combat, Toreador wall 
-    guns, and Gangrel Grinder. The Ministry deck clashed against the wall combat, unable to break through. The Brujah 
-    deck spent 80% of the game rushing backwards, while the Toreador deck, unlucky, remained passive as hand jammed and 
-    the deck failed. After the Ministry was ousted, the Tzimisce began aiding the Brujah against me. Both the Brujah and
-    Toreador decks were ousted nearly simultaneously, and in the end, I was gaining more pool than the Tzimisce could 
-    bleed away, with several recursive locations and blood engines, securing my victory. The world is cruel, and life is
-    unfair. (O mundo é mau e a vida injusta).
+  description: The table featured Brujah explosive combat, Ministry, Tzimisce 
+    Den of Fiends wall combat, Toreador wall guns, and Gangrel Grinder. The 
+    Ministry deck clashed against the wall combat, unable to break through. The 
+    Brujah deck spent 80% of the game rushing backwards, while the Toreador 
+    deck, unlucky, remained passive as hand jammed and the deck failed. After 
+    the Ministry was ousted, the Tzimisce began aiding the Brujah against me. 
+    Both the Brujah and Toreador decks were ousted nearly simultaneously, and in
+    the end, I was gaining more pool than the Tzimisce could bleed away, with 
+    several recursive locations and blood engines, securing my victory. The 
+    world is cruel, and life is unfair. (O mundo é mau e a vida injusta).
   crypt_count: 12
   crypt_min: 18
   crypt_max: 40

@@ -7,12 +7,14 @@ winner: Tiago Guedes
 vekn_number: 6130050
 event_url: https://www.vekn.net/event-calendar/event/12504
 event_id: 12504
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82523-twd-1st-ccb-tomahawk
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82523-twd-1st-ccb-tomahawk
 deck:
   name: Peace sells
   created_by: Tiago Guedes
-  description: Credits to deck creator Darby Keeney (based on Kelly Lyons' deck). I swapped Anarch Manifest for Ivory 
-    Bow. The change had to do with the local meta with guns and ranged combat.
+  description: Credits to deck creator Darby Keeney (based on Kelly Lyons' 
+    deck). I swapped Anarch Manifest for Ivory Bow. The change had to do with 
+    the local meta with guns and ranged combat.
   crypt_count: 12
   crypt_min: 22
   crypt_max: 32

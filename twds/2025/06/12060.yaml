@@ -8,13 +8,16 @@ vekn_number: 2150015
 event_url: https://www.vekn.net/event-calendar/event/12060
 event_id: 12060
 vp_comment: 1GW5, 3VP in final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82450-twd-week-of-nightmares-event-6-2025
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82450-twd-week-of-nightmares-event-6-2025
 deck:
   name: Don't Try This At Home, a.k.a. Enema Gathering
-  description: This toolboxy Creeping Sabotage deck was made from two other decks smashed together, with some crypt 
-    changes afterward. One deck was an Anima Gathering + Organized Resistance + Earth Meld wall. The other was a Barons 
-    + Creeping Sabotage deck. The result is pretty weird. It features vamps with very different jobs, but somehow 
-    managed not to jam too badly and snuck in some GWs.
+  description: This toolboxy Creeping Sabotage deck was made from two other 
+    decks smashed together, with some crypt changes afterward. One deck was an 
+    Anima Gathering + Organized Resistance + Earth Meld wall. The other was a 
+    Barons + Creeping Sabotage deck. The result is pretty weird. It features 
+    vamps with very different jobs, but somehow managed not to jam too badly and
+    snuck in some GWs.
   crypt_count: 12
   crypt_min: 15
   crypt_max: 25

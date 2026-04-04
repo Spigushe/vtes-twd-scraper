@@ -12,7 +12,8 @@ forum_post_url:
 deck:
   name: Hells Bells
   created_by: Alessandro Donati, Prince of Barga
-  description: "Pure Baali Political Deck that exploits Arishat's ability and the Condamnation: Mute to gain the vote lock."
+  description: "Pure Baali Political Deck that exploits Arishat's ability and the
+    Condamnation: Mute to gain the vote lock."
   crypt_count: 12
   crypt_min: 15
   crypt_max: 34

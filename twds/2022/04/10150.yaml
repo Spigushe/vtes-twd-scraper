@@ -8,14 +8,18 @@ vekn_number: 1003843
 event_url: https://www.vekn.net/event-calendar/event/10150
 event_id: 10150
 vp_comment: 3 Vp in final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/79736-twd-fee-stake-maceio-brazil-17-april-2022
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/79736-twd-fee-stake-maceio-brazil-17-april-2022
 deck:
   name: The Might of Ur-Shulgi, The Shepherd
-  description: 'Basically this is a toolbox bleed with stealth deck focused on the power of Ur-Shulgi. Using murmur (redirect
-    or bleed) with blood awakening (block fails or intercept) and some shenanigans like spying mission (stealth, anti redirections
-    or extra bleed with the 5 caps), I managed to honor our mighty assamite clan with a glorious victory crushing the filthy
-    ventrue on a very tight finals (with some off the books helps from the ministry). Holding Khabar: Glory for the right
-    time for that extra 4 pool is crucial. Also Black Sunrise or mylan with enkil cog is really interesting.'
+  description: 'Basically this is a toolbox bleed with stealth deck focused on the
+    power of Ur-Shulgi. Using murmur (redirect or bleed) with blood awakening (block
+    fails or intercept) and some shenanigans like spying mission (stealth, anti redirections
+    or extra bleed with the 5 caps), I managed to honor our mighty assamite clan with
+    a glorious victory crushing the filthy ventrue on a very tight finals (with some
+    off the books helps from the ministry). Holding Khabar: Glory for the right time
+    for that extra 4 pool is crucial. Also Black Sunrise or mylan with enkil cog is
+    really interesting.'
   crypt_count: 12
   crypt_min: 20
   crypt_max: 44

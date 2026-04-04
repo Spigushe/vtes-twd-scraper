@@ -7,14 +7,17 @@ winner: Édouard Menneson
 vekn_number: 3200360
 event_url: https://www.vekn.net/event-calendar/event/10675
 event_id: 10675
-vp_comment: 'Description : Classic Gangrel Wall. Hell-For-Leather is a real mvp. Sniper may be reomved or replaced by Ivory
-  Bow. A 2nd Carfax Abbey or a Zoo Hunting Grounded may be needed. 2nd Gangrel Revel could also help.'
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80502-twd-haven-uncovered-paris-2023-04-22
+vp_comment: 'Description : Classic Gangrel Wall. Hell-For-Leather is a real mvp. Sniper
+  may be reomved or replaced by Ivory Bow. A 2nd Carfax Abbey or a Zoo Hunting Grounded
+  may be needed. 2nd Gangrel Revel could also help.'
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80502-twd-haven-uncovered-paris-2023-04-22
 deck:
   name: PROWall streamlined
   created_by: Rhazoo
-  description: Classic Gangrel Wall. Hell-For-Leather is a real mvp. Sniper may be reomved or replaced by Ivory Bow. A 
-    2nd Carfax Abbey or a Zoo Hunting Grounded may be needed. 2nd Gangrel Revel could also help.
+  description: Classic Gangrel Wall. Hell-For-Leather is a real mvp. Sniper may 
+    be reomved or replaced by Ivory Bow. A 2nd Carfax Abbey or a Zoo Hunting 
+    Grounded may be needed. 2nd Gangrel Revel could also help.
   crypt_count: 12
   crypt_min: 13
   crypt_max: 25

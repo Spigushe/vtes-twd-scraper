@@ -12,9 +12,11 @@ forum_post_url:
 deck:
   name: Muussauskoulu
   created_by: Teemu Pulkkinen
-  description: Thank you to Antti Penttilä for providing a great list that I customized by adding some rushes. Antti got
-    an idea of using Raw Recruit + As the Crow + Codex of the Edenic Groundskeepers with the intent of actually removing
-    vampires instead of just torporizing them and to turn objectives into assets.
+  description: Thank you to Antti Penttilä for providing a great list that I 
+    customized by adding some rushes. Antti got an idea of using Raw Recruit + 
+    As the Crow + Codex of the Edenic Groundskeepers with the intent of actually
+    removing vampires instead of just torporizing them and to turn objectives 
+    into assets.
   crypt_count: 12
   crypt_min: 14
   crypt_max: 28

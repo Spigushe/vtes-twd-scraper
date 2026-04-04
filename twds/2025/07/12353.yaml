@@ -13,7 +13,8 @@ forum_post_url:
 deck:
   name: Exit Through the Gift Shop
   created_by: James Freimuller
-  description: Tweaks on Jesper Boje's loot the museum deck with an expectation of ally spam appearing.
+  description: Tweaks on Jesper Boje's loot the museum deck with an expectation 
+    of ally spam appearing.
   crypt_count: 12
   crypt_min: 16
   crypt_max: 28

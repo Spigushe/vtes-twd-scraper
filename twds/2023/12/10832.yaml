@@ -138,7 +138,8 @@ deck:
     cards:
     - count: 1
       name: Camera Phone
-      comment: would still love to duplicate this, but went with a Heart instead.
+      comment: would still love to duplicate this, but went with a Heart 
+        instead.
     - count: 1
       name: Heart of Nizchetus
     - count: 1

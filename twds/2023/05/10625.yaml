@@ -8,11 +8,13 @@ vekn_number: 5810002
 event_url: https://www.vekn.net/event-calendar/event/10625
 event_id: 10625
 vp_comment: 1.5 VP, 0.5 VP; 4 VP + GW
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80532-twd-haranni-madness-may-13th-2023-herne-germany
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80532-twd-haranni-madness-may-13th-2023-herne-germany
 deck:
   name: Vor neun Wochen (Nine weeks ago)
-  description: This deck is dedicated to my son Robin who was born exactly nine weeks before the tournament. It is 
-    pretty much the same deck as Otso's "Feral High Council" (Thank you for your inspiring decks!) which entered the 
+  description: This deck is dedicated to my son Robin who was born exactly nine 
+    weeks before the tournament. It is pretty much the same deck as Otso's 
+    "Feral High Council" (Thank you for your inspiring decks!) which entered the
     TWDA seven weeks ago.
   crypt_count: 12
   crypt_min: 35

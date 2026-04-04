@@ -12,7 +12,8 @@ forum_post_url:
 deck:
   name: Ozempic Clown
   created_by: Christian Chenard
-  description: The leanest and most straightforward version of the classic archetype
+  description: The leanest and most straightforward version of the classic 
+    archetype
   crypt_count: 12
   crypt_min: 8
   crypt_max: 15

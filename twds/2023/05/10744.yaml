@@ -7,13 +7,16 @@ winner: Serge Cirri
 vekn_number: 8300013
 event_url: https://www.vekn.net/event-calendar/event/10744
 event_id: 10744
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/80603-road-to-vitrolles-france
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/80603-road-to-vitrolles-france
 deck:
   name: Fists of the Giovanni
-  description: 'A version of a Weenie Potence based on the G5-G6 vamps. I had tried a version with Computer Hacking and tried
-    for this tournament to replace them with permableed and 1 Heidelberg. I also addressed their blood problem, and included
-    Carver’s but also Coven, after some hesitation: bad idea, should be ditched. Went down from 2 Frontal to just 1, but maybe
-    it should be none, it’s always a risky bet.'
+  description: 'A version of a Weenie Potence based on the G5-G6 vamps. I had tried
+    a version with Computer Hacking and tried for this tournament to replace them
+    with permableed and 1 Heidelberg. I also addressed their blood problem, and included
+    Carver’s but also Coven, after some hesitation: bad idea, should be ditched. Went
+    down from 2 Frontal to just 1, but maybe it should be none, it’s always a risky
+    bet.'
   crypt_count: 12
   crypt_min: 8
   crypt_max: 18

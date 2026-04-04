@@ -12,8 +12,9 @@ forum_post_url:
 deck:
   name: Vozhd on a Hawg
   created_by: Jan-Willem Kaagman
-  description: The deck is based on the standard 2024 Tzimisce deck. I didn't understand why the "Childe of the 
-    revolution" was in the standard V5 deck, so I took them out. The goal was to get either a Vozhd or a War ghoul on a 
+  description: The deck is based on the standard 2024 Tzimisce deck. I didn't 
+    understand why the "Childe of the revolution" was in the standard V5 deck, 
+    so I took them out. The goal was to get either a Vozhd or a War ghoul on a 
     Hawg.
   crypt_count: 12
   crypt_min: 18
