@@ -69,7 +69,7 @@ class Tournament_Dict(TypedDict, total=False):
     event_url: str
     event_id: int | None
     vp_comment: str | None
-    forum_post_url: str | None
+    forum_post_url: str
     deck: Deck_Dict
 
 

@@ -21,7 +21,10 @@ from vtes_scraper.output.txt import (
     tournament_to_txt,
     write_tournament_txt,
 )
-from vtes_scraper.output.yaml import tournament_to_yaml_str, write_tournament_yaml
+from vtes_scraper.output.yaml import (
+    tournament_to_yaml_str,
+    write_tournament_yaml,
+)
 
 
 def _make_tournament(**kwargs) -> Tournament:
@@ -62,7 +65,7 @@ def _make_tournament(**kwargs) -> Tournament:
         ),
     )
     defaults.update(kwargs)
-    return Tournament(**defaults)
+    return Tournament.model_validate(defaults)
 
 
 # ---------------------------------------------------------------------------

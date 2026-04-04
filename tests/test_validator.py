@@ -57,6 +57,7 @@ def _tournament(**kwargs) -> Tournament_Dict:
         winner="Jane Doe",
         vekn_number=1234567,
         event_url="https://www.vekn.net/event-calendar/event/9999",
+        forum_post_url="https://www.vekn.net/forum/event-reports-and-twd/99999-test-event",
         deck=_deck(**kwargs),
     )
     for k, v in kwargs.items():
@@ -75,26 +76,31 @@ class TestMandatoryFields:
         assert error_types(_tournament()) == []
 
     def test_missing_name(self):
-        print(_tournament(name=""))
-        assert "missing_name" in error_types(_tournament(name=""))
+        assert "illegal_header" in error_types(_tournament(name=""))
 
     def test_missing_location(self):
-        assert "missing_location" in error_types(_tournament(location=None))
+        assert "illegal_header" in error_types(_tournament(location=None))
 
     def test_missing_date_start(self):
-        assert "missing_date_start" in error_types(_tournament(date_start=None))
+        assert "illegal_header" in error_types(_tournament(date_start=None))
 
     def test_missing_rounds_format(self):
-        assert "missing_rounds_format" in error_types(_tournament(rounds_format=""))
+        assert "illegal_header" in error_types(_tournament(rounds_format=""))
 
     def test_missing_players_count(self):
-        assert "missing_players_count" in error_types(_tournament(players_count=0))
+        assert "illegal_header" in error_types(_tournament(players_count=0))
 
     def test_missing_winner(self):
-        assert "missing_winner" in error_types(_tournament(winner=""))
+        assert "unconfirmed_winner" in error_types(_tournament(winner=""))
 
     def test_missing_event_url(self):
-        assert "missing_event_url" in error_types(_tournament(event_url=None))
+        assert "illegal_header" in error_types(_tournament(event_url=None))
+
+    def test_missing_forum_post_url(self):
+        assert "illegal_header" in error_types(_tournament(forum_post_url=None))
+
+    def test_empty_forum_post_url(self):
+        assert "illegal_header" in error_types(_tournament(forum_post_url=""))
 
     def test_limited_format(self):
         assert "limited_format" in error_types(_tournament(name="Limited Edition Cup"))
@@ -117,12 +123,12 @@ class TestUnconfirmedWinner:
     def test_present_vekn_number(self):
         assert "unconfirmed_winner" not in error_types(_tournament(vekn_number=1234567))
 
-    def test_priority_after_missing_winner(self):
-        """missing_winner should come before unconfirmed_winner in errors list."""
-        errors = error_types(_tournament(winner="", vekn_number=None))
-        assert "missing_winner" in errors
+    def test_priority_illegal_header_before_unconfirmed_winner(self):
+        """illegal_header should come before unconfirmed_winner in errors list."""
+        errors = error_types(_tournament(name="", winner=""))
+        assert "illegal_header" in errors
         assert "unconfirmed_winner" in errors
-        assert errors.index("missing_winner") < errors.index("unconfirmed_winner")
+        assert errors.index("illegal_header") < errors.index("unconfirmed_winner")
 
 
 # ---------------------------------------------------------------------------
@@ -133,7 +139,7 @@ class TestUnconfirmedWinner:
 class TestDeckChecks:
     def test_empty_crypt(self):
         deck = _deck(crypt=[])
-        assert "empty_crypt" in error_types(_tournament(deck=deck))
+        assert "illegal_crypt" in error_types(_tournament(deck=deck))
 
     def test_illegal_crypt_non_consecutive(self):
         deck = _deck(
@@ -169,7 +175,7 @@ class TestDeckChecks:
 
     def test_empty_library(self):
         deck = _deck(library_sections=[])
-        assert "empty_library" in error_types(_tournament(deck=deck))
+        assert "illegal_library" in error_types(_tournament(deck=deck))
 
 
 # ---------------------------------------------------------------------------
@@ -180,25 +186,25 @@ class TestDeckChecks:
 class TestCryptCountMismatch:
     def test_matching_count_no_error(self):
         # crypt_count=2, sum of counts=2
-        assert "crypt_count_mismatch" not in error_types(_tournament())
+        assert "illegal_crypt" not in error_types(_tournament())
 
     def test_crypt_count_too_high(self):
         deck = _deck(crypt_count=5)  # actual sum is 2
-        assert "crypt_count_mismatch" in error_types(_tournament(deck=deck))
+        assert "illegal_crypt" in error_types(_tournament(deck=deck))
 
     def test_crypt_count_too_low(self):
         deck = _deck(crypt_count=1)  # actual sum is 2
-        assert "crypt_count_mismatch" in error_types(_tournament(deck=deck))
+        assert "illegal_crypt" in error_types(_tournament(deck=deck))
 
     def test_no_crypt_count_field_skipped(self):
         deck = _deck()
         del deck["crypt_count"]
-        assert "crypt_count_mismatch" not in error_types(_tournament(deck=deck))
+        assert "illegal_crypt" not in error_types(_tournament(deck=deck))
 
 
 class TestLibrarySectionCountMismatch:
     def test_matching_count_no_error(self):
-        assert "library_section_count_mismatch" not in error_types(_tournament())
+        assert "illegal_library" not in error_types(_tournament())
 
     def test_section_count_too_high(self):
         deck = _deck(
@@ -210,7 +216,7 @@ class TestLibrarySectionCountMismatch:
                 }
             ]
         )
-        assert "library_section_count_mismatch" in error_types(_tournament(deck=deck))
+        assert "illegal_library" in error_types(_tournament(deck=deck))
 
     def test_section_count_matches_sum(self):
         deck = _deck(
@@ -226,16 +232,16 @@ class TestLibrarySectionCountMismatch:
                 }
             ],
         )
-        assert "library_section_count_mismatch" not in error_types(_tournament(deck=deck))
+        assert "illegal_library" not in error_types(_tournament(deck=deck))
 
 
 class TestLibraryCountMismatch:
     def test_matching_count_no_error(self):
-        assert "library_count_mismatch" not in error_types(_tournament())
+        assert "illegal_library" not in error_types(_tournament())
 
     def test_library_count_too_high(self):
         deck = _deck(library_count=10)  # sum of sections is 1
-        assert "library_count_mismatch" in error_types(_tournament(deck=deck))
+        assert "illegal_library" in error_types(_tournament(deck=deck))
 
     def test_library_count_matches_section_sum(self):
         deck = _deck(
@@ -255,12 +261,12 @@ class TestLibraryCountMismatch:
                 },
             ],
         )
-        assert "library_count_mismatch" not in error_types(_tournament(deck=deck))
+        assert "illegal_library" not in error_types(_tournament(deck=deck))
 
     def test_no_library_count_field_skipped(self):
         deck = _deck()
         del deck["library_count"]
-        assert "library_count_mismatch" not in error_types(_tournament(deck=deck))
+        assert "illegal_library" not in error_types(_tournament(deck=deck))
 
 
 # ---------------------------------------------------------------------------
@@ -276,7 +282,7 @@ class TestTooFewPlayers:
         assert "too_few_players" in error_types(_tournament(players_count=11))
 
     def test_zero_not_flagged_as_too_few(self):
-        # Zero triggers missing_players_count but NOT too_few_players
+        # Zero triggers illegal_header but NOT too_few_players
         assert "too_few_players" not in error_types(_tournament(players_count=0))
 
 
@@ -418,7 +424,10 @@ class TestFixCardSections:
     def test_library_count_updated(self):
         deck = _make_deck_with_sections(
             [
-                _section("Master", [_card("Villein", 2), _card("Govern the Unaligned", 1)]),
+                _section(
+                    "Master",
+                    [_card("Villein", 2), _card("Govern the Unaligned", 1)],
+                ),
             ]
         )
         with self._patch_krcg():

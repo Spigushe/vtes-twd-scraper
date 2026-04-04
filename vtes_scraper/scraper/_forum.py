@@ -19,7 +19,11 @@ from vtes_scraper.scraper._http import (
     get_soup,
     kunena_div_to_text,
 )
-from vtes_scraper.scraper._icons import ICON_IDEA, ICON_MERGED, detect_topic_icon
+from vtes_scraper.scraper._icons import (
+    ICON_IDEA,
+    ICON_MERGED,
+    detect_topic_icon,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -50,7 +54,11 @@ def iter_thread_urls(
     while True:
         limitstart = page * TOPICS_PER_PAGE
         url = FORUM_INDEX if limitstart == 0 else f"{FORUM_INDEX}?limitstart={limitstart}"
-        logger.info("Scraping forum index page %d (limitstart=%d).", page + 1, limitstart)
+        logger.info(
+            "Scraping forum index page %d (limitstart=%d).",
+            page + 1,
+            limitstart,
+        )
         soup = get_soup(client, url, delay)
 
         # Collect all <a> tags whose href matches a clean thread URL pattern

@@ -109,7 +109,7 @@ omit = [
     "*/tests/*",
     "*/test_*.py",
     "*/__pycache__/*",
-    "vtes_scraper*/*",
+    "vtes_scraper_*/*",
 ]
 
 [tool.coverage.report]

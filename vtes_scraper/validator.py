@@ -6,35 +6,23 @@ structured results — no I/O, no CLI concerns.
 Error types
 -----------
 Mandatory tournament fields
-  missing_name           : top-level name is absent or blank
-  missing_location       : top-level location is absent or blank
-  missing_date_start     : top-level date_start is absent
-  missing_rounds_format  : top-level rounds_format is absent or blank
-  missing_players_count  : top-level players_count is absent or zero
-  missing_winner         : top-level winner is absent or blank
-  missing_event_url      : top-level event_url is absent or blank
-  limited_format         : tournament name contains "Limited" (draft/limited event)
+  illegal_header     : any of name, location, date_start, rounds_format,
+                       players_count, or event_url is absent or blank
+  unconfirmed_winner : winner is absent/blank, or vekn_number is absent/None
+  limited_format     : tournament name contains "Limited" (draft/limited event)
 
 Mandatory deck fields
-  empty_crypt    : deck.crypt list is empty (no vampire cards found)
-  illegal_crypt  : crypt groupings are not a pair of consecutive integers
-                   (cards with grouping==ANY are ignored in this check)
-  empty_library  : deck.library_sections list is empty (no library cards found)
-
-Deck count consistency
-  crypt_count_mismatch          : deck.crypt_count != sum of each crypt card count
-  library_section_count_mismatch: a library section count != sum of its card counts
-  library_count_mismatch        : deck.library_count != sum of all section counts
+  illegal_crypt  : deck.crypt is empty, crypt groupings are not a pair of
+                   consecutive integers, or deck.crypt_count != sum of card counts
+                   (cards with grouping==ANY are ignored in the grouping check)
+  illegal_library: deck.library_sections is empty, a section count != sum of
+                   its card counts, or deck.library_count != sum of section counts
 
 Player count
   too_few_players : players_count is present but below the minimum of 12
 
 Date coherence (requires a calendar_date from the VEKN event calendar)
   incoherent_date : date_start in the file does not match the official date
-
-Player identity (requires network; --check-players flag)
-  unconfirmed_winner : vekn_number absent/None, or winner name not found in
-                       the VEKN calendar data
 
 When multiple errors are present the first one (in the order listed above)
 determines the error directory used by the CLI validate command.
@@ -257,21 +245,17 @@ def error_types(data: Tournament_Dict, calendar_date: date | None = None) -> lis
     errors: list[str] = []
 
     # --- Mandatory tournament fields ---
-    if not data.get("name"):
-        errors.append("missing_name")
-    if not data.get("location"):
-        errors.append("missing_location")
-    if data.get("date_start") is None:
-        errors.append("missing_date_start")
-    if not data.get("rounds_format"):
-        errors.append("missing_rounds_format")
-    if not data.get("players_count"):
-        errors.append("missing_players_count")
-    if not data.get("event_url"):
-        errors.append("missing_event_url")
-    if not data.get("winner"):
-        errors.append("missing_winner")
-    if not data.get("vekn_number"):
+    if (
+        not data.get("name")
+        or not data.get("location")
+        or data.get("date_start") is None
+        or not data.get("rounds_format")
+        or not data.get("players_count")
+        or not data.get("event_url")
+        or not data.get("forum_post_url")
+    ):
+        errors.append("illegal_header")
+    if not data.get("winner") or not data.get("vekn_number"):
         errors.append("unconfirmed_winner")
     name_val: str = data.get("name") or ""
     if "limited" in name_val.lower():
@@ -282,8 +266,9 @@ def error_types(data: Tournament_Dict, calendar_date: date | None = None) -> lis
     deck = cast(Deck_Dict, deck_raw)
     crypt_list_raw = deck.get("crypt")
     crypt_list = cast(list[Library_Card_Dict], crypt_list_raw)
+    illegal_crypt = False
     if not crypt_list:
-        errors.append("empty_crypt")
+        illegal_crypt = True
     else:
         groupings: set[int] = set()
         for card in crypt_list:
@@ -291,20 +276,20 @@ def error_types(data: Tournament_Dict, calendar_date: date | None = None) -> lis
             if isinstance(g, int):
                 groupings.add(g)
         if len(groupings) > 2 or (len(groupings) == 2 and max(groupings) - min(groupings) != 1):
-            errors.append("illegal_crypt")
+            illegal_crypt = True
+        crypt_count = deck.get("crypt_count")
+        if crypt_count is not None:
+            expected_crypt = sum([card.get("count", 0) for card in crypt_list])
+            if crypt_count != expected_crypt:
+                illegal_crypt = True
+    if illegal_crypt:
+        errors.append("illegal_crypt")
     if not deck.get("library_sections"):
-        errors.append("empty_library")
+        errors.append("illegal_library")
 
     # --- Deck count consistency ---
+    illegal_library = False
     if deck_raw:
-        crypt_raw = deck.get("crypt") or []
-        crypt = cast(list[Library_Card_Dict], crypt_raw)
-        crypt_count = deck.get("crypt_count")
-        if crypt and crypt_count is not None:
-            expected_crypt = sum([card.get("count", 0) for card in crypt])
-            if crypt_count != expected_crypt:
-                errors.append("crypt_count_mismatch")
-
         lib_sections = deck.get("library_sections") or []
         for section in lib_sections:
             section_cards = section.get("cards") or []
@@ -312,14 +297,16 @@ def error_types(data: Tournament_Dict, calendar_date: date | None = None) -> lis
             if section_count is not None and section_cards:
                 expected_section = sum([card.get("count", 0) for card in section_cards])
                 if section_count != expected_section:
-                    errors.append("library_section_count_mismatch")
+                    illegal_library = True
                     break  # one occurrence is enough
 
         library_count = deck.get("library_count")
         if lib_sections and library_count is not None:
             expected_library = sum([section.get("count", 0) for section in lib_sections])
             if library_count != expected_library:
-                errors.append("library_count_mismatch")
+                illegal_library = True
+    if illegal_library:
+        errors.append("illegal_library")
 
     # --- Player count floor ---
     players_count: int = data.get("players_count") or 0
