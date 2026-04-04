@@ -113,7 +113,10 @@ class TestPublishCommand:
                 include_pre_2020=False,
                 verbose=False,
             )
-            with patch("vtes_scraper.cli.publish.publish_all_as_single_pr", return_value=result):
+            with patch(
+                "vtes_scraper.cli.publish.publish_all_as_single_pr",
+                return_value=result,
+            ):
                 ret = publish_cmd.run(args)
             assert ret == 0
 
@@ -134,7 +137,10 @@ class TestPublishCommand:
                 include_pre_2020=False,
                 verbose=False,
             )
-            with patch("vtes_scraper.cli.publish.publish_all_as_single_pr", return_value=result):
+            with patch(
+                "vtes_scraper.cli.publish.publish_all_as_single_pr",
+                return_value=result,
+            ):
                 ret = publish_cmd.run(args)
             assert ret == 0
 
@@ -159,7 +165,10 @@ class TestPublishCommand:
                 include_pre_2020=False,
                 verbose=False,
             )
-            with patch("vtes_scraper.cli.publish.publish_all_as_single_pr", return_value=result):
+            with patch(
+                "vtes_scraper.cli.publish.publish_all_as_single_pr",
+                return_value=result,
+            ):
                 ret = publish_cmd.run(args)
             assert ret == 1
 
@@ -180,7 +189,10 @@ class TestPublishCommand:
                 include_pre_2020=False,
                 verbose=False,
             )
-            with patch("vtes_scraper.cli.publish.publish_all_as_single_pr", return_value=result):
+            with patch(
+                "vtes_scraper.cli.publish.publish_all_as_single_pr",
+                return_value=result,
+            ):
                 ret = publish_cmd.run(args)
             assert ret == 0
 
@@ -223,7 +235,8 @@ class TestPublishCommand:
                 verbose=False,
             )
             with patch(
-                "vtes_scraper.cli.publish.publish_all_as_single_pr", return_value=result
+                "vtes_scraper.cli.publish.publish_all_as_single_pr",
+                return_value=result,
             ) as mock_publish:
                 ret = publish_cmd.run(args)
             # No valid tournaments outside errors/ — nothing to publish

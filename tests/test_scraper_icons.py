@@ -202,8 +202,16 @@ class TestScrapeCliRouting:
             verbose=False,
         )
         with (
-            patch.object(scrape_mod, "scrape_forum", return_value=iter([(t, ICON_MERGED)])),
-            patch.object(scrape_mod, "tournament_to_yaml_str", return_value="yaml: content\n"),
+            patch.object(
+                scrape_mod,
+                "scrape_forum",
+                return_value=iter([(t, ICON_MERGED)]),
+            ),
+            patch.object(
+                scrape_mod,
+                "tournament_to_yaml_str",
+                return_value="yaml: content\n",
+            ),
         ):
             scrape_mod.run(args)
 
@@ -223,8 +231,16 @@ class TestScrapeCliRouting:
             verbose=False,
         )
         with (
-            patch.object(scrape_mod, "scrape_forum", return_value=iter([(t, ICON_MERGED)])),
-            patch.object(scrape_mod, "tournament_to_yaml_str", return_value="yaml: content\n"),
+            patch.object(
+                scrape_mod,
+                "scrape_forum",
+                return_value=iter([(t, ICON_MERGED)]),
+            ),
+            patch.object(
+                scrape_mod,
+                "tournament_to_yaml_str",
+                return_value="yaml: content\n",
+            ),
             patch.object(scrape_mod, "write_tournament_yaml") as mock_write,
         ):
             scrape_mod.run(args)
@@ -248,8 +264,16 @@ class TestScrapeCliRouting:
             verbose=False,
         )
         with (
-            patch.object(scrape_mod, "scrape_forum", return_value=iter([(t, ICON_MERGED)])),
-            patch.object(scrape_mod, "tournament_to_yaml_str", return_value="new: content\n"),
+            patch.object(
+                scrape_mod,
+                "scrape_forum",
+                return_value=iter([(t, ICON_MERGED)]),
+            ),
+            patch.object(
+                scrape_mod,
+                "tournament_to_yaml_str",
+                return_value="new: content\n",
+            ),
         ):
             scrape_mod.run(args)
 
@@ -280,7 +304,8 @@ class TestScrapeCliRouting:
                 scrape_mod,
                 "write_tournament_yaml",
                 side_effect=lambda tournament, output_dir, **kw: _capture(
-                    written_paths, output_dir / "fake" / tournament.yaml_filename
+                    written_paths,
+                    output_dir / "fake" / tournament.yaml_filename,
                 ),
             ),
         ):
@@ -336,7 +361,11 @@ class TestScrapeCliRouting:
         )
         with (
             patch.object(scrape_mod, "scrape_forum", return_value=iter([(t, icon)])),
-            patch.object(scrape_mod, "write_tournament_yaml", return_value=tmp_path / "x.yaml"),
+            patch.object(
+                scrape_mod,
+                "write_tournament_yaml",
+                return_value=tmp_path / "x.yaml",
+            ),
         ):
             rc = scrape_mod.run(args)
 
@@ -403,8 +432,16 @@ class TestScrapeCliRouting:
             verbose=False,
         )
         with (
-            patch.object(scrape_mod, "scrape_forum", return_value=iter([(t, ICON_DEFAULT)])),
-            patch.object(scrape_mod, "write_tournament_yaml", side_effect=RuntimeError("boom")),
+            patch.object(
+                scrape_mod,
+                "scrape_forum",
+                return_value=iter([(t, ICON_DEFAULT)]),
+            ),
+            patch.object(
+                scrape_mod,
+                "write_tournament_yaml",
+                side_effect=RuntimeError("boom"),
+            ),
         ):
             rc = scrape_mod.run(args)
 

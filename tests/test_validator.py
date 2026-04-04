@@ -418,7 +418,10 @@ class TestFixCardSections:
     def test_library_count_updated(self):
         deck = _make_deck_with_sections(
             [
-                _section("Master", [_card("Villein", 2), _card("Govern the Unaligned", 1)]),
+                _section(
+                    "Master",
+                    [_card("Villein", 2), _card("Govern the Unaligned", 1)],
+                ),
             ]
         )
         with self._patch_krcg():

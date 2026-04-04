@@ -10,7 +10,11 @@ from urllib.parse import quote
 
 import httpx
 
-from vtes_scraper.scraper._http import DEFAULT_DELAY_SECONDS, VEKN_PLAYERS_URL, get_soup
+from vtes_scraper.scraper._http import (
+    DEFAULT_DELAY_SECONDS,
+    VEKN_PLAYERS_URL,
+    get_soup,
+)
 
 logger = logging.getLogger(__name__)
 JsonValue = str | int | float | bool | None | list["JsonValue"] | dict[str, "JsonValue"]
@@ -105,7 +109,13 @@ def fetch_event_winner(
         pos_col: int | None = None
         player_col: int | None = None
         for idx, text in enumerate(header_texts):
-            if pos_col is None and text in ("pos.", "pos", "rank", "#", "position"):
+            if pos_col is None and text in (
+                "pos.",
+                "pos",
+                "rank",
+                "#",
+                "position",
+            ):
                 pos_col = idx
             if player_col is None and "player" in text:
                 player_col = idx
