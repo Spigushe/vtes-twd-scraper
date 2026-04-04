@@ -6,6 +6,10 @@ players_count: 39
 winner: Lech Ivanov
 vekn_number: 5250030
 event_url: https://www.vekn.net/event-calendar/event/12765
+event_id: 12765
+vp_comment: 1GW6 + 3vp in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82892-twd-eve-before-the-night-vilnius-lithuania-27-february-2026
 deck:
   name: New path of emerald legionnaire
   created_by: Lech Ivanov
@@ -131,7 +135,3 @@ deck:
       name: Scourge of the Enochians
     - count: 2
       name: Unmasking, The
-event_id: 12765
-vp_comment: 1GW6 + 3vp in final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82892-twd-eve-before-the-night-vilnius-lithuania-27-february-2026

@@ -6,6 +6,9 @@ players_count: 57
 winner: Augusto Ponce de León
 vekn_number: 3830054
 event_url: https://www.vekn.net/event-calendar/event/12879
+event_id: 12879
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82886-twd-portuguese-nc-2026-coimbra-portugal-7-mar-2026
 deck:
   name: Malkavian Pols
   description: ''
@@ -134,6 +137,3 @@ deck:
     cards:
     - count: 1
       name: Waiting Game
-event_id: 12879
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82886-twd-portuguese-nc-2026-coimbra-portugal-7-mar-2026

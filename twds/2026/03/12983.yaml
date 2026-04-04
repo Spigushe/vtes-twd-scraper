@@ -6,6 +6,9 @@ players_count: 23
 winner: Hugo Coelho
 vekn_number: 3260056
 event_url: https://www.vekn.net/event-calendar/event/12983
+event_id: 12983
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82929-twd-elysium-leiriacon-vieira-de-leiria-portugal-29-mar-2026
 deck:
   name: Power Punch Girls
   created_by: Hugo Coelho
@@ -149,6 +152,3 @@ deck:
     cards:
     - count: 1
       name: NSA Trio
-event_id: 12983
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82929-twd-elysium-leiriacon-vieira-de-leiria-portugal-29-mar-2026
