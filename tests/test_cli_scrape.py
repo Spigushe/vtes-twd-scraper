@@ -349,6 +349,7 @@ class TestScrapeRun:
             args = _scrape_namespace(output_dir=Path(tmpdir))
             with _patch_pipeline(
                 scrape_forum=iter([(t, None)]),
+                fetch_event_winner="Jane Doe",
                 error_types=[],
             ):
                 ret = scrape_cmd.run(args)
