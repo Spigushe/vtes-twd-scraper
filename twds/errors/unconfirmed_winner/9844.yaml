@@ -1,0 +1,130 @@
+name: Standard Preconstructed
+location: Geneva, Switzerland
+date_start: 2021-08-02
+rounds_format: 2R+F
+players_count: 10
+winner: Gabriel Carnino's Tournament Winning Deck with 4 VPs in the Finals
+event_url: https://www.vekn.net/event-calendar/event/9844
+event_id: 9844
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81925-twd-geneva-wake-2021-belated-report
+deck:
+  name: Tony Montano
+  created_by: Gabriel Carnino
+  description: ''
+  crypt_count: 12
+  crypt_min: 35
+  crypt_max: 43
+  crypt_avg: 9.83
+  crypt:
+  - count: 3
+    name: Montano
+    capacity: 11
+    disciplines: ANI DOM FOR OBT POT
+    title: 2 votes
+    clan: Lasombra
+    grouping: 3
+  - count: 3
+    name: Ambrosio Luis Monçada, Plenipotentiary
+    capacity: 10
+    disciplines: aus for DOM OBT POT PRE
+    title: Cardinal
+    clan: Lasombra
+    grouping: 2
+  - count: 2
+    name: Marcus Vitel
+    capacity: 10
+    disciplines: DOM FOR OBF OBT PRE
+    title: Prince
+    clan: Ventrue
+    grouping: 3
+  - count: 2
+    name: Francisco Domingo de Polonia
+    capacity: 9
+    disciplines: pro DOM OBT POT PRE
+    title: Archbishop
+    clan: Lasombra
+    grouping: 2
+  - count: 1
+    name: Alvaro, The Scion of Angelica
+    capacity: 9
+    disciplines: dom pre OBT POT
+    title: Archbishop
+    clan: Lasombra
+    grouping: 2
+  - count: 1
+    name: Gratiano
+    capacity: 8
+    disciplines: obf pot DOM OBT
+    title: Priscus
+    clan: Lasombra
+    grouping: 2
+  library_count: 70
+  library_sections:
+  - name: Master
+    count: 19
+    cards:
+    - count: 3
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Elysian Fields
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Jake Washington
+    - count: 1
+      name: Legendary Vampire
+    - count: 1
+      name: Pentex(TM) Subversion
+    - count: 6
+      name: Villein
+    - count: 4
+      name: Zillah's Valley
+  - name: Action
+    count: 9
+    cards:
+    - count: 9
+      name: Govern the Unaligned
+  - name: Political Action
+    count: 12
+    cards:
+    - count: 2
+      name: Anarchist Uprising
+    - count: 1
+      name: Ancient Influence
+    - count: 2
+      name: Ancilla Empowerment
+    - count: 3
+      name: Banishment
+    - count: 2
+      name: Kine Resources Contested
+    - count: 1
+      name: Political Stranglehold
+    - count: 1
+      name: Reins of Power
+  - name: Action Modifier
+    count: 17
+    cards:
+    - count: 2
+      name: Foreshadowing Destruction
+    - count: 2
+      name: Freak Drive
+    - count: 3
+      name: Seduction
+    - count: 7
+      name: Shadow Play
+    - count: 2
+      name: Shroud of Absence
+    - count: 1
+      name: Voter Captivation
+  - name: Reaction
+    count: 10
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 4
+      name: Obedience
+  - name: Combat
+    count: 3
+    cards:
+    - count: 3
+      name: Shadow Body

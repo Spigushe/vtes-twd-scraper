@@ -1,0 +1,420 @@
+name: Blood League part IV.
+location: Kecskemét, Hungary
+date_start: 2024-06-01
+rounds_format: 2R+F
+players_count: 12
+winner: Martin Weinmayer's Tournament Winning Deck with 1,5 VPs in the Finals
+event_url: https://www.vekn.net/event-calendar/event/11429
+event_id: 11429
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/81519-twd-blood-league-part-iv
+deck:
+  name: New Ventrue
+  created_by: Lajos Vég
+  description: ''
+  crypt_count: 13
+  crypt_min: 26
+  crypt_max: 43
+  crypt_avg: 8.31
+  crypt:
+  - count: 3
+    name: Mithras
+    capacity: 11
+    disciplines: DOM FOR POT PRE THA
+    clan: Ventrue
+    grouping: 6
+  - count: 1
+    name: Karl Schrekt
+    capacity: 10
+    disciplines: AUS DOM FOR PRE THA
+    title: 2 votes
+    clan: Tremere
+    grouping: 6
+  - count: 1
+    name: De Sade
+    capacity: 9
+    disciplines: AUS DOM FOR PRE
+    title: Archbishop
+    clan: Ventrue antitribu
+    grouping: 5
+  - count: 2
+    name: Alexa Draper
+    capacity: 8
+    disciplines: for pot DOM PRE
+    title: Prince
+    clan: Ventrue
+    grouping: 6
+  - count: 2
+    name: Alice Chen
+    capacity: 7
+    disciplines: dom obf FOR PRE
+    title: Prince
+    clan: Ventrue
+    grouping: 6
+  - count: 2
+    name: Sybren van Oosten
+    capacity: 7
+    disciplines: dom tha FOR PRE
+    title: Prince
+    clan: Ventrue
+    grouping: 6
+  - count: 2
+    name: Horst von Brühl
+    capacity: 6
+    disciplines: aus dom pre FOR
+    title: Prince
+    clan: Ventrue
+    grouping: 6
+  library_count: 88
+  library_sections:
+  - name: Master
+    count: 18
+    cards:
+    - count: 1
+      name: Anarch Troublemaker
+    - count: 1
+      name: Elder Library
+    - count: 1
+      name: Giant's Blood
+    - count: 2
+      name: Information Highway
+    - count: 1
+      name: Monastery of Shadows
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: Sudden Reversal
+    - count: 1
+      name: Uptown Hunting Ground
+    - count: 4
+      name: Villein
+    - count: 5
+      name: Zillah's Valley
+  - name: Action
+    count: 10
+    cards:
+    - count: 8
+      name: Enchant Kindred
+    - count: 2
+      name: Entrancement
+  - name: Political Action
+    count: 11
+    cards:
+    - count: 1
+      name: Ancient Influence
+    - count: 7
+      name: Kine Resources Contested
+    - count: 2
+      name: Parity Shift
+    - count: 1
+      name: Political Stranglehold
+  - name: Action Modifier
+    count: 22
+    cards:
+    - count: 4
+      name: Bewitching Oration
+    - count: 6
+      name: Freak Drive
+    - count: 6
+      name: Seduction
+    - count: 6
+      name: Voter Captivation
+  - name: Reaction
+    count: 17
+    cards:
+    - count: 10
+      name: Deflection
+    - count: 7
+      name: 'Second Tradition: Domain'
+  - name: Combat
+    count: 10
+    cards:
+    - count: 4
+      name: Hidden Strength
+    - count: 6
+      name: Majesty
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 1
+      name: Massimiliano            7 ANI FOR pro       baron   Gangrel:6
+    - count: 2
+      name: André the Manipulator   6 FOR PRO                   Gangrel:5
+    - count: 2
+      name: Casey Snyder            6 PRO ani cel for   baron   Gangrel:6
+    - count: 2
+      name: Kuyén                   6 ANI PRO           baron   Gangrel:6
+    - count: 1
+      name: Kamile Paukstys         5 PRO ani for               Gangrel:6
+    - count: 1
+      name: Nathan Turner           4 PRO ani                   Gangrel:6
+    - count: 1
+      name: Indira                  3 PRO                       Gangrel:6
+    - count: 2
+      name: Ruslan Fedorenko        2 pro                       Gangrel:6
+  - name: Library
+    count: 90
+    cards: []
+  - name: Master
+    count: 22
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Archon Investigation
+    - count: 1
+      name: Backways
+    - count: 1
+      name: Carfax Abbey
+    - count: 2
+      name: Club Illusion
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Ecoterrorists
+    - count: 2
+      name: Gangrel Revel
+    - count: 2
+      name: Garibaldi-Meucci Museum
+    - count: 2
+      name: Protean
+    - count: 1
+      name: Rack, The
+    - count: 1
+      name: Retribution
+    - count: 2
+      name: Tribute to the Master
+    - count: 4
+      name: Vessel
+  - name: Action
+    count: 15
+    cards:
+    - count: 6
+      name: Childe of the Revolution
+    - count: 1
+      name: 'Fee Stake: Seattle'
+    - count: 8
+      name: Thing
+  - name: Equipment
+    count: 1
+    cards:
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Political Action
+    count: 3
+    cards:
+    - count: 1
+      name: Eat the Rich
+    - count: 1
+      name: Reckless Agitation
+    - count: 1
+      name: Revolutionary Council
+  - name: Action Modifier
+    count: 4
+    cards:
+    - count: 2
+      name: Earth Control
+    - count: 2
+      name: Monkey Wrench
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Form of the Bat
+  - name: Reaction
+    count: 24
+    cards:
+    - count: 7
+      name: Bait and Switch
+    - count: 2
+      name: Cats' Guidance
+    - count: 4
+      name: Deep Ecology
+    - count: 1
+      name: Delaying Tactics
+    - count: 10
+      name: Organized Resistance
+  - name: Combat
+    count: 17
+    cards:
+    - count: 2
+      name: Donnybrook
+    - count: 10
+      name: Earth Meld
+    - count: 3
+      name: Form of Mist
+    - count: 2
+      name: Wolf Claws
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 1
+      name: Marcel                        4 obf pre pro              Follower of Set:6
+    - count: 1
+      name: Jenny Silver                  5 obf PRE PRO              Follower of Set:6
+    - count: 1
+      name: Crystal Lynn                  6 OBF PRE PRO              Follower of Set:6
+    - count: 2
+      name: Elisha Tucker                 6 cel obf pro PRE          Follower of Set:6
+    - count: 3
+      name: Vivian VI                     7 obf tha PRE PRO          Follower of Set:6
+    - count: 2
+      name: Nonu Dis                      8 for OBF PRE PRO          Follower of Set:6
+    - count: 2
+      name: Sergio Bueno                  8 aus pot OBF PRE PRO      Follower of Set:6
+  - name: Master
+    count: 17
+    cards:
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Opium Den
+    - count: 1
+      name: Sudden Reversal
+    - count: 4
+      name: Villein
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 4
+      name: Dabbler
+    - count: 2
+      name: Dreams of the Sphinx
+  - name: Action
+    count: 19
+    cards:
+    - count: 1
+      name: Heart of the City
+    - count: 2
+      name: Public Trust
+    - count: 16
+      name: Platinum Protocol, The
+  - name: Action Modifier
+    count: 20
+    cards:
+    - count: 4
+      name: Faceless Night
+    - count: 10
+      name: Revelation of the Serpent
+    - count: 6
+      name: Enchanting Gaze
+  - name: Action Modifier/Reaction
+    count: 4
+    cards:
+    - count: 4
+      name: Form of the Bat
+  - name: Combat
+    count: 10
+    cards:
+    - count: 4
+      name: Form of Mist
+    - count: 6
+      name: Earth Meld
+  - name: Reaction
+    count: 20
+    cards:
+    - count: 2
+      name: On the Qui Vive
+    - count: 6
+      name: Bait and Switch
+    - count: 4
+      name: Organized Resistance
+    - count: 8
+      name: Party Out Of Bounds
+  - name: Crypt
+    count: 12
+    cards:
+    - count: 1
+      name: Ladislas Toth, The Torch   7 AUS DOM THA for   archbishop   Tremere antitribu:3
+    - count: 1
+      name: Elena Mendoza Vasquez      6 AUS THA dom obt                Tremere antitribu:3
+    - count: 1
+      name: Selena                     6 AUS DOM THA                    Tremere antitribu:3
+    - count: 1
+      name: Yasmin the Black           6 AUS THA dom pre                Tremere antitribu:3
+    - count: 5
+      name: Antonio d'Erlette          5 THA dom for pot                Tremere antitribu:4
+    - count: 1
+      name: Ember Wright               3 aus dom                        Tremere antitribu:3
+    - count: 1
+      name: Lectora                    3 aus tha                        Tremere antitribu:4
+    - count: 1
+      name: Martin Franckel            3 AUS tha                        Tremere:3
+  - name: Library
+    count: 90
+    cards: []
+  - name: Master
+    count: 33
+    cards:
+    - count: 9
+      name: Ashur Tablets
+    - count: 2
+      name: Direct Intervention
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Infernal Pact
+    - count: 1
+      name: Information Highway
+    - count: 1
+      name: Jake Washington
+    - count: 6
+      name: Liquidation
+    - count: 6
+      name: Parthenon, The
+    - count: 2
+      name: Shard, London, The
+    - count: 2
+      name: Wash
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 2
+    cards:
+    - count: 2
+      name: Magic of the Smith
+  - name: Ally
+    count: 10
+    cards:
+    - count: 10
+      name: Nephandus
+  - name: Equipment
+    count: 3
+    cards:
+    - count: 1
+      name: Bowl of Convergence
+    - count: 1
+      name: Heart of Nizchetus
+    - count: 1
+      name: Sniper Rifle
+  - name: Action Modifier
+    count: 10
+    cards:
+    - count: 2
+      name: Conditioning
+    - count: 8
+      name: Mirror Walk
+  - name: Reaction
+    count: 30
+    cards:
+    - count: 6
+      name: Deflection
+    - count: 2
+      name: Delaying Tactics
+    - count: 6
+      name: Eyes of Argus
+    - count: 4
+      name: My Enemy's Enemy
+    - count: 6
+      name: On the Qui Vive
+    - count: 6
+      name: Telepathic Misdirection
+  - name: Event
+    count: 2
+    cards:
+    - count: 2
+      name: Unmasking, The
