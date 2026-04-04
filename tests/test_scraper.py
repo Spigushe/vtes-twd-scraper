@@ -2,11 +2,12 @@
 
 import unicodedata as _ud
 from datetime import date
+from typing import cast
 from unittest.mock import MagicMock, patch
 
 import httpx
 import pytest
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag
 
 from vtes_scraper.scraper import (
     extract_twd_from_thread,
@@ -28,29 +29,25 @@ class TestKuneaDivToText:
     def test_replaces_br_with_newline(self):
         html = "<div class='kmsg'>Line 1<br>Line 2</div>"
         soup = BeautifulSoup(html, "lxml")
-        div = soup.find("div")
-        text = kunena_div_to_text(div)
+        text = kunena_div_to_text(cast(Tag, soup.find("div")))
         assert "Line 1\nLine 2" in text
 
     def test_replaces_hr_with_newline(self):
         html = "<div class='kmsg'>Before<hr>After</div>"
         soup = BeautifulSoup(html, "lxml")
-        div = soup.find("div")
-        text = kunena_div_to_text(div)
+        text = kunena_div_to_text(cast(Tag, soup.find("div")))
         assert "Before\nAfter" in text
 
     def test_normalizes_bare_www_url(self):
         html = "<div class='kmsg'>See www.vekn.net/event-calendar/event/123</div>"
         soup = BeautifulSoup(html, "lxml")
-        div = soup.find("div")
-        text = kunena_div_to_text(div)
+        text = kunena_div_to_text(cast(Tag, soup.find("div")))
         assert "https://www.vekn.net" in text
 
     def test_does_not_double_prefix_https_url(self):
         html = "<div class='kmsg'>See https://www.vekn.net/event-calendar/event/123</div>"
         soup = BeautifulSoup(html, "lxml")
-        div = soup.find("div")
-        text = kunena_div_to_text(div)
+        text = kunena_div_to_text(cast(Tag, soup.find("div")))
         assert "https://https://" not in text
 
 
