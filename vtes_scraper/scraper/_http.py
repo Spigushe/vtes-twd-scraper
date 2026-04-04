@@ -31,10 +31,10 @@ HEADERS = {
 }
 
 # Matches thread URLs like /forum/event-reports-and-twd/12345-some-title
-_THREAD_HREF_RE = re.compile(r"^/forum/event-reports-and-twd/(\d+)-[^\"'?#]+$")
+THREAD_HREF_RE = re.compile(r"^/forum/event-reports-and-twd/(\d+)-[^\"'?#]+$")
 
 # Thread slugs that are meta/admin posts, not TWD reports — skip them
-_SKIP_SLUGS = {
+SKIP_SLUGS = {
     "2119-how-to-report-a-twd",
     "79623-contributing-to-the-twd",
     "63835-howto-use-the-archon-correctly",

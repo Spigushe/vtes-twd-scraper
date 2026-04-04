@@ -8,7 +8,14 @@ from pathlib import Path
 from unittest.mock import patch
 
 from vtes_scraper.cli import scrape as scrape_cmd
-from vtes_scraper.models import CryptCard, Deck, LibraryCard, LibrarySection, Tournament
+from vtes_scraper.models import (
+    Crypt_Card_Dict,
+    Deck_Dict,
+    Library_Card_Dict,
+    Library_Section_Dict,
+    Tournament,
+    Tournament_Dict,
+)
 
 # ---------------------------------------------------------------------------
 # Shared fixtures
@@ -16,7 +23,7 @@ from vtes_scraper.models import CryptCard, Deck, LibraryCard, LibrarySection, To
 
 
 def _make_tournament(**overrides) -> Tournament:
-    defaults = dict(
+    defaults = Tournament_Dict(
         name="Test Event",
         location="Paris, France",
         date_start=date(2023, 3, 25),
@@ -24,9 +31,9 @@ def _make_tournament(**overrides) -> Tournament:
         players_count=15,
         winner="Jane Doe",
         event_url="https://www.vekn.net/event-calendar/event/9999",
-        deck=Deck(
+        deck=Deck_Dict(
             crypt=[
-                CryptCard(
+                Crypt_Card_Dict(
                     count=2,
                     name="Nathan Turner",
                     capacity=4,
@@ -40,17 +47,19 @@ def _make_tournament(**overrides) -> Tournament:
             crypt_max=4,
             crypt_avg=4.0,
             library_sections=[
-                LibrarySection(
+                Library_Section_Dict(
                     name="Master",
                     count=1,
-                    cards=[LibraryCard(count=1, name="Blood Doll")],
+                    cards=[Library_Card_Dict(count=1, name="Blood Doll")],
                 )
             ],
             library_count=1,
         ),
     )
-    defaults.update(overrides)
-    return Tournament(**defaults)
+    for k, v in overrides.items():
+        if k in defaults:
+            defaults[k] = v
+    return Tournament.model_validate(defaults)
 
 
 def _scrape_namespace(**kwargs) -> argparse.Namespace:

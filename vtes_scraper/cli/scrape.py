@@ -91,8 +91,8 @@ def _to_serializable(obj: Tournament) -> Tournament_Dict:
             d = cast(dict[str, Any], value)
             return {k: _filter_none(v) for k, v in d.items() if v is not None}
         if isinstance(value, list):
-            lst = cast(list[Any], value)
-            return [_filter_none(item) for item in lst]
+            items = cast(list[Any], value)  # type: ignore[redundant-cast]
+            return [_filter_none(item) for item in items]
         return value
 
     return cast(Tournament_Dict, _filter_none(obj.model_dump()))

@@ -3,6 +3,13 @@
 from datetime import date
 from unittest.mock import patch
 
+from vtes_scraper.models import (
+    Crypt_Card_Dict,
+    Deck_Dict,
+    Library_Card_Dict,
+    Library_Section_Dict,
+    Tournament_Dict,
+)
 from vtes_scraper.validator import (
     _pick_best_crypt_version,
     enrich_crypt_cards,
@@ -12,44 +19,49 @@ from vtes_scraper.validator import (
 )
 
 
-def _deck(**kwargs) -> dict:
-    base = {
-        "crypt_count": 2,
-        "crypt": [
-            {
-                "count": 2,
-                "name": "Nathan Turner",
-                "capacity": 4,
-                "disciplines": "PRO ani",
-                "clan": "Gangrel",
-                "grouping": 6,
-            },
+def _deck(**kwargs) -> Deck_Dict:
+    base = Deck_Dict(
+        crypt_count=2,
+        crypt=[
+            Crypt_Card_Dict(
+                count=2,
+                name="Nathan Turner",
+                capacity=4,
+                disciplines="PRO ani",
+                clan="Gangrel",
+                grouping=6,
+            ),
         ],
-        "library_count": 1,
-        "library_sections": [
-            {
-                "name": "Master",
-                "count": 1,
-                "cards": [{"count": 1, "name": "Blood Doll"}],
-            }
+        library_count=1,
+        library_sections=[
+            Library_Section_Dict(
+                name="Master",
+                count=1,
+                cards=[Library_Card_Dict(count=1, name="Blood Doll")],
+            )
         ],
-    }
-    base.update(kwargs)
+    )
+    for k, v in kwargs.items():
+        if k in Deck_Dict.__annotations__:
+            base[k] = v
     return base
 
 
-def _tournament(**kwargs) -> dict:
-    base = dict(
+def _tournament(**kwargs) -> Tournament_Dict:
+    base = Tournament_Dict(
         name="Test Event",
         location="Paris, France",
-        date_start="2023-03-25",
+        date_start=date(2023, 3, 25),
         rounds_format="3R+F",
         players_count=15,
         winner="Jane Doe",
+        vekn_number=1234567,
         event_url="https://www.vekn.net/event-calendar/event/9999",
-        deck=_deck(),
+        deck=_deck(**kwargs),
     )
-    base.update(kwargs)
+    for k, v in kwargs.items():
+        if k in Tournament_Dict.__annotations__:
+            base[k] = v
     return base
 
 
@@ -63,6 +75,7 @@ class TestMandatoryFields:
         assert error_types(_tournament()) == []
 
     def test_missing_name(self):
+        print(_tournament(name=""))
         assert "missing_name" in error_types(_tournament(name=""))
 
     def test_missing_location(self):
@@ -85,6 +98,31 @@ class TestMandatoryFields:
 
     def test_limited_format(self):
         assert "limited_format" in error_types(_tournament(name="Limited Edition Cup"))
+
+
+# ---------------------------------------------------------------------------
+# Unconfirmed winner (missing vekn_number)
+# ---------------------------------------------------------------------------
+
+
+class TestUnconfirmedWinner:
+    def test_missing_vekn_number_key(self):
+        t = _tournament()
+        del t["vekn_number"]
+        assert "unconfirmed_winner" in error_types(t)
+
+    def test_none_vekn_number(self):
+        assert "unconfirmed_winner" in error_types(_tournament(vekn_number=None))
+
+    def test_present_vekn_number(self):
+        assert "unconfirmed_winner" not in error_types(_tournament(vekn_number=1234567))
+
+    def test_priority_after_missing_winner(self):
+        """missing_winner should come before unconfirmed_winner in errors list."""
+        errors = error_types(_tournament(winner="", vekn_number=None))
+        assert "missing_winner" in errors
+        assert "unconfirmed_winner" in errors
+        assert errors.index("missing_winner") < errors.index("unconfirmed_winner")
 
 
 # ---------------------------------------------------------------------------
@@ -286,22 +324,22 @@ class TestParseDateField:
 # ---------------------------------------------------------------------------
 
 
-def _make_deck_with_sections(sections):
+def _make_deck_with_sections(sections) -> Deck_Dict:
     """Build a minimal deck dict with given library_sections."""
     total = sum(s["count"] for s in sections)
-    return {
-        "library_count": total,
-        "library_sections": sections,
-    }
+    return Deck_Dict(
+        library_count=total,
+        library_sections=sections,
+    )
 
 
-def _section(name, cards):
+def _section(name, cards) -> Library_Section_Dict:
     count = sum(c["count"] for c in cards)
-    return {"name": name, "count": count, "cards": cards}
+    return Library_Section_Dict(name=name, count=count, cards=cards)
 
 
-def _card(name, count=1):
-    return {"name": name, "count": count}
+def _card(name, count=1) -> Library_Card_Dict:
+    return Library_Card_Dict(name=name, count=count)
 
 
 # Mapping used in tests: card name → krcg section name
@@ -344,7 +382,10 @@ class TestFixCardSections:
         with self._patch_krcg():
             fixes = fix_card_sections(deck)
         assert fixes == []
+        assert "library_sections" in deck
+        assert "name" in deck["library_sections"][0]
         assert deck["library_sections"][0]["name"] == "Master"
+        assert "name" in deck["library_sections"][1]
         assert deck["library_sections"][1]["name"] == "Action"
 
     def test_moves_card_to_correct_section(self):
@@ -365,13 +406,14 @@ class TestFixCardSections:
         assert "'Master'" in fixes[0]
         assert "'Action'" in fixes[0]
 
-        section_names = [s["name"] for s in deck["library_sections"]]
+        assert "library_sections" in deck
+        section_names = [s["name"] for s in deck["library_sections"] if "name" in s]
         assert "Master" in section_names
         assert "Action" in section_names
-        master = next(s for s in deck["library_sections"] if s["name"] == "Master")
-        assert master["count"] == 2
-        action = next(s for s in deck["library_sections"] if s["name"] == "Action")
-        assert action["count"] == 1
+        master = next(s for s in deck["library_sections"] if "name" in s and s["name"] == "Master")
+        assert "count" in master and master["count"] == 2
+        action = next(s for s in deck["library_sections"] if "name" in s and s["name"] == "Action")
+        assert "count" in action and action["count"] == 1
 
     def test_library_count_updated(self):
         deck = _make_deck_with_sections(
@@ -381,14 +423,19 @@ class TestFixCardSections:
         )
         with self._patch_krcg():
             fix_card_sections(deck)
-        assert deck["library_count"] == 3  # unchanged total
+        assert "library_count" in deck and deck["library_count"] == 3  # unchanged total
 
     def test_unknown_card_stays_in_current_section(self):
         deck = _make_deck_with_sections([_section("Master", [_card("Some Unknown Card", 1)])])
         with self._patch_krcg():
             fixes = fix_card_sections(deck)
         assert fixes == []
-        assert deck["library_sections"][0]["name"] == "Master"
+        assert (
+            "library_sections" in deck
+            and deck["library_sections"]
+            and "name" in deck["library_sections"][0]
+            and deck["library_sections"][0]["name"] == "Master"
+        )
 
     def test_krcg_unavailable_returns_empty(self):
         deck = _make_deck_with_sections([_section("Master", [_card("Govern the Unaligned", 1)])])
@@ -397,7 +444,7 @@ class TestFixCardSections:
         assert fixes == []
 
     def test_empty_library_sections_returns_empty(self):
-        deck = {"library_sections": []}
+        deck = _deck(library_sections=[])
         with self._patch_krcg():
             fixes = fix_card_sections(deck)
         assert fixes == []
@@ -413,6 +460,8 @@ class TestFixCardSections:
         )
         # Both are already correct, so we force a move to trigger rebuild.
         # Put Mirror Walk (Action Modifier) in the Master section.
+        assert "library_sections" in deck and "library_count" in deck
+        assert "cards" in deck["library_sections"][1] and "count" in deck["library_sections"][1]
         deck["library_sections"][1]["cards"].append(_card("Mirror Walk", 1))
         deck["library_sections"][1]["count"] += 1
         deck["library_count"] += 1
@@ -421,7 +470,7 @@ class TestFixCardSections:
             fixes = fix_card_sections(deck)
 
         assert fixes  # something was moved
-        names = [s["name"] for s in deck["library_sections"]]
+        names = [s["name"] for s in deck["library_sections"] if "name" in s]
         # Master should come before Action Modifier, which should come before Reaction
         assert names.index("Master") < names.index("Action Modifier")
         assert names.index("Action Modifier") < names.index("Reaction")
@@ -482,17 +531,19 @@ def _fake_krcg_all_crypt_data(card_name: str) -> list[dict]:
     return [data]
 
 
-def _crypt_card(name: str, count: int = 2, **overrides) -> dict:
-    base = {
-        "count": count,
-        "name": name,
-        "capacity": 0,
-        "disciplines": "",
-        "title": None,
-        "clan": "Unknown",
-        "grouping": 0,
-    }
-    base.update(overrides)
+def _crypt_card(name: str, count: int = 2, **overrides) -> Crypt_Card_Dict:
+    base = Crypt_Card_Dict(
+        count=count,
+        name=name,
+        capacity=0,
+        disciplines="",
+        title=None,
+        clan="Unknown",
+        grouping=0,
+    )
+    for k, v in overrides.items():
+        if k in Crypt_Card_Dict.__annotations__:
+            base[k] = v
     return base
 
 
@@ -513,37 +564,37 @@ class TestEnrichCryptCards:
 
     def test_enriches_fields_from_krcg(self):
         card = _crypt_card("Nathan Turner", capacity=0, clan="Unknown", grouping=0)
-        deck = {"crypt": [card]}
+        deck = _deck(crypt=[card])
         with self._patch_krcg():
             fixes = enrich_crypt_cards(deck)
         assert fixes
-        assert card["capacity"] == 4
-        assert card["disciplines"] == "PRO ani"
-        assert card["clan"] == "Gangrel"
-        assert card["grouping"] == 6
-        assert card["title"] is None
+        assert "capacity" in card and card["capacity"] == 4
+        assert "disciplines" in card and card["disciplines"] == "PRO ani"
+        assert "clan" in card and card["clan"] == "Gangrel"
+        assert "grouping" in card and card["grouping"] == 6
+        assert "title" in card and card["title"] is None
 
     def test_count_and_name_preserved(self):
         card = _crypt_card("Nathan Turner", count=3)
-        deck = {"crypt": [card]}
+        deck = _deck(crypt=[card])
         with self._patch_krcg():
             enrich_crypt_cards(deck)
-        assert card["count"] == 3
-        assert card["name"] == "Nathan Turner"
+        assert "count" in card and card["count"] == 3
+        assert "name" in card and card["name"] == "Nathan Turner"
 
     def test_title_enriched(self):
         card = _crypt_card("Antón de Concepción", title=None)
-        deck = {"crypt": [card]}
+        deck = _deck(crypt=[card])
         with self._patch_krcg():
             enrich_crypt_cards(deck)
-        assert card["title"] == "Prince"
+        assert "title" in card and card["title"] == "Prince"
 
     def test_any_grouping_stored_as_string(self):
         card = _crypt_card("Anarch Convert", grouping=0)
-        deck = {"crypt": [card]}
+        deck = _deck(crypt=[card])
         with self._patch_krcg():
             enrich_crypt_cards(deck)
-        assert card["grouping"] == "ANY"
+        assert "grouping" in card and card["grouping"] == "ANY"
 
     def test_no_changes_when_already_correct(self):
         card = _crypt_card(
@@ -553,30 +604,30 @@ class TestEnrichCryptCards:
             clan="Gangrel",
             grouping=6,
         )
-        deck = {"crypt": [card]}
+        deck = Deck_Dict(crypt=[card])
         with self._patch_krcg():
             fixes = enrich_crypt_cards(deck)
         assert fixes == []
 
     def test_unknown_card_left_unchanged(self):
         card = _crypt_card("Unknown Vampire", capacity=5, clan="Nosferatu", grouping=3)
-        deck = {"crypt": [card]}
+        deck = Deck_Dict(crypt=[card])
         with self._patch_krcg():
             fixes = enrich_crypt_cards(deck)
         assert fixes == []
-        assert card["capacity"] == 5
-        assert card["clan"] == "Nosferatu"
+        assert "capacity" in card and card["capacity"] == 5
+        assert "clan" in card and card["clan"] == "Nosferatu"
 
     def test_krcg_unavailable_returns_empty(self):
         card = _crypt_card("Nathan Turner", capacity=0, clan="Unknown")
-        deck = {"crypt": [card]}
+        deck = Deck_Dict(crypt=[card])
         with self._patch_krcg(available=False):
             fixes = enrich_crypt_cards(deck)
         assert fixes == []
-        assert card["capacity"] == 0  # unchanged
+        assert "capacity" in card and card["capacity"] == 0  # unchanged
 
     def test_empty_crypt_returns_empty(self):
-        deck = {"crypt": []}
+        deck = Deck_Dict(crypt=[])
         with self._patch_krcg():
             fixes = enrich_crypt_cards(deck)
         assert fixes == []
@@ -584,24 +635,24 @@ class TestEnrichCryptCards:
     def test_base_vampire_not_replaced_by_adv(self):
         """Scraped 'Xaviar' must never be enriched with 'Xaviar (ADV)' data."""
         card = _crypt_card("Xaviar", capacity=0)
-        deck = {"crypt": [card]}
+        deck = Deck_Dict(crypt=[card])
         with self._patch_krcg():
             enrich_crypt_cards(deck)
         # Must use base Xaviar data (capacity=11), not ADV data (capacity=10)
-        assert card["capacity"] == 11
-        assert card["disciplines"] == "ANI CEL FOR PRO"
+        assert "capacity" in card and card["capacity"] == 11
+        assert "disciplines" in card and card["disciplines"] == "ANI CEL FOR PRO"
         # Name must not be changed to include "(ADV)"
-        assert card["name"] == "Xaviar"
+        assert "name" in card and card["name"] == "Xaviar"
 
     def test_adv_vampire_uses_adv_data(self):
         """Scraped 'Xaviar (ADV)' must be enriched with ADV data, not base data."""
         card = _crypt_card("Xaviar (ADV)", capacity=0)
-        deck = {"crypt": [card]}
+        deck = Deck_Dict(crypt=[card])
         with self._patch_krcg():
             enrich_crypt_cards(deck)
-        assert card["capacity"] == 10
-        assert card["disciplines"] == "aus cel pot ABO ANI FOR PRO"
-        assert card["name"] == "Xaviar (ADV)"
+        assert "capacity" in card and card["capacity"] == 10
+        assert "disciplines" in card and card["disciplines"] == "aus cel pot ABO ANI FOR PRO"
+        assert "name" in card and card["name"] == "Xaviar (ADV)"
 
     def test_multi_version_picks_matching_group(self):
         """When a vampire has two grouping versions, pick the one that fits."""
@@ -624,10 +675,10 @@ class TestEnrichCryptCards:
         try:
             single_card = _crypt_card("Antón de Concepción", grouping=6)  # krcg group=6
             multi_card = _crypt_card("Nathan Turner", grouping=0)
-            deck = {"crypt": [single_card, multi_card]}
+            deck = Deck_Dict(crypt=[single_card, multi_card])
             with self._patch_krcg():
                 enrich_crypt_cards(deck)
-            assert multi_card["grouping"] == 6
+            assert "grouping" in multi_card and multi_card["grouping"] == 6
         finally:
             _FAKE_CRYPT_KRCG["Nathan Turner"] = {
                 "capacity": 4,
@@ -665,11 +716,11 @@ class TestEnrichCryptCards:
         try:
             single_card = _crypt_card("_RefCard_G10")  # krcg group=10
             multi_card = _crypt_card("Nathan Turner", grouping=0)
-            deck = {"crypt": [single_card, multi_card]}
+            deck = Deck_Dict(crypt=[single_card, multi_card])
             with self._patch_krcg():
                 enrich_crypt_cards(deck)
             # G3→{3,10} not consecutive; G6→{6,10} not consecutive → fallback to first (G3)
-            assert multi_card["grouping"] == 3
+            assert "grouping" in multi_card and multi_card["grouping"] == 3
         finally:
             _FAKE_CRYPT_KRCG["Nathan Turner"] = {
                 "capacity": 4,
@@ -700,11 +751,11 @@ class TestEnrichCryptCards:
         ]
         try:
             multi_card = _crypt_card("Nathan Turner", grouping=0)
-            deck = {"crypt": [multi_card]}
+            deck = Deck_Dict(crypt=[multi_card])
             with self._patch_krcg():
                 enrich_crypt_cards(deck)
             # No fixed reference → fallback to first version (G5)
-            assert multi_card["grouping"] == 5
+            assert "grouping" in multi_card and multi_card["grouping"] == 5
         finally:
             _FAKE_CRYPT_KRCG["Nathan Turner"] = {
                 "capacity": 4,
@@ -721,45 +772,45 @@ class TestEnrichCryptCards:
 
 
 class TestPickBestCryptVersion:
-    def _v(self, grouping) -> dict:
-        return {
-            "capacity": 5,
-            "disciplines": "",
-            "title": None,
-            "clan": "Gangrel",
-            "grouping": grouping,
-        }
+    def _v(self, grouping) -> Crypt_Card_Dict:
+        return Crypt_Card_Dict(
+            capacity=5,
+            disciplines="",
+            title=None,
+            clan="Gangrel",
+            grouping=grouping,
+        )
 
     def test_exact_match_preferred(self):
         versions = [self._v(5), self._v(6)]
         best = _pick_best_crypt_version(versions, {6})
-        assert best["grouping"] == 6
+        assert "grouping" in best and best["grouping"] == 6
 
     def test_consecutive_extension_chosen(self):
         versions = [self._v(4), self._v(5)]
         best = _pick_best_crypt_version(versions, {6})
         # G5 extends {6} to {5,6} which is consecutive; G4 would give {4,6} which is not
-        assert best["grouping"] == 5
+        assert "grouping" in best and best["grouping"] == 5
 
     def test_no_reference_returns_first(self):
         versions = [self._v(3), self._v(7)]
         best = _pick_best_crypt_version(versions, set())
-        assert best["grouping"] == 3
+        assert "grouping" in best and best["grouping"] == 3
 
     def test_no_fit_returns_first(self):
         versions = [self._v(3), self._v(7)]
         best = _pick_best_crypt_version(versions, {1})
-        assert best["grouping"] == 3
+        assert "grouping" in best and best["grouping"] == 3
 
     def test_any_grouping_only_falls_back(self):
         versions = [
-            {
-                "capacity": 1,
-                "disciplines": "",
-                "title": None,
-                "clan": "Caitiff",
-                "grouping": "ANY",
-            }
+            Crypt_Card_Dict(
+                capacity=1,
+                disciplines="",
+                title=None,
+                clan="Caitiff",
+                grouping="ANY",
+            )
         ]
         best = _pick_best_crypt_version(versions, {5})
-        assert best["grouping"] == "ANY"
+        assert "grouping" in best and best["grouping"] == "ANY"
