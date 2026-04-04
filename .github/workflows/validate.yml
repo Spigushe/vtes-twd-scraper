@@ -4,6 +4,12 @@ on:
   # Allow manual trigger from the Actions tab
   workflow_dispatch:
 
+  # Run after Scrape VTES TWD completes successfully
+  workflow_run:
+    workflows: ["Scrape VTES TWD"]
+    types: [completed]
+    branches: [main]
+
   # Run on every push to main (covers PR merges)
   push:
     branches: [main]
@@ -15,6 +21,7 @@ on:
 
 jobs:
   validate:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write   # needed to commit updated YAML files
