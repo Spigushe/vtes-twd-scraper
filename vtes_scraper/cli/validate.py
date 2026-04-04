@@ -36,7 +36,7 @@ from vtes_scraper.validator import enrich_crypt_cards, error_types, fix_card_sec
 # and can be removed; so we skip only tournaments flagged as "changes_required"
 # to avoid moving them back and forth.
 SKIP_DIRS = {"changes_required"}
-_FAST_VALIDATION_YAML_FILES_NUMBER_THRESHOLD = 100
+_FAST_VALIDATION_YAML_FILES_NUMBER_THRESHOLD = 25
 
 _TOURNAMENT_FIELD_ORDER = list(Tournament.model_fields.keys())
 
@@ -90,7 +90,12 @@ def _filter_yaml_paths(twds_dir: Path, full_validation: bool) -> list[Path]:
     yaml_files: list[Path] = sorted(list(twds_dir.rglob("*.yaml")), reverse=True)
 
     if not full_validation:
-        yaml_files = [p for p in yaml_files if p.relative_to(twds_dir).parts[0] not in SKIP_DIRS]
+        skip_dirs_fast_validation = SKIP_DIRS.union({"errors"})
+        yaml_files = [
+            p
+            for p in yaml_files
+            if p.relative_to(twds_dir).parts[0] not in skip_dirs_fast_validation
+        ]
         yaml_files = yaml_files[:_FAST_VALIDATION_YAML_FILES_NUMBER_THRESHOLD]
 
     return yaml_files

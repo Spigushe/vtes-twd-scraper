@@ -1,6 +1,10 @@
 name: Validate VTES TWD
 
 on:
+  # Run every Sunday at 20:00 UTC
+  schedule:
+    - cron: "0 20 * * 0"
+
   # Allow manual trigger from the Actions tab
   workflow_dispatch:
     inputs:
@@ -61,7 +65,9 @@ jobs:
         continue-on-error: true
         run: |
           FLAGS="--verbose"
-          if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ github.event.inputs.full_validation }}" == "true" ]]; then
+          if [[ "${{ github.event_name }}" == "schedule" ]]; then
+            FLAGS="$FLAGS --full-validation"
+          elif [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ github.event.inputs.full_validation }}" == "true" ]]; then
             FLAGS="$FLAGS --full-validation"
           fi
           vtes-scraper validate $FLAGS

@@ -480,11 +480,11 @@ class TestValidateRunValidatorInteraction:
             validate_mod.run(_validate_namespace(tmp_path))
         mocks["error_types"].assert_not_called()
 
-    def test_errors_dir_files_are_revalidated(self, tmp_path):
+    def test_errors_dir_files_are_revalidated(self, tmp_path, full_validation=True):
         """Files already in errors/ are processed so they can be recovered."""
         _write_yaml(tmp_path / "errors" / "unconfirmed_winner" / "9999.yaml", _tournament_dict())
         with _patch_validate(error_types=[]) as mocks:
-            validate_mod.run(_validate_namespace(tmp_path))
+            validate_mod.run(_validate_namespace(tmp_path, full_validation=full_validation))
         mocks["error_types"].assert_called_once()
 
     def test_recovered_error_file_moved_to_clean_location(self, tmp_path):
