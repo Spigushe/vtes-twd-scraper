@@ -358,7 +358,7 @@ def run(args: argparse.Namespace) -> int:
             # Step 6: validate content
             errors = _validate_content(client, tournament, args.delay)
             if calendar_winner_missing:
-                errors.append("unknown_winner")
+                errors.append("unconfirmed_winner")
 
             # Route file to the appropriate destination
             if errors:

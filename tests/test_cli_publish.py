@@ -210,7 +210,7 @@ class TestPublishCommand:
             from vtes_scraper.output.yaml import write_tournament_yaml
 
             # Place a valid YAML in the errors subdirectory
-            errors_dir = Path(tmpdir) / "errors" / "unknown_winner"
+            errors_dir = Path(tmpdir) / "errors" / "unconfirmed_winner"
             errors_dir.mkdir(parents=True)
             write_tournament_yaml(t, errors_dir, overwrite=True)
 

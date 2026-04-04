@@ -33,7 +33,8 @@ Date coherence (requires a calendar_date from the VEKN event calendar)
   incoherent_date : date_start in the file does not match the official date
 
 Player identity (requires network; --check-players flag)
-  unknown_winner  : winner name not found in the VEKN member database
+  unconfirmed_winner : vekn_number absent/None, or winner name not found in
+                       the VEKN calendar data
 
 When multiple errors are present the first one (in the order listed above)
 determines the error directory used by the CLI validate command.
