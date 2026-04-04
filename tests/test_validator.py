@@ -57,6 +57,7 @@ def _tournament(**kwargs) -> Tournament_Dict:
         winner="Jane Doe",
         vekn_number=1234567,
         event_url="https://www.vekn.net/event-calendar/event/9999",
+        forum_post_url="https://www.vekn.net/forum/event-reports-and-twd/99999-test-event",
         deck=_deck(**kwargs),
     )
     for k, v in kwargs.items():
@@ -94,6 +95,12 @@ class TestMandatoryFields:
 
     def test_missing_event_url(self):
         assert "illegal_header" in error_types(_tournament(event_url=None))
+
+    def test_missing_forum_post_url(self):
+        assert "illegal_header" in error_types(_tournament(forum_post_url=None))
+
+    def test_empty_forum_post_url(self):
+        assert "illegal_header" in error_types(_tournament(forum_post_url=""))
 
     def test_limited_format(self):
         assert "limited_format" in error_types(_tournament(name="Limited Edition Cup"))

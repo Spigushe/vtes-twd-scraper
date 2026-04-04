@@ -270,6 +270,32 @@ TEXT_SCAN_HTML = """
 
 NO_DATE_HTML = "<html><body><p>No date information here.</p></body></html>"
 
+EVENTDATE_DIV_HTML = """
+<html><body>
+<div class="eventdate">19 March 2022, 11:00 &ndash; 21:00</div>
+</body></html>
+"""
+
+EVENTDATE_DIV_SINGLE_DIGIT_HTML = """
+<html><body>
+<div class="eventdate">5 January 2024, 10:00 &ndash; 18:00</div>
+</body></html>
+"""
+
+EVENTDATE_DIV_PRIORITY_HTML = """
+<html><body>
+<div class="eventdate">19 March 2022, 11:00 &ndash; 21:00</div>
+<p>Event date: 2099-12-31 in Paris</p>
+</body></html>
+"""
+
+EVENTDATE_DIV_INVALID_HTML = """
+<html><body>
+<div class="eventdate">Unknown date</div>
+<p>Event date: 2023-03-25 in Paris</p>
+</body></html>
+"""
+
 JSON_LD_INVALID_HTML = """
 <html><head>
 <script type="application/ld+json">not valid json {</script>
@@ -333,6 +359,36 @@ class TestFetchEventDate:
         with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
             result = fetch_event_date(mock_client, "https://example.com", delay=0)
         assert result is None
+
+    def test_eventdate_div(self):
+        soup = BeautifulSoup(EVENTDATE_DIV_HTML, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
+            result = fetch_event_date(mock_client, "https://example.com", delay=0)
+        assert result == date(2022, 3, 19)
+
+    def test_eventdate_div_single_digit_day(self):
+        soup = BeautifulSoup(EVENTDATE_DIV_SINGLE_DIGIT_HTML, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
+            result = fetch_event_date(mock_client, "https://example.com", delay=0)
+        assert result == date(2024, 1, 5)
+
+    def test_eventdate_div_takes_priority_over_text_scan(self):
+        """eventdate div (strategy 3) is tried before ISO text scan (strategy 4)."""
+        soup = BeautifulSoup(EVENTDATE_DIV_PRIORITY_HTML, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
+            result = fetch_event_date(mock_client, "https://example.com", delay=0)
+        assert result == date(2022, 3, 19)
+
+    def test_eventdate_div_invalid_falls_through_to_text_scan(self):
+        """Unparseable eventdate div falls through to ISO text scan (strategy 4)."""
+        soup = BeautifulSoup(EVENTDATE_DIV_INVALID_HTML, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
+            result = fetch_event_date(mock_client, "https://example.com", delay=0)
+        assert result == date(2023, 3, 25)
 
 
 # ---------------------------------------------------------------------------

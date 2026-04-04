@@ -252,6 +252,7 @@ def error_types(data: Tournament_Dict, calendar_date: date | None = None) -> lis
         or not data.get("rounds_format")
         or not data.get("players_count")
         or not data.get("event_url")
+        or not data.get("forum_post_url")
     ):
         errors.append("illegal_header")
     if not data.get("winner") or not data.get("vekn_number"):

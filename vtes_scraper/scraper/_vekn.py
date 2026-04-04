@@ -70,7 +70,20 @@ def fetch_event_date(
         except ValueError:
             pass
 
-    # --- Strategy 3: text scan near a "date" label ---
+    # --- Strategy 3: <div class="eventdate"> (e.g. "19 March 2022, 11:00 – 21:00") ---
+    eventdate_div = soup.find(class_="eventdate")
+    if eventdate_div:
+        eventdate_text = eventdate_div.get_text(separator=" ", strip=True)
+        m = re.search(r"(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})", eventdate_text)
+        if m:
+            try:
+                return datetime.strptime(
+                    f"{m.group(1)} {m.group(2)} {m.group(3)}", "%d %B %Y"
+                ).date()
+            except ValueError:
+                pass
+
+    # --- Strategy 4: text scan near a "date" label ---
     page_text = soup.get_text(separator=" ")
     # Look for "date" followed within 60 chars by an ISO date
     iso_near_label = re.search(r"(?i)\bdate[:\s]+(\d{4}-\d{2}-\d{2})", page_text)

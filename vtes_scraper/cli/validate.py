@@ -1,34 +1,47 @@
 """CLI subcommand: validate.
 
-Validates that all published tournament YAML files have a vekn_number.
+Re-applies the full scraping validation pipeline to all published tournament
+YAML files:
 
-Scans all YAML files under twds/<year>/<month>/ (i.e. files NOT in the
-``errors/`` or ``changes_required/`` directories) and checks that each one
-contains a non-null ``vekn_number`` field.
+  1. Rescrape the forum post (forum_post_url) for fresh tournament data.
+  2. Enrich crypt cards and fix library card sections via krcg.
+  3. Attempt to recover a missing vekn_number from the VEKN event calendar.
+  4. Fetch the official event date from the VEKN calendar for date-coherence.
+  5. Run the full error_types() check (illegal_header, unconfirmed_winner,
+     limited_format, illegal_crypt, illegal_library, too_few_players,
+     incoherent_date).
+  6. Move files that still have errors to twds/errors/<first_error>/.
+     Files without errors that were modified in place are written back.
 
-For files missing a vekn_number, the command first attempts to rescrape the
-VEKN event calendar page (via event_url) to retrieve the winner and their
-VEKN number.  If the rescrape succeeds the file is updated in place.
-Only if the rescrape fails is the file moved to ``twds/errors/unconfirmed_winner/``.
+Scans all YAML files under twds/ except the ``changes_required/`` directory.
+Files in ``errors/`` are also re-validated so that previously failing files can
+be recovered when the underlying issue (e.g. missing calendar results) is fixed.
 """
 
 import argparse
 import shutil
 from pathlib import Path
+from typing import cast
 
 import httpx
 
 from vtes_scraper.cli._common import SubParsersAction, console
+from vtes_scraper.models import Deck_Dict, Tournament_Dict
+from vtes_scraper.scraper._forum import extract_twd_from_thread
 from vtes_scraper.scraper._http import DEFAULT_DELAY_SECONDS, HEADERS
-from vtes_scraper.scraper._vekn import fetch_event_winner, fetch_player
+from vtes_scraper.scraper._vekn import fetch_event_date, fetch_event_winner, fetch_player
+from vtes_scraper.validator import enrich_crypt_cards, error_types, fix_card_sections
 
-SKIP_DIRS = {"errors", "changes_required"}
+# Error dir is rechecked every time to see if errors have been fixed
+# and can be removed; so we skip only tournaments flagged as "changes_required"
+# to avoid moving them back and forth.
+SKIP_DIRS = {"changes_required"}
 
 
 def register(sub: SubParsersAction) -> None:
     p = sub.add_parser(
         "validate",
-        help="Validate VEKN numbers for all published tournament YAML files.",
+        help="Re-validate all published tournament YAML files.",
         description=__doc__,
     )
     p.add_argument(
@@ -47,7 +60,7 @@ def register(sub: SubParsersAction) -> None:
 
 
 def _iter_published_yaml(twds_dir: Path):
-    """Yield all YAML files that are NOT inside errors/ or changes_required/."""
+    """Yield all YAML files that are NOT inside changes_required/."""
     for yaml_file in sorted(twds_dir.rglob("*.yaml")):
         parts = yaml_file.relative_to(twds_dir).parts
         if parts and parts[0] in SKIP_DIRS:
@@ -55,15 +68,12 @@ def _iter_published_yaml(twds_dir: Path):
         yield yaml_file
 
 
-def _try_rescrape_vekn_number(
+def _try_recover_vekn_number(
     client: httpx.Client,
     event_url: str,
     delay: float = DEFAULT_DELAY_SECONDS,
 ) -> int | None:
-    """Try to fetch the winner's VEKN number from the event calendar page.
-
-    Returns the VEKN number as an int, or None if it cannot be determined.
-    """
+    """Try to fetch the winner's VEKN number from the event calendar page."""
     winner_name = fetch_event_winner(client, event_url, delay)
     if not winner_name:
         return None
@@ -80,55 +90,117 @@ def run(args: argparse.Namespace) -> int:
     yaml = YAML()
     twds_dir: Path = args.twds_dir
     dry_run: bool = args.dry_run
-    dest_dir = twds_dir / "errors" / "unconfirmed_winner"
 
     moved: list[Path] = []
-    with httpx.Client(headers=HEADERS, follow_redirects=True) as client:
+    updated: list[Path] = []
+
+    with httpx.Client(headers=HEADERS, follow_redirects=True, timeout=60.0) as client:
         for path in _iter_published_yaml(twds_dir):
             with open(path, encoding="utf-8") as fh:
-                data = yaml.load(fh)
+                data = cast(Tournament_Dict, yaml.load(fh))
 
             if not isinstance(data, dict):
                 continue
 
-            if data.get("vekn_number") is not None:
-                continue
+            dirty = False
 
-            event_id = data.get("event_id", path.stem)
-            event_url = data.get("event_url", "")
-
-            vekn_number: int | None = None
-            if event_url and not dry_run:
-                console.print(f"rescraping calendar for event {event_id} ({event_url}) ...")
+            # Step 1: rescrape the forum post for fresh tournament data
+            forum_post_url: str = data.get("forum_post_url") or ""
+            if forum_post_url and not dry_run:
                 try:
-                    vekn_number = _try_rescrape_vekn_number(client, event_url)
-                except Exception as exc:
-                    console.print(f"  rescrape error: {exc}")
+                    fresh = extract_twd_from_thread(
+                        client, forum_post_url, delay=DEFAULT_DELAY_SECONDS
+                    )
+                    if fresh is not None:
+                        from vtes_scraper.cli.scrape import _to_serializable
 
-            if vekn_number is not None:
-                data["vekn_number"] = vekn_number
-                with open(path, "w", encoding="utf-8") as fh:
-                    yaml.dump(data, fh)
-                console.print(f"[green]✓[/green] updated {path} with vekn_number={vekn_number}")
+                        fresh_data = cast(Tournament_Dict, _to_serializable(fresh))
+                        # Preserve vekn_number — forum posts never contain it
+                        preserved_vekn = data.get("vekn_number")
+                        if preserved_vekn is not None:
+                            fresh_data["vekn_number"] = preserved_vekn  # type: ignore[assignment]
+                        data = fresh_data
+                        dirty = True
+                except Exception as exc:
+                    console.print(f"  forum rescrape error for {path.name}: {exc}")
+
+            # Step 2: enrich crypt cards and fix library sections via krcg
+            deck = cast(Deck_Dict, data.get("deck") or {})
+            if deck:
+                crypt_fixes = enrich_crypt_cards(deck)
+                section_fixes = fix_card_sections(deck)
+                if crypt_fixes:
+                    console.print(
+                        f"[cyan]⚙[/cyan] {path.name}  crypt enriched:\n" + "\n".join(crypt_fixes)
+                    )
+                    dirty = True
+                if section_fixes:
+                    console.print(
+                        f"[cyan]⚙[/cyan] {path.name}  sections fixed:\n" + "\n".join(section_fixes)
+                    )
+                    dirty = True
+                if dirty:
+                    data["deck"] = deck  # type: ignore[assignment]
+
+            # Step 2: attempt to recover a missing vekn_number
+            event_url: str = data.get("event_url") or ""
+            if data.get("vekn_number") is None and event_url:
+                event_id = data.get("event_id", path.stem)
+                if not dry_run:
+                    console.print(f"rescraping calendar for event {event_id} ({event_url}) ...")
+                    try:
+                        vekn_number = _try_recover_vekn_number(client, event_url)
+                    except Exception as exc:
+                        console.print(f"  rescrape error: {exc}")
+                        vekn_number = None
+                    if vekn_number is not None:
+                        data["vekn_number"] = vekn_number  # type: ignore[assignment]
+                        console.print(f"[green]✓[/green] {path.name}  vekn_number={vekn_number}")
+                        dirty = True
+
+            # Step 3: fetch official event date for date-coherence check
+            calendar_date = None
+            if event_url and not dry_run:
+                try:
+                    calendar_date = fetch_event_date(client, event_url)
+                except Exception as exc:
+                    console.print(f"  calendar date error for {path.name}: {exc}")
+
+            # Step 4: full validation
+            errors = error_types(cast(Tournament_Dict, data), calendar_date=calendar_date)
+
+            if not errors:
+                if dirty and not dry_run:
+                    with open(path, "w", encoding="utf-8") as fh:
+                        yaml.dump(data, fh)
+                    console.print(f"[green]✓[/green] updated {path.name}")
+                    updated.append(path)
                 continue
 
+            # Step 5: move to errors/<first_error>/
+            dest_dir = twds_dir / "errors" / errors[0]
             if dry_run:
-                rescrape_note = " (rescrape would be attempted first)" if event_url else ""
                 console.print(
-                    f"[yellow]─[/yellow] [dry-run] would move {path} -> "
-                    f"errors/unconfirmed_winner/{path.name}{rescrape_note}"
+                    f"[yellow]─[/yellow] [dry-run] would move {path.name} → "
+                    f"errors/{errors[0]}/  [dim]({', '.join(errors)})[/dim]"
                 )
             else:
                 dest_dir.mkdir(parents=True, exist_ok=True)
                 dest = dest_dir / path.name
                 shutil.move(str(path), str(dest))
-                console.print(f"[red]✗[/red] moved {path} -> errors/unconfirmed_winner/{path.name}")
+                console.print(
+                    f"[red]✗[/red] {path.name} → errors/{errors[0]}/"
+                    f"  [dim]({', '.join(errors)})[/dim]"
+                )
             moved.append(path)
 
-    if not moved:
-        console.print("[green]All published files have a vekn_number.[/green]")
+    if not moved and not updated:
+        console.print("[green]All published files passed validation.[/green]")
     else:
         label = "would be moved" if dry_run else "moved"
-        console.print(f"\n{len(moved)} file(s) {label}.")
+        if moved:
+            console.print(f"\n{len(moved)} file(s) {label}.")
+        if updated:
+            console.print(f"{len(updated)} file(s) updated in place.")
 
     return 0
