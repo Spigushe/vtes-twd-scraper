@@ -6,6 +6,9 @@ players_count: 30
 winner: Lukáš Vrbický
 vekn_number: 1007030
 event_url: https://www.vekn.net/event-calendar/event/13126
+event_id: 13126
+vp_comment: 2GW 9,5VP, final 1GW 3VP
+forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82918-twd-silesia-nightfall-katowice
 deck:
   name: Capuchin the Rich
   created_by: Lukáš Vrbický
@@ -135,6 +138,3 @@ deck:
       name: Theft of Vitae
     - count: 6
       name: Unflinching Persistence
-event_id: 13126
-vp_comment: 2GW 9,5VP, final 1GW 3VP
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82918-twd-silesia-nightfall-katowice

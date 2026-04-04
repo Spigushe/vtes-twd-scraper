@@ -6,6 +6,9 @@ players_count: 12
 winner: Airlan Sudário de Oliveira
 vekn_number: 3560042
 event_url: https://www.vekn.net/event-calendar/event/13118
+event_id: 13118
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82919-twd-3-lagrimas-de-marco-quer-um-lencinho-teresina-brazil-29-03-2026
 deck:
   name: Nobres em Poder
   created_by: Airlan
@@ -138,6 +141,3 @@ deck:
       name: Deflection
     - count: 4
       name: On the Qui Vive
-event_id: 13118
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82919-twd-3-lagrimas-de-marco-quer-um-lencinho-teresina-brazil-29-03-2026

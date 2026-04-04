@@ -6,6 +6,10 @@ players_count: 112
 winner: Martin Weinmayer
 vekn_number: 3340035
 event_url: https://www.vekn.net/event-calendar/event/12524
+event_id: 12524
+vp_comment: 2GW 8.5VP + 1VP in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82926-twd-last-chance-qualifier-aarhus-denmark-17-october-2025
 deck:
   name: The Evil Marko Experience
   created_by: Martin Weinmayer
@@ -166,7 +170,3 @@ deck:
       name: Earth Meld
     - count: 7
       name: Form of Mist
-event_id: 12524
-vp_comment: 2GW 8.5VP + 1VP in final
-forum_post_url: 
-  https://www.vekn.net/forum/event-reports-and-twd/82926-twd-last-chance-qualifier-aarhus-denmark-17-october-2025
