@@ -2,6 +2,7 @@
 
 import io
 import logging
+import runpy
 from unittest.mock import patch
 
 import pytest
@@ -89,6 +90,24 @@ class TestReconfigureWindowsStdio:
             # Should not raise even without .buffer
             reconfigure_windows_stdio()
             assert isinstance(mock_sys.stdout, io.StringIO)
+
+
+# ---------------------------------------------------------------------------
+# setup_logging
+# ---------------------------------------------------------------------------
+
+
+class TestDunderMain:
+    """Cover vtes_scraper/cli/__main__.py (the `python -m vtes_scraper.cli` entry point)."""
+
+    def test_main_called_via_run_module(self):
+        with (
+            patch("vtes_scraper.cli.main") as mock_main,
+        ):
+            mock_main.side_effect = SystemExit(0)
+            with pytest.raises(SystemExit):
+                runpy.run_module("vtes_scraper.cli", run_name="__main__")
+            mock_main.assert_called_once()
 
 
 # ---------------------------------------------------------------------------

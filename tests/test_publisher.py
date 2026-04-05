@@ -17,6 +17,7 @@ from vtes_scraper.publisher import (
     BatchPRResult,
     _create_branch,
     _delete_branch,
+    _ensure_fork,
     _file_exists_on_branch,
     _find_existing_pr,
     _get_authenticated_user,
@@ -632,6 +633,31 @@ class TestPublishAllAsSinglePr:
         assert result.pr_url is None
         mock_del.assert_called_once()
 
+    def test_422_existing_pr_not_found_raises(self):
+        """
+        422 with 'pull request already exists'
+        but _find_existing_pr returns None → raise_for_status.
+        """
+        mock_post_resp = MagicMock()
+        mock_post_resp.status_code = 422
+        mock_post_resp.json.return_value = {
+            "errors": [{"message": "A pull request already exists for this head"}]
+        }
+        mock_post_resp.raise_for_status.side_effect = httpx.HTTPStatusError(
+            "422", request=MagicMock(), response=MagicMock()
+        )
+
+        mock_get_resp = MagicMock()
+        mock_get_resp.status_code = 200
+        mock_get_resp.json.return_value = []  # _find_existing_pr returns None
+
+        mock_client = MagicMock()
+        mock_client.post.return_value = mock_post_resp
+        mock_client.get.return_value = mock_get_resp
+
+        with pytest.raises(httpx.HTTPStatusError):
+            _open_pull_request(mock_client, "branch", "Title", "Body", token="t")
+
     def test_with_errors_in_pr_body(self):
         """Test PR body generation when there are both published and errored decks."""
         t1 = _make_tournament(9001)
@@ -670,3 +696,41 @@ class TestPublishAllAsSinglePr:
         assert len(result.published) == 1
         assert len(result.errors) == 1
         assert result.pr_url == "https://github.com/pr/3"
+
+
+# ---------------------------------------------------------------------------
+# _ensure_fork
+# ---------------------------------------------------------------------------
+
+
+class TestEnsureFork:
+    def test_fork_ready_immediately(self):
+        """Returns the fork owner when the fork is immediately available (200)."""
+        mock_client = MagicMock()
+        user_resp = MagicMock()
+        user_resp.json.return_value = {"login": "testuser"}
+        fork_resp = MagicMock()
+        fork_resp.status_code = 200
+        mock_client.get.side_effect = [user_resp, fork_resp]
+        mock_client.post.return_value = MagicMock()
+
+        result = _ensure_fork(mock_client, token="mytoken")
+        assert result == "testuser"
+
+    def test_fork_polls_until_ready(self):
+        """Polls until the fork becomes available (first 404, then 200)."""
+        mock_client = MagicMock()
+        user_resp = MagicMock()
+        user_resp.json.return_value = {"login": "testuser"}
+        fork_not_ready = MagicMock()
+        fork_not_ready.status_code = 404
+        fork_ready = MagicMock()
+        fork_ready.status_code = 200
+        mock_client.get.side_effect = [user_resp, fork_not_ready, fork_ready]
+        mock_client.post.return_value = MagicMock()
+
+        with patch("vtes_scraper.publisher.time") as mock_time:
+            result = _ensure_fork(mock_client, token="mytoken")
+
+        assert result == "testuser"
+        mock_time.sleep.assert_called_once_with(1)

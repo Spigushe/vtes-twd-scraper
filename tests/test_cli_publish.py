@@ -283,3 +283,137 @@ class TestPublishCommand:
             path = publish_cmd._write_publish_report(result, Path(tmpdir), "2023-03-25", [])
             content = path.read_text()
             assert "8888" in content
+
+    def test_write_publish_report_dry_run_with_timestamp(self):
+        result = BatchPRResult(dry_run=True, published=["9999"])
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = publish_cmd._write_publish_report(
+                result, Path(tmpdir), "2023-03-25", [], timestamp="2023-03-25-10-30-00"
+            )
+            content = path.read_text()
+        assert "dry-run" in path.name
+        assert "DRY RUN" in content
+        assert "10-30-00" in path.name
+
+    def test_write_publish_report_dry_run_no_timestamp(self):
+        result = BatchPRResult(dry_run=True)
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = publish_cmd._write_publish_report(
+                result, Path(tmpdir), "2023-03-25", [], timestamp=None
+            )
+        assert "dry-run" in path.name
+
+    def test_write_publish_report_published_without_event_url(self):
+        """Tournament with no event_url: name appears without a hyperlink."""
+        t = _make_tournament()
+        t2 = t.model_copy(update={"event_url": None})
+        result = BatchPRResult(published=[t2.event_id or "unknown"])
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = publish_cmd._write_publish_report(result, Path(tmpdir), "2023-03-25", [t2])
+            content = path.read_text()
+        assert "Test Event" in content
+
+    def test_run_nothing_after_year_filter(self):
+        """When all loaded tournaments pre-date 2020, nothing to publish."""
+        from datetime import date as _date
+
+        t_old = _make_tournament()
+        t_old = t_old.model_copy(update={"date_start": _date(2019, 1, 1)})
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            from vtes_scraper.output.yaml import write_tournament_yaml
+
+            write_tournament_yaml(t_old, Path(tmpdir), overwrite=True)
+
+            args = argparse.Namespace(
+                twds_dir=Path(tmpdir),
+                delay=0,
+                github_token="mytoken",
+                publish_dir=Path(tmpdir) / "publish",
+                include_pre_2020=False,
+                verbose=False,
+            )
+            with patch("vtes_scraper.cli.publish.publish_all_as_single_pr") as mock_pub:
+                ret = publish_cmd.run(args)
+            mock_pub.assert_not_called()
+        assert ret == 0
+
+    def test_run_dry_run_prints_summary(self):
+        t = _make_tournament()
+        result = BatchPRResult(dry_run=True, published=["9999"])
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            from vtes_scraper.output.yaml import write_tournament_yaml
+
+            write_tournament_yaml(t, Path(tmpdir), overwrite=True)
+
+            args = argparse.Namespace(
+                twds_dir=Path(tmpdir),
+                delay=0,
+                github_token="mytoken",
+                publish_dir=Path(tmpdir) / "publish",
+                include_pre_2020=True,
+                dry_run=True,
+                verbose=False,
+            )
+            with patch(
+                "vtes_scraper.cli.publish.publish_all_as_single_pr",
+                return_value=result,
+            ):
+                ret = publish_cmd.run(args)
+        assert ret == 0
+
+    def test_run_skipped_entries_printed(self):
+        t = _make_tournament()
+        result = BatchPRResult(published=["9999"], skipped=["8888"])
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            from vtes_scraper.output.yaml import write_tournament_yaml
+
+            write_tournament_yaml(t, Path(tmpdir), overwrite=True)
+
+            args = argparse.Namespace(
+                twds_dir=Path(tmpdir),
+                delay=0,
+                github_token="mytoken",
+                publish_dir=Path(tmpdir) / "publish",
+                include_pre_2020=True,
+                dry_run=False,
+                verbose=False,
+            )
+            with patch(
+                "vtes_scraper.cli.publish.publish_all_as_single_pr",
+                return_value=result,
+            ):
+                ret = publish_cmd.run(args)
+        assert ret == 0
+
+    def test_run_report_write_failure_is_swallowed(self):
+        """A crash in _write_publish_report must not abort the command."""
+        t = _make_tournament()
+        result = BatchPRResult(pr_url="https://github.com/pr/1", published=["9999"])
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            from vtes_scraper.output.yaml import write_tournament_yaml
+
+            write_tournament_yaml(t, Path(tmpdir), overwrite=True)
+
+            args = argparse.Namespace(
+                twds_dir=Path(tmpdir),
+                delay=0,
+                github_token="mytoken",
+                publish_dir=Path(tmpdir) / "publish",
+                include_pre_2020=True,
+                dry_run=False,
+                verbose=False,
+            )
+            with patch(
+                "vtes_scraper.cli.publish.publish_all_as_single_pr",
+                return_value=result,
+            ):
+                with patch(
+                    "vtes_scraper.cli.publish._write_publish_report",
+                    side_effect=OSError("disk full"),
+                ):
+                    ret = publish_cmd.run(args)
+        assert ret == 0

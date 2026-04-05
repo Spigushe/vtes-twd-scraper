@@ -411,3 +411,95 @@ class TestValidation:
         )
         with pytest.raises(ValueError, match="Library"):
             parse_twd_text(bad)
+
+
+class TestParseHeaderStrict:
+    """Direct unit tests for _parse_header_strict edge cases."""
+
+    def test_non_player_count_raises(self):
+        """Line 4 not matching PLAYERS_RE raises ValueError."""
+        from vtes_scraper.parser._header import _parse_header_strict
+
+        lines = [
+            "Event Name",
+            "City, Country",
+            "March 1st 2023",
+            "2R+F",
+            "NOT_A_PLAYER_COUNT",
+            "Jane Doe",
+            "https://www.vekn.net/event-calendar/event/123",
+        ]
+        with pytest.raises(ValueError, match="not player count"):
+            _parse_header_strict(lines)
+
+    def test_non_vekn_url_raises(self):
+        """Line 6 not containing vekn.net raises ValueError."""
+        from vtes_scraper.parser._header import _parse_header_strict
+
+        lines = [
+            "Event Name",
+            "City, Country",
+            "March 1st 2023",
+            "2R+F",
+            "12 players",
+            "Jane Doe",
+            "http://example.com/event/123",
+        ]
+        with pytest.raises(ValueError, match="not vekn URL"):
+            _parse_header_strict(lines)
+
+
+class TestParseHeaderLenient:
+    """Direct unit tests for _parse_header_lenient edge cases."""
+
+    def test_second_vekn_url_is_skipped(self):
+        """When two vekn.net URLs appear, only the first is stored."""
+        from vtes_scraper.parser._header import _parse_header_lenient
+
+        lines = [
+            "Event Name",
+            "City, Country",
+            "March 1st 2023",
+            "2R+F",
+            "12 players",
+            "Jane Doe",
+            "https://www.vekn.net/event-calendar/event/123",
+            "https://www.vekn.net/event-calendar/event/456",
+        ]
+        result = _parse_header_lenient(lines)
+        assert "123" in result["event_url"]
+        assert "456" not in result["event_url"]
+
+    def test_all_labeled_no_name_raises(self):
+        """When all lines are classified (unlabeled empty), missing name raises."""
+        from vtes_scraper.parser._header import _parse_header_lenient
+
+        lines = [
+            "2R+F",
+            "12 players",
+            "https://www.vekn.net/event-calendar/event/123",
+        ]
+        with pytest.raises(ValueError, match="missing"):
+            _parse_header_lenient(lines)
+
+
+class TestBlankLineStripping:
+    """Covers the leading/trailing blank-line stripping in parse_twd_text."""
+
+    def test_leading_blank_lines_stripped(self):
+        """Blank lines before the tournament name must not cause a parse failure."""
+        raw = "\n\n\n" + EXAMPLE_SIMPLE
+        result = parse_twd_text(raw)
+        assert result.name == "Conservative Agitation"
+
+    def test_trailing_blank_lines_stripped(self):
+        """Blank lines after the last deck line must not cause a parse failure."""
+        raw = EXAMPLE_SIMPLE + "\n\n\n"
+        result = parse_twd_text(raw)
+        assert result.name == "Conservative Agitation"
+
+    def test_leading_and_trailing_blank_lines_stripped(self):
+        """Both leading and trailing blank lines are stripped cleanly."""
+        raw = "\n\n" + EXAMPLE_SIMPLE.strip() + "\n\n"
+        result = parse_twd_text(raw)
+        assert result.name == "Conservative Agitation"

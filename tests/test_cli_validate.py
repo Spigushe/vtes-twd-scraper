@@ -532,3 +532,70 @@ class TestValidateRunValidatorInteraction:
         with _patch_validate():
             rc = validate_mod.run(_validate_namespace(tmp_path))
         assert rc == 0
+
+
+# ---------------------------------------------------------------------------
+# Additional coverage for edge-case branches in validate.run()
+# ---------------------------------------------------------------------------
+
+
+class TestValidateRunEdgeCases:
+    def test_non_dict_yaml_is_skipped(self, tmp_path):
+        """A YAML file that deserialises to a list (not a dict) is silently skipped."""
+        f = tmp_path / "2023" / "03" / "9999.yaml"
+        _write_yaml(f, ["not", "a", "dict"])
+        with _patch_validate() as mocks:
+            validate_mod.run(_validate_namespace(tmp_path))
+        mocks["error_types"].assert_not_called()
+
+    def test_calendar_winner_check_exception_continues(self, tmp_path):
+        """A crash in _check_and_update_winner must not abort the run loop."""
+        _write_yaml(tmp_path / "2023" / "03" / "9999.yaml", _tournament_dict())
+        with _patch_validate():
+            with patch.object(
+                validate_mod,
+                "fetch_event_winner",
+                side_effect=Exception("network error"),
+            ):
+                rc = validate_mod.run(_validate_namespace(tmp_path))
+        assert rc == 0
+
+    def test_calendar_date_exception_continues(self, tmp_path):
+        """A crash fetching the calendar date must not abort the run loop."""
+        _write_yaml(tmp_path / "2023" / "03" / "9999.yaml", _tournament_dict())
+        with _patch_validate():
+            with patch.object(
+                validate_mod,
+                "fetch_event_date",
+                side_effect=Exception("timeout"),
+            ):
+                rc = validate_mod.run(_validate_namespace(tmp_path))
+        assert rc == 0
+
+    def test_reorder_tournament_dict_preserves_extra_keys(self):
+        """Extra keys beyond the Tournament model are appended at the end."""
+        data = _tournament_dict()
+        data["extra_field"] = "extra_value"  # type: ignore[index]
+        reordered = validate_mod._reorder_tournament_dict(data)
+        keys = list(reordered.keys())
+        assert "extra_field" in keys
+        # extra_field must come after all standard model fields
+        standard_keys = validate_mod._TOURNAMENT_FIELD_ORDER
+        last_standard = max((keys.index(k) for k in standard_keys if k in keys), default=-1)
+        assert keys.index("extra_field") > last_standard
+
+    def test_section_fixes_marks_dirty(self, tmp_path):
+        """fix_card_sections returning non-empty list sets dirty=True."""
+        _write_yaml(tmp_path / "2023" / "03" / "9999.yaml", _tournament_dict())
+        with _patch_validate(fix_card_sections=["Blood Doll → Master"], error_types=[]):
+            validate_mod.run(_validate_namespace(tmp_path))
+        written = tmp_path / "2023" / "03" / "9999.yaml"
+        assert written.exists()
+
+    def test_no_winner_in_data_skips_player_lookup(self, tmp_path):
+        """When winner is empty/None, fetch_player must not be called."""
+        data = _tournament_dict(winner="")
+        _write_yaml(tmp_path / "2023" / "03" / "9999.yaml", data)
+        with _patch_validate(fetch_event_winner=None) as mocks:
+            validate_mod.run(_validate_namespace(tmp_path))
+        mocks["fetch_player"].assert_not_called()

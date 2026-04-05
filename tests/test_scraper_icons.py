@@ -116,6 +116,33 @@ class TestDetectTopicIcon:
         soup = BeautifulSoup(html, "lxml")
         assert detect_topic_icon(cast(Tag, soup.find("a"))) == ICON_SOLVED
 
+    def test_deep_nesting_exhausts_walk_loop(self):
+        """8+ non-row ancestor divs exhaust the walk loop (branch 51->63)."""
+        inner = (
+            f'<img src="{_ICON_BASE}default.png"><a href="/forum/event-reports-and-twd/123">X</a>'
+        )
+        html = "<div>" * 9 + inner + "</div>" * 9
+        soup = BeautifulSoup(html, "lxml")
+        assert detect_topic_icon(cast(Tag, soup.find("a"))) == ICON_DEFAULT
+
+    def test_detached_tag_returns_none(self):
+        """A tag with no parent yields search_root=None → returns None (line 65)."""
+        soup = BeautifulSoup("", "lxml")
+        tag = soup.new_tag("a")
+        tag["href"] = "/forum/event-reports-and-twd/123-test"
+        assert detect_topic_icon(cast(Tag, tag)) is None
+
+    def test_unknown_icon_stem_returns_none(self):
+        """Img with base URL but unrecognised stem exhausts inner loop (71->67)."""
+        html = (
+            '<div class="krow">'
+            f'<img src="{_ICON_BASE}unknown_stem.png">'
+            '<a href="/forum/event-reports-and-twd/123-test">Title</a>'
+            "</div>"
+        )
+        soup = BeautifulSoup(html, "lxml")
+        assert detect_topic_icon(cast(Tag, soup.find("a"))) is None
+
 
 # ---------------------------------------------------------------------------
 # Fixtures — minimal Tournament stubs for CLI tests

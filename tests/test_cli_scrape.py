@@ -445,6 +445,29 @@ class TestScrapeInternalPaths:
                 result = scrape_cmd._enrich_with_krcg(t)
         assert result is not t
 
+    def test_lookup_player_coerces_winner_name(self):
+        """When fetch_player returns a different canonical name, it is printed and stored."""
+        from unittest.mock import MagicMock
+
+        t = _make_tournament()
+        client = MagicMock()
+        with patch(
+            "vtes_scraper.cli.scrape.fetch_player",
+            return_value=("Jane Doe-Smith", 12345),
+        ):
+            result = scrape_cmd._lookup_player(client, t, delay=0)
+        assert result.winner == "Jane Doe-Smith"
+        assert result.vekn_number == 12345
+
+    def test_enrich_with_krcg_no_deck(self):
+        """Tournament with no deck data is returned unchanged (line 138)."""
+        from unittest.mock import MagicMock
+
+        t = MagicMock()
+        t.model_dump.return_value = {}  # _to_serializable returns no deck key
+        result = scrape_cmd._enrich_with_krcg(t)
+        assert result is t
+
     # ── _validate_content ────────────────────────────────────────────────────
 
     def test_validate_content_fetch_date_exception(self):
@@ -459,6 +482,19 @@ class TestScrapeInternalPaths:
             with patch("vtes_scraper.cli.scrape.error_types", return_value=[]):
                 errors = scrape_cmd._validate_content(client, t, delay=0)
         assert errors == []
+
+    def test_validate_content_no_event_url(self):
+        """Tournament with no event_url skips the date fetch (branch 169->179)."""
+        from unittest.mock import MagicMock
+
+        t = _make_tournament().model_copy(update={"event_url": None})
+        client = MagicMock()
+        with patch("vtes_scraper.cli.scrape.error_types", return_value=[]) as mock_et:
+            errors = scrape_cmd._validate_content(client, t, delay=0)
+        assert errors == []
+        # calendar_date should be None since there was no event_url
+        _, kwargs = mock_et.call_args
+        assert kwargs.get("calendar_date") is None
 
     # ── run() routing paths ───────────────────────────────────────────────────
 
@@ -488,10 +524,12 @@ class TestScrapeInternalPaths:
             args = _scrape_namespace(output_dir=Path(tmpdir))
             with _patch_pipeline(
                 scrape_forum=iter([(t, ICON_MERGED)]),
+                fetch_event_winner=t.winner,
                 error_types=[],
             ):
-                with patch("pathlib.Path.write_text", side_effect=OSError("disk full")):
-                    ret = scrape_cmd.run(args)
+                with patch("vtes_scraper.cli.scrape.console"):
+                    with patch("pathlib.Path.write_text", side_effect=OSError("disk full")):
+                        ret = scrape_cmd.run(args)
         assert ret == 1
 
     def test_run_errors_write_exception_counts_as_failure(self):
@@ -516,7 +554,11 @@ class TestScrapeInternalPaths:
             stale.write_text("stale content", encoding="utf-8")
 
             args = _scrape_namespace(output_dir=Path(tmpdir))
-            with _patch_pipeline(scrape_forum=iter([(t, None)]), error_types=[]):
+            with _patch_pipeline(
+                scrape_forum=iter([(t, None)]),
+                fetch_event_winner=t.winner,
+                error_types=[],
+            ):
                 ret = scrape_cmd.run(args)
         assert ret == 0
         assert not stale.exists()
@@ -526,9 +568,17 @@ class TestScrapeInternalPaths:
         t = _make_tournament()
         with tempfile.TemporaryDirectory() as tmpdir:
             args = _scrape_namespace(output_dir=Path(tmpdir))
-            with _patch_pipeline(scrape_forum=iter([(t, None)]), error_types=[]):
+            with _patch_pipeline(
+                scrape_forum=iter([(t, None)]),
+                fetch_event_winner=t.winner,
+                error_types=[],
+            ):
                 scrape_cmd.run(args)
-            with _patch_pipeline(scrape_forum=iter([(t, None)]), error_types=[]):
+            with _patch_pipeline(
+                scrape_forum=iter([(t, None)]),
+                fetch_event_winner=t.winner,
+                error_types=[],
+            ):
                 ret = scrape_cmd.run(args)
         assert ret == 0
 
