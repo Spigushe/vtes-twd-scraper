@@ -2,7 +2,7 @@
 
 import unicodedata as _ud
 from datetime import date
-from typing import cast
+from typing import Any, cast
 from unittest.mock import MagicMock, patch
 
 import httpx
@@ -644,3 +644,229 @@ class TestFetchEventWinner:
         with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
             result = fetch_event_winner(mock_client, "https://example.com", delay=0)
         assert result is None
+
+
+# ---------------------------------------------------------------------------
+# Additional coverage for uncovered branches
+# ---------------------------------------------------------------------------
+
+
+class TestFetchEventDateExtraStrategies:
+    """Covers branches in fetch_event_date not exercised by existing tests."""
+
+    def test_json_ld_attribute_error_is_skipped(self):
+        """script.string raising AttributeError must be handled gracefully."""
+        # Provide a page whose <script> has a .string attribute that raises AttributeError
+        html = """
+        <html><body>
+        <script type="application/ld+json">{"startDate": "2023-03-25"}</script>
+        <time datetime="2023-03-25">25 March 2023</time>
+        </body></html>
+        """
+        soup = BeautifulSoup(html, "lxml")
+        # Patch script.string to raise AttributeError on the first script tag
+        import bs4
+
+        original_string: Any = bs4.element.Tag.string.fget  # type: ignore[attr-defined]
+
+        def bad_string_getter(self):
+            if self.name == "script":
+                raise AttributeError("bad")
+            return original_string(self)
+
+        with (
+            patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup),
+            patch.object(
+                type(soup.find("script")),
+                "string",
+                new_callable=lambda: property(bad_string_getter),
+            ),
+        ):
+            result = fetch_event_date(mock_client, "https://example.com", delay=0)
+        # Falls through to time tag strategy
+        assert result == date(2023, 3, 25)
+
+    def test_json_ld_non_dict_items_are_skipped(self):
+        """JSON-LD array where items are not dicts must be silently skipped."""
+        html = """
+        <html><body>
+        <script type="application/ld+json">["not a dict", 42]</script>
+        <time datetime="2023-03-25">25 March 2023</time>
+        </body></html>
+        """
+        soup = BeautifulSoup(html, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
+            result = fetch_event_date(mock_client, "https://example.com", delay=0)
+        assert result == date(2023, 3, 25)
+
+    def test_json_ld_invalid_date_format_falls_through(self):
+        """startDate with an unparseable value falls through to the next strategy."""
+        html = """
+        <html><body>
+        <script type="application/ld+json">{"startDate": "not-a-date"}</script>
+        <time datetime="2023-03-25">25 March 2023</time>
+        </body></html>
+        """
+        soup = BeautifulSoup(html, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
+            result = fetch_event_date(mock_client, "https://example.com", delay=0)
+        assert result == date(2023, 3, 25)
+
+    def test_time_tag_invalid_datetime_falls_through(self):
+        """A <time> tag with an unparseable datetime value falls through."""
+        html = """
+        <html><body>
+        <time datetime="not-a-date">25 March 2023</time>
+        <p>date: 2023-03-25</p>
+        </body></html>
+        """
+        soup = BeautifulSoup(html, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
+            result = fetch_event_date(mock_client, "https://example.com", delay=0)
+        assert result == date(2023, 3, 25)
+
+    def test_eventdate_div_no_date_match_falls_through(self):
+        """An eventdate div whose text doesn't match the date pattern falls through."""
+        html = """
+        <html><body>
+        <div class="eventdate">No date here at all</div>
+        <p>date: 2023-03-25</p>
+        </body></html>
+        """
+        soup = BeautifulSoup(html, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
+            result = fetch_event_date(mock_client, "https://example.com", delay=0)
+        assert result == date(2023, 3, 25)
+
+    def test_text_scan_invalid_iso_date_returns_none(self):
+        """A date label near an invalid ISO string (e.g. 9999-99-99) falls through."""
+        html = "<html><body><p>date: 9999-99-99</p></body></html>"
+        soup = BeautifulSoup(html, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
+            result = fetch_event_date(mock_client, "https://example.com", delay=0)
+        assert result is None
+
+
+mock_client = MagicMock()
+
+
+class TestFetchPlayerExtraPaths:
+    """Covers branches in fetch_player not exercised by existing tests."""
+
+    def test_row_too_short_is_skipped(self):
+        """A data row with too few cells is skipped without error."""
+        html = """
+        <html><body>
+        <table>
+          <tr><th>Name</th><th>VEKN Number</th></tr>
+          <tr><td>Only One Cell</td></tr>
+        </table>
+        </body></html>
+        """
+        soup = BeautifulSoup(html, "lxml")
+        mock_c = MagicMock()
+        with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
+            result = fetch_player(mock_c, "Only One Cell", delay=0)
+        assert result is None
+
+    def test_table_with_one_row_skipped(self):
+        """A table with only a header row (< 2 rows) is skipped."""
+        html = """
+        <html><body>
+        <table>
+          <tr><th>Name</th><th>VEKN Number</th></tr>
+        </table>
+        </body></html>
+        """
+        soup = BeautifulSoup(html, "lxml")
+        mock_c = MagicMock()
+        with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
+            result = fetch_player(mock_c, "Nobody", delay=0)
+        assert result is None
+
+    def test_non_digit_number_cell_is_skipped(self):
+        """A row whose VEKN number is not all digits is ignored."""
+        html = """
+        <html><body>
+        <table>
+          <tr><th>Name</th><th>VEKN Number</th></tr>
+          <tr><td>Alice</td><td>N/A</td></tr>
+        </table>
+        </body></html>
+        """
+        soup = BeautifulSoup(html, "lxml")
+        mock_c = MagicMock()
+        with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
+            result = fetch_player(mock_c, "Alice", delay=0)
+        assert result is None
+
+
+class TestFetchEventWinnerExtraPaths:
+    """Covers branches in fetch_event_winner not exercised by existing tests."""
+
+    def test_row_too_short_is_skipped(self):
+        """A data row with fewer cells than required column indices is skipped."""
+        html = """
+        <html><body>
+        <table>
+          <tr><th>Pos.</th><th>Player</th></tr>
+          <tr><td>1</td></tr>
+        </table>
+        </body></html>
+        """
+        soup = BeautifulSoup(html, "lxml")
+        mock_c = MagicMock()
+        with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
+            result = fetch_event_winner(mock_c, "https://example.com", delay=0)
+        assert result is None
+
+
+class TestScrapeForum2:
+    """Additional scrape_forum branches."""
+
+    IDEA_INDEX_HTML = """
+    <html><body>
+      <tr class="krow">
+        <img src="https://www.vekn.net/media/kunena/topic_icons/default/user/idea.png" alt="idea">
+        <a href="/forum/event-reports-and-twd/99999-an-info-post">Info Post</a>
+      </tr>
+    </body></html>
+    """
+
+    def test_idea_icon_threads_are_skipped(self):
+        """Threads with ICON_IDEA must never be yielded."""
+        from vtes_scraper.scraper import ICON_IDEA
+
+        mock_client = MagicMock()
+
+        # iter_thread_urls will yield the idea-icon thread
+        with patch(
+            "vtes_scraper.scraper._forum.iter_thread_urls",
+            return_value=iter([("https://example.com/idea-thread", ICON_IDEA)]),
+        ):
+            results = list(scrape_forum(mock_client, delay=0))
+
+        assert results == []
+
+    def test_no_valid_twd_thread_not_yielded(self):
+        """Threads whose first post is not parseable are silently dropped."""
+        from vtes_scraper.scraper import ICON_DEFAULT
+
+        mock_client = MagicMock()
+
+        with patch(
+            "vtes_scraper.scraper._forum.iter_thread_urls",
+            return_value=iter([("https://example.com/thread", ICON_DEFAULT)]),
+        ):
+            with patch(
+                "vtes_scraper.scraper._forum.extract_twd_from_thread",
+                return_value=None,
+            ):
+                results = list(scrape_forum(mock_client, delay=0))
+
+        assert results == []

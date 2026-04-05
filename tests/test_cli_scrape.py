@@ -1,7 +1,6 @@
 """Tests for the ``scrape`` CLI subcommand."""
 
 import argparse
-import json
 import tempfile
 from datetime import date
 from pathlib import Path
@@ -265,21 +264,6 @@ class TestScrapeRun:
             error_file = Path(tmpdir) / "errors" / "unconfirmed_winner" / "9999.yaml"
             assert error_file.exists()
 
-    def test_run_coercions_saved_on_new_resolution(self):
-        """coercions.json is created when a new player name is resolved."""
-        t = _make_tournament()
-        with tempfile.TemporaryDirectory() as tmpdir:
-            args = _scrape_namespace(output_dir=Path(tmpdir))
-            with _patch_pipeline(
-                scrape_forum=iter([(t, None)]),
-                fetch_player=("Jane Doe", 3940009),
-            ):
-                scrape_cmd.run(args)
-            coercions_path = Path(tmpdir) / "coercions.json"
-            assert coercions_path.exists()
-            data = json.loads(coercions_path.read_text())
-            assert "Jane Doe" in data
-
     def test_run_skips_lookup_when_vekn_number_present(self):
         """Tournaments with a vekn_number are not re-looked-up."""
         t = _make_tournament().model_copy(update={"vekn_number": 3940009})
@@ -288,24 +272,6 @@ class TestScrapeRun:
             with _patch_pipeline(scrape_forum=iter([(t, None)])) as mocks:
                 scrape_cmd.run(args)
             mocks["fetch_player"].assert_not_called()
-
-    def test_run_uses_coercions_cache(self):
-        """Pre-populated coercions.json is used without an HTTP request."""
-        t = _make_tournament()
-        with tempfile.TemporaryDirectory() as tmpdir:
-            coercions_path = Path(tmpdir) / "coercions.json"
-            coercions_path.write_text(
-                json.dumps({"Jane Doe": {"winner": "Jane Doe", "vekn_number": 3940009}}),
-                encoding="utf-8",
-            )
-            args = _scrape_namespace(output_dir=Path(tmpdir))
-            with _patch_pipeline(scrape_forum=iter([(t, None)])) as mocks:
-                scrape_cmd.run(args)
-            mocks["fetch_player"].assert_not_called()
-            written = list(Path(tmpdir).rglob("*.yaml"))
-            assert len(written) == 1
-            content = written[0].read_text(encoding="utf-8")
-            assert "vekn_number: 3940009" in content
 
     def test_calendar_winner_override(self):
         """Step 3: calendar winner overrides the forum winner."""
@@ -380,3 +346,198 @@ class TestScrapeRun:
                 scrape_cmd.run(args)
             _, kwargs = mocks["error_types"].call_args
             assert kwargs["calendar_date"] == date(2023, 3, 25)
+
+
+# ---------------------------------------------------------------------------
+# Additional coverage for internal helpers and run() routing branches
+# ---------------------------------------------------------------------------
+
+
+class TestScrapeInternalPaths:
+    # ── _check_calendar_winner ───────────────────────────────────────────────
+
+    def test_check_calendar_winner_exception_returns_original(self):
+        from unittest.mock import MagicMock
+
+        t = _make_tournament()
+        client = MagicMock()
+        with patch(
+            "vtes_scraper.cli.scrape.fetch_event_winner",
+            side_effect=Exception("network error"),
+        ):
+            result, missing = scrape_cmd._check_calendar_winner(client, t, delay=0)
+        assert result is t
+        assert missing is False
+
+    def test_check_calendar_winner_overrides_winner(self):
+        from unittest.mock import MagicMock
+
+        t = _make_tournament()  # winner="Jane Doe"
+        client = MagicMock()
+        with patch(
+            "vtes_scraper.cli.scrape.fetch_event_winner",
+            return_value="New Winner",
+        ):
+            result, missing = scrape_cmd._check_calendar_winner(client, t, delay=0)
+        assert result.winner == "New Winner"
+        assert missing is False
+
+    def test_check_calendar_winner_none_sets_missing(self):
+        from unittest.mock import MagicMock
+
+        t = _make_tournament()
+        client = MagicMock()
+        with patch("vtes_scraper.cli.scrape.fetch_event_winner", return_value=None):
+            result, missing = scrape_cmd._check_calendar_winner(client, t, delay=0)
+        assert missing is True
+
+    def test_check_calendar_winner_no_event_url(self):
+        from unittest.mock import MagicMock
+
+        t = _make_tournament().model_copy(update={"event_url": None})
+        client = MagicMock()
+        result, missing = scrape_cmd._check_calendar_winner(client, t, delay=0)
+        assert result is t
+        assert missing is False
+
+    # ── _lookup_player ───────────────────────────────────────────────────────
+
+    def test_lookup_player_exception_returns_original(self):
+        from unittest.mock import MagicMock
+
+        t = _make_tournament()
+        client = MagicMock()
+        with patch(
+            "vtes_scraper.cli.scrape.fetch_player",
+            side_effect=Exception("timeout"),
+        ):
+            result = scrape_cmd._lookup_player(client, t, delay=0)
+        assert result is t
+
+    def test_lookup_player_not_found_prints_message(self):
+        from unittest.mock import MagicMock
+
+        t = _make_tournament()
+        client = MagicMock()
+        with patch("vtes_scraper.cli.scrape.fetch_player", return_value=None):
+            result = scrape_cmd._lookup_player(client, t, delay=0)
+        assert result is t
+
+    # ── _enrich_with_krcg ────────────────────────────────────────────────────
+
+    def test_enrich_with_krcg_prints_crypt_fixes(self):
+        t = _make_tournament()
+        with patch(
+            "vtes_scraper.cli.scrape.enrich_crypt_cards",
+            return_value=["capacity: 0 → 4"],
+        ):
+            with patch("vtes_scraper.cli.scrape.fix_card_sections", return_value=[]):
+                result = scrape_cmd._enrich_with_krcg(t)
+        assert result is not t  # model was rebuilt
+
+    def test_enrich_with_krcg_prints_section_fixes(self):
+        t = _make_tournament()
+        with patch("vtes_scraper.cli.scrape.enrich_crypt_cards", return_value=[]):
+            with patch(
+                "vtes_scraper.cli.scrape.fix_card_sections",
+                return_value=["Blood Doll → Master"],
+            ):
+                result = scrape_cmd._enrich_with_krcg(t)
+        assert result is not t
+
+    # ── _validate_content ────────────────────────────────────────────────────
+
+    def test_validate_content_fetch_date_exception(self):
+        from unittest.mock import MagicMock
+
+        t = _make_tournament()
+        client = MagicMock()
+        with patch(
+            "vtes_scraper.cli.scrape.fetch_event_date",
+            side_effect=Exception("timeout"),
+        ):
+            with patch("vtes_scraper.cli.scrape.error_types", return_value=[]):
+                errors = scrape_cmd._validate_content(client, t, delay=0)
+        assert errors == []
+
+    # ── run() routing paths ───────────────────────────────────────────────────
+
+    def test_run_icon_merged_no_errors_writes_to_changes_required(self):
+        from vtes_scraper.scraper import ICON_MERGED
+
+        t = _make_tournament()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = _scrape_namespace(output_dir=Path(tmpdir))
+            with _patch_pipeline(
+                scrape_forum=iter([(t, ICON_MERGED)]),
+                fetch_event_winner=t.winner,  # avoids calendar_winner_missing=True
+                error_types=[],
+            ):
+                with patch("vtes_scraper.cli.scrape.console"):
+                    ret = scrape_cmd.run(args)
+            changes_dir = Path(tmpdir) / "changes_required"
+            assert ret == 0
+            assert changes_dir.exists()
+            assert len(list(changes_dir.glob("*.yaml"))) == 1
+
+    def test_run_icon_merged_write_exception_counts_as_failure(self):
+        from vtes_scraper.scraper import ICON_MERGED
+
+        t = _make_tournament()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = _scrape_namespace(output_dir=Path(tmpdir))
+            with _patch_pipeline(
+                scrape_forum=iter([(t, ICON_MERGED)]),
+                error_types=[],
+            ):
+                with patch("pathlib.Path.write_text", side_effect=OSError("disk full")):
+                    ret = scrape_cmd.run(args)
+        assert ret == 1
+
+    def test_run_errors_write_exception_counts_as_failure(self):
+        t = _make_tournament()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = _scrape_namespace(output_dir=Path(tmpdir))
+            with _patch_pipeline(
+                scrape_forum=iter([(t, None)]),
+                error_types=["too_few_players"],
+            ):
+                with patch("pathlib.Path.write_text", side_effect=OSError("disk full")):
+                    ret = scrape_cmd.run(args)
+        assert ret == 1
+
+    def test_run_stale_changes_required_file_removed(self):
+        """After a successful normal write, any stale changes_required copy is deleted."""
+        t = _make_tournament()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            changes_dir = Path(tmpdir) / "changes_required"
+            changes_dir.mkdir(parents=True)
+            stale = changes_dir / t.yaml_filename
+            stale.write_text("stale content", encoding="utf-8")
+
+            args = _scrape_namespace(output_dir=Path(tmpdir))
+            with _patch_pipeline(scrape_forum=iter([(t, None)]), error_types=[]):
+                ret = scrape_cmd.run(args)
+        assert ret == 0
+        assert not stale.exists()
+
+    def test_run_overwrite_skipped_message_printed(self):
+        """Running twice without --overwrite increments overwrite_skipped counter."""
+        t = _make_tournament()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = _scrape_namespace(output_dir=Path(tmpdir))
+            with _patch_pipeline(scrape_forum=iter([(t, None)]), error_types=[]):
+                scrape_cmd.run(args)
+            with _patch_pipeline(scrape_forum=iter([(t, None)]), error_types=[]):
+                ret = scrape_cmd.run(args)
+        assert ret == 0
+
+    def test_run_no_event_id_increments_skipped(self):
+        """Tournaments without an event_id are skipped immediately."""
+        t = _make_tournament().model_copy(update={"event_id": None})
+        with tempfile.TemporaryDirectory() as tmpdir:
+            args = _scrape_namespace(output_dir=Path(tmpdir))
+            with _patch_pipeline(scrape_forum=iter([(t, None)]), error_types=[]):
+                ret = scrape_cmd.run(args)
+        assert ret == 0
+        assert list(Path(tmpdir).rglob("*.yaml")) == []

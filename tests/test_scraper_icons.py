@@ -155,7 +155,7 @@ class TestScrapeCliRouting:
             patch.object(
                 _scrape_mod,
                 "_lookup_player",
-                side_effect=lambda _client, t, _coercions, _delay: (t, False),
+                side_effect=lambda _client, t, _delay: t,
             ),
             patch.object(
                 _scrape_mod,

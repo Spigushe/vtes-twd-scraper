@@ -10,7 +10,6 @@ Scraping workflow:
 """
 
 import argparse
-import json
 import logging
 from pathlib import Path
 from typing import Any, cast
@@ -37,46 +36,6 @@ from vtes_scraper.validator import (
 )
 
 logger = logging.getLogger(__name__)
-
-_COERCIONS_FILENAME = "coercions.json"
-_COERCIONS_TYPE = dict[str, dict[str, str | int]]
-
-# ---------------------------------------------------------------------------
-# Coercions cache
-# ---------------------------------------------------------------------------
-
-
-def _load_coercions(output_dir: Path) -> _COERCIONS_TYPE:
-    """Load the coercions cache from *output_dir*/coercions.json."""
-    path = output_dir / _COERCIONS_FILENAME
-    if not path.exists():
-        return {}
-    try:
-        return cast(
-            _COERCIONS_TYPE,
-            json.loads(  # pyright: ignore[reportUnknownMemberType]
-                path.read_text(encoding="utf-8")
-            ),
-        )
-    except Exception:
-        return {}
-
-
-def _save_coercions(output_dir: Path, coercions: _COERCIONS_TYPE) -> None:
-    """Persist *coercions* to *output_dir*/coercions.json."""
-    path = output_dir / _COERCIONS_FILENAME
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(
-        json.dumps(  # pyright: ignore[reportUnknownMemberType]
-            coercions,
-            ensure_ascii=False,
-            indent=2,
-            sort_keys=True,
-        )
-        + "\n",
-        encoding="utf-8",
-    )
-
 
 # ---------------------------------------------------------------------------
 # Serialization helper
@@ -141,42 +100,25 @@ def _check_calendar_winner(
 def _lookup_player(
     client: httpx.Client,
     tournament: Tournament,
-    coercions: dict[str, dict[str, int | str]],
     delay: float,
-) -> tuple[Tournament, bool]:
-    """Step 4: look up winner in the VEKN player registry.
-
-    Returns ``(tournament, coercions_changed)``.
-    """
+) -> Tournament:
+    """Step 4: look up winner in the VEKN player registry."""
     if tournament.vekn_number is not None:
-        return tournament, False
+        return tournament
 
     winner = tournament.winner
-
-    # Check cache first.
-    if winner in coercions:
-        entry = coercions[winner]
-        return (
-            tournament.model_copy(
-                update={
-                    "winner": entry["winner"],
-                    "vekn_number": entry["vekn_number"],
-                }
-            ),
-            False,
-        )
 
     try:
         result = fetch_player(client, winner, delay=delay)
     except Exception as exc:
         logger.warning("Player lookup failed for %r: %s", winner, exc)
-        return tournament, False
+        return tournament
 
     if result is None:
         console.print(
             f"[yellow]?[/yellow] {tournament.yaml_filename}  winner not found in VEKN: {winner!r}"
         )
-        return tournament, False
+        return tournament
 
     canonical_name, vekn_number = result
     if canonical_name != winner:
@@ -185,15 +127,7 @@ def _lookup_player(
             f"  winner coerced: {winner!r}"
             f" → {canonical_name!r}  (VEKN {vekn_number})"
         )
-    coercions[winner] = {"winner": canonical_name, "vekn_number": vekn_number}
-    coercions[canonical_name] = {
-        "winner": canonical_name,
-        "vekn_number": vekn_number,
-    }
-    return (
-        tournament.model_copy(update={"winner": canonical_name, "vekn_number": vekn_number}),
-        True,
-    )
+    return tournament.model_copy(update={"winner": canonical_name, "vekn_number": vekn_number})
 
 
 def _enrich_with_krcg(tournament: Tournament) -> Tournament:
@@ -323,8 +257,6 @@ def run(args: argparse.Namespace) -> int:
 
     written = skipped = failed = overwrite_skipped = 0
 
-    coercions = _load_coercions(args.output_dir)
-
     with httpx.Client(headers=HEADERS, timeout=60.0) as client:
         # Steps 1-2: scrape forum data and parse it into Tournament objects
         for tournament, icon in scrape_forum(
@@ -346,11 +278,7 @@ def run(args: argparse.Namespace) -> int:
             )
 
             # Step 4: look up winner in VEKN player registry
-            tournament, coercions_changed = _lookup_player(
-                client, tournament, coercions, args.delay
-            )
-            if coercions_changed:
-                _save_coercions(args.output_dir, coercions)
+            tournament = _lookup_player(client, tournament, args.delay)
 
             # Step 5: validate card information with krcg
             tournament = _enrich_with_krcg(tournament)
