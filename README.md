@@ -2,6 +2,11 @@
 
 Scrape tournament winning decks (TWD) from the [VEKN forum](https://www.vekn.net/forum/event-reports-and-twd) and export them as YAML files.
 
+[![Pre-commit checks](https://github.com/Spigushe/vtes-twd-scraper/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/Spigushe/vtes-twd-scraper/actions/workflows/pre-commit.yml)
+[![Scrape VTES TWD](https://github.com/Spigushe/vtes-twd-scraper/actions/workflows/scrape.yml/badge.svg)](https://github.com/Spigushe/vtes-twd-scraper/actions/workflows/scrape.yml)
+[![Validate VTES TWD](https://github.com/Spigushe/vtes-twd-scraper/actions/workflows/validate.yml/badge.svg)](https://github.com/Spigushe/vtes-twd-scraper/actions/workflows/validate.yml)
+[![Publish TWD Deck PRs](https://github.com/Spigushe/vtes-twd-scraper/actions/workflows/publish.yml/badge.svg)](https://github.com/Spigushe/vtes-twd-scraper/actions/workflows/publish.yml)
+
 ## Data format
 
 Each tournament produces one YAML file named `{event_id}.yaml` where `event_id` is the numeric id from the VEKN event calendar URL (e.g. `/event/8470` → `8470.yaml`). Files are stored under `twds/YYYY/MM/` by default.
