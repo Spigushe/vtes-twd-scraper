@@ -6,7 +6,8 @@ players_count: 10
 winner: Alessandro Donati's Tournament Winning Deck
 event_url: https://www.vekn.net/event-calendar/event/13133
 event_id: 13133
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82922-twd-sins-of-the-cauchemar
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82922-twd-sins-of-the-cauchemar
 deck:
   name: Another Delicious Meat Experience!
   created_by: Alessandro "Nekrós" Donati

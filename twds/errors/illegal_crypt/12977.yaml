@@ -12,7 +12,8 @@ forum_post_url:
 deck:
   name: Beauty and the Beast
   created_by: Otso
-  description: Once again shout-out to Otso who is mastermind behind this beautiful deck.
+  description: Once again shout-out to Otso who is mastermind behind this 
+    beautiful deck.
   crypt_count: 12
   crypt_min: 20
   crypt_max: 44
