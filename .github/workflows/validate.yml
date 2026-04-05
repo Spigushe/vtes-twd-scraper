@@ -47,7 +47,14 @@ jobs:
 
       - name: Validate Scraped tournaments
         continue-on-error: true
-        run: vtes-scraper validate --full-validation --verbose
+        run: |
+          FLAGS="--verbose"
+          if [[ "${{ github.event_name }}" == "schedule" ]]; then
+            FLAGS="$FLAGS --full-validation"
+          elif [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ github.event.inputs.full_validation }}" == "true" ]]; then
+            FLAGS="$FLAGS --full-validation"
+          fi
+          vtes-scraper validate $FLAGS
 
       - name: Check for changes
         id: git_status
