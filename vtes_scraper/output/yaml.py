@@ -56,7 +56,6 @@ def tournament_to_yaml_str(tournament: Tournament) -> str:
     yaml = YAML()
     yaml.default_flow_style = False
     yaml.allow_unicode = True
-    yaml.width = 120
 
     buf = io.StringIO()
     yaml.dump(  # pyright: ignore[reportUnknownMemberType]
