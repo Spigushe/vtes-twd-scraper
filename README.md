@@ -14,9 +14,10 @@ This convention mirrors the [GiottoVerducci/TWD](https://github.com/GiottoVerduc
 git clone https://github.com/Spigushe/vtes-twd-scraper.git
 cd vtes-twd-scraper
 python3 -m venv .venv
-source .venv/bin/activate      # UNIX
+source .venv/bin/activate      # Unix / macOS
 & .\.venv\Scripts\Activate.ps1 # Windows PowerShell
 pip install -e ".[dev]"
+pre-commit install              # register git hooks (ruff, pytest, CLI smoke tests)
 ```
 
 Requires Python ≥ 3.14.
@@ -50,6 +51,15 @@ vtes-scraper parse decks/8470.txt --output-dir twds
 # Convert a YAML file back to .txt (prints to stdout)
 vtes-scraper parse twds/2023/03/9999.yaml
 
+# Re-validate the 25 most recent published YAML files (fast, default)
+vtes-scraper validate
+
+# Re-validate every YAML file in twds/ (slow, rescrapes the forum)
+vtes-scraper validate --full-validation
+
+# Report only — do not move or update any files
+vtes-scraper validate --dry-run
+
 # Publish new decks as a single PR to GiottoVerducci/TWD
 GITHUB_TOKEN=ghp_xxx vtes-scraper publish
 
@@ -82,7 +92,25 @@ pytest
 # Lint + format
 ruff check vtes_scraper/ tests/
 ruff format vtes_scraper/ tests/
+
+# Run all pre-commit hooks manually against every file
+pre-commit run --all-files
 ```
+
+### Pre-commit hooks
+
+The `.pre-commit-config.yaml` runs the following checks on every commit:
+
+| Hook | What it does |
+| --- | --- |
+| `ruff lint` | Lint with auto-fix (`ruff check --fix`) |
+| `ruff format` | Format with ruff |
+| `pytest` | Full test suite |
+| `cli smoke: scrape --help` | Verify the `scrape` subcommand loads cleanly |
+| `cli smoke: parse --help` | Verify the `parse` subcommand loads cleanly |
+| `cli smoke: publish --help` | Verify the `publish` subcommand loads cleanly |
+
+The GitHub Actions workflow `pre-commit.yml` runs the same hooks on every push and pull request as a safety net in case local hooks are not installed.
 
 ## GitHub Actions
 
@@ -93,12 +121,23 @@ The workflow in `.github/workflows/scrape.yml`:
 - Can be triggered manually with optional `start_page`, `last_page`, and `overwrite` inputs
 - Runs tests, scrapes the forum, and commits new YAML files automatically
 
+The workflow in `.github/workflows/validate.yml`:
+
+- Runs every Sunday at 20:00 UTC
+- Can be triggered manually with an optional `full_validation` boolean input
+- Re-validates all published YAML files, enriches them via krcg, and commits any updates
+
 The workflow in `.github/workflows/publish.yml`:
 
 - Runs every Monday at 08:00 UTC
 - Can be triggered manually
 - Runs tests, then publishes all new decks to the GiottoVerducci/TWD repository as a single PR
 - Commits a Markdown publish report to `publish/YYYY/MM/`
+
+The workflow in `.github/workflows/pre-commit.yml`:
+
+- Runs on every push to `main` and on pull requests
+- Installs the `[dev]` dependencies and runs `pre-commit run --all-files`
 
 ## YAML output example
 
@@ -144,7 +183,8 @@ vtes-twd-scraper/
 │   │   ├── _common.py         # CLI shared utilities
 │   │   ├── parse.py           # CLI command: parse .txt ↔ .yaml
 │   │   ├── publish.py         # CLI command: publish decks to GitHub
-│   │   └── scrape.py          # CLI command: scrape the VEKN forum
+│   │   ├── scrape.py          # CLI command: scrape the VEKN forum
+│   │   └── validate.py        # CLI command: re-validate published YAML files
 │   ├── output/
 │   │   ├── __init__.py
 │   │   ├── _common.py         # Output shared utilities
@@ -170,6 +210,8 @@ vtes-twd-scraper/
 │   ├── test_cli_parse.py
 │   ├── test_cli_publish.py
 │   ├── test_cli_scrape.py
+│   ├── test_cli_validate.py
+│   ├── test_krcg_helper.py
 │   ├── test_models.py
 │   ├── test_output.py
 │   ├── test_parser.py
@@ -183,8 +225,11 @@ vtes-twd-scraper/
 ├── .github/
 │   └── workflows/
 │       ├── scrape.yml         # CRON scrape at 06:00 UTC every day
+│       ├── validate.yml       # CRON re-validate at 20:00 UTC every Sunday
 │       ├── publish.yml        # CRON publish at 08:00 UTC every Monday
+│       ├── pre-commit.yml     # Pre-commit checks on push / PR
 │       └── feature-review.yml # Automated feature-request review
+├── .pre-commit-config.yaml
 ├── pyproject.toml
 └── .env.example
 ```
@@ -196,6 +241,7 @@ vtes-twd-scraper/
 - Winner lookup against the VEKN member database is applied automatically during scraping. `vekn_number` is written to the file. Unresolvable names are flagged but not blocked.
 - Content validation routes tournaments with errors to `twds/errors/<error_type>/` automatically.
 - Forum posts marked with the "merged" icon are written to `twds/changes_required/` instead of the normal date tree, so they can be reviewed before merging.
+- `validate` (fast mode) re-validates only the 25 most recent files that are neither stored in errors nor changes required; `--full-validation` rescrapes every published file.
 - `publish --dry-run` commits all files to a temporary branch to verify behaviour, then deletes the branch without opening a PR. A dry-run report is saved to `publish/YYYY/MM/dry-run-{date}-{HH-MM-SS}.md`.
 - The `User-Agent` header identifies the bot to the server.
 - Always verify `robots.txt` and VEKN forum terms before large-scale scraping.

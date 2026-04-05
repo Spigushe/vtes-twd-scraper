@@ -1,4 +1,4 @@
-name: Pre-commit checks
+name: Pre-commit checks (in case it is not enabled locally)
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
       - "pyproject.toml"
       - ".pre-commit-config.yaml"
       - ".github/workflows/pre-commit.yml"
+
   pull_request:
     branches: [main]
 

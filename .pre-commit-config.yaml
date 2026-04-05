@@ -58,3 +58,11 @@ repos:
         language: system
         pass_filenames: false
         always_run: true
+
+      - id: cli-smoke-validate
+        name: "cli smoke: validate --help"
+        entry: python -m vtes_scraper.cli
+        args: [validate, --help]
+        language: system
+        pass_filenames: false
+        always_run: true
