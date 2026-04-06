@@ -1,4 +1,4 @@
-name: Publish TWD Deck PRs
+name: Publish VTES TWD
 
 on:
   # Run every Monday at 08:00 UTC (after the weekly scrape has run)
@@ -34,7 +34,7 @@ jobs:
       - name: Run pre-commit checks
         run: pre-commit run --all-files
 
-      - name: Commit updated TWDs after validation
+      - name: Commit updated TWDs to GiottoVerducci/TWD
         run: |
           git add twds/
           if git diff --staged --quiet; then
