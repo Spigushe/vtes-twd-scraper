@@ -186,6 +186,81 @@ class TestFmtCryptCard:
         # 11 spaces for no-title slot
         assert "  " in line  # at least 2 spaces in the title column
 
+    def test_capacity_right_aligned(self):
+        card = CryptCard(
+            count=1,
+            name="Test",
+            capacity=1,
+            disciplines="ani",
+            clan="Gangrel",
+            grouping=6,
+        )
+        line = _fmt_crypt_card(card)
+        # capacity=1 should be right-aligned in 2-char field: " 1"
+        assert " 1 " in line
+
+    def test_disciplines_over_22_with_title_has_space(self):
+        # Regression: event 12635 — disciplines string longer than 22 chars
+        # must still have at least one space before title
+        card = CryptCard(
+            count=1,
+            name="Test Vamp",
+            capacity=9,
+            disciplines="ANI AUS CEL DOM FOR PRO",  # 23 chars
+            title="prince",
+            clan="Gangrel",
+            grouping=6,
+        )
+        line = _fmt_crypt_card(card)
+        disciplines_end = line.index("ANI AUS CEL DOM FOR PRO") + len("ANI AUS CEL DOM FOR PRO")
+        assert line[disciplines_end] == " ", (
+            "must have at least one space between disciplines and title"
+        )
+
+    def test_disciplines_over_22_without_title_has_space_before_clan(self):
+        # Guard must fire even without a title, so clan is not glued to disciplines
+        card = CryptCard(
+            count=1,
+            name="Test Vamp",
+            capacity=9,
+            disciplines="ANI AUS CEL DOM FOR PRO",  # 23 chars
+            clan="Gangrel",
+            grouping=6,
+        )
+        line = _fmt_crypt_card(card)
+        disciplines_end = line.index("ANI AUS CEL DOM FOR PRO") + len("ANI AUS CEL DOM FOR PRO")
+        assert line[disciplines_end] == " ", (
+            "must have at least one space between disciplines and clan"
+        )
+
+    def test_title_over_11_has_space_before_clan(self):
+        # Regression: event 12635 — "Inner Circle" (12 chars) overflows the
+        # 11-char title field and must not be glued to clan
+        card = CryptCard(
+            count=1,
+            name="Test Vamp",
+            capacity=11,
+            disciplines="ANI",
+            title="Inner Circle",
+            clan="Gangrel",
+            grouping=2,
+        )
+        line = _fmt_crypt_card(card)
+        assert "Inner Circle Gangrel:2" in line
+
+    def test_disciplines_exactly_22_with_title_has_space(self):
+        card = CryptCard(
+            count=1,
+            name="Test Vamp",
+            capacity=5,
+            disciplines="ANI AUS CEL DOM FOR P ",  # exactly 22 chars
+            title="Bishop",
+            clan="Gangrel",
+            grouping=6,
+        )
+        line = _fmt_crypt_card(card)
+        assert " Bishop" in line
+
 
 # ---------------------------------------------------------------------------
 # _fmt_library_section

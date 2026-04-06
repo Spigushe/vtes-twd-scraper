@@ -17,11 +17,15 @@ def _fmt_date(d: date) -> str:
 def _fmt_crypt_card(card: CryptCard) -> str:
     """Render one crypt card line with fixed-width column layout."""
     count_name = f"{card.count}x {card.name}"
-    line = f"{count_name:<35}{card.capacity} {card.disciplines:<22}"
+    line = f"{count_name:<35}{card.capacity:>2} {card.disciplines:<22}"
+    if not line.endswith(" "):
+        line += " "
     if card.title:
         line += f"{card.title:<11}"
     else:
         line += " " * 11
+    if not line.endswith(" "):
+        line += " "
     line += f"{card.clan}:{card.grouping}"
     if card.comment:
         line = f"{line} -- {card.comment}"
