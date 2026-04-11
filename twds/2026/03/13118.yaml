@@ -1,6 +1,6 @@
 name: '3° Lágrimas de Março: quer um lencinho?'
 location: Teresina, Brasil
-date_start: 2026-02-22
+date_start: 2026-03-29
 rounds_format: 2R+F
 players_count: 12
 winner: Airlan Sudário de Oliveira
@@ -12,7 +12,7 @@ forum_post_url:
 deck:
   name: Nobres em Poder
   created_by: Airlan
-  description: F
+  description: ''
   crypt_count: 12
   crypt_min: 29
   crypt_max: 35
