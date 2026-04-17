@@ -1,0 +1,127 @@
+name: Championnat Québécois
+location: Montreal, Canada
+date_start: 2026-04-11
+rounds_format: 3R+F
+players_count: 22
+winner: Alexandre Bustros
+vekn_number: 8840000
+event_url: https://www.vekn.net/event-calendar/event/13078
+event_id: 13078
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82946-twd-championnat-quebecois-montreal-canada-april-11th-2026
+deck:
+  name: all-you-can-feast on your secrets
+  created_by: Alexandre Bustros
+  description: ''
+  crypt_count: 12
+  crypt_min: 21
+  crypt_max: 31
+  crypt_avg: 6.5
+  crypt:
+  - count: 3
+    name: Abaddon
+    capacity: 8
+    disciplines: cel pot AUS DOM FOR
+    clan: Salubri
+    grouping: 7
+  - count: 2
+    name: Ilonka
+    capacity: 7
+    disciplines: tha AUS DOM FOR
+    clan: Salubri
+    grouping: 7
+  - count: 1
+    name: Barachiel
+    capacity: 7
+    disciplines: ani AUS DOM FOR
+    clan: Salubri
+    grouping: 7
+  - count: 2
+    name: Malachi
+    capacity: 6
+    disciplines: AUS DOM FOR
+    clan: Salubri
+    grouping: 7
+  - count: 1
+    name: Aniel
+    capacity: 6
+    disciplines: for AUS DOM
+    clan: Salubri
+    grouping: 7
+  - count: 3
+    name: Opikun
+    capacity: 5
+    disciplines: aus dom FOR
+    clan: Salubri
+    grouping: 7
+  library_count: 90
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 2
+      name: Anarch Troublemaker
+    - count: 3
+      name: Blind Spot
+    - count: 3
+      name: Blood Doll
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: From a Sinking Ship
+    - count: 1
+      name: Meditative Grove
+    - count: 1
+      name: Misdirection
+    - count: 2
+      name: Perfectionist
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 16
+    cards:
+    - count: 14
+      name: Feast of the Soul's Secrets
+    - count: 2
+      name: Hunting the Beast
+  - name: Action Modifier
+    count: 30
+    cards:
+    - count: 6
+      name: Conditioning
+    - count: 8
+      name: Forced Confessional
+    - count: 3
+      name: Foreshadowing Destruction
+    - count: 3
+      name: Freak Drive
+    - count: 6
+      name: Seduction
+    - count: 4
+      name: Unleashing the Bestial Soul
+  - name: Reaction
+    count: 16
+    cards:
+    - count: 8
+      name: Deflection
+    - count: 4
+      name: Eyes of Argus
+    - count: 2
+      name: On the Qui Vive
+    - count: 2
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 13
+    cards:
+    - count: 1
+      name: Anticipation
+    - count: 3
+      name: Disarm
+    - count: 2
+      name: Hidden Strength
+    - count: 1
+      name: Immortal Grapple
+    - count: 5
+      name: Rolling with the Punches
+    - count: 1
+      name: Undead Persistence

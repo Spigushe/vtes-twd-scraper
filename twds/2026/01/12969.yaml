@@ -1,0 +1,131 @@
+name: R&D Paris
+location: Paris, France
+date_start: 2026-01-25
+rounds_format: 3R+F
+players_count: 13
+winner: Édouard Menneson
+vekn_number: 3200360
+event_url: https://www.vekn.net/event-calendar/event/12969
+event_id: 12969
+vp_comment: 2GW6 + 1.5vp in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82942-twd-r-d-paris
+deck:
+  name: Guns and shit (mostly guns)
+  created_by: Rhazoo
+  description: ''
+  crypt_count: 12
+  crypt_min: 18
+  crypt_max: 30
+  crypt_avg: 6.17
+  crypt:
+  - count: 2
+    name: Saku Pihlajamäki
+    capacity: 8
+    disciplines: for pro CEL POT PRE
+    title: Baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Aline Gädeke
+    capacity: 7
+    disciplines: cel POT PRE
+    title: Baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Valeriya Zinovieva
+    capacity: 7
+    disciplines: cel pre pro POT
+    title: Baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Atiena
+    capacity: 6
+    disciplines: obf pot pre CEL
+    title: Baron
+    clan: Brujah
+    grouping: 6
+  - count: 2
+    name: Leumeah
+    capacity: 6
+    disciplines: cel for pot PRE
+    title: Baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Anita Wainwright
+    capacity: 3
+    disciplines: cel pre
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Laura Goldman
+    capacity: 3
+    disciplines: cel pre
+    clan: Brujah
+    grouping: 5
+  library_count: 80
+  library_sections:
+  - name: Master
+    count: 18
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 1
+      name: Direct Intervention
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 1
+      name: New Carthage
+    - count: 1
+      name: Papillon
+    - count: 1
+      name: 'Powerbase: Los Angeles'
+    - count: 1
+      name: 'Powerbase: Montreal'
+    - count: 7
+      name: Villein
+  - name: Action
+    count: 6
+    cards:
+    - count: 5
+      name: Line Brawl
+    - count: 1
+      name: Open War
+  - name: Equipment
+    count: 8
+    cards:
+    - count: 7
+      name: .44 Magnum
+    - count: 1
+      name: Heart of Nizchetus
+  - name: Reaction
+    count: 21
+    cards:
+    - count: 7
+      name: Bait and Switch
+    - count: 14
+      name: Organized Resistance
+  - name: Combat
+    count: 27
+    cards:
+    - count: 4
+      name: Bollix
+    - count: 6
+      name: Concealed Weapon
+    - count: 10
+      name: Diversion
+    - count: 4
+      name: Hell-for-Leather
+    - count: 3
+      name: Taste of Vitae
