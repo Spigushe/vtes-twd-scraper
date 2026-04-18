@@ -88,6 +88,7 @@ def _patch_pipeline(**overrides):
 
     patches = {
         "scrape_forum": iter([]),
+        "fetch_event_name": None,
         "fetch_event_winner": None,
         "fetch_event_date": None,
         "fetch_player": None,
@@ -591,3 +592,65 @@ class TestScrapeInternalPaths:
                 ret = scrape_cmd.run(args)
         assert ret == 0
         assert list(Path(tmpdir).rglob("*.yaml")) == []
+
+
+# ---------------------------------------------------------------------------
+# _check_calendar_name tests
+# ---------------------------------------------------------------------------
+
+
+class TestCheckCalendarName:
+    def test_overrides_name_when_calendar_differs(self):
+        from unittest.mock import MagicMock
+
+        t = _make_tournament()  # name="Test Event"
+        client = MagicMock()
+        with patch(
+            "vtes_scraper.cli.scrape.fetch_event_name",
+            return_value="Authoritative Event Name",
+        ):
+            result = scrape_cmd._check_calendar_name(client, t, delay=0)
+        assert result.name == "Authoritative Event Name"
+        assert result is not t
+
+    def test_keeps_forum_name_when_calendar_returns_none(self):
+        from unittest.mock import MagicMock
+
+        t = _make_tournament()
+        client = MagicMock()
+        with patch("vtes_scraper.cli.scrape.fetch_event_name", return_value=None):
+            result = scrape_cmd._check_calendar_name(client, t, delay=0)
+        assert result is t
+        assert result.name == "Test Event"
+
+    def test_keeps_forum_name_when_names_match(self):
+        from unittest.mock import MagicMock
+
+        t = _make_tournament()  # name="Test Event"
+        client = MagicMock()
+        with patch(
+            "vtes_scraper.cli.scrape.fetch_event_name",
+            return_value="Test Event",
+        ):
+            result = scrape_cmd._check_calendar_name(client, t, delay=0)
+        assert result is t
+
+    def test_exception_returns_original_tournament(self):
+        from unittest.mock import MagicMock
+
+        t = _make_tournament()
+        client = MagicMock()
+        with patch(
+            "vtes_scraper.cli.scrape.fetch_event_name",
+            side_effect=Exception("network error"),
+        ):
+            result = scrape_cmd._check_calendar_name(client, t, delay=0)
+        assert result is t
+
+    def test_no_event_url_returns_original_tournament(self):
+        from unittest.mock import MagicMock
+
+        t = _make_tournament().model_copy(update={"event_url": None})
+        client = MagicMock()
+        result = scrape_cmd._check_calendar_name(client, t, delay=0)
+        assert result is t

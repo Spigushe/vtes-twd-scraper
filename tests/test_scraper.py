@@ -12,6 +12,7 @@ from bs4 import BeautifulSoup, Tag
 from vtes_scraper.scraper import (
     extract_twd_from_thread,
     fetch_event_date,
+    fetch_event_name,
     fetch_event_winner,
     fetch_player,
     get_soup,
@@ -304,6 +305,70 @@ JSON_LD_NO_START_HTML = """
 <script type="application/ld+json">{"@type": "Event", "name": "No date here"}</script>
 </head><body></body></html>
 """
+
+# ---------------------------------------------------------------------------
+# fetch_event_name fixtures
+# ---------------------------------------------------------------------------
+
+EVENT_NAME_JSON_LD_HTML = """
+<html><head>
+<script type="application/ld+json">{"@type": "Event", "name": "Last Chance Qualifier 2025",
+"startDate": "2025-01-15T10:00:00"}</script>
+</head><body><h1>Wrong heading</h1></body></html>
+"""
+
+EVENT_NAME_H1_HTML = """
+<html><head></head>
+<body><h1>Grand Prix Paris 2025</h1></body></html>
+"""
+
+EVENT_NAME_NONE_HTML = """
+<html><head></head>
+<body><p>No name anywhere</p></body></html>
+"""
+
+EVENT_NAME_JSON_LD_LIST_HTML = """
+<html><head>
+<script type="application/ld+json">[{"@type": "Event", "name": "List Qualifier"}]</script>
+</head><body></body></html>
+"""
+
+
+class TestFetchEventName:
+    def test_json_ld_name(self):
+        soup = BeautifulSoup(EVENT_NAME_JSON_LD_HTML, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
+            result = fetch_event_name(mock_client, "https://example.com", delay=0)
+        assert result == "Last Chance Qualifier 2025"
+
+    def test_json_ld_takes_priority_over_h1(self):
+        soup = BeautifulSoup(EVENT_NAME_JSON_LD_HTML, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
+            result = fetch_event_name(mock_client, "https://example.com", delay=0)
+        assert result != "Wrong heading"
+
+    def test_h1_fallback(self):
+        soup = BeautifulSoup(EVENT_NAME_H1_HTML, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
+            result = fetch_event_name(mock_client, "https://example.com", delay=0)
+        assert result == "Grand Prix Paris 2025"
+
+    def test_no_name_returns_none(self):
+        soup = BeautifulSoup(EVENT_NAME_NONE_HTML, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
+            result = fetch_event_name(mock_client, "https://example.com", delay=0)
+        assert result is None
+
+    def test_json_ld_list(self):
+        soup = BeautifulSoup(EVENT_NAME_JSON_LD_LIST_HTML, "lxml")
+        mock_client = MagicMock()
+        with patch("vtes_scraper.scraper._vekn.get_soup", return_value=soup):
+            result = fetch_event_name(mock_client, "https://example.com", delay=0)
+        assert result == "List Qualifier"
 
 
 class TestFetchEventDate:

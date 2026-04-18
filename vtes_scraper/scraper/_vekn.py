@@ -97,6 +97,50 @@ def fetch_event_date(
     return None
 
 
+def fetch_event_name(
+    client: httpx.Client,
+    event_url: str,
+    delay: float = DEFAULT_DELAY_SECONDS,
+) -> str | None:
+    """
+    Fetch the official event name from a VEKN event calendar page.
+    Tries two strategies in order:
+      1. JSON-LD structured data (``<script type="application/ld+json">``
+         with ``name`` key).
+      2. HTML ``<h1>`` element text.
+    Returns a ``str``, or ``None`` if the name cannot be extracted.
+    """
+    soup = get_soup(client, event_url, delay)
+
+    # --- Strategy 1: JSON-LD ---
+    for script in soup.find_all("script", type="application/ld+json"):
+        try:
+            data: JsonValue = json.loads(script.string or "")
+        except json.JSONDecodeError:
+            continue
+        except AttributeError:
+            continue
+        items: list[JsonValue] = data if isinstance(data, list) else [data]
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            name = item.get("name")
+            if name and isinstance(name, str):
+                logger.debug("Calendar name (JSON-LD) found: %r at %s", name, event_url)
+                return name
+
+    # --- Strategy 2: <h1> element ---
+    h1 = soup.find("h1")
+    if h1:
+        name = h1.get_text(strip=True)
+        if name:
+            logger.debug("Calendar name (h1) found: %r at %s", name, event_url)
+            return name
+
+    logger.warning("Could not extract name from event page: %s", event_url)
+    return None
+
+
 def fetch_event_winner(
     client: httpx.Client,
     event_url: str,

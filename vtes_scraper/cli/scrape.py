@@ -3,10 +3,11 @@
 Scraping workflow:
   1. Scrape forum data (fetch thread HTML).
   2. Parse data (extract Tournament from post text).
-  3. Check event calendar for the winner's name.
-  4. Look up the winner in the VEKN player registry for their VEKN number.
-  5. Validate card information with the krcg library.
-  6. Validate content and route files to the appropriate destination.
+  3. Check event calendar for the tournament name.
+  4. Check event calendar for the winner's name.
+  5. Look up the winner in the VEKN player registry for their VEKN number.
+  6. Validate card information with the krcg library.
+  7. Validate content and route files to the appropriate destination.
 """
 
 import argparse
@@ -25,6 +26,7 @@ from vtes_scraper.scraper import (
     HEADERS,
     ICON_MERGED,
     fetch_event_date,
+    fetch_event_name,
     fetch_event_winner,
     fetch_player,
     scrape_forum,
@@ -60,6 +62,36 @@ def _to_serializable(obj: Tournament) -> Tournament_Dict:
 # ---------------------------------------------------------------------------
 # Pipeline steps
 # ---------------------------------------------------------------------------
+
+
+def _check_calendar_name(
+    client: httpx.Client,
+    tournament: Tournament,
+    delay: float,
+) -> Tournament:
+    """Step 3: override the tournament name with the official VEKN calendar name."""
+    if not tournament.event_url:
+        return tournament
+    try:
+        calendar_name = fetch_event_name(client, tournament.event_url, delay=delay)
+        if calendar_name is None:
+            logger.debug("No name data on event page: %s", tournament.event_url)
+            return tournament
+        if calendar_name != tournament.name:
+            logger.debug(
+                "Calendar name override: %r → %r  (%s)",
+                tournament.name,
+                calendar_name,
+                tournament.event_url,
+            )
+            return tournament.model_copy(update={"name": calendar_name})
+    except Exception as exc:
+        logger.warning(
+            "Could not fetch calendar name for %s: %s",
+            tournament.event_url,
+            exc,
+        )
+    return tournament
 
 
 def _check_calendar_winner(
@@ -242,10 +274,11 @@ def run(args: argparse.Namespace) -> int:
     Scraping workflow per tournament:
       1. Scrape forum data (fetch thread HTML).
       2. Parse data (extract Tournament from post text).
-      3. Check event calendar for the winner's name.
-      4. Look up the winner in the VEKN player registry.
-      5. Validate card information with the krcg library.
-      6. Validate content and route file to the appropriate destination.
+      3. Check event calendar for the tournament name.
+      4. Check event calendar for the winner's name.
+      5. Look up the winner in the VEKN player registry.
+      6. Validate card information with the krcg library.
+      7. Validate content and route file to the appropriate destination.
     """
     setup_logging(args.verbose)
 
@@ -272,18 +305,21 @@ def run(args: argparse.Namespace) -> int:
                 skipped += 1
                 continue
 
-            # Step 3: check event calendar for the winner's name
+            # Step 3: check event calendar for the tournament name
+            tournament = _check_calendar_name(client, tournament, args.delay)
+
+            # Step 4: check event calendar for the winner's name
             tournament, calendar_winner_missing = _check_calendar_winner(
                 client, tournament, args.delay
             )
 
-            # Step 4: look up winner in VEKN player registry
+            # Step 5: look up winner in VEKN player registry
             tournament = _lookup_player(client, tournament, args.delay)
 
-            # Step 5: validate card information with krcg
+            # Step 6: validate card information with krcg
             tournament = _enrich_with_krcg(tournament)
 
-            # Step 6: validate content
+            # Step 7: validate content
             errors = _validate_content(client, tournament, args.delay)
             if calendar_winner_missing:
                 errors.append("unconfirmed_winner")

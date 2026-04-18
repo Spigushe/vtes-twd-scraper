@@ -30,6 +30,7 @@ from vtes_scraper.scraper._icons import (
 )
 from vtes_scraper.scraper._vekn import (
     fetch_event_date,
+    fetch_event_name,
     fetch_event_winner,
     fetch_player,
 )
@@ -54,6 +55,7 @@ __all__ = [
     "scrape_forum",
     # VEKN
     "fetch_event_date",
+    "fetch_event_name",
     "fetch_event_winner",
     "fetch_player",
 ]
