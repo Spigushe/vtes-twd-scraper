@@ -4,13 +4,13 @@ on:
   push:
     branches: [main]
     paths:
-      - "vtes_scraper/**"
-      - "pyproject.toml"
       - ".pre-commit-config.yaml"
       - ".github/workflows/pre-commit.yml"
 
   pull_request:
     branches: [main]
+
+  workflow_call:
 
 jobs:
   pre-commit:
