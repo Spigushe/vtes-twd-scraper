@@ -29,9 +29,9 @@ deck:
     name: Vivian VI
     capacity: 7
     disciplines: obf tha PRE PRO
+    title: Baron
     clan: Ministry
     grouping: 6
-    title: Baron
   - count: 1
     name: Hesha Ruhadze
     capacity: 7
@@ -42,9 +42,9 @@ deck:
     name: Elisha Tucker
     capacity: 6
     disciplines: cel obf pro PRE
+    title: Baron
     clan: Ministry
     grouping: 6
-    title: Baron
   - count: 1
     name: Crystal Lynn
     capacity: 6

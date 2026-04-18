@@ -7,15 +7,18 @@ winner: Alex Romano
 event_url: https://www.vekn.net/event-calendar/event/12783
 event_id: 12783
 vp_comment: 5VP+1GW and 3VP in final
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/82736-twd-tommaso-sforza-s-birthday
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82736-twd-tommaso-sforza-s-birthday
 deck:
   name: No Good
-  description: This is a deck in homage to "He has to run out sometime" by John Bell, as he terrorized me with it when I
-    first came back to Vtes. Same idea but a bit heavier master mix and some updated cards that didn't exist when he was
-    playing his version. The Faerie Wards tend to be much fewer than most people realize but they truly feel infinite 
-    when utilized with constant Ashur recursion. It's very weak to heavy vote meta and may need to be adjusted to deal 
-    with that more now that votes are coming back in vogue so heavily, but luckily I didn't see much vote at this 
-    tournament.
+  description: This is a deck in homage to "He has to run out sometime" by John 
+    Bell, as he terrorized me with it when I first came back to Vtes. Same idea 
+    but a bit heavier master mix and some updated cards that didn't exist when 
+    he was playing his version. The Faerie Wards tend to be much fewer than most
+    people realize but they truly feel infinite when utilized with constant 
+    Ashur recursion. It's very weak to heavy vote meta and may need to be 
+    adjusted to deal with that more now that votes are coming back in vogue so 
+    heavily, but luckily I didn't see much vote at this tournament.
   crypt_count: 13
   crypt_min: 28
   crypt_max: 36
