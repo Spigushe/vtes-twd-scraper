@@ -1,0 +1,191 @@
+name: Jogos de Guerra - Abril da Tola Camarilla
+location: São Paulo, Brasil
+date_start: 2026-04-18
+rounds_format: 2R+F
+players_count: 14
+winner: Francisco Mantovanini Carvalho
+vekn_number: 6010104
+event_url: https://www.vekn.net/event-calendar/event/13210
+event_id: 13210
+vp_comment: 2GW6+4VPs in the final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82953-twd-jogos-de-guerra-sao-paulo-brasil-18-april-2026
+deck:
+  name: Só Carta Justa
+  created_by: Francisco Mantovanini Carvalho
+  description: This deck name translates from brazilian portuguese as "Only fair
+    cards". I thought of this concept because I think that the newer anarch 
+    cards, specially those two that recquire barons (organized resistence and 
+    bait and switch) are grossly overpowered. So yeah, I'll make a deck around 
+    using those cards in the most efficient way, with the cheapest vampires 
+    possible, and see how it goes. The whole concept of a gun wall came from 
+    those two cards.
+  crypt_count: 12
+  crypt_min: 24
+  crypt_max: 27
+  crypt_avg: 6.25
+  crypt:
+  - count: 1
+    name: Aline Gädeke
+    capacity: 7
+    disciplines: cel POT PRE
+    title: Baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Ángel Guerrero
+    capacity: 7
+    disciplines: ANI DOM PRO
+    title: Baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Massimiliano
+    capacity: 7
+    disciplines: pro ANI FOR
+    title: Baron
+    clan: Gangrel
+    grouping: 6
+  - count: 2
+    name: Benedito, a Lanterna
+    capacity: 6
+    disciplines: ani aus obf POT
+    title: Baron
+    clan: Nosferatu
+    grouping: 6
+  - count: 2
+    name: Jacques Rouge
+    capacity: 6
+    disciplines: ani pot pre OBF
+    title: Baron
+    clan: Nosferatu
+    grouping: 6
+  - count: 1
+    name: Atiena
+    capacity: 6
+    disciplines: obf pot pre CEL
+    title: Baron
+    clan: Brujah
+    grouping: 6
+  - count: 1
+    name: Branimira
+    capacity: 6
+    disciplines: dom pre pro ANI
+    title: Baron
+    clan: Tzimisce
+    grouping: 6
+  - count: 1
+    name: Casey Snyder
+    capacity: 6
+    disciplines: ani cel for PRO
+    title: Baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Kuyén
+    capacity: 6
+    disciplines: ANI PRO
+    title: Baron
+    clan: Gangrel
+    grouping: 6
+  - count: 1
+    name: Leumeah
+    capacity: 6
+    disciplines: cel for pot PRE
+    title: Baron
+    clan: Brujah
+    grouping: 6
+  library_count: 82
+  library_sections:
+  - name: Master
+    count: 17
+    cards:
+    - count: 1
+      name: Anarch Free Press, The
+    - count: 1
+      name: Anarch Railroad
+    - count: 1
+      name: Carfax Abbey
+    - count: 1
+      name: Club Illusion
+    - count: 1
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Erciyes Fragments, The
+    - count: 1
+      name: Garibaldi-Meucci Museum
+    - count: 2
+      name: Hackerspace
+    - count: 1
+      name: Rack, The
+    - count: 2
+      name: Smiling Jack, The Anarch
+    - count: 5
+      name: Villein
+  - name: Action
+    count: 6
+    cards:
+    - count: 1
+      name: Army of Rats
+    - count: 1
+      name: Childe of the Revolution
+    - count: 1
+      name: Constant Revolution
+    - count: 2
+      name: Creeping Sabotage
+    - count: 1
+      name: Status Perfectus, The
+  - name: Political Action
+    count: 2
+    cards:
+    - count: 2
+      name: Reckless Agitation
+  - name: Equipment
+    count: 6
+    cards:
+    - count: 3
+      name: .44 Magnum
+    - count: 2
+      name: Deer Rifle
+    - count: 1
+      name: Sniper Rifle
+  - name: Action Modifier
+    count: 5
+    cards:
+    - count: 1
+      name: Earth Control
+    - count: 1
+      name: Forgotten Labyrinth
+    - count: 1
+      name: Lost in Crowds
+    - count: 2
+      name: Monkey Wrench
+  - name: Reaction
+    count: 23
+    cards:
+    - count: 8
+      name: Bait and Switch
+    - count: 1
+      name: Delaying Tactics
+    - count: 14
+      name: Organized Resistance
+  - name: Combat
+    count: 22
+    cards:
+    - count: 6
+      name: Concealed Weapon
+    - count: 3
+      name: Diversion
+    - count: 3
+      name: Donnybrook
+    - count: 4
+      name: Groundfighting
+    - count: 4
+      name: Target Vitals
+    - count: 2
+      name: Taste of Vitae
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Scourge of the Enochians
