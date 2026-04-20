@@ -1,0 +1,21 @@
+# Spike test events — VEKN calendar field extraction feasibility
+#
+# Format: event_id  # description (why included)
+#
+# Goal: cover enough variety to surface extraction failures before
+# the design is committed to implementation.
+
+# ── Small / old events ────────────────────────────────────────────────────────
+8470    # 2016, 12 players, Vila Velha Brazil — design doc canonical example
+9183    # mid-era event — check HTML structure stability
+10000   # round number — milestone event, likely large
+
+# ── Events with known standings data ─────────────────────────────────────────
+12012   # design doc score example (Luca Turicchi, 1GW6.0 + 3VP in finals)
+13096   # 2026, 20 players, Recife Brazil — recent YAML on disk
+
+# ── Edge cases ────────────────────────────────────────────────────────────────
+# Add an online event ID here once one is identified:
+# ????    # online event — location field should read "Online"
+# Add a multi-day event ID here:
+# ????    # multi-day event — date_end should be present
