@@ -187,7 +187,7 @@ after ingestion and does not need to be enforced during parsing.
 Each library card line:
 
 ```
-{count}x {Card Name}
+{count}x {Card Name}  -- {optional comment}
 ```
 
 ---
@@ -215,12 +215,13 @@ overwrites the forum value). `Forum` = parsed from the forum post only.
 | `event_url`        | `str`      | Mandatory | Forum    | Canonical VEKN calendar URL                                  |
 | `event_id`         | `int`      | Derived   | —        | Extracted from `event_url`                                   |
 | `forum_post_url`   | `str`      | Mandatory | —        | Required for publication and validation traceability         |
-| `last_edit`        | `datetime` | Mandatory | —        | UTC timestamp set on every write or update                   |
-| `last_validation`  | `datetime` | Mandatory | —        | UTC timestamp set by the validation job after each run       |
+| `last_edit`          | `datetime` | Mandatory | —        | UTC timestamp set on every write or update                   |
+| `last_validation`    | `datetime` | Mandatory | —        | UTC timestamp set by the validation job after each run       |
+| `validation_status`  | `str`      | Mandatory | —        | Outcome of the last validation run: `None`, `Error`, `Pass`  |
 
-`last_edit` and `last_validation` are internal timestamps. The validation
-job targets files where `last_edit > last_validation`. `last_validation` is
-set each time the validation script processes the file, regardless of outcome.
+`last_edit`, `last_validation`, and `validation_status` are internal fields.
+The validation job targets files where `last_edit > last_validation`, then
+sets `last_validation` and `validation_status` on each processed file.
 
 ### 5.2 Winner Score Format
 
@@ -393,15 +394,14 @@ twds/
 
 ### 8.2 JSON Structure
 
-Optional fields are always present in the JSON; they are set to `null` when
-absent.
+Optional fields are omitted from the JSON when absent, provided the schema
+validator can still distinguish a missing optional field from an invalid record.
 
 ```json
 {
   "name": "Example Championship",
   "location": "Paris, France",
   "date_start": "2026-03-15",
-  "date_end": null,
   "rounds_format": "3R+F",
   "players_count": 20,
   "winner": "Alice Dupont",
@@ -414,10 +414,9 @@ absent.
   "forum_post_url": "https://www.vekn.net/forum/event-reports-and-twd/12345-example",
   "last_edit": "2026-04-20T14:32:00Z",
   "last_validation": "2026-04-20T14:32:00Z",
+  "validation_status": "Pass",
   "deck": {
     "name": "Nocturnal Visitor",
-    "created_by": null,
-    "description": null,
     "crypt_count": 12,
     "crypt_min": 4,
     "crypt_max": 9,
@@ -429,9 +428,7 @@ absent.
         "capacity": 9,
         "disciplines": "ANI FOR PRO",
         "clan": "Gangrel",
-        "grouping": 6,
-        "title": null,
-        "comment": null
+        "grouping": 6
       }
     ],
     "library_count": 90,
@@ -440,7 +437,7 @@ absent.
         "name": "Master",
         "count": 15,
         "cards": [
-          { "count": 1, "name": "Anarch Free Press, The", "comment": null }
+          { "count": 1, "name": "Anarch Free Press, The" }
         ]
       }
     ]
