@@ -77,15 +77,38 @@ maintained in code or in a config file?
 
 ## 3. Scraping Strategy
 
-### 3.1 Page Range
+### 3.1 Scrape Modes
+
+The scraper operates in two modes.
+
+**Fact-check mode** (default — automated jobs and CLI)
+
+- Reads only the **first post** of each forum thread (the original TWD report).
+- After parsing, every non-deck field is **confirmed** against the VEKN event
+  calendar before the record is accepted (see Section 6).
+- A field that cannot be confirmed is flagged as unconfirmed and routed to the
+  appropriate error directory.
+
+**Slow-check mode** (CLI only, opt-in flag)
+
+- Reads **all posts** in the thread: first post and every reply.
+- Intended for topics where the original report was corrected or supplemented
+  in the comments (e.g. missing cards, corrected player count, updated deck
+  link).
+- ???? What is the merge strategy when a reply contradicts the first post?
+  (Last confirmed value wins? Manual review required?)
+- ???? Is the slow-check only useful during the initial ingestion of a topic,
+  or should it also be used during re-validation?
+
+### 3.2 Page Range
 
 The scraper iterates forum index pages. Each page lists 20 topics.
 
-- Default scope: the most recent pages (????  how many by default?).
+- Default scope: the most recent pages (???? how many by default?).
 - Full scrape: all pages from 0 to the last available.
 - Both `start_page` and `last_page` are 0-indexed; `last_page` is inclusive.
 
-### 3.2 Request Rate
+### 3.3 Request Rate
 
 The scraper must identify itself and be respectful of the server:
 
@@ -93,7 +116,7 @@ The scraper must identify itself and be respectful of the server:
 - **Delay between requests**: ???? What is the agreed delay? (Currently 1.5 s.)
 - The scraper must honour `robots.txt` and VEKN forum terms of service.
 
-### 3.3 Duplicate Handling
+### 3.4 Duplicate Handling
 
 If a YAML file for a given `event_id` already exists on disk, the scraper
 **skips** it by default. An `--overwrite` flag allows re-scraping.
@@ -154,25 +177,31 @@ handle (e.g. count without `x`, disciplines in different order)?
 
 ### 5.1 Tournament Fields
 
-| Field            | Type           | Status    | Notes                                       |
-|------------------|----------------|-----------|---------------------------------------------|
-| `name`           | `str`          | Mandatory | Event name                                  |
-| `location`       | `str`          | Mandatory | `"City, Country"` or `"Online"`             |
-| `date_start`     | `date`         | Mandatory | Tournament start date                       |
-| `date_end`       | `date`         | Optional  | Only for multi-day events                   |
-| `rounds_format`  | `str`          | Mandatory | Must match `\d+R\+F` (e.g. `"3R+F"`)        |
-| `players_count`  | `int`          | Mandatory | Minimum ???? (currently 12)                 |
-| `winner`         | `str`          | Mandatory | Winner's full name                          |
-| `vekn_number`    | `int`          | Mandatory | Winner's VEKN membership number             |
-| `event_url`      | `str`          | Mandatory | Canonical VEKN calendar URL                 |
-| `event_id`       | `int`          | Derived   | Extracted from `event_url`                  |
-| `vp_comment`     | `str`          | Optional  | Victory points note (e.g. `"5VP in final"`) |
-| `forum_post_url` | `str`          | Mandatory | Source forum thread URL (for traceability)  |
+The **Source** column indicates where the value originates.
+`Forum` = parsed from the forum post.
+`Calendar` = fetched from the VEKN event calendar (authoritative; overwrites the forum value).
 
-???? Should `vp_comment` follow a strict format, or is free text acceptable?
+| Field            | Type           | Status    | Source     | Notes                                             |
+|------------------|----------------|-----------|------------|---------------------------------------------------|
+| `name`           | `str`          | Mandatory | Calendar   | Event name — calendar value overrides forum       |
+| `location`       | `str`          | Mandatory | Forum      | `"City, Country"` or `"Online"`                   |
+| `date_start`     | `date`         | Mandatory | Calendar   | Tournament start date — must match calendar       |
+| `date_end`       | `date`         | Optional  | Calendar   | Only for multi-day events                         |
+| `rounds_format`  | `str`          | Mandatory | Forum      | Must match `\d+R\+F` (e.g. `"3R+F"`)             |
+| `players_count`  | `int`          | Mandatory | Forum      | Minimum ???? (currently 12)                       |
+| `winner`         | `str`          | Mandatory | Calendar   | Winner's name — must match calendar standings     |
+| `vekn_number`    | `int`          | Mandatory | Calendar   | Winner's VEKN membership number from standings    |
+| `winner_gw`      | `int`          | Mandatory | Calendar   | Winner's Game Wins total from official standings  |
+| `winner_vp`      | `float`        | Mandatory | Calendar   | Winner's Victory Points total from standings      |
+| `event_url`      | `str`          | Mandatory | Forum      | Canonical VEKN calendar URL                       |
+| `event_id`       | `int`          | Derived   | —          | Extracted from `event_url`                        |
+| `forum_post_url` | `str`          | Mandatory | —          | Source forum thread URL (for traceability)        |
 
-???? Is `forum_post_url` truly mandatory for publication, or only for
-internal traceability?
+???? Is `forum_post_url` required for publication to the archive, or only for
+internal traceability in this repository?
+
+???? `winner_gw` and `winner_vp` come from the final standings table. Should
+they reflect the **final round only** or the **cumulative tournament total**?
 
 ### 5.2 Deck Fields
 
@@ -201,14 +230,15 @@ internal traceability?
 
 ---
 
-## 6. Enrichment from Official Sources
+## 6. Calendar Confirmation
 
-After parsing, the scraper enriches the tournament data by querying official
-VEKN sources. Enrichment **overrides** scraped values when the official source
-provides a definitive answer.
+The VEKN event calendar is the **authoritative source** for all non-deck
+fields. The forum post is treated as a raw input only; every field that the
+calendar can supply **must** be confirmed or overwritten by the calendar value.
+A record with any unconfirmed mandatory calendar field is invalid.
 
-???? Confirm priority: does official calendar data always win over the scraped
-forum post, or are there fields where the post is preferred?
+The deck list itself (crypt and library) is the one block that comes
+exclusively from the forum post and is not cross-checked against the calendar.
 
 ### 6.1 Event Name
 
@@ -217,34 +247,42 @@ Fetched from the VEKN event calendar page. Extraction strategies, in order:
 1. JSON-LD structured data (`name` field).
 2. `<h1>` element text.
 
-### 6.2 Event Date
+The calendar value replaces whatever name was in the forum post.
+
+### 6.2 Event Dates
 
 Fetched from the VEKN event calendar page. Extraction strategies, in order:
 
-1. JSON-LD structured data (`startDate` field).
+1. JSON-LD structured data (`startDate` / `endDate` fields).
 2. `<time datetime="...">` element.
 3. Event date `<div>` text.
 4. Regex scan for date-like strings.
 
-### 6.3 Winner Confirmation
+If the calendar date differs from the forum date, the calendar value wins.
+If the calendar provides no date at all, the record is flagged `incoherent_date`.
+
+### 6.3 Winner Name, VEKN Number, and Score
 
 Fetched from the official standings table on the event calendar page.
-The scraper looks for a table with headers such as `Pos.`, `Rank`, `#`, or
-`Player`, then extracts the first-place entry.
+The scraper identifies the first-place row in a table with headers such as
+`Pos.`, `Rank`, `#`, or `Player`, then extracts:
+
+- `winner` — player name as it appears in the standings.
+- `vekn_number` — VEKN membership number from the standings row.
+- `winner_gw` — Game Wins total from the standings row.
+- `winner_vp` — Victory Points total from the standings row.
+
+All four fields are mandatory. If any cannot be read from the standings table
+the record is flagged `unconfirmed_winner`.
 
 ???? What should happen when the winner name in the forum post does not match
-the name in the official standings (e.g. due to spelling differences or
-transliteration)?
+the name in the official standings (e.g. spelling difference or transliteration)?
+Should the scraper accept the calendar name unconditionally, or raise a flag?
 
-### 6.4 VEKN Member Number
+???? If the standings table has no GW or VP column (only rank and player name),
+how should the scraper handle it?
 
-Looked up in the VEKN player registry by winner name. If found, the
-`vekn_number` field is populated.
-
-???? What is the fallback when the name search returns no result or multiple
-results?
-
-### 6.5 Card Data (krcg)
+### 6.4 Card Data (krcg)
 
 Crypt and library cards are validated and enriched using the **krcg** card
 database:
@@ -332,15 +370,17 @@ flat directory suffice?
 ### 8.2 YAML Structure
 
 ```yaml
-name: Example Championship
-location: Paris, France
-date_start: 2026-03-15
-rounds_format: 3R+F
-players_count: 20
-winner: Alice Dupont
-vekn_number: 1234567
+name: Example Championship           # from calendar
+location: Paris, France              # from forum post
+date_start: 2026-03-15               # from calendar
+rounds_format: 3R+F                  # from forum post
+players_count: 20                    # from forum post
+winner: Alice Dupont                 # from calendar standings
+vekn_number: 1234567                 # from calendar standings
+winner_gw: 2                         # from calendar standings
+winner_vp: 8.5                       # from calendar standings
 event_url: https://www.vekn.net/event-calendar/event/9999
-event_id: 9999
+event_id: 9999                       # derived from event_url
 forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/12345-example
 deck:
   name: Nocturnal Visitor
@@ -364,8 +404,8 @@ deck:
           name: Anarch Free Press, The
 ```
 
-???? Should `vp_comment`, `date_end`, `created_by`, and `description` always
-appear in the YAML even when absent (as `null`), or be omitted entirely?
+???? Should `date_end`, `created_by`, and `description` appear in the YAML
+when absent (as `null`) or be omitted entirely?
 
 ---
 
@@ -401,22 +441,29 @@ For convenience, all `????` items grouped by theme:
 
 **Sources**
 - Is the forum URL stable or configurable?
-- Is the player registry endpoint publicly queryable without authentication?
 
 **Icon classification**
 - Are the four icons exhaustive?
 - How should topics with no detectable icon be treated?
 - Should the skip-slug list be in code or config?
 
+**Scrape modes**
+- In slow-check mode, what is the merge strategy when a reply contradicts the
+  first post?
+- Is slow-check useful during re-validation, or only on first ingestion?
+- Page range for the default (fact-check) scrape?
+
 **Parsing**
 - What labelling prefixes does the lenient header parser recognise?
 - What crypt/library formatting variants must be handled?
 - Are there additional date formats needed?
 
-**Enrichment**
-- Does calendar data always override forum data, or are there exceptions?
-- How to handle winner name mismatches between post and standings?
-- What is the fallback for unresolvable VEKN member lookups?
+**Calendar confirmation**
+- When the winner name in the post and in the standings differ, does the
+  calendar name win unconditionally, or is a flag raised?
+- If the standings table has no GW/VP column, how should the scraper handle it?
+- Do `winner_gw` and `winner_vp` reflect the final round only or the
+  cumulative tournament total?
 
 **Validation rules**
 - Is the grouping rule a VEKN regulation or an archive convention?
@@ -424,10 +471,10 @@ For convenience, all `????` items grouped by theme:
 - Are there other format keywords to exclude beyond `"Limited"`?
 
 **Output**
+- Is `forum_post_url` required for publication or only for internal traceability?
 - Should `changes_required/` be organised by date?
 - Should optional fields appear as `null` or be omitted?
 
 **Automation**
-- Page range for the daily scrape?
 - Full vs. partial re-validation in the weekly job?
 - Should pre-2020 tournaments be published by default?
