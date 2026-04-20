@@ -1,0 +1,37 @@
+name: Spike — Calendar Field Feasibility
+
+on:
+  workflow_dispatch:
+    inputs:
+      event_ids:
+        description: "Space-separated event IDs to probe (leave blank to use spike/test_events.txt)"
+        required: false
+        default: ""
+      delay:
+        description: "Delay between requests in seconds"
+        required: false
+        default: "2.0"
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install httpx beautifulsoup4 lxml
+
+      - name: Run spike
+        run: |
+          if [ -n "${{ github.event.inputs.event_ids }}" ]; then
+            python spike/calendar_fields.py \
+              --event-ids ${{ github.event.inputs.event_ids }} \
+              --delay ${{ github.event.inputs.delay }}
+          else
+            python spike/calendar_fields.py \
+              --delay ${{ github.event.inputs.delay }}
+          fi
