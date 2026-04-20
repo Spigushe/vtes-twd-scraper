@@ -3,7 +3,7 @@
 ## Goal
 
 Automatically collect Tournament Winning Decks (TWD) from the VEKN forum,
-validate them against official data, and produce structured YAML files ready
+validate them against official data, and produce structured JSON files ready
 for publication to the shared TWD archive.
 
 ---
@@ -196,12 +196,16 @@ The **Source** column indicates where the value originates.
 | `event_url`      | `str`          | Mandatory | Forum      | Canonical VEKN calendar URL                       |
 | `event_id`       | `int`          | Derived   | —          | Extracted from `event_url`                        |
 | `forum_post_url` | `str`          | Mandatory | —          | Source forum thread URL (for traceability)        |
+| `last_edit`      | `datetime`     | Mandatory | —          | UTC timestamp of the last write to the JSON file  |
 
 ???? Is `forum_post_url` required for publication to the archive, or only for
 internal traceability in this repository?
 
 ???? `winner_gw` and `winner_vp` come from the final standings table. Should
 they reflect the **final round only** or the **cumulative tournament total**?
+
+`last_edit` is set by the scraper (or validator) each time the file is
+written or updated. It is not sourced from the forum or the calendar.
 
 ### 5.2 Deck Fields
 
@@ -342,14 +346,14 @@ be excluded (e.g. `"Draft"`, `"Sealed"`)?
 
 ### 8.1 File Naming and Directory Layout
 
-Each tournament produces one YAML file named `{event_id}.yaml`. Files are
+Each tournament produces one JSON file named `{event_id}.json`. Files are
 stored under:
 
 ```
 twds/
 ├── YYYY/
 │   └── MM/
-│       └── {event_id}.yaml       ← Valid tournaments
+│       └── {event_id}.json       ← Valid tournaments
 ├── errors/
 │   ├── illegal_header/
 │   ├── unconfirmed_winner/
@@ -359,7 +363,7 @@ twds/
 │   ├── too_few_players/
 │   └── incoherent_date/
 └── changes_required/             ← Posts marked with the "merged" icon
-    └── {event_id}.yaml
+    └── {event_id}.json
 ```
 
 `YYYY/MM` is derived from `date_start`.
@@ -367,44 +371,54 @@ twds/
 ???? Should `changes_required/` files also be organised by date, or does a
 flat directory suffice?
 
-### 8.2 YAML Structure
+### 8.2 JSON Structure
 
-```yaml
-name: Example Championship           # from calendar
-location: Paris, France              # from forum post
-date_start: 2026-03-15               # from calendar
-rounds_format: 3R+F                  # from forum post
-players_count: 20                    # from forum post
-winner: Alice Dupont                 # from calendar standings
-vekn_number: 1234567                 # from calendar standings
-winner_gw: 2                         # from calendar standings
-winner_vp: 8.5                       # from calendar standings
-event_url: https://www.vekn.net/event-calendar/event/9999
-event_id: 9999                       # derived from event_url
-forum_post_url: https://www.vekn.net/forum/event-reports-and-twd/12345-example
-deck:
-  name: Nocturnal Visitor
-  crypt_count: 12
-  crypt_min: 4
-  crypt_max: 9
-  crypt_avg: 6.5
-  crypt:
-    - count: 2
-      name: Eze
-      capacity: 9
-      disciplines: ANI FOR PRO
-      clan: Gangrel
-      grouping: 6
-  library_count: 90
-  library_sections:
-    - name: Master
-      count: 15
-      cards:
-        - count: 1
-          name: Anarch Free Press, The
+```json
+{
+  "name": "Example Championship",
+  "location": "Paris, France",
+  "date_start": "2026-03-15",
+  "rounds_format": "3R+F",
+  "players_count": 20,
+  "winner": "Alice Dupont",
+  "vekn_number": 1234567,
+  "winner_gw": 2,
+  "winner_vp": 8.5,
+  "event_url": "https://www.vekn.net/event-calendar/event/9999",
+  "event_id": 9999,
+  "forum_post_url": "https://www.vekn.net/forum/event-reports-and-twd/12345-example",
+  "last_edit": "2026-04-20T14:32:00Z",
+  "deck": {
+    "name": "Nocturnal Visitor",
+    "crypt_count": 12,
+    "crypt_min": 4,
+    "crypt_max": 9,
+    "crypt_avg": 6.5,
+    "crypt": [
+      {
+        "count": 2,
+        "name": "Eze",
+        "capacity": 9,
+        "disciplines": "ANI FOR PRO",
+        "clan": "Gangrel",
+        "grouping": 6
+      }
+    ],
+    "library_count": 90,
+    "library_sections": [
+      {
+        "name": "Master",
+        "count": 15,
+        "cards": [
+          { "count": 1, "name": "Anarch Free Press, The" }
+        ]
+      }
+    ]
+  }
+}
 ```
 
-???? Should `date_end`, `created_by`, and `description` appear in the YAML
+???? Should `date_end`, `created_by`, and `description` appear in the JSON
 when absent (as `null`) or be omitted entirely?
 
 ---
@@ -414,21 +428,22 @@ when absent (as `null`) or be omitted entirely?
 ### 9.1 Scheduled Scrape
 
 A daily job scrapes the most recent forum pages, validates new posts, and
-commits resulting YAML files.
+commits resulting JSON files.
 
 ???? What page range should the daily job target? How many pages back is
 sufficient to catch all new posts within 24 hours?
 
 ### 9.2 Scheduled Validation
 
-A weekly job re-validates published files and updates card data from krcg.
+A weekly job re-validates published JSON files and updates card data from krcg.
+Each file that is updated receives a fresh `last_edit` timestamp.
 
 ???? Should the weekly job re-validate only a recent subset, or the full
 archive? What is the acceptable run time?
 
 ### 9.3 Scheduled Publication
 
-A weekly job publishes validated YAML files to the shared TWD archive as a
+A weekly job publishes validated JSON files to the shared TWD archive as a
 pull request.
 
 ???? Should pre-2020 tournaments be included in publication by default?
@@ -473,7 +488,7 @@ For convenience, all `????` items grouped by theme:
 **Output**
 - Is `forum_post_url` required for publication or only for internal traceability?
 - Should `changes_required/` be organised by date?
-- Should optional fields appear as `null` or be omitted?
+- Should optional fields appear as `null` or be omitted in the JSON?
 
 **Automation**
 - Full vs. partial re-validation in the weekly job?
