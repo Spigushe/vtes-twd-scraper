@@ -144,13 +144,10 @@ winner's VP in the final is fetched from the VEKN event calendar standings
 (see Section 6.3).
 
 A lenient fallback parser handles posts where fields are labelled (e.g.
-`Winner: Ravel Zorzal`) or appear out of order. The set of recognised label
-prefixes is not fixed in advance; the parser builds a working dictionary
-on the fly from the content it encounters.
-
-???? What exactly does "dictionary on the fly" mean for the lenient parser —
-is it a set of heuristic patterns, or a learned mapping that persists across
-runs?
+`Winner: Ravel Zorzal`) or appear out of order. As scraping progresses the
+parser accumulates a candidate list of observed label-to-field mappings.
+Candidates that are never confirmed by a successful parse are pruned (self-
+purging), provided the overhead of maintaining the list stays acceptable.
 
 ### 4.2 Deck Block
 
@@ -222,10 +219,8 @@ overwrites the forum value). `Forum` = parsed from the forum post only.
 | `last_validation`  | `datetime` | Mandatory | —        | UTC timestamp set by the validation job after each run       |
 
 `last_edit` and `last_validation` are internal timestamps. The validation
-job targets files where `last_edit > last_validation`.
-
-???? Should `last_validation` be updated only after a fully successful
-validation, or also when validation finds errors?
+job targets files where `last_edit > last_validation`. `last_validation` is
+set each time the validation script processes the file, regardless of outcome.
 
 ### 5.2 Winner Score Format
 
@@ -313,7 +308,7 @@ The calendar winner name overrides the forum post value unconditionally.
 
 If the standings table is missing or any of the five fields cannot be read
 (including missing GW, VP, or Final columns), the record is flagged
-`unconfirmed_winner`.
+`unknown_winner`.
 
 ### 6.4 Card Data (krcg)
 
@@ -339,7 +334,7 @@ directory.
 | Priority | Error type           | Condition                                                                 |
 |----------|----------------------|---------------------------------------------------------------------------|
 | 1        | `illegal_header`     | Any mandatory tournament field is absent or blank                         |
-| 2        | `unconfirmed_winner` | `winner`, `vekn_number`, `winner_gw`, `winner_vp`, or `winner_vp_final` missing |
+| 2        | `unknown_winner` | `winner`, `vekn_number`, `winner_gw`, `winner_vp`, or `winner_vp_final` missing |
 | 3        | `limited_format`     | Tournament name contains `"Limited"`, `"Draft"`, or `"Sealed"` (case-insensitive) |
 | 4        | `illegal_crypt`      | Crypt is empty, grouping rule violated, or `crypt_count` inconsistent     |
 | 5        | `illegal_library`    | Library is empty, a section count is wrong, or `library_count` wrong     |
@@ -352,8 +347,8 @@ All crypt cards with an integer grouping must span **at most two consecutive
 integers** (e.g. G5 and G6 are legal; G4, G5, G6 is not). Cards with
 grouping `ANY` are excluded from this check.
 
-???? Is this grouping rule a VEKN tournament regulation or a TWD archive
-convention? Does it apply to all formats (Standard, Draft, …)?
+This is an actual VEKN tournament regulation. Violations are flagged as
+`illegal_crypt`.
 
 ### 7.2 Player Count
 
@@ -385,7 +380,7 @@ twds/
 │       └── {event_id}.json       ← Valid tournaments (YYYY/MM from date_start)
 ├── errors/
 │   ├── illegal_header/
-│   ├── unconfirmed_winner/
+│   ├── unknown_winner/
 │   ├── limited_format/
 │   ├── illegal_crypt/
 │   ├── illegal_library/
@@ -398,11 +393,15 @@ twds/
 
 ### 8.2 JSON Structure
 
+Optional fields are always present in the JSON; they are set to `null` when
+absent.
+
 ```json
 {
   "name": "Example Championship",
   "location": "Paris, France",
   "date_start": "2026-03-15",
+  "date_end": null,
   "rounds_format": "3R+F",
   "players_count": 20,
   "winner": "Alice Dupont",
@@ -417,8 +416,8 @@ twds/
   "last_validation": "2026-04-20T14:32:00Z",
   "deck": {
     "name": "Nocturnal Visitor",
-    "created_by": "Bobby Lemon",
-    "description": "A great deck that wins all the time.",
+    "created_by": null,
+    "description": null,
     "crypt_count": 12,
     "crypt_min": 4,
     "crypt_max": 9,
@@ -430,7 +429,9 @@ twds/
         "capacity": 9,
         "disciplines": "ANI FOR PRO",
         "clan": "Gangrel",
-        "grouping": 6
+        "grouping": 6,
+        "title": null,
+        "comment": null
       }
     ],
     "library_count": 90,
@@ -439,16 +440,13 @@ twds/
         "name": "Master",
         "count": 15,
         "cards": [
-          { "count": 1, "name": "Anarch Free Press, The" }
+          { "count": 1, "name": "Anarch Free Press, The", "comment": null }
         ]
       }
     ]
   }
 }
 ```
-
-???? Should optional fields (`date_end`, `created_by`, `description`) appear
-in the JSON as `null` when absent, or be omitted entirely?
 
 ---
 
@@ -463,10 +461,7 @@ validates new posts, and commits resulting JSON files.
 
 A weekly job re-validates published JSON files and updates card data from
 krcg. It targets only files where `last_edit > last_validation`, then updates
-`last_validation` on each processed file.
-
-???? Should `last_validation` be updated only after a fully successful
-validation, or also when the file is found to contain errors?
+`last_validation` on each processed file regardless of outcome.
 
 ### 9.3 Scheduled Publication
 
@@ -477,18 +472,4 @@ pull request. Pre-2020 tournaments are excluded from publication by default.
 
 ## 10. Open Questions
 
-**Parsing**
-- What exactly does "dictionary on the fly" mean for the lenient header
-  parser — heuristic patterns, or a mapping that persists across runs?
-
-**Calendar confirmation**
-- Should `last_validation` be updated even when validation finds errors, or
-  only on a clean result?
-
-**Validation rules**
-- Is the grouping rule (at most two consecutive integers) a VEKN tournament
-  regulation or a TWD archive convention?
-
-**Output**
-- Should optional fields (`date_end`, `created_by`, `description`) appear as
-  `null` or be omitted from the JSON when absent?
+No open questions remain.
