@@ -1,0 +1,135 @@
+name: Extremis Boon
+location: Paris, France
+date_start: 2026-04-26
+rounds_format: 3R+F
+players_count: 18
+winner: Édouard Menneson
+vekn_number: 3200360
+event_url: https://www.vekn.net/event-calendar/event/13129
+event_id: 13129
+vp_comment: 3GW9 + 1.5VPs in final
+forum_post_url: 
+  https://www.vekn.net/forum/event-reports-and-twd/82966-twd-extremis-boon-26-04-26
+deck:
+  name: Salut salut !
+  created_by: Rhazoo
+  description: ''
+  crypt_count: 12
+  crypt_min: 20
+  crypt_max: 32
+  crypt_avg: 6.67
+  crypt:
+  - count: 4
+    name: Abaddon
+    capacity: 8
+    disciplines: cel pot AUS DOM FOR
+    clan: Salubri
+    grouping: 7
+  - count: 4
+    name: Barachiel
+    capacity: 7
+    disciplines: ani AUS DOM FOR
+    clan: Salubri
+    grouping: 7
+  - count: 1
+    name: Castellan
+    capacity: 6
+    disciplines: cel dom AUS FOR
+    clan: Salubri
+    grouping: 7
+  - count: 1
+    name: Sakhar
+    capacity: 6
+    disciplines: dom AUS FOR
+    clan: Salubri
+    grouping: 7
+  - count: 1
+    name: Opikun
+    capacity: 5
+    disciplines: aus dom FOR
+    clan: Salubri
+    grouping: 7
+  - count: 1
+    name: Dominica
+    capacity: 3
+    disciplines: aus for
+    clan: Salubri
+    grouping: 7
+  library_count: 80
+  library_sections:
+  - name: Master
+    count: 15
+    cards:
+    - count: 2
+      name: Dreams of the Sphinx
+    - count: 1
+      name: Fame
+    - count: 1
+      name: Giant's Blood
+    - count: 1
+      name: Guardian Angel
+    - count: 1
+      name: Meditative Grove
+    - count: 2
+      name: Saulot's Avenging Fist
+    - count: 1
+      name: Saulot's Healing Touch
+    - count: 5
+      name: Villein
+    - count: 1
+      name: Wider View
+  - name: Action
+    count: 10
+    cards:
+    - count: 10
+      name: Hunting the Beast
+  - name: Action/Combat
+    count: 2
+    cards:
+    - count: 2
+      name: Touch of Valeren
+  - name: Equipment
+    count: 6
+    cards:
+    - count: 4
+      name: Righteous Blade
+    - count: 2
+      name: Sword of the Archangel
+  - name: Action Modifier
+    count: 3
+    cards:
+    - count: 1
+      name: Conditioning
+    - count: 2
+      name: Freak Drive
+  - name: Reaction
+    count: 8
+    cards:
+    - count: 3
+      name: Eyes of Argus
+    - count: 2
+      name: My Enemy's Enemy
+    - count: 3
+      name: Telepathic Misdirection
+  - name: Combat
+    count: 35
+    cards:
+    - count: 6
+      name: Angel's Gift
+    - count: 13
+      name: Anticipation
+    - count: 1
+      name: Orgy of Blood
+    - count: 3
+      name: Rolling with the Punches
+    - count: 6
+      name: Taste of Vitae
+    - count: 4
+      name: Tranquility Shield
+    - count: 2
+      name: Unflinching Persistence
+  - name: Event
+    count: 1
+    cards:
+    - count: 1
+      name: Dragonbound
